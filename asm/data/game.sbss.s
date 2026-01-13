@@ -103,6 +103,7 @@ dlabel D_8006C54C
 .size D_8006C54C, . - D_8006C54C
 
 dlabel mobyArrayPtr
+dlabel g_MobyArrayPtr
 dlabel D_8006C550
 /* 5CD50 8006C550 00000000 */ .space 0x04
 .size D_8006C550, . - D_8006C550
@@ -215,6 +216,7 @@ dlabel D_8006C5B8
 .size D_8006C5B8, . - D_8006C5B8
 
 dlabel currentLevel
+dlabel g_CurrentLevel
 dlabel D_8006C5BC
 /* 5CDBC 8006C5BC 00000000 */ .space 0x04
 .size D_8006C5BC, . - D_8006C5BC
@@ -374,6 +376,7 @@ dlabel D_8006C650
 .size D_8006C650, . - D_8006C650
 
 dlabel soundTablePtr
+dlabel g_SoundTablePtr
 dlabel D_8006C654
 /* 5CE54 8006C654 00000000 */ .space 0x04
 .size D_8006C654, . - D_8006C654
@@ -570,6 +573,7 @@ dlabel D_8006C700
 .size D_8006C700, . - D_8006C700
 
 dlabel allocatedMobysPtr
+dlabel g_AllocatedMobyArrayPtr;
 dlabel D_8006C704
 /* 5CF04 8006C704 00000000 */ .space 0x04
 .size D_8006C704, . - D_8006C704

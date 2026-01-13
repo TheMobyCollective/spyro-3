@@ -1145,6 +1145,7 @@ dlabel D_80065878
 /* 5609F 8006589F */ .byte 0x70
 .size D_80065878, . - D_80065878
 
+dlabel g_Sin
 dlabel D_800658A0
 /* 560A0 800658A0 */ .short 0x0000
 /* 560A2 800658A2 */ .short 0x0065
@@ -1212,6 +1213,7 @@ dlabel D_800658A0
 /* 5611E 8006591E */ .short 0x0FFF
 .size D_800658A0, . - D_800658A0
 
+dlabel g_Cos
 dlabel D_80065920
 /* 56120 80065920 */ .short 0x1000
 /* 56122 80065922 */ .short 0x0FFF

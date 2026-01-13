@@ -155,6 +155,7 @@ dlabel D_8006DEF8
 /* 8006DEF8 */ .space 0x100
 
 dlabel camera
+dlabel g_Camera
 dlabel D_8006DFF8
 /* 8006DFF8 */ .space 0x14
 
@@ -668,6 +669,7 @@ dlabel D_8006E504
 /* 8006E504 */ .space 0x04
 
 dlabel pad
+dlabel g_Pad
 dlabel D_8006E508
 /* 8006E508 */ .space 0x01
 
@@ -1231,6 +1233,7 @@ dlabel D_80070300
 /* 80070300 */ .space 0x28
 
 dlabel spyro
+dlabel g_Spyro
 dlabel D_80070328
 /* 80070328 */ .space 0x04
 
@@ -2024,6 +2027,7 @@ dlabel D_800718D8
 dlabel D_800718DC
 /* 800718DC */ .space 0x24
 
+dlabel g_CollisionData
 dlabel D_80071900
 /* 80071900 */ .space 0x04
 
