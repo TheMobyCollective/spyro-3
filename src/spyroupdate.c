@@ -136,9 +136,8 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004BA6C);
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004BDF0);
 
 /**
- * UpdateMovementState() - func_8004BEF8()
- * WIP
- * Before adding, must be annotated with where the double jump hack is implemented (as in the asm)
+ * UpdateMovementState() - func_8004BEF8() - MATCHING
+ * Ready to add, but there's some oddities in here
  * https://decomp.me/scratch/RSA1r
  */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004BEF8);
