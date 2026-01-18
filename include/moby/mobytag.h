@@ -16,7 +16,7 @@ typedef struct {
     char unkA; // ?
     char unkB; // probably the animation type, seems to be 5 or 10 (the latter for close-up)
     char unkC; // ?
-    char unkD;
+    char unkD; // idle timer, jumps to 0x78 whenever Spyro moves
     short unkE; // ?
     int unk10; // seems to be a pointer to somewhere else in bss, maybe some kind of counter? unclear
     Moby* unk14; // captured moby
