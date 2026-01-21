@@ -1,4 +1,5 @@
 #include "common.h"
+#include "tracers.h"
 #include "savepoint.h"
 #include "camera.h"
 #include "ovl_header.h"
@@ -39,31 +40,6 @@ extern Savepoint savedData; // 8006D088
 extern Game game; // 8006E344 - game.state
 extern StreamingData streamingData; // 8006e470
 extern PauseData pauseData; // 8006fbc4
-
-////////////////////////////////////////////////////////////////////////////////////
-// Move these to the bottom of tracers.c and add in an extern for func_800509F0 to this file
-
-/**
- * UpdateTracers() - func_800509F0() - MATCHING
- * Has some placeholder struct names
- * https://decomp.me/scratch/jf4s5
- */
-INCLUDE_ASM("asm/nonmatchings/update", func_800509F0);
-
-/**
- * ???() - func_80050B00() - MATCHING
- * Has an unknown struct of size 0x14 which seems to consist of pointers
- * Might be a set / add particle function
- * https://decomp.me/scratch/LIHxH
- */
-INCLUDE_ASM("asm/nonmatchings/update", func_80050B00);
-
-/**
- * ???() - func_80050B88() - MATCHING
- * Just dereferences a pointer??
- * https://decomp.me/scratch/wl5A8
- */
-INCLUDE_ASM("asm/nonmatchings/update", func_80050B88);
 
 ////////////////////////////////////////////////////////////////////////////////////
 

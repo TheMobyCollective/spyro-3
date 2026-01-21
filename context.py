@@ -11,6 +11,7 @@ files = [
     'savepoint.h',
     'memcard.h',
     'mobyutil.h',
+    'tracers.h',
     'ovl_header.h',
     'moby/mobytag.h',
 ]

@@ -1213,20 +1213,19 @@ dlabel D_80070160
 dlabel D_8007020E
 /* 8007020E */ .space 0x52
 
+
+/* Something to do with tracers */
 dlabel D_80070260
 /* 80070260 */ .space 0x04
-
 dlabel D_80070264
 /* 80070264 */ .space 0x04
-
 dlabel D_80070268
 /* 80070268 */ .space 0x04
-
 dlabel D_8007026C
 /* 8007026C */ .space 0x04
-
 dlabel D_80070270
 /* 80070270 */ .space 0x90
+
 
 dlabel eggsCollectedArray /* bitmask array */
 dlabel D_80070300
