@@ -316,9 +316,9 @@
 <!-- Tracers -->
 - [ ] func_80050844
 - [x] func_800509E8
-- [ ] func_800509F0 <!-- Ready to add -->
-- [ ] func_80050B00 <!-- Ready to add -->
-- [ ] func_80050B88 <!-- Ready to add -->
+- [x] func_800509F0
+- [x] func_80050B00
+- [x] func_80050B88
 
 <!-- Update -->
 - [ ] func_80050B90

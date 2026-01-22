@@ -1,10 +1,14 @@
 #include "common.h"
+#include "tracers.h"
+
+void func_8004F504(Vector3D16*, Vector3D16*); // fDivVectorBy4AndMakeShort
+void func_8004F58C(Vector3D16*, Vector3D16*); // fSetShortVector
 
 /**
  * ???() - func_80050844()
  * TODO
  */
-INCLUDE_ASM("asm/nonmatchings/unknown", func_80050844);
+INCLUDE_ASM("asm/nonmatchings/tracers", func_80050844);
 
 /**
  * ???() - func_800509E8()
@@ -16,22 +20,53 @@ void func_800509E8(int* ptr) {
 
 /**
  * UpdateTracers() - func_800509F0() - MATCHING
- * Has some placeholder struct names
- * https://decomp.me/scratch/jf4s5
+ * https://decomp.me/scratch/1ofwG
  */
-INCLUDE_ASM("asm/nonmatchings/update", func_800509F0);
+void func_800509F0() {
+    int i;
+
+    for (i = 0; i < 0x20; i++) {
+        if (D_80070610[i].unk0) {
+            
+            D_80070610[i].unk64 += 1;
+            if (D_80070610[i].unk64 >= D_80070610[i].unk65) {
+                D_80070610[i].unk64 = 0;
+            }
+            
+            if (D_80070610[i].unk67) {
+                func_8004F58C(&D_80070610[i].unk4[D_80070610[i].unk64], D_80070610[i].unk0);
+            } else {
+                func_8004F504(&D_80070610[i].unk4[D_80070610[i].unk64], D_80070610[i].unk0);
+            }
+            
+        }
+    }
+}
 
 /**
  * ???() - func_80050B00() - MATCHING
- * Has an unknown struct of size 0x14 which seems to consist of pointers
- * Might be a set / add particle function
  * https://decomp.me/scratch/LIHxH
  */
-INCLUDE_ASM("asm/nonmatchings/update", func_80050B00);
+Unknown_80070260* func_80050B00(int arg0, int arg1, int arg2, int arg3, int arg4) {
+    int i;
+
+    for (i = 0; i < 8; i++) {
+        if (D_80070260[i].unk0 == 0) {
+            D_80070260[i].unk0 = arg0;
+            D_80070260[i].unk4 = arg1;
+            D_80070260[i].unk8 = arg2;
+            D_80070260[i].unkC = arg3;
+            D_80070260[i].unk10 = arg4;
+            return &D_80070260[i];
+        }
+    }
+    return 0;
+}
 
 /**
  * ???() - func_80050B88() - MATCHING
- * Just dereferences a pointer??
  * https://decomp.me/scratch/wl5A8
  */
-INCLUDE_ASM("asm/nonmatchings/update", func_80050B88);
+void func_80050B88(int* ptr) {
+    *ptr = 0;
+}

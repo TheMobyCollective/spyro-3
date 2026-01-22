@@ -1714,23 +1714,21 @@ dlabel D_800705E8
 /* 800705E8 */ .space 0x28
 /* SPYRO END */
 
+
+/* Tracers */
 dlabel D_80070610
 /* 80070610 */ .space 0x04
-
 dlabel D_80070614
 /* 80070614 */ .space 0x60
-
 dlabel D_80070674
 /* 80070674 */ .space 0x01
-
 dlabel D_80070675
 /* 80070675 */ .space 0x01
-
 dlabel D_80070676
 /* 80070676 */ .space 0x01
-
 dlabel D_80070677
 /* 80070677 */ .space 0xD19
+
 
 dlabel D_80071390
 /* 80071390 */ .space 0x18

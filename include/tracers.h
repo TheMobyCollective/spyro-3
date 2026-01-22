@@ -9,13 +9,24 @@ typedef struct {
     int unk10;
 } Unknown_80070260; // seems to be five pointers rather than ints, and it's related to tracers
 
+typedef struct {
+    Vector3D16* unk0;
+    Vector3D16 unk4[16];
+    unsigned char unk64;
+    unsigned char unk65;
+    unsigned char unk66;
+    unsigned char unk67;
+    int unk68;
+} Tracer;
+
 // .bss 8006c7f8
-extern Unknown_80070260 D_80070260[8];
+extern Unknown_80070260 D_80070260[8]; // pointers relating to tracers
+extern Tracer D_80070610[0x20]; // probably the tracers themselves
 
 // func_80050844
 extern void func_800509E8(int* ptr);
 extern void func_800509F0();
 extern Unknown_80070260* func_80050B00(int arg0, int arg1, int arg2, int arg3, int arg4);
-extern void func_80050B88(int* arg0);
+extern void func_80050B88(int* ptr);
 
 #endif
