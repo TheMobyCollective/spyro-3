@@ -1,17 +1,18 @@
 #include "common.h"
 #include "tracers.h"
 
-void func_8004F504(Vector3D16*, Vector3D16*); // fDivVectorBy4AndMakeShort
+void func_8004F504(Vector3D16*, Vector3D16*); // fDivVectorBy4AndMakeShort // TODO: latter argument should be Vector3D*!
 void func_8004F58C(Vector3D16*, Vector3D16*); // fSetShortVector
 
 /**
  * ???() - func_80050844()
- * TODO
+ * Tricky one, nearly there but not ready yet
+ * https://decomp.me/scratch/v6QhM
  */
 INCLUDE_ASM("asm/nonmatchings/tracers", func_80050844);
 
 /**
- * ???() - func_800509E8()
+ * ???() - func_800509E8() - MATCHING
  * https://decomp.me/scratch/VCBgx
  */
 void func_800509E8(int* ptr) {
