@@ -1,8 +1,5 @@
 OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
 
-/* TODO!! Make sure all of the critter and boss levels have the overlay start pointer in their headers instead of the secondary */
-/* This will also mean recalculating the base hash values! */
-
 /* If the header is updated make sure both macros are updated - I only made this one to simplify the other */
 #define HEADER_GENERAL(folder, psyqId) \
         LONG(psyqId) \
@@ -130,7 +127,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
 		LONG(function_##folder) /*TODO*/ \
 		/* ... */
 
-#define LEVEL(folder, checkvalue) \
+#define LEVEL(folder) \
         build/src/overlays/folder/moby.o(.rodata); \
         build/src/overlays/folder/moby.o(.rodata.jtbl); \
         build/src/overlays/folder/moby_spawn.o(.rodata); \
@@ -151,8 +148,6 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/folder/level.o(.text*); \
         build/src/overlays/folder/parts_update.o(.text*); \
         build/src/overlays/folder/parts_spawn.o(.text*); \
-        /*.folder##_check = .;*/ \
-        /*LONG(checkvalue)*/ \
         build/asm/overlays/folder/check.o(.text*); \
         build/src/overlays/folder/animation.o(.text*); \
         build/src/overlays/folder/camera.o(.text*); \
@@ -399,7 +394,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_10, 0x8B6F77E)
+        LEVEL(level_10)
     }
 
     .level_11 {
@@ -515,7 +510,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(func_level_11_80088678)
         LONG(func_level_11_800888C4)
         LONG(0)
-        LEVEL(level_11, 0x8C5ABA7)
+        LEVEL(level_11)
     }
 
     .level_12 {
@@ -631,7 +626,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_12, 0x8F5B692)
+        LEVEL(level_12)
     }
 
     .level_13 {
@@ -747,7 +742,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_13, 0x84070F6)
+        LEVEL(level_13)
     }
 
     .level_14 {
@@ -863,7 +858,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_14, 0x8BA7DDF)
+        LEVEL(level_14)
     }
 
     .level_15 {
@@ -979,7 +974,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_15, 0x80AD454)
+        LEVEL(level_15)
     }
 
     .level_16 {
@@ -1042,7 +1037,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         level_16_secondary_check = .;
-        LONG(0) /* secondary check? */
+        LONG(0)
         LONG(0)
         LONG(0)
         LONG(0)
@@ -1096,7 +1091,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_16, 0x8D437D4)
+        LEVEL(level_16)
     }
 
     .level_17 {
@@ -1191,7 +1186,6 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         level_17_secondary_check = .;
-        LONG(0) /* secondary check? */
         LONG(0)
         LONG(0)
         LONG(0)
@@ -1213,7 +1207,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_17, 0x84E2349)
+        LONG(0)
+        LEVEL(level_17)
     }
 
     .level_18 {
@@ -1329,7 +1324,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_18, 0x8A29F17)
+        LEVEL(level_18)
     }
 
     .level_20 {
@@ -1445,7 +1440,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_20, 0x8E9B167)
+        LEVEL(level_20)
     }
 
     .level_21 {
@@ -1561,7 +1556,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_21, 0x8FF092E)
+        LEVEL(level_21)
     }
 
     .level_22 {
@@ -1677,7 +1672,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(func_level_22_800935F0)
         LONG(func_level_22_8009383C)
         LONG(0)
-        LEVEL(level_22, 0x8A3C70C)
+        LEVEL(level_22)
     }
 
     .level_23 {
@@ -1793,7 +1788,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_23, 0x81D274E)
+        LEVEL(level_23)
     }
 
     .level_24 {
@@ -1909,7 +1904,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_24, 0x8346BAB)
+        LEVEL(level_24)
     }
 
     .level_25 {
@@ -2025,7 +2020,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_25, 0x8541F2C)
+        LEVEL(level_25)
     }
 
     .level_26 {
@@ -2092,7 +2087,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         level_26_secondary_check = .;
-        LONG(0) /* secondary check? */
+        LONG(0)
         LONG(0)
         LONG(0)
         LONG(0)
@@ -2142,7 +2137,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_26, 0x8392AB5)
+        LEVEL(level_26)
     }
 
     .level_27 {
@@ -2241,7 +2236,6 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         level_27_secondary_check = .;
-        LONG(0) /* secondary check? */
         LONG(0)
         LONG(0)
         LONG(0)
@@ -2259,7 +2253,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_27, 0x87B9E09)
+        LONG(0)
+        LEVEL(level_27)
     }
 
     .level_28 {
@@ -2375,7 +2370,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_28, 0x856FC73)
+        LEVEL(level_28)
     }
 
     .level_30 {
@@ -2491,7 +2486,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_30, 0x84251AC)
+        LEVEL(level_30)
     }
 
     .level_31 {
@@ -2607,7 +2602,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_31, 0x8FAE618)
+        LEVEL(level_31)
     }
 
     .level_32 {
@@ -2723,7 +2718,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(func_level_32_8009384C)
         LONG(func_level_32_80093A98)
         LONG(0)
-        LEVEL(level_32, 0x88FC253)
+        LEVEL(level_32)
     }
 
     .level_33 {
@@ -2839,7 +2834,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_33, 0x8BE7637)
+        LEVEL(level_33)
     }
 
     .level_34 {
@@ -2955,7 +2950,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_34, 0x8A60F4B)
+        LEVEL(level_34)
     }
 
     .level_35 {
@@ -3071,7 +3066,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_35, 0x8473782)
+        LEVEL(level_35)
     }
 
     .level_36 {
@@ -3110,7 +3105,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         level_36_secondary_check = .;
-        LONG(0) /* secondary check? */
+        LONG(0)
         LONG(func_level_36_80080D84)
         LONG(0)
         LONG(0)
@@ -3188,7 +3183,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_36, 0x880E817)
+        LEVEL(level_36)
     }
 
     .level_37 {
@@ -3290,7 +3285,6 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         level_37_secondary_check = .;
-        LONG(0) /* secondary check? */
         LONG(0)
         LONG(0)
         LONG(0)
@@ -3305,7 +3299,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_37, 0x86E64B4)
+        LONG(0)
+        LEVEL(level_37)
     }
 
     .level_38 {
@@ -3421,7 +3416,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_38, 0x84ACFFF)
+        LEVEL(level_38)
     }
 
     .level_40 {
@@ -3537,7 +3532,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_40, 0x85607E9)
+        LEVEL(level_40)
     }
 
     .level_41 {
@@ -3653,7 +3648,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_41, 0x838AA63)
+        LEVEL(level_41)
     }
 
     .level_42 {
@@ -3769,7 +3764,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_42, 0x82DFA89)
+        LEVEL(level_42)
     }
 
     .level_43 {
@@ -3885,7 +3880,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(func_level_43_8008DDE4)
-        LEVEL(level_43, 0x8F1DC15)
+        LEVEL(level_43)
     }
 
     .level_44 {
@@ -4001,7 +3996,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_44, 0x8F8FEA4)
+        LEVEL(level_44)
     }
 
     .level_45 {
@@ -4117,7 +4112,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_45, 0x878947C)
+        LEVEL(level_45)
     }
 
     .level_46 {
@@ -4173,7 +4168,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         level_46_secondary_check = .;
-        LONG(0) /* secondary check? */
+        LONG(0)
         LONG(0)
         LONG(0)
         LONG(func_level_46_8008B0B8)
@@ -4234,7 +4229,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_46, 0x821514D)
+        LEVEL(level_46)
     }
 
     .level_47 {
@@ -4339,7 +4334,6 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         level_47_secondary_check = .;
-        LONG(0) /* secondary check? */
         LONG(0)
         LONG(0)
         LONG(0)
@@ -4351,7 +4345,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_47, 0x8EC51F5)
+        LONG(0)
+        LEVEL(level_47)
     }
 
     .level_48 {
@@ -4467,7 +4462,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_48, 0x8FB0E0D)
+        LEVEL(level_48)
     }
 
     .level_50 {
@@ -4583,7 +4578,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(func_level_50_80096450)
         LONG(func_level_50_8009669C)
         LONG(0)
-        LEVEL(level_50, 0x804B0AC)
+        LEVEL(level_50)
     }
 
     .cutscene_61 {
