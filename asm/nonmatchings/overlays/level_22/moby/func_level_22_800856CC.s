@@ -422,8 +422,8 @@ glabel func_level_22_800856CC
 /* 57759F0 80085CC0 09000224 */   addiu     $v0, $zero, 0x9
 /* 57759F4 80085CC4 470042A2 */  sb         $v0, 0x47($s2)
 .Llevel_22_80085CC8:
-/* 57759F8 80085CC8 0780023C */  lui        $v0, %hi(D_8006FB91)
-/* 57759FC 80085CCC 91FB4290 */  lbu        $v0, %lo(D_8006FB91)($v0)
+/* 57759F8 80085CC8 0780023C */  lui        $v0, %hi(g_CheatFlags + 1)
+/* 57759FC 80085CCC 91FB4290 */  lbu        $v0, %lo(g_CheatFlags + 1)($v0)
 /* 5775A00 80085CD0 00000000 */  nop
 /* 5775A04 80085CD4 03004010 */  beqz       $v0, .Llevel_22_80085CE4
 /* 5775A08 80085CD8 21204002 */   addu      $a0, $s2, $zero

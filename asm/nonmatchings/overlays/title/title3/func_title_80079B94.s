@@ -42,8 +42,8 @@ glabel func_title_80079B94
 /* 288E4 80079BB4 1000B0AF */  sw         $s0, 0x10($sp)
 /* 288E8 80079BB8 F539010C */  jal        func_8004E7D4
 /* 288EC 80079BBC 80300600 */   sll       $a2, $a2, 2
-/* 288F0 80079BC0 0780103C */  lui        $s0, %hi(D_8006FB95)
-/* 288F4 80079BC4 95FB1026 */  addiu      $s0, $s0, %lo(D_8006FB95)
+/* 288F0 80079BC0 0780103C */  lui        $s0, %hi(g_CheatFlags + 5)
+/* 288F4 80079BC4 95FB1026 */  addiu      $s0, $s0, %lo(g_CheatFlags + 5)
 /* 288F8 80079BC8 00000592 */  lbu        $a1, 0x0($s0)
 /* 288FC 80079BCC 00000000 */  nop
 /* 28900 80079BD0 0500A010 */  beqz       $a1, .Ltitle_80079BE8

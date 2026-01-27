@@ -72,8 +72,8 @@ glabel func_8003E968
 /* 2F264 8003EA64 21280002 */  addu       $a1, $s0, $zero
 /* 2F268 8003EA68 D77C010C */  jal        func_8005F35C
 /* 2F26C 8003EA6C 21300002 */   addu      $a2, $s0, $zero
-/* 2F270 8003EA70 0780053C */  lui        $a1, %hi(D_8006FB96)
-/* 2F274 8003EA74 96FBA524 */  addiu      $a1, $a1, %lo(D_8006FB96)
+/* 2F270 8003EA70 0780053C */  lui        $a1, %hi(g_CheatFlags + 6)
+/* 2F274 8003EA74 96FBA524 */  addiu      $a1, $a1, %lo(g_CheatFlags + 6)
 /* 2F278 8003EA78 0000A290 */  lbu        $v0, 0x0($a1)
 /* 2F27C 8003EA7C 00000000 */  nop
 /* 2F280 8003EA80 03004010 */  beqz       $v0, .L8003EA90

@@ -42,8 +42,8 @@ glabel func_loading_80079A0C
 /* 3231F5C 80079A2C 1000B0AF */  sw         $s0, 0x10($sp)
 /* 3231F60 80079A30 F539010C */  jal        func_8004E7D4
 /* 3231F64 80079A34 80300600 */   sll       $a2, $a2, 2
-/* 3231F68 80079A38 0780103C */  lui        $s0, %hi(D_8006FB95)
-/* 3231F6C 80079A3C 95FB1026 */  addiu      $s0, $s0, %lo(D_8006FB95)
+/* 3231F68 80079A38 0780103C */  lui        $s0, %hi(g_CheatFlags + 5)
+/* 3231F6C 80079A3C 95FB1026 */  addiu      $s0, $s0, %lo(g_CheatFlags + 5)
 /* 3231F70 80079A40 00000592 */  lbu        $a1, 0x0($s0)
 /* 3231F74 80079A44 00000000 */  nop
 /* 3231F78 80079A48 0500A010 */  beqz       $a1, .Lloading_80079A60

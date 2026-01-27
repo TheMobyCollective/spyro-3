@@ -42,8 +42,8 @@ glabel func_cutscene_64_800770D8
 /* BCC628 800770F8 1000B0AF */  sw         $s0, 0x10($sp)
 /* BCC62C 800770FC F539010C */  jal        func_8004E7D4
 /* BCC630 80077100 80300600 */   sll       $a2, $a2, 2
-/* BCC634 80077104 0780103C */  lui        $s0, %hi(D_8006FB95)
-/* BCC638 80077108 95FB1026 */  addiu      $s0, $s0, %lo(D_8006FB95)
+/* BCC634 80077104 0780103C */  lui        $s0, %hi(g_CheatFlags + 5)
+/* BCC638 80077108 95FB1026 */  addiu      $s0, $s0, %lo(g_CheatFlags + 5)
 /* BCC63C 8007710C 00000592 */  lbu        $a1, 0x0($s0)
 /* BCC640 80077110 00000000 */  nop
 /* BCC644 80077114 0500A010 */  beqz       $a1, .Lcutscene_64_8007712C

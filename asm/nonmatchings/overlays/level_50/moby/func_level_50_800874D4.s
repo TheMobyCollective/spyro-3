@@ -631,8 +631,8 @@ glabel func_level_50_800874D4
 /* 95DC2FC 80087DCC 0B000224 */   addiu     $v0, $zero, 0xB
 /* 95DC300 80087DD0 470042A2 */  sb         $v0, 0x47($s2)
 .Llevel_50_80087DD4:
-/* 95DC304 80087DD4 0780023C */  lui        $v0, %hi(D_8006FB91)
-/* 95DC308 80087DD8 91FB4290 */  lbu        $v0, %lo(D_8006FB91)($v0)
+/* 95DC304 80087DD4 0780023C */  lui        $v0, %hi(g_CheatFlags + 1)
+/* 95DC308 80087DD8 91FB4290 */  lbu        $v0, %lo(g_CheatFlags + 1)($v0)
 /* 95DC30C 80087DDC 00000000 */  nop
 /* 95DC310 80087DE0 03004010 */  beqz       $v0, .Llevel_50_80087DF0
 /* 95DC314 80087DE4 21204002 */   addu      $a0, $s2, $zero

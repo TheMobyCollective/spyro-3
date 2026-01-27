@@ -45,13 +45,13 @@ void func_80017A40();    // CheckCheatInputs
 void func_80017B7C(int); // ActivateCheat
 
 // data
-extern int cheatCodes[CHEAT_COUNT][16]; // enum PadInput
+extern int g_CheatCodes[CHEAT_COUNT][16]; // enum PadInput
 
 // sdata
 extern int pauseMenuButtonPresses; // 8006C5CC; "cheatInputs"?
 
 // bss
-extern CheatFlags cheatFlags; // 8006FB90
-extern int cheatBuffer[16]; // 800713F8
+extern CheatFlags g_CheatFlags; // 8006FB90
+extern int g_CheatBuffer[16]; // 800713F8
 
 #endif

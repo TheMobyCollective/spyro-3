@@ -270,8 +270,8 @@ glabel func_8003CDA0
 /* 2D998 8003D198 10002523 */  addi       $a1, $t9, 0x10 /* handwritten instruction */
 /* 2D99C 8003D19C A43A010C */  jal        func_8004EA90
 /* 2D9A0 8003D1A0 0000C623 */   addi      $a2, $fp, 0x0 /* handwritten instruction */
-/* 2D9A4 8003D1A4 0780053C */  lui        $a1, %hi(D_8006FB90)
-/* 2D9A8 8003D1A8 90FBA524 */  addiu      $a1, $a1, %lo(D_8006FB90)
+/* 2D9A4 8003D1A4 0780053C */  lui        $a1, %hi(g_CheatFlags)
+/* 2D9A8 8003D1A8 90FBA524 */  addiu      $a1, $a1, %lo(g_CheatFlags)
 /* 2D9AC 8003D1AC 0700A480 */  lb         $a0, 0x7($a1)
 /* 2D9B0 8003D1B0 0800A520 */  addi       $a1, $a1, 0x8 /* handwritten instruction */
 /* 2D9B4 8003D1B4 03008010 */  beqz       $a0, .L8003D1C4
@@ -328,8 +328,8 @@ glabel func_8003CDA0
 /* 2DA74 8003D274 4C002523 */  addi       $a1, $t9, 0x4C /* handwritten instruction */
 /* 2DA78 8003D278 A43A010C */  jal        func_8004EA90
 /* 2DA7C 8003D27C 10002623 */   addi      $a2, $t9, 0x10 /* handwritten instruction */
-/* 2DA80 8003D280 0780053C */  lui        $a1, %hi(D_8006FB90)
-/* 2DA84 8003D284 90FBA524 */  addiu      $a1, $a1, %lo(D_8006FB90)
+/* 2DA80 8003D280 0780053C */  lui        $a1, %hi(g_CheatFlags)
+/* 2DA84 8003D284 90FBA524 */  addiu      $a1, $a1, %lo(g_CheatFlags)
 /* 2DA88 8003D288 0600A480 */  lb         $a0, 0x6($a1)
 /* 2DA8C 8003D28C 0800A520 */  addi       $a1, $a1, 0x8 /* handwritten instruction */
 /* 2DA90 8003D290 03008010 */  beqz       $a0, .L8003D2A0

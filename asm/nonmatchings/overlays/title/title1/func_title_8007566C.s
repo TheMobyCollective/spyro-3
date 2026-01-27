@@ -2422,8 +2422,8 @@ glabel func_title_8007566C
 .Ltitle_800777DC:
 /* 2650C 800777DC E5E6010C */  jal        func_title_80079B94
 /* 26510 800777E0 00000000 */   nop
-/* 26514 800777E4 0780033C */  lui        $v1, %hi(D_8006FB93)
-/* 26518 800777E8 93FB6324 */  addiu      $v1, $v1, %lo(D_8006FB93)
+/* 26514 800777E4 0780033C */  lui        $v1, %hi(g_CheatFlags + 3)
+/* 26518 800777E8 93FB6324 */  addiu      $v1, $v1, %lo(g_CheatFlags + 3)
 /* 2651C 800777EC 00006490 */  lbu        $a0, 0x0($v1)
 /* 26520 800777F0 0780023C */  lui        $v0, %hi(D_8006C3F0)
 /* 26524 800777F4 F0C3428C */  lw         $v0, %lo(D_8006C3F0)($v0)

@@ -206,8 +206,8 @@ glabel func_80053A10
 /* 444C8 80053CC8 EA4A000C */  jal        func_80012BA8
 /* 444CC 80053CCC 00000000 */   nop
 .L80053CD0:
-/* 444D0 80053CD0 0780053C */  lui        $a1, %hi(D_8006FBA6)
-/* 444D4 80053CD4 A6FBA524 */  addiu      $a1, $a1, %lo(D_8006FBA6)
+/* 444D0 80053CD0 0780053C */  lui        $a1, %hi(g_CheatFlags + 0x16)
+/* 444D4 80053CD4 A6FBA524 */  addiu      $a1, $a1, %lo(g_CheatFlags + 0x16)
 /* 444D8 80053CD8 0000A290 */  lbu        $v0, 0x0($a1)
 /* 444DC 80053CDC 00000000 */  nop
 /* 444E0 80053CE0 21004010 */  beqz       $v0, .L80053D68

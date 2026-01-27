@@ -133,7 +133,7 @@ static inline void SaveGame(SaveFile* save, int noUpdate) {
             save->skateRecords[i] = D_800718CC[i];
         }
         
-        save->activeCam = cheatFlags.cameraMode;
+        save->activeCam = g_CheatFlags.cameraMode;
         save->vibrationOn = pad.vibrationMode;
         save->voicesOn = (char) D_8006C7B0;
         save->soundVolume = (char) D_8006C3F8;

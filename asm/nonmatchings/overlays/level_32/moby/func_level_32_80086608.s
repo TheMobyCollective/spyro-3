@@ -544,8 +544,8 @@ glabel func_level_32_80086608
 /* 6DEE2D8 80086DA8 0A001024 */   addiu     $s0, $zero, 0xA
 .L80086DAC_:
 /* 6DEE2DC 80086DAC 01000224 */  addiu      $v0, $zero, 0x1
-/* 6DEE2E0 80086DB0 0780013C */  lui        $at, %hi(D_8006FB93)
-/* 6DEE2E4 80086DB4 93FB22A0 */  sb         $v0, %lo(D_8006FB93)($at)
+/* 6DEE2E0 80086DB0 0780013C */  lui        $at, %hi(g_CheatFlags + 3)
+/* 6DEE2E4 80086DB4 93FB22A0 */  sb         $v0, %lo(g_CheatFlags + 3)($at)
 .Llevel_32_80086DB8:
 /* 6DEE2E8 80086DB8 2400648E */  lw         $a0, 0x24($s3)
 /* 6DEE2EC 80086DBC 00000000 */  nop

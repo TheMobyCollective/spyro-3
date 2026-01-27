@@ -61,8 +61,8 @@ glabel func_80054E5C
 /* 4573C 80054F3C 21280000 */  addu       $a1, $zero, $zero
 /* 45740 80054F40 E439010C */  jal        func_8004E790
 /* 45744 80054F44 50080624 */   addiu     $a2, $zero, 0x850
-/* 45748 80054F48 0780103C */  lui        $s0, %hi(D_8006FB93)
-/* 4574C 80054F4C 93FB1026 */  addiu      $s0, $s0, %lo(D_8006FB93)
+/* 45748 80054F48 0780103C */  lui        $s0, %hi(g_CheatFlags + 3)
+/* 4574C 80054F4C 93FB1026 */  addiu      $s0, $s0, %lo(g_CheatFlags + 3)
 /* 45750 80054F50 FDFF0426 */  addiu      $a0, $s0, -0x3
 /* 45754 80054F54 21280000 */  addu       $a1, $zero, $zero
 /* 45758 80054F58 00001192 */  lbu        $s1, 0x0($s0)

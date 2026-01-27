@@ -342,8 +342,8 @@ glabel func_level_11_8007B8B0
 /* 3E202B4 8007BD84 09000224 */   addiu     $v0, $zero, 0x9
 /* 3E202B8 8007BD88 470042A2 */  sb         $v0, 0x47($s2)
 .Llevel_11_8007BD8C:
-/* 3E202BC 8007BD8C 0780023C */  lui        $v0, %hi(D_8006FB91)
-/* 3E202C0 8007BD90 91FB4290 */  lbu        $v0, %lo(D_8006FB91)($v0)
+/* 3E202BC 8007BD8C 0780023C */  lui        $v0, %hi(g_CheatFlags + 1)
+/* 3E202C0 8007BD90 91FB4290 */  lbu        $v0, %lo(g_CheatFlags + 1)($v0)
 /* 3E202C4 8007BD94 00000000 */  nop
 /* 3E202C8 8007BD98 03004010 */  beqz       $v0, .Llevel_11_8007BDA8
 /* 3E202CC 8007BD9C 21204002 */   addu      $a0, $s2, $zero

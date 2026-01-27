@@ -150,8 +150,8 @@ glabel func_options_80074C00
 /* 9654AE8 80074DB8 08004000 */  jr         $v0
 /* 9654AEC 80074DBC 00000000 */   nop
 .L80074DC0_:
-/* 9654AF0 80074DC0 0780023C */  lui        $v0, %hi(D_8006FB92)
-/* 9654AF4 80074DC4 92FB4290 */  lbu        $v0, %lo(D_8006FB92)($v0)
+/* 9654AF0 80074DC0 0780023C */  lui        $v0, %hi(g_CheatFlags + 2)
+/* 9654AF4 80074DC4 92FB4290 */  lbu        $v0, %lo(g_CheatFlags + 2)($v0)
 /* 9654AF8 80074DC8 00000000 */  nop
 /* 9654AFC 80074DCC 0E004010 */  beqz       $v0, .Loptions_80074E08
 /* 9654B00 80074DD0 21284002 */   addu      $a1, $s2, $zero

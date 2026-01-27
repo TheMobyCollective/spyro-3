@@ -377,8 +377,8 @@ glabel func_level_10_800782EC
 /* 3ADD538 80078808 00000000 */  nop
 /* 3ADD53C 8007880C 0B006214 */  bne        $v1, $v0, .Llevel_10_8007883C
 /* 3ADD540 80078810 0C000224 */   addiu     $v0, $zero, 0xC
-/* 3ADD544 80078814 0780023C */  lui        $v0, %hi(D_8006FB92)
-/* 3ADD548 80078818 92FB4290 */  lbu        $v0, %lo(D_8006FB92)($v0)
+/* 3ADD544 80078814 0780023C */  lui        $v0, %hi(g_CheatFlags + 2)
+/* 3ADD548 80078818 92FB4290 */  lbu        $v0, %lo(g_CheatFlags + 2)($v0)
 /* 3ADD54C 8007881C 00000000 */  nop
 /* 3ADD550 80078820 03004010 */  beqz       $v0, .Llevel_10_80078830
 /* 3ADD554 80078824 04000224 */   addiu     $v0, $zero, 0x4
@@ -601,15 +601,15 @@ glabel func_level_10_800782EC
 /* 3ADD878 80078B48 06006214 */  bne        $v1, $v0, .Llevel_10_80078B64
 /* 3ADD87C 80078B4C 06000224 */   addiu     $v0, $zero, 0x6
 /* 3ADD880 80078B50 01000224 */  addiu      $v0, $zero, 0x1
-/* 3ADD884 80078B54 0780013C */  lui        $at, %hi(D_8006FB92)
-/* 3ADD888 80078B58 92FB22A0 */  sb         $v0, %lo(D_8006FB92)($at)
+/* 3ADD884 80078B54 0780013C */  lui        $at, %hi(g_CheatFlags + 2)
+/* 3ADD888 80078B58 92FB22A0 */  sb         $v0, %lo(g_CheatFlags + 2)($at)
 /* 3ADD88C 80078B5C DDE20108 */  j          .Llevel_10_80078B74
 /* 3ADD890 80078B60 00000000 */   nop
 .Llevel_10_80078B64:
 /* 3ADD894 80078B64 13006214 */  bne        $v1, $v0, .Llevel_10_80078BB4
 /* 3ADD898 80078B68 01000224 */   addiu     $v0, $zero, 0x1
-/* 3ADD89C 80078B6C 0780013C */  lui        $at, %hi(D_8006FB92)
-/* 3ADD8A0 80078B70 92FB20A0 */  sb         $zero, %lo(D_8006FB92)($at)
+/* 3ADD89C 80078B6C 0780013C */  lui        $at, %hi(g_CheatFlags + 2)
+/* 3ADD8A0 80078B70 92FB20A0 */  sb         $zero, %lo(g_CheatFlags + 2)($at)
 .Llevel_10_80078B74:
 /* 3ADD8A4 80078B74 AB50000C */  jal        func_800142AC
 /* 3ADD8A8 80078B78 00000000 */   nop

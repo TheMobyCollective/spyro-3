@@ -38,8 +38,8 @@ glabel func_80017B7C
 /* 83AC 80017BAC 08004000 */  jr         $v0
 /* 83B0 80017BB0 00000000 */   nop
 .L80017BB4:
-/* 83B4 80017BB4 0780033C */  lui        $v1, %hi(D_8006FBA7)
-/* 83B8 80017BB8 A7FB6324 */  addiu      $v1, $v1, %lo(D_8006FBA7)
+/* 83B4 80017BB4 0780033C */  lui        $v1, %hi(g_CheatFlags + 0x17)
+/* 83B8 80017BB8 A7FB6324 */  addiu      $v1, $v1, %lo(g_CheatFlags + 0x17)
 /* 83BC 80017BBC 00006290 */  lbu        $v0, 0x0($v1)
 /* 83C0 80017BC0 00000000 */  nop
 /* 83C4 80017BC4 06004010 */  beqz       $v0, .L80017BE0
@@ -232,21 +232,21 @@ glabel func_80017B7C
 /* 8644 80017E44 17004490 */  lbu        $a0, 0x17($v0)
 /* 8648 80017E48 D4EE000C */  jal        func_8003BB50
 /* 864C 80017E4C 21801202 */   addu      $s0, $s0, $s2
-/* 8650 80017E50 0780013C */  lui        $at, %hi(D_8006FB94)
-/* 8654 80017E54 94FB30A0 */  sb         $s0, %lo(D_8006FB94)($at)
+/* 8650 80017E50 0780013C */  lui        $at, %hi(g_CheatFlags + 4)
+/* 8654 80017E54 94FB30A0 */  sb         $s0, %lo(g_CheatFlags + 4)($at)
 /* 8658 80017E58 FF001032 */  andi       $s0, $s0, 0xFF
 /* 865C 80017E5C 3C00102E */  sltiu      $s0, $s0, 0x3C
 /* 8660 80017E60 23010016 */  bnez       $s0, .L800182F0
 /* 8664 80017E64 00000000 */   nop
 /* 8668 80017E68 0780023C */  lui        $v0, %hi(D_8006C5BC)
 /* 866C 80017E6C BCC5428C */  lw         $v0, %lo(D_8006C5BC)($v0)
-/* 8670 80017E70 0780013C */  lui        $at, %hi(D_8006FB95)
-/* 8674 80017E74 95FB22A0 */  sb         $v0, %lo(D_8006FB95)($at)
+/* 8670 80017E70 0780013C */  lui        $at, %hi(g_CheatFlags + 5)
+/* 8674 80017E74 95FB22A0 */  sb         $v0, %lo(g_CheatFlags + 5)($at)
 /* 8678 80017E78 BC600008 */  j          .L800182F0
 /* 867C 80017E7C 00000000 */   nop
 .L80017E80:
-/* 8680 80017E80 0780023C */  lui        $v0, %hi(D_8006FB91)
-/* 8684 80017E84 91FB4224 */  addiu      $v0, $v0, %lo(D_8006FB91)
+/* 8680 80017E80 0780023C */  lui        $v0, %hi(g_CheatFlags + 1)
+/* 8684 80017E84 91FB4224 */  addiu      $v0, $v0, %lo(g_CheatFlags + 1)
 /* 8688 80017E88 00004390 */  lbu        $v1, 0x0($v0)
 /* 868C 80017E8C 0780043C */  lui        $a0, %hi(D_8006C654)
 /* 8690 80017E90 54C6848C */  lw         $a0, %lo(D_8006C654)($a0)
@@ -256,45 +256,45 @@ glabel func_80017B7C
 /* 86A0 80017EA0 BA600008 */  j          .L800182E8
 /* 86A4 80017EA4 21280000 */   addu      $a1, $zero, $zero
 .L80017EA8:
-/* 86A8 80017EA8 0780033C */  lui        $v1, %hi(D_8006FB96)
-/* 86AC 80017EAC 96FB6390 */  lbu        $v1, %lo(D_8006FB96)($v1)
+/* 86A8 80017EA8 0780033C */  lui        $v1, %hi(g_CheatFlags + 6)
+/* 86AC 80017EAC 96FB6390 */  lbu        $v1, %lo(g_CheatFlags + 6)($v1)
 /* 86B0 80017EB0 0780043C */  lui        $a0, %hi(D_8006C654)
 /* 86B4 80017EB4 54C6848C */  lw         $a0, %lo(D_8006C654)($a0)
 /* 86B8 80017EB8 00200224 */  addiu      $v0, $zero, 0x2000
-/* 86BC 80017EBC 0780013C */  lui        $at, %hi(D_8006FB98)
-/* 86C0 80017EC0 98FB22AC */  sw         $v0, %lo(D_8006FB98)($at)
-/* 86C4 80017EC4 0780013C */  lui        $at, %hi(D_8006FB9C)
-/* 86C8 80017EC8 9CFB22AC */  sw         $v0, %lo(D_8006FB9C)($at)
-/* 86CC 80017ECC 0780013C */  lui        $at, %hi(D_8006FBA0)
-/* 86D0 80017ED0 A0FB22AC */  sw         $v0, %lo(D_8006FBA0)($at)
+/* 86BC 80017EBC 0780013C */  lui        $at, %hi(g_CheatFlags + 8)
+/* 86C0 80017EC0 98FB22AC */  sw         $v0, %lo(g_CheatFlags + 8)($at)
+/* 86C4 80017EC4 0780013C */  lui        $at, %hi(g_CheatFlags + 0xC)
+/* 86C8 80017EC8 9CFB22AC */  sw         $v0, %lo(g_CheatFlags + 0xC)($at)
+/* 86CC 80017ECC 0780013C */  lui        $at, %hi(g_CheatFlags + 0x10)
+/* 86D0 80017ED0 A0FB22AC */  sw         $v0, %lo(g_CheatFlags + 0x10)($at)
 /* 86D4 80017ED4 01000224 */  addiu      $v0, $zero, 0x1
-/* 86D8 80017ED8 0780013C */  lui        $at, %hi(D_8006FB96 + 0x1)
-/* 86DC 80017EDC 97FB20A0 */  sb         $zero, %lo(D_8006FB96 + 0x1)($at)
+/* 86D8 80017ED8 0780013C */  lui        $at, %hi(g_CheatFlags + 6 + 0x1)
+/* 86DC 80017EDC 97FB20A0 */  sb         $zero, %lo(g_CheatFlags + 6 + 0x1)($at)
 /* 86E0 80017EE0 23104300 */  subu       $v0, $v0, $v1
-/* 86E4 80017EE4 0780013C */  lui        $at, %hi(D_8006FB96)
-/* 86E8 80017EE8 96FB22A0 */  sb         $v0, %lo(D_8006FB96)($at)
+/* 86E4 80017EE4 0780013C */  lui        $at, %hi(g_CheatFlags + 6)
+/* 86E8 80017EE8 96FB22A0 */  sb         $v0, %lo(g_CheatFlags + 6)($at)
 /* 86EC 80017EEC 01008490 */  lbu        $a0, 0x1($a0)
 /* 86F0 80017EF0 BA600008 */  j          .L800182E8
 /* 86F4 80017EF4 21280000 */   addu      $a1, $zero, $zero
 .L80017EF8:
-/* 86F8 80017EF8 0780033C */  lui        $v1, %hi(D_8006FB96 + 0x1)
-/* 86FC 80017EFC 97FB6390 */  lbu        $v1, %lo(D_8006FB96 + 0x1)($v1)
+/* 86F8 80017EF8 0780033C */  lui        $v1, %hi(g_CheatFlags + 6 + 0x1)
+/* 86FC 80017EFC 97FB6390 */  lbu        $v1, %lo(g_CheatFlags + 6 + 0x1)($v1)
 /* 8700 80017F00 0780043C */  lui        $a0, %hi(D_8006C654)
 /* 8704 80017F04 54C6848C */  lw         $a0, %lo(D_8006C654)($a0)
 /* 8708 80017F08 00020224 */  addiu      $v0, $zero, 0x200
-/* 870C 80017F0C 0780013C */  lui        $at, %hi(D_8006FB98)
-/* 8710 80017F10 98FB22AC */  sw         $v0, %lo(D_8006FB98)($at)
+/* 870C 80017F0C 0780013C */  lui        $at, %hi(g_CheatFlags + 8)
+/* 8710 80017F10 98FB22AC */  sw         $v0, %lo(g_CheatFlags + 8)($at)
 /* 8714 80017F14 00100224 */  addiu      $v0, $zero, 0x1000
-/* 8718 80017F18 0780013C */  lui        $at, %hi(D_8006FB9C)
-/* 871C 80017F1C 9CFB22AC */  sw         $v0, %lo(D_8006FB9C)($at)
-/* 8720 80017F20 0780013C */  lui        $at, %hi(D_8006FBA0)
-/* 8724 80017F24 A0FB22AC */  sw         $v0, %lo(D_8006FBA0)($at)
+/* 8718 80017F18 0780013C */  lui        $at, %hi(g_CheatFlags + 0xC)
+/* 871C 80017F1C 9CFB22AC */  sw         $v0, %lo(g_CheatFlags + 0xC)($at)
+/* 8720 80017F20 0780013C */  lui        $at, %hi(g_CheatFlags + 0x10)
+/* 8724 80017F24 A0FB22AC */  sw         $v0, %lo(g_CheatFlags + 0x10)($at)
 /* 8728 80017F28 01000224 */  addiu      $v0, $zero, 0x1
-/* 872C 80017F2C 0780013C */  lui        $at, %hi(D_8006FB96)
-/* 8730 80017F30 96FB20A0 */  sb         $zero, %lo(D_8006FB96)($at)
+/* 872C 80017F2C 0780013C */  lui        $at, %hi(g_CheatFlags + 6)
+/* 8730 80017F30 96FB20A0 */  sb         $zero, %lo(g_CheatFlags + 6)($at)
 /* 8734 80017F34 23104300 */  subu       $v0, $v0, $v1
-/* 8738 80017F38 0780013C */  lui        $at, %hi(D_8006FB96 + 0x1)
-/* 873C 80017F3C 97FB22A0 */  sb         $v0, %lo(D_8006FB96 + 0x1)($at)
+/* 8738 80017F38 0780013C */  lui        $at, %hi(g_CheatFlags + 6 + 0x1)
+/* 873C 80017F3C 97FB22A0 */  sb         $v0, %lo(g_CheatFlags + 6 + 0x1)($at)
 /* 8740 80017F40 01008490 */  lbu        $a0, 0x1($a0)
 /* 8744 80017F44 BA600008 */  j          .L800182E8
 /* 8748 80017F48 21280000 */   addu      $a1, $zero, $zero
@@ -302,8 +302,8 @@ glabel func_80017B7C
 /* 874C 80017F4C 0780023C */  lui        $v0, %hi(D_8006C654)
 /* 8750 80017F50 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 8754 80017F54 21280000 */  addu       $a1, $zero, $zero
-/* 8758 80017F58 0780013C */  lui        $at, %hi(D_8006FBA4)
-/* 875C 80017F5C A4FB20A0 */  sb         $zero, %lo(D_8006FBA4)($at)
+/* 8758 80017F58 0780013C */  lui        $at, %hi(g_CheatFlags + 0x14)
+/* 875C 80017F5C A4FB20A0 */  sb         $zero, %lo(g_CheatFlags + 0x14)($at)
 /* 8760 80017F60 17004490 */  lbu        $a0, 0x17($v0)
 /* 8764 80017F64 D4EE000C */  jal        func_8003BB50
 /* 8768 80017F68 21300000 */   addu      $a2, $zero, $zero
@@ -341,8 +341,8 @@ glabel func_80017B7C
 /* 87E4 80017FE4 03004010 */  beqz       $v0, .L80017FF4
 /* 87E8 80017FE8 06000224 */   addiu     $v0, $zero, 0x6
 .L80017FEC:
-/* 87EC 80017FEC 0780013C */  lui        $at, %hi(D_8006FBA4)
-/* 87F0 80017FF0 A4FB22A0 */  sb         $v0, %lo(D_8006FBA4)($at)
+/* 87EC 80017FEC 0780013C */  lui        $at, %hi(g_CheatFlags + 0x14)
+/* 87F0 80017FF0 A4FB22A0 */  sb         $v0, %lo(g_CheatFlags + 0x14)($at)
 .L80017FF4:
 /* 87F4 80017FF4 0780023C */  lui        $v0, %hi(D_8006C654)
 /* 87F8 80017FF8 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
@@ -358,8 +358,8 @@ glabel func_80017B7C
 /* 881C 8001801C 03004228 */  slti       $v0, $v0, 0x3
 /* 8820 80018020 B3004014 */  bnez       $v0, .L800182F0
 /* 8824 80018024 01000224 */   addiu     $v0, $zero, 0x1
-/* 8828 80018028 0780043C */  lui        $a0, %hi(D_8006FBA5)
-/* 882C 8001802C A5FB8424 */  addiu      $a0, $a0, %lo(D_8006FBA5)
+/* 8828 80018028 0780043C */  lui        $a0, %hi(g_CheatFlags + 0x15)
+/* 882C 8001802C A5FB8424 */  addiu      $a0, $a0, %lo(g_CheatFlags + 0x15)
 /* 8830 80018030 00008390 */  lbu        $v1, 0x0($a0)
 /* 8834 80018034 00000000 */  nop
 /* 8838 80018038 23104300 */  subu       $v0, $v0, $v1

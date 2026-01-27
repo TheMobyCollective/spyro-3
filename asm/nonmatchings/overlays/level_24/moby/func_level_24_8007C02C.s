@@ -517,8 +517,8 @@ glabel func_level_24_8007C02C
 /* 5DF7498 8007C768 0A001024 */   addiu     $s0, $zero, 0xA
 .L8007C76C_:
 /* 5DF749C 8007C76C 01000224 */  addiu      $v0, $zero, 0x1
-/* 5DF74A0 8007C770 0780013C */  lui        $at, %hi(D_8006FB93)
-/* 5DF74A4 8007C774 93FB22A0 */  sb         $v0, %lo(D_8006FB93)($at)
+/* 5DF74A0 8007C770 0780013C */  lui        $at, %hi(g_CheatFlags + 3)
+/* 5DF74A4 8007C774 93FB22A0 */  sb         $v0, %lo(g_CheatFlags + 3)($at)
 .Llevel_24_8007C778:
 /* 5DF74A8 8007C778 2400648E */  lw         $a0, 0x24($s3)
 /* 5DF74AC 8007C77C 00000000 */  nop

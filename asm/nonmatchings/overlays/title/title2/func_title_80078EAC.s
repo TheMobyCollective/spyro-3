@@ -223,8 +223,8 @@ glabel func_title_80078EAC
 /* 27F10 800791E0 FAFF4014 */  bnez       $v0, .Ltitle_800791CC
 /* 27F14 800791E4 04008424 */   addiu     $a0, $a0, 0x4
 /* 27F18 800791E8 89080292 */  lbu        $v0, 0x889($s0)
-/* 27F1C 800791EC 0780013C */  lui        $at, %hi(D_8006FB92)
-/* 27F20 800791F0 92FB22A0 */  sb         $v0, %lo(D_8006FB92)($at)
+/* 27F1C 800791EC 0780013C */  lui        $at, %hi(g_CheatFlags + 2)
+/* 27F20 800791F0 92FB22A0 */  sb         $v0, %lo(g_CheatFlags + 2)($at)
 /* 27F24 800791F4 8A080292 */  lbu        $v0, 0x88A($s0)
 /* 27F28 800791F8 0780013C */  lui        $at, %hi(D_8006E50C)
 /* 27F2C 800791FC 0CE522A0 */  sb         $v0, %lo(D_8006E50C)($at)

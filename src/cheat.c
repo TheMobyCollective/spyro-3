@@ -29,10 +29,10 @@ extern StreamingData streamingData;
 void func_80017A04() {
     int i;
 
-    for (i = 15; i >= 0; i--) cheatBuffer[i] = 0;
+    for (i = 15; i >= 0; i--) g_CheatBuffer[i] = 0;
     pauseMenuButtonPresses = 0;
-    cheatFlags.warpToLevel = 0;
-    cheatFlags.previousLevel = 0;
+    g_CheatFlags.warpToLevel = 0;
+    g_CheatFlags.previousLevel = 0;
 }
 
 /**
@@ -48,14 +48,14 @@ void func_80017A40() { // cheat codes
     if (pad.state.pressed == PAD_INPUT_NULL) return;
 
     cheatIndex = 0;
-    cheatBuffer[pauseMenuButtonPresses] = pad.state.pressed;
+    g_CheatBuffer[pauseMenuButtonPresses] = pad.state.pressed;
     pauseMenuButtonPresses++;
     
     for (cheatIndex = 0; cheatIndex < CHEAT_COUNT; cheatIndex++) {
         
         // Get the length of the current code
         codeLen = 0;
-		while (cheatCodes[cheatIndex][codeLen] != PAD_INPUT_NULL) codeLen++;
+		while (g_CheatCodes[cheatIndex][codeLen] != PAD_INPUT_NULL) codeLen++;
 
         // Get the input # of the start of the last n inputs, for code of size n
         inputCodeOffset = pauseMenuButtonPresses - codeLen;
@@ -63,7 +63,7 @@ void func_80017A40() { // cheat codes
 
         // Find how many inputs match the cheat code
         for (matchingInputs = 0; matchingInputs < codeLen; matchingInputs++) {
-            if (cheatBuffer[inputCodeOffset] != cheatCodes[cheatIndex][matchingInputs]) {
+            if (g_CheatBuffer[inputCodeOffset] != g_CheatCodes[cheatIndex][matchingInputs]) {
                 matchingInputs = -1;
                 break;
             }
@@ -100,11 +100,11 @@ void func_80017B7C(int cheat) {
     switch (cheat) {
 
     case CHEAT_SPEECH_TEST:
-        if (cheatFlags.dialogueTestIndex != 0) {
-            cheatFlags.dialogueTestIndex = 0;
+        if (g_CheatFlags.dialogueTestIndex != 0) {
+            g_CheatFlags.dialogueTestIndex = 0;
             streamingData.musicEnabled = 1;
         } else {
-            cheatFlags.dialogueTestIndex = 1;
+            g_CheatFlags.dialogueTestIndex = 1;
             streamingData.musicEnabled = 0;
         }
         func_8003BB50(soundTablePtr->gemCollect, 0, 0);
@@ -160,37 +160,37 @@ void func_80017B7C(int cheat) {
 
         temp_s0 = var_s1 * 10 + var_s2;
         func_8003BB50(soundTablePtr->pauseExit, 0, 0);
-        cheatFlags.warpToLevel = temp_s0;//var_s1 * 10 + var_s2; //*(char*)& ???
-        if (cheatFlags.warpToLevel >= 60U) {
-            cheatFlags.warpToLevel = (char) D_8006C5BC;
+        g_CheatFlags.warpToLevel = temp_s0;//var_s1 * 10 + var_s2; //*(char*)& ???
+        if (g_CheatFlags.warpToLevel >= 60U) {
+            g_CheatFlags.warpToLevel = (char) D_8006C5BC;
         }
         return;
 
     case CHEAT_SQUIDBOARD:
-        cheatFlags.squidboard = !cheatFlags.squidboard;
+        g_CheatFlags.squidboard = !g_CheatFlags.squidboard;
         func_8003BB50(soundTablePtr->gemCollect, 0, 0);
         return;
         
     case CHEAT_BIG_HEAD:
-        cheatFlags.spyroWidth = 0x2000;
-        cheatFlags.spyroHeight = 0x2000;
-        cheatFlags.spyroLength = 0x2000;
-        cheatFlags.flatMode = 0;
-        cheatFlags.bigHeadMode = 1 - cheatFlags.bigHeadMode;
+        g_CheatFlags.spyroWidth = 0x2000;
+        g_CheatFlags.spyroHeight = 0x2000;
+        g_CheatFlags.spyroLength = 0x2000;
+        g_CheatFlags.flatMode = 0;
+        g_CheatFlags.bigHeadMode = 1 - g_CheatFlags.bigHeadMode;
         func_8003BB50(soundTablePtr->gemCollect, 0, 0);
         return;
         
     case CHEAT_FLAT_MODE:
-        cheatFlags.spyroWidth = 0x200;
-        cheatFlags.spyroHeight = 0x1000;
-        cheatFlags.spyroLength = 0x1000;
-        cheatFlags.bigHeadMode = 0;
-        cheatFlags.flatMode = 1 - cheatFlags.flatMode;
+        g_CheatFlags.spyroWidth = 0x200;
+        g_CheatFlags.spyroHeight = 0x1000;
+        g_CheatFlags.spyroLength = 0x1000;
+        g_CheatFlags.bigHeadMode = 0;
+        g_CheatFlags.flatMode = 1 - g_CheatFlags.flatMode;
         func_8003BB50(soundTablePtr->gemCollect, 0, 0);
         return;
         
     case CHEAT_COLOUR:
-        cheatFlags.bodyColour = 0;
+        g_CheatFlags.bodyColour = 0;
         func_8003BB50(soundTablePtr->pauseExit, 0, 0); //
         do {
             func_8005956C(0); // VSync
@@ -198,12 +198,12 @@ void func_80017B7C(int cheat) {
             func_8003C184();
         } while (pad.state.pressed == 0);
 
-        if      ((pad.state.pressed & 0x20) != 0)   cheatFlags.bodyColour = 1;
-        else if ((pad.state.pressed & 0x40) != 0)   cheatFlags.bodyColour = 2;
-        else if ((pad.state.pressed & 0x80) != 0)   cheatFlags.bodyColour = 3;
-        else if ((pad.state.pressed & 0x10) != 0)   cheatFlags.bodyColour = 4;
-        else if ((pad.state.pressed & 0x1000) != 0) cheatFlags.bodyColour = 5;
-        else if ((pad.state.pressed & 0x4000) != 0) cheatFlags.bodyColour = 6;
+        if      ((pad.state.pressed & 0x20) != 0)   g_CheatFlags.bodyColour = 1;
+        else if ((pad.state.pressed & 0x40) != 0)   g_CheatFlags.bodyColour = 2;
+        else if ((pad.state.pressed & 0x80) != 0)   g_CheatFlags.bodyColour = 3;
+        else if ((pad.state.pressed & 0x10) != 0)   g_CheatFlags.bodyColour = 4;
+        else if ((pad.state.pressed & 0x1000) != 0) g_CheatFlags.bodyColour = 5;
+        else if ((pad.state.pressed & 0x4000) != 0) g_CheatFlags.bodyColour = 6;
         
         func_8003BB50(soundTablePtr->gemCollect, 0, 0);
         return;
@@ -212,8 +212,8 @@ void func_80017B7C(int cheat) {
         if (sparx.maxHitpoints < 3) {
             return;
         }
-        temp_v0 = 1 - cheatFlags.extraHitpoint;
-        cheatFlags.extraHitpoint = temp_v0;
+        temp_v0 = 1 - g_CheatFlags.extraHitpoint;
+        g_CheatFlags.extraHitpoint = temp_v0;
         sparx.maxHitpoints = (char)temp_v0 ? 4 : 3;
         func_8003BB50(soundTablePtr->gemCollect, 0, 0);
         return;

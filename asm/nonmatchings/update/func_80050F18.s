@@ -252,8 +252,8 @@ glabel func_80050F18
 /* 41AC0 800512C0 21280000 */   addu      $a1, $zero, $zero
 /* 41AC4 800512C4 0780023C */  lui        $v0, %hi(D_8006C734)
 /* 41AC8 800512C8 34C7428C */  lw         $v0, %lo(D_8006C734)($v0)
-/* 41ACC 800512CC 0780013C */  lui        $at, %hi(D_8006FB93)
-/* 41AD0 800512D0 93FB22A0 */  sb         $v0, %lo(D_8006FB93)($at)
+/* 41ACC 800512CC 0780013C */  lui        $at, %hi(g_CheatFlags + 3)
+/* 41AD0 800512D0 93FB22A0 */  sb         $v0, %lo(g_CheatFlags + 3)($at)
 .L800512D4:
 /* 41AD4 800512D4 1000BF8F */  lw         $ra, 0x10($sp)
 /* 41AD8 800512D8 1800BD27 */  addiu      $sp, $sp, 0x18

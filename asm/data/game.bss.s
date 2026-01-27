@@ -926,47 +926,20 @@ dlabel D_8006FA8C
 dlabel D_8006FA90
 .space 0x100
 
-dlabel cheatFlags
-dlabel D_8006FB90
+dlabel g_CheatFlags
 /* 8006FB90 */ .space 0x01
-
-dlabel D_8006FB91
 /* 8006FB91 */ .space 0x01
-
-dlabel D_8006FB92
 /* 8006FB92 */ .space 0x01
-
-dlabel D_8006FB93
 /* 8006FB93 */ .space 0x01
-
-dlabel D_8006FB94
 /* 8006FB94 */ .space 0x01
-
-dlabel D_8006FB95
 /* 8006FB95 */ .space 0x01
-
-dlabel D_8006FB96
 /* 8006FB96 */ .space 0x02
-
-dlabel D_8006FB98
 /* 8006FB98 */ .space 0x04
-
-dlabel D_8006FB9C
 /* 8006FB9C */ .space 0x04
-
-dlabel D_8006FBA0
 /* 8006FBA0 */ .space 0x04
-
-dlabel D_8006FBA4
 /* 8006FBA4 */ .space 0x01
-
-dlabel D_8006FBA5
 /* 8006FBA5 */ .space 0x01
-
-dlabel D_8006FBA6
 /* 8006FBA6 */ .space 0x01
-
-dlabel D_8006FBA7
 /* 8006FBA7 */ .space 0x01
 
 dlabel D_8006FBA8
@@ -1736,8 +1709,7 @@ dlabel D_80071390
 dlabel D_800713A8
 /* 800713A8 */ .space 0x50
 
-dlabel cheatBuffer
-dlabel D_800713F8
+dlabel g_CheatBuffer
 /* 800713F8 */ .space 0x40
 
 dlabel demoPadState
