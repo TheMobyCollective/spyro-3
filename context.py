@@ -12,6 +12,8 @@ files = [
     'memcard.h',
     'mobyutil.h',
     'tracers.h',
+    'warp.h',
+    'drawutil.h',
     'ovl_header.h',
     'moby/mobytag.h',
 ]
@@ -104,7 +106,7 @@ extern int D_8006C5BC; // currentLvl
 extern int D_8006C648; // deltaTime
 extern Spyro D_80070328; // left without name to make the decompiler find it easier
 extern StreamingData D_8006E470; // streamingData
-extern SpeedwayData D_8006FA38; // speedwayData
+extern SpeedwayData D_8006FA38; // speedwayData (bss)
 extern PauseData D_8006FBC4; // pauseData
 
 // ADD IN THE FUNCTION SIGNATURE TO MAKE DECOMPILING EASIER

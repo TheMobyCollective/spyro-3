@@ -697,7 +697,7 @@ typedef struct {
 	short dat_8006fa9c;
 	short dat_8006fa9e;
 	char dat_8006faa0[0xF0]; // unk
-} SpeedwayData;
+} SpeedwayData; // The bss one - not the speedway data in .data
 
 
 /*** Parts ***/

@@ -147,7 +147,7 @@ void func_80017028();
 
 // 80068f7c "CameraPositionData", an array of 65 camera positions
 // Overlay camera functions suggest that these are probably not a single array, as that seems to break things
-// All this likely comes from spyro.c or a separate file (assembly?)
+// All this likely comes from spyro.c actually
 
 extern CameraPosition D_80068F7C; // cam0
 extern CameraPosition D_80068F90;

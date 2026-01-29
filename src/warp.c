@@ -1,5 +1,6 @@
-#include "libgpu.h"
+#include "warp.h"
 #include "common.h"
+#include "drawutil.h"
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Externs
@@ -27,14 +28,13 @@ typedef struct {
 } SpriteData;
 
 // text
-extern void func_8001EBAC(); // clear frame buffers
-extern void func_8001FB10(int);
-extern void func_80020168();
-extern void func_80020344(char*, int, short, int);
+// hud
 extern int* func_800289C8(SpriteData*, short, short); // first arg is probably a struct of size 8
+// spu
 extern void func_8003BEDC();
+// stdutil
 extern void func_8004E71C(void*, int); // fAddWorldOT
-extern void func_80059358(int, int); // byte int?
+// psyq
 extern int func_8005956C(int); // VSync
 extern void func_8005C564(DR_MODE*, int, int, int, int); // SetDrawMode - type and args to check
 extern DRAWENV* func_8005E500(DRAWENV*, int, int, int, int); // SetDefDrawEnv
