@@ -1,4 +1,5 @@
 #include "common.h"
+#include "drawutil.h"
 
 extern char D_80067570[16][12]; // might be an array of structs, not sure
 extern PauseData pauseData; // 8006fbc4
@@ -35,18 +36,18 @@ INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_800200A0);
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020168);
 
 /**
- * DrawStringCentered() - func_800202DC()
- * Not quite there yet, but simple
- * https://decomp.me/scratch/TcBtX
+ * DrawStringCentered() - func_800202DC() - MATCHING
+ * Implementing may mean changing some function signatures
+ * https://decomp.me/scratch/iAe5h
  */
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_800202DC);
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020344);
 
 /**
- * DrawStringRightAligned() - func_800203C4()
- * Not quite there yet, but simple
- * https://decomp.me/scratch/POzDi
+ * DrawStringRightAligned() - func_800203C4() - MATCHING
+ * Implementing may mean changing some function signatures
+ * https://decomp.me/scratch/YCZcN
  */
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_800203C4);
 
@@ -60,13 +61,13 @@ INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020790);
  * ???() - func_80020D70() - MATCHING 
  * https://decomp.me/scratch/iZDl3
  */
-void func_80020D70(void) {
+void func_80020D70() {
     func_80020530((char*)&D_80067570[pauseData.menuType]);
 }
 
 /**
  * ???() - func_80020DAC()
  * Pretty close, just a bit left
- * https://decomp.me/scratch/DAYzC
+ * https://decomp.me/scratch/DkMBr
  */
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020DAC);
