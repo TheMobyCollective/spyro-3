@@ -5,19 +5,20 @@
 #include "moby/mobytag.h"
 #include "mobyutil.h"
 #include "camera.h"
+#include "stdutil.h"
 
-// Includes to do
-extern void func_8004E790(void*, int, int); // memset
-extern void func_8004F178(Vector3D*, Vector3D*); // fSetVector
+// updatemobys
 extern Moby* func_80055A7C(); // get first empty allocated moby
 extern void func_80055C24(Moby*);
+
+// variables
 extern Spyro spyro;
 extern Moby* mobyArrayPtr;
 extern short D_800658A0[0x100]; // sin
 extern short D_80065920[0x100]; // cos
 extern int D_8006C784; // life count
 
-//sparx.h
+// sparx
 extern Sparx sparx;
 extern MobyTag_120 D_8006E394; // bss, some sort of shared moby tag?? used by Sparx
 

@@ -1,6 +1,8 @@
 #include "moby/mobytag.h"
 #include "moby/moby260.h"
 
+#include "stdutil.h"
+#include "warp.h"
 
 // This needs re-writing / factoring into the general moby spawn
 
@@ -12,11 +14,6 @@ extern int func_8003BABC(Moby*, int, char); // fPlayMobySound
 extern void func_8003BE70(int); // fKillSound
 extern int func_8003BFC0(Moby*, int);
 
-// Stdutil
-extern void func_8004E790(void*, int, int); // memset
-extern void func_8004F178(Vector3D*, Vector3D*); // fSetVector
-extern void func_8004F194(Vector3D*, Vector3D*, Vector3D*); // fAddVector
-
 // Update
 extern void func_80054F94(int, Moby*); // unclear types
 
@@ -25,9 +22,6 @@ extern Moby* func_80055A7C(); // get first empty allocated moby
 extern void func_80055B18(Moby*); // fDeleteMoby
 extern void func_80055C24(Moby*);
 extern void func_80055D24(Moby*, int); // fUpdateMobyCollision
-
-// Warp
-extern void func_800584BC(int, int); // fWarpToLevel
 
 // Psyq
 extern int func_8005C644(); // rand
