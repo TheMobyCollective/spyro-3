@@ -18,7 +18,7 @@ extern void func_8004E790(void*, int, int); // memset
 // fMemsetLine	8004e7ac
 extern void func_8004E7D4(int *dest, int *src, int len); // memcpy
 extern void func_8004E828(int*, int*, int); // memcpy reverse
-// FUN_8004e880	8004e880
+extern int func_8004E880(int, int, int);
 // fSinLerp	8004e9e4
 // fCosLerp	8004ea2c
 // fGetUsedBits	8004ea74
@@ -37,20 +37,20 @@ extern void func_8004F194(Vector3D*, Vector3D*, Vector3D*); // fAddVector
 // fSubVector	8004f1c8
 // FUN_8004f1fc	8004f1fc
 // fScaleDownVector	8004f228
-// fSubtractAbsolute	8004f264
+extern int func_8004F264(int, int); // subtract absolute
 // fSubtractFromAngle4096	8004f284
 // fSubtractFromAngle256	8004f2a4
 // FUN_8004f2c8	8004f2c8
-// FUN_8004f2ec	8004f2ec
+extern int func_8004F2EC(int, int, int, int);
 // fGetOctagonalDistance	8004f334
 // FUN_8004f388	8004f388
 // fRTPSVectorByCamera	8004f408
 // FUN_8004f4bc	8004f4bc
-// fDivVectorBy4AndMakeShort	8004f504
+void func_8004F504(Vector3D16*, Vector3D16*); // fDivVectorBy4AndMakeShort // TODO: latter argument should be Vector3D*!
 // fMultVectorBy4AndMakeInt	8004f52c
 // fSetVectorFromShortVector	8004f554
 // fSetShortVectorFromVector	8004f570
-// fSetShortVector	8004f58c
+void func_8004F58C(Vector3D16*, Vector3D16*); // fSetShortVector
 // fAddShortVector	8004f5a8
 // fUnpackCollisionTriangle	8004f5dc
 // fGetClock	8004f6a0

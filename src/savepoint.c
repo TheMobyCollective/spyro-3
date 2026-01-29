@@ -1,5 +1,6 @@
 #include "common.h"
 #include "savepoint.h"
+#include "stdutil.h"
 #include "camera.h"
 
 // bss
@@ -12,10 +13,7 @@ extern Moby* mobyArrayPtr; // Pointer to the moby array
 extern Moby* allocatedMobysPtr; // Pointer into the moby array, pointing at the mobys added after the level was loaded
 extern int collectionAreaOffset; // Offset used by the collection bitmask for the current area
 
-// Functions
-extern void func_8004E790(int*, int, int);  // memset
-extern void func_8004E7D4(int*, int*, int); // memcpy
-extern void func_8004F178(Vector3D*, Vector3D*); // set vector
+// Update
 extern void func_80053944(); // an update function
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -64,7 +62,7 @@ void func_8003B74C(Savepoint* save) {
     if (save->updated != 0) {
         func_8004E7D4((int*)&unsavedData, (int*)save, 0x850);
     } else {
-        func_8004E790((int*)&unsavedData, 0, 0x850);
+        func_8004E790(&unsavedData, 0, 0x850);
     }
     func_80053944();
     camera.unk40 = 0;

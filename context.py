@@ -17,6 +17,7 @@ files = [
     'stdutil.h',
     'loaders.h',
     'spu.h',
+    'environment.h',
     'ovl_header.h',
     'moby/mobytag.h',
 ]

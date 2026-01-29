@@ -1,5 +1,6 @@
 #include "common.h"
 #include "mobyutil.h"
+#include "stdutil.h"
 #include "ovl_header.h"
 
 // collision
@@ -11,13 +12,6 @@ extern void func_8002E2D0();
 
 // spyro
 extern int func_80040954(int);
-
-// stdutil
-extern int func_8004E880(int, int, int);
-extern void func_8004F178(Vector3D*, Vector3D*); // set vector
-extern void func_8004F194(Vector3D*, Vector3D*, Vector3D*); // fAddVector
-extern int func_8004F264(int, int); // subtract absolute
-extern int func_8004F2EC(int, int, int, int);
 
 // str
 extern int func_80050680(int, int*, int, int); // fLoadFromWad?(int sector,int *dest,undefined *len,undefined *sectorOffset)

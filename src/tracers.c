@@ -1,8 +1,6 @@
 #include "common.h"
+#include "stdutil.h"
 #include "tracers.h"
-
-void func_8004F504(Vector3D16*, Vector3D16*); // fDivVectorBy4AndMakeShort // TODO: latter argument should be Vector3D*!
-void func_8004F58C(Vector3D16*, Vector3D16*); // fSetShortVector
 
 /**
  * ???() - func_80050844()

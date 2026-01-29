@@ -2,6 +2,7 @@
 
 INCLUDE_ASM("asm/nonmatchings/draw", func_8001D274);
 
+// Different in 1.1
 INCLUDE_ASM("asm/nonmatchings/draw", func_8001D424);
 
 INCLUDE_ASM("asm/nonmatchings/draw", func_8001DC3C);

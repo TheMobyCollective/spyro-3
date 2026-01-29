@@ -1,8 +1,7 @@
 #include "common.h"
+#include "stdutil.h"
 #include "pad.h"
 
-// stdutil
-extern void func_8004E7D4(int*, int*, int); // memcpy
 // psyq
 extern void func_8005956C(int); // VSync
 

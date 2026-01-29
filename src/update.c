@@ -1,24 +1,29 @@
 #include "common.h"
+#include "environment.h"
 #include "tracers.h"
 #include "savepoint.h"
 #include "camera.h"
+#include "pad.h"
+#include "spu.h"
+#include "stdutil.h"
+#include "warp.h"
 #include "ovl_header.h"
 
-extern void func_8001204C(); // UpdateCamera
-extern void func_80020E74(int); // env
-extern void func_80021FF4(); // env
-extern void func_80022158(); // env
-extern void func_80022260(); // env
+// hud
 extern int func_800285A4(int); // UpdateHud
+
+// mobyupdate
 extern void func_8003038C(); // UpdateMobys
-extern void func_8003A584();
-extern void func_8003BEDC();
-extern void func_8003C184();
+
+// spyroupdate
 extern void func_8003E83C(); // UpdateSpyro
-extern void func_8004E790(char* start, int set, int len); // memset
+
+// str
 extern void func_8004FA24();
+
+// updatepause
 extern void func_80057834(); // pause updates
-extern void func_80058778(); // loading img updates
+
 //extern void func_title_8007566C(); // title screen updates // "ovlHeader+0x139C"
 
 // data
@@ -51,6 +56,7 @@ INCLUDE_ASM("asm/nonmatchings/update", func_800512E4);
 
 INCLUDE_ASM("asm/nonmatchings/update", func_800518F8);
 
+// Different in 1.1
 INCLUDE_ASM("asm/nonmatchings/update", func_80051A60);
 
 /**
@@ -97,8 +103,8 @@ void func_8005399C(void) {
     pauseData.frameCount = 1;
     D_8006C598 = 0xFF;
     D_8006C718 = 1;
-    func_8004E790((char*)&savedData, 0, 0x850);
-    func_8004E790((char*)&unsavedData, 0, 0x850);
+    func_8004E790(&savedData, 0, 0x850);
+    func_8004E790(&unsavedData, 0, 0x850);
 }
 
 INCLUDE_ASM("asm/nonmatchings/update", func_80053A10);
@@ -107,7 +113,8 @@ INCLUDE_ASM("asm/nonmatchings/update", func_80053A10);
  * GoToLevel() - func_80053F50()
  * It's getting there, mostly register shit now
  * Actually pretty portal focused rather than going to levels in general
- * https://decomp.me/scratch/dhDtF
+ * This is a function that is different in 1.1
+ * https://decomp.me/scratch/0zqbG
  */
 INCLUDE_ASM("asm/nonmatchings/update", func_80053F50);
 
