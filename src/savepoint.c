@@ -23,7 +23,7 @@ extern void func_80053944(); // an update function
  * This one had some sign / ifs weirdness resolved with a nice switch statement
  * https://decomp.me/scratch/Trdeq
  */
-void func_8003B634(Savepoint* save, Vector3D* spawnPos, unsigned int arg2) {
+void func_8003B634(Savepoint* save, Vector3D* spawnPos, int arg2) {
     save->updated = 1;
     
     func_8004F178(&save->spawnPos, spawnPos);

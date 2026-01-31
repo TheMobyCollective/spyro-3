@@ -6,8 +6,8 @@ typedef struct {
 	int* D_800722bc; // lvlWadHeaderPtr?
 	int* D_800722c0; // scenePtr
 	int* D_800722c4; // envPtr
-	int* D_800722c8; // layoutPtr
-	int* D_800722cc; // demoInputsPtr
+	char* D_800722c8; // layoutPtr // LevelWadHeader*? void*?
+	char* D_800722cc; // demoInputsPtr
 	int* D_800722d0;
 	int* D_800722d4;
 	int* D_800722d8;
@@ -19,6 +19,8 @@ typedef struct {
 extern void func_8002AE00();
 // other functions use structs so we need some includes
 extern void func_8002D044();
+extern void* func_8002B810(void*);
+extern void func_8002CA50();
 
 extern LoadingData loadingData; // D_800722b8; probably defined in loaders.c
 

@@ -82,7 +82,7 @@ INCLUDE_ASM("asm/nonmatchings/update", func_80053374);
  * InitStateFadeIn() - func_80053944() - MATCHING
  * https://decomp.me/scratch/zZDVz
  */
-void func_80053944(void) {
+void func_80053944() {
     pauseData.dat_8006fbc8 = 0;
     pauseData.frameCount = 0;
     pauseData.menuType = 0;
@@ -97,7 +97,7 @@ void func_80053944(void) {
  * Worth reviewing for the structs etc.
  * https://decomp.me/scratch/MKuo7
  */
-void func_8005399C(void) {
+void func_8005399C() {
     func_80053944(); // init state fade in
     pauseData.dat_8006fbc8 = 2;
     pauseData.frameCount = 1;

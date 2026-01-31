@@ -16,7 +16,7 @@ extern void func_8001FB10(int);
 //fDrawFullScreenFade	800200a0
 extern void func_80020168();
 //fDrawStringCentered	800202dc
-extern void func_80020344(char*, int, short, int); // short may be an int
+extern void func_80020344(const char*, int, short, int); // short may be an int, char* may be const?
 //fDrawStringRightAligned	800203c4
 //FUN_80020428	80020428
 //FUN_80020530	80020530

@@ -1,6 +1,8 @@
 #ifndef __SAVEPOINT_H
 #define __SAVEPOINT_H
 
+#include "common.h"
+
 /*** Savepoint definitions ***/
 
 typedef struct {
@@ -17,5 +19,7 @@ typedef struct {
     int swimState; // 0 standing, 1 surface, 2 dive
     int unk5;
 } Savepoint;
+
+void func_8003B634(Savepoint* save, Vector3D* spawnPos, int arg2);
 
 #endif

@@ -191,7 +191,7 @@ extern void (*unk_ovlheader_8007445C)(void); // 8007445C, types TODO
 extern void (*unk_ovlheader_80074460)(void); // 80074460, types TODO
 
 // Cutscenes
-extern void (*unk_ovlheader_80074464)(void); // 80074464, types TODO
+extern void (*unk_ovlheader_80074464)(int); // 80074464, types TODO
 extern void (*unk_ovlheader_80074468)(void); // 80074468, types TODO
 extern void (*UpdateCutscene)(); // 8007446C, likely Cutscene update
 extern void (*unk_ovlheader_80074470)(void); // 80074470, types TODO

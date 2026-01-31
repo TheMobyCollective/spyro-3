@@ -17,7 +17,6 @@
 extern int func_8001A358(Vector3D*, int);
 
 // Savepoint
-extern void func_8003B634(Savepoint*, Vector3D*, int); // fSetCheckpoint
 extern void func_8003B7B4(void*, int, Savepoint*); // saved memory
 
 // Sound

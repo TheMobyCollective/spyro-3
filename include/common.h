@@ -56,10 +56,7 @@ typedef struct {
 	DataHeader universalLogo;
 	DataHeader unk1;
 	DataHeader insomniacLogo;
-	DataHeader titleLvl;
-	DataHeader unk2;
-	DataHeader titleMdls;
-	CutsceneWads cutscene[20];
+	CutsceneWads cutscene[21]; // based on func_80058778, 0th is title!
 	DataHeader loadOvl; // common
 	DataHeader loadImg[6];
 	DataHeader cutsceneImg[20];
@@ -626,7 +623,7 @@ typedef struct {
 	int menuType; // 8006fbd0
 	int dat_8006fbd4; // 8006fbd4
 
-	// Could be in a different struct
+	// Could be in a different struct, unclear
     int dat_8006fbd8; // 8006fbd8
     int dat_8006fbdc; // 8006fbdc
     int dat_8006fbe0; // 8006fbe0
@@ -636,7 +633,9 @@ typedef struct {
 	int dat_8006fbf0; // 8006fbf0
 	int dat_8006fbf4; // 8006fbf4
 	int* dat_8006fbf8; // 8006fbf8, some kind of pointer seems to be used in Atlas
+} PauseData; // 8006fbc4; may need renaming
 
+typedef struct {
 	// Probably in a different struct, to get struct usage to match properly
 	DRAWENV dat_8006fbfc; // 8006fbfc
 	DISPENV dat_8006fc58; // 8006fc58
@@ -644,7 +643,7 @@ typedef struct {
 	DRAWENV dat_8006fc70; // 8006fc70
 	DISPENV dat_8006fccc; // 8006fccc
 	int dat_8006fce0; // 8006fce0
-} PauseData; // 8006fbc4; may need renaming
+} PauseData2; // temporary name, unclear what this is for (loading images?)
 
 
 /*** Speedways ***/
@@ -808,6 +807,35 @@ typedef struct {
     GemToll level_31;
     GemToll level_41;
 } MoneybagsData;
+
+typedef struct {
+    Vector3D16 pos;
+    short swimming;
+} PortalSpawn;
+
+typedef struct {
+    Vector3D pos;
+    int angle;
+} FullPosition;
+
+typedef struct {
+	int unk0;
+	int unk4;
+	int unk8;
+	int unkC;
+	int unk10;
+	int unk14;
+	int unk18;
+	int unk1C;
+	int* unk20; // TextureComponent*?
+	int unk24;
+	void* unk28; // CollisionHeader*?
+	int unk2C;
+	int unk30;
+	int unk34;
+	int unk38;
+	int unk3C;
+} Unk_8006d048;
 
 
 #endif

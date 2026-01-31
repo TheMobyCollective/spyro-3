@@ -370,5 +370,5 @@
 <!-- Warp -->
 - [ ] func_800584BC <!-- Ready, but having gp_rel problems -->
 - [ ] func_80058778
-- [ ] func_80059038
+- [x] func_80059038
 - [x] func_80059358

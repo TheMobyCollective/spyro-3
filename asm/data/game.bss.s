@@ -988,6 +988,7 @@ dlabel D_8006FBEC
 dlabel D_8006FBF8
 /* 8006FBF8 */ .space 0x04
 
+dlabel pauseData2
 dlabel D_8006FBFC
 /* 8006FBFC */ .space 0x02
 
