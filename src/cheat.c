@@ -163,8 +163,8 @@ void func_80017B7C(int cheat) {
         temp_s0 = var_s1 * 10 + var_s2;
         func_8003BB50(soundTablePtr->pauseExit, 0, 0);
         g_CheatFlags.warpToLevel = temp_s0;//var_s1 * 10 + var_s2; //*(char*)& ???
-        if (g_CheatFlags.warpToLevel >= 60U) {
-            g_CheatFlags.warpToLevel = (char) D_8006C5BC;
+        if (g_CheatFlags.warpToLevel >= 60) {
+            g_CheatFlags.warpToLevel = D_8006C5BC;
         }
         return;
 

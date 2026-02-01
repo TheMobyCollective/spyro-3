@@ -19,14 +19,15 @@ DRAGONBREATH = "./tools/dragonbreath/dragonbreath.exe"
 
 # Individual file flags
 file_flags = {
-    "src/warp": "-G8" # Contains strings, will need to be matched from the bottom up
+    "src/warp": "-G8", # Contains strings, will need to be matched from the bottom up
+#    "src/cheat": "-G8"
 }
 
 # The C_FLAGS and MASPSX_FLAGS *should* be -G8, but this is currently breaking the function ordering
 # This would be fixed with the reorder hack but it doesn't work...
 # Note that the AS_FLAGS needs -G0 regardless
 GCC_FLAGS = "-ffreestanding -Iinclude -Ipsyq/include -MMD -MP -MF" # -D_HAS_MASPSX currently excluded as the reorder hack is broken
-C_FLAGS = "-O2 -G0 -fverbose-asm -mips1 -mcpu=3000 -fgnu-linker -mno-abicalls -mgpopt -msoft-float -gcoff -quiet"
+C_FLAGS = "-O2 -G0 -fverbose-asm -mips1 -mcpu=3000 -fgnu-linker -mno-abicalls -mgpopt -msoft-float -gcoff -funsigned-chars -quiet"
 AS_FLAGS = "-Iinclude -march=r3000 -mtune=r3000 -G0 -no-pad-sections"
 LD_FLAGS = "-T /tmp/psx.ld -Map build/psx.map --no-check-sections -nostdlib" # -T undefined_syms_auto.txt if needed
 MASPSX_FLAGS = "-G0 --aspsx-version 2.56 --expand-div"

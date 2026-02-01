@@ -9,7 +9,7 @@ typedef struct {
 	unsigned char squidboard;
 	unsigned char cameraMode;
 	unsigned char superflame;
-	char warpToLevel; // probably
+	unsigned char warpToLevel; // probably
 	unsigned char previousLevel;
 	unsigned char bigHeadMode;
 	unsigned char flatMode;
