@@ -184,51 +184,50 @@ int func_8003585C(Moby* arg0, int arg1, int arg2, int arg3, int arg4, int arg5) 
 
 /**
  * CountTimerDown() - func_800359A4() - MATCHING
- * Not working right now, come back to this later
- * https://decomp.me/scratch/FjxxT
+ * https://decomp.me/scratch/YfBcS
  */
-INCLUDE_ASM("asm/nonmatchings/mobyutil", func_800359A4);
-#if 0
-int func_800359A4(void* timer, int size) {
-    int temp_v1;
+int func_800359A4(void* pTimer, int pTimerType) {
 
-    if (size == sizeof(int)) {
-        temp_v1 = *(int*)timer;
-        if (D_8006C648 >= temp_v1) {
-            if (temp_v1 != 0) {
-                *(int*)timer = 0;
+    if (pTimerType == sizeof(int)) {
+        int timer = *(int*)pTimer;
+        if (D_8006C648 >= timer) {
+            if (timer != 0) {
+                *(int*)pTimer = 0;
+                return 2;
+            }
+            return 1;
+        } else {
+            *(int*)pTimer -= D_8006C648;
+            return 0;
+        }
+    } else if (pTimerType == sizeof(short)) {
+        short timer = *(short*)pTimer;
+        if (D_8006C648 >= timer) {
+            if (timer != 0) {
+                *(short*)pTimer = 0;
+                return 2;
+            }
+            return 1;
+        } else {
+            *(short*)pTimer -= D_8006C648;
+            return 0;
+        }
+    } else if (pTimerType == sizeof(char)) {
+        unsigned char timer = *(unsigned char*)pTimer;
+        if (D_8006C648 >= timer) {
+            if (timer != 0) {
+                *(unsigned char*)pTimer = 0;
                 return 2;
             }
             return 1;
         }
-        *(int*)timer -= D_8006C648;
-        return 0;
-    }
-    else if (size == sizeof(short)) {
-        if (D_8006C648 >= *(short*)timer) {
-            if (*(short*)timer != 0) {
-                *(short*)timer = 0;
-                return 2;
-            }
-            return 1;
+        else {
+            *(unsigned char*)pTimer -= D_8006C648;
+            return 0; 
         }
-        *(short*)timer -= D_8006C648;
-        return 0;
-    }
-    else if (size == sizeof(char)) {
-        if (D_8006C648 >= *(char*)timer) {
-            if (*(char*)timer != 0) {
-                *(char*)timer = 0;
-                return 2;
-            }
-            return 1;
-        }
-        *(char*)timer -= D_8006C648;
-        return 0; 
     }
     return 0;
 }
-#endif
 
 /**
  * ???() - func_80035A80() - MATCHING
