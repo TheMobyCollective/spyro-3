@@ -1,6 +1,6 @@
 #include "common.h"
+#include "draw.h"
 
-extern void func_8001E638(); // func_8001E638 draw
 extern void func_8002AB38(); // func_8002AB38 init
 extern void Update(); // func_80055400 update
 
@@ -13,6 +13,6 @@ void main() {
   func_8002AB38();
   do {
     Update();
-    func_8001E638();
+    Draw();
   } while (1);
 }

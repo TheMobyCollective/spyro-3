@@ -12,8 +12,8 @@ void func_8001E32C(); // fDrawDuringGameOver
 void func_8001E374(); // Draw during credits
 void func_8001E394(); // fDrawDuringLoadingVehicle
 void func_8001E3F8(); // fDrawDuringLoadingSublevel
-void func_8001E460(int); // fDrawGameWorld()
+void func_8001E460(int); // fDrawGameWorld
 void func_8001E618(); // fDrawDuringBulletTime
-void func_8001E638(); // Draw
+void Draw(); // Draw
 
 #endif

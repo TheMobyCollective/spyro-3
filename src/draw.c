@@ -133,4 +133,7 @@ void func_8001E618() {
     func_8001E460(0x3D);
 }
 
-INCLUDE_ASM("asm/nonmatchings/draw", func_8001E638);
+/**
+ * Draw() - func_8001E638()
+ */
+INCLUDE_ASM("asm/nonmatchings/draw", Draw);

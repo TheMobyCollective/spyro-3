@@ -1,3 +1,4 @@
+#include "libgpu.h"
 #include "warp.h"
 #include "common.h"
 #include "drawutil.h"
