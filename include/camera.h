@@ -153,7 +153,13 @@ extern CameraPosition D_80068F7C; // cam0
 extern CameraPosition D_80068F90;
 // cams 2 - 6
 extern CameraPosition D_80069008; // D_80068F7C.cam7
-// cams 8 - 36
+// cams 8 - 13
+extern CameraPosition D_80069094[2]; // cam14,15 // 0: left, 1: right // Certainly an array, could be up to 5 long?
+// cams 16 - 18
+extern CameraPosition D_800690F8[2]; // cam19,20 // 0: left, 1: right // Certainly an array, could be up to 5 long?
+// cams 21 - 23
+extern CameraPosition D_8006915C[2]; // cam24,25 // 0: left, 1: right // Certainly an array, unclear length
+// cams 26 - 36
 extern CameraPosition D_80069260; // D_80068F7C.cam37
 // cams 38 - 39
 extern CameraPosition D_8006929C[5]; // D_80068F7C.cam40

@@ -9,6 +9,8 @@ pfiles = [
 root = 'include/'
 files = [
     'common.h',
+    'cyclorama.h',
+    'draw.h',
     'camera.h',
     'cheat.h',
     'pad.h',

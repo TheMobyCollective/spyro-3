@@ -47,12 +47,12 @@
 - [ ] func_8001DD1C
 - [x] func_8001E2A8
 - [x] func_8001E2C8
-- [ ] func_8001E32C
-- [ ] func_8001E374
-- [ ] func_8001E394
-- [ ] func_8001E3F8
+- [x] func_8001E32C
+- [x] func_8001E374
+- [x] func_8001E394
+- [x] func_8001E3F8
 - [ ] func_8001E460
-- [ ] func_8001E618
+- [x] func_8001E618
 - [ ] func_8001E638
 
 <!-- Drawutil -->
