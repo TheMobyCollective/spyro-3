@@ -548,6 +548,9 @@ if not os.environ.get("LINK_ONLY"):
     asm_files = collect_asm_files()
     c_files = collect_c_files()
 
+    c_objects = []
+    asm_objects = []
+
     with Pool() as pool:
         for i, result in enumerate(pool.imap_unordered(build_file, c_files), 1):
             print_info(f"Compiled {i}/{len(c_files)}: {result}")
