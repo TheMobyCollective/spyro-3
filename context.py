@@ -74,10 +74,6 @@ extern int func_8001A358(Vector3D*, int);
 extern int func_8002803C(int, int, void*, void*, void*, int*, int); // fSetHud // hudPos, spriteId, soundFuncPtr, unk, fallbackFuncPtr, diplayVar, max
 extern int func_80028154(int); // Updates the HUD
 
-// Savepoint
-extern void func_8003B634(Savepoint*, Vector3D*, int); // fSetCheckpoint
-extern void func_8003B7B4(void*, int, Savepoint*); // saved memory
-
 // Sound
 extern int func_8003BABC(Moby*, int, char); // fPlayMobySound
 extern int func_8003BB10(Moby*, int, char); // fPlayAmbientSound, name probably inaccurate (might be looping sounds)
@@ -114,8 +110,7 @@ extern int func_80055E84(Moby*);
 extern void func_80056270(Moby*);
 extern void func_8005629C(Moby*);
 
-// Warp
-extern void func_800584BC(int, int); // fWarpToLevel
+// Psyq
 extern int func_8005C644(); // rand
 
 // Variables

@@ -1,9 +1,7 @@
 #include "common.h"
 #include "camera.h"
 #include "stdutil.h"
-
-// spyro
-extern Spyro spyro;
+#include "spyro.h"
 
 // sbss
 extern int D_8006C6D0;

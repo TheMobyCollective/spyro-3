@@ -93,7 +93,6 @@ extern PauseData2 pauseData2;
 extern WadHeader wadHeader;
 extern Unk_8006d048 D_8006D048;
 extern LevelWadHeader levelWadHeader; // 80072098
-extern Savepoint savedData;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 

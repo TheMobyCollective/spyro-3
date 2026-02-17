@@ -1,6 +1,7 @@
 #include "moby/mobytag.h"
 #include "moby/moby260.h"
 
+#include "spyro.h"
 #include "stdutil.h"
 #include "warp.h"
 
@@ -42,8 +43,6 @@ extern int D_8006C784; // lifeCount
 extern unsigned char D_8006C7B4; // EggsCollectedSinceEnteredBitmask
 
 extern MobyTag_120 D_8006E394; // bss, some sort of shared moby tag?? used by Sparx
-
-extern Spyro spyro; // Spyro 80070328
 
 ////////////////////////////////////////////////////////////////////////////////////
 // Spawn

@@ -1,8 +1,6 @@
 #include "common.h"
 #include "camera.h"
-
-extern Spyro spyro;
-extern Camera camera;
+#include "spyro.h"
 
 INCLUDE_ASM("asm/nonmatchings/overlays/level_14/level", func_level_14_8008D9A4);
 

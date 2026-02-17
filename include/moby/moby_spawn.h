@@ -6,13 +6,13 @@
 #include "mobyutil.h"
 #include "camera.h"
 #include "stdutil.h"
+#include "spyro.h"
 
 // updatemobys
 extern Moby* func_80055A7C(); // get first empty allocated moby
 extern void func_80055C24(Moby*);
 
 // variables
-extern Spyro spyro;
 extern Moby* mobyArrayPtr;
 extern short D_800658A0[0x100]; // sin
 extern short D_80065920[0x100]; // cos

@@ -1,5 +1,6 @@
 #include "common.h"
 #include "camera.h"
+#include "spyro.h"
 
 #define LEVEL_ID 10
 
@@ -12,8 +13,6 @@
  || (LEVEL_ID == 23) || (LEVEL_ID == 32) || (LEVEL_ID == 33) || (LEVEL_ID == 44)
     #define IS_ZOOM_OUT_CAMERA_LEVEL
 #endif
-
-extern Spyro spyro;
 
 /**
  * ???() - func_level_10_8008AD44() - MATCHING

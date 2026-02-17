@@ -40,8 +40,6 @@ extern int D_8006C718;
 extern int D_8006C7C8;
 
 // bss
-extern Savepoint unsavedData; // 8006C7F8
-extern Savepoint savedData; // 8006D088
 extern Game game; // 8006E344 - game.state
 extern StreamingData streamingData; // 8006e470
 extern PauseData pauseData; // 8006fbc4

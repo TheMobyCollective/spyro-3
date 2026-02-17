@@ -2,6 +2,7 @@
 #include "savepoint.h" // vehicles
 #include "camera.h" // anything with the camera
 #include "mobyutil.h"
+#include "spyro.h"
 #include "ovl_header.h"
 
 #include "moby/mobytag.h"
@@ -15,9 +16,6 @@
 
 // Collision - unclear types
 extern int func_8001A358(Vector3D*, int);
-
-// Savepoint
-extern void func_8003B7B4(void*, int, Savepoint*); // saved memory
 
 // Sound
 extern int func_8003BABC(Moby*, int, char); // fPlayMobySound
@@ -60,8 +58,6 @@ extern int D_8006C784; // lifeCount
 extern unsigned char D_8006C7B4; // EggsCollectedSinceEnteredBitmask
 
 // .bss 8006c7f8
-extern Savepoint unsavedData; // D_8006C7F8
-extern Savepoint savedData; // D_8006D088
 extern Game game; // 8006E344
 
 extern MobyTag_120 D_8006E394; // bss, some sort of shared moby tag?? used by Sparx
@@ -101,7 +97,6 @@ extern struct {
 // there's also possibly more afterwards from 80070160 to 80070260, but this might be separate
 
 extern unsigned char eggsCollectedArray[40]; // 80070300 EggsCollectedBitmaskArray
-extern Spyro spyro; // Spyro 80070328
 extern ProgressFlags progressFlags; // 80071570
 
 ////////////////////////////////////////////////////////////////////////////////////

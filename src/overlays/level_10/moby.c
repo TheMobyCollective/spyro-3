@@ -1,4 +1,5 @@
 #include "common.h"
+#include "spyro.h"
 
 /*
 // Maybe all of this (except level ID) in a separate file for useful macros
@@ -30,7 +31,6 @@ typedef struct {
     int yWidth;
     int angle;
 } BoxTag;
-extern Spyro spyro; // 80070328
 extern int func_80036220(Vector3D*, BoxTag*, int, int); // isInBox; second arg should be a box tag actually
 
 // For 486

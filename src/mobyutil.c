@@ -2,6 +2,7 @@
 #include "mobyutil.h"
 #include "stdutil.h"
 #include "ovl_header.h"
+#include "spyro.h"
 
 // collision
 extern int func_8001A310(Vector3D*, int, int, Moby*);
@@ -48,7 +49,6 @@ extern int D_8006C770;
 extern WadHeader wadHeader; // 8006d8d8
 extern StreamingData streamingData; // 8006e470
 extern CollisionData D_80071900;
-extern Spyro spyro; // 80070328
 extern LevelWadHeader levelWadHeader; // 80072098
 
 ////////////////////////////////////////////////////////////////////////////////////

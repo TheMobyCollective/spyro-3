@@ -20,6 +20,13 @@ typedef struct {
     int unk5;
 } Savepoint;
 
-void func_8003B634(Savepoint* save, Vector3D* spawnPos, int arg2);
+extern Savepoint unsavedData; // Checkpoint data that is not yet saved (8006c7f8)
+extern Savepoint savedData; // 8006D088
+
+void func_8003B634(Savepoint* save, Vector3D* spawnPos, int arg2); // fSetCheckpoint
+void func_8003B74C(Savepoint* save); // fResetToCheckpoint
+void func_8003B7B4(void* addr, int len, Savepoint *save); // saved memory
+void func_8003B918(Savepoint* save);
+void func_8003BA00(Moby* moby); // fUpdateLocalCollectionBitmask
 
 #endif

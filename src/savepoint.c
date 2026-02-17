@@ -2,10 +2,7 @@
 #include "savepoint.h"
 #include "stdutil.h"
 #include "camera.h"
-
-// bss
-extern Savepoint unsavedData; // Checkpoint data that is not yet saved (8006c7f8)
-extern Spyro spyro; // 80070328
+#include "spyro.h"
 
 // sdata
 extern int area; // Current area - 8006C5C8
