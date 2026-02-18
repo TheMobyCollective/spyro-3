@@ -7,7 +7,6 @@
 
 INCLUDE_ASM("asm/nonmatchings/overlays/level_43/level", func_level_43_8008B598);
 
-// INCLUDE_ASM("asm/nonmatchings/overlays/level_43/level", func_level_43_8008B8B4);
 extern int D_8006E044;
 extern unsigned int D_8006E048;
 extern Spyro spyro;
@@ -26,6 +25,11 @@ typedef struct {
     int unk40;
 } ARG_8008DDE4;
 
+
+/*
+ * ???() - func_level_43_8008B8B4 - MATCHING
+ * https://decomp.me/scratch/QyTEy
+ */
 extern void func_level_43_8008B8B4(Moby* arg0, int arg1) {
     spyro.unk20a = 1;
     spyro.unk20b = arg1;
@@ -47,6 +51,11 @@ INCLUDE_ASM("asm/nonmatchings/overlays/level_43/level", func_level_43_8008BF10);
 
 INCLUDE_ASM("asm/nonmatchings/overlays/level_43/level", func_level_43_8008C498);
 
+
+
+/*
+ * ???() - func_level_43_8008C5AC - MATCHING
+ */
 
 int func_level_43_8008C5AC(Vector3D* arg0, int arg1, Moby* arg2) {
     int temp_s0;
