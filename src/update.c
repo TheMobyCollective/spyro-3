@@ -1,5 +1,6 @@
 #include "common.h"
 #include "environment.h"
+#include "hud.h"
 #include "tracers.h"
 #include "savepoint.h"
 #include "camera.h"
@@ -8,9 +9,6 @@
 #include "stdutil.h"
 #include "warp.h"
 #include "ovl_header.h"
-
-// hud
-extern int func_800285A4(int); // UpdateHud
 
 // mobyupdate
 extern void func_8003038C(); // UpdateMobys

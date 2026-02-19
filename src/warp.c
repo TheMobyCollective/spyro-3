@@ -1,6 +1,7 @@
 #include "libgpu.h"
 #include "warp.h"
 #include "common.h"
+#include "hud.h"
 #include "drawutil.h"
 #include "loaders.h"
 #include "savepoint.h"
@@ -22,20 +23,7 @@ typedef struct {
     short w, h;
 } SPRT; // psyq
 
-// Some sort of sprite data, probably used for the text box
-// doesn't seem to be the same as the sprite definitions used elsewhere (w/ the class)
-typedef struct {
-    unsigned char unk0;
-    unsigned char unk1;
-    short unk2;
-    unsigned char unk4;
-    unsigned char unk5;
-    short unk6;
-} SpriteData;
-
 // text
-// hud
-extern int* func_800289C8(SpriteData*, short, short); // first arg is probably a struct of size 8
 // str
 extern void func_80050578(int, int*, int, int); // void fLoadFromDisc(int sector,int *dest,int len,int sectorOffset)
 // update
