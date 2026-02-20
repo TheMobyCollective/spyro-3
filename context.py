@@ -72,10 +72,6 @@ others = """
 extern int func_80019194(Vector3D*, int);
 extern int func_8001A358(Vector3D*, int);
 
-// HUD
-extern int func_8002803C(int, int, void*, void*, void*, int*, int); // fSetHud // hudPos, spriteId, soundFuncPtr, unk, fallbackFuncPtr, diplayVar, max
-extern int func_80028154(int); // Updates the HUD
-
 // Sound
 extern int func_8003BABC(Moby*, int, char); // fPlayMobySound
 extern int func_8003BB10(Moby*, int, char); // fPlayAmbientSound, name probably inaccurate (might be looping sounds)

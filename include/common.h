@@ -638,14 +638,4 @@ typedef struct {
 	int unk3C;
 } Unk_8006d048;
 
-typedef struct {
-    unsigned char unk0;
-    unsigned char unk1;
-    short unk2;
-    unsigned char unk4;
-    unsigned char unk5;
-    short unk6;
-} SpriteData; // there'll be a better place for this somewhere, and probably a better name too
-
-
 #endif

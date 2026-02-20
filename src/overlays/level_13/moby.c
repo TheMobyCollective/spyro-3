@@ -38,6 +38,11 @@ INCLUDE_ASM("asm/nonmatchings/overlays/level_13/moby", func_level_13_8007B3F8);
 
 INCLUDE_ASM("asm/nonmatchings/overlays/level_13/moby", func_level_13_8007B5B4);
 
+/**
+ * MobyUpdate_88() - func_level_13_8007C2C8()
+ * Thieves
+ * https://decomp.me/scratch/JgS7L
+ */
 INCLUDE_ASM("asm/nonmatchings/overlays/level_13/moby", func_level_13_8007C2C8);
 
 INCLUDE_ASM("asm/nonmatchings/overlays/level_13/moby", func_level_13_8007D820);
