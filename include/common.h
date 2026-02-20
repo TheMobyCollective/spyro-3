@@ -638,5 +638,4 @@ typedef struct {
 	int unk3C;
 } Unk_8006d048;
 
-
 #endif

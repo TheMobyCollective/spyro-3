@@ -1,4 +1,9 @@
 #include "common.h"
+#include "hud.h"
+
+extern int D_8006C64C;
+
+///////////////////////////////////////////////////
 
 INCLUDE_ASM("asm/nonmatchings/hud", func_80027934);
 
@@ -20,17 +25,99 @@ INCLUDE_ASM("asm/nonmatchings/hud", func_80027EE4);
 
 INCLUDE_ASM("asm/nonmatchings/hud", func_80027F88);
 
-INCLUDE_ASM("asm/nonmatchings/hud", func_80027FCC);
 
+/**
+ * UpdateHudSpriteFromClass()? - func_80027FCC() - MATCHING
+ * https://decomp.me/scratch/dYesf
+ */
+void func_80027FCC(HudEntry* hud, int spriteClass) {
+    int i;
+
+    i = func_80027934(spriteClass);
+    hud->unk24 = D_8006C738[i].spriteClass;
+    hud->unk1C.index = i;
+    hud->unk1C.animationType = D_8006C738[i].animationType;
+    hud->unk1C.frame = D_8006C738[i].frame;
+}
+
+/**
+ * SetHud() - func_8002803C()
+ * WIP
+ * https://decomp.me/scratch/VNAQB
+ */
 INCLUDE_ASM("asm/nonmatchings/hud", func_8002803C);
 
-INCLUDE_ASM("asm/nonmatchings/hud", func_80028154);
+/**
+ * ???() - func_80028154() - MATCHING
+ * Clears a HUD with a specific value in its struct, unclear what this value is right now
+ * https://decomp.me/scratch/sn1q6
+ */
+int func_80028154(int arg0) {
+    int i;
 
-INCLUDE_ASM("asm/nonmatchings/hud", func_800281D0);
+    for (i = 0; i < 8; i++) {
+        if (D_80067248[i].unk1A == arg0) {
+            break;
+        }
+    }
+    
+    if (i < 8) {
+        func_8002803C(i, -1, 0, 0, 0, 0, 0);
+        return 1;
+    }
+    return 0;
+}
 
-INCLUDE_ASM("asm/nonmatchings/hud", func_80028264);
+/**
+ * ???() - func_800281D0() - MATCHING
+ * https://decomp.me/scratch/y73dG
+ */
+void func_800281D0(int arg0, int arg1) {
+    int i;
 
-INCLUDE_ASM("asm/nonmatchings/hud", func_800282D8);
+    for (i = 0; i < 8; i++) {
+        if (D_80067248[i].unk1A == arg0) {
+            break;
+        }
+    }
+    
+    if (i < 8) {
+        func_80027FCC(&D_80067248[i], arg1);
+        D_80067248[i].unk4 = D_80067248[i].unk24;
+    }
+}
+
+/**
+ * ???() - func_80028264() - MATCHING
+ * https://decomp.me/scratch/4We6S
+ */
+void func_80028264(HudEntry* arg0) {
+    func_80027FCC(arg0, arg0->unk4);
+    arg0->unk38 = arg0->unk3A;
+    arg0->unk2C = arg0->unkC;
+    arg0->unk30 = arg0->unk10;
+    arg0->unk34 = arg0->unk14;
+    arg0->unk28 = arg0->unk8;
+    arg0->unk26 = arg0->unk6;
+    if (arg0->unk2C != 0) {
+        arg0->unk2C(arg0);
+    }
+    arg0->unk19 = 0;
+}
+
+/**
+ * ResetHuds() - func_800282D8() - MATCHING
+ * https://decomp.me/scratch/69F5F
+ */
+void func_800282D8() {
+    int i;
+    
+    for (i = 0; i < 8; i++) {
+        func_8002803C(i, -1, 0, 0, 0, 0, 1);
+        D_80067248[i].unk3F = 0x32;
+        func_80028264(&D_80067248[i]);
+    }
+}
 
 INCLUDE_ASM("asm/nonmatchings/hud", func_80028378);
 
@@ -44,7 +131,41 @@ INCLUDE_ASM("asm/nonmatchings/hud", func_800291B8);
 
 INCLUDE_ASM("asm/nonmatchings/hud", func_800293C4);
 
-INCLUDE_ASM("asm/nonmatchings/hud", func_80029674);
+/**
+ * ???() - func_80029674() - MATCHING
+ * https://decomp.me/scratch/ek230
+ */
+int func_80029674(HudEntry* arg0, int* arg1, int* arg2) {
+    int temp_t1;
+    int temp_v1;
+    int temp_a3;
+
+    // Needs an extra variable to return to match
+    int ret = 0;
+    
+    temp_t1 = arg0->unk3C;
+    temp_v1 = arg0->unk3D;
+    temp_a3 = D_8006C64C;
+    
+    if (!(arg0->unk18 & 1)) {
+        if (arg0->unk18 & 2) {
+            *arg2 -= temp_a3;
+        } else {
+            *arg2 -= (temp_v1 >> 1);
+        }
+    } else {
+        *arg2 += temp_a3;
+    }
+    
+    if (!(arg0->unk18 & 4)) {
+        if (arg0->unk18 & 8) {
+            *arg1 -= temp_t1;
+        } else {
+            *arg1 -= (temp_t1 >> 1);
+        }
+    }
+    return ret;
+}
 
 INCLUDE_ASM("asm/nonmatchings/hud", func_80029708);
 
