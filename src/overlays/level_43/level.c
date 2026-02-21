@@ -67,22 +67,21 @@ INCLUDE_ASM("asm/nonmatchings/overlays/level_43/level", func_level_43_8008D96C);
 
 INCLUDE_ASM("asm/nonmatchings/overlays/level_43/level", func_level_43_8008DB04);
 
-/* ???() - func_level_43_8008DDE4 
-//https://decomp.me/scratch/2DGL7
-//*/
+/*
+ * ???() - func_level_43_8008DDE4 
+ * https://decomp.me/scratch/2DGL7
+ */
 void func_level_43_8008DDE4(HudEntry* arg0) {
     int sp18;
     int sp1C;
     int sp20;
     int sp24;
     int sp28;
-    unsigned char temp_v0;
 
-    sp18 = (int) arg0->unk0;
-    sp1C = (int) arg0->unk2;
-    temp_v0 = arg0->unk3F;
-    if (temp_v0 != 0) {
-        sp20 = (int) (temp_v0 + 0xA) >> 1;
+    sp18 = arg0->unk0;
+    sp1C = arg0->unk2;
+    if (arg0->unk3F != 0) {
+        sp20 = (arg0->unk3F + 0xA) >> 1;
     } else {
         sp20 = 0;
     }
