@@ -4,7 +4,8 @@
 
 extern int D_8006C648; // deltaTime
 extern int D_8006C64C;
-extern SoundTable* D_8006C654;
+extern SoundTable* g_SoundTablePtr; // D_8006C654
+extern int func_8002EBB0(int*);                            /* extern */
 ///////////////////////////////////////////////////
 
 INCLUDE_ASM("asm/nonmatchings/hud", func_80027934);
@@ -52,19 +53,16 @@ void func_8002798C(HudEntry* arg0) {
 // https://decomp.me/scratch/QvPw5
 void func_80027A60(HudEntry* arg0) {
     int var_v0;
-    int* temp_v0;
-    unsigned short temp_v1;
+    // int* temp_v0;
+    // unsigned short temp_v1;
 
-    temp_v0 = arg0->unk28;
-    if (temp_v0 != 0) {
-        var_v0 = *temp_v0;
-        if (var_v0 < 0) {
-            var_v0 = 0;
-        }
-        temp_v1 = arg0->unk26;
-        arg0->unk42 = (unsigned short) var_v0;
-        if (temp_v1 < (unsigned int) (var_v0 & 0xFFFF)) {
-            arg0->unk42 = temp_v1;
+    // temp_v0 = arg0->unk28;
+    if (arg0->unk28 != 0) {
+        var_v0 = *arg0->unk28;
+        MIN(var_v0,0);
+        arg0->unk42 = var_v0;
+        if (arg0->unk26 < (unsigned short) var_v0) {
+            arg0->unk42 = arg0->unk26;
         }
     }
     func_8002798C(arg0);
@@ -101,7 +99,7 @@ void func_80027B0C(HudEntry* arg0) {
     temp_s1 = arg0->unk40;
     func_80027A60(arg0);
     if ( temp_s1 <  arg0->unk40) { // ?
-        func_8003BB50((int) D_8006C654->extraLife, 0, 0); //playSound(int,*Moby,char)
+        PlaySound((int) g_SoundTablePtr->extraLife, 0, 0); //playSound(int,*Moby,char)
     }
 }
 
@@ -113,7 +111,12 @@ INCLUDE_ASM("asm/nonmatchings/hud", func_80027E40);
 
 INCLUDE_ASM("asm/nonmatchings/hud", func_80027EE4);
 
-INCLUDE_ASM("asm/nonmatchings/hud", func_80027F88);
+// INCLUDE_ASM("asm/nonmatchings/hud", func_80027F88);
+// https://decomp.me/scratch/DupJT
+void func_80027F88(HudEntry* arg0) {
+    func_80027D60(arg0);
+    arg0->unk3C = (unsigned short) arg0->unk3C + func_8002EBB0(arg0->unk28);
+}
 
 
 /**
@@ -146,7 +149,7 @@ int func_80028154(int arg0) {
     int i;
 
     for (i = 0; i < 8; i++) {
-        if (D_80067248[i].unk1A == arg0) {
+        if (g_HudEntries[i].unk1A == arg0) {
             break;
         }
     }
@@ -166,14 +169,14 @@ void func_800281D0(int arg0, int arg1) {
     int i;
 
     for (i = 0; i < 8; i++) {
-        if (D_80067248[i].unk1A == arg0) {
+        if (g_HudEntries[i].unk1A == arg0) {
             break;
         }
     }
     
     if (i < 8) {
-        func_80027FCC(&D_80067248[i], arg1);
-        D_80067248[i].unk4 = D_80067248[i].unk24;
+        func_80027FCC(&g_HudEntries[i], arg1);
+        g_HudEntries[i].unk4 = g_HudEntries[i].unk24;
     }
 }
 
@@ -204,8 +207,8 @@ void func_800282D8() {
     
     for (i = 0; i < 8; i++) {
         func_8002803C(i, -1, 0, 0, 0, 0, 1);
-        D_80067248[i].unk3F = 0x32;
-        func_80028264(&D_80067248[i]);
+        g_HudEntries[i].unk3F = 0x32;
+        func_80028264(&g_HudEntries[i]);
     }
 }
 
@@ -279,18 +282,18 @@ INCLUDE_ASM("asm/nonmatchings/hud", func_8002A580);
 
 //https://decomp.me/scratch/CXdDl
 void func_8002A6B4(void) {
-    func_8003BB50(D_8006C654->pauseEnter, 0, 0);
+    PlaySound(g_SoundTablePtr->pauseEnter, 0, 0);
 }
 
 // https://decomp.me/scratch/Mck3B
 void func_8002A6E4(void) {
-    func_8003BB50(D_8006C654->pauseExit, 0, 0);
+    PlaySound(g_SoundTablePtr->pauseExit, 0, 0);
 }
 
 
 // https://decomp.me/scratch/omnBk
 void func_8002A714(void) {
-    int temp = func_8003BB50((int) D_8006C654->pauseMove, 0, 0); 
+    int temp = PlaySound((int) g_SoundTablePtr->pauseMove, 0, 0); 
     if (temp >= 0) {
         func_8003C140(temp, 0x640);
     }
@@ -299,7 +302,7 @@ void func_8002A714(void) {
 
 //https://decomp.me/scratch/0JDAC
 void func_8002A754(void) {
-    int temp = func_8003BB50((int) D_8006C654->changeVolume, 0, 0); //playSound
+    int temp = PlaySound((int) g_SoundTablePtr->changeVolume, 0, 0); //playSound
     if (temp >= 0) {
         func_8003C140(temp, 0xC00); 
     }

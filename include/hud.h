@@ -46,7 +46,7 @@ typedef struct {
     char unk22;
     char unk23;
     short unk24;
-    short unk26;
+    unsigned short unk26;
     int* unk28;
     void (*unk2C)(void*);
     void (*unk30)(void*);
