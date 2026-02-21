@@ -10,8 +10,10 @@ extern int func_8002EBB0(int*);                            /* extern */
 
 INCLUDE_ASM("asm/nonmatchings/hud", func_80027934);
 
-// INCLUDE_ASM("asm/nonmatchings/hud", func_8002798C);
-// https://decomp.me/scratch/IDonA
+/**
+ * ???() - func_8002798C - MATCHING 
+ * https://decomp.me/scratch/IDonA
+ */
 void func_8002798C(HudEntry* arg0) {
     int temp_v0;
     int var_a0;
@@ -49,7 +51,7 @@ void func_8002798C(HudEntry* arg0) {
     }
 }
 
-/*
+/**
  * ???() - func_80027A60 - MATCHING
  * https://decomp.me/scratch/kBxS7
 */
@@ -68,8 +70,10 @@ void func_80027A60(HudEntry* arg0) {
 }
 
 
-// INCLUDE_ASM("asm/nonmatchings/hud", func_80027AC0);
-// https://decomp.me/scratch/Aloso
+/**
+* ???() - func_80027AC0 - MATCHING
+* https://decomp.me/scratch/Aloso
+*/
 void func_80027AC0(HudEntry* arg0) {
     int var_v0;
 
@@ -85,14 +89,16 @@ void func_80027AC0(HudEntry* arg0) {
 }
 
 
-
-// INCLUDE_ASM("asm/nonmatchings/hud", func_80027B0C);
+/**
+ * ???() - func_80027B0C - MATCHING
+ * https://decomp.me/scratch/456ru
+ */ 
 void func_80027B0C(HudEntry* arg0) {
     int temp_s1;
 
     temp_s1 = arg0->unk40;
     func_80027A60(arg0);
-    if ( temp_s1 <  arg0->unk40) { // ?
+    if (temp_s1 <  arg0->unk40) {
         PlaySound((int) g_SoundTablePtr->extraLife, 0, 0); //playSound(int,*Moby,char)
     }
 }
@@ -105,8 +111,10 @@ INCLUDE_ASM("asm/nonmatchings/hud", func_80027E40);
 
 INCLUDE_ASM("asm/nonmatchings/hud", func_80027EE4);
 
-// INCLUDE_ASM("asm/nonmatchings/hud", func_80027F88);
-// https://decomp.me/scratch/DupJT
+/**
+ * ???() - func_80027F88 - MATCHING
+ * https://decomp.me/scratch/DupJT
+ */
 void func_80027F88(HudEntry* arg0) {
     func_80027D60(arg0);
     arg0->unk3C = (unsigned short) arg0->unk3C + func_8002EBB0(arg0->unk28);
@@ -270,22 +278,32 @@ INCLUDE_ASM("asm/nonmatchings/hud", func_80029CF8);
 
 INCLUDE_ASM("asm/nonmatchings/hud", func_80029E48);
 
-
-//WIP - https://decomp.me/scratch/gamSH
+/**
+ * ???() - func_8002A580 - WIP
+ * https://decomp.me/scratch/gamSH
+ */
 INCLUDE_ASM("asm/nonmatchings/hud", func_8002A580);
 
-//https://decomp.me/scratch/CXdDl
+/**
+ * ???() - func_8002A6B4 - MATCHING
+ * https://decomp.me/scratch/CXdDl
+ */
 void func_8002A6B4(void) {
     PlaySound(g_SoundTablePtr->pauseEnter, 0, 0);
 }
 
-// https://decomp.me/scratch/Mck3B
+/**
+ * ???() - func_8002A6E4 - MATCHING
+ * https://decomp.me/scratch/Mck3B
+ */
 void func_8002A6E4(void) {
     PlaySound(g_SoundTablePtr->pauseExit, 0, 0);
 }
 
-
-// https://decomp.me/scratch/omnBk
+/**
+ * ???() - func_8002A714 - MATCHING
+ * https://decomp.me/scratch/omnBk
+ */
 void func_8002A714(void) {
     int temp = PlaySound((int) g_SoundTablePtr->pauseMove, 0, 0); 
     if (temp >= 0) {
@@ -293,11 +311,15 @@ void func_8002A714(void) {
     }
 }
 
-
-//https://decomp.me/scratch/0JDAC
+/**
+ * ???() - func_8002A754 - MATCHING
+ * https://decomp.me/scratch/0JDAC
+ */
 void func_8002A754(void) {
-    int temp = PlaySound((int) g_SoundTablePtr->changeVolume, 0, 0); //playSound
+    int temp = PlaySound((int) g_SoundTablePtr->changeVolume, 0, 0); 
     if (temp >= 0) {
         func_8003C140(temp, 0xC00); 
     }
 }
+
+
