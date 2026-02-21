@@ -1,47 +1,30 @@
+#include "camera.h"
 #include "common.h"
+#include "hud.h"
 #include "mobyutil.h"
+#include "spyro.h"
 #include "stdutil.h"
 #include "ovl_header.h"
-#include "spyro.h"
 
+extern Camera g_Camera;
 
 INCLUDE_ASM("asm/nonmatchings/overlays/level_43/level", func_level_43_8008B598);
-
-extern int D_8006E044;
-extern unsigned int D_8006E048;
-extern Spyro spyro;
-extern void func_8004F178(Vector3D*, Vector3D*); // fSetVector
-extern void func_800293C4(unsigned short, unsigned short, int, int, int);           
-extern void func_80029674(void*, int*, int*);                 
-extern void func_80029708(void*, int*, int*, int*);
-
-typedef struct {
-    short unk0;
-    short unk2;
-    unsigned char unk4 [0x22]; //pad?
-    short unk26;
-    unsigned char unk28 [0x17]; //pad?
-    unsigned char unk3F;
-    int unk40;
-} ARG_8008DDE4;
-
 
 /*
  * ???() - func_level_43_8008B8B4 - MATCHING
  * https://decomp.me/scratch/QyTEy
  */
-extern void func_level_43_8008B8B4(Moby* arg0, int arg1) {
+extern void func_level_43_8008B8B4(Moby* moby, int arg1) {
     spyro.unk20a = 1;
     spyro.unk20b = arg1;
-    spyro.critterMobyPtr = arg0;
-    if (((D_8006E044 == 7) && ((unsigned int) D_8006E048 >= 2U)) || (spyro.unk17b & 0x2000)) {
-        arg0->lowDrawDistance = 0;
-        arg0->drawn = 0;
+    spyro.critterMobyPtr = moby;
+    if (((g_Camera.cameraState == CAMERA_FIRST_PERSON) && ((unsigned int) g_Camera.unk50 >= 2U)) || (spyro.unk17b & 0x2000)) {
+        moby->lowDrawDistance = 0;
+        moby->drawn = 0;
         return;
     }
-    arg0->lowDrawDistance = 0x10;
+    moby->lowDrawDistance = 0x10;
 }
-
 
 INCLUDE_ASM("asm/nonmatchings/overlays/level_43/level", func_level_43_8008B92C);
 
@@ -51,29 +34,19 @@ INCLUDE_ASM("asm/nonmatchings/overlays/level_43/level", func_level_43_8008BF10);
 
 INCLUDE_ASM("asm/nonmatchings/overlays/level_43/level", func_level_43_8008C498);
 
-
-
 /*
  * ???() - func_level_43_8008C5AC - MATCHING
+ * https://decomp.me/scratch/Jm37m
  */
-
-int func_level_43_8008C5AC(Vector3D* arg0, int arg1, Moby* arg2) {
-    int temp_s0;
-    int temp_s1;
+int func_level_43_8008C5AC(Vector3D* vec, int arg1, Moby* moby) {
+    int ret;
     
-    temp_s1 = arg1;
-    temp_s0 = spyro.unk17c;
-    
+    ret = (spyro.unk17c == 2);
     spyro.unk17a = 0x10000040;
-    spyro.unk17d = arg2;
-
-    temp_s0 = temp_s0 == 2;
-    
-    func_8004F178(&spyro.unk19, arg0);
-    
-    spyro.unk20[0] = temp_s1;
-    
-    return temp_s0;
+    spyro.unk17d = moby;
+    func_8004F178(&spyro.unk19, vec);
+    spyro.unk20[0] = arg1;
+    return ret;
 }
 
 INCLUDE_ASM("asm/nonmatchings/overlays/level_43/level", func_level_43_8008C620);
@@ -94,12 +67,10 @@ INCLUDE_ASM("asm/nonmatchings/overlays/level_43/level", func_level_43_8008D96C);
 
 INCLUDE_ASM("asm/nonmatchings/overlays/level_43/level", func_level_43_8008DB04);
 
-
-
-
-
-
-void func_level_43_8008DDE4(ARG_8008DDE4* arg0) {
+/* ???() - func_level_43_8008DDE4 
+//https://decomp.me/scratch/2DGL7
+//*/
+void func_level_43_8008DDE4(HudEntry* arg0) {
     int sp18;
     int sp1C;
     int sp20;
