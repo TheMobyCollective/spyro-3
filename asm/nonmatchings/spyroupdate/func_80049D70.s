@@ -1529,7 +1529,7 @@ glabel func_80049D70
 /* 3BAA8 8004B2A8 0780013C */  lui        $at, %hi(D_8006E52C)
 /* 3BAAC 8004B2AC 2CE522AC */  sw         $v0, %lo(D_8006E52C)($at)
 /* 3BAB0 8004B2B0 14006490 */  lbu        $a0, 0x14($v1)
-/* 3BAB4 8004B2B4 D4EE000C */  jal        func_8003BB50
+/* 3BAB4 8004B2B4 D4EE000C */  jal        PlaySound
 /* 3BAB8 8004B2B8 21300000 */   addu      $a2, $zero, $zero
 /* 3BABC 8004B2BC BC2C0108 */  j          .L8004B2F0
 /* 3BAC0 8004B2C0 00000000 */   nop

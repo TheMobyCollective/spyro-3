@@ -434,7 +434,7 @@ glabel func_8004B324
 /* 3C094 8004B894 65004014 */  bnez       $v0, .L8004BA2C
 /* 3C098 8004B898 21280000 */   addu      $a1, $zero, $zero
 /* 3C09C 8004B89C 0000048E */  lw         $a0, 0x0($s0)
-/* 3C0A0 8004B8A0 D4EE000C */  jal        func_8003BB50
+/* 3C0A0 8004B8A0 D4EE000C */  jal        PlaySound
 /* 3C0A4 8004B8A4 04000624 */   addiu     $a2, $zero, 0x4
 /* 3C0A8 8004B8A8 0780013C */  lui        $at, %hi(D_80070328 + 0x28C)
 /* 3C0AC 8004B8AC B40522AC */  sw         $v0, %lo(D_80070328 + 0x28C)($at)

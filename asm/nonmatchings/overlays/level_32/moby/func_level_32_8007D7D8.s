@@ -811,7 +811,7 @@ glabel func_level_32_8007D7D8
 /* 6DE5700 8007E1D0 0780013C */  lui        $at, %hi(D_800719DC)
 /* 6DE5704 8007E1D4 DC1922A4 */  sh         $v0, %lo(D_800719DC)($at)
 /* 6DE5708 8007E1D8 23006490 */  lbu        $a0, 0x23($v1)
-/* 6DE570C 8007E1DC D4EE000C */  jal        func_8003BB50
+/* 6DE570C 8007E1DC D4EE000C */  jal        PlaySound
 /* 6DE5710 8007E1E0 A1000624 */   addiu     $a2, $zero, 0xA1
 /* 6DE5714 8007E1E4 D3000424 */  addiu      $a0, $zero, 0xD3
 /* 6DE5718 8007E1E8 0780023C */  lui        $v0, %hi(SpawnMoby)
@@ -2760,7 +2760,7 @@ glabel func_level_32_8007D7D8
 /* 6DE7334 8007FE04 0780013C */  lui        $at, %hi(D_800719DC)
 /* 6DE7338 8007FE08 DC1922A4 */  sh         $v0, %lo(D_800719DC)($at)
 /* 6DE733C 8007FE0C 23006490 */  lbu        $a0, 0x23($v1)
-/* 6DE7340 8007FE10 D4EE000C */  jal        func_8003BB50
+/* 6DE7340 8007FE10 D4EE000C */  jal        PlaySound
 /* 6DE7344 8007FE14 A1000624 */   addiu     $a2, $zero, 0xA1
 /* 6DE7348 8007FE18 0780023C */  lui        $v0, %hi(D_8006C784)
 /* 6DE734C 8007FE1C 84C7428C */  lw         $v0, %lo(D_8006C784)($v0)

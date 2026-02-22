@@ -106,7 +106,7 @@ glabel func_level_32_80099CE0
 /* 6E01320 80099DF0 00000000 */  nop
 /* 6E01324 80099DF4 0A004490 */  lbu        $a0, 0xA($v0)
 .Llevel_32_80099DF8:
-/* 6E01328 80099DF8 D4EE000C */  jal        func_8003BB50
+/* 6E01328 80099DF8 D4EE000C */  jal        PlaySound
 /* 6E0132C 80099DFC 21300000 */   addu      $a2, $zero, $zero
 /* 6E01330 80099E00 0780013C */  lui        $at, %hi(D_80070328 + 0x29C)
 /* 6E01334 80099E04 C40530AC */  sw         $s0, %lo(D_80070328 + 0x29C)($at)

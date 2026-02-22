@@ -213,7 +213,7 @@ glabel func_level_14_80096A68
 /* 47D61A4 80096C74 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 47D61A8 80096C78 21280000 */  addu       $a1, $zero, $zero
 /* 47D61AC 80096C7C 0C004490 */  lbu        $a0, 0xC($v0)
-/* 47D61B0 80096C80 D4EE000C */  jal        func_8003BB50
+/* 47D61B0 80096C80 D4EE000C */  jal        PlaySound
 /* 47D61B4 80096C84 21300000 */   addu      $a2, $zero, $zero
 /* 47D61B8 80096C88 0F000224 */  addiu      $v0, $zero, 0xF
 .Llevel_14_80096C8C:
@@ -324,7 +324,7 @@ glabel func_level_14_80096A68
 /* 47D6340 80096E10 0780013C */  lui        $at, %hi(D_80070328 + 0x1B4)
 /* 47D6344 80096E14 DC0422A0 */  sb         $v0, %lo(D_80070328 + 0x1B4)($at)
 /* 47D6348 80096E18 08006490 */  lbu        $a0, 0x8($v1)
-/* 47D634C 80096E1C D4EE000C */  jal        func_8003BB50
+/* 47D634C 80096E1C D4EE000C */  jal        PlaySound
 /* 47D6350 80096E20 21300000 */   addu      $a2, $zero, $zero
 /* 47D6354 80096E24 935B0208 */  j          .Llevel_14_80096E4C
 /* 47D6358 80096E28 00000000 */   nop
@@ -466,7 +466,7 @@ glabel func_level_14_80096A68
 /* 47D6550 80097020 0780013C */  lui        $at, %hi(D_80070328 + 0x1B4)
 /* 47D6554 80097024 DC0422A0 */  sb         $v0, %lo(D_80070328 + 0x1B4)($at)
 /* 47D6558 80097028 08006490 */  lbu        $a0, 0x8($v1)
-/* 47D655C 8009702C D4EE000C */  jal        func_8003BB50
+/* 47D655C 8009702C D4EE000C */  jal        PlaySound
 /* 47D6560 80097030 21300000 */   addu      $a2, $zero, $zero
 /* 47D6564 80097034 0C000224 */  addiu      $v0, $zero, 0xC
 .Llevel_14_80097038:
@@ -487,7 +487,7 @@ glabel func_level_14_80096A68
 /* 47D659C 8009706C 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 47D65A0 80097070 00000000 */  nop
 /* 47D65A4 80097074 07004490 */  lbu        $a0, 0x7($v0)
-/* 47D65A8 80097078 D4EE000C */  jal        func_8003BB50
+/* 47D65A8 80097078 D4EE000C */  jal        PlaySound
 /* 47D65AC 8009707C 21300000 */   addu      $a2, $zero, $zero
 /* 47D65B0 80097080 0780023C */  lui        $v0, %hi(D_80070328 + 0x94)
 /* 47D65B4 80097084 BC03428C */  lw         $v0, %lo(D_80070328 + 0x94)($v0)
@@ -616,7 +616,7 @@ glabel func_level_14_80096A68
 /* 47D6790 80097260 21280000 */  addu       $a1, $zero, $zero
 /* 47D6794 80097264 19004490 */  lbu        $a0, 0x19($v0)
 .Llevel_14_80097268:
-/* 47D6798 80097268 D4EE000C */  jal        func_8003BB50
+/* 47D6798 80097268 D4EE000C */  jal        PlaySound
 /* 47D679C 8009726C 21300000 */   addu      $a2, $zero, $zero
 .Llevel_14_80097270:
 /* 47D67A0 80097270 0780013C */  lui        $at, %hi(D_80070328 + 0x244)
@@ -843,7 +843,7 @@ glabel func_level_14_80096A68
 /* 47D6AD8 800975A8 DC0420A0 */  sb         $zero, %lo(D_80070328 + 0x1B4)($at)
 /* 47D6ADC 800975AC 22006490 */  lbu        $a0, 0x22($v1)
 .Llevel_14_800975B0:
-/* 47D6AE0 800975B0 D4EE000C */  jal        func_8003BB50
+/* 47D6AE0 800975B0 D4EE000C */  jal        PlaySound
 /* 47D6AE4 800975B4 21300000 */   addu      $a2, $zero, $zero
 /* 47D6AE8 800975B8 AD5E0208 */  j          .Llevel_14_80097AB4
 /* 47D6AEC 800975BC 00000000 */   nop
@@ -928,7 +928,7 @@ glabel func_level_14_80096A68
 /* 47D6C04 800976D4 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 47D6C08 800976D8 00000000 */  nop
 /* 47D6C0C 800976DC 07004490 */  lbu        $a0, 0x7($v0)
-/* 47D6C10 800976E0 D4EE000C */  jal        func_8003BB50
+/* 47D6C10 800976E0 D4EE000C */  jal        PlaySound
 /* 47D6C14 800976E4 21300000 */   addu      $a2, $zero, $zero
 /* 47D6C18 800976E8 0780023C */  lui        $v0, %hi(D_80070328 + 0x94)
 /* 47D6C1C 800976EC BC03428C */  lw         $v0, %lo(D_80070328 + 0x94)($v0)
@@ -1037,7 +1037,7 @@ glabel func_level_14_80096A68
 /* 47D6DB0 80097880 0780013C */  lui        $at, %hi(D_80070328 + 0x148)
 /* 47D6DB4 80097884 700431AC */  sw         $s1, %lo(D_80070328 + 0x148)($at)
 /* 47D6DB8 80097888 0C006490 */  lbu        $a0, 0xC($v1)
-/* 47D6DBC 8009788C D4EE000C */  jal        func_8003BB50
+/* 47D6DBC 8009788C D4EE000C */  jal        PlaySound
 /* 47D6DC0 80097890 21300000 */   addu      $a2, $zero, $zero
 /* 47D6DC4 80097894 575E0208 */  j          .Llevel_14_8009795C
 /* 47D6DC8 80097898 00000000 */   nop

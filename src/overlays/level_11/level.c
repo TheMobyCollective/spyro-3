@@ -9,16 +9,16 @@ INCLUDE_ASM("asm/nonmatchings/overlays/level_11/level", func_level_11_80085498);
  * Likely reused across levels, indicating a file reuse
  * https://decomp.me/scratch/iqPAq
  */
-void func_level_11_800857B4(Moby* critter, int arg1) {
+void func_level_11_800857B4(Moby* pCritterMoby, int arg1) {
     spyro.unk20a = 1;
     spyro.unk20b = arg1;
-    spyro.critterMobyPtr = critter;
+    spyro.critterMobyPtr = pCritterMoby;
     if (((camera.cameraState == CAMERA_FIRST_PERSON) && (camera.unk50 >= 2U)) || (spyro.unk17b & 0x2000)) {
-        critter->lowDrawDistance = 0;
-        critter->drawn = 0;
+        pCritterMoby->lowDrawDistance = 0;
+        pCritterMoby->drawn = 0;
         return;
     }
-    critter->lowDrawDistance = 0x10;
+    pCritterMoby->lowDrawDistance = 0x10;
 }
 
 INCLUDE_ASM("asm/nonmatchings/overlays/level_11/level", func_level_11_8008582C);

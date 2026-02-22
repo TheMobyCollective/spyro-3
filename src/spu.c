@@ -5,7 +5,11 @@ INCLUDE_ASM("asm/nonmatchings/spu", func_8003BABC);
 
 INCLUDE_ASM("asm/nonmatchings/spu", func_8003BB10);
 
-INCLUDE_ASM("asm/nonmatchings/spu", func_8003BB50);
+/** 
+ * PlaySound() - func_8003BB50()
+ * TODO
+ */
+INCLUDE_ASM("asm/nonmatchings/spu", PlaySound);
 
 INCLUDE_ASM("asm/nonmatchings/spu", func_8003BE70);
 

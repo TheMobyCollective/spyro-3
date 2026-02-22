@@ -61,7 +61,7 @@ enum CameraState {
 
 typedef struct {
 	CameraPosition pos[9]; // not sure what they all do yet!
-} CameraPositionArray;
+} CameraPositionArray; // May be an array rather than a struct
 
 typedef struct {
 	int unk0;
@@ -96,7 +96,7 @@ typedef struct {
 	int unk13c;
 	char unk140[8];
 	int unk148[8];
-	int unk168; // 0x70 from this point might be its own struct
+	int unk168;
 	Moby* unk16c;
 	CameraPosition unk170; // "target relative camera pos during gameplay" ???
 	Vector3D unk184;
@@ -111,7 +111,8 @@ typedef struct {
 } Camera;
 
 // bss
-extern Camera camera;  // 8006dff8 - possible sub-struct at camera.unk168??
+extern Camera camera;
+extern Camera g_Camera; // TODO - unify labels
 
 void func_8001204C(); // update camera
 void func_80012168();

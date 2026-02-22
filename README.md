@@ -21,11 +21,11 @@ This version contains modchip protection, anti-crack protection, and encrypted o
 - `tools/`: contains utilities for building the game.
 
 ## Progress
-Last updated: 2026-02-20
+Last updated: 2026-02-22
 |                            | EXE     | Overlays | Total   |
 | -------------------------- | ------- | -------- | ------- |
-| Total C functions matching | 87/337 | 154/3098 | 241/3435 |
-| Progress percentage        | 25.82% | 4.97% | 7.02% |
+| Total C functions matching | 96/337 | 159/3098 | 255/3435 |
+| Progress percentage        | 28.49% | 5.13% | 7.42% |
 
 *Note: the percentages given above are not necessarily representative of a linear indicator of progress. In particular, many overlay functions repeat and will be easier to implement on the whole than the EXE's functions.*
 
@@ -34,7 +34,7 @@ Hashes listed are for the final overlays, after correcting checksums and encrypt
 
 | EXE / Overlay | Expected SHA-256                                                   | C functions matching | Progess % |
 | ------------- | ------------------------------------------------------------------ | -------------------- | --------- |
-| EXE           | `CB819EE78C556D403779309859CB08A7111331F624759BC1BC380946261BB26E` | 87/337 | 25.82% |
+| EXE           | `CB819EE78C556D403779309859CB08A7111331F624759BC1BC380946261BB26E` | 96/337 | 28.49% |
 | credits       | `BBE3F8DEB18E0F462C5918C8AFEDB03A32FE855CC6778E9B8D7E4E3849988BCD` | 0/5 | 0.00% |
 | loading       | `0E94063F258479586AE630C23260B77014BE18BAC5891FBB9A894156B5763AE2` | 2/16 | 12.50% |
 | title         | `675044820F58E521AE2F5AE67F3D050BA37D604D4F06FEC20DCD8806FD1B90F9` | 2/22 | 9.09% |
@@ -69,8 +69,8 @@ Hashes listed are for the final overlays, after correcting checksums and encrypt
 | level_38      | `84B47DF569AC584E530FCA8CB4D2952860F25FA53637CBD8776F9F2CAC3C06E9` | 1/59 | 1.69% |
 | level_40      | `4DE201FC7E423B518160361C743143A8669D538783337C2D11218C2C2A2642A2` | 1/57 | 1.75% |
 | level_41      | `99E04DDA32B461C65DE303BAC8E55D357CD0A6D87495CF430E748C1E469323AE` | 1/81 | 1.23% |
-| level_42      | `DB4F017CD24C2A53E625C0A1C68AA645491C1A822CF5C31F424E2236E58F1A04` | 1/74 | 1.35% |
-| level_43      | `30E19C0BF7EB843C38B3A21C18DC3ED4E79AB1887BC7A90AEA0EA905349767C9` | 1/79 | 1.27% |
+| level_42      | `DB4F017CD24C2A53E625C0A1C68AA645491C1A822CF5C31F424E2236E58F1A04` | 3/74 | 4.05% |
+| level_43      | `30E19C0BF7EB843C38B3A21C18DC3ED4E79AB1887BC7A90AEA0EA905349767C9` | 4/79 | 5.06% |
 | level_44      | `372FDF9B8551C4FC8BE6DADFC0B8F012D6358B8C2B0560B47A9858E19B0CFD95` | 1/74 | 1.35% |
 | level_45      | `6B3C55B68394E9E3035198949C2025E46D2FB4A31109B51BB88C355C7D7F2E1F` | 1/64 | 1.56% |
 | level_46      | `42B5819A5AE3BBA0E07A4282D5CD74AC819CBC5A486F8AAE06545AC77C287EA2` | 1/68 | 1.47% |

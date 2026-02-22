@@ -3,8 +3,7 @@
 
 #include "common.h"
 
-extern int func_8003BB50(int localSoundId, Moby *moby, char param_3); // func_8003BB50 playsound
-extern int PlaySound(int localSoundId, Moby *moby, char param_3); // func_8003BB50 playsound
+extern int PlaySound(int localSoundId, Moby *moby, char param_3); // 8003BB50
 extern void func_8003BEDC();
 extern void func_8003C184();
 

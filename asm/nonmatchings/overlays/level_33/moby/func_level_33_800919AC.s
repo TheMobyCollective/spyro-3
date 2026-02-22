@@ -120,7 +120,7 @@ glabel func_level_33_800919AC
 /* 71C9858 80091B28 0780013C */  lui        $at, %hi(D_800719DC)
 /* 71C985C 80091B2C DC1922A4 */  sh         $v0, %lo(D_800719DC)($at)
 /* 71C9860 80091B30 23006490 */  lbu        $a0, 0x23($v1)
-/* 71C9864 80091B34 D4EE000C */  jal        func_8003BB50
+/* 71C9864 80091B34 D4EE000C */  jal        PlaySound
 /* 71C9868 80091B38 A1000624 */   addiu     $a2, $zero, 0xA1
 /* 71C986C 80091B3C D3000424 */  addiu      $a0, $zero, 0xD3
 /* 71C9870 80091B40 0780023C */  lui        $v0, %hi(SpawnMoby)

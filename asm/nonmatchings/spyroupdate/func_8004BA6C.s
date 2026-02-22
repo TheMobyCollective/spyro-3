@@ -141,7 +141,7 @@ glabel func_8004BA6C
 /* 3C37C 8004BB7C 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 3C380 8004BB80 00000000 */  nop
 /* 3C384 8004BB84 06004490 */  lbu        $a0, 0x6($v0)
-/* 3C388 8004BB88 D4EE000C */  jal        func_8003BB50
+/* 3C388 8004BB88 D4EE000C */  jal        PlaySound
 /* 3C38C 8004BB8C 04000624 */   addiu     $a2, $zero, 0x4
 /* 3C390 8004BB90 F42E0108 */  j          .L8004BBD0
 /* 3C394 8004BB94 00000000 */   nop
@@ -207,7 +207,7 @@ glabel func_8004BA6C
 /* 3C468 8004BC68 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 3C46C 8004BC6C 21280000 */  addu       $a1, $zero, $zero
 /* 3C470 8004BC70 12004490 */  lbu        $a0, 0x12($v0)
-/* 3C474 8004BC74 D4EE000C */  jal        func_8003BB50
+/* 3C474 8004BC74 D4EE000C */  jal        PlaySound
 /* 3C478 8004BC78 21300000 */   addu      $a2, $zero, $zero
 /* 3C47C 8004BC7C 21804000 */  addu       $s0, $v0, $zero
 /* 3C480 8004BC80 0780013C */  lui        $at, %hi(D_80070328 + 0x29C)
@@ -227,7 +227,7 @@ glabel func_8004BA6C
 /* 3C4B0 8004BCB0 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 3C4B4 8004BCB4 21280000 */  addu       $a1, $zero, $zero
 /* 3C4B8 8004BCB8 12004490 */  lbu        $a0, 0x12($v0)
-/* 3C4BC 8004BCBC D4EE000C */  jal        func_8003BB50
+/* 3C4BC 8004BCBC D4EE000C */  jal        PlaySound
 /* 3C4C0 8004BCC0 21300000 */   addu      $a2, $zero, $zero
 /* 3C4C4 8004BCC4 21804000 */  addu       $s0, $v0, $zero
 /* 3C4C8 8004BCC8 0780013C */  lui        $at, %hi(D_80070328 + 0x29C)
@@ -274,7 +274,7 @@ glabel func_8004BA6C
 /* 3C554 8004BD54 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 3C558 8004BD58 21280000 */  addu       $a1, $zero, $zero
 /* 3C55C 8004BD5C 12004490 */  lbu        $a0, 0x12($v0)
-/* 3C560 8004BD60 D4EE000C */  jal        func_8003BB50
+/* 3C560 8004BD60 D4EE000C */  jal        PlaySound
 /* 3C564 8004BD64 21300000 */   addu      $a2, $zero, $zero
 /* 3C568 8004BD68 21804000 */  addu       $s0, $v0, $zero
 /* 3C56C 8004BD6C 0780013C */  lui        $at, %hi(D_80070328 + 0x29C)

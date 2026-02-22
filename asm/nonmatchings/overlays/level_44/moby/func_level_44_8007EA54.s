@@ -98,7 +98,7 @@ glabel func_level_44_8007EA54
 /* 8B52010 8007EAE0 0780013C */  lui        $at, %hi(D_800719DC)
 /* 8B52014 8007EAE4 DC1922A4 */  sh         $v0, %lo(D_800719DC)($at)
 /* 8B52018 8007EAE8 23006490 */  lbu        $a0, 0x23($v1)
-/* 8B5201C 8007EAEC D4EE000C */  jal        func_8003BB50
+/* 8B5201C 8007EAEC D4EE000C */  jal        PlaySound
 /* 8B52020 8007EAF0 A1000624 */   addiu     $a2, $zero, 0xA1
 /* 8B52024 8007EAF4 D3000424 */  addiu      $a0, $zero, 0xD3
 /* 8B52028 8007EAF8 0780023C */  lui        $v0, %hi(SpawnMoby)

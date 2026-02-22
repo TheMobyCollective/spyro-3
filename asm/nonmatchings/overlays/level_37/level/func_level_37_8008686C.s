@@ -35,7 +35,7 @@ glabel func_level_37_8008686C
 /* 7AB2610 800868E0 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 7AB2614 800868E4 21280000 */  addu       $a1, $zero, $zero
 /* 7AB2618 800868E8 1E004490 */  lbu        $a0, 0x1E($v0)
-/* 7AB261C 800868EC D4EE000C */  jal        func_8003BB50
+/* 7AB261C 800868EC D4EE000C */  jal        PlaySound
 /* 7AB2620 800868F0 21300000 */   addu      $a2, $zero, $zero
 .Llevel_37_800868F4:
 /* 7AB2624 800868F4 2800228E */  lw         $v0, 0x28($s1)

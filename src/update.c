@@ -125,7 +125,7 @@ INCLUDE_ASM("asm/nonmatchings/update", func_80054450);
  * InitGameOver() - func_80054AF8() - MATCHING
  * https://decomp.me/scratch/G5jiI
  */
-void func_80054AF8(void) {
+void func_80054AF8() {
     game.state = GAMESTATE_GAME_OVER;
     pauseData.dat_8006fbc8 = 0;
     D_8006C598 = 0;
@@ -271,7 +271,7 @@ void Update(void) {
         break;
     case GAMESTATE_SPEEDWAY_MENU:
         var_a0 = 0x10;
-        if (camera.unk50 == 2) {
+        if (camera.unk50 == 2) { // unsigned in some places? maybe causing matching issues
             (*ovlHeader.UpdateSpeedwayMenu)(var_a0); // 0x10 // UpdateSpeedwayMenu
             var_a0 = 0x11;
         }

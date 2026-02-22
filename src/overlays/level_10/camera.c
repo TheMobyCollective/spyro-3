@@ -1,6 +1,7 @@
 #include "common.h"
 #include "camera.h"
 #include "spyro.h"
+#include "stdutil.h"
 
 #define LEVEL_ID 10
 

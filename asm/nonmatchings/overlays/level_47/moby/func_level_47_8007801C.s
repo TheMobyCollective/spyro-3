@@ -260,7 +260,7 @@ glabel func_level_47_8007801C
 /* 91178E8 800783B8 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 91178EC 800783BC 00000000 */  nop
 /* 91178F0 800783C0 1D004490 */  lbu        $a0, 0x1D($v0)
-/* 91178F4 800783C4 D4EE000C */  jal        func_8003BB50
+/* 91178F4 800783C4 D4EE000C */  jal        PlaySound
 /* 91178F8 800783C8 04000624 */   addiu     $a2, $zero, 0x4
 /* 91178FC 800783CC 100042AE */  sw         $v0, 0x10($s2)
 .Llevel_47_800783D0:

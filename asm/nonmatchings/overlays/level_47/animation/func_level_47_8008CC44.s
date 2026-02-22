@@ -90,7 +90,7 @@ glabel func_level_47_8008CC44
 /* 912C24C 8008CD1C 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 912C250 8008CD20 00000000 */  nop
 /* 912C254 8008CD24 0D004490 */  lbu        $a0, 0xD($v0)
-/* 912C258 8008CD28 D4EE000C */  jal        func_8003BB50
+/* 912C258 8008CD28 D4EE000C */  jal        PlaySound
 /* 912C25C 8008CD2C 21300000 */   addu      $a2, $zero, $zero
 /* 912C260 8008CD30 0780013C */  lui        $at, %hi(D_80070328 + 0x29C)
 /* 912C264 8008CD34 C40530AC */  sw         $s0, %lo(D_80070328 + 0x29C)($at)

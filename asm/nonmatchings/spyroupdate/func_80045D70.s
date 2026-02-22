@@ -312,7 +312,7 @@ glabel func_80045D70
 /* 369A8 800461A8 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 369AC 800461AC 21280000 */  addu       $a1, $zero, $zero
 /* 369B0 800461B0 03004490 */  lbu        $a0, 0x3($v0)
-/* 369B4 800461B4 D4EE000C */  jal        func_8003BB50
+/* 369B4 800461B4 D4EE000C */  jal        PlaySound
 /* 369B8 800461B8 21300000 */   addu      $a2, $zero, $zero
 /* 369BC 800461BC E51B0108 */  j          .L80046F94
 /* 369C0 800461C0 00000000 */   nop
@@ -629,7 +629,7 @@ glabel func_80045D70
 /* 36E4C 8004664C 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 36E50 80046650 00000000 */  nop
 /* 36E54 80046654 04004490 */  lbu        $a0, 0x4($v0)
-/* 36E58 80046658 D4EE000C */  jal        func_8003BB50
+/* 36E58 80046658 D4EE000C */  jal        PlaySound
 /* 36E5C 8004665C 21300000 */   addu      $a2, $zero, $zero
 /* 36E60 80046660 1000C427 */  addiu      $a0, $fp, 0x10
 /* 36E64 80046664 03000224 */  addiu      $v0, $zero, 0x3
@@ -807,7 +807,7 @@ glabel func_80045D70
 /* 370E4 800468E4 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 370E8 800468E8 00000000 */  nop
 /* 370EC 800468EC 05004490 */  lbu        $a0, 0x5($v0)
-/* 370F0 800468F0 D4EE000C */  jal        func_8003BB50
+/* 370F0 800468F0 D4EE000C */  jal        PlaySound
 /* 370F4 800468F4 21300000 */   addu      $a2, $zero, $zero
 /* 370F8 800468F8 C8FFC28F */  lw         $v0, -0x38($fp)
 /* 370FC 800468FC F8FFC0AF */  sw         $zero, -0x8($fp)

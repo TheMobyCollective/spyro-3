@@ -378,7 +378,7 @@ glabel func_loading_80078678
 .Lloading_80078C04:
 /* 3231134 80078C04 01000424 */  addiu      $a0, $zero, 0x1
 /* 3231138 80078C08 21280000 */  addu       $a1, $zero, $zero
-/* 323113C 80078C0C D4EE000C */  jal        func_8003BB50
+/* 323113C 80078C0C D4EE000C */  jal        PlaySound
 /* 3231140 80078C10 21300000 */   addu      $a2, $zero, $zero
 /* 3231144 80078C14 21204000 */  addu       $a0, $v0, $zero
 /* 3231148 80078C18 50F0000C */  jal        func_8003C140
@@ -478,7 +478,7 @@ glabel func_loading_80078678
 .Lloading_80078D7C:
 /* 32312AC 80078D7C 21200000 */  addu       $a0, $zero, $zero
 /* 32312B0 80078D80 21280000 */  addu       $a1, $zero, $zero
-/* 32312B4 80078D84 D4EE000C */  jal        func_8003BB50
+/* 32312B4 80078D84 D4EE000C */  jal        PlaySound
 /* 32312B8 80078D88 21300000 */   addu      $a2, $zero, $zero
 /* 32312BC 80078D8C 21204000 */  addu       $a0, $v0, $zero
 /* 32312C0 80078D90 50F0000C */  jal        func_8003C140

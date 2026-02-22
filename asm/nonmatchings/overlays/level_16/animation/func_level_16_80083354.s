@@ -1337,7 +1337,7 @@ glabel func_level_16_80083354
 /* 4BA5BBC 8008468C 0780013C */  lui        $at, %hi(D_8006E52C)
 /* 4BA5BC0 80084690 2CE522AC */  sw         $v0, %lo(D_8006E52C)($at)
 /* 4BA5BC4 80084694 14006490 */  lbu        $a0, 0x14($v1)
-/* 4BA5BC8 80084698 D4EE000C */  jal        func_8003BB50
+/* 4BA5BC8 80084698 D4EE000C */  jal        PlaySound
 /* 4BA5BCC 8008469C 21300000 */   addu      $a2, $zero, $zero
 /* 4BA5BD0 800846A0 AC110208 */  j          .Llevel_16_800846B0
 /* 4BA5BD4 800846A4 00000000 */   nop

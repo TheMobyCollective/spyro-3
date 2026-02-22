@@ -92,7 +92,7 @@ glabel func_cutscene_76_80076AA4
 /* 264D118 80076BE8 00010224 */   addiu     $v0, $zero, 0x100
 /* 264D11C 80076BEC 21200000 */  addu       $a0, $zero, $zero
 /* 264D120 80076BF0 21280000 */  addu       $a1, $zero, $zero
-/* 264D124 80076BF4 D4EE000C */  jal        func_8003BB50
+/* 264D124 80076BF4 D4EE000C */  jal        PlaySound
 /* 264D128 80076BF8 04000624 */   addiu     $a2, $zero, 0x4
 /* 264D12C 80076BFC 0780013C */  lui        $at, %hi(D_8006EE14)
 /* 264D130 80076C00 14EE22AC */  sw         $v0, %lo(D_8006EE14)($at)

@@ -348,7 +348,7 @@ glabel func_level_33_8009B8A8
 /* 71D3928 8009BBF8 0780013C */  lui        $at, %hi(D_80070328 + 0x148)
 /* 71D392C 8009BBFC 700422AC */  sw         $v0, %lo(D_80070328 + 0x148)($at)
 /* 71D3930 8009BC00 0C006490 */  lbu        $a0, 0xC($v1)
-/* 71D3934 8009BC04 D4EE000C */  jal        func_8003BB50
+/* 71D3934 8009BC04 D4EE000C */  jal        PlaySound
 /* 71D3938 8009BC08 21300000 */   addu      $a2, $zero, $zero
 /* 71D393C 8009BC0C 726F0208 */  j          .Llevel_33_8009BDC8
 /* 71D3940 8009BC10 00000000 */   nop
@@ -373,7 +373,7 @@ glabel func_level_33_8009B8A8
 /* 71D3984 8009BC54 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 71D3988 8009BC58 21280000 */  addu       $a1, $zero, $zero
 /* 71D398C 8009BC5C 0C004490 */  lbu        $a0, 0xC($v0)
-/* 71D3990 8009BC60 D4EE000C */  jal        func_8003BB50
+/* 71D3990 8009BC60 D4EE000C */  jal        PlaySound
 /* 71D3994 8009BC64 21300000 */   addu      $a2, $zero, $zero
 /* 71D3998 8009BC68 0F000224 */  addiu      $v0, $zero, 0xF
 .Llevel_33_8009BC6C:
@@ -552,7 +552,7 @@ glabel func_level_33_8009B8A8
 /* 71D3C14 8009BEE4 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 71D3C18 8009BEE8 21280000 */  addu       $a1, $zero, $zero
 /* 71D3C1C 8009BEEC 0E004490 */  lbu        $a0, 0xE($v0)
-/* 71D3C20 8009BEF0 D4EE000C */  jal        func_8003BB50
+/* 71D3C20 8009BEF0 D4EE000C */  jal        PlaySound
 /* 71D3C24 8009BEF4 21300000 */   addu      $a2, $zero, $zero
 /* 71D3C28 8009BEF8 0780033C */  lui        $v1, %hi(D_8006C654)
 /* 71D3C2C 8009BEFC 54C6638C */  lw         $v1, %lo(D_8006C654)($v1)
@@ -734,7 +734,7 @@ glabel func_level_33_8009B8A8
 /* 71D3EC4 8009C194 0780013C */  lui        $at, %hi(D_80070328 + 0x1B4)
 /* 71D3EC8 8009C198 DC0420A0 */  sb         $zero, %lo(D_80070328 + 0x1B4)($at)
 /* 71D3ECC 8009C19C 22004490 */  lbu        $a0, 0x22($v0)
-/* 71D3ED0 8009C1A0 D4EE000C */  jal        func_8003BB50
+/* 71D3ED0 8009C1A0 D4EE000C */  jal        PlaySound
 /* 71D3ED4 8009C1A4 21300000 */   addu      $a2, $zero, $zero
 /* 71D3ED8 8009C1A8 A7700208 */  j          .Llevel_33_8009C29C
 /* 71D3EDC 8009C1AC 00000000 */   nop

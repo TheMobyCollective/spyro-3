@@ -166,7 +166,7 @@ glabel func_credits_8007458C
 /* 97A9520 800747F0 0000228E */  lw         $v0, 0x0($s1)
 /* 97A9524 800747F4 21280000 */  addu       $a1, $zero, $zero
 /* 97A9528 800747F8 04000624 */  addiu      $a2, $zero, 0x4
-/* 97A952C 800747FC D4EE000C */  jal        func_8003BB50
+/* 97A952C 800747FC D4EE000C */  jal        PlaySound
 /* 97A9530 80074800 21802202 */   addu      $s0, $s1, $v0
 /* 97A9534 80074804 21100002 */  addu       $v0, $s0, $zero
 .Lcredits_80074808:

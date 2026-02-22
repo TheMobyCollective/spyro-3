@@ -116,12 +116,12 @@ void ActivateCheat(int cheat) {
             g_CheatFlags.dialogueTestIndex = 1;
             streamingData.musicEnabled = 0;
         }
-        func_8003BB50(soundTablePtr->gemCollect, 0, 0);
+        PlaySound(soundTablePtr->gemCollect, 0, 0);
         return;
 
     case CHEAT_CREDITS:
         D_8006C67C = (short) D_8006C5BC;
-        func_8003BB50(soundTablePtr->gemCollect, 0, 0);
+        PlaySound(soundTablePtr->gemCollect, 0, 0);
         func_80054CD8();
         return;
 
@@ -133,7 +133,7 @@ void ActivateCheat(int cheat) {
         var_s1 = -1;
         var_s2 = -1;
 
-        func_8003BB50(soundTablePtr->gemCollect, 0, 0); // D_8006C654->unk1
+        PlaySound(soundTablePtr->gemCollect, 0, 0); // D_8006C654->unk1
         do {
             func_8005956C(0); // VSync
             func_8003A584();
@@ -150,7 +150,7 @@ void ActivateCheat(int cheat) {
             else if (pad.state.pressed & L1)  var_s1 = 9;
         } while (var_s1 < 0);
 
-        func_8003BB50(soundTablePtr->pauseMove, 0, 0);
+        PlaySound(soundTablePtr->pauseMove, 0, 0);
         while (var_s2 < 0) {
             func_8005956C(0); // VSync
             func_8003A584();
@@ -168,13 +168,13 @@ void ActivateCheat(int cheat) {
         }
 
         temp_s0 = var_s1 * 10 + var_s2;
-        func_8003BB50(soundTablePtr->pauseExit, 0, 0);
+        PlaySound(soundTablePtr->pauseExit, 0, 0);
         InitiateLevelWarp(temp_s0);
         return;
 
     case CHEAT_SQUIDBOARD:
         g_CheatFlags.squidboard = !g_CheatFlags.squidboard;
-        func_8003BB50(soundTablePtr->gemCollect, 0, 0);
+        PlaySound(soundTablePtr->gemCollect, 0, 0);
         return;
         
     case CHEAT_BIG_HEAD:
@@ -183,7 +183,7 @@ void ActivateCheat(int cheat) {
         g_CheatFlags.spyroLength = 0x2000;
         g_CheatFlags.flatMode = 0;
         g_CheatFlags.bigHeadMode = 1 - g_CheatFlags.bigHeadMode;
-        func_8003BB50(soundTablePtr->gemCollect, 0, 0);
+        PlaySound(soundTablePtr->gemCollect, 0, 0);
         return;
         
     case CHEAT_FLAT_MODE:
@@ -192,12 +192,12 @@ void ActivateCheat(int cheat) {
         g_CheatFlags.spyroLength = 0x1000;
         g_CheatFlags.bigHeadMode = 0;
         g_CheatFlags.flatMode = 1 - g_CheatFlags.flatMode;
-        func_8003BB50(soundTablePtr->gemCollect, 0, 0);
+        PlaySound(soundTablePtr->gemCollect, 0, 0);
         return;
         
     case CHEAT_COLOUR:
         g_CheatFlags.bodyColour = 0;
-        func_8003BB50(soundTablePtr->pauseExit, 0, 0); //
+        PlaySound(soundTablePtr->pauseExit, 0, 0); //
         do {
             func_8005956C(0); // VSync
             func_8003A584();
@@ -211,7 +211,7 @@ void ActivateCheat(int cheat) {
         else if ((pad.state.pressed & 0x1000) != 0) g_CheatFlags.bodyColour = 5;
         else if ((pad.state.pressed & 0x4000) != 0) g_CheatFlags.bodyColour = 6;
         
-        func_8003BB50(soundTablePtr->gemCollect, 0, 0);
+        PlaySound(soundTablePtr->gemCollect, 0, 0);
         return;
         
     case CHEAT_EXTRA_HIT:
@@ -221,12 +221,12 @@ void ActivateCheat(int cheat) {
         temp_v0 = 1 - g_CheatFlags.extraHitpoint;
         g_CheatFlags.extraHitpoint = temp_v0;
         sparx.maxHitpoints = (char)temp_v0 ? 4 : 3;
-        func_8003BB50(soundTablePtr->gemCollect, 0, 0);
+        PlaySound(soundTablePtr->gemCollect, 0, 0);
         return;
         
     case CHEAT_OVERRIDE_ACT:
         var_s0 = -1;
-        func_8003BB50(soundTablePtr->gemCollect, 0, 0);
+        PlaySound(soundTablePtr->gemCollect, 0, 0);
         do {
             func_8005956C(0);
             func_8003A584();
@@ -240,15 +240,15 @@ void ActivateCheat(int cheat) {
             var_s0 = -1;
         }
         localDifficultyOverride = var_s0;
-        if       (var_s0 == -1) func_8003BB50(soundTablePtr->gemCollect, 0, 0);
-        else if  (var_s0 == 0)  func_8003BB50(soundTablePtr->pauseExit, 0, 0);
-        else if  (var_s0 == 1)  func_8003BB50(soundTablePtr->pauseEnter, 0, 0);
-        else if  (var_s0 == 2)  func_8003BB50(soundTablePtr->flame, 0, 0);
+        if       (var_s0 == -1) PlaySound(soundTablePtr->gemCollect, 0, 0);
+        else if  (var_s0 == 0)  PlaySound(soundTablePtr->pauseExit, 0, 0);
+        else if  (var_s0 == 1)  PlaySound(soundTablePtr->pauseEnter, 0, 0);
+        else if  (var_s0 == 2)  PlaySound(soundTablePtr->flame, 0, 0);
         return;
         
     case CHEAT_GLOBAL_ACT:
         var_s0_2 = -1;
-        func_8003BB50(soundTablePtr->gemCollect, 0, 0);
+        PlaySound(soundTablePtr->gemCollect, 0, 0);
         do {
             func_8005956C(0); // VSync
             func_8003A584();
@@ -270,20 +270,20 @@ void ActivateCheat(int cheat) {
             break;
 		}
         
-        if       (var_s0_2 == 0)  func_8003BB50(soundTablePtr->pauseExit, 0, 0);
-        else if  (var_s0_2 == 1)  func_8003BB50(soundTablePtr->pauseEnter, 0, 0);
-        else if  (var_s0_2 == 2)  func_8003BB50(soundTablePtr->flame, 0, 0);
+        if       (var_s0_2 == 0)  PlaySound(soundTablePtr->pauseExit, 0, 0);
+        else if  (var_s0_2 == 1)  PlaySound(soundTablePtr->pauseEnter, 0, 0);
+        else if  (var_s0_2 == 2)  PlaySound(soundTablePtr->flame, 0, 0);
         
         return;
         
     case CHEAT_MAX_LIVES:
         D_8006C784 = 99;
-        func_8003BB50(soundTablePtr->gemCollect, 0, 0);
+        PlaySound(soundTablePtr->gemCollect, 0, 0);
         return;
         
     case CHEAT_TREASURE_FINDER:
         sparx.treasureFinder = 1;
-        func_8003BB50(soundTablePtr->gemCollect, 0, 0);
+        PlaySound(soundTablePtr->gemCollect, 0, 0);
         return;
     }
 }

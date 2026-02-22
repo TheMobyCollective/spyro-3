@@ -234,7 +234,7 @@ glabel func_level_13_8007A874
 /* 4419118 8007ABE8 0780013C */  lui        $at, %hi(D_800719DC)
 /* 441911C 8007ABEC DC1922A4 */  sh         $v0, %lo(D_800719DC)($at)
 /* 4419120 8007ABF0 23006490 */  lbu        $a0, 0x23($v1)
-/* 4419124 8007ABF4 D4EE000C */  jal        func_8003BB50
+/* 4419124 8007ABF4 D4EE000C */  jal        PlaySound
 /* 4419128 8007ABF8 A1000624 */   addiu     $a2, $zero, 0xA1
 .Llevel_13_8007ABFC:
 /* 441912C 8007ABFC 3400BF8F */  lw         $ra, 0x34($sp)

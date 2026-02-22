@@ -392,7 +392,7 @@ glabel func_title_80074DEC
 /* 240E0 800753B0 060062A4 */  sh         $v0, 0x6($v1)
 /* 240E4 800753B4 00080224 */  addiu      $v0, $zero, 0x800
 /* 240E8 800753B8 0C0062A4 */  sh         $v0, 0xC($v1)
-/* 240EC 800753BC D4EE000C */  jal        func_8003BB50
+/* 240EC 800753BC D4EE000C */  jal        PlaySound
 /* 240F0 800753C0 0E0062A4 */   sh        $v0, 0xE($v1)
 /* 240F4 800753C4 0780033C */  lui        $v1, %hi(D_8006EDF0)
 /* 240F8 800753C8 F0ED638C */  lw         $v1, %lo(D_8006EDF0)($v1)

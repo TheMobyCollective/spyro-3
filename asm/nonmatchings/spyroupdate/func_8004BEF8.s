@@ -199,7 +199,7 @@ glabel func_8004BEF8
 /* 3C8F0 8004C0F0 54C6428C */  lw         $v0, %lo(g_SoundTablePtr)($v0)
 /* 3C8F4 8004C0F4 21280000 */  addu       $a1, $zero, $zero
 /* 3C8F8 8004C0F8 10004490 */  lbu        $a0, 0x10($v0)
-/* 3C8FC 8004C0FC D4EE000C */  jal        func_8003BB50
+/* 3C8FC 8004C0FC D4EE000C */  jal        PlaySound
 /* 3C900 8004C100 21300000 */   addu      $a2, $zero, $zero
 .L8004C104:
 /* 3C904 8004C104 8E0E010C */  jal        func_80043A38
@@ -381,7 +381,7 @@ glabel func_8004BEF8
 /* 3CB98 8004C398 0780013C */  lui        $at, %hi(g_Spyro + 0x1B4)
 /* 3CB9C 8004C39C DC0420A0 */  sb         $zero, %lo(g_Spyro + 0x1B4)($at)
 /* 3CBA0 8004C3A0 22004490 */  lbu        $a0, 0x22($v0)
-/* 3CBA4 8004C3A4 D4EE000C */  jal        func_8003BB50
+/* 3CBA4 8004C3A4 D4EE000C */  jal        PlaySound
 /* 3CBA8 8004C3A8 21300000 */   addu      $a2, $zero, $zero
 /* 3CBAC 8004C3AC 02330108 */  j          .L8004CC08
 /* 3CBB0 8004C3B0 00000000 */   nop
@@ -601,7 +601,7 @@ glabel func_8004BEF8
 /* 3CEC8 8004C6C8 0780013C */  lui        $at, %hi(g_Spyro + 0x1B4)
 /* 3CECC 8004C6CC DC0422A0 */  sb         $v0, %lo(g_Spyro + 0x1B4)($at)
 /* 3CED0 8004C6D0 02006490 */  lbu        $a0, 0x2($v1)
-/* 3CED4 8004C6D4 D4EE000C */  jal        func_8003BB50
+/* 3CED4 8004C6D4 D4EE000C */  jal        PlaySound
 /* 3CED8 8004C6D8 21300000 */   addu      $a2, $zero, $zero
 /* 3CEDC 8004C6DC 78000224 */  addiu      $v0, $zero, 0x78
 /* 3CEE0 8004C6E0 0780013C */  lui        $at, %hi(g_Pad + 0x28)
@@ -687,7 +687,7 @@ glabel func_8004BEF8
 /* 3D00C 8004C80C 54C6428C */  lw         $v0, %lo(g_SoundTablePtr)($v0)
 /* 3D010 8004C810 21280000 */  addu       $a1, $zero, $zero
 /* 3D014 8004C814 15004490 */  lbu        $a0, 0x15($v0)
-/* 3D018 8004C818 D4EE000C */  jal        func_8003BB50
+/* 3D018 8004C818 D4EE000C */  jal        PlaySound
 /* 3D01C 8004C81C 21300000 */   addu      $a2, $zero, $zero
 /* 3D020 8004C820 02330108 */  j          .L8004CC08
 /* 3D024 8004C824 00000000 */   nop
@@ -797,7 +797,7 @@ glabel func_8004BEF8
 /* 3D1A4 8004C9A4 54C6428C */  lw         $v0, %lo(g_SoundTablePtr)($v0)
 /* 3D1A8 8004C9A8 00000000 */  nop
 /* 3D1AC 8004C9AC 07004490 */  lbu        $a0, 0x7($v0)
-/* 3D1B0 8004C9B0 D4EE000C */  jal        func_8003BB50
+/* 3D1B0 8004C9B0 D4EE000C */  jal        PlaySound
 /* 3D1B4 8004C9B4 21300000 */   addu      $a2, $zero, $zero
 /* 3D1B8 8004C9B8 4800B027 */  addiu      $s0, $sp, 0x48
 /* 3D1BC 8004C9BC 21200002 */  addu       $a0, $s0, $zero

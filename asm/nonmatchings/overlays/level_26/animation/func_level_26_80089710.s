@@ -336,7 +336,7 @@ glabel func_level_26_80089710
 /* 62398B8 80089B88 06004014 */  bnez       $v0, .Llevel_26_80089BA4
 /* 62398BC 80089B8C 21280000 */   addu      $a1, $zero, $zero
 /* 62398C0 80089B90 0000048E */  lw         $a0, 0x0($s0)
-/* 62398C4 80089B94 D4EE000C */  jal        func_8003BB50
+/* 62398C4 80089B94 D4EE000C */  jal        PlaySound
 /* 62398C8 80089B98 04000624 */   addiu     $a2, $zero, 0x4
 /* 62398CC 80089B9C 0780013C */  lui        $at, %hi(D_80070328 + 0x28C)
 /* 62398D0 80089BA0 B40522AC */  sw         $v0, %lo(D_80070328 + 0x28C)($at)

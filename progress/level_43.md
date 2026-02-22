@@ -14,12 +14,12 @@
 
 <!-- level.c -->
 - [ ] func_level_43_8008B598
-- [ ] func_level_43_8008B8B4
+- [x] func_level_43_8008B8B4
 - [ ] func_level_43_8008B92C
 - [ ] func_level_43_8008BE00
 - [ ] func_level_43_8008BF10
 - [ ] func_level_43_8008C498
-- [ ] func_level_43_8008C5AC
+- [x] func_level_43_8008C5AC
 - [ ] func_level_43_8008C620
 - [ ] func_level_43_8008CD10
 - [ ] func_level_43_8008CE08
@@ -29,7 +29,7 @@
 - [ ] func_level_43_8008D73C
 - [ ] func_level_43_8008D96C
 - [ ] func_level_43_8008DB04
-- [ ] func_level_43_8008DDE4
+- [x] func_level_43_8008DDE4
 
 <!-- moby.c -->
 - [ ] func_level_43_8007584C

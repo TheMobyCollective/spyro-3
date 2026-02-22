@@ -451,7 +451,7 @@ glabel func_level_26_80079D3C
 /* 622A088 8007A358 0780013C */  lui        $at, %hi(D_800719DC)
 /* 622A08C 8007A35C DC1922A4 */  sh         $v0, %lo(D_800719DC)($at)
 /* 622A090 8007A360 23006490 */  lbu        $a0, 0x23($v1)
-/* 622A094 8007A364 D4EE000C */  jal        func_8003BB50
+/* 622A094 8007A364 D4EE000C */  jal        PlaySound
 /* 622A098 8007A368 A1000624 */   addiu     $a2, $zero, 0xA1
 /* 622A09C 8007A36C D3000424 */  addiu      $a0, $zero, 0xD3
 /* 622A0A0 8007A370 0780023C */  lui        $v0, %hi(SpawnMoby)

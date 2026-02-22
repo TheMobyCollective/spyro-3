@@ -273,7 +273,7 @@ glabel func_level_40_80080BE4
 /* 7E6C4D8 80080FA8 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 7E6C4DC 80080FAC 00000000 */  nop
 /* 7E6C4E0 80080FB0 1D004490 */  lbu        $a0, 0x1D($v0)
-/* 7E6C4E4 80080FB4 D4EE000C */  jal        func_8003BB50
+/* 7E6C4E4 80080FB4 D4EE000C */  jal        PlaySound
 /* 7E6C4E8 80080FB8 04000624 */   addiu     $a2, $zero, 0x4
 /* 7E6C4EC 80080FBC 100042AE */  sw         $v0, 0x10($s2)
 .Llevel_40_80080FC0:

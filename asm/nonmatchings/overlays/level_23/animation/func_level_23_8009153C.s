@@ -1953,7 +1953,7 @@ glabel func_level_23_8009153C
 /* 5AAF608 800930D8 0780013C */  lui        $at, %hi(D_8006E52C)
 /* 5AAF60C 800930DC 2CE522AC */  sw         $v0, %lo(D_8006E52C)($at)
 /* 5AAF610 800930E0 14006490 */  lbu        $a0, 0x14($v1)
-/* 5AAF614 800930E4 D4EE000C */  jal        func_8003BB50
+/* 5AAF614 800930E4 D4EE000C */  jal        PlaySound
 /* 5AAF618 800930E8 21300000 */   addu      $a2, $zero, $zero
 /* 5AAF61C 800930EC 3F4C0208 */  j          .Llevel_23_800930FC
 /* 5AAF620 800930F0 00000000 */   nop

@@ -12,7 +12,7 @@ glabel func_8003BB10
 /* 2C32C 8003BB2C FF000224 */  addiu      $v0, $zero, 0xFF
 /* 2C330 8003BB30 03008210 */  beq        $a0, $v0, .L8003BB40
 /* 2C334 8003BB34 FFFF0224 */   addiu     $v0, $zero, -0x1
-/* 2C338 8003BB38 D4EE000C */  jal        func_8003BB50
+/* 2C338 8003BB38 D4EE000C */  jal        PlaySound
 /* 2C33C 8003BB3C 21286000 */   addu      $a1, $v1, $zero
 .L8003BB40:
 /* 2C340 8003BB40 1000BF8F */  lw         $ra, 0x10($sp)

@@ -11,48 +11,46 @@ extern int func_8002EBB0(int*);                            /* extern */
 INCLUDE_ASM("asm/nonmatchings/hud", func_80027934);
 
 /**
- * ???() - func_8002798C - MATCHING 
- * https://decomp.me/scratch/IDonA
+ * ???() - func_8002798C() - MATCHING 
+ * https://decomp.me/scratch/VjAmr
  */
 void func_8002798C(HudEntry* arg0) {
     int temp_v0;
     int var_a0;
-    int var_v0;
     int var_v1;
     short temp_a2;
-    unsigned short temp_v1;
-    int var_v0_2;
 
     if (arg0->unk40 != arg0->unk42) {
         temp_a2 = arg0->unk46 + D_8006C648;
         arg0->unk46 = temp_a2;
-        arg0->unk44 = 0xB4;
+        arg0->unk44 = 180;
         if (arg0->unk3F == 0) {
             temp_v0 = arg0->unk40 - arg0->unk42;
-            var_v1 = temp_v0 >= 0 ? temp_v0 : -temp_v0; 
-            if ((var_v1 >= 0x28) ||
-                ((((var_v1 < 0xA) == 0)) && ( ((temp_a2 < 4) == 0))) ||
-                (temp_a2 >= 6)) {
+            var_v1 = ABS(temp_v0);
+            if (var_v1 >= 40 || (var_v1 >= 10 && temp_a2 >= 4) || temp_a2 >= 6) {
 
-                if (var_v1 >= 0x140) {
+                if (var_v1 >= 320) {
                     var_a0 = 6;
+                } else if (var_v1 >= 40) {
+                    var_a0 = 3;
                 } else {
                     var_a0 = 1;
-                    if (var_v1 >= 0x28) {
-                        var_a0 = 3;
-                    }
                 }
-                temp_v1 = arg0->unk40;
-                var_v0_2 = temp_v1 <= arg0->unk42 ? temp_v1 + var_a0 : temp_v1 - var_a0;
-                arg0->unk40 = var_v0_2;
-                arg0->unk46 = 0U;
+
+                if (arg0->unk40 <= arg0->unk42) {
+                    arg0->unk40 += var_a0;
+                } else {
+                    arg0->unk40 -= var_a0;
+                }
+                
+                arg0->unk46 = 0;
             }
         }
     }
 }
 
 /**
- * ???() - func_80027A60 - MATCHING
+ * ???() - func_80027A60() - MATCHING
  * https://decomp.me/scratch/kBxS7
 */
 void func_80027A60(HudEntry* arg0) {
@@ -71,7 +69,7 @@ void func_80027A60(HudEntry* arg0) {
 
 
 /**
-* ???() - func_80027AC0 - MATCHING
+* ???() - func_80027AC0() - MATCHING
 * https://decomp.me/scratch/Aloso
 */
 void func_80027AC0(HudEntry* arg0) {
@@ -90,7 +88,7 @@ void func_80027AC0(HudEntry* arg0) {
 
 
 /**
- * ???() - func_80027B0C - MATCHING
+ * ???() - func_80027B0C() - MATCHING
  * https://decomp.me/scratch/456ru
  */ 
 void func_80027B0C(HudEntry* arg0) {
@@ -98,8 +96,8 @@ void func_80027B0C(HudEntry* arg0) {
 
     temp_s1 = arg0->unk40;
     func_80027A60(arg0);
-    if (temp_s1 <  arg0->unk40) {
-        PlaySound((int) g_SoundTablePtr->extraLife, 0, 0); //playSound(int,*Moby,char)
+    if (temp_s1 < arg0->unk40) {
+        PlaySound(g_SoundTablePtr->extraLife, 0, 0);
     }
 }
 
@@ -112,12 +110,12 @@ INCLUDE_ASM("asm/nonmatchings/hud", func_80027E40);
 INCLUDE_ASM("asm/nonmatchings/hud", func_80027EE4);
 
 /**
- * ???() - func_80027F88 - MATCHING
+ * ???() - func_80027F88() - MATCHING
  * https://decomp.me/scratch/DupJT
  */
 void func_80027F88(HudEntry* arg0) {
     func_80027D60(arg0);
-    arg0->unk3C = (unsigned short) arg0->unk3C + func_8002EBB0(arg0->unk28);
+    arg0->unk3C += func_8002EBB0(arg0->unk28);
 }
 
 
@@ -279,46 +277,47 @@ INCLUDE_ASM("asm/nonmatchings/hud", func_80029CF8);
 INCLUDE_ASM("asm/nonmatchings/hud", func_80029E48);
 
 /**
- * ???() - func_8002A580 - WIP
+ * ???() - func_8002A580()
+ * WIP
  * https://decomp.me/scratch/gamSH
  */
 INCLUDE_ASM("asm/nonmatchings/hud", func_8002A580);
 
 /**
- * ???() - func_8002A6B4 - MATCHING
+ * ???() - func_8002A6B4() - MATCHING
  * https://decomp.me/scratch/CXdDl
  */
-void func_8002A6B4(void) {
+void func_8002A6B4() {
     PlaySound(g_SoundTablePtr->pauseEnter, 0, 0);
 }
 
 /**
- * ???() - func_8002A6E4 - MATCHING
+ * ???() - func_8002A6E4() - MATCHING
  * https://decomp.me/scratch/Mck3B
  */
-void func_8002A6E4(void) {
+void func_8002A6E4() {
     PlaySound(g_SoundTablePtr->pauseExit, 0, 0);
 }
 
 /**
- * ???() - func_8002A714 - MATCHING
+ * ???() - func_8002A714() - MATCHING
  * https://decomp.me/scratch/omnBk
  */
-void func_8002A714(void) {
-    int temp = PlaySound((int) g_SoundTablePtr->pauseMove, 0, 0); 
-    if (temp >= 0) {
-        func_8003C140(temp, 0x640);
+void func_8002A714() {
+    int sound = PlaySound(g_SoundTablePtr->pauseMove, 0, 0); 
+    if (sound >= 0) {
+        func_8003C140(sound, 0x640);
     }
 }
 
 /**
- * ???() - func_8002A754 - MATCHING
+ * ???() - func_8002A754() - MATCHING
  * https://decomp.me/scratch/0JDAC
  */
-void func_8002A754(void) {
-    int temp = PlaySound((int) g_SoundTablePtr->changeVolume, 0, 0); 
-    if (temp >= 0) {
-        func_8003C140(temp, 0xC00); 
+void func_8002A754() {
+    int sound = PlaySound(g_SoundTablePtr->changeVolume, 0, 0); 
+    if (sound >= 0) {
+        func_8003C140(sound, 0xC00); 
     }
 }
 

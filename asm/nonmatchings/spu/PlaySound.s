@@ -2,7 +2,6 @@
 .set noreorder /* don't insert nops after branches */
 
 glabel PlaySound
-glabel func_8003BB50
 /* 2C350 8003BB50 D8FFBD27 */  addiu      $sp, $sp, -0x28
 /* 2C354 8003BB54 1800B2AF */  sw         $s2, 0x18($sp)
 /* 2C358 8003BB58 21908000 */  addu       $s2, $a0, $zero
@@ -215,4 +214,4 @@ glabel func_8003BB50
 /* 2C664 8003BE64 2800BD27 */  addiu      $sp, $sp, 0x28
 /* 2C668 8003BE68 0800E003 */  jr         $ra
 /* 2C66C 8003BE6C 00000000 */   nop
-.size func_8003BB50, . - func_8003BB50
+.size PlaySound, . - PlaySound

@@ -32,7 +32,7 @@ dlabel jtbl_title_80074A3C
 dlabel D_title_80074A8C
 /* 237BC 80074A8C */ .asciz "     SOFTWARE TERMINATED\nCONSOLE MAY HAVE BEEN MODIFIED\n     CALL 1-888-780-7690"
 .align 2
-dlabel D_title_80074AE0
+dlabel D_title_80074AE0 /* Japanese string: 強制終了しました。\n本体が改造されている\nおそれがあります。 */
 /* 23810 80074AE0 8BAD90A7 */ .word 0xA790AD8B
 /* 23814 80074AE4 8F4997B9 */ .word 0xB997498F
 /* 23818 80074AE8 82B582DC */ .word 0xDC82B582

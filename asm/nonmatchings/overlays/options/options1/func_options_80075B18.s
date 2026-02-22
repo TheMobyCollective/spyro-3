@@ -430,7 +430,7 @@ glabel func_options_80075B18
 /* 9655E28 800760F8 0780013C */  lui        $at, %hi(D_8006C3FC)
 /* 9655E2C 800760FC FCC322AC */  sw         $v0, %lo(D_8006C3FC)($at)
 /* 9655E30 80076100 1A006490 */  lbu        $a0, 0x1A($v1)
-/* 9655E34 80076104 D4EE000C */  jal        func_8003BB50
+/* 9655E34 80076104 D4EE000C */  jal        PlaySound
 /* 9655E38 80076108 21300000 */   addu      $a2, $zero, $zero
 /* 9655E3C 8007610C 21204000 */  addu       $a0, $v0, $zero
 .Loptions_80076110:

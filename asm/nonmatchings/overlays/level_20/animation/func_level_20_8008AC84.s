@@ -153,7 +153,7 @@ glabel func_level_20_8008AC84
 /* 50DAAC8 8008AD98 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 50DAACC 8008AD9C 21280000 */  addu       $a1, $zero, $zero
 /* 50DAAD0 8008ADA0 0B004490 */  lbu        $a0, 0xB($v0)
-/* 50DAAD4 8008ADA4 D4EE000C */  jal        func_8003BB50
+/* 50DAAD4 8008ADA4 D4EE000C */  jal        PlaySound
 /* 50DAAD8 8008ADA8 21300000 */   addu      $a2, $zero, $zero
 /* 50DAADC 8008ADAC 00000392 */  lbu        $v1, 0x0($s0)
 /* 50DAAE0 8008ADB0 21204000 */  addu       $a0, $v0, $zero
@@ -173,7 +173,7 @@ glabel func_level_20_8008AC84
 /* 50DAB14 8008ADE4 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 50DAB18 8008ADE8 00000000 */  nop
 /* 50DAB1C 8008ADEC 0A004490 */  lbu        $a0, 0xA($v0)
-/* 50DAB20 8008ADF0 D4EE000C */  jal        func_8003BB50
+/* 50DAB20 8008ADF0 D4EE000C */  jal        PlaySound
 /* 50DAB24 8008ADF4 21300000 */   addu      $a2, $zero, $zero
 /* 50DAB28 8008ADF8 0780013C */  lui        $at, %hi(D_80070328 + 0x29C)
 /* 50DAB2C 8008ADFC C40531AC */  sw         $s1, %lo(D_80070328 + 0x29C)($at)
@@ -190,7 +190,7 @@ glabel func_level_20_8008AC84
 /* 50DAB50 8008AE20 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 50DAB54 8008AE24 21280000 */  addu       $a1, $zero, $zero
 /* 50DAB58 8008AE28 11004490 */  lbu        $a0, 0x11($v0)
-/* 50DAB5C 8008AE2C D4EE000C */  jal        func_8003BB50
+/* 50DAB5C 8008AE2C D4EE000C */  jal        PlaySound
 /* 50DAB60 8008AE30 21300000 */   addu      $a2, $zero, $zero
 /* 50DAB64 8008AE34 21204000 */  addu       $a0, $v0, $zero
 /* 50DAB68 8008AE38 0780013C */  lui        $at, %hi(D_80070328 + 0x29C)
@@ -212,7 +212,7 @@ glabel func_level_20_8008AC84
 /* 50DABA0 8008AE70 54C6428C */  lw         $v0, %lo(D_8006C654)($v0)
 /* 50DABA4 8008AE74 21280000 */  addu       $a1, $zero, $zero
 /* 50DABA8 8008AE78 11004490 */  lbu        $a0, 0x11($v0)
-/* 50DABAC 8008AE7C D4EE000C */  jal        func_8003BB50
+/* 50DABAC 8008AE7C D4EE000C */  jal        PlaySound
 /* 50DABB0 8008AE80 21300000 */   addu      $a2, $zero, $zero
 /* 50DABB4 8008AE84 21804000 */  addu       $s0, $v0, $zero
 /* 50DABB8 8008AE88 0780013C */  lui        $at, %hi(D_80070328 + 0x29C)
