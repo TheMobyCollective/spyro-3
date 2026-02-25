@@ -101,9 +101,9 @@ Hashes listed are for the final overlays, after correcting checksums and encrypt
 
 Executing `docker_env.sh` starts a container in interactive mode with the Dockerfile image, which comes with modern mipsel- gcc and binutils. For the source code, a much older compiler will be used, gcc2.7.2-mipsel.
 
-After starting the container, executing `python3 ./build.py` will create the main executable, named `PSX.EXE` in the `/build` folder. The overlays will be output to `/build/wad`.
+After starting the container, executing `python3 ./build.py` will create the main executable, named `PSX.EXE` in the `/build` folder. The overlays will be output to `/build/wad`. Alternatively, you can fun `python3 ./build_multiproc.py` when building to speed up the build process by multiprocessing. A `Makefile` is also included, but I've not really tested this yet, and it doesn't support running the antipiracy correction.
 
-By default, this script does not produce overlays that have fixed antipiracy checksums or the appropriate encryption, and as such these are not usable for gameplay purposes. In order to build playable files, you'll need to turn on the FIX_CHECKSUMS flag in the script. This increases the length of the build process significantly so it's not recommended that you keep this setting on, but it's necessary when producing a build for testing. In addition, the first time you run this, you'll want to set COMPILE_DRAGONBREATH to "True" to compile a local copy of the Dragonbreath antipiracy tool.
+By default, the `build.py` script does not produce overlays that have fixed antipiracy checksums or the appropriate encryption, and as such these are not usable for gameplay purposes. In order to build playable files, you'll need to turn on the `FIX_CHECKSUMS` flag in the script. This increases the length of the build process significantly so it's not recommended that you keep this setting on, but it's necessary when producing a build for testing. In addition, the first time you run this, you'll want to set COMPILE_DRAGONBREATH to "True" to compile a local copy of the Dragonbreath antipiracy tool.
 
 Because this project primarily concerns the game's code, you will need a copy of the game for its assets. A separate tool such as [wadtool](https://github.com/altro50/wadtool) is needed to rebuild the WAD.WAD file. Edits to any non-overlay WADs (such as level data) will also require a separate tool. For creating the CD image, I would recommend [mkpsxiso](https://github.com/Lameguy64/mkpsxiso).
 
@@ -122,14 +122,15 @@ The following assumptions have been made in determining an appropriate file stru
   * Level overlays appear to be particularly difficult, as rodata suggests that there is probably one file per moby, and this is also corroborated by debug strings in Ratchet and Clank which suggest the same would be true for that game. For now, all mobys have been put into a single file per level, but these may be split up later on if we can figure out how to reuse object files across different overlays. This might make adding new moby classes a bit of a pain though as it'd also probably mean updating the ld manually, so some part of the process probably needs to be automated.
   * The "level.c" files probably split up, too. There is some proof of what these splits are and how they affect the rodata for a given level; weirdly, the strings appear to go at the bottom of the level files instead of the top.
   * Many functions (e.g. saving and loading functions, moby functions, etc.) are shared by multiple levels. Currently it's not clear exactly how this was achieved, but where possible we will avoid repeat implementations of the same function.
-  * Antipiracy check values are also implemented in the form of an assembly file which isn't currently supported in this project.
 
 ## Currently Unsupported Features
 * In the long term, mobys should probably each have their own C file in `/src/moby`, so that each moby only needs to be built once. It's not clear how this will work, if it'll work at all.
   * There is evidence in the rodata structure for the overlays that each moby had a separate source file, rather than all of them sitting in one moby file per overlay.
   * Most mobys are the same across all levels. Mobys that aren't will need to be handled somewhat differently - eggs are one example.
 * All PsyQ / library functions and variables are implemented by included assembly files. The PsyQ compiler and linker are not used and thus specific features it implements may be done slightly differently in this repository.
-  * Supposedly chars are unsigned by default in the PsyQ compiler, whereas in this function they are currently signed by default. Fixing this and including the `-funsigned-char` build flag might be a bit tedious.
+
+## Other Resources
+* The [MobyDoc](https://docs.google.com/spreadsheets/d/1YprizWnDfuyh4JVEq41byIoF232TSvQs2fbaDFdMiK4/) contains a list of all of the moby classes in this game.
 
 ## Acknowledgements
 
