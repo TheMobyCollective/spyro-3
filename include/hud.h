@@ -119,7 +119,7 @@ int func_80028378(void*, int); // 80028378 fAnimateHudSprite // first ptr is to 
 int func_800285A4(int); // 800285a4 fUpdateHudMovement
 int* func_800289C8(SpriteData*, short, short); // 800289c8 FUN_800289c8 // apparently first arg is whatever "SpriteData" is, possibly something that would fit in here?
 int* func_80028D30(char*, short, short, int); // 80028d30 FUN_80028d30
-int func_800291B8(int, int, short, int); // 800291b8 FUN_800291b8
+int func_800291B8(int, int, int, int); // 800291b8 FUN_800291b8
 int func_800293C4(int, int, int, int, int); // 800293c4 FUN_800293c4
 int func_80029674(HudEntry*, int*, int*); // 80029674 FUN_80029674
 void func_80029708(HudEntry*, int*, int*, int*); // 80029708 FUN_80029708
