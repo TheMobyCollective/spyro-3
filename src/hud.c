@@ -13,6 +13,17 @@ extern int D_8006C660; // g_EggTotal
 extern int D_8006C71C; // g_GemTotal
 extern int D_8006C74C;
 
+extern int D_8006C768;
+extern SpriteData* D_8006C788;
+extern int D_8006E344;
+extern int D_8006FA3C;
+extern int D_800714F4;
+extern int D_800714F8;
+extern short D_800719CA;
+extern char D_80071A04;
+extern int D_8006C5BC; // currentLvl
+
+
 ///////////////////////////////////////////////////
 
 /**
@@ -470,7 +481,35 @@ INCLUDE_ASM("asm/nonmatchings/hud", func_80029E48);
  * WIP
  * https://decomp.me/scratch/gamSH
  */
-INCLUDE_ASM("asm/nonmatchings/hud", func_8002A580);
+// INCLUDE_ASM("asm/nonmatchings/hud", func_8002A580);
+void func_8002A580(void) {
+    SpriteData* var_a0;
+    int var_a1;
+    int var_a2;
+    if (D_8006E344 == 4) {
+        return;
+    }
+    if (D_8006C5BC == 0x2C && D_80071A04 != 0 && D_8006E344 == 0) {
+        var_a1 = D_800714F4 - 0x10;
+        var_a2 = D_800714F8 - 0xB;
+        var_a0 = (SpriteData*)((short*)D_8006C788 + (D_800719CA * 8));
+        func_800289C8(var_a0, var_a1, var_a2);
+    }
+    else if ((D_8006C5BC == 0x19) && (D_8006FA3C == 3) && ((D_8006E344 == 0) || (D_8006E344 == 4))
+    ) {
+        var_a1 = D_800714F4 - 0x10;
+        var_a2 = D_800714F8 - 0xB;
+        var_a0 = (SpriteData*)((short*)D_8006C788 + (D_800719CA * 8));
+        func_800289C8(var_a0, var_a1, var_a2);
+    } else {
+        var_a1 = 0xF0;
+        if (D_8006C768 != 0) {
+            var_a2 = 0x6D;
+            var_a0 = (SpriteData*)((short*)D_8006C788 + (D_800719CA * 8));
+            func_800289C8(var_a0, var_a1, var_a2);
+        }
+    }
+}
 
 /**
  * ???() - func_8002A6B4() - MATCHING

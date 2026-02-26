@@ -117,7 +117,7 @@ void func_80028264(HudEntry*); // 80028264 fSomethingHud?
 void func_800282D8(); // 800282d8 FUN_800282d8
 int func_80028378(void*, int); // 80028378 fAnimateHudSprite // first ptr is to a struct of size 6, "sprite animation data"?
 int func_800285A4(int); // 800285a4 fUpdateHudMovement
-int* func_800289C8(SpriteData*, short, short); // 800289c8 FUN_800289c8 // apparently first arg is whatever "SpriteData" is, possibly something that would fit in here?
+int* func_800289C8(SpriteData*, int, int); // 800289c8 FUN_800289c8 // apparently first arg is whatever "SpriteData" is, possibly something that would fit in here?
 int* func_80028D30(char*, short, short, int); // 80028d30 FUN_80028d30
 int func_800291B8(int, int, int, int); // 800291b8 FUN_800291b8
 int func_800293C4(int, int, int, int, int); // 800293c4 FUN_800293c4
