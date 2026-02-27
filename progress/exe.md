@@ -84,7 +84,7 @@
 - [x] func_80027A60
 - [x] func_80027AC0
 - [x] func_80027B0C
-- [ ] func_80027B70
+- [x] func_80027B70
 - [x] func_80027D60
 - [x] func_80027E40
 - [x] func_80027EE4
@@ -105,12 +105,12 @@
 - [ ] func_80029708
 - [ ] func_8002982C
 - [ ] func_80029904
-- [ ] func_80029A00
+- [x] func_80029A00
 - [ ] func_80029AA0
 - [ ] func_80029BB0
 - [ ] func_80029CF8
 - [ ] func_80029E48
-- [ ] func_8002A580
+- [x] func_8002A580
 - [x] func_8002A6B4
 - [x] func_8002A6E4
 - [x] func_8002A714

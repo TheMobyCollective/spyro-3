@@ -132,8 +132,32 @@ void func_80027B0C(HudEntry* arg0) {
     }
 }
 
-INCLUDE_ASM("asm/nonmatchings/hud", func_80027B70);
+/*
+ * ???() - func_80027B70() - MATCHING
+ * https://decomp.me/scratch/lmfXY
+ */
+void func_80027B70(void) {
+    int idx;
 
+    g_Hud.DAT_800719c8 = 0;
+    g_Hud.reticleFrame = D_8006C738[func_80027934(2)].frame;
+    g_Hud.numberFrame = D_8006C738[func_80027934(0)].frame;
+    g_Hud.gemFrame =  D_8006C738[func_80027934(3)].frame;
+    g_Hud.textBoxCornerFrame = D_8006C738[func_80027934(1)].frame;
+    g_Hud.mainHudIsOnScreen = 0;
+    
+    idx = 0;
+    while (idx < 8) { 
+        g_HudEntries[idx].unk1A = -1;
+        g_HudEntries[idx].unk4 = 0;
+        func_8002803C(idx, -1, 0, 0, 0, 0, 1);
+        g_HudEntries[idx].movementFrame = 0x32;
+        idx++;
+    }
+    func_8002803C(0, 3, func_80027E40, func_80027A60, func_80029904, &D_8006C71C, 0x4E20);
+    func_8002803C(1, 4, func_80027E40, func_80027B0C, func_80029BB0, &D_8006C784, 0x63);
+    func_8002803C(2, 5, func_80027E40, func_80027A60, func_80029904, &D_8006C660, 0x96);
+}
 /**
  * ???() - func_80027D60() - MATCHING
  * https://decomp.me/scratch/4YB6r
@@ -480,7 +504,6 @@ INCLUDE_ASM("asm/nonmatchings/hud", func_80029E48);
  * ???() - func_8002A580() - MATCHING
  * https://decomp.me/scratch/gamSH
  */
-// INCLUDE_ASM("asm/nonmatchings/hud", func_8002A580);
 void func_8002A580(void) {
     SpriteData* var_a0;
     int var_a1;
