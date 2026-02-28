@@ -94,7 +94,7 @@ $wt unpack $cdd/WAD.WAD $wadd
 
 # sed some lines in the wad.json based on which version of the output you have
 echo "Updating build config..."
-if grep -q 'name: "Spyro: Year of the Dragon (NTSC 1.0)"' $cdd/$bx; then
+if grep -q 'name: "Spyro: Year of the Dragon (NTSC 1.0)"' $wadd/$wj; then
   updateDocumentedJson
 else
   updateUndocumentedJson
