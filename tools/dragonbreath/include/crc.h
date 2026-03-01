@@ -90,6 +90,14 @@ int crc16_rev_bitwise(char* buffer, int length, int initXor, int finalXor) { // 
     return crcreg ^ initXor;
 }
 
+int crc16_rev_table(char* buffer, int length, int initXor, int finalXor) {
+    int tcrcreg = finalXor; // e.g. if you want it to be 0 at the end, this should be 0
+    for (int i = length - 1; i >= 0; --i) {
+        tcrcreg = (crc_revtable[tcrcreg & 0xFF] ^ (tcrcreg >> 8) ^ ((unsigned char)buffer[i] << 8)) & 0xFFFF;
+    }
+    return tcrcreg ^ initXor;
+}
+
 void restore_check(char* buffer, int length, int chk_pos, int chk_addr) { // rethink the arguments here?
 
     // make sure fix_pos is within 0..(length-1)
@@ -101,45 +109,25 @@ void restore_check(char* buffer, int length, int chk_pos, int chk_addr) { // ret
 
 }
 
-// don't think this works... womp womp
-void fix_crc_pos(char* buffer, int length, int tcrcreg, int fix_pos, int initXor) { // fix_pos must be relative to start of buffer, not start of ovl
+void fix_crc_pos_fast(char* buffer, int length, int chk_pos, int initXor) { // chk_pos must be relative to start of buffer, not start of ovl
 
     // make sure fix_pos is within 0..(length-1)
-    fix_pos = ((fix_pos % length) + length) % length;
+    chk_pos = ((chk_pos % length) + length) % length;
 
-    // calculate crc register at position fix_pos
-    int crcreg = crc16_table(buffer, fix_pos, initXor, 0, 0);
-    printf("CRC up to fix_pos: 0x%X\n", crcreg);
-    //printf("Value of check bytes: 0x%X, 0x%X\n", (unsigned char)buffer[fix_pos], (unsigned char)buffer[fix_pos + 1]);
+    // calculate crc register at position chk_pos + 1, and backwards crc at chk_pos + 3
+    int crcreg = crc16_table(buffer, chk_pos + 1, initXor, 0, 0); // first byte of chk_pos is not edited
+    int tcrcreg = crc16_rev_table(buffer + (chk_pos + 3), length - (chk_pos + 3), 0, 0);
 
-    // inject crcreg as content - this makes it zero at fix_pos + 2
-    buffer[fix_pos + 0] = (crcreg >> 8) & 0xFF;
-    buffer[fix_pos + 1] = (crcreg >> 0) & 0xFF;
-    //printf("Value of check bytes after first change: 0x%X, 0x%X\n", (unsigned char)buffer[fix_pos], (unsigned char)buffer[fix_pos + 1]);
-
-    // calculate crc backwards to fix_pos, beginning at the end    
-    // maybe use a bitwise implementation
-    tcrcreg ^= FINALXOR;
-    for (int i = length - 1; i >= fix_pos; --i) {
-        tcrcreg = crc_revtable[tcrcreg & 0xff] ^ (tcrcreg >> 8) ^ (buffer[i] << 8);
-    }
+    // this bridges the gap between the two values, but I don't really understand how it works
+    unsigned int i2 = (unsigned short)crc_revtable[tcrcreg & 0xFF] >> 8;
+    unsigned int i1 = (unsigned short)crc_revtable[(tcrcreg ^ (unsigned short)crc_table[i2]) >> 8] >> 8;
     
-    // inject new content
-    // (probably doesn't work)
-    buffer[fix_pos + 0] = (tcrcreg >> 8) & 0xFF;
-    buffer[fix_pos + 1] = (tcrcreg >> 0) & 0xFF;
-    //printf("Value of check bytes after: 0x%X, 0x%X\n", (unsigned char)buffer[fix_pos], (unsigned char)buffer[fix_pos + 1]);
+    buffer[chk_pos + 1] = i1 ^ (crcreg >> 8);
+    buffer[chk_pos + 2] = i2 ^ (((unsigned short)crc_table[i1] ^ (crcreg << 8)) >> 8);
 
-    int finalCheck = crc16_table(buffer, length, initXor, 0, 0); // crc16_bitwise?
-    printf("Final checksum after refixing: 0x%X\n", finalCheck);
-
-    // either the buffers are stored the other way
-    // or something needs bit reversing
-    // or the backwards rev table usage implementation is wrong
-    // or the poly needs reversing for the revtable
 }
 
-void fix_crc_pos_new(char* buffer, int length, int chk_pos, int initXor) { // fix_pos must be relative to start of buffer, not start of ovl
+void fix_crc_pos_brute(char* buffer, int length, int chk_pos, int initXor) { // fix_pos must be relative to start of buffer, not start of ovl
 
     // make sure fix_pos is within 0..(length-1)
     chk_pos = ((chk_pos % length) + length) % length;

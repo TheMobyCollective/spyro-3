@@ -63,7 +63,7 @@ void fixStandardCheck(char* exeBuffer, char* ovlBuffer, int scanOffset) {
 	int ovlChkOffset = addrs.chkAddr - addrs.ovlTextStart;
 	
 	int exeCrc = crc16_table(exeText + scanOffset, exeTextLen - scanOffset, 0, 0, 3);
- 	fix_crc_pos_new(ovlText, ovlTextLen, ovlChkOffset, exeCrc);
+ 	fix_crc_pos_fast(ovlText, ovlTextLen, ovlChkOffset, exeCrc);
 }
 
 void fixLevelCheck(char* exeBuffer, char* ovlBuffer) {
@@ -82,9 +82,9 @@ void fixTitleCheck(char* exeBuffer, char* ovlBuffer) {
 	int ovlTextLen = addrs.ovlTextEnd - addrs.ovlTextStart;
 	int ovlChkOffset = addrs.chkAddr - addrs.ovlTextStart;
 	
- 	fix_crc_pos_new(ovlText, ovlTextLen, ovlChkOffset, 0);
+ 	fix_crc_pos_fast(ovlText, ovlTextLen, ovlChkOffset, 0);
 	int ovlCrc = crc16_table(ovlText, ovlTextLen, 0, 0, 3);
- 	fix_crc_pos_new(exeText, exeTextLen, exeChkOffset, ovlCrc);
+ 	fix_crc_pos_fast(exeText, exeTextLen, exeChkOffset, ovlCrc);
 }
 
 void fixSecondaryCheck(char* exeBuffer, char* ovlBuffer) {
@@ -153,7 +153,7 @@ void printSuccess(CheckType type, unsigned int wadIndex, std::string exePath, st
 *                   Main                    *
 ********************************************/
 
-std::string version = "1.0.0";
+std::string version = "1.1.0";
 
 int main(int argc, char* argv[]) {
 
