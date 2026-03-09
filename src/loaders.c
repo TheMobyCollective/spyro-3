@@ -72,6 +72,11 @@ void func_8002B768(Particle* arg0) {
     memset(D_80070260, 0, 0xA0);
 }
 
+/**
+ * LoadLayout() - func_8002B810()
+ * WIP
+ * https://decomp.me/scratch/XH66Q
+ */
 INCLUDE_ASM("asm/nonmatchings/loaders", func_8002B810);
 
 /**

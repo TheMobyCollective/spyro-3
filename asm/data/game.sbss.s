@@ -64,6 +64,7 @@ dlabel D_8006C52C
 /* 5CD2C 8006C52C 00000000 */ .space 0x04
 .size D_8006C52C, . - D_8006C52C
 
+dlabel g_Portals
 dlabel D_8006C530
 /* 5CD30 8006C530 00000000 */ .space 0x04
 .size D_8006C530, . - D_8006C530
@@ -255,6 +256,7 @@ dlabel D_8006C5DC
 /* 5CDDC 8006C5DC 00000000 */ .space 0x04
 .size D_8006C5DC, . - D_8006C5DC
 
+dlabel g_PortalCount
 dlabel D_8006C5E0
 /* 5CDE0 8006C5E0 00000000 */ .space 0x04
 .size D_8006C5E0, . - D_8006C5E0

@@ -499,6 +499,7 @@ dlabel game
 dlabel D_8006E344
 /* 8006E344 */ .space 0x0C
 
+dlabel g_Layout
 dlabel D_8006E350
 /* 8006E350 */ .space 0x04
 
