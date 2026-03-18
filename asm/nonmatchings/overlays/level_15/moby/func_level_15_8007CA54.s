@@ -161,7 +161,7 @@ glabel func_level_15_8007CA54
 /* 49B71D4 8007CCA4 21200002 */  addu       $a0, $s0, $zero
 /* 49B71D8 8007CCA8 443C010C */  jal        func_8004F110
 /* 49B71DC 8007CCAC 05000524 */   addiu     $a1, $zero, 0x5
-/* 49B71E0 8007CCB0 9171010C */  jal        func_8005C644
+/* 49B71E0 8007CCB0 9171010C */  jal        rand
 /* 49B71E4 8007CCB4 00000000 */   nop
 /* 49B71E8 8007CCB8 1F004230 */  andi       $v0, $v0, 0x1F
 /* 49B71EC 8007CCBC 78000324 */  addiu      $v1, $zero, 0x78

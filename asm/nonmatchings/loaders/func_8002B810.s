@@ -1078,7 +1078,7 @@ glabel func_8002B810
 /* 1CFB8 8002C7B8 00000000 */  nop
 /* 1CFBC 8002C7BC 1D004010 */  beqz       $v0, .L8002C834
 /* 1CFC0 8002C7C0 00000000 */   nop
-/* 1CFC4 8002C7C4 9D71010C */  jal        func_8005C674
+/* 1CFC4 8002C7C4 9D71010C */  jal        srand
 /* 1CFC8 8002C7C8 D2040424 */   addiu     $a0, $zero, 0x4D2
 /* 1CFCC 8002C7CC 0780033C */  lui        $v1, %hi(D_8006C658)
 /* 1CFD0 8002C7D0 58C6638C */  lw         $v1, %lo(D_8006C658)($v1)

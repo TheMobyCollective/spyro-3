@@ -711,7 +711,7 @@ glabel func_level_50_800861B0
 /* 95DB0DC 80086BAC 261B0208 */  j          .Llevel_50_80086C98
 /* 95DB0E0 80086BB0 480060A2 */   sb        $zero, 0x48($s3)
 .Llevel_50_80086BB4:
-/* 95DB0E4 80086BB4 9171010C */  jal        func_8005C644
+/* 95DB0E4 80086BB4 9171010C */  jal        rand
 /* 95DB0E8 80086BB8 00000000 */   nop
 /* 95DB0EC 80086BBC FF005230 */  andi       $s2, $v0, 0xFF
 /* 95DB0F0 80086BC0 0680143C */  lui        $s4, %hi(D_80065920)

@@ -13,7 +13,7 @@ extern void func_8004E7D4(int*, int*, int); // memcpy
 extern int func_8004F6A0(); // getClock
 
 // psyq
-extern int func_8005C644(); // rand
+extern int rand(); // rand
 
 // data
 extern SpeedwayRecord speedwayRecords[4]; // 8006575C
@@ -97,7 +97,7 @@ static inline void SaveGame(SaveFile* save, int noUpdate) {
     id = save->fileId;
     func_8004E790(save, 0, 0x900);
     save->fileId = id;
-    save->saveId = (func_8004F6A0() + (func_8005C644() << 0x10));
+    save->saveId = (func_8004F6A0() + (rand() << 0x10));
     
     if (!noUpdate) {
         save->currentLevel = (char) currentLevel;

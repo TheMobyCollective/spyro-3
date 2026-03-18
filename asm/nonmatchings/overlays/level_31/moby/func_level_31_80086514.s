@@ -310,15 +310,15 @@ glabel func_level_31_80086514
 /* 6AA16D4 800869A4 21286002 */   addu      $a1, $s3, $zero
 /* 6AA16D8 800869A8 7700E012 */  beqz       $s7, .Llevel_31_80086B88
 /* 6AA16DC 800869AC 00000000 */   nop
-/* 6AA16E0 800869B0 9171010C */  jal        func_8005C644
+/* 6AA16E0 800869B0 9171010C */  jal        rand
 /* 6AA16E4 800869B4 00000000 */   nop
 /* 6AA16E8 800869B8 0F004230 */  andi       $v0, $v0, 0xF
 /* 6AA16EC 800869BC F9FF4224 */  addiu      $v0, $v0, -0x7
-/* 6AA16F0 800869C0 9171010C */  jal        func_8005C644
+/* 6AA16F0 800869C0 9171010C */  jal        rand
 /* 6AA16F4 800869C4 3800A2AF */   sw        $v0, 0x38($sp)
 /* 6AA16F8 800869C8 0F004230 */  andi       $v0, $v0, 0xF
 /* 6AA16FC 800869CC F9FF4224 */  addiu      $v0, $v0, -0x7
-/* 6AA1700 800869D0 9171010C */  jal        func_8005C644
+/* 6AA1700 800869D0 9171010C */  jal        rand
 /* 6AA1704 800869D4 3C00A2AF */   sw        $v0, 0x3C($sp)
 /* 6AA1708 800869D8 01000424 */  addiu      $a0, $zero, 0x1
 /* 6AA170C 800869DC 21280000 */  addu       $a1, $zero, $zero

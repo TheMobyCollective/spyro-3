@@ -321,7 +321,7 @@ glabel func_level_32_80083A14
 /* 6DEB3FC 80083ECC 3C000524 */  addiu      $a1, $zero, 0x3C
 /* 6DEB400 80083ED0 DBD8000C */  jal        func_8003636C
 /* 6DEB404 80083ED4 21984000 */   addu      $s3, $v0, $zero
-/* 6DEB408 80083ED8 9171010C */  jal        func_8005C644
+/* 6DEB408 80083ED8 9171010C */  jal        rand
 /* 6DEB40C 80083EDC 21A04000 */   addu      $s4, $v0, $zero
 /* 6DEB410 80083EE0 21200000 */  addu       $a0, $zero, $zero
 /* 6DEB414 80083EE4 00080524 */  addiu      $a1, $zero, 0x800

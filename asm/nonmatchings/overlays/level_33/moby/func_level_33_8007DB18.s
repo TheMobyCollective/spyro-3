@@ -110,9 +110,9 @@ glabel func_level_33_8007DB18
 /* 71B59D4 8007DCA4 3B008012 */  beqz       $s4, .Llevel_33_8007DD94
 /* 71B59D8 8007DCA8 00000000 */   nop
 /* 71B59DC 8007DCAC 0000928E */  lw         $s2, 0x0($s4)
-/* 71B59E0 8007DCB0 9171010C */  jal        func_8005C644
+/* 71B59E0 8007DCB0 9171010C */  jal        rand
 /* 71B59E4 8007DCB4 00000000 */   nop
-/* 71B59E8 8007DCB8 9171010C */  jal        func_8005C644
+/* 71B59E8 8007DCB8 9171010C */  jal        rand
 /* 71B59EC 8007DCBC FF0F5330 */   andi      $s3, $v0, 0xFFF
 /* 71B59F0 8007DCC0 0C008426 */  addiu      $a0, $s4, 0xC
 /* 71B59F4 8007DCC4 0C00A526 */  addiu      $a1, $s5, 0xC

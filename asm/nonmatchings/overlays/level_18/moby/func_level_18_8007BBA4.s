@@ -262,7 +262,7 @@ glabel func_level_18_8007BBA4
 /* 4EAEC40 8007BF10 28000324 */  addiu      $v1, $zero, 0x28
 /* 4EAEC44 8007BF14 160023A2 */  sb         $v1, 0x16($s1)
 /* 4EAEC48 8007BF18 FFFE4230 */  andi       $v0, $v0, 0xFEFF
-/* 4EAEC4C 8007BF1C 9171010C */  jal        func_8005C644
+/* 4EAEC4C 8007BF1C 9171010C */  jal        rand
 /* 4EAEC50 8007BF20 180022A6 */   sh        $v0, 0x18($s1)
 /* 4EAEC54 8007BF24 1F004230 */  andi       $v0, $v0, 0x1F
 /* 4EAEC58 8007BF28 46000492 */  lbu        $a0, 0x46($s0)

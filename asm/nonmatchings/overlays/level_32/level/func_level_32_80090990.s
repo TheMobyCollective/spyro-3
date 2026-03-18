@@ -422,15 +422,15 @@ glabel func_level_32_80090990
 /* 6DF84E4 80090FB4 00000000 */  nop
 /* 6DF84E8 80090FB8 450022A2 */  sb         $v0, 0x45($s1)
 /* 6DF84EC 80090FBC 46004292 */  lbu        $v0, 0x46($s2)
-/* 6DF84F0 80090FC0 9171010C */  jal        func_8005C644
+/* 6DF84F0 80090FC0 9171010C */  jal        rand
 /* 6DF84F4 80090FC4 460022A2 */   sb        $v0, 0x46($s1)
 /* 6DF84F8 80090FC8 06004230 */  andi       $v0, $v0, 0x6
 /* 6DF84FC 80090FCC FDFF4224 */  addiu      $v0, $v0, -0x3
-/* 6DF8500 80090FD0 9171010C */  jal        func_8005C644
+/* 6DF8500 80090FD0 9171010C */  jal        rand
 /* 6DF8504 80090FD4 060002A6 */   sh        $v0, 0x6($s0)
 /* 6DF8508 80090FD8 06004230 */  andi       $v0, $v0, 0x6
 /* 6DF850C 80090FDC FDFF4224 */  addiu      $v0, $v0, -0x3
-/* 6DF8510 80090FE0 9171010C */  jal        func_8005C644
+/* 6DF8510 80090FE0 9171010C */  jal        rand
 /* 6DF8514 80090FE4 080002A6 */   sh        $v0, 0x8($s0)
 /* 6DF8518 80090FE8 1E000424 */  addiu      $a0, $zero, 0x1E
 /* 6DF851C 80090FEC 06004230 */  andi       $v0, $v0, 0x6

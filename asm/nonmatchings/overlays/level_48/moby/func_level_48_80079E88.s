@@ -287,7 +287,7 @@ glabel func_level_48_80079E88
 /* 926CFB8 8007A288 04E90108 */  j          .Llevel_48_8007A410
 /* 926CFBC 8007A28C 660062A0 */   sb        $v0, 0x66($v1)
 .Llevel_48_8007A290:
-/* 926CFC0 8007A290 9171010C */  jal        func_8005C644
+/* 926CFC0 8007A290 9171010C */  jal        rand
 /* 926CFC4 8007A294 21800000 */   addu      $s0, $zero, $zero
 /* 926CFC8 8007A298 FF005130 */  andi       $s1, $v0, 0xFF
 /* 926CFCC 8007A29C 0C007526 */  addiu      $s5, $s3, 0xC

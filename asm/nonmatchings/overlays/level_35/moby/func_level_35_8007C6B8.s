@@ -76,7 +76,7 @@ glabel func_level_35_8007C6B8
 /* 76FF4FC 8007C7CC 00000000 */  nop
 /* 76FF500 8007C7D0 4E0043A0 */  sb         $v1, 0x4E($v0)
 /* 76FF504 8007C7D4 FF000224 */  addiu      $v0, $zero, 0xFF
-/* 76FF508 8007C7D8 9171010C */  jal        func_8005C644
+/* 76FF508 8007C7D8 9171010C */  jal        rand
 /* 76FF50C 8007C7DC 130002A2 */   sb        $v0, 0x13($s0)
 /* 76FF510 8007C7E0 FF004230 */  andi       $v0, $v0, 0xFF
 /* 76FF514 8007C7E4 040022AE */  sw         $v0, 0x4($s1)

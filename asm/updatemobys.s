@@ -1005,7 +1005,7 @@ glabel func_80056434
 /* 46C50 80056450 1A004514 */  bne        $v0, $a1, .L800564BC
 /* 46C54 80056454 00000000 */   nop
 /* 46C58 80056458 0000E723 */  addi       $a3, $ra, 0x0 /* handwritten instruction */
-/* 46C5C 8005645C 9171010C */  jal        func_8005C644
+/* 46C5C 8005645C 9171010C */  jal        rand
 /* 46C60 80056460 00008620 */   addi      $a2, $a0, 0x0 /* handwritten instruction */
 /* 46C64 80056464 FF004230 */  andi       $v0, $v0, 0xFF
 /* 46C68 80056468 01004220 */  addi       $v0, $v0, 0x1 /* handwritten instruction */

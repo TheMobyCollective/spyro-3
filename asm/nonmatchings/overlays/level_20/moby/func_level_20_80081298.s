@@ -537,15 +537,15 @@ glabel func_level_20_80081298
 /* 50D17A8 80081A78 01004230 */  andi       $v0, $v0, 0x1
 /* 50D17AC 80081A7C 1E004010 */  beqz       $v0, .Llevel_20_80081AF8
 /* 50D17B0 80081A80 00000000 */   nop
-/* 50D17B4 80081A84 9171010C */  jal        func_8005C644
+/* 50D17B4 80081A84 9171010C */  jal        rand
 /* 50D17B8 80081A88 00000000 */   nop
 /* 50D17BC 80081A8C 0F004230 */  andi       $v0, $v0, 0xF
 /* 50D17C0 80081A90 F8FF4224 */  addiu      $v0, $v0, -0x8
-/* 50D17C4 80081A94 9171010C */  jal        func_8005C644
+/* 50D17C4 80081A94 9171010C */  jal        rand
 /* 50D17C8 80081A98 2000A2AF */   sw        $v0, 0x20($sp)
 /* 50D17CC 80081A9C 0F004230 */  andi       $v0, $v0, 0xF
 /* 50D17D0 80081AA0 F8FF4224 */  addiu      $v0, $v0, -0x8
-/* 50D17D4 80081AA4 9171010C */  jal        func_8005C644
+/* 50D17D4 80081AA4 9171010C */  jal        rand
 /* 50D17D8 80081AA8 2400A2AF */   sw        $v0, 0x24($sp)
 /* 50D17DC 80081AAC 01000424 */  addiu      $a0, $zero, 0x1
 /* 50D17E0 80081AB0 37000524 */  addiu      $a1, $zero, 0x37
@@ -560,7 +560,7 @@ glabel func_level_20_80081298
 /* 50D1804 80081AD4 21804000 */  addu       $s0, $v0, $zero
 /* 50D1808 80081AD8 07000012 */  beqz       $s0, .Llevel_20_80081AF8
 /* 50D180C 80081ADC 00000000 */   nop
-/* 50D1810 80081AE0 9171010C */  jal        func_8005C644
+/* 50D1810 80081AE0 9171010C */  jal        rand
 /* 50D1814 80081AE4 00000000 */   nop
 /* 50D1818 80081AE8 08000396 */  lhu        $v1, 0x8($s0)
 /* 50D181C 80081AEC FF004230 */  andi       $v0, $v0, 0xFF

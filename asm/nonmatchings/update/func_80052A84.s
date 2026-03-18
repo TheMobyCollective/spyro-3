@@ -300,7 +300,7 @@ glabel func_80052A84
 /* 436EC 80052EEC 1000A427 */  addiu      $a0, $sp, 0x10
 /* 436F0 80052EF0 10004224 */  addiu      $v0, $v0, 0x10
 /* 436F4 80052EF4 21800202 */  addu       $s0, $s0, $v0
-/* 436F8 80052EF8 1E69010C */  jal        func_8005A478
+/* 436F8 80052EF8 1E69010C */  jal        LoadImage
 /* 436FC 80052EFC 21280002 */   addu      $a1, $s0, $zero
 .L80052F00:
 /* 43700 80052F00 0780013C */  lui        $at, %hi(D_800722C8)

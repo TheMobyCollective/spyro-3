@@ -24,10 +24,10 @@ glabel func_atlas_80075CA8
 /* 962E224 80075CF4 C0120200 */  sll        $v0, $v0, 11
 /* 962E228 80075CF8 2000BFAF */  sw         $ra, 0x20($sp)
 /* 962E22C 80075CFC 21800202 */  addu       $s0, $s0, $v0
-/* 962E230 80075D00 9968010C */  jal        func_8005A264
+/* 962E230 80075D00 9968010C */  jal        DrawSync
 /* 962E234 80075D04 1C001026 */   addiu     $s0, $s0, 0x1C
 /* 962E238 80075D08 1000A427 */  addiu      $a0, $sp, 0x10
-/* 962E23C 80075D0C 1E69010C */  jal        func_8005A478
+/* 962E23C 80075D0C 1E69010C */  jal        LoadImage
 /* 962E240 80075D10 21280002 */   addu      $a1, $s0, $zero
 /* 962E244 80075D14 00021026 */  addiu      $s0, $s0, 0x200
 /* 962E248 80075D18 21200000 */  addu       $a0, $zero, $zero
@@ -41,12 +41,12 @@ glabel func_atlas_80075CA8
 /* 962E268 80075D38 C0000224 */  addiu      $v0, $zero, 0xC0
 /* 962E26C 80075D3C 1400A2A7 */  sh         $v0, 0x14($sp)
 /* 962E270 80075D40 78000224 */  addiu      $v0, $zero, 0x78
-/* 962E274 80075D44 9968010C */  jal        func_8005A264
+/* 962E274 80075D44 9968010C */  jal        DrawSync
 /* 962E278 80075D48 1600A2A7 */   sh        $v0, 0x16($sp)
 /* 962E27C 80075D4C 1000A427 */  addiu      $a0, $sp, 0x10
-/* 962E280 80075D50 1E69010C */  jal        func_8005A478
+/* 962E280 80075D50 1E69010C */  jal        LoadImage
 /* 962E284 80075D54 21280002 */   addu      $a1, $s0, $zero
-/* 962E288 80075D58 9968010C */  jal        func_8005A264
+/* 962E288 80075D58 9968010C */  jal        DrawSync
 /* 962E28C 80075D5C 21200000 */   addu      $a0, $zero, $zero
 /* 962E290 80075D60 2000BF8F */  lw         $ra, 0x20($sp)
 /* 962E294 80075D64 1C00B18F */  lw         $s1, 0x1C($sp)

@@ -6,7 +6,7 @@ glabel func_8001FB10
 /* 10314 8001FB14 1000B0AF */  sw         $s0, 0x10($sp)
 /* 10318 8001FB18 21808000 */  addu       $s0, $a0, $zero
 /* 1031C 8001FB1C 1400BFAF */  sw         $ra, 0x14($sp)
-/* 10320 8001FB20 9968010C */  jal        func_8005A264
+/* 10320 8001FB20 9968010C */  jal        DrawSync
 /* 10324 8001FB24 21200000 */   addu      $a0, $zero, $zero
 /* 10328 8001FB28 0780023C */  lui        $v0, %hi(D_800722D8)
 /* 1032C 8001FB2C D822428C */  lw         $v0, %lo(D_800722D8)($v0)

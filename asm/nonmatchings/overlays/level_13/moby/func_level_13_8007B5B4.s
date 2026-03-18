@@ -559,7 +559,7 @@ glabel func_level_13_8007B5B4
 /* 441A2C0 8007BD90 08000224 */  addiu      $v0, $zero, 0x8
 /* 441A2C4 8007BD94 490062A2 */  sb         $v0, 0x49($s3)
 .Llevel_13_8007BD98:
-/* 441A2C8 8007BD98 9171010C */  jal        func_8005C644
+/* 441A2C8 8007BD98 9171010C */  jal        rand
 /* 441A2CC 8007BD9C 00000000 */   nop
 /* 441A2D0 8007BDA0 FF004230 */  andi       $v0, $v0, 0xFF
 /* 441A2D4 8007BDA4 40100200 */  sll        $v0, $v0, 1

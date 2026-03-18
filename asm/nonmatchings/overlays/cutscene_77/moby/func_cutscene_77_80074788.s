@@ -20,15 +20,15 @@ glabel func_cutscene_77_80074788
 /* 2935CF4 800747C4 21800000 */   addu      $s0, $zero, $zero
 /* 2935CF8 800747C8 2000B127 */  addiu      $s1, $sp, 0x20
 .Lcutscene_77_800747CC:
-/* 2935CFC 800747CC 9171010C */  jal        func_8005C644
+/* 2935CFC 800747CC 9171010C */  jal        rand
 /* 2935D00 800747D0 01001026 */   addiu     $s0, $s0, 0x1
 /* 2935D04 800747D4 FF034230 */  andi       $v0, $v0, 0x3FF
 /* 2935D08 800747D8 00FE4224 */  addiu      $v0, $v0, -0x200
-/* 2935D0C 800747DC 9171010C */  jal        func_8005C644
+/* 2935D0C 800747DC 9171010C */  jal        rand
 /* 2935D10 800747E0 1000A2AF */   sw        $v0, 0x10($sp)
 /* 2935D14 800747E4 FF034230 */  andi       $v0, $v0, 0x3FF
 /* 2935D18 800747E8 00FE4224 */  addiu      $v0, $v0, -0x200
-/* 2935D1C 800747EC 9171010C */  jal        func_8005C644
+/* 2935D1C 800747EC 9171010C */  jal        rand
 /* 2935D20 800747F0 1400A2AF */   sw        $v0, 0x14($sp)
 /* 2935D24 800747F4 1000A427 */  addiu      $a0, $sp, 0x10
 /* 2935D28 800747F8 14000524 */  addiu      $a1, $zero, 0x14

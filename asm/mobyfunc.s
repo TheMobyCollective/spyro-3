@@ -1410,7 +1410,7 @@ glabel func_8002E2D0
 /* 1ED7C 8002E57C F8FF5921 */  addi       $t9, $t2, -0x8 /* handwritten instruction */
 /* 1ED80 8002E580 0000EF23 */  addi       $t7, $ra, 0x0 /* handwritten instruction */
 .L8002E584:
-/* 1ED84 8002E584 9171010C */  jal        func_8005C644
+/* 1ED84 8002E584 9171010C */  jal        rand
 /* 1ED88 8002E588 00000000 */   nop
 /* 1ED8C 8002E58C 00004C20 */  addi       $t4, $v0, 0x0 /* handwritten instruction */
 /* 1ED90 8002E590 0D59010C */  jal        func_80056434
@@ -1909,7 +1909,7 @@ glabel func_8002EC50
 /* 1F480 8002EC80 1000C4A1 */  sb         $a0, 0x10($t6)
 /* 1F484 8002EC84 1100C5A1 */  sb         $a1, 0x11($t6)
 /* 1F488 8002EC88 0000EF23 */  addi       $t7, $ra, 0x0 /* handwritten instruction */
-/* 1F48C 8002EC8C 9171010C */  jal        func_8005C644
+/* 1F48C 8002EC8C 9171010C */  jal        rand
 /* 1F490 8002EC90 0C00C6AD */   sw        $a2, 0xC($t6)
 /* 1F494 8002EC94 1200C2A1 */  sb         $v0, 0x12($t6)
 /* 1F498 8002EC98 04000220 */  addi       $v0, $zero, 0x4 /* handwritten instruction */
@@ -2180,7 +2180,7 @@ glabel func_8002F040
 /* 1F86C 8002F06C 00000220 */   addi      $v0, $zero, 0x0 /* handwritten instruction */
 .L8002F070:
 /* 1F870 8002F070 0000EF23 */  addi       $t7, $ra, 0x0 /* handwritten instruction */
-/* 1F874 8002F074 9171010C */  jal        func_8005C644
+/* 1F874 8002F074 9171010C */  jal        rand
 /* 1F878 8002F078 0F00C4A1 */   sb        $a0, 0xF($t6)
 /* 1F87C 8002F07C 0E00C2A1 */  sb         $v0, 0xE($t6)
 /* 1F880 8002F080 30000220 */  addi       $v0, $zero, 0x30 /* handwritten instruction */
@@ -2535,7 +2535,7 @@ glabel func_8002F540
 /* 1FD94 8002F594 2068AC01 */  add        $t5, $t5, $t4 /* handwritten instruction */
 /* 1FD98 8002F598 0000EF23 */  addi       $t7, $ra, 0x0 /* handwritten instruction */
 .L8002F59C:
-/* 1FD9C 8002F59C 9171010C */  jal        func_8005C644
+/* 1FD9C 8002F59C 9171010C */  jal        rand
 /* 1FDA0 8002F5A0 02008C21 */   addi      $t4, $t4, 0x2 /* handwritten instruction */
 /* 1FDA4 8002F5A4 FDFF8D15 */  bne        $t4, $t5, .L8002F59C
 /* 1FDA8 8002F5A8 FEFF82A5 */   sh        $v0, -0x2($t4)
@@ -2670,7 +2670,7 @@ glabel func_8002F5B4
 /* 1FF90 8002F790 2070C801 */   add       $t6, $t6, $t0 /* handwritten instruction */
 /* 1FF94 8002F794 0D004110 */  beq        $v0, $at, .L8002F7CC
 /* 1FF98 8002F798 00000000 */   nop
-/* 1FF9C 8002F79C 9171010C */  jal        func_8005C644
+/* 1FF9C 8002F79C 9171010C */  jal        rand
 /* 1FFA0 8002F7A0 00000000 */   nop
 /* 1FFA4 8002F7A4 FEFF02A6 */  sh         $v0, -0x2($s0)
 /* 1FFA8 8002F7A8 400C0200 */  sll        $at, $v0, 17

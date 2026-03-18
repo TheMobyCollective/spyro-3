@@ -95,7 +95,7 @@ glabel func_level_42_8007FDE0
 /* 8484C70 8007FF40 07004230 */  andi       $v0, $v0, 0x7
 /* 8484C74 8007FF44 19004014 */  bnez       $v0, .Llevel_42_8007FFAC
 /* 8484C78 8007FF48 00000000 */   nop
-/* 8484C7C 8007FF4C 9171010C */  jal        func_8005C644
+/* 8484C7C 8007FF4C 9171010C */  jal        rand
 /* 8484C80 8007FF50 00000000 */   nop
 /* 8484C84 8007FF54 DA4B033C */  lui        $v1, (0x4BDA12F7 >> 16)
 /* 8484C88 8007FF58 F7126334 */  ori        $v1, $v1, (0x4BDA12F7 & 0xFFFF)

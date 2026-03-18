@@ -402,11 +402,11 @@ glabel func_level_21_8007F438
 /* 53FBF10 8007F9E0 3C00A38F */  lw         $v1, 0x3C($sp)
 /* 53FBF14 8007F9E4 00000000 */  nop
 /* 53FBF18 8007F9E8 21186200 */  addu       $v1, $v1, $v0
-/* 53FBF1C 8007F9EC 9171010C */  jal        func_8005C644
+/* 53FBF1C 8007F9EC 9171010C */  jal        rand
 /* 53FBF20 8007F9F0 3C00A3AF */   sw        $v1, 0x3C($sp)
 /* 53FBF24 8007F9F4 1F004230 */  andi       $v0, $v0, 0x1F
 /* 53FBF28 8007F9F8 F0FF4224 */  addiu      $v0, $v0, -0x10
-/* 53FBF2C 8007F9FC 9171010C */  jal        func_8005C644
+/* 53FBF2C 8007F9FC 9171010C */  jal        rand
 /* 53FBF30 8007FA00 4800A2AF */   sw        $v0, 0x48($sp)
 /* 53FBF34 8007FA04 19000424 */  addiu      $a0, $zero, 0x19
 /* 53FBF38 8007FA08 23000524 */  addiu      $a1, $zero, 0x23

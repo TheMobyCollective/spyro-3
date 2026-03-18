@@ -109,7 +109,7 @@ extern void func_80056270(Moby*);
 extern void func_8005629C(Moby*);
 
 // Psyq
-extern int func_8005C644(); // rand
+extern int rand(); // rand
 
 // Variables
 extern short D_800658A0[0x100]; // sin

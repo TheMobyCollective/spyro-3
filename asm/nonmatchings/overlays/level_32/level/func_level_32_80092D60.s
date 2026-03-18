@@ -22,9 +22,9 @@ glabel func_level_32_80092D60
 /* 6DFA2D4 80092DA4 3000B227 */  addiu      $s2, $sp, 0x30
 /* 6DFA2D8 80092DA8 2000B027 */  addiu      $s0, $sp, 0x20
 .Llevel_32_80092DAC:
-/* 6DFA2DC 80092DAC 9171010C */  jal        func_8005C644
+/* 6DFA2DC 80092DAC 9171010C */  jal        rand
 /* 6DFA2E0 80092DB0 4800A0A3 */   sb        $zero, 0x48($sp)
-/* 6DFA2E4 80092DB4 9171010C */  jal        func_8005C644
+/* 6DFA2E4 80092DB4 9171010C */  jal        rand
 /* 6DFA2E8 80092DB8 4900A2A3 */   sb        $v0, 0x49($sp)
 /* 6DFA2EC 80092DBC 4800A427 */  addiu      $a0, $sp, 0x48
 /* 6DFA2F0 80092DC0 21284002 */  addu       $a1, $s2, $zero

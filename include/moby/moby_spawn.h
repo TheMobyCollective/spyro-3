@@ -83,7 +83,7 @@ Moby* NAME_OVERLAY_FUNCTION(MobySpawn) (int mobyClass, Moby* linkedMoby) {
         
         if ((linkedMoby->mobyClass == mobyClass) || (linkedMoby->mobyClass == 0x142) || (linkedMoby->mobyClass == 0x15C)) {
             mobyTag = linkedMoby->mobyTag;
-            unk_ovlheader_800743E4(&newMoby->position, (func_8005C644() & 0xFF) - 0x7F, (func_8005C644() & 0xFF) - 0x7F, &mobyTag->unk0);
+            unk_ovlheader_800743E4(&newMoby->position, (rand() & 0xFF) - 0x7F, (rand() & 0xFF) - 0x7F, &mobyTag->unk0);
         } else {
             func_8004F178(&newMoby->position, &linkedMoby->position);
         }
@@ -162,7 +162,7 @@ Moby* NAME_OVERLAY_FUNCTION(MobySpawn) (int mobyClass, Moby* linkedMoby) {
         newMoby->unknown4 = 2;
         mobyTag->unkE = 0x708;
         mobyTag->unk11 = 0;
-        mobyTag->unk12 = (char) (func_8005C644() & 0xFC);
+        mobyTag->unk12 = (char) (rand() & 0xFC);
         break;
     }
 #endif
@@ -235,8 +235,8 @@ Moby* NAME_OVERLAY_FUNCTION(MobySpawn) (int mobyClass, Moby* linkedMoby) {
         else            func_8004F178(&newMoby->position, &spyro.position);
 
         // Level 13 specific
-        rand1 = (unsigned char)func_8005C644();
-        rand2 = (unsigned char)func_8005C644();
+        rand1 = (unsigned char)rand();
+        rand2 = (unsigned char)rand();
         // Slightly awful fix for these first two lines; the z coord can also be done like this
         mobyTag->unk0.x = ((D_80065920[rand1] << 1 >> 5) * D_80065920[rand2]) >> 0xC;
         mobyTag->unk0.y = ((D_800658A0[rand1] << 1 >> 5) * D_80065920[rand2]) >> 0xC;
@@ -245,9 +245,9 @@ Moby* NAME_OVERLAY_FUNCTION(MobySpawn) (int mobyClass, Moby* linkedMoby) {
         
         func_8004F194(&newMoby->position, &newMoby->position, &mobyTag->unk0);
         func_8004F110(&mobyTag->unk0, 1);
-        newMoby->angle.yaw = func_8005C644();
+        newMoby->angle.yaw = rand();
         func_80055C24(newMoby);
-        switch (func_8005C644() & 3) {
+        switch (rand() & 3) {
         case 0:
             *(int*)&newMoby->colour = 0x3C0000FF;
             break;
@@ -333,8 +333,8 @@ Moby* NAME_OVERLAY_FUNCTION(MobySpawn) (int mobyClass, Moby* linkedMoby) {
         newMoby->lowDrawDistance = 0x20;
         func_8004F178(&newMoby->position, &linkedMoby->position);
         func_80055C24(newMoby);
-        azimuth = func_8005C644() & 0xFFF;
-        elevation = func_8005C644() & 0x7FF;
+        azimuth = rand() & 0xFFF;
+        elevation = rand() & 0x7FF;
 		
         // spherical -> cartesian!
         mobyTag->linearVel.x = (func_8004EA2C(elevation) * func_8004EA2C(azimuth) * linkedMoby->substate) >> 0x18;
@@ -361,11 +361,11 @@ Moby* NAME_OVERLAY_FUNCTION(MobySpawn) (int mobyClass, Moby* linkedMoby) {
         newMoby->position.x += mobyTag->linearVel.x * 4;
         newMoby->position.y += mobyTag->linearVel.y * 4;
         newMoby->position.z += mobyTag->linearVel.z * 4;
-        newMoby->angle.pitch = func_8005C644();
-        newMoby->angle.yaw = func_8005C644();
-        mobyTag->angularVel.x = (func_8005C644() & 0x1F) - 0x10;
-        mobyTag->angularVel.y = (func_8005C644() & 0x1F) - 0x10;
-        mobyTag->angularVel.z = (func_8005C644() & 0x1F) - 0x10;
+        newMoby->angle.pitch = rand();
+        newMoby->angle.yaw = rand();
+        mobyTag->angularVel.x = (rand() & 0x1F) - 0x10;
+        mobyTag->angularVel.y = (rand() & 0x1F) - 0x10;
+        mobyTag->angularVel.z = (rand() & 0x1F) - 0x10;
         mobyTag->unk10 = linkedMoby->position.z - 0x40;
         mobyTag->timer = func_8003636C(0x32, 0x50);
         break;

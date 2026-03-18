@@ -412,15 +412,15 @@ glabel func_level_44_80089EFC
 /* 8B5DA30 8008A500 00000000 */  nop
 /* 8B5DA34 8008A504 450022A2 */  sb         $v0, 0x45($s1)
 /* 8B5DA38 8008A508 46004292 */  lbu        $v0, 0x46($s2)
-/* 8B5DA3C 8008A50C 9171010C */  jal        func_8005C644
+/* 8B5DA3C 8008A50C 9171010C */  jal        rand
 /* 8B5DA40 8008A510 460022A2 */   sb        $v0, 0x46($s1)
 /* 8B5DA44 8008A514 06004230 */  andi       $v0, $v0, 0x6
 /* 8B5DA48 8008A518 FDFF4224 */  addiu      $v0, $v0, -0x3
-/* 8B5DA4C 8008A51C 9171010C */  jal        func_8005C644
+/* 8B5DA4C 8008A51C 9171010C */  jal        rand
 /* 8B5DA50 8008A520 060002A6 */   sh        $v0, 0x6($s0)
 /* 8B5DA54 8008A524 06004230 */  andi       $v0, $v0, 0x6
 /* 8B5DA58 8008A528 FDFF4224 */  addiu      $v0, $v0, -0x3
-/* 8B5DA5C 8008A52C 9171010C */  jal        func_8005C644
+/* 8B5DA5C 8008A52C 9171010C */  jal        rand
 /* 8B5DA60 8008A530 080002A6 */   sh        $v0, 0x8($s0)
 /* 8B5DA64 8008A534 1E000424 */  addiu      $a0, $zero, 0x1E
 /* 8B5DA68 8008A538 06004230 */  andi       $v0, $v0, 0x6

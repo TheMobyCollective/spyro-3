@@ -389,12 +389,12 @@ glabel func_level_18_8007D3CC
 /* 4EB0654 8007D924 23206400 */  subu       $a0, $v1, $a0
 /* 4EB0658 8007D928 203A010C */  jal        func_8004E880
 /* 4EB065C 8007D92C 23284500 */   subu      $a1, $v0, $a1
-/* 4EB0660 8007D930 9171010C */  jal        func_8005C644
+/* 4EB0660 8007D930 9171010C */  jal        rand
 /* 4EB0664 8007D934 21804000 */   addu      $s0, $v0, $zero
 /* 4EB0668 8007D938 40001026 */  addiu      $s0, $s0, 0x40
 /* 4EB066C 8007D93C 1F004230 */  andi       $v0, $v0, 0x1F
 /* 4EB0670 8007D940 21800202 */  addu       $s0, $s0, $v0
-/* 4EB0674 8007D944 9171010C */  jal        func_8005C644
+/* 4EB0674 8007D944 9171010C */  jal        rand
 /* 4EB0678 8007D948 460030A2 */   sb        $s0, 0x46($s1)
 /* 4EB067C 8007D94C 1E004230 */  andi       $v0, $v0, 0x1E
 /* 4EB0680 8007D950 21106202 */  addu       $v0, $s3, $v0
@@ -437,16 +437,16 @@ glabel func_level_18_8007D3CC
 /* 4EB0708 8007D9D8 2000B127 */  addiu      $s1, $sp, 0x20
 /* 4EB070C 8007D9DC 3000B027 */  addiu      $s0, $sp, 0x30
 .Llevel_18_8007D9E0:
-/* 4EB0710 8007D9E0 9171010C */  jal        func_8005C644
+/* 4EB0710 8007D9E0 9171010C */  jal        rand
 /* 4EB0714 8007D9E4 5800A0A3 */   sb        $zero, 0x58($sp)
-/* 4EB0718 8007D9E8 9171010C */  jal        func_8005C644
+/* 4EB0718 8007D9E8 9171010C */  jal        rand
 /* 4EB071C 8007D9EC 5900A2A3 */   sb        $v0, 0x59($sp)
 /* 4EB0720 8007D9F0 5800A427 */  addiu      $a0, $sp, 0x58
 /* 4EB0724 8007D9F4 21288002 */  addu       $a1, $s4, $zero
 /* 4EB0728 8007D9F8 21300000 */  addu       $a2, $zero, $zero
 /* 4EB072C 8007D9FC A43A010C */  jal        func_8004EA90
 /* 4EB0730 8007DA00 5A00A2A3 */   sb        $v0, 0x5A($sp)
-/* 4EB0734 8007DA04 9171010C */  jal        func_8005C644
+/* 4EB0734 8007DA04 9171010C */  jal        rand
 /* 4EB0738 8007DA08 01007326 */   addiu     $s3, $s3, 0x1
 /* 4EB073C 8007DA0C 21208002 */  addu       $a0, $s4, $zero
 /* 4EB0740 8007DA10 21282002 */  addu       $a1, $s1, $zero

@@ -785,11 +785,11 @@ glabel func_level_32_8007B864
 /* 6DE3880 8007C350 2400A38F */  lw         $v1, 0x24($sp)
 /* 6DE3884 8007C354 C3120200 */  sra        $v0, $v0, 11
 /* 6DE3888 8007C358 21186200 */  addu       $v1, $v1, $v0
-/* 6DE388C 8007C35C 9171010C */  jal        func_8005C644
+/* 6DE388C 8007C35C 9171010C */  jal        rand
 /* 6DE3890 8007C360 2400A3AF */   sw        $v1, 0x24($sp)
 /* 6DE3894 8007C364 1F004230 */  andi       $v0, $v0, 0x1F
 /* 6DE3898 8007C368 F0FF4224 */  addiu      $v0, $v0, -0x10
-/* 6DE389C 8007C36C 9171010C */  jal        func_8005C644
+/* 6DE389C 8007C36C 9171010C */  jal        rand
 /* 6DE38A0 8007C370 4800A2AF */   sw        $v0, 0x48($sp)
 /* 6DE38A4 8007C374 12000424 */  addiu      $a0, $zero, 0x12
 /* 6DE38A8 8007C378 18000524 */  addiu      $a1, $zero, 0x18

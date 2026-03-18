@@ -542,7 +542,7 @@ glabel func_level_34_80094D30
 /* 74F10D4 800953A4 C6FE7224 */  addiu      $s2, $v1, -0x13A
 /* 74F10D8 800953A8 5000B027 */  addiu      $s0, $sp, 0x50
 .Llevel_34_800953AC:
-/* 74F10DC 800953AC 9171010C */  jal        func_8005C644
+/* 74F10DC 800953AC 9171010C */  jal        rand
 /* 74F10E0 800953B0 00000000 */   nop
 /* 74F10E4 800953B4 FF004230 */  andi       $v0, $v0, 0xFF
 /* 74F10E8 800953B8 2A106202 */  slt        $v0, $s3, $v0

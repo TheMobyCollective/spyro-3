@@ -95,7 +95,7 @@ glabel func_atlas_800775D8
 /* 962FC68 80077738 0780053C */  lui        $a1, %hi(D_atlas_800757C8)
 /* 962FC6C 8007773C C857A524 */  addiu      $a1, $a1, %lo(D_atlas_800757C8)
 /* 962FC70 80077740 21304002 */  addu       $a2, $s2, $zero
-/* 962FC74 80077744 DF65010C */  jal        func_8005977C
+/* 962FC74 80077744 DF65010C */  jal        sprintf
 /* 962FC78 80077748 21380002 */   addu      $a3, $s0, $zero
 /* 962FC7C 8007774C 2000073C */  lui        $a3, (0x202020 >> 16)
 /* 962FC80 80077750 03005016 */  bne        $s2, $s0, .Latlas_80077760
@@ -138,7 +138,7 @@ glabel func_atlas_800775D8
 /* 962FD00 800777D0 0880023C */  lui        $v0, %hi(D_atlas_8007AA1C)
 /* 962FD04 800777D4 1CAA428C */  lw         $v0, %lo(D_atlas_8007AA1C)($v0)
 /* 962FD08 800777D8 25000724 */  addiu      $a3, $zero, 0x25
-/* 962FD0C 800777DC DF65010C */  jal        func_8005977C
+/* 962FD0C 800777DC DF65010C */  jal        sprintf
 /* 962FD10 800777E0 1000A2AF */   sw        $v0, 0x10($sp)
 /* 962FD14 800777E4 0200A012 */  beqz       $s5, .Latlas_800777F0
 /* 962FD18 800777E8 1800A427 */   addiu     $a0, $sp, 0x18

@@ -220,7 +220,7 @@ glabel func_options_80074C00
 /* 9654BEC 80074EBC 94C6C68C */  lw         $a2, %lo(D_8006C694)($a2)
 /* 9654BF0 80074EC0 0780053C */  lui        $a1, %hi(D_options_80074490)
 /* 9654BF4 80074EC4 9044A524 */  addiu      $a1, $a1, %lo(D_options_80074490)
-/* 9654BF8 80074EC8 DF65010C */  jal        func_8005977C
+/* 9654BF8 80074EC8 DF65010C */  jal        sprintf
 /* 9654BFC 80074ECC 1800A427 */   addiu     $a0, $sp, 0x18
 /* 9654C00 80074ED0 1800A427 */  addiu      $a0, $sp, 0x18
 /* 9654C04 80074ED4 21284002 */  addu       $a1, $s2, $zero
@@ -231,7 +231,7 @@ glabel func_options_80074C00
 /* 9654C14 80074EE4 98C6C68C */  lw         $a2, %lo(D_8006C698)($a2)
 /* 9654C18 80074EE8 0780053C */  lui        $a1, %hi(D_options_80074490)
 /* 9654C1C 80074EEC 9044A524 */  addiu      $a1, $a1, %lo(D_options_80074490)
-/* 9654C20 80074EF0 DF65010C */  jal        func_8005977C
+/* 9654C20 80074EF0 DF65010C */  jal        sprintf
 /* 9654C24 80074EF4 1800A427 */   addiu     $a0, $sp, 0x18
 /* 9654C28 80074EF8 1800A427 */  addiu      $a0, $sp, 0x18
 /* 9654C2C 80074EFC 21284002 */  addu       $a1, $s2, $zero

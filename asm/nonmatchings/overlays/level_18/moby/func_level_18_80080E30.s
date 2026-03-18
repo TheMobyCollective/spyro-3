@@ -313,7 +313,7 @@ glabel func_level_18_80080E30
 /* 4EB3FB4 80081284 03050208 */  j          .Llevel_18_8008140C
 /* 4EB3FB8 80081288 660062A0 */   sb        $v0, 0x66($v1)
 .Llevel_18_8008128C:
-/* 4EB3FBC 8008128C 9171010C */  jal        func_8005C644
+/* 4EB3FBC 8008128C 9171010C */  jal        rand
 /* 4EB3FC0 80081290 21800000 */   addu      $s0, $zero, $zero
 /* 4EB3FC4 80081294 FF005130 */  andi       $s1, $v0, 0xFF
 /* 4EB3FC8 80081298 0C005526 */  addiu      $s5, $s2, 0xC

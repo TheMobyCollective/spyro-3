@@ -185,7 +185,7 @@ glabel func_level_11_80075E1C
 /* 3E1A5E8 800760B8 1E000424 */  addiu      $a0, $zero, 0x1E
 /* 3E1A5EC 800760BC F7D8000C */  jal        func_800363DC
 /* 3E1A5F0 800760C0 5A000524 */   addiu     $a1, $zero, 0x5A
-/* 3E1A5F4 800760C4 9171010C */  jal        func_8005C644
+/* 3E1A5F4 800760C4 9171010C */  jal        rand
 /* 3E1A5F8 800760C8 21804000 */   addu      $s0, $v0, $zero
 /* 3E1A5FC 800760CC 01004230 */  andi       $v0, $v0, 0x1
 /* 3E1A600 800760D0 02004010 */  beqz       $v0, .Llevel_11_800760DC

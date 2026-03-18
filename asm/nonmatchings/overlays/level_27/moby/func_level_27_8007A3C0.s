@@ -515,7 +515,7 @@ glabel func_level_27_8007A3C0
 /* 63EF058 8007AB28 1C00C28E */  lw         $v0, 0x1C($s6)
 /* 63EF05C 8007AB2C 0000D28E */  lw         $s2, 0x0($s6)
 /* 63EF060 8007AB30 25104300 */  or         $v0, $v0, $v1
-/* 63EF064 8007AB34 9171010C */  jal        func_8005C644
+/* 63EF064 8007AB34 9171010C */  jal        rand
 /* 63EF068 8007AB38 1C00C2AE */   sw        $v0, 0x1C($s6)
 /* 63EF06C 8007AB3C FF005730 */  andi       $s7, $v0, 0xFF
 /* 63EF070 8007AB40 40201700 */  sll        $a0, $s7, 1

@@ -21,15 +21,15 @@ glabel func_level_36_80079BC0
 /* 78DA130 80079C00 21380000 */   addu      $a3, $zero, $zero
 /* 78DA134 80079C04 21880000 */  addu       $s1, $zero, $zero
 .Llevel_36_80079C08:
-/* 78DA138 80079C08 9171010C */  jal        func_8005C644
+/* 78DA138 80079C08 9171010C */  jal        rand
 /* 78DA13C 80079C0C 01003126 */   addiu     $s1, $s1, 0x1
 /* 78DA140 80079C10 FE014230 */  andi       $v0, $v0, 0x1FE
 /* 78DA144 80079C14 01FF4224 */  addiu      $v0, $v0, -0xFF
-/* 78DA148 80079C18 9171010C */  jal        func_8005C644
+/* 78DA148 80079C18 9171010C */  jal        rand
 /* 78DA14C 80079C1C 2000A2AF */   sw        $v0, 0x20($sp)
 /* 78DA150 80079C20 FE014230 */  andi       $v0, $v0, 0x1FE
 /* 78DA154 80079C24 01FF4224 */  addiu      $v0, $v0, -0xFF
-/* 78DA158 80079C28 9171010C */  jal        func_8005C644
+/* 78DA158 80079C28 9171010C */  jal        rand
 /* 78DA15C 80079C2C 2400A2AF */   sw        $v0, 0x24($sp)
 /* 78DA160 80079C30 2000A427 */  addiu      $a0, $sp, 0x20
 /* 78DA164 80079C34 21288000 */  addu       $a1, $a0, $zero

@@ -22,9 +22,9 @@ glabel func_level_23_8008DB7C
 /* 5AAA0F0 8008DBC0 3000B227 */  addiu      $s2, $sp, 0x30
 /* 5AAA0F4 8008DBC4 2000B027 */  addiu      $s0, $sp, 0x20
 .Llevel_23_8008DBC8:
-/* 5AAA0F8 8008DBC8 9171010C */  jal        func_8005C644
+/* 5AAA0F8 8008DBC8 9171010C */  jal        rand
 /* 5AAA0FC 8008DBCC 4800A0A3 */   sb        $zero, 0x48($sp)
-/* 5AAA100 8008DBD0 9171010C */  jal        func_8005C644
+/* 5AAA100 8008DBD0 9171010C */  jal        rand
 /* 5AAA104 8008DBD4 4900A2A3 */   sb        $v0, 0x49($sp)
 /* 5AAA108 8008DBD8 4800A427 */  addiu      $a0, $sp, 0x48
 /* 5AAA10C 8008DBDC 21284002 */  addu       $a1, $s2, $zero

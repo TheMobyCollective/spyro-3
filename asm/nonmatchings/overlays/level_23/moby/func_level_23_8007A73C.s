@@ -15,7 +15,7 @@ glabel func_level_23_8007A73C
 /* 5A96C94 8007A764 0B004010 */  beqz       $v0, .Llevel_23_8007A794
 /* 5A96C98 8007A768 00000000 */   nop
 .Llevel_23_8007A76C:
-/* 5A96C9C 8007A76C 9171010C */  jal        func_8005C644
+/* 5A96C9C 8007A76C 9171010C */  jal        rand
 /* 5A96CA0 8007A770 00000000 */   nop
 /* 5A96CA4 8007A774 01004230 */  andi       $v0, $v0, 0x1
 /* 5A96CA8 8007A778 0780033C */  lui        $v1, %hi(SpawnParticle)

@@ -99,7 +99,7 @@ glabel func_level_50_8009669C
 /* 95EAD00 800967D0 1000A2AF */  sw         $v0, 0x10($sp)
 /* 95EAD04 800967D4 0780053C */  lui        $a1, %hi(D_level_50_80074AC4)
 /* 95EAD08 800967D8 C44AA524 */  addiu      $a1, $a1, %lo(D_level_50_80074AC4)
-/* 95EAD0C 800967DC DF65010C */  jal        func_8005977C
+/* 95EAD0C 800967DC DF65010C */  jal        sprintf
 /* 95EAD10 800967E0 1800A427 */   addiu     $a0, $sp, 0x18
 /* 95EAD14 800967E4 025A0208 */  j          .Llevel_50_80096808
 /* 95EAD18 800967E8 1800A427 */   addiu     $a0, $sp, 0x18
@@ -108,7 +108,7 @@ glabel func_level_50_8009669C
 /* 95EAD20 800967F0 0780053C */  lui        $a1, %hi(D_level_50_80074AD4)
 /* 95EAD24 800967F4 D44AA524 */  addiu      $a1, $a1, %lo(D_level_50_80074AD4)
 /* 95EAD28 800967F8 2130E000 */  addu       $a2, $a3, $zero
-/* 95EAD2C 800967FC DF65010C */  jal        func_8005977C
+/* 95EAD2C 800967FC DF65010C */  jal        sprintf
 /* 95EAD30 80096800 21384000 */   addu      $a3, $v0, $zero
 /* 95EAD34 80096804 1800A427 */  addiu      $a0, $sp, 0x18
 .Llevel_50_80096808:
@@ -181,7 +181,7 @@ glabel func_level_50_8009669C
 /* 95EAE3C 8009690C 1000A2AF */  sw         $v0, 0x10($sp)
 /* 95EAE40 80096910 0780053C */  lui        $a1, %hi(D_level_50_80074AC4)
 /* 95EAE44 80096914 C44AA524 */  addiu      $a1, $a1, %lo(D_level_50_80074AC4)
-/* 95EAE48 80096918 DF65010C */  jal        func_8005977C
+/* 95EAE48 80096918 DF65010C */  jal        sprintf
 /* 95EAE4C 8009691C 2800A427 */   addiu     $a0, $sp, 0x28
 /* 95EAE50 80096920 515A0208 */  j          .Llevel_50_80096944
 /* 95EAE54 80096924 2800A427 */   addiu     $a0, $sp, 0x28
@@ -190,7 +190,7 @@ glabel func_level_50_8009669C
 /* 95EAE5C 8009692C 0780053C */  lui        $a1, %hi(D_level_50_80074AD4)
 /* 95EAE60 80096930 D44AA524 */  addiu      $a1, $a1, %lo(D_level_50_80074AD4)
 /* 95EAE64 80096934 2130E000 */  addu       $a2, $a3, $zero
-/* 95EAE68 80096938 DF65010C */  jal        func_8005977C
+/* 95EAE68 80096938 DF65010C */  jal        sprintf
 /* 95EAE6C 8009693C 21384000 */   addu      $a3, $v0, $zero
 /* 95EAE70 80096940 2800A427 */  addiu      $a0, $sp, 0x28
 .Llevel_50_80096944:

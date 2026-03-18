@@ -170,7 +170,7 @@ glabel func_level_38_8007B450
 /* 7C3A404 8007B6D4 2C00A38F */  lw         $v1, 0x2C($sp)
 /* 7C3A408 8007B6D8 43120200 */  sra        $v0, $v0, 9
 /* 7C3A40C 8007B6DC 21186200 */  addu       $v1, $v1, $v0
-/* 7C3A410 8007B6E0 9171010C */  jal        func_8005C644
+/* 7C3A410 8007B6E0 9171010C */  jal        rand
 /* 7C3A414 8007B6E4 2C00A3AF */   sw        $v1, 0x2C($sp)
 /* 7C3A418 8007B6E8 07004230 */  andi       $v0, $v0, 0x7
 /* 7C3A41C 8007B6EC 0E004010 */  beqz       $v0, .Llevel_38_8007B728

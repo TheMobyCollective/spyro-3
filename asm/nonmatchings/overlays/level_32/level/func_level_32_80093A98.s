@@ -99,7 +99,7 @@ glabel func_level_32_80093A98
 /* 6DFB0FC 80093BCC 1000A2AF */  sw         $v0, 0x10($sp)
 /* 6DFB100 80093BD0 0780053C */  lui        $a1, %hi(D_level_32_80074BBC)
 /* 6DFB104 80093BD4 BC4BA524 */  addiu      $a1, $a1, %lo(D_level_32_80074BBC)
-/* 6DFB108 80093BD8 DF65010C */  jal        func_8005977C
+/* 6DFB108 80093BD8 DF65010C */  jal        sprintf
 /* 6DFB10C 80093BDC 1800A427 */   addiu     $a0, $sp, 0x18
 /* 6DFB110 80093BE0 014F0208 */  j          .Llevel_32_80093C04
 /* 6DFB114 80093BE4 1800A427 */   addiu     $a0, $sp, 0x18
@@ -108,7 +108,7 @@ glabel func_level_32_80093A98
 /* 6DFB11C 80093BEC 0780053C */  lui        $a1, %hi(D_level_32_80074BCC)
 /* 6DFB120 80093BF0 CC4BA524 */  addiu      $a1, $a1, %lo(D_level_32_80074BCC)
 /* 6DFB124 80093BF4 2130E000 */  addu       $a2, $a3, $zero
-/* 6DFB128 80093BF8 DF65010C */  jal        func_8005977C
+/* 6DFB128 80093BF8 DF65010C */  jal        sprintf
 /* 6DFB12C 80093BFC 21384000 */   addu      $a3, $v0, $zero
 /* 6DFB130 80093C00 1800A427 */  addiu      $a0, $sp, 0x18
 .Llevel_32_80093C04:
@@ -181,7 +181,7 @@ glabel func_level_32_80093A98
 /* 6DFB238 80093D08 1000A2AF */  sw         $v0, 0x10($sp)
 /* 6DFB23C 80093D0C 0780053C */  lui        $a1, %hi(D_level_32_80074BBC)
 /* 6DFB240 80093D10 BC4BA524 */  addiu      $a1, $a1, %lo(D_level_32_80074BBC)
-/* 6DFB244 80093D14 DF65010C */  jal        func_8005977C
+/* 6DFB244 80093D14 DF65010C */  jal        sprintf
 /* 6DFB248 80093D18 2800A427 */   addiu     $a0, $sp, 0x28
 /* 6DFB24C 80093D1C 504F0208 */  j          .Llevel_32_80093D40
 /* 6DFB250 80093D20 2800A427 */   addiu     $a0, $sp, 0x28
@@ -190,7 +190,7 @@ glabel func_level_32_80093A98
 /* 6DFB258 80093D28 0780053C */  lui        $a1, %hi(D_level_32_80074BCC)
 /* 6DFB25C 80093D2C CC4BA524 */  addiu      $a1, $a1, %lo(D_level_32_80074BCC)
 /* 6DFB260 80093D30 2130E000 */  addu       $a2, $a3, $zero
-/* 6DFB264 80093D34 DF65010C */  jal        func_8005977C
+/* 6DFB264 80093D34 DF65010C */  jal        sprintf
 /* 6DFB268 80093D38 21384000 */   addu      $a3, $v0, $zero
 /* 6DFB26C 80093D3C 2800A427 */  addiu      $a0, $sp, 0x28
 .Llevel_32_80093D40:

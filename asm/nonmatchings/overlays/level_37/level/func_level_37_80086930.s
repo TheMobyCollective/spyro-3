@@ -22,9 +22,9 @@ glabel func_level_37_80086930
 /* 7AB26A4 80086974 3000B227 */  addiu      $s2, $sp, 0x30
 /* 7AB26A8 80086978 2000B027 */  addiu      $s0, $sp, 0x20
 .Llevel_37_8008697C:
-/* 7AB26AC 8008697C 9171010C */  jal        func_8005C644
+/* 7AB26AC 8008697C 9171010C */  jal        rand
 /* 7AB26B0 80086980 4800A0A3 */   sb        $zero, 0x48($sp)
-/* 7AB26B4 80086984 9171010C */  jal        func_8005C644
+/* 7AB26B4 80086984 9171010C */  jal        rand
 /* 7AB26B8 80086988 4900A2A3 */   sb        $v0, 0x49($sp)
 /* 7AB26BC 8008698C 4800A427 */  addiu      $a0, $sp, 0x48
 /* 7AB26C0 80086990 21284002 */  addu       $a1, $s2, $zero

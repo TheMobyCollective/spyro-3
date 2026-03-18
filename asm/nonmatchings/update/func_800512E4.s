@@ -328,7 +328,7 @@ glabel func_800512E4
 /* 41FA4 800517A4 0000268E */  lw         $a2, 0x0($s1)
 /* 41FA8 800517A8 0780053C */  lui        $a1, %hi(D_8006C4E8)
 /* 41FAC 800517AC E8C4A524 */  addiu      $a1, $a1, %lo(D_8006C4E8)
-/* 41FB0 800517B0 DF65010C */  jal        func_8005977C
+/* 41FB0 800517B0 DF65010C */  jal        sprintf
 /* 41FB4 800517B4 1000A427 */   addiu     $a0, $sp, 0x10
 /* 41FB8 800517B8 21200000 */  addu       $a0, $zero, $zero
 /* 41FBC 800517BC 1000A293 */  lbu        $v0, 0x10($sp)

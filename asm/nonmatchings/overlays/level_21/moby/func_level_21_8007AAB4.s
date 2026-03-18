@@ -884,7 +884,7 @@ glabel func_level_21_8007AAB4
 /* 53F7C20 8007B6F0 FFFF4224 */  addiu      $v0, $v0, -0x1
 /* 53F7C24 8007B6F4 07002212 */  beq        $s1, $v0, .Llevel_21_8007B714
 /* 53F7C28 8007B6F8 00000000 */   nop
-/* 53F7C2C 8007B6FC 9171010C */  jal        func_8005C644
+/* 53F7C2C 8007B6FC 9171010C */  jal        rand
 /* 53F7C30 8007B700 00000000 */   nop
 /* 53F7C34 8007B704 FF004230 */  andi       $v0, $v0, 0xFF
 /* 53F7C38 8007B708 80004228 */  slti       $v0, $v0, 0x80

@@ -273,7 +273,7 @@ glabel func_level_17_80082528
 /* 4D0FD94 80082864 C6FE7224 */  addiu      $s2, $v1, -0x13A
 /* 4D0FD98 80082868 4000B027 */  addiu      $s0, $sp, 0x40
 .Llevel_17_8008286C:
-/* 4D0FD9C 8008286C 9171010C */  jal        func_8005C644
+/* 4D0FD9C 8008286C 9171010C */  jal        rand
 /* 4D0FDA0 80082870 00000000 */   nop
 /* 4D0FDA4 80082874 FF004230 */  andi       $v0, $v0, 0xFF
 /* 4D0FDA8 80082878 2A106202 */  slt        $v0, $s3, $v0

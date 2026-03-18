@@ -672,7 +672,7 @@ glabel func_level_12_8007C2B8
 /* 4169818 8007CAE8 1F004230 */  andi       $v0, $v0, 0x1F
 /* 416981C 8007CAEC 21004014 */  bnez       $v0, .Llevel_12_8007CB74
 /* 4169820 8007CAF0 00000000 */   nop
-/* 4169824 8007CAF4 9171010C */  jal        func_8005C644
+/* 4169824 8007CAF4 9171010C */  jal        rand
 /* 4169828 8007CAF8 00000000 */   nop
 /* 416982C 8007CAFC 6666033C */  lui        $v1, (0x66666667 >> 16)
 /* 4169830 8007CB00 67666334 */  ori        $v1, $v1, (0x66666667 & 0xFFFF)
@@ -688,9 +688,9 @@ glabel func_level_12_8007C2B8
 /* 4169858 8007CB28 0900222A */  slti       $v0, $s1, 0x9
 /* 416985C 8007CB2C 11004014 */  bnez       $v0, .Llevel_12_8007CB74
 /* 4169860 8007CB30 00000000 */   nop
-/* 4169864 8007CB34 9171010C */  jal        func_8005C644
+/* 4169864 8007CB34 9171010C */  jal        rand
 /* 4169868 8007CB38 00000000 */   nop
-/* 416986C 8007CB3C 9171010C */  jal        func_8005C644
+/* 416986C 8007CB3C 9171010C */  jal        rand
 /* 4169870 8007CB40 07005030 */   andi      $s0, $v0, 0x7
 /* 4169874 8007CB44 07004230 */  andi       $v0, $v0, 0x7
 /* 4169878 8007CB48 01000424 */  addiu      $a0, $zero, 0x1
@@ -1377,9 +1377,9 @@ glabel func_level_12_8007C2B8
 /* 416A284 8007D554 7000B227 */  addiu      $s2, $sp, 0x70
 /* 416A288 8007D558 8000B527 */  addiu      $s5, $sp, 0x80
 .Llevel_12_8007D55C:
-/* 416A28C 8007D55C 9171010C */  jal        func_8005C644
+/* 416A28C 8007D55C 9171010C */  jal        rand
 /* 416A290 8007D560 01009426 */   addiu     $s4, $s4, 0x1
-/* 416A294 8007D564 9171010C */  jal        func_8005C644
+/* 416A294 8007D564 9171010C */  jal        rand
 /* 416A298 8007D568 FF005030 */   andi      $s0, $v0, 0xFF
 /* 416A29C 8007D56C 8C000424 */  addiu      $a0, $zero, 0x8C
 /* 416A2A0 8007D570 C8000524 */  addiu      $a1, $zero, 0xC8
@@ -2073,7 +2073,7 @@ glabel func_level_12_8007C2B8
 /* 416ACF0 8007DFC0 9000B427 */  addiu      $s4, $sp, 0x90
 /* 416ACF4 8007DFC4 A000BE27 */  addiu      $fp, $sp, 0xA0
 .Llevel_12_8007DFC8:
-/* 416ACF8 8007DFC8 9171010C */  jal        func_8005C644
+/* 416ACF8 8007DFC8 9171010C */  jal        rand
 /* 416ACFC 8007DFCC 0100B526 */   addiu     $s5, $s5, 0x1
 /* 416AD00 8007DFD0 20030424 */  addiu      $a0, $zero, 0x320
 /* 416AD04 8007DFD4 00080524 */  addiu      $a1, $zero, 0x800
@@ -2963,14 +2963,14 @@ glabel func_level_12_8007C2B8
 /* 416B9FC 8007ECCC 01000624 */   addiu     $a2, $zero, 0x1
 /* 416BA00 8007ECD0 FF000224 */  addiu      $v0, $zero, 0xFF
 .Llevel_12_8007ECD4:
-/* 416BA04 8007ECD4 9171010C */  jal        func_8005C644
+/* 416BA04 8007ECD4 9171010C */  jal        rand
 /* 416BA08 8007ECD8 4A0002A2 */   sb        $v0, 0x4A($s0)
 /* 416BA0C 8007ECDC 460002A2 */  sb         $v0, 0x46($s0)
 /* 416BA10 8007ECE0 E800AB8F */  lw         $t3, 0xE8($sp)
 /* 416BA14 8007ECE4 00000000 */  nop
 /* 416BA18 8007ECE8 04006015 */  bnez       $t3, .Llevel_12_8007ECFC
 /* 416BA1C 8007ECEC 00000000 */   nop
-/* 416BA20 8007ECF0 9171010C */  jal        func_8005C644
+/* 416BA20 8007ECF0 9171010C */  jal        rand
 /* 416BA24 8007ECF4 00000000 */   nop
 /* 416BA28 8007ECF8 21A04000 */  addu       $s4, $v0, $zero
 .Llevel_12_8007ECFC:
@@ -3059,7 +3059,7 @@ glabel func_level_12_8007C2B8
 /* 416BB68 8007EE38 96001E24 */  addiu      $fp, $zero, 0x96
 /* 416BB6C 8007EE3C 21A00000 */  addu       $s4, $zero, $zero
 .Llevel_12_8007EE40:
-/* 416BB70 8007EE40 9171010C */  jal        func_8005C644
+/* 416BB70 8007EE40 9171010C */  jal        rand
 /* 416BB74 8007EE44 00000000 */   nop
 /* 416BB78 8007EE48 20030424 */  addiu      $a0, $zero, 0x320
 /* 416BB7C 8007EE4C 00080524 */  addiu      $a1, $zero, 0x800
@@ -3161,7 +3161,7 @@ glabel func_level_12_8007C2B8
 /* 416BCF0 8007EFC0 4C00C013 */  beqz       $fp, .Llevel_12_8007F0F4
 /* 416BCF4 8007EFC4 21A80000 */   addu      $s5, $zero, $zero
 .Llevel_12_8007EFC8:
-/* 416BCF8 8007EFC8 9171010C */  jal        func_8005C644
+/* 416BCF8 8007EFC8 9171010C */  jal        rand
 /* 416BCFC 8007EFCC 00000000 */   nop
 /* 416BD00 8007EFD0 20030424 */  addiu      $a0, $zero, 0x320
 /* 416BD04 8007EFD4 00080524 */  addiu      $a1, $zero, 0x800

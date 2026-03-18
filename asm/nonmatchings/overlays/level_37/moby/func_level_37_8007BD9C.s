@@ -910,7 +910,7 @@ glabel func_level_37_8007BD9C
 /* 7AA87C0 8007CA90 01000C24 */  addiu      $t4, $zero, 0x1
 /* 7AA87C4 8007CA94 14001724 */  addiu      $s7, $zero, 0x14
 /* 7AA87C8 8007CA98 E000ABAF */  sw         $t3, 0xE0($sp)
-/* 7AA87CC 8007CA9C 9171010C */  jal        func_8005C644
+/* 7AA87CC 8007CA9C 9171010C */  jal        rand
 /* 7AA87D0 8007CAA0 E800ACAF */   sw        $t4, 0xE8($sp)
 /* 7AA87D4 8007CAA4 01004230 */  andi       $v0, $v0, 0x1
 /* 7AA87D8 8007CAA8 03004010 */  beqz       $v0, .Llevel_37_8007CAB8

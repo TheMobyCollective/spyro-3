@@ -17,12 +17,12 @@ glabel func_atlas_80075F2C
 /* 962E48C 80075F5C 2000BFAF */  sw         $ra, 0x20($sp)
 /* 962E490 80075F60 1000A3A7 */  sh         $v1, 0x10($sp)
 /* 962E494 80075F64 1400A3A7 */  sh         $v1, 0x14($sp)
-/* 962E498 80075F68 9968010C */  jal        func_8005A264
+/* 962E498 80075F68 9968010C */  jal        DrawSync
 /* 962E49C 80075F6C 1600A2A7 */   sh        $v0, 0x16($sp)
 /* 962E4A0 80075F70 1000A427 */  addiu      $a0, $sp, 0x10
-/* 962E4A4 80075F74 1E69010C */  jal        func_8005A478
+/* 962E4A4 80075F74 1E69010C */  jal        LoadImage
 /* 962E4A8 80075F78 21280002 */   addu      $a1, $s0, $zero
-/* 962E4AC 80075F7C 9968010C */  jal        func_8005A264
+/* 962E4AC 80075F7C 9968010C */  jal        DrawSync
 /* 962E4B0 80075F80 21200000 */   addu      $a0, $zero, $zero
 /* 962E4B4 80075F84 05002012 */  beqz       $s1, .Latlas_80075F9C
 /* 962E4B8 80075F88 00000000 */   nop

@@ -166,13 +166,13 @@ glabel func_level_34_8008DAE8
 /* 74E9A88 8008DD58 1F000224 */   addiu     $v0, $zero, 0x1F
 /* 74E9A8C 8008DD5C 06002216 */  bne        $s1, $v0, .Llevel_34_8008DD78
 /* 74E9A90 8008DD60 00000000 */   nop
-/* 74E9A94 8008DD64 9171010C */  jal        func_8005C644
+/* 74E9A94 8008DD64 9171010C */  jal        rand
 /* 74E9A98 8008DD68 00000000 */   nop
 /* 74E9A9C 8008DD6C 01004230 */  andi       $v0, $v0, 0x1
 /* 74E9AA0 8008DD70 58004010 */  beqz       $v0, .Llevel_34_8008DED4
 /* 74E9AA4 8008DD74 21200000 */   addu      $a0, $zero, $zero
 .Llevel_34_8008DD78:
-/* 74E9AA8 8008DD78 9171010C */  jal        func_8005C644
+/* 74E9AA8 8008DD78 9171010C */  jal        rand
 /* 74E9AAC 8008DD7C 00000000 */   nop
 /* 74E9AB0 8008DD80 21200002 */  addu       $a0, $s0, $zero
 /* 74E9AB4 8008DD84 01004230 */  andi       $v0, $v0, 0x1
@@ -311,19 +311,19 @@ glabel func_level_34_8008DAE8
 /* 74E9CB0 8008DF80 1800A38F */  lw         $v1, 0x18($sp)
 /* 74E9CB4 8008DF84 00000000 */  nop
 /* 74E9CB8 8008DF88 21186200 */  addu       $v1, $v1, $v0
-/* 74E9CBC 8008DF8C 9171010C */  jal        func_8005C644
+/* 74E9CBC 8008DF8C 9171010C */  jal        rand
 /* 74E9CC0 8008DF90 040043A6 */   sh        $v1, 0x4($s2)
-/* 74E9CC4 8008DF94 9171010C */  jal        func_8005C644
+/* 74E9CC4 8008DF94 9171010C */  jal        rand
 /* 74E9CC8 8008DF98 450002A2 */   sb        $v0, 0x45($s0)
-/* 74E9CCC 8008DF9C 9171010C */  jal        func_8005C644
+/* 74E9CCC 8008DF9C 9171010C */  jal        rand
 /* 74E9CD0 8008DFA0 460002A2 */   sb        $v0, 0x46($s0)
 /* 74E9CD4 8008DFA4 1F004230 */  andi       $v0, $v0, 0x1F
 /* 74E9CD8 8008DFA8 F0FF4224 */  addiu      $v0, $v0, -0x10
-/* 74E9CDC 8008DFAC 9171010C */  jal        func_8005C644
+/* 74E9CDC 8008DFAC 9171010C */  jal        rand
 /* 74E9CE0 8008DFB0 060042A6 */   sh        $v0, 0x6($s2)
 /* 74E9CE4 8008DFB4 1F004230 */  andi       $v0, $v0, 0x1F
 /* 74E9CE8 8008DFB8 F0FF4224 */  addiu      $v0, $v0, -0x10
-/* 74E9CEC 8008DFBC 9171010C */  jal        func_8005C644
+/* 74E9CEC 8008DFBC 9171010C */  jal        rand
 /* 74E9CF0 8008DFC0 080042A6 */   sh        $v0, 0x8($s2)
 /* 74E9CF4 8008DFC4 1F004230 */  andi       $v0, $v0, 0x1F
 /* 74E9CF8 8008DFC8 F0FF4224 */  addiu      $v0, $v0, -0x10

@@ -99,7 +99,7 @@ glabel func_level_24_8007B948
 /* 5DF67E0 8007BAB0 040022AE */  sw         $v0, 0x4($s1)
 /* 5DF67E4 8007BAB4 C2010224 */  addiu      $v0, $zero, 0x1C2
 /* 5DF67E8 8007BAB8 020022A6 */  sh         $v0, 0x2($s1)
-/* 5DF67EC 8007BABC 9171010C */  jal        func_8005C644
+/* 5DF67EC 8007BABC 9171010C */  jal        rand
 /* 5DF67F0 8007BAC0 000023A2 */   sb        $v1, 0x0($s1)
 /* 5DF67F4 8007BAC4 440002A2 */  sb         $v0, 0x44($s0)
 /* 5DF67F8 8007BAC8 480016A2 */  sb         $s6, 0x48($s0)

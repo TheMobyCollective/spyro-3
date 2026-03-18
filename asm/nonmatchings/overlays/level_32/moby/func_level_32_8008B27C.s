@@ -711,7 +711,7 @@ glabel func_level_32_8008B27C
 /* 6DF31A8 8008BC78 592F0208 */  j          .Llevel_32_8008BD64
 /* 6DF31AC 8008BC7C 480060A2 */   sb        $zero, 0x48($s3)
 .Llevel_32_8008BC80:
-/* 6DF31B0 8008BC80 9171010C */  jal        func_8005C644
+/* 6DF31B0 8008BC80 9171010C */  jal        rand
 /* 6DF31B4 8008BC84 00000000 */   nop
 /* 6DF31B8 8008BC88 FF005230 */  andi       $s2, $v0, 0xFF
 /* 6DF31BC 8008BC8C 0680143C */  lui        $s4, %hi(D_80065920)

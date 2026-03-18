@@ -379,7 +379,7 @@ glabel func_level_22_80081674
 /* 57718EC 80081BBC 00000000 */   nop
 /* 57718F0 80081BC0 78001024 */  addiu      $s0, $zero, 0x78
 .Llevel_22_80081BC4:
-/* 57718F4 80081BC4 9171010C */  jal        func_8005C644
+/* 57718F4 80081BC4 9171010C */  jal        rand
 /* 57718F8 80081BC8 00000000 */   nop
 /* 57718FC 80081BCC 1A005000 */  div        $zero, $v0, $s0
 /* 5771900 80081BD0 02000016 */  bnez       $s0, .Llevel_22_80081BDC

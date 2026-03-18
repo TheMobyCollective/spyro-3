@@ -2056,7 +2056,7 @@ glabel func_level_50_8008B434
 /* 95E16C8 8008D198 02000524 */   addiu     $a1, $zero, 0x2
 /* 95E16CC 8008D19C C3004010 */  beqz       $v0, .Llevel_50_8008D4AC
 /* 95E16D0 8008D1A0 00000000 */   nop
-/* 95E16D4 8008D1A4 9171010C */  jal        func_8005C644
+/* 95E16D4 8008D1A4 9171010C */  jal        rand
 /* 95E16D8 8008D1A8 00000000 */   nop
 /* 95E16DC 8008D1AC 01004230 */  andi       $v0, $v0, 0x1
 /* 95E16E0 8008D1B0 07004010 */  beqz       $v0, .Llevel_50_8008D1D0

@@ -40,7 +40,7 @@ extern void func_80055D24(Moby*, int); // fUpdateMobyCollision
 extern void func_800584BC(int, int); // fWarpToLevel
 
 // Psyq
-extern int func_8005C644(); // rand
+extern int rand(); // rand
 
 // .data 80064f9c
 extern Sparx sparx;

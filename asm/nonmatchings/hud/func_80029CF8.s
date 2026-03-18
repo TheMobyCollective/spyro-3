@@ -62,7 +62,7 @@ glabel func_80029CF8
 /* 1A5D4 80029DD4 0780013C */  lui        $at, %hi(D_80069DC4)
 /* 1A5D8 80029DD8 21082200 */  addu       $at, $at, $v0
 /* 1A5DC 80029DDC C49D258C */  lw         $a1, %lo(D_80069DC4)($at)
-/* 1A5E0 80029DE0 DF65010C */  jal        func_8005977C
+/* 1A5E0 80029DE0 DF65010C */  jal        sprintf
 /* 1A5E4 80029DE4 1800A427 */   addiu     $a0, $sp, 0x18
 /* 1A5E8 80029DE8 ECBA000C */  jal        func_8002EBB0
 /* 1A5EC 80029DEC 1800A427 */   addiu     $a0, $sp, 0x18

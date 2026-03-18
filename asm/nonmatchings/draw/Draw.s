@@ -186,7 +186,7 @@ glabel Draw
 /* F050 8001E850 23104300 */  subu       $v0, $v0, $v1
 /* F054 8001E854 0780013C */  lui        $at, %hi(D_8006C7E8)
 /* F058 8001E858 E8C722AC */  sw         $v0, %lo(D_8006C7E8)($at)
-/* F05C 8001E85C 9968010C */  jal        func_8005A264
+/* F05C 8001E85C 9968010C */  jal        DrawSync
 /* F060 8001E860 21200000 */   addu      $a0, $zero, $zero
 /* F064 8001E864 0780033C */  lui        $v1, %hi(D_8006E344)
 /* F068 8001E868 44E3638C */  lw         $v1, %lo(D_8006E344)($v1)
@@ -198,10 +198,10 @@ glabel Draw
 /* F080 8001E880 00000000 */  nop
 /* F084 8001E884 03004010 */  beqz       $v0, .L8001E894
 /* F088 8001E888 00000000 */   nop
-/* F08C 8001E88C 5B65010C */  jal        func_8005956C
+/* F08C 8001E88C 5B65010C */  jal        VSync
 /* F090 8001E890 21200000 */   addu      $a0, $zero, $zero
 .L8001E894:
-/* F094 8001E894 5B65010C */  jal        func_8005956C
+/* F094 8001E894 5B65010C */  jal        VSync
 /* F098 8001E898 FFFF0424 */   addiu     $a0, $zero, -0x1
 /* F09C 8001E89C 0780033C */  lui        $v1, %hi(D_8006C5D4)
 /* F0A0 8001E8A0 D4C5638C */  lw         $v1, %lo(D_8006C5D4)($v1)
@@ -213,9 +213,9 @@ glabel Draw
 /* F0B8 8001E8B8 0F004010 */  beqz       $v0, .L8001E8F8
 /* F0BC 8001E8BC 21808000 */   addu      $s0, $a0, $zero
 .L8001E8C0:
-/* F0C0 8001E8C0 5B65010C */  jal        func_8005956C
+/* F0C0 8001E8C0 5B65010C */  jal        VSync
 /* F0C4 8001E8C4 21200000 */   addu      $a0, $zero, $zero
-/* F0C8 8001E8C8 5B65010C */  jal        func_8005956C
+/* F0C8 8001E8C8 5B65010C */  jal        VSync
 /* F0CC 8001E8CC FFFF0424 */   addiu     $a0, $zero, -0x1
 /* F0D0 8001E8D0 FCFF038E */  lw         $v1, -0x4($s0)
 /* F0D4 8001E8D4 000002AE */  sw         $v0, 0x0($s0)
@@ -226,20 +226,20 @@ glabel Draw
 /* F0E8 8001E8E8 307A0008 */  j          .L8001E8C0
 /* F0EC 8001E8EC 00000000 */   nop
 .L8001E8F0:
-/* F0F0 8001E8F0 5B65010C */  jal        func_8005956C
+/* F0F0 8001E8F0 5B65010C */  jal        VSync
 /* F0F4 8001E8F4 21200000 */   addu      $a0, $zero, $zero
 .L8001E8F8:
-/* F0F8 8001E8F8 5B65010C */  jal        func_8005956C
+/* F0F8 8001E8F8 5B65010C */  jal        VSync
 /* F0FC 8001E8FC FFFF0424 */   addiu     $a0, $zero, -0x1
 /* F100 8001E900 0780043C */  lui        $a0, %hi(D_8006C600)
 /* F104 8001E904 00C6848C */  lw         $a0, %lo(D_8006C600)($a0)
 /* F108 8001E908 0780013C */  lui        $at, %hi(D_8006C5D4)
 /* F10C 8001E90C D4C522AC */  sw         $v0, %lo(D_8006C5D4)($at)
-/* F110 8001E910 C769010C */  jal        func_8005A71C
+/* F110 8001E910 C769010C */  jal        PutDispEnv
 /* F114 8001E914 5C008424 */   addiu     $a0, $a0, 0x5C
 /* F118 8001E918 0780043C */  lui        $a0, %hi(D_8006C600)
 /* F11C 8001E91C 00C6848C */  lw         $a0, %lo(D_8006C600)($a0)
-/* F120 8001E920 9769010C */  jal        func_8005A65C
+/* F120 8001E920 9769010C */  jal        PutDrawEnv
 /* F124 8001E924 00000000 */   nop
 /* F128 8001E928 0780033C */  lui        $v1, %hi(D_8006E344)
 /* F12C 8001E92C 44E3638C */  lw         $v1, %lo(D_8006E344)($v1)
@@ -400,7 +400,7 @@ glabel Draw
 /* F378 8001EB78 80050424 */   addiu     $a0, $zero, 0x580
 /* F37C 8001EB7C 21204000 */  addu       $a0, $v0, $zero
 .L8001EB80:
-/* F380 8001EB80 7B69010C */  jal        func_8005A5EC
+/* F380 8001EB80 7B69010C */  jal        DrawOTag
 /* F384 8001EB84 00000000 */   nop
 .L8001EB88:
 /* F388 8001EB88 2400BF8F */  lw         $ra, 0x24($sp)

@@ -3,7 +3,7 @@
 #include "pad.h"
 
 // psyq
-extern void func_8005956C(int); // VSync
+extern void VSync(int); // VSync
 
 // sdata
 extern PsyqPad* currentDemoInput; // 8006C538, note that if PsyqPad is updated any ptr arithmetic will need updating
@@ -145,7 +145,7 @@ void func_8003A2B0(void) {
         D_8006C7CC++;
     };
     if (isDemoMode == 2) {
-        func_8005956C(2);
+        VSync(2);
     }
     *(int*)&demoPadState.status = 0xFFFF7300;
     *(int*)&demoPadState.stick = 0x7F7F7F7F;

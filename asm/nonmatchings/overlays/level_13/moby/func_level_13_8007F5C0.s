@@ -448,9 +448,9 @@ glabel func_level_13_8007F5C0
 /* 441E170 8007FC40 2000B127 */  addiu      $s1, $sp, 0x20
 /* 441E174 8007FC44 4000B427 */  addiu      $s4, $sp, 0x40
 .Llevel_13_8007FC48:
-/* 441E178 8007FC48 9171010C */  jal        func_8005C644
+/* 441E178 8007FC48 9171010C */  jal        rand
 /* 441E17C 8007FC4C 01005226 */   addiu     $s2, $s2, 0x1
-/* 441E180 8007FC50 9171010C */  jal        func_8005C644
+/* 441E180 8007FC50 9171010C */  jal        rand
 /* 441E184 8007FC54 FF005030 */   andi      $s0, $v0, 0xFF
 /* 441E188 8007FC58 FF004230 */  andi       $v0, $v0, 0xFF
 /* 441E18C 8007FC5C 40801000 */  sll        $s0, $s0, 1

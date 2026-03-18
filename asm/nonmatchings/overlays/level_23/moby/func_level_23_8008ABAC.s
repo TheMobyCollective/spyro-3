@@ -79,7 +79,7 @@ glabel func_level_23_8008ABAC
 /* 5AA7200 8008ACD0 43100200 */  sra        $v0, $v0, 1
 /* 5AA7204 8008ACD4 12380000 */  mflo       $a3
 /* 5AA7208 8008ACD8 2310E200 */  subu       $v0, $a3, $v0
-/* 5AA720C 8008ACDC 9171010C */  jal        func_8005C644
+/* 5AA720C 8008ACDC 9171010C */  jal        rand
 /* 5AA7210 8008ACE0 1400A2AF */   sw        $v0, 0x14($sp)
 /* 5AA7214 8008ACE4 0C000426 */  addiu      $a0, $s0, 0xC
 /* 5AA7218 8008ACE8 21288000 */  addu       $a1, $a0, $zero

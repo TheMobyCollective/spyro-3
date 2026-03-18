@@ -86,7 +86,7 @@ glabel func_level_41_8007FDC0
 /* 8145C24 8007FEF4 00000000 */  nop
 /* 8145C28 8007FEF8 03004014 */  bnez       $v0, .Llevel_41_8007FF08
 /* 8145C2C 8007FEFC 00000000 */   nop
-/* 8145C30 8007FF00 5B65010C */  jal        func_8005956C
+/* 8145C30 8007FF00 5B65010C */  jal        VSync
 /* 8145C34 8007FF04 02000424 */   addiu     $a0, $zero, 0x2
 .Llevel_41_8007FF08:
 /* 8145C38 8007FF08 48004392 */  lbu        $v1, 0x48($s2)

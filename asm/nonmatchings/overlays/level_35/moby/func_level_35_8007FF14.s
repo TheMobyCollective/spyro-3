@@ -20,7 +20,7 @@ glabel func_level_35_8007FF14
 /* 7702C80 8007FF50 01000524 */   addiu     $a1, $zero, 0x1
 /* 7702C84 8007FF54 2D004010 */  beqz       $v0, .Llevel_35_8008000C
 /* 7702C88 8007FF58 00000000 */   nop
-/* 7702C8C 8007FF5C 9171010C */  jal        func_8005C644
+/* 7702C8C 8007FF5C 9171010C */  jal        rand
 /* 7702C90 8007FF60 080000AE */   sw        $zero, 0x8($s0)
 /* 7702C94 8007FF64 FF004230 */  andi       $v0, $v0, 0xFF
 /* 7702C98 8007FF68 03000208 */  j          .Llevel_35_8008000C

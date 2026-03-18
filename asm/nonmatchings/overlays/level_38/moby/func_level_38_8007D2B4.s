@@ -456,7 +456,7 @@ glabel func_level_38_8007D2B4
 /* 7C3C688 8007D958 00000000 */  nop
 /* 7C3C68C 8007D95C 3C004010 */  beqz       $v0, .Llevel_38_8007DA50
 /* 7C3C690 8007D960 00000000 */   nop
-/* 7C3C694 8007D964 9171010C */  jal        func_8005C644
+/* 7C3C694 8007D964 9171010C */  jal        rand
 /* 7C3C698 8007D968 21800000 */   addu      $s0, $zero, $zero
 /* 7C3C69C 8007D96C FF005130 */  andi       $s1, $v0, 0xFF
 /* 7C3C6A0 8007D970 5000B427 */  addiu      $s4, $sp, 0x50

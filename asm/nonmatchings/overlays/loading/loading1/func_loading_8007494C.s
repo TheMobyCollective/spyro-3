@@ -302,7 +302,7 @@ glabel func_loading_8007494C
 /* 322D24C 80074D1C 1400A2A7 */  sh         $v0, 0x14($sp)
 /* 322D250 80074D20 00010224 */  addiu      $v0, $zero, 0x100
 /* 322D254 80074D24 1200A0A7 */  sh         $zero, 0x12($sp)
-/* 322D258 80074D28 1E69010C */  jal        func_8005A478
+/* 322D258 80074D28 1E69010C */  jal        LoadImage
 /* 322D25C 80074D2C 1600A2A7 */   sh        $v0, 0x16($sp)
 /* 322D260 80074D30 01000224 */  addiu      $v0, $zero, 0x1
 /* 322D264 80074D34 0780013C */  lui        $at, %hi(D_8006C5E4)
@@ -320,7 +320,7 @@ glabel func_loading_8007494C
 /* 322D290 80074D60 0400053C */  lui        $a1, (0x40000 >> 16)
 /* 322D294 80074D64 1000A3A7 */  sh         $v1, 0x10($sp)
 /* 322D298 80074D68 1400A3A7 */  sh         $v1, 0x14($sp)
-/* 322D29C 80074D6C 1E69010C */  jal        func_8005A478
+/* 322D29C 80074D6C 1E69010C */  jal        LoadImage
 /* 322D2A0 80074D70 21284500 */   addu      $a1, $v0, $a1
 /* 322D2A4 80074D74 02000224 */  addiu      $v0, $zero, 0x2
 /* 322D2A8 80074D78 0780013C */  lui        $at, %hi(D_8006C5E4)

@@ -21,9 +21,9 @@ extern void func_80053944();
 extern void func_8005399C();
 extern void func_80054E5C();
 // psyq
-extern int func_8005956C(int); // VSync
-extern void func_8005A264(int);
-extern int func_8005A478(RECT*, unsigned int);
+extern int VSync(int); // VSync
+extern void DrawSync(int);
+extern int LoadImage(RECT*, unsigned int);
 extern void func_8005C564(DR_MODE*, int, int, int, int); // SetDrawMode - type and args to check
 extern DRAWENV* func_8005E500(DRAWENV*, int, int, int, int); // SetDefDrawEnv
 extern DISPENV* func_8005E5C0(DISPENV*, int, int, int, int); // SetDefDispEnv
@@ -276,8 +276,8 @@ void func_80058778() {
             sp10.y = 0;
             sp10.w = 0x200;
             sp10.h = 0xD8;
-            func_8005A478(&sp10, D_80011254 + D_8006C714 + 0x1C);
-            func_8005A264(0);
+            LoadImage(&sp10, D_80011254 + D_8006C714 + 0x1C);
+            DrawSync(0);
         }
 
         if (pauseData.frameCount >= 0xD) {
@@ -529,7 +529,7 @@ void func_80059038() {
         spr.unk6 = 372;
         func_800289C8(&spr, 256, 182);
         if ((loadStage >= 2) && (loadStage < 8) && (D_8006C548 == 0)) {
-            func_8005956C(0);
+            VSync(0);
             func_loading_80075114(186);
         }
         return;

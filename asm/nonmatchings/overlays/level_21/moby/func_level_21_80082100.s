@@ -174,7 +174,7 @@ glabel func_level_21_80082100
 /* 53FE8C8 80082398 23100201 */  subu       $v0, $t0, $v0
 /* 53FE8CC 8008239C 653C010C */  jal        func_8004F194
 /* 53FE8D0 800823A0 0C0042AE */   sw        $v0, 0xC($s2)
-/* 53FE8D4 800823A4 9171010C */  jal        func_8005C644
+/* 53FE8D4 800823A4 9171010C */  jal        rand
 /* 53FE8D8 800823A8 00000000 */   nop
 /* 53FE8DC 800823AC 01004230 */  andi       $v0, $v0, 0x1
 /* 53FE8E0 800823B0 02004014 */  bnez       $v0, .Llevel_21_800823BC
@@ -365,7 +365,7 @@ glabel func_level_21_80082100
 /* 53FEBA4 80082674 23100201 */  subu       $v0, $t0, $v0
 /* 53FEBA8 80082678 653C010C */  jal        func_8004F194
 /* 53FEBAC 8008267C 0C0042AE */   sw        $v0, 0xC($s2)
-/* 53FEBB0 80082680 9171010C */  jal        func_8005C644
+/* 53FEBB0 80082680 9171010C */  jal        rand
 /* 53FEBB4 80082684 00000000 */   nop
 /* 53FEBB8 80082688 01004230 */  andi       $v0, $v0, 0x1
 /* 53FEBBC 8008268C 02004014 */  bnez       $v0, .Llevel_21_80082698

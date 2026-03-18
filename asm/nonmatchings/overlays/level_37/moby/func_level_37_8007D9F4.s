@@ -80,7 +80,7 @@ glabel func_level_37_8007D9F4
 /* 7AA983C 8007DB0C 1000228E */  lw         $v0, 0x10($s1)
 /* 7AA9840 8007DB10 00000000 */  nop
 /* 7AA9844 8007DB14 21104300 */  addu       $v0, $v0, $v1
-/* 7AA9848 8007DB18 9171010C */  jal        func_8005C644
+/* 7AA9848 8007DB18 9171010C */  jal        rand
 /* 7AA984C 8007DB1C 100022AE */   sw        $v0, 0x10($s1)
 /* 7AA9850 8007DB20 01004230 */  andi       $v0, $v0, 0x1
 /* 7AA9854 8007DB24 05004010 */  beqz       $v0, .Llevel_37_8007DB3C

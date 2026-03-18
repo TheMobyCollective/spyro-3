@@ -116,7 +116,7 @@ glabel func_title_8007AB24
 /* 299D4 8007ACA4 1000A427 */   addiu     $a0, $sp, 0x10
 /* 299D8 8007ACA8 0780053C */  lui        $a1, %hi(D_title_80074A34)
 /* 299DC 8007ACAC 344AA524 */  addiu      $a1, $a1, %lo(D_title_80074A34)
-/* 299E0 8007ACB0 DF65010C */  jal        func_8005977C
+/* 299E0 8007ACB0 DF65010C */  jal        sprintf
 /* 299E4 8007ACB4 21304000 */   addu      $a2, $v0, $zero
 /* 299E8 8007ACB8 21380000 */  addu       $a3, $zero, $zero
 /* 299EC 8007ACBC 43101300 */  sra        $v0, $s3, 1

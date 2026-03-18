@@ -1047,7 +1047,7 @@ glabel func_level_21_8007E0A8
 /* 53FB45C 8007EF2C 21286002 */   addu      $a1, $s3, $zero
 /* 53FB460 8007EF30 21884000 */  addu       $s1, $v0, $zero
 /* 53FB464 8007EF34 0000328E */  lw         $s2, 0x0($s1)
-/* 53FB468 8007EF38 9171010C */  jal        func_8005C644
+/* 53FB468 8007EF38 9171010C */  jal        rand
 /* 53FB46C 8007EF3C 00000000 */   nop
 /* 53FB470 8007EF40 B0040424 */  addiu      $a0, $zero, 0x4B0
 /* 53FB474 8007EF44 94110524 */  addiu      $a1, $zero, 0x1194

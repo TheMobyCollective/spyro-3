@@ -26,7 +26,7 @@ glabel func_level_12_8007F57C
 /* 416C2FC 8007F5CC F7D8000C */  jal        func_800363DC
 /* 416C300 8007F5D0 5800A0A3 */   sb        $zero, 0x58($sp)
 /* 416C304 8007F5D4 40004224 */  addiu      $v0, $v0, 0x40
-/* 416C308 8007F5D8 9171010C */  jal        func_8005C644
+/* 416C308 8007F5D8 9171010C */  jal        rand
 /* 416C30C 8007F5DC 5900A2A3 */   sb        $v0, 0x59($sp)
 /* 416C310 8007F5E0 5800A427 */  addiu      $a0, $sp, 0x58
 /* 416C314 8007F5E4 21284002 */  addu       $a1, $s2, $zero

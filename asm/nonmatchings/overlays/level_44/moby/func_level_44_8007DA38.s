@@ -1019,15 +1019,15 @@ glabel func_level_44_8007DA38
 /* 8B51E00 8007E8D0 00000000 */  nop
 /* 8B51E04 8007E8D4 14004010 */  beqz       $v0, .Llevel_44_8007E928
 /* 8B51E08 8007E8D8 00000000 */   nop
-/* 8B51E0C 8007E8DC 9171010C */  jal        func_8005C644
+/* 8B51E0C 8007E8DC 9171010C */  jal        rand
 /* 8B51E10 8007E8E0 00000000 */   nop
 /* 8B51E14 8007E8E4 0F004230 */  andi       $v0, $v0, 0xF
 /* 8B51E18 8007E8E8 F9FF4224 */  addiu      $v0, $v0, -0x7
-/* 8B51E1C 8007E8EC 9171010C */  jal        func_8005C644
+/* 8B51E1C 8007E8EC 9171010C */  jal        rand
 /* 8B51E20 8007E8F0 6800A2AF */   sw        $v0, 0x68($sp)
 /* 8B51E24 8007E8F4 0F004230 */  andi       $v0, $v0, 0xF
 /* 8B51E28 8007E8F8 F9FF4224 */  addiu      $v0, $v0, -0x7
-/* 8B51E2C 8007E8FC 9171010C */  jal        func_8005C644
+/* 8B51E2C 8007E8FC 9171010C */  jal        rand
 /* 8B51E30 8007E900 6C00A2AF */   sw        $v0, 0x6C($sp)
 /* 8B51E34 8007E904 01000424 */  addiu      $a0, $zero, 0x1
 /* 8B51E38 8007E908 21280000 */  addu       $a1, $zero, $zero

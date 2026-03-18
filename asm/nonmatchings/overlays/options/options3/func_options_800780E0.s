@@ -116,7 +116,7 @@ glabel func_options_800780E0
 /* 9657F90 80078260 1000A427 */   addiu     $a0, $sp, 0x10
 /* 9657F94 80078264 0780053C */  lui        $a1, %hi(D_options_80074938)
 /* 9657F98 80078268 3849A524 */  addiu      $a1, $a1, %lo(D_options_80074938)
-/* 9657F9C 8007826C DF65010C */  jal        func_8005977C
+/* 9657F9C 8007826C DF65010C */  jal        sprintf
 /* 9657FA0 80078270 21304000 */   addu      $a2, $v0, $zero
 /* 9657FA4 80078274 21380000 */  addu       $a3, $zero, $zero
 /* 9657FA8 80078278 43101300 */  sra        $v0, $s3, 1

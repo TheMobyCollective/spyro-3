@@ -543,15 +543,15 @@ glabel func_level_13_80080DFC
 /* 441FAC4 80081594 01004230 */  andi       $v0, $v0, 0x1
 /* 441FAC8 80081598 B1004010 */  beqz       $v0, .Llevel_13_80081860
 /* 441FACC 8008159C 00000000 */   nop
-/* 441FAD0 800815A0 9171010C */  jal        func_8005C644
+/* 441FAD0 800815A0 9171010C */  jal        rand
 /* 441FAD4 800815A4 00000000 */   nop
 /* 441FAD8 800815A8 0F004230 */  andi       $v0, $v0, 0xF
 /* 441FADC 800815AC F8FF4224 */  addiu      $v0, $v0, -0x8
-/* 441FAE0 800815B0 9171010C */  jal        func_8005C644
+/* 441FAE0 800815B0 9171010C */  jal        rand
 /* 441FAE4 800815B4 2000A2AF */   sw        $v0, 0x20($sp)
 /* 441FAE8 800815B8 0F004230 */  andi       $v0, $v0, 0xF
 /* 441FAEC 800815BC F8FF4224 */  addiu      $v0, $v0, -0x8
-/* 441FAF0 800815C0 9171010C */  jal        func_8005C644
+/* 441FAF0 800815C0 9171010C */  jal        rand
 /* 441FAF4 800815C4 2400A2AF */   sw        $v0, 0x24($sp)
 /* 441FAF8 800815C8 01000424 */  addiu      $a0, $zero, 0x1
 /* 441FAFC 800815CC 37000524 */  addiu      $a1, $zero, 0x37
@@ -566,7 +566,7 @@ glabel func_level_13_80080DFC
 /* 441FB20 800815F0 21804000 */  addu       $s0, $v0, $zero
 /* 441FB24 800815F4 9A000012 */  beqz       $s0, .Llevel_13_80081860
 /* 441FB28 800815F8 00000000 */   nop
-/* 441FB2C 800815FC 9171010C */  jal        func_8005C644
+/* 441FB2C 800815FC 9171010C */  jal        rand
 /* 441FB30 80081600 00000000 */   nop
 /* 441FB34 80081604 08000396 */  lhu        $v1, 0x8($s0)
 /* 441FB38 80081608 FF004230 */  andi       $v0, $v0, 0xFF

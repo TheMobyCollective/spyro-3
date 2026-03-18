@@ -720,7 +720,7 @@ glabel func_level_22_80089B38
 /* 577A2A8 8008A578 F7D8000C */  jal        func_800363DC
 /* 577A2AC 8008A57C 40000524 */   addiu     $a1, $zero, 0x40
 /* 577A2B0 8008A580 18005092 */  lbu        $s0, 0x18($s2)
-/* 577A2B4 8008A584 9171010C */  jal        func_8005C644
+/* 577A2B4 8008A584 9171010C */  jal        rand
 /* 577A2B8 8008A588 21884000 */   addu      $s1, $v0, $zero
 /* 577A2BC 8008A58C 01004230 */  andi       $v0, $v0, 0x1
 /* 577A2C0 8008A590 02004014 */  bnez       $v0, .Llevel_22_8008A59C

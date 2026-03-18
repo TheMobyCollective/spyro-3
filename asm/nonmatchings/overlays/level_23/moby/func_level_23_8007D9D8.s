@@ -172,7 +172,7 @@ glabel func_level_23_8007D9D8
 /* 5A9A0EC 8007DBBC 00000000 */  nop
 /* 5A9A0F0 8007DBC0 62024010 */  beqz       $v0, .Llevel_23_8007E54C
 /* 5A9A0F4 8007DBC4 01000224 */   addiu     $v0, $zero, 0x1
-/* 5A9A0F8 8007DBC8 9171010C */  jal        func_8005C644
+/* 5A9A0F8 8007DBC8 9171010C */  jal        rand
 /* 5A9A0FC 8007DBCC 490042A2 */   sb        $v0, 0x49($s2)
 /* 5A9A100 8007DBD0 21204002 */  addu       $a0, $s2, $zero
 /* 5A9A104 8007DBD4 21280000 */  addu       $a1, $zero, $zero

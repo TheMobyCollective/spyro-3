@@ -1019,15 +1019,15 @@ glabel func_level_50_800898E4
 /* 95DECAC 8008A77C 00000000 */  nop
 /* 95DECB0 8008A780 14004010 */  beqz       $v0, .Llevel_50_8008A7D4
 /* 95DECB4 8008A784 00000000 */   nop
-/* 95DECB8 8008A788 9171010C */  jal        func_8005C644
+/* 95DECB8 8008A788 9171010C */  jal        rand
 /* 95DECBC 8008A78C 00000000 */   nop
 /* 95DECC0 8008A790 0F004230 */  andi       $v0, $v0, 0xF
 /* 95DECC4 8008A794 F9FF4224 */  addiu      $v0, $v0, -0x7
-/* 95DECC8 8008A798 9171010C */  jal        func_8005C644
+/* 95DECC8 8008A798 9171010C */  jal        rand
 /* 95DECCC 8008A79C 6800A2AF */   sw        $v0, 0x68($sp)
 /* 95DECD0 8008A7A0 0F004230 */  andi       $v0, $v0, 0xF
 /* 95DECD4 8008A7A4 F9FF4224 */  addiu      $v0, $v0, -0x7
-/* 95DECD8 8008A7A8 9171010C */  jal        func_8005C644
+/* 95DECD8 8008A7A8 9171010C */  jal        rand
 /* 95DECDC 8008A7AC 6C00A2AF */   sw        $v0, 0x6C($sp)
 /* 95DECE0 8008A7B0 01000424 */  addiu      $a0, $zero, 0x1
 /* 95DECE4 8008A7B4 21280000 */  addu       $a1, $zero, $zero

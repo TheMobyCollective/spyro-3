@@ -324,7 +324,7 @@ glabel func_level_12_80079A30
 /* 4166BAC 80079E7C 00000000 */  nop
 /* 4166BB0 80079E80 5C004014 */  bnez       $v0, .Llevel_12_80079FF4
 /* 4166BB4 80079E84 00000000 */   nop
-/* 4166BB8 80079E88 9171010C */  jal        func_8005C644
+/* 4166BB8 80079E88 9171010C */  jal        rand
 /* 4166BBC 80079E8C 00000000 */   nop
 /* 4166BC0 80079E90 6AFF0424 */  addiu      $a0, $zero, -0x96
 /* 4166BC4 80079E94 96000524 */  addiu      $a1, $zero, 0x96

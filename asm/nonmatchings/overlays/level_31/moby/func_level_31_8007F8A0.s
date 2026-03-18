@@ -377,7 +377,7 @@ glabel func_level_31_8007F8A0
 /* 6A9A99C 8007FC6C 00000000 */  nop
 /* 6A9A9A0 8007FC70 0A004014 */  bnez       $v0, .Llevel_31_8007FC9C
 /* 6A9A9A4 8007FC74 21200002 */   addu      $a0, $s0, $zero
-/* 6A9A9A8 8007FC78 9171010C */  jal        func_8005C644
+/* 6A9A9A8 8007FC78 9171010C */  jal        rand
 /* 6A9A9AC 8007FC7C 00000000 */   nop
 /* 6A9A9B0 8007FC80 01004230 */  andi       $v0, $v0, 0x1
 /* 6A9A9B4 8007FC84 05004010 */  beqz       $v0, .Llevel_31_8007FC9C

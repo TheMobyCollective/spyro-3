@@ -110,7 +110,7 @@ glabel func_level_38_80081D68
 /* 7C40C24 80081EF4 03080208 */  j          .Llevel_38_8008200C
 /* 7C40C28 80081EF8 00000000 */   nop
 .Llevel_38_80081EFC:
-/* 7C40C2C 80081EFC 9171010C */  jal        func_8005C644
+/* 7C40C2C 80081EFC 9171010C */  jal        rand
 /* 7C40C30 80081F00 21880000 */   addu      $s1, $zero, $zero
 /* 7C40C34 80081F04 21904000 */  addu       $s2, $v0, $zero
 /* 7C40C38 80081F08 0680143C */  lui        $s4, %hi(D_80065920)

@@ -48,7 +48,7 @@ glabel func_level_11_800888C4
 /* 3E2CEA0 80088970 70FAC68C */  lw         $a2, %lo(D_8006FA70)($a2)
 /* 3E2CEA4 80088974 0780053C */  lui        $a1, %hi(D_level_11_80074A00)
 /* 3E2CEA8 80088978 004AA524 */  addiu      $a1, $a1, %lo(D_level_11_80074A00)
-/* 3E2CEAC 8008897C DF65010C */  jal        func_8005977C
+/* 3E2CEAC 8008897C DF65010C */  jal        sprintf
 /* 3E2CEB0 80088980 1000A427 */   addiu     $a0, $sp, 0x10
 /* 3E2CEB4 80088984 1000A427 */  addiu      $a0, $sp, 0x10
 /* 3E2CEB8 80088988 C0000524 */  addiu      $a1, $zero, 0xC0
@@ -94,7 +94,7 @@ glabel func_level_11_800888C4
 .Llevel_11_80088A20:
 /* 3E2CF50 80088A20 0780053C */  lui        $a1, %hi(D_level_11_80074A00)
 /* 3E2CF54 80088A24 004AA524 */  addiu      $a1, $a1, %lo(D_level_11_80074A00)
-/* 3E2CF58 80088A28 DF65010C */  jal        func_8005977C
+/* 3E2CF58 80088A28 DF65010C */  jal        sprintf
 /* 3E2CF5C 80088A2C 00000000 */   nop
 /* 3E2CF60 80088A30 2000A427 */  addiu      $a0, $sp, 0x20
 /* 3E2CF64 80088A34 40010524 */  addiu      $a1, $zero, 0x140

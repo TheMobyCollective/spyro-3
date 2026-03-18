@@ -16,7 +16,7 @@ glabel func_level_34_8008A690
 /* 74E63EC 8008A6BC 04000524 */   addiu     $a1, $zero, 0x4
 /* 74E63F0 8008A6C0 1800A0AF */  sw         $zero, 0x18($sp)
 /* 74E63F4 8008A6C4 1C00A0AF */  sw         $zero, 0x1C($sp)
-/* 74E63F8 8008A6C8 9171010C */  jal        func_8005C644
+/* 74E63F8 8008A6C8 9171010C */  jal        rand
 /* 74E63FC 8008A6CC 2000A0AF */   sw        $zero, 0x20($sp)
 /* 74E6400 8008A6D0 01004230 */  andi       $v0, $v0, 0x1
 /* 74E6404 8008A6D4 08004010 */  beqz       $v0, .Llevel_34_8008A6F8

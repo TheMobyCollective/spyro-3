@@ -248,16 +248,16 @@ glabel func_level_32_80084D60
 /* 6DEC624 800850F4 3800B227 */  addiu      $s2, $sp, 0x38
 /* 6DEC628 800850F8 4800B027 */  addiu      $s0, $sp, 0x48
 .Llevel_32_800850FC:
-/* 6DEC62C 800850FC 9171010C */  jal        func_8005C644
+/* 6DEC62C 800850FC 9171010C */  jal        rand
 /* 6DEC630 80085100 7000A0A3 */   sb        $zero, 0x70($sp)
-/* 6DEC634 80085104 9171010C */  jal        func_8005C644
+/* 6DEC634 80085104 9171010C */  jal        rand
 /* 6DEC638 80085108 7100A2A3 */   sb        $v0, 0x71($sp)
 /* 6DEC63C 8008510C 7000A427 */  addiu      $a0, $sp, 0x70
 /* 6DEC640 80085110 2128A002 */  addu       $a1, $s5, $zero
 /* 6DEC644 80085114 21300000 */  addu       $a2, $zero, $zero
 /* 6DEC648 80085118 A43A010C */  jal        func_8004EA90
 /* 6DEC64C 8008511C 7200A2A3 */   sb        $v0, 0x72($sp)
-/* 6DEC650 80085120 9171010C */  jal        func_8005C644
+/* 6DEC650 80085120 9171010C */  jal        rand
 /* 6DEC654 80085124 01009426 */   addiu     $s4, $s4, 0x1
 /* 6DEC658 80085128 2120A002 */  addu       $a0, $s5, $zero
 /* 6DEC65C 8008512C 21284002 */  addu       $a1, $s2, $zero
@@ -310,16 +310,16 @@ glabel func_level_32_80084D60
 /* 6DEC718 800851E8 00000000 */  nop
 /* 6DEC71C 800851EC 19004010 */  beqz       $v0, .Llevel_32_80085254
 /* 6DEC720 800851F0 00000000 */   nop
-/* 6DEC724 800851F4 9171010C */  jal        func_8005C644
+/* 6DEC724 800851F4 9171010C */  jal        rand
 /* 6DEC728 800851F8 7000A0A3 */   sb        $zero, 0x70($sp)
-/* 6DEC72C 800851FC 9171010C */  jal        func_8005C644
+/* 6DEC72C 800851FC 9171010C */  jal        rand
 /* 6DEC730 80085200 7100A2A3 */   sb        $v0, 0x71($sp)
 /* 6DEC734 80085204 7000A427 */  addiu      $a0, $sp, 0x70
 /* 6DEC738 80085208 2128A002 */  addu       $a1, $s5, $zero
 /* 6DEC73C 8008520C 21300000 */  addu       $a2, $zero, $zero
 /* 6DEC740 80085210 A43A010C */  jal        func_8004EA90
 /* 6DEC744 80085214 7200A2A3 */   sb        $v0, 0x72($sp)
-/* 6DEC748 80085218 9171010C */  jal        func_8005C644
+/* 6DEC748 80085218 9171010C */  jal        rand
 /* 6DEC74C 8008521C 00000000 */   nop
 /* 6DEC750 80085220 2120A002 */  addu       $a0, $s5, $zero
 /* 6DEC754 80085224 21284002 */  addu       $a1, $s2, $zero

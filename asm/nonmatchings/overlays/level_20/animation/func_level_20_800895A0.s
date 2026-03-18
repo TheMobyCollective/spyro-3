@@ -534,7 +534,7 @@ glabel func_level_20_800895A0
 /* 50D99B8 80089C88 2C000426 */  addiu      $a0, $s0, 0x2C
 /* 50D99BC 80089C8C 5E3C010C */  jal        func_8004F178
 /* 50D99C0 80089C90 20000526 */   addiu     $a1, $s0, 0x20
-/* 50D99C4 80089C94 9171010C */  jal        func_8005C644
+/* 50D99C4 80089C94 9171010C */  jal        rand
 /* 50D99C8 80089C98 00000000 */   nop
 /* 50D99CC 80089C9C 1F004230 */  andi       $v0, $v0, 0x1F
 /* 50D99D0 80089CA0 90004014 */  bnez       $v0, .Llevel_20_80089EE4
@@ -669,7 +669,7 @@ glabel func_level_20_800895A0
 /* 50D9BB8 80089E88 21200002 */   addu      $a0, $s0, $zero
 /* 50D9BBC 80089E8C 5A3C010C */  jal        func_8004F168
 /* 50D9BC0 80089E90 0C000426 */   addiu     $a0, $s0, 0xC
-/* 50D9BC4 80089E94 9171010C */  jal        func_8005C644
+/* 50D9BC4 80089E94 9171010C */  jal        rand
 /* 50D9BC8 80089E98 00000000 */   nop
 /* 50D9BCC 80089E9C 1F004230 */  andi       $v0, $v0, 0x1F
 /* 50D9BD0 80089EA0 10004014 */  bnez       $v0, .Llevel_20_80089EE4
@@ -868,7 +868,7 @@ glabel func_level_20_800895A0
 /* 50D9EA0 8008A170 D1074228 */  slti       $v0, $v0, 0x7D1
 /* 50D9EA4 8008A174 9A014014 */  bnez       $v0, .Llevel_20_8008A7E0
 /* 50D9EA8 8008A178 70FE0224 */   addiu     $v0, $zero, -0x190
-/* 50D9EAC 8008A17C 9171010C */  jal        func_8005C644
+/* 50D9EAC 8008A17C 9171010C */  jal        rand
 /* 50D9EB0 8008A180 5000A2AF */   sw        $v0, 0x50($sp)
 /* 50D9EB4 8008A184 01000424 */  addiu      $a0, $zero, 0x1
 /* 50D9EB8 8008A188 2C000524 */  addiu      $a1, $zero, 0x2C
@@ -1021,7 +1021,7 @@ glabel func_level_20_800895A0
 /* 50DA0DC 8008A3AC 00000000 */  nop
 /* 50DA0E0 8008A3B0 09F84000 */  jalr       $v0
 /* 50DA0E4 8008A3B4 21382002 */   addu      $a3, $s1, $zero
-/* 50DA0E8 8008A3B8 9171010C */  jal        func_8005C644
+/* 50DA0E8 8008A3B8 9171010C */  jal        rand
 /* 50DA0EC 8008A3BC 00000000 */   nop
 /* 50DA0F0 8008A3C0 1F004230 */  andi       $v0, $v0, 0x1F
 /* 50DA0F4 8008A3C4 35004014 */  bnez       $v0, .Llevel_20_8008A49C
@@ -1051,7 +1051,7 @@ glabel func_level_20_800895A0
 /* 50DA150 8008A420 07004230 */  andi       $v0, $v0, 0x7
 /* 50DA154 8008A424 1D004014 */  bnez       $v0, .Llevel_20_8008A49C
 /* 50DA158 8008A428 00000000 */   nop
-/* 50DA15C 8008A42C 9171010C */  jal        func_8005C644
+/* 50DA15C 8008A42C 9171010C */  jal        rand
 /* 50DA160 8008A430 00000000 */   nop
 /* 50DA164 8008A434 03004230 */  andi       $v0, $v0, 0x3
 /* 50DA168 8008A438 18004014 */  bnez       $v0, .Llevel_20_8008A49C

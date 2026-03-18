@@ -675,7 +675,7 @@ glabel func_level_12_8007B584
 /* 4168BDC 8007BEAC 2000B427 */  addiu      $s4, $sp, 0x20
 /* 4168BE0 8007BEB0 3000B627 */  addiu      $s6, $sp, 0x30
 .Llevel_12_8007BEB4:
-/* 4168BE4 8007BEB4 9171010C */  jal        func_8005C644
+/* 4168BE4 8007BEB4 9171010C */  jal        rand
 /* 4168BE8 8007BEB8 0100B526 */   addiu     $s5, $s5, 0x1
 /* 4168BEC 8007BEBC 2C000424 */  addiu      $a0, $zero, 0x2C
 /* 4168BF0 8007BEC0 40000524 */  addiu      $a1, $zero, 0x40

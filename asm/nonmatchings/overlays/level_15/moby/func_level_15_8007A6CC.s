@@ -83,7 +83,7 @@ glabel func_level_15_8007A6CC
 /* 49B4D2C 8007A7FC 00000000 */  nop
 /* 49B4D30 8007A800 4E0062A0 */  sb         $v0, 0x4E($v1)
 /* 49B4D34 8007A804 FF000224 */  addiu      $v0, $zero, 0xFF
-/* 49B4D38 8007A808 9171010C */  jal        func_8005C644
+/* 49B4D38 8007A808 9171010C */  jal        rand
 /* 49B4D3C 8007A80C 130002A2 */   sb        $v0, 0x13($s0)
 /* 49B4D40 8007A810 FF004230 */  andi       $v0, $v0, 0xFF
 /* 49B4D44 8007A814 080022AE */  sw         $v0, 0x8($s1)

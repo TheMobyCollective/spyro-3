@@ -3,7 +3,7 @@
 .ascii "PS-X EXE"      /* Magic number */
 .word 0x00000000       /* .text vram address */
 .word 0x00000000       /* .data vram address */
-.word func_80059444       /* Initial PC */
+.word start            /* Initial PC */
 .word 0x00000000       /* Initial $gp/r28 */
 .word 0x80010000       /* .text start */
 .word main_FULL_TEXT_SIZE       /* .text size */

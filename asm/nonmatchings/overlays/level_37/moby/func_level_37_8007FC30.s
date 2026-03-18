@@ -618,7 +618,7 @@ glabel func_level_37_8007FC30
 /* 7AAC1EC 800804BC 040022AE */  sw         $v0, 0x4($s1)
 /* 7AAC1F0 800804C0 2C010224 */  addiu      $v0, $zero, 0x12C
 /* 7AAC1F4 800804C4 020022A6 */  sh         $v0, 0x2($s1)
-/* 7AAC1F8 800804C8 9171010C */  jal        func_8005C644
+/* 7AAC1F8 800804C8 9171010C */  jal        rand
 /* 7AAC1FC 800804CC 000023A2 */   sb        $v1, 0x0($s1)
 /* 7AAC200 800804D0 440002A2 */  sb         $v0, 0x44($s0)
 /* 7AAC204 800804D4 480016A2 */  sb         $s6, 0x48($s0)

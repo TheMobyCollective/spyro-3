@@ -674,10 +674,10 @@ glabel func_level_21_8007C03C
 /* 53F8EF8 8007C9C8 4400622A */  slti       $v0, $s3, 0x44
 /* 53F8EFC 8007C9CC 0B004010 */  beqz       $v0, .Llevel_21_8007C9FC
 /* 53F8F00 8007C9D0 00000000 */   nop
-/* 53F8F04 8007C9D4 9171010C */  jal        func_8005C644
+/* 53F8F04 8007C9D4 9171010C */  jal        rand
 /* 53F8F08 8007C9D8 00000000 */   nop
 /* 53F8F0C 8007C9DC 0F004230 */  andi       $v0, $v0, 0xF
-/* 53F8F10 8007C9E0 9171010C */  jal        func_8005C644
+/* 53F8F10 8007C9E0 9171010C */  jal        rand
 /* 53F8F14 8007C9E4 3000A2AF */   sw        $v0, 0x30($sp)
 /* 53F8F18 8007C9E8 0F004230 */  andi       $v0, $v0, 0xF
 /* 53F8F1C 8007C9EC 3400A2AF */  sw         $v0, 0x34($sp)

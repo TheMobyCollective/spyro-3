@@ -690,7 +690,7 @@ glabel func_level_45_80079BE0
 /* 8D36AC0 8007A590 9FE90108 */  j          .Llevel_45_8007A67C
 /* 8D36AC4 8007A594 480060A2 */   sb        $zero, 0x48($s3)
 .Llevel_45_8007A598:
-/* 8D36AC8 8007A598 9171010C */  jal        func_8005C644
+/* 8D36AC8 8007A598 9171010C */  jal        rand
 /* 8D36ACC 8007A59C 00000000 */   nop
 /* 8D36AD0 8007A5A0 FF005230 */  andi       $s2, $v0, 0xFF
 /* 8D36AD4 8007A5A4 0680143C */  lui        $s4, %hi(D_80065920)

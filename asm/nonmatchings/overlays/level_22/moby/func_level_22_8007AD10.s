@@ -148,10 +148,10 @@ glabel func_level_22_8007AD10
 /* 576AC5C 8007AF2C 21104300 */  addu       $v0, $v0, $v1
 /* 576AC60 8007AF30 38008214 */  bne        $a0, $v0, .Llevel_22_8007B014
 /* 576AC64 8007AF34 00000000 */   nop
-/* 576AC68 8007AF38 9171010C */  jal        func_8005C644
+/* 576AC68 8007AF38 9171010C */  jal        rand
 /* 576AC6C 8007AF3C 00000000 */   nop
 /* 576AC70 8007AF40 03004230 */  andi       $v0, $v0, 0x3
-/* 576AC74 8007AF44 9171010C */  jal        func_8005C644
+/* 576AC74 8007AF44 9171010C */  jal        rand
 /* 576AC78 8007AF48 1000A2AF */   sw        $v0, 0x10($sp)
 /* 576AC7C 8007AF4C 03004230 */  andi       $v0, $v0, 0x3
 /* 576AC80 8007AF50 1400A2AF */  sw         $v0, 0x14($sp)

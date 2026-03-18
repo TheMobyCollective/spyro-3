@@ -444,7 +444,7 @@ glabel func_level_34_8007EFD8
 /* 74DB320 8007F5F0 00000000 */   nop
 /* 74DB324 8007F5F4 26004014 */  bnez       $v0, .Llevel_34_8007F690
 /* 74DB328 8007F5F8 00000000 */   nop
-/* 74DB32C 8007F5FC 9968010C */  jal        func_8005A264
+/* 74DB32C 8007F5FC 9968010C */  jal        DrawSync
 /* 74DB330 8007F600 21200000 */   addu      $a0, $zero, $zero
 /* 74DB334 8007F604 3000A427 */  addiu      $a0, $sp, 0x30
 /* 74DB338 8007F608 0780053C */  lui        $a1, %hi(D_8006C5B0)
@@ -456,7 +456,7 @@ glabel func_level_34_8007EFD8
 /* 74DB350 8007F620 40000224 */  addiu      $v0, $zero, 0x40
 /* 74DB354 8007F624 3400A2A7 */  sh         $v0, 0x34($sp)
 /* 74DB358 8007F628 60000224 */  addiu      $v0, $zero, 0x60
-/* 74DB35C 8007F62C 1E69010C */  jal        func_8005A478
+/* 74DB35C 8007F62C 1E69010C */  jal        LoadImage
 /* 74DB360 8007F630 3600A2A7 */   sh        $v0, 0x36($sp)
 /* 74DB364 8007F634 A3FD0108 */  j          .Llevel_34_8007F68C
 /* 74DB368 8007F638 02000224 */   addiu     $v0, $zero, 0x2

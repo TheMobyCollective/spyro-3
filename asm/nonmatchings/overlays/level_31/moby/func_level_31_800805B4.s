@@ -500,7 +500,7 @@ glabel func_level_31_800805B4
 /* 6A9BA40 80080D10 0114022E */  sltiu      $v0, $s0, 0x1401
 /* 6A9BA44 80080D14 06004014 */  bnez       $v0, .Llevel_31_80080D30
 /* 6A9BA48 80080D18 82001624 */   addiu     $s6, $zero, 0x82
-/* 6A9BA4C 80080D1C 9171010C */  jal        func_8005C644
+/* 6A9BA4C 80080D1C 9171010C */  jal        rand
 /* 6A9BA50 80080D20 A5001624 */   addiu     $s6, $zero, 0xA5
 /* 6A9BA54 80080D24 01004230 */  andi       $v0, $v0, 0x1
 /* 6A9BA58 80080D28 4D030208 */  j          .Llevel_31_80080D34

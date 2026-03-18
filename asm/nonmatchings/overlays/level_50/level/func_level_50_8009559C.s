@@ -22,9 +22,9 @@ glabel func_level_50_8009559C
 /* 95E9B10 800955E0 3000B227 */  addiu      $s2, $sp, 0x30
 /* 95E9B14 800955E4 2000B027 */  addiu      $s0, $sp, 0x20
 .Llevel_50_800955E8:
-/* 95E9B18 800955E8 9171010C */  jal        func_8005C644
+/* 95E9B18 800955E8 9171010C */  jal        rand
 /* 95E9B1C 800955EC 4800A0A3 */   sb        $zero, 0x48($sp)
-/* 95E9B20 800955F0 9171010C */  jal        func_8005C644
+/* 95E9B20 800955F0 9171010C */  jal        rand
 /* 95E9B24 800955F4 4900A2A3 */   sb        $v0, 0x49($sp)
 /* 95E9B28 800955F8 4800A427 */  addiu      $a0, $sp, 0x48
 /* 95E9B2C 800955FC 21284002 */  addu       $a1, $s2, $zero

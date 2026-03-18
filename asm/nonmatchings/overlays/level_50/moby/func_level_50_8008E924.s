@@ -54,7 +54,7 @@ glabel func_level_50_8008E924
 /* 95E2F18 8008E9E8 21804000 */  addu       $s0, $v0, $zero
 /* 95E2F1C 8008E9EC 0F000012 */  beqz       $s0, .Llevel_50_8008EA2C
 /* 95E2F20 8008E9F0 20002426 */   addiu     $a0, $s1, 0x20
-/* 95E2F24 8008E9F4 9171010C */  jal        func_8005C644
+/* 95E2F24 8008E9F4 9171010C */  jal        rand
 /* 95E2F28 8008E9F8 00000000 */   nop
 /* 95E2F2C 8008E9FC 01004230 */  andi       $v0, $v0, 0x1
 /* 95E2F30 8008EA00 05004010 */  beqz       $v0, .Llevel_50_8008EA18

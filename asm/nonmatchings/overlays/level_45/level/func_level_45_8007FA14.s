@@ -160,9 +160,9 @@ glabel func_level_45_8007FA14
 /* 8D3C138 8007FC08 0680143C */  lui        $s4, %hi(D_800658A0)
 /* 8D3C13C 8007FC0C A0589426 */  addiu      $s4, $s4, %lo(D_800658A0)
 .Llevel_45_8007FC10:
-/* 8D3C140 8007FC10 9171010C */  jal        func_8005C644
+/* 8D3C140 8007FC10 9171010C */  jal        rand
 /* 8D3C144 8007FC14 01005226 */   addiu     $s2, $s2, 0x1
-/* 8D3C148 8007FC18 9171010C */  jal        func_8005C644
+/* 8D3C148 8007FC18 9171010C */  jal        rand
 /* 8D3C14C 8007FC1C FF005030 */   andi      $s0, $v0, 0xFF
 /* 8D3C150 8007FC20 FF004230 */  andi       $v0, $v0, 0xFF
 /* 8D3C154 8007FC24 40801000 */  sll        $s0, $s0, 1

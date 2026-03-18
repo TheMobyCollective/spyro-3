@@ -23,7 +23,7 @@ extern void func_80056270(Moby*);
 extern void func_8005629C(Moby*);
 
 // lib
-extern int func_8005C644(); // rand
+extern int rand(); // rand
 
 // data
 extern short D_800658A0[0x100]; // sin
@@ -373,7 +373,7 @@ INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80036220);
  * https://decomp.me/scratch/GldaF
  */
 int func_8003636C(int low, int high) {
-    return (func_8005C644() % ((high - low) + 1)) + low;
+    return (rand() % ((high - low) + 1)) + low;
 }
 
 /**
@@ -384,7 +384,7 @@ int func_800363DC(int low, int high) {
     int r;
     int out;
 
-    r = func_8005C644();
+    r = rand();
     out = (r % ((high - low) + 1)) + low;
     if (r & 1) {
         return out;

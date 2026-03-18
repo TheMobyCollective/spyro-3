@@ -51,15 +51,15 @@ glabel func_level_11_8007D748
 /* 3E21D28 8007D7F8 5600A0A0 */  sb         $zero, 0x56($a1)
 /* 3E21D2C 8007D7FC 5700A2A0 */  sb         $v0, 0x57($a1)
 .Llevel_11_8007D800:
-/* 3E21D30 8007D800 9171010C */  jal        func_8005C644
+/* 3E21D30 8007D800 9171010C */  jal        rand
 /* 3E21D34 8007D804 01003126 */   addiu     $s1, $s1, 0x1
 /* 3E21D38 8007D808 0F004230 */  andi       $v0, $v0, 0xF
 /* 3E21D3C 8007D80C F8FF4224 */  addiu      $v0, $v0, -0x8
-/* 3E21D40 8007D810 9171010C */  jal        func_8005C644
+/* 3E21D40 8007D810 9171010C */  jal        rand
 /* 3E21D44 8007D814 2000A2AF */   sw        $v0, 0x20($sp)
 /* 3E21D48 8007D818 0F004230 */  andi       $v0, $v0, 0xF
 /* 3E21D4C 8007D81C F8FF4224 */  addiu      $v0, $v0, -0x8
-/* 3E21D50 8007D820 9171010C */  jal        func_8005C644
+/* 3E21D50 8007D820 9171010C */  jal        rand
 /* 3E21D54 8007D824 2400A2AF */   sw        $v0, 0x24($sp)
 /* 3E21D58 8007D828 01000424 */  addiu      $a0, $zero, 0x1
 /* 3E21D5C 8007D82C 37000524 */  addiu      $a1, $zero, 0x37

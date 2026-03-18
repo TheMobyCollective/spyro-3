@@ -33,7 +33,7 @@ glabel func_8002B31C
 /* 1BB8C 8002B38C 1600A5A7 */  sh         $a1, 0x16($sp)
 /* 1BB90 8002B390 10001026 */  addiu      $s0, $s0, 0x10
 /* 1BB94 8002B394 21805000 */  addu       $s0, $v0, $s0
-/* 1BB98 8002B398 1E69010C */  jal        func_8005A478
+/* 1BB98 8002B398 1E69010C */  jal        LoadImage
 /* 1BB9C 8002B39C 21280002 */   addu      $a1, $s0, $zero
 /* 1BBA0 8002B3A0 21B00002 */  addu       $s6, $s0, $zero
 .L8002B3A4:

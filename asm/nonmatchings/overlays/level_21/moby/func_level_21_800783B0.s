@@ -133,13 +133,13 @@ glabel func_level_21_800783B0
 /* 53F4AC8 80078598 3800A0AF */  sw         $zero, 0x38($sp)
 /* 53F4ACC 8007859C 5B3B010C */  jal        func_8004ED6C
 /* 53F4AD0 800785A0 4000A2AF */   sw        $v0, 0x40($sp)
-/* 53F4AD4 800785A4 9171010C */  jal        func_8005C644
+/* 53F4AD4 800785A4 9171010C */  jal        rand
 /* 53F4AD8 800785A8 00000000 */   nop
 /* 53F4ADC 800785AC 3800A38F */  lw         $v1, 0x38($sp)
 /* 53F4AE0 800785B0 0F004230 */  andi       $v0, $v0, 0xF
 /* 53F4AE4 800785B4 F8FF6324 */  addiu      $v1, $v1, -0x8
 /* 53F4AE8 800785B8 21186200 */  addu       $v1, $v1, $v0
-/* 53F4AEC 800785BC 9171010C */  jal        func_8005C644
+/* 53F4AEC 800785BC 9171010C */  jal        rand
 /* 53F4AF0 800785C0 3800A3AF */   sw        $v1, 0x38($sp)
 /* 53F4AF4 800785C4 01000424 */  addiu      $a0, $zero, 0x1
 /* 53F4AF8 800785C8 4A000524 */  addiu      $a1, $zero, 0x4A
@@ -308,15 +308,15 @@ glabel func_level_21_800783B0
 /* 53F4D68 80078838 4800B427 */  addiu      $s4, $sp, 0x48
 /* 53F4D6C 8007883C 5800B127 */  addiu      $s1, $sp, 0x58
 .Llevel_21_80078840:
-/* 53F4D70 80078840 9171010C */  jal        func_8005C644
+/* 53F4D70 80078840 9171010C */  jal        rand
 /* 53F4D74 80078844 01001026 */   addiu     $s0, $s0, 0x1
 /* 53F4D78 80078848 FF004230 */  andi       $v0, $v0, 0xFF
 /* 53F4D7C 8007884C 2310A202 */  subu       $v0, $s5, $v0
-/* 53F4D80 80078850 9171010C */  jal        func_8005C644
+/* 53F4D80 80078850 9171010C */  jal        rand
 /* 53F4D84 80078854 5800A2AF */   sw        $v0, 0x58($sp)
 /* 53F4D88 80078858 FF004230 */  andi       $v0, $v0, 0xFF
 /* 53F4D8C 8007885C 2310A202 */  subu       $v0, $s5, $v0
-/* 53F4D90 80078860 9171010C */  jal        func_8005C644
+/* 53F4D90 80078860 9171010C */  jal        rand
 /* 53F4D94 80078864 5C00A2AF */   sw        $v0, 0x5C($sp)
 /* 53F4D98 80078868 21208002 */  addu       $a0, $s4, $zero
 /* 53F4D9C 8007886C 0C006526 */  addiu      $a1, $s3, 0xC

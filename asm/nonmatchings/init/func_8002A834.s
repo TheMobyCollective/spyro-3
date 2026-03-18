@@ -7,13 +7,13 @@ glabel func_8002A834
 /* 1B03C 8002A83C 2400BFAF */  sw         $ra, 0x24($sp)
 /* 1B040 8002A840 2000B2AF */  sw         $s2, 0x20($sp)
 /* 1B044 8002A844 1C00B1AF */  sw         $s1, 0x1C($sp)
-/* 1B048 8002A848 5B65010C */  jal        func_8005956C
+/* 1B048 8002A848 5B65010C */  jal        VSync
 /* 1B04C 8002A84C 1800B0AF */   sw        $s0, 0x18($sp)
-/* 1B050 8002A850 7368010C */  jal        func_8005A1CC
+/* 1B050 8002A850 7368010C */  jal        SetDispMask
 /* 1B054 8002A854 21200000 */   addu      $a0, $zero, $zero
-/* 1B058 8002A858 FF67010C */  jal        func_80059FFC
+/* 1B058 8002A858 FF67010C */  jal        ResetGraph
 /* 1B05C 8002A85C 21200000 */   addu      $a0, $zero, $zero
-/* 1B060 8002A860 5C68010C */  jal        func_8005A170
+/* 1B060 8002A860 5C68010C */  jal        SetGraphDebug
 /* 1B064 8002A864 21200000 */   addu      $a0, $zero, $zero
 /* 1B068 8002A868 0780103C */  lui        $s0, %hi(D_8006FBFC)
 /* 1B06C 8002A86C FCFB1026 */  addiu      $s0, $s0, %lo(D_8006FBFC)
@@ -73,17 +73,17 @@ glabel func_8002A834
 /* 1B144 8002A944 86FC22A0 */  sb         $v0, %lo(D_8006FC86)($at)
 /* 1B148 8002A948 EB7A000C */  jal        func_8001EBAC
 /* 1B14C 8002A94C 00000000 */   nop
-/* 1B150 8002A950 5B65010C */  jal        func_8005956C
+/* 1B150 8002A950 5B65010C */  jal        VSync
 /* 1B154 8002A954 21200000 */   addu      $a0, $zero, $zero
 /* 1B158 8002A958 0780013C */  lui        $at, %hi(D_8006C600)
 /* 1B15C 8002A95C 00C632AC */  sw         $s2, %lo(D_8006C600)($at)
-/* 1B160 8002A960 C769010C */  jal        func_8005A71C
+/* 1B160 8002A960 C769010C */  jal        PutDispEnv
 /* 1B164 8002A964 21200002 */   addu      $a0, $s0, $zero
 /* 1B168 8002A968 0780043C */  lui        $a0, %hi(D_8006C600)
 /* 1B16C 8002A96C 00C6848C */  lw         $a0, %lo(D_8006C600)($a0)
-/* 1B170 8002A970 9769010C */  jal        func_8005A65C
+/* 1B170 8002A970 9769010C */  jal        PutDrawEnv
 /* 1B174 8002A974 00000000 */   nop
-/* 1B178 8002A978 7368010C */  jal        func_8005A1CC
+/* 1B178 8002A978 7368010C */  jal        SetDispMask
 /* 1B17C 8002A97C 01000424 */   addiu     $a0, $zero, 0x1
 /* 1B180 8002A980 2400BF8F */  lw         $ra, 0x24($sp)
 /* 1B184 8002A984 2000B28F */  lw         $s2, 0x20($sp)

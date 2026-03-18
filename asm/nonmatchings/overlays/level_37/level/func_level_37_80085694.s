@@ -422,15 +422,15 @@ glabel func_level_37_80085694
 /* 7AB19E8 80085CB8 00000000 */  nop
 /* 7AB19EC 80085CBC 450022A2 */  sb         $v0, 0x45($s1)
 /* 7AB19F0 80085CC0 46004292 */  lbu        $v0, 0x46($s2)
-/* 7AB19F4 80085CC4 9171010C */  jal        func_8005C644
+/* 7AB19F4 80085CC4 9171010C */  jal        rand
 /* 7AB19F8 80085CC8 460022A2 */   sb        $v0, 0x46($s1)
 /* 7AB19FC 80085CCC 06004230 */  andi       $v0, $v0, 0x6
 /* 7AB1A00 80085CD0 FDFF4224 */  addiu      $v0, $v0, -0x3
-/* 7AB1A04 80085CD4 9171010C */  jal        func_8005C644
+/* 7AB1A04 80085CD4 9171010C */  jal        rand
 /* 7AB1A08 80085CD8 060002A6 */   sh        $v0, 0x6($s0)
 /* 7AB1A0C 80085CDC 06004230 */  andi       $v0, $v0, 0x6
 /* 7AB1A10 80085CE0 FDFF4224 */  addiu      $v0, $v0, -0x3
-/* 7AB1A14 80085CE4 9171010C */  jal        func_8005C644
+/* 7AB1A14 80085CE4 9171010C */  jal        rand
 /* 7AB1A18 80085CE8 080002A6 */   sh        $v0, 0x8($s0)
 /* 7AB1A1C 80085CEC 1E000424 */  addiu      $a0, $zero, 0x1E
 /* 7AB1A20 80085CF0 06004230 */  andi       $v0, $v0, 0x6

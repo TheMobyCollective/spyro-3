@@ -615,7 +615,7 @@ glabel func_loading_80075B74
 /* 322E9A4 80076474 0000678C */  lw         $a3, 0x0($v1)
 /* 322E9A8 80076478 0780053C */  lui        $a1, %hi(D_loading_80074504)
 /* 322E9AC 8007647C 0445A524 */  addiu      $a1, $a1, %lo(D_loading_80074504)
-/* 322E9B0 80076480 DF65010C */  jal        func_8005977C
+/* 322E9B0 80076480 DF65010C */  jal        sprintf
 /* 322E9B4 80076484 00000000 */   nop
 /* 322E9B8 80076488 1800A427 */  addiu      $a0, $sp, 0x18
 /* 322E9BC 8007648C 0A010524 */  addiu      $a1, $zero, 0x10A

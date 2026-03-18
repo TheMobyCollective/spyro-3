@@ -671,7 +671,7 @@ glabel func_level_24_8007DDFC
 /* 5DF949C 8007E76C 00000000 */   nop
 /* 5DF94A0 8007E770 26000012 */  beqz       $s0, .Llevel_24_8007E80C
 /* 5DF94A4 8007E774 00000000 */   nop
-/* 5DF94A8 8007E778 9171010C */  jal        func_8005C644
+/* 5DF94A8 8007E778 9171010C */  jal        rand
 /* 5DF94AC 8007E77C 00000000 */   nop
 /* 5DF94B0 8007E780 0F004230 */  andi       $v0, $v0, 0xF
 /* 5DF94B4 8007E784 08004228 */  slti       $v0, $v0, 0x8

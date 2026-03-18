@@ -79,15 +79,15 @@ glabel func_level_31_8007EBF4
 /* 6A999FC 8007ECCC 4F0022A2 */  sb         $v0, 0x4F($s1)
 /* 6A99A00 8007ECD0 21900000 */  addu       $s2, $zero, $zero
 .Llevel_31_8007ECD4:
-/* 6A99A04 8007ECD4 9171010C */  jal        func_8005C644
+/* 6A99A04 8007ECD4 9171010C */  jal        rand
 /* 6A99A08 8007ECD8 00000000 */   nop
 /* 6A99A0C 8007ECDC 0F004230 */  andi       $v0, $v0, 0xF
 /* 6A99A10 8007ECE0 F8FF4224 */  addiu      $v0, $v0, -0x8
-/* 6A99A14 8007ECE4 9171010C */  jal        func_8005C644
+/* 6A99A14 8007ECE4 9171010C */  jal        rand
 /* 6A99A18 8007ECE8 1800A2AF */   sw        $v0, 0x18($sp)
 /* 6A99A1C 8007ECEC 0F004230 */  andi       $v0, $v0, 0xF
 /* 6A99A20 8007ECF0 F8FF4224 */  addiu      $v0, $v0, -0x8
-/* 6A99A24 8007ECF4 9171010C */  jal        func_8005C644
+/* 6A99A24 8007ECF4 9171010C */  jal        rand
 /* 6A99A28 8007ECF8 1C00A2AF */   sw        $v0, 0x1C($sp)
 /* 6A99A2C 8007ECFC 01000424 */  addiu      $a0, $zero, 0x1
 /* 6A99A30 8007ED00 21280000 */  addu       $a1, $zero, $zero
@@ -102,7 +102,7 @@ glabel func_level_31_8007EBF4
 /* 6A99A54 8007ED24 21804000 */  addu       $s0, $v0, $zero
 /* 6A99A58 8007ED28 14000012 */  beqz       $s0, .Llevel_31_8007ED7C
 /* 6A99A5C 8007ED2C 00000000 */   nop
-/* 6A99A60 8007ED30 9171010C */  jal        func_8005C644
+/* 6A99A60 8007ED30 9171010C */  jal        rand
 /* 6A99A64 8007ED34 00000000 */   nop
 /* 6A99A68 8007ED38 4F002392 */  lbu        $v1, 0x4F($s1)
 /* 6A99A6C 8007ED3C FF7F4230 */  andi       $v0, $v0, 0x7FFF

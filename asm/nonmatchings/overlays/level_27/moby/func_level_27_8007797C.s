@@ -1116,7 +1116,7 @@ glabel func_level_27_8007797C
 .Llevel_27_800788E0:
 /* 63ECE10 800788E0 07004010 */  beqz       $v0, .Llevel_27_80078900
 /* 63ECE14 800788E4 00000000 */   nop
-/* 63ECE18 800788E8 9171010C */  jal        func_8005C644
+/* 63ECE18 800788E8 9171010C */  jal        rand
 /* 63ECE1C 800788EC 00000000 */   nop
 /* 63ECE20 800788F0 FF004230 */  andi       $v0, $v0, 0xFF
 /* 63ECE24 800788F4 80004228 */  slti       $v0, $v0, 0x80
@@ -1252,7 +1252,7 @@ glabel func_level_27_8007797C
 /* 63ECFFC 80078ACC 01280229 */  slti       $v0, $t0, 0x2801
 /* 63ED000 80078AD0 07004010 */  beqz       $v0, .Llevel_27_80078AF0
 /* 63ED004 80078AD4 00000000 */   nop
-/* 63ED008 80078AD8 9171010C */  jal        func_8005C644
+/* 63ED008 80078AD8 9171010C */  jal        rand
 /* 63ED00C 80078ADC 00000000 */   nop
 /* 63ED010 80078AE0 FF004230 */  andi       $v0, $v0, 0xFF
 /* 63ED014 80078AE4 80004228 */  slti       $v0, $v0, 0x80
@@ -1671,10 +1671,10 @@ glabel func_level_27_8007797C
 /* 63ED5F4 800790C4 6800A38F */  lw         $v1, 0x68($sp)
 /* 63ED5F8 800790C8 01001026 */  addiu      $s0, $s0, 0x1
 /* 63ED5FC 800790CC 21186200 */  addu       $v1, $v1, $v0
-/* 63ED600 800790D0 9171010C */  jal        func_8005C644
+/* 63ED600 800790D0 9171010C */  jal        rand
 /* 63ED604 800790D4 6800A3AF */   sw        $v1, 0x68($sp)
 /* 63ED608 800790D8 07004230 */  andi       $v0, $v0, 0x7
-/* 63ED60C 800790DC 9171010C */  jal        func_8005C644
+/* 63ED60C 800790DC 9171010C */  jal        rand
 /* 63ED610 800790E0 7000A2AF */   sw        $v0, 0x70($sp)
 /* 63ED614 800790E4 01000424 */  addiu      $a0, $zero, 0x1
 /* 63ED618 800790E8 0D000524 */  addiu      $a1, $zero, 0xD
@@ -1766,7 +1766,7 @@ glabel func_level_27_8007797C
 /* 63ED760 80079230 40100300 */  sll        $v0, $v1, 1
 /* 63ED764 80079234 21104300 */  addu       $v0, $v0, $v1
 /* 63ED768 80079238 83120200 */  sra        $v0, $v0, 10
-/* 63ED76C 8007923C 9171010C */  jal        func_8005C644
+/* 63ED76C 8007923C 9171010C */  jal        rand
 /* 63ED770 80079240 3400A2AF */   sw        $v0, 0x34($sp)
 /* 63ED774 80079244 01000424 */  addiu      $a0, $zero, 0x1
 /* 63ED778 80079248 19000524 */  addiu      $a1, $zero, 0x19
@@ -1794,7 +1794,7 @@ glabel func_level_27_8007797C
 .Llevel_27_800792A0:
 /* 63ED7D0 800792A0 0D004010 */  beqz       $v0, .Llevel_27_800792D8
 /* 63ED7D4 800792A4 00000000 */   nop
-/* 63ED7D8 800792A8 9171010C */  jal        func_8005C644
+/* 63ED7D8 800792A8 9171010C */  jal        rand
 /* 63ED7DC 800792AC 00000000 */   nop
 /* 63ED7E0 800792B0 01000424 */  addiu      $a0, $zero, 0x1
 /* 63ED7E4 800792B4 19000524 */  addiu      $a1, $zero, 0x19

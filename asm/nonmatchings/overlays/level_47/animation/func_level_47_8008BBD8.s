@@ -467,7 +467,7 @@ glabel func_level_47_8008BBD8
 /* 912B720 8008C1F0 C6FE7224 */  addiu      $s2, $v1, -0x13A
 /* 912B724 8008C1F4 5000B027 */  addiu      $s0, $sp, 0x50
 .Llevel_47_8008C1F8:
-/* 912B728 8008C1F8 9171010C */  jal        func_8005C644
+/* 912B728 8008C1F8 9171010C */  jal        rand
 /* 912B72C 8008C1FC 00000000 */   nop
 /* 912B730 8008C200 FF004230 */  andi       $v0, $v0, 0xFF
 /* 912B734 8008C204 2A106202 */  slt        $v0, $s3, $v0

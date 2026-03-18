@@ -920,7 +920,7 @@ glabel func_level_10_800881FC
 /* 3AEDC10 80088EE0 2C000426 */  addiu      $a0, $s0, 0x2C
 /* 3AEDC14 80088EE4 5E3C010C */  jal        func_8004F178
 /* 3AEDC18 80088EE8 20000526 */   addiu     $a1, $s0, 0x20
-/* 3AEDC1C 80088EEC 9171010C */  jal        func_8005C644
+/* 3AEDC1C 80088EEC 9171010C */  jal        rand
 /* 3AEDC20 80088EF0 00000000 */   nop
 /* 3AEDC24 80088EF4 1F004230 */  andi       $v0, $v0, 0x1F
 /* 3AEDC28 80088EF8 90004014 */  bnez       $v0, .Llevel_10_8008913C
@@ -1055,7 +1055,7 @@ glabel func_level_10_800881FC
 /* 3AEDE10 800890E0 21200002 */   addu      $a0, $s0, $zero
 /* 3AEDE14 800890E4 5A3C010C */  jal        func_8004F168
 /* 3AEDE18 800890E8 0C000426 */   addiu     $a0, $s0, 0xC
-/* 3AEDE1C 800890EC 9171010C */  jal        func_8005C644
+/* 3AEDE1C 800890EC 9171010C */  jal        rand
 /* 3AEDE20 800890F0 00000000 */   nop
 /* 3AEDE24 800890F4 1F004230 */  andi       $v0, $v0, 0x1F
 /* 3AEDE28 800890F8 10004014 */  bnez       $v0, .Llevel_10_8008913C
@@ -1254,7 +1254,7 @@ glabel func_level_10_800881FC
 /* 3AEE0F8 800893C8 D1074228 */  slti       $v0, $v0, 0x7D1
 /* 3AEE0FC 800893CC EC004014 */  bnez       $v0, .Llevel_10_80089780
 /* 3AEE100 800893D0 70FE0224 */   addiu     $v0, $zero, -0x190
-/* 3AEE104 800893D4 9171010C */  jal        func_8005C644
+/* 3AEE104 800893D4 9171010C */  jal        rand
 /* 3AEE108 800893D8 6000A2AF */   sw        $v0, 0x60($sp)
 /* 3AEE10C 800893DC 01000424 */  addiu      $a0, $zero, 0x1
 /* 3AEE110 800893E0 2C000524 */  addiu      $a1, $zero, 0x2C
@@ -1414,7 +1414,7 @@ glabel func_level_10_800881FC
 /* 3AEE34C 8008961C 00000000 */  nop
 /* 3AEE350 80089620 09F84000 */  jalr       $v0
 /* 3AEE354 80089624 21382002 */   addu      $a3, $s1, $zero
-/* 3AEE358 80089628 9171010C */  jal        func_8005C644
+/* 3AEE358 80089628 9171010C */  jal        rand
 /* 3AEE35C 8008962C 00000000 */   nop
 /* 3AEE360 80089630 1F004230 */  andi       $v0, $v0, 0x1F
 /* 3AEE364 80089634 35004014 */  bnez       $v0, .Llevel_10_8008970C
@@ -1444,7 +1444,7 @@ glabel func_level_10_800881FC
 /* 3AEE3C0 80089690 07004230 */  andi       $v0, $v0, 0x7
 /* 3AEE3C4 80089694 1D004014 */  bnez       $v0, .Llevel_10_8008970C
 /* 3AEE3C8 80089698 00000000 */   nop
-/* 3AEE3CC 8008969C 9171010C */  jal        func_8005C644
+/* 3AEE3CC 8008969C 9171010C */  jal        rand
 /* 3AEE3D0 800896A0 00000000 */   nop
 /* 3AEE3D4 800896A4 03004230 */  andi       $v0, $v0, 0x3
 /* 3AEE3D8 800896A8 18004014 */  bnez       $v0, .Llevel_10_8008970C

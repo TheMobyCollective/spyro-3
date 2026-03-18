@@ -25,7 +25,7 @@ extern void func_80055C24(Moby*);
 extern void func_80055D24(Moby*, int); // fUpdateMobyCollision
 
 // Psyq
-extern int func_8005C644(); // rand
+extern int rand(); // rand
 
 // .data 80064f9c
 extern Sparx sparx;
@@ -114,7 +114,7 @@ Moby* func_level_17_8007EFAC(int mobyClass, Moby* linkedMoby) {
         newMoby->unknown4 = 2;
         temp_s2->unkE = 0x708;
         temp_s2->unk11 = 0;
-        temp_s2->unk12 = (char) (func_8005C644() & 0xFC);
+        temp_s2->unk12 = (char) (rand() & 0xFC);
         break;
         
     case 0x78: // Sparx

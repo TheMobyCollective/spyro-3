@@ -67,10 +67,10 @@ glabel func_level_41_80079D2C
 /* 813FB48 80079E18 1000A427 */  addiu      $a0, $sp, 0x10
 /* 813FB4C 80079E1C 5E3C010C */  jal        func_8004F178
 /* 813FB50 80079E20 21284002 */   addu      $a1, $s2, $zero
-/* 813FB54 80079E24 9171010C */  jal        func_8005C644
+/* 813FB54 80079E24 9171010C */  jal        rand
 /* 813FB58 80079E28 00000000 */   nop
 /* 813FB5C 80079E2C 03004230 */  andi       $v0, $v0, 0x3
-/* 813FB60 80079E30 9171010C */  jal        func_8005C644
+/* 813FB60 80079E30 9171010C */  jal        rand
 /* 813FB64 80079E34 1C00A2AF */   sw        $v0, 0x1C($sp)
 /* 813FB68 80079E38 01000424 */  addiu      $a0, $zero, 0x1
 /* 813FB6C 80079E3C 11000524 */  addiu      $a1, $zero, 0x11
