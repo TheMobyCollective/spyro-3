@@ -27,11 +27,42 @@ INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FB10);
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FB74);
 
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FC90);
+/**
+ * ???() - func_8001FC90() - MATCHING
+ * https://decomp.me/scratch/spFFL
+ */
+void func_8001FC90(int arg0, int  arg1, int  arg2, int  arg3) {
+    struct HudRectDraw* temp_s0;
+
+    temp_s0 = D_8006C664;
+    temp_s0->unk8 = arg0;
+    temp_s0->unk10 = arg0;
+    temp_s0->unk0 = 0x05000000;    //gpu tag?
+    temp_s0->unk4 = 0x2A080808;    //color?
+    temp_s0->unkC = arg1;
+    temp_s0->unk14 = arg1;
+    temp_s0->unkA = arg2;
+    temp_s0->unkE = arg2;
+    temp_s0->unk12 = arg3;
+    temp_s0->unk16 = arg3;
+    func_8004E758(temp_s0);
+    D_8006C664 = temp_s0 + 1;
+}
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FD00);
 
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FE48);
+/**
+ * ???() - func_8001FE48() - MATCHING
+ * https://decomp.me/scratch/bNzDh
+ */
+void func_8001FE48(int arg0, int arg1, int arg2, int arg3) {
+    func_8001FABC(0x18);
+    func_8001FC90(arg0 + 3, arg1 - 3,    arg2,        arg2 + 1);
+    func_8001FC90(arg0 + 1, arg1 - 1,    arg2 + 1,    arg2 + 2);
+    func_8001FC90(arg0,     arg1,        arg2 + 2,    arg3 - 2);
+    func_8001FC90(arg0 + 1, arg1 - 1,    arg3 - 2,    arg3 - 1);
+    func_8001FC90(arg0 + 3, arg1 - 3,    arg3 - 1,    arg3);
+}
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FF44);
 
