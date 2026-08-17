@@ -129,6 +129,15 @@ The following assumptions have been made in determining an appropriate file stru
   * Most mobys are the same across all levels. Mobys that aren't will need to be handled somewhat differently - eggs are one example.
 * All PsyQ / library functions and variables are implemented by included assembly files. The PsyQ compiler and linker are not used and thus specific features it implements may be done slightly differently in this repository.
 
+## Contribution Policy
+Contributions are greatly appreciated, and this is not a project that I will be able to do all by myself. How you choose to contribute code or decompile functions is left up to the contributor, but I ask a few things for you to consider before submitting a pull request:
+
+* Where possible, try to align with the naming schemes and code style with other functions already in the repo. Even better if you can align them with the [spyro-1](https://github.com/TheMobyCollective/spyro-1/tree/main) project, as longer-term these two repositories will be as aligned as possible.
+* Please do not co-author commits using an AI agent. Agent context files should be kept local and there are currently no plans to accept these into the main repository.
+* Please ensure that the executable and all overlays are matching before submitting a pull request.
+
+All PRs will be subject to some scrutiny before being accepted, so please bear with me when a request is made!
+
 ## Other Resources
 * The [MobyDoc](https://docs.google.com/spreadsheets/d/1YprizWnDfuyh4JVEq41byIoF232TSvQs2fbaDFdMiK4/) contains a list of all of the moby classes in this game.
 
