@@ -25,7 +25,50 @@ INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FABC);
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FB10);
 
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FB74);
+/**
+ * ???() - func_8001FB74()
+ * https://decomp.me/scratch/9NQVn
+ */
+void func_8001FB74(int arg0, int arg1, int arg2, int arg3) {
+
+    LINE_G2* line;
+
+    line = D_8006C664;
+    
+    line->tag = 0x04000000;
+    line->code = 0x50;
+    line->x0 = arg0;
+    line->y0 = arg1;
+    line->x1 = arg2;
+    line->y1 = arg3;
+    line->r0 = 180;
+    line->g0 = 154;
+    line->b0 = 17;
+    line->r1 = 180;
+    line->g1 = 154;
+    line->b1 = 17; 
+    
+    func_8004E758(line);
+    
+    line++;
+    D_8006C664 = line;
+    
+    line->tag = 0x04000000;
+    line->code = 0x50;
+    line->x0 = arg0 + 1;
+    line->y0 = arg1 + 1;
+    line->x1 = arg2 + 1;
+    line->y1 = arg3 + 1;
+    line->r0 = 128;
+    line->g0 = 82;
+    line->b0 = 0;
+    line->r1 = 128;
+    line->g1 = 82;
+    line->b1 = 0;
+    
+    func_8004E758(line);
+    D_8006C664 = line + 1;
+}
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FC90);
 
