@@ -1,19 +1,6 @@
 #ifndef __DRAWUTIL_H
 #define __DRAWUTIL_H
 
-typedef struct {
-    int unk0;    //gpu tag?
-    int unk4;    //color?
-    short unk8;    //x0
-    short unkA;    //y0
-    short unkC;    //x1
-    short unkE;    //y0 duplicate
-    short unk10;    //x0 duplicate
-    short unk12;    //y1
-    short unk14;    //x1 duplicate
-    short unk16;    //y1 duplicate
-} HudRectDraw;
-
 void func_8001EBAC(); // clear frame buffers
 void func_8001EC24(); // 8001ec24 fDrawWorld_C / fDrawWorldGeometry
 long long func_8001EC5C(); // 8001ec5c fDrawSpyroAndMobys

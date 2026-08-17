@@ -29,24 +29,18 @@ INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FB74);
 
 /**
  * ???() - func_8001FC90() - MATCHING
- * https://decomp.me/scratch/spFFL
+ * 100% match: https://decomp.me/scratch/spFFL
+ * uses macros & doesn't match: https://decomp.me/scratch/Ps5tF
  */
 void func_8001FC90(int arg0, int  arg1, int  arg2, int  arg3) {
-    struct HudRectDraw* temp_s0;
+    POLY_F4* poly;
 
-    temp_s0 = D_8006C664;
-    temp_s0->unk8 = arg0;
-    temp_s0->unk10 = arg0;
-    temp_s0->unk0 = 0x05000000;    //gpu tag?
-    temp_s0->unk4 = 0x2A080808;    //color?
-    temp_s0->unkC = arg1;
-    temp_s0->unk14 = arg1;
-    temp_s0->unkA = arg2;
-    temp_s0->unkE = arg2;
-    temp_s0->unk12 = arg3;
-    temp_s0->unk16 = arg3;
-    func_8004E758(temp_s0);
-    D_8006C664 = temp_s0 + 1;
+    poly = D_8006C664;
+    poly->tag = 0x05000000;    //gpu tag?
+    setXY2(poly, arg0, arg1, arg2, arg3);
+    setRGB0(poly,8,8,8);    //temp_s0->unk4 = 0x2A080808;
+    func_8004E758(poly);
+    D_8006C664 = poly + 1;
 }
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FD00);
