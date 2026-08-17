@@ -21,7 +21,7 @@ glabel func_8002A9D0
 /* 1B210 8002AA10 0CE522A0 */  sb         $v0, %lo(D_8006E50C)($at)
 /* 1B214 8002AA14 0780013C */  lui        $at, %hi(D_8007201C)
 /* 1B218 8002AA18 1C2022A0 */  sb         $v0, %lo(D_8007201C)($at)
-/* 1B21C 8002AA1C C571010C */  jal        func_8005C714
+/* 1B21C 8002AA1C C571010C */  jal        VSyncCallback
 /* 1B220 8002AA20 00000000 */   nop
 /* 1B224 8002AA24 1000BF8F */  lw         $ra, 0x10($sp)
 /* 1B228 8002AA28 1800BD27 */  addiu      $sp, $sp, 0x18

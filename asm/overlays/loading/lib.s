@@ -30,7 +30,7 @@ glabel func_loading_80079BA8
 /* 3232124 80079BF4 500003AE */   sw        $v1, 0x50($s0)
 /* 3232128 80079BF8 0880053C */  lui        $a1, %hi(func_loading_8007ADEC)
 /* 323212C 80079BFC ECADA524 */  addiu      $a1, $a1, %lo(func_loading_8007ADEC)
-/* 3232130 80079C00 D271010C */  jal        func_8005C748
+/* 3232130 80079C00 D271010C */  jal        VSyncCallbacks
 /* 3232134 80079C04 07000424 */   addiu     $a0, $zero, 0x7
 /* 3232138 80079C08 1400BF8F */  lw         $ra, 0x14($sp)
 /* 323213C 80079C0C 1000B08F */  lw         $s0, 0x10($sp)
@@ -48,7 +48,7 @@ glabel func_loading_80079C18
 /* 323215C 80079C2C 00000000 */  nop
 /* 3232160 80079C30 FDFF4014 */  bnez       $v0, .Lloading_80079C28
 /* 3232164 80079C34 07000424 */   addiu     $a0, $zero, 0x7
-/* 3232168 80079C38 D271010C */  jal        func_8005C748
+/* 3232168 80079C38 D271010C */  jal        VSyncCallbacks
 /* 323216C 80079C3C 21280000 */   addu      $a1, $zero, $zero
 /* 3232170 80079C40 A0EC010C */  jal        func_loading_8007B280
 /* 3232174 80079C44 00000000 */   nop

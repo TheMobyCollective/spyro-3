@@ -6,7 +6,7 @@ glabel func_8002AB38
 /* 1B33C 8002AB3C 3C00BFAF */  sw         $ra, 0x3C($sp)
 /* 1B340 8002AB40 3800B2AF */  sw         $s2, 0x38($sp)
 /* 1B344 8002AB44 3400B1AF */  sw         $s1, 0x34($sp)
-/* 1B348 8002AB48 A171010C */  jal        func_8005C684
+/* 1B348 8002AB48 A171010C */  jal        ResetCallback
 /* 1B34C 8002AB4C 3000B0AF */   sw        $s0, 0x30($sp)
 /* 1B350 8002AB50 0DAA000C */  jal        func_8002A834
 /* 1B354 8002AB54 00000000 */   nop

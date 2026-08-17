@@ -899,7 +899,7 @@ glabel func_title_8007BB40
 /* 2A87C 8007BB4C EC00B1AF */  sw         $s1, 0xEC($sp)
 /* 2A880 8007BB50 FF67010C */  jal        ResetGraph
 /* 2A884 8007BB54 E800B0AF */   sw        $s0, 0xE8($sp)
-/* 2A888 8007BB58 DE71010C */  jal        func_8005C778
+/* 2A888 8007BB58 DE71010C */  jal        StopCallback
 /* 2A88C 8007BB5C F0001024 */   addiu     $s0, $zero, 0xF0
 /* 2A890 8007BB60 FF67010C */  jal        ResetGraph
 /* 2A894 8007BB64 05000424 */   addiu     $a0, $zero, 0x5
@@ -1383,7 +1383,7 @@ glabel func_title_8007C1F8
 /* 2AF74 8007C244 500003AE */   sw        $v1, 0x50($s0)
 /* 2AF78 8007C248 0880053C */  lui        $a1, %hi(func_title_8007D5AC)
 /* 2AF7C 8007C24C ACD5A524 */  addiu      $a1, $a1, %lo(func_title_8007D5AC)
-/* 2AF80 8007C250 D271010C */  jal        func_8005C748
+/* 2AF80 8007C250 D271010C */  jal        VSyncCallbacks
 /* 2AF84 8007C254 07000424 */   addiu     $a0, $zero, 0x7
 /* 2AF88 8007C258 1400BF8F */  lw         $ra, 0x14($sp)
 /* 2AF8C 8007C25C 1000B08F */  lw         $s0, 0x10($sp)
@@ -1401,7 +1401,7 @@ glabel func_title_8007C268
 /* 2AFAC 8007C27C 00000000 */  nop
 /* 2AFB0 8007C280 FDFF4014 */  bnez       $v0, .Ltitle_8007C278
 /* 2AFB4 8007C284 07000424 */   addiu     $a0, $zero, 0x7
-/* 2AFB8 8007C288 D271010C */  jal        func_8005C748
+/* 2AFB8 8007C288 D271010C */  jal        VSyncCallbacks
 /* 2AFBC 8007C28C 21280000 */   addu      $a1, $zero, $zero
 /* 2AFC0 8007C290 9CF6010C */  jal        func_title_8007DA70
 /* 2AFC4 8007C294 00000000 */   nop
