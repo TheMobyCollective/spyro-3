@@ -37,16 +37,9 @@ void func_8001FB74(int arg0, int arg1, int arg2, int arg3) {
     
     line->tag = 0x04000000;
     line->code = 0x50;
-    line->x0 = arg0;
-    line->y0 = arg1;
-    line->x1 = arg2;
-    line->y1 = arg3;
-    line->r0 = 180;
-    line->g0 = 154;
-    line->b0 = 17;
-    line->r1 = 180;
-    line->g1 = 154;
-    line->b1 = 17; 
+    setXY2(line, arg0, arg1, arg2, arg3);
+    setRGB0(line, 180, 154, 17);
+    setRGB1(line, 180, 154, 17);
     
     func_8004E758(line);
     
@@ -55,16 +48,9 @@ void func_8001FB74(int arg0, int arg1, int arg2, int arg3) {
     
     line->tag = 0x04000000;
     line->code = 0x50;
-    line->x0 = arg0 + 1;
-    line->y0 = arg1 + 1;
-    line->x1 = arg2 + 1;
-    line->y1 = arg3 + 1;
-    line->r0 = 128;
-    line->g0 = 82;
-    line->b0 = 0;
-    line->r1 = 128;
-    line->g1 = 82;
-    line->b1 = 0;
+    setXY2(line, arg0 + 1, arg1 + 1, arg2 + 1, arg3 + 1);
+    setRGB0(line, 128, 82, 0);
+    setRGB1(line, 128, 82, 0);
     
     func_8004E758(line);
     D_8006C664 = line + 1;
