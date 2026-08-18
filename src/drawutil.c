@@ -29,18 +29,27 @@ INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FB74);
 
 /**
  * ???() - func_8001FC90() - MATCHING
- * 100% match: https://decomp.me/scratch/spFFL
- * uses macros & doesn't match: https://decomp.me/scratch/Ps5tF
+ * https://decomp.me/scratch/8lG9w
  */
 void func_8001FC90(int arg0, int  arg1, int  arg2, int  arg3) {
-    POLY_F4* poly;
+    POLY_F4* p;
 
-    poly = D_8006C664;
-    poly->tag = 0x05000000;    //gpu tag?
-    setXY2(poly, arg0, arg1, arg2, arg3);
-    setRGB0(poly,8,8,8);    //temp_s0->unk4 = 0x2A080808;
-    func_8004E758(poly);
-    D_8006C664 = poly + 1;
+    p = D_8006C664;
+    p->tag = 0x05000000;
+
+    *(int*)&p->r0 = 0x2A080808;
+    
+    p->x0 = x0;
+    p->x1 = x1;
+    p->x2 = x0;
+    p->x3 = x1;
+    p->y0 = y0;
+    p->y1 = y0;
+    p->y2 = y1;
+    p->y3 = y1;
+    
+    func_8004E758(p);
+    D_8006C664 = p + 1;
 }
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FD00);
