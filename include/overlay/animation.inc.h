@@ -3,6 +3,12 @@
 
 // Should have a level ID passed into this
 
+#include "ovl_header.h"
+#include "spu.h"
+#include "spyro.h"
+
+// ovl_header.h will need to be updated to give the pointers to the functions in here more appropriate names
+
 //////////////////////////////////////////////////////////////////////////////////
 // Function 1 TODO
 
