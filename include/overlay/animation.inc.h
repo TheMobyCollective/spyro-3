@@ -26,7 +26,12 @@
 // https://decomp.me/scratch/9jeXH
 // https://decomp.me/scratch/YLLhe
 
-// 15 is the most updated
+// 20 - 22
+// https://decomp.me/scratch/T3LWL
+// https://decomp.me/scratch/3l0K5
+// https://decomp.me/scratch/7dyJm
+
+// 22 is the most updated
 
 // The following levels will have no cases:
 // 16, 18, 28, 38, 40, 48
@@ -47,7 +52,7 @@
 // 30, 43, 44
 
 // Therefore the following levels are left to do:
-// 20 21 22 23 24    26
+//          23 24    26
 // 30 31    33 34    36 37
 //    41 42 43 44    46
 // 50
@@ -71,6 +76,20 @@
  || (LEVEL_ID == 27) || (LEVEL_ID == 30) || (LEVEL_ID == 33) || (LEVEL_ID == 37) \
  || (LEVEL_ID == 42) || (LEVEL_ID == 47)
     #define IS_FIRE_LAVA_LEVEL
+#endif
+
+#if (LEVEL_ID == 20) || (LEVEL_ID == 21) || (LEVEL_ID == 31)
+    #define IS_ICE_LEVEL
+#endif
+
+// Assuming it's a wooden ladder thing specifically
+#if (LEVEL_ID == 20) || (LEVEL_ID == 23)
+    #define IS_WOODEN_LADDER_LEVEL
+#endif
+
+// This isn't known yet
+#if (LEVEL_ID == 20)
+    #define IS_UNKNOWN_ANIM_33_LEVEL
 #endif
 
 #if (LEVEL_ID == 13) || (LEVEL_ID == 22) || (LEVEL_ID == 26) || (LEVEL_ID == 34)
@@ -121,6 +140,23 @@ void NAME_OVERLAY_FUNCTION(UnnamedOverlayFunction_Animation3) (void) {
     
     switch (animationId) {
 
+    #ifdef IS_ICE_LEVEL
+    case ANIMATION_STATE_ICE_SKATE:
+        {
+            int handler;
+            if (spyro.bodyAnimation.frame == 1 || spyro.bodyAnimation.frame == 6) {
+                handler = PlaySound(g_SoundTablePtr->iceSkate, 0, 0);
+                spyro.unk22[6] = spyro.bodyAnimation.frame;
+                if (handler >= 0) {
+                    if (spyro.bodyAnimation.frame == 6) {
+                        func_8003C0B0(handler, 0x1190);
+                    }
+                }
+            }
+            break;
+        }
+    #endif
+        
     #ifdef IS_SKATEBOARDING_LEVEL
     case ANIMATION_STATE_FALL_OFF_SKATEBOARD:
         if (animationFrame == 24) {
@@ -129,7 +165,7 @@ void NAME_OVERLAY_FUNCTION(UnnamedOverlayFunction_Animation3) (void) {
         }
         break;
     #endif
-
+        
     #ifdef IS_SWIMMING_LEVEL
     case ANIMATION_STATE_SWIM_MOVE_SURFACE:
         if (animationFrame == 1) {
@@ -138,7 +174,41 @@ void NAME_OVERLAY_FUNCTION(UnnamedOverlayFunction_Animation3) (void) {
         }
         break;
     #endif
-    
+
+    #ifdef IS_WOODEN_LADDER_LEVEL
+    case ANIMATION_STATE_LADDER_CLIMB:
+        {
+            int handler;
+            if (animationFrame == 3 || animationFrame == 10) {
+                handler = PlaySound(g_SoundTablePtr->spyroLand, 0, 0);
+                spyro.unk22[6] = animationFrame;
+                if (handler >= 0) {
+                    if (animationFrame == 10) {
+                        func_8003C0B0(handler, 0x1200);
+                    }
+                }
+            }
+            break;
+        }
+    #endif
+
+    #ifdef IS_UNKNOWN_ANIM_33_LEVEL
+    case ANIMATION_STATE_UNK_33:
+    case ANIMATION_STATE_UNK_34:
+        {
+            int handler;
+            if (animationFrame == 1 || animationFrame == 3) {
+                handler = PlaySound(g_SoundTablePtr->spyroLand, 0, 0);
+                spyro.unk22[6] = animationFrame;
+                if (handler >= 0 && animationFrame == 1) {
+                    func_8003C140(handler, 0xC00);
+                    func_8003C0B0(handler, 0x1200);
+                }
+            }
+            break;
+        }
+    #endif
+
     #ifdef IS_FIRE_LAVA_LEVEL
     case ANIMATION_STATE_DEATH_BURN:
         if (animationFrame == 13) {
@@ -159,7 +229,7 @@ void NAME_OVERLAY_FUNCTION(UnnamedOverlayFunction_Animation3) (void) {
         }
         break;
     #endif
-        
+    
     }
 }
 
