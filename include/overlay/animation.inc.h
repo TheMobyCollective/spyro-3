@@ -33,32 +33,37 @@
 // 26 https://decomp.me/scratch/Qb1Vq
 // 30 https://decomp.me/scratch/hozW3
 // 31 https://decomp.me/scratch/sqMbR
-
-// 31 is latest
+// 33 https://decomp.me/scratch/MOhh8
+// 34 https://decomp.me/scratch/wzKHC
+// 36 https://decomp.me/scratch/YkTJ2
+// 37 https://decomp.me/scratch/qSPZb
+// 42 https://decomp.me/scratch/akoSs
+// 46 https://decomp.me/scratch/iinKq
+// 50 https://decomp.me/scratch/E3MhZ // most recent, include this one as an example
 // Worth checking all for notable comments when this is implemented
 
-// The following levels are left to do:
-//          33 34    36 37
-//       42          46
-// 50
 
 
-
-// Does not include 16
+// Does not include 16, possibly because it's Sheila
+// Does include 37 for some reason
 #if (LEVEL_ID == 10) || (LEVEL_ID == 11) || (LEVEL_ID == 14) || (LEVEL_ID == 15) \
  || (LEVEL_ID == 20) || (LEVEL_ID == 21) || (LEVEL_ID == 23) || (LEVEL_ID == 24) \
  || (LEVEL_ID == 25) || (LEVEL_ID == 30) || (LEVEL_ID == 32) || (LEVEL_ID == 35) \
- || (LEVEL_ID == 41) || (LEVEL_ID == 43) || (LEVEL_ID == 44) || (LEVEL_ID == 45)
+ || (LEVEL_ID == 37) || (LEVEL_ID == 41) || (LEVEL_ID == 42) || (LEVEL_ID == 43) \
+ || (LEVEL_ID == 44) || (LEVEL_ID == 45) || (LEVEL_ID == 50)
     #define IS_SWIMMING_LEVEL
 #endif
 
-#if (LEVEL_ID == 11) || (LEVEL_ID == 22) || (LEVEL_ID == 32) || (LEVEL_ID == 50)
+// Includes 33 for some reason
+#if (LEVEL_ID == 11) || (LEVEL_ID == 22) || (LEVEL_ID == 32) || (LEVEL_ID == 33) \
+ || (LEVEL_ID == 50)
     #define IS_SKATEBOARDING_LEVEL
 #endif
 
-// Does not include 26 or 30
+// Does not include 26 or 30 - in 30, the fire makes Spyro do a different animation
 #if (LEVEL_ID == 12) || (LEVEL_ID == 13) || (LEVEL_ID == 17) || (LEVEL_ID == 27) \
- || (LEVEL_ID == 33) || (LEVEL_ID == 37) || (LEVEL_ID == 42) || (LEVEL_ID == 47)
+ || (LEVEL_ID == 33) || (LEVEL_ID == 37) || (LEVEL_ID == 42) || (LEVEL_ID == 47) \
+ || (LEVEL_ID == 50)
     #define IS_FIRE_LAVA_LEVEL
 #endif
 
@@ -66,8 +71,8 @@
     #define IS_ICE_LEVEL
 #endif
 
-// To confirm: 33, 34, 42, 43, 44
-#if (LEVEL_ID == 20) || (LEVEL_ID == 23) || (LEVEL_ID == 30)
+#if (LEVEL_ID == 20) || (LEVEL_ID == 23) || (LEVEL_ID == 30) || (LEVEL_ID == 33) \
+ || (LEVEL_ID == 34) || (LEVEL_ID == 42) || (LEVEL_ID == 43) || (LEVEL_ID == 44)
     #define IS_LADDER_LEVEL
 #endif
 
@@ -75,19 +80,18 @@
     #define IS_SGT_BYRD_LEVEL
 #endif
 
-// 31 is not included, boxing yeti is considered separate
-// and also doesn't have any special sound effects
+// 31 not included, boxing Bentley is considered separate and doesn't have any special sounds
 #if (LEVEL_ID == 24) || (LEVEL_ID == 36) || (LEVEL_ID == 41)
     #define IS_BENTLEY_LEVEL
 #endif
 
-// Oops! They included 30?
+// 30 included for some reason? That makes it identical to 43's and 44's
 #if (LEVEL_ID == 30) || (LEVEL_ID == 33) || (LEVEL_ID == 43) || (LEVEL_ID == 44) \
  || (LEVEL_ID == 46)
     #define IS_AGENT_9_LEVEL
 #endif
 
-// WIP - taken from decomp.me on August 19th 2026
+// Unsure on name - maybe PlaySpecialWalkSounds?
 void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
     int animationId;
     int animationFrame;
