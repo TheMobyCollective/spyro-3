@@ -264,10 +264,18 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
 //////////////////////////////////////////////////////////////////////////////////
 // Function 4 TODO
 
-// Levels 10 to 12 confirmed in decomp.me so far, none confirmed with a build
-// https://decomp.me/scratch/4KNXz
-// https://decomp.me/scratch/GJ9gX
-// https://decomp.me/scratch/pcTDp
+// requires changing the Spyro animation state to an int
+
+// Cases seem complicated in these
+// 10 https://decomp.me/scratch/4KNXz
+// 11 https://decomp.me/scratch/GJ9gX
+// 12 https://decomp.me/scratch/pcTDp
+// 13 https://decomp.me/scratch/M03HV
+// 14 https://decomp.me/scratch/ysWCq
+// 15 https://decomp.me/scratch/jEIyz non-matching, maybe needs more redundant break cases
+// 16 https://decomp.me/scratch/LsvA9
+// 17 https://decomp.me/scratch/yLjTm
+// 18 https://decomp.me/scratch/KOGtp
 
 //////////////////////////////////////////////////////////////////////////////////
 // Function 5 TODO
