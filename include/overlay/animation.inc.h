@@ -41,6 +41,7 @@
 // 46 https://decomp.me/scratch/iinKq
 // 50 https://decomp.me/scratch/E3MhZ // most recent, include this one as an example
 // Worth checking all for notable comments when this is implemented
+// Will be able to be implemented (empty) for cutscenes too
 
 
 
