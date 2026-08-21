@@ -17,8 +17,12 @@
 
 // Slightly trickier but should be easier when more of them are done, similar to the below
 // 10 https://decomp.me/scratch/zKlCP
+// 37 https://decomp.me/scratch/IDsIj
 
-// 11 - 50; 61 - 80 TODO
+// Most recent is 37
+// Seems to have some of the strange cases that the function below does, so can probably reuse the same macros (confirm though)
+
+// 11 - 36; 38 - 50; 61 - 80 TODO
 // cutscenes are likely all the same, probably just an instant return
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -284,8 +288,8 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
 // 17 https://decomp.me/scratch/yLjTm
 // 18 https://decomp.me/scratch/KOGtp
 
-// Most recent is 18
-// 20 - 50 and cutscenes TODO
+// Most recent is 18 - this has some new case names for the enum
+// 20 - 50; 61 - 80 TODO
 // Cutscenes are likely all the same; just the pad store
 
 //////////////////////////////////////////////////////////////////////////////////
