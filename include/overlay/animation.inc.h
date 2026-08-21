@@ -15,6 +15,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Function 2 TODO
 
+// Slightly trickier but should be easier when more of them are done, similar to the below
+// 10 https://decomp.me/scratch/zKlCP
+
+// 11 - 50; 61 - 80 TODO
+// cutscenes are likely all the same, probably just an instant return
+
 //////////////////////////////////////////////////////////////////////////////////
 // Function 3 (Spyro and critter animation sounds)
 
@@ -280,6 +286,7 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
 
 // Most recent is 18
 // 20 - 50 and cutscenes TODO
+// Cutscenes are likely all the same; just the pad store
 
 //////////////////////////////////////////////////////////////////////////////////
 // Function 5 TODO
