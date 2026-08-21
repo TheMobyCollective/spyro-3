@@ -265,17 +265,21 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
 // Function 4 TODO
 
 // requires changing the Spyro animation state to an int
+// also some of these have updated animation states
 
-// Cases seem complicated in these
+// Sometimes you need to add in a pair of redundant break cases to make it match
 // 10 https://decomp.me/scratch/4KNXz
 // 11 https://decomp.me/scratch/GJ9gX
 // 12 https://decomp.me/scratch/pcTDp
 // 13 https://decomp.me/scratch/M03HV
 // 14 https://decomp.me/scratch/ysWCq
-// 15 https://decomp.me/scratch/jEIyz non-matching, maybe needs more redundant break cases
+// 15 https://decomp.me/scratch/jEIyz
 // 16 https://decomp.me/scratch/LsvA9
 // 17 https://decomp.me/scratch/yLjTm
 // 18 https://decomp.me/scratch/KOGtp
+
+// Most recent is 18
+// 20 - 50 and cutscenes TODO
 
 //////////////////////////////////////////////////////////////////////////////////
 // Function 5 TODO
