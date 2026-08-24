@@ -4,14 +4,24 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8003E83C);
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8003E968);
 
+// Apply surface effects
+// There's a bunch of surface functions here
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8003F194);
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8003F6F4);
 
+// Run surface type function
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8003FD58);
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800408B8);
 
+/**
+ * ???() - func_80040954()
+ * Roughly equivalent to func_80057380 from spyro-1
+ * Checks if the surface is a special surface, and returns its type
+ * D_8006D048 struct updated
+ * https://decomp.me/scratch/cwjZ4
+ */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80040954);
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80040994);
