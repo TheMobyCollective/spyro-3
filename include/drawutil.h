@@ -1,6 +1,10 @@
 #ifndef __DRAWUTIL_H
 #define __DRAWUTIL_H
 
+#include "libgpu.h"
+
+extern void* D_8006C664;
+
 void func_8001EBAC(); // clear frame buffers
 void func_8001EC24(); // 8001ec24 fDrawWorld_C / fDrawWorldGeometry
 long long func_8001EC5C(); // 8001ec5c fDrawSpyroAndMobys

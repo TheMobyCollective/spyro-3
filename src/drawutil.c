@@ -1,5 +1,6 @@
 #include "common.h"
 #include "drawutil.h"
+#include "stdutil.h"
 
 extern char D_80067570[16][12]; // might be an array of structs, not sure
 extern PauseData pauseData; // 8006fbc4
@@ -29,7 +30,7 @@ INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FB10);
  * ???() - func_8001FB74()
  * https://decomp.me/scratch/9NQVn
  */
-void func_8001FB74(int arg0, int arg1, int arg2, int arg3) {
+void func_8001FB74(int x0, int y0, int x1, int y1) {
 
     LINE_G2* line;
 
@@ -37,7 +38,7 @@ void func_8001FB74(int arg0, int arg1, int arg2, int arg3) {
     
     line->tag = 0x04000000;
     line->code = 0x50;
-    setXY2(line, arg0, arg1, arg2, arg3);
+    setXY2(line, x0, y0, x1, y1);
     setRGB0(line, 180, 154, 17);
     setRGB1(line, 180, 154, 17);
     
@@ -48,7 +49,7 @@ void func_8001FB74(int arg0, int arg1, int arg2, int arg3) {
     
     line->tag = 0x04000000;
     line->code = 0x50;
-    setXY2(line, arg0 + 1, arg1 + 1, arg2 + 1, arg3 + 1);
+    setXY2(line, x0 + 1, y0 + 1, x1 + 1, y1 + 1);
     setRGB0(line, 128, 82, 0);
     setRGB1(line, 128, 82, 0);
     

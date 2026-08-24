@@ -7,7 +7,7 @@
 
 // fBuildOT	8004e664
 extern void func_8004E71C(void*, int); // fAddWorldOT
-// fAddHudOT	8004e758
+extern void func_8004E758(void*); //fAddHudOT
 
 
 // consolidate these
