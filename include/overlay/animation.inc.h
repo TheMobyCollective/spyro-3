@@ -17,12 +17,14 @@
 
 // Slightly trickier but should be easier when more of them are done, similar to the below
 // 10 https://decomp.me/scratch/zKlCP
+// 11 https://decomp.me/scratch/ruiMl - NON-MATCHING - probably needs some case rearrangement, also has some notes about various variables / structs
 // 37 https://decomp.me/scratch/IDsIj
 
-// Most recent is 37
+// Most recent is 11
 // Seems to have some of the strange cases that the function below does, so can probably reuse the same macros (confirm though)
 
-// 11 - 36; 38 - 50; 61 - 80 TODO
+// 11 to finish
+// 12 - 36; 38 - 50; 61 - 80 TODO
 // cutscenes are likely all the same, probably just an instant return
 
 //////////////////////////////////////////////////////////////////////////////////
