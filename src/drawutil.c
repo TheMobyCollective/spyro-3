@@ -1,5 +1,6 @@
 #include "common.h"
 #include "drawutil.h"
+#include "stdutil.h"
 
 extern char D_80067570[16][12]; // might be an array of structs, not sure
 extern PauseData pauseData; // 8006fbc4
@@ -31,7 +32,7 @@ INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FB74);
  * ???() - func_8001FC90() - MATCHING
  * https://decomp.me/scratch/8lG9w
  */
-void func_8001FC90(int arg0, int  arg1, int  arg2, int  arg3) {
+void func_8001FC90(int x0, int x1, int y0, int y1) {
     POLY_F4* p;
 
     p = D_8006C664;
