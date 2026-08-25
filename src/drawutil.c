@@ -27,7 +27,8 @@ INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FABC);
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FB10);
 
 /**
- * ???() - func_8001FB74()
+ * ???() - func_8001FB74() - MATCHING
+ * Draw line under NPC name
  * https://decomp.me/scratch/9NQVn
  */
 void func_8001FB74(int x0, int y0, int x1, int y1) {

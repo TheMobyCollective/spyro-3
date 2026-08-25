@@ -62,10 +62,10 @@
 - [ ] func_8001EDEC
 - [ ] func_8001FABC
 - [ ] func_8001FB10
-- [ ] func_8001FB74
-- [ ] func_8001FC90
+- [x] func_8001FB74
+- [x] func_8001FC90
 - [ ] func_8001FD00
-- [ ] func_8001FE48
+- [x] func_8001FE48
 - [ ] func_8001FF44
 - [ ] func_800200A0
 - [ ] func_80020168
