@@ -1,6 +1,10 @@
 #ifndef __DRAWUTIL_H
 #define __DRAWUTIL_H
 
+#include "libgpu.h"
+
+extern void* D_8006C664;
+
 void func_8001EBAC(); // clear frame buffers
 void func_8001EC24(); // 8001ec24 fDrawWorld_C / fDrawWorldGeometry
 long long func_8001EC5C(); // 8001ec5c fDrawSpyroAndMobys
@@ -8,9 +12,9 @@ void func_8001EDEC(); // 8001edec fDrawSkyboxPortals
 void func_8001FABC(int); // 8001fabc FUN_8001fabc
 void func_8001FB10(int);
 void func_8001FB74(short, short, short, short); // 8001fb74 FUN_8001fb74
-void func_8001FC90(short, short, short, short); // 8001fc90 FUN_8001fc90
+void func_8001FC90(int, int, int, int); // 8001fc90 FUN_8001fc90
 void func_8001FD00(short, short, short, short); // 8001fd00 FUN_8001fd00
-void func_8001FE48(short, short, short, short); // 8001fe48 FUN_8001fe48
+void func_8001FE48(int, int, int, int); // 8001fe48 FUN_8001fe48
 void func_8001FF44(); // 8001ff44 fDrawScreenBorder
 void func_800200A0(int, char, char, char); // 800200a0 fDrawFullScreenFade
 void func_80020168();

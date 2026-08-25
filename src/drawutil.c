@@ -1,5 +1,6 @@
 #include "common.h"
 #include "drawutil.h"
+#include "stdutil.h"
 
 extern char D_80067570[16][12]; // might be an array of structs, not sure
 extern PauseData pauseData; // 8006fbc4
@@ -27,11 +28,45 @@ INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FB10);
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FB74);
 
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FC90);
+/**
+ * ???() - func_8001FC90() - MATCHING
+ * https://decomp.me/scratch/8lG9w
+ */
+void func_8001FC90(int x0, int x1, int y0, int y1) {
+    POLY_F4* p;
+
+    p = D_8006C664;
+    p->tag = 0x05000000;
+
+    *(int*)&p->r0 = 0x2A080808;
+    
+    p->x0 = x0;
+    p->x1 = x1;
+    p->x2 = x0;
+    p->x3 = x1;
+    p->y0 = y0;
+    p->y1 = y0;
+    p->y2 = y1;
+    p->y3 = y1;
+    
+    func_8004E758(p);
+    D_8006C664 = p + 1;
+}
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FD00);
 
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FE48);
+/**
+ * ???() - func_8001FE48() - MATCHING
+ * https://decomp.me/scratch/bNzDh
+ */
+void func_8001FE48(int arg0, int arg1, int arg2, int arg3) {
+    func_8001FABC(0x18);
+    func_8001FC90(arg0 + 3, arg1 - 3,    arg2,        arg2 + 1);
+    func_8001FC90(arg0 + 1, arg1 - 1,    arg2 + 1,    arg2 + 2);
+    func_8001FC90(arg0,     arg1,        arg2 + 2,    arg3 - 2);
+    func_8001FC90(arg0 + 1, arg1 - 1,    arg3 - 2,    arg3 - 1);
+    func_8001FC90(arg0 + 3, arg1 - 3,    arg3 - 1,    arg3);
+}
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FF44);
 
