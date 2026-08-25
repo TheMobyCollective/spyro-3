@@ -12,8 +12,8 @@ glabel func_level_23_8008ABAC
 /* 5AA70F8 8008ABC8 0000728E */  lw         $s2, 0x0($s3)
 /* 5AA70FC 8008ABCC 00000000 */  nop
 /* 5AA7100 8008ABD0 0000428E */  lw         $v0, 0x0($s2)
-/* 5AA7104 8008ABD4 0780033C */  lui        $v1, %hi(D_8006D05C)
-/* 5AA7108 8008ABD8 5CD0638C */  lw         $v1, %lo(D_8006D05C)($v1)
+/* 5AA7104 8008ABD4 0780033C */  lui        $v1, %hi(D_8006D048 + 0x14)
+/* 5AA7108 8008ABD8 5CD0638C */  lw         $v1, %lo(D_8006D048 + 0x14)($v1)
 /* 5AA710C 8008ABDC 80100200 */  sll        $v0, $v0, 2
 /* 5AA7110 8008ABE0 21104300 */  addu       $v0, $v0, $v1
 /* 5AA7114 8008ABE4 0000438C */  lw         $v1, 0x0($v0)

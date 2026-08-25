@@ -292,8 +292,8 @@ glabel func_8004BA6C
 /* 3C598 8004BD98 6F2F0108 */  j          .L8004BDBC
 /* 3C59C 8004BD9C 00000000 */   nop
 .L8004BDA0:
-/* 3C5A0 8004BDA0 0780023C */  lui        $v0, %hi(unk_ovlheader_800742F4)
-/* 3C5A4 8004BDA4 F442428C */  lw         $v0, %lo(unk_ovlheader_800742F4)($v0)
+/* 3C5A0 8004BDA0 0780023C */  lui        $v0, %hi(PlaySpecialAnimationSounds)
+/* 3C5A4 8004BDA4 F442428C */  lw         $v0, %lo(PlaySpecialAnimationSounds)($v0)
 /* 3C5A8 8004BDA8 00000000 */  nop
 /* 3C5AC 8004BDAC 03004010 */  beqz       $v0, .L8004BDBC
 /* 3C5B0 8004BDB0 00000000 */   nop

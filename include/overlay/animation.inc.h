@@ -30,33 +30,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Function 3 (Spyro and critter animation sounds)
 
-// Some cases excluded due to repetition
-// 10 https://decomp.me/scratch/HatAh
-// 11 https://decomp.me/scratch/WDEnn
-// 12 https://decomp.me/scratch/CMQIW
-// 13 https://decomp.me/scratch/7MBYI
-// 14 https://decomp.me/scratch/9jeXH
-// 15 https://decomp.me/scratch/YLLhe
-// 20 https://decomp.me/scratch/T3LWL
-// 21 https://decomp.me/scratch/3l0K5
-// 22 https://decomp.me/scratch/7dyJm
-// 23 https://decomp.me/scratch/CVnqu
-// 24 https://decomp.me/scratch/L1Ee8
-// 26 https://decomp.me/scratch/Qb1Vq
-// 30 https://decomp.me/scratch/hozW3
-// 31 https://decomp.me/scratch/sqMbR
-// 33 https://decomp.me/scratch/MOhh8
-// 34 https://decomp.me/scratch/wzKHC
-// 36 https://decomp.me/scratch/YkTJ2
-// 37 https://decomp.me/scratch/qSPZb
-// 42 https://decomp.me/scratch/akoSs
-// 46 https://decomp.me/scratch/iinKq
-// 50 https://decomp.me/scratch/E3MhZ // most recent, include this one as an example
-// Worth checking all for notable comments when this is implemented
-// Will be able to be implemented (empty) for cutscenes too
-
-
-
 // Does not include 16, possibly because it's Sheila
 // Does include 37 for some reason
 #if (LEVEL_ID == 10) || (LEVEL_ID == 11) || (LEVEL_ID == 14) || (LEVEL_ID == 15) \
@@ -104,7 +77,11 @@
     #define IS_AGENT_9_LEVEL
 #endif
 
-// Unsure on name - maybe PlaySpecialWalkSounds?
+/**
+ * PlaySpecialAnimationSounds() - MATCHING
+ * Unsure on name - maybe PlaySpecialWalkSounds?
+ * https://decomp.me/scratch/E3MhZ
+ */
 void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
     int animationId;
     int animationFrame;
@@ -113,31 +90,31 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
         animationId = spyro.critterMobyPtr->animationState.id;
         switch (spyro.critterMode) {
         case CRITTER_SHEILA:
-            animationId += 0x41;
+            animationId += ANIMATION_STATE_SHEILA_IDLE;
             break;
         case CRITTER_BENTLEY:
-            animationId += 0x55;
+            animationId += ANIMATION_STATE_BENTLEY_IDLE;
             break;
         case CRITTER_SGT_BYRD:
-            animationId += 0x64;
+            animationId += ANIMATION_STATE_SGT_BYRD_IDLE;
             break;
         case CRITTER_AGENT_9:
-            animationId += 0x73;
+            animationId += ANIMATION_STATE_AGENT_9_IDLE;
             break;
         case CRITTER_BENTLEY_BOXING:
-            animationId += 0x87;
+            animationId += ANIMATION_STATE_BENTLEY_BOXING_IDLE;
             break;
         case CRITTER_SUBS:
-            animationId += 0x96;
+            animationId += ANIMATION_STATE_SUB_IDLE;
             break;
         case CRITTER_SPARX:
-            animationId += 0x98;
+            animationId += ANIMATION_STATE_SPARX_IDLE;
             break;
         case CRITTER_HUNTER_4:
-            animationId += 0xA0;
+            animationId += ANIMATION_STATE_HUNTER_4_FLY;
             break;
         case CRITTER_HUNTER_3:
-            animationId += 0xA5;
+            animationId += ANIMATION_STATE_HUNTER_3_IDLE;
             break;
         }
         animationFrame = spyro.critterMobyPtr->animationState.frame;
@@ -198,8 +175,8 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
             }
             break;
         }
-    case ANIMATION_STATE_UNK_33:
-    case ANIMATION_STATE_UNK_34:
+    case ANIMATION_STATE_LADDER_RIGHT:
+    case ANIMATION_STATE_LADDER_LEFT:
         {
             int handler;
             if (animationFrame == 1 || animationFrame == 3) {
@@ -224,7 +201,7 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
     #endif
 
     #ifdef IS_BENTLEY_LEVEL
-    case 0x56:
+    case ANIMATION_STATE_BENTLEY_WALK_START:
         {
             int handler;
             if (animationFrame == 2 || animationFrame == 11) {
@@ -239,7 +216,7 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
     #endif    
 
     #ifdef IS_SGT_BYRD_LEVEL
-    case 0x65:
+    case ANIMATION_STATE_SGT_BYRD_WALK:
         {
             int handler;
             if (animationFrame == 2 || animationFrame == 7) {
@@ -254,7 +231,7 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
     #endif
 
     #ifdef IS_AGENT_9_LEVEL
-    case 0x74:
+    case ANIMATION_STATE_AGENT_9_WALK:
         {
             int handler;
             if (animationFrame == 10 || animationFrame == 19) {

@@ -68,8 +68,8 @@ glabel func_loading_800795BC
 /* 3231BE0 800796B0 04001026 */  addiu      $s0, $s0, 0x4
 /* 3231BE4 800796B4 0000028E */  lw         $v0, 0x0($s0)
 /* 3231BE8 800796B8 04001026 */  addiu      $s0, $s0, 0x4
-/* 3231BEC 800796BC 0780013C */  lui        $at, %hi(D_8006D05C)
-/* 3231BF0 800796C0 5CD030AC */  sw         $s0, %lo(D_8006D05C)($at)
+/* 3231BEC 800796BC 0780013C */  lui        $at, %hi(D_8006D048 + 0x14)
+/* 3231BF0 800796C0 5CD030AC */  sw         $s0, %lo(D_8006D048 + 0x14)($at)
 /* 3231BF4 800796C4 0B004018 */  blez       $v0, .Lloading_800796F4
 /* 3231BF8 800796C8 000082AC */   sw        $v0, 0x0($a0)
 .Lloading_800796CC:

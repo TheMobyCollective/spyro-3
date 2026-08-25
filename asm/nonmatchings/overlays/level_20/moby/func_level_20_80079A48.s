@@ -574,8 +574,8 @@ glabel func_level_20_80079A48
 /* 50C9FF0 8007A2C0 0D004314 */  bne        $v0, $v1, .Llevel_20_8007A2F8
 /* 50C9FF4 8007A2C4 0700C426 */   addiu     $a0, $s6, 0x7
 /* 50C9FF8 8007A2C8 0000028E */  lw         $v0, 0x0($s0)
-/* 50C9FFC 8007A2CC 0780033C */  lui        $v1, %hi(D_8006D05C)
-/* 50CA000 8007A2D0 5CD0638C */  lw         $v1, %lo(D_8006D05C)($v1)
+/* 50C9FFC 8007A2CC 0780033C */  lui        $v1, %hi(D_8006D048 + 0x14)
+/* 50CA000 8007A2D0 5CD0638C */  lw         $v1, %lo(D_8006D048 + 0x14)($v1)
 /* 50CA004 8007A2D4 3F004230 */  andi       $v0, $v0, 0x3F
 /* 50CA008 8007A2D8 80100200 */  sll        $v0, $v0, 2
 /* 50CA00C 8007A2DC 21104300 */  addu       $v0, $v0, $v1

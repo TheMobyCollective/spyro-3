@@ -84,8 +84,11 @@ extern SoundDefinition* g_SpuDefinitionsPtr; // 8006C6A0
 // bss
 extern ActiveSound g_ActiveSounds[24]; // 8006FCE4
 
-extern int PlaySound(int localSoundId, Moby *moby, char param_3); // 8003BB50
-extern void func_8003BEDC();
-extern void func_8003C184();
+int PlaySound(int localSoundId, Moby *moby, char param_3); // 8003BB50
+int func_8003BABC(Moby*, int, int); // PlayMobySound
+void func_8003BEDC();
+void func_8003C0B0(int, int); // ApplyPitchVariance // Causes Bluto glitch
+void func_8003C140(int, int);
+void func_8003C184();
 
 #endif

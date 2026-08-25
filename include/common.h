@@ -475,7 +475,7 @@ typedef struct {
 	Vector3D D_80071900; // 80071900
 	Vector3D targetedPosition; // 8007190c
 	Vector3D D_80071918; // 80071918
-	int D_80071924; // 80071924
+	int D_80071924; // 80071924 // xxyyyyyy: xx surface sound type; yyyyyy index of special surface type, or 0x3F if not special
 	int D_80071928; // 80071928
 	int D_8007192C; // 8007192c
 	int D_80071930; // 80071930
@@ -552,12 +552,18 @@ typedef struct {
 } FullPosition;
 
 typedef struct {
+	char m_Type; // 1: Lava; 2: Supercharge; 4: Ice; 6: Portal
+	char unk1, unk2, unk3; // padding? maybe not needed
+	int unk4; // depends on the surface as to whether there's any additional data, there may be another int needed
+} SpecialSurface;
+
+typedef struct {
 	int unk0;
 	int unk4;
 	int unk8;
 	int unkC;
 	int unk10;
-	int unk14;
+	SpecialSurface** m_SurfaceData; // points to array of surface param ptrs
 	int unk18;
 	int unk1C;
 	int* unk20; // TextureComponent*?
@@ -568,6 +574,6 @@ typedef struct {
 	int unk34;
 	int unk38;
 	int unk3C;
-} Unk_8006d048;
+} Unk_8006d048; // g_Environment in S1?
 
 #endif

@@ -81,7 +81,7 @@ extern char* (*UpdateParticles)(int delta); // 800742E8, types TODO
 // Animation related, in all levels and cutscenes
 extern void (*unk_ovlheader_800742EC)(void); // 800742EC, types TODO, likely Update animation state
 extern void (*unk_ovlheader_800742F0)(void); // 800742F0, types TODO, likely Update animation state(?)
-extern void (*unk_ovlheader_800742F4)(void); // 800742F4, types TODO, likely Update critter animation state
+extern void (*PlaySpecialAnimationSounds)(void); // 800742F4
 extern void (*unk_ovlheader_800742F8)(void); // 800742F8, types TODO, likely Update animation state(?)
 extern void (*unk_ovlheader_800742FC)(void); // 800742FC, types TODO, likely Update movement state(?)
 extern void (*unk_ovlheader_80074300)(void); // 80074300, types TODO, likely Update animation state(?)
