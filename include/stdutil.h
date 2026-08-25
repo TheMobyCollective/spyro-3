@@ -9,7 +9,6 @@
 extern void func_8004E71C(void*, int); // fAddWorldOT
 extern void func_8004E758(void*); //fAddHudOT
 
-
 // consolidate these
 extern void memset(int*, int, int);  // memset // func_8004E790
 extern void func_8004E790(void*, int, int); // memset
