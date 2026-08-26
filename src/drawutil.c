@@ -18,7 +18,7 @@ extern PauseData pauseData; // 8006fbc4
  * ???() - func_8001EBAC() - MATCHING
  * https://decomp.me/scratch/v2ehU
  */
-void func_8001EBAC(void) {
+void func_8001EBAC() {
     RECT rect;
 
     DrawSync(0);
