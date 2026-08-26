@@ -274,7 +274,22 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
 //////////////////////////////////////////////////////////////////////////////////
 // Function 5 TODO
 
+// 10 https://decomp.me/scratch/0p1lS NON-MATCHING
+
+// This one isn't too bad to match, though there's a Sheila case in 10 I'm struggling with
+// For these I've split part of the Spyro struct into a union of structs
+// If this ends up being the right approach it'll mean a lot of renaming
+// These could be movement related structs - see how 8007046C onwards looks in-game
+
+// 10 - 50; 61 - 80 TODO
+
 //////////////////////////////////////////////////////////////////////////////////
 // Function 6 TODO
+
+// 10 https://decomp.me/scratch/Ck2ls NON-MATCHING
+
+// Not an easy match, lots of if statements
+
+// 10 - 50; 61 - 80 TODO
 
 #endif
