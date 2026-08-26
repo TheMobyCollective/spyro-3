@@ -2,6 +2,10 @@
 #include "drawutil.h"
 #include "stdutil.h"
 
+extern int ClearImage(RECT*, unsigned char, unsigned char, unsigned char);
+extern void DrawSync(int);
+extern void VSync(int);
+
 extern char D_80067570[16][12]; // might be an array of structs, not sure
 extern PauseData pauseData; // 8006fbc4
 
@@ -10,7 +14,24 @@ extern PauseData pauseData; // 8006fbc4
 // I'm using the REORDER_HACK in here which should just equal the normal INCLUDE_ASM right now
 // At time of writing this is a file that would fail when changing to -G8 so this is just saving me time later
 
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001EBAC);
+/**
+ * ???() - func_8001EBAC() - MATCHING
+ * https://decomp.me/scratch/v2ehU
+ */
+void func_8001EBAC(void) {
+    RECT rect;
+
+    DrawSync(0);
+    VSync(0);
+    rect.x = 0;
+    rect.y = 0;
+    rect.w = 512;
+    rect.h = 240;
+    ClearImage(&rect, 0, 0, 0);
+    rect.y = 228;
+    ClearImage(&rect, 0, 0, 0);
+    DrawSync(0);
+}
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001EC24);
 
