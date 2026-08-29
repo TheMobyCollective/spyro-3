@@ -139,8 +139,30 @@ void func_80020D70() {
 }
 
 /**
- * ???() - func_80020DAC()
- * Pretty close, just a bit left
- * https://decomp.me/scratch/DkMBr
+ * ???() - func_80020DAC() - MATCHING
+ * Draw Centered String
+ * https://decomp.me/scratch/isI8T
  */
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020DAC);
+void func_80020DAC(char** arg0, int arg1, int arg2, int arg3) {
+    int var_s0;
+    int var_s2;
+    int var_s3;
+
+    var_s2 = 0;
+
+    if (*arg0[0] != 0) {
+        char **p = arg0;
+
+        do {
+            p++;
+            var_s2++;
+        } while (*p[0] != 0);
+    }
+
+    var_s3 = arg2 - var_s2 * 7;
+
+    for (var_s0 = 0; var_s0 < var_s2; var_s0++) {
+        func_800202DC(arg0[var_s0], arg1, var_s3, arg3);
+        var_s3 += 14;
+    }
+}
