@@ -139,30 +139,20 @@ void func_80020D70() {
 }
 
 /**
- * ???() - func_80020DAC() - MATCHING
- * Draw Centered String
- * https://decomp.me/scratch/isI8T
+ * DrawStringRowCentered() - func_80020DAC() - MATCHING
+ * https://decomp.me/scratch/0lU0I
  */
 void func_80020DAC(char** arg0, int arg1, int arg2, int arg3) {
-    int var_s0;
-    int var_s2;
+    int i;
     int var_s3;
+    int var_s2 = 0;
+    char **p = arg0;
 
-    var_s2 = 0;
-
-    if (*arg0[0] != 0) {
-        char **p = arg0;
-
-        do {
-            p++;
-            var_s2++;
-        } while (*p[0] != 0);
-    }
+    while (*p[var_s2] != 0) var_s2++;
 
     var_s3 = arg2 - var_s2 * 7;
-
-    for (var_s0 = 0; var_s0 < var_s2; var_s0++) {
-        func_800202DC(arg0[var_s0], arg1, var_s3, arg3);
+    for (i = 0; i < var_s2; i++) {
+        func_800202DC(arg0[i], arg1, var_s3, arg3);
         var_s3 += 14;
     }
 }

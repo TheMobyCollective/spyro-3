@@ -1,0 +1,52 @@
+[1mdiff --git a/progress/exe.md b/progress/exe.md[m
+[1mindex afffdb7..1fc4418 100644[m
+[1m--- a/progress/exe.md[m
+[1m+++ b/progress/exe.md[m
+[36m@@ -76,7 +76,7 @@[m
+ - [ ] func_80020530[m
+ - [ ] func_80020790[m
+ - [x] func_80020D70[m
+[31m-- [ ] func_80020DAC[m
+[32m+[m[32m- [x] func_80020DAC[m
+ [m
+ <!-- HUD -->[m
+ - [x] func_80027934[m
+[1mdiff --git a/src/drawutil.c b/src/drawutil.c[m
+[1mindex 970264f..0ea257d 100644[m
+[1m--- a/src/drawutil.c[m
+[1m+++ b/src/drawutil.c[m
+[36m@@ -139,8 +139,30 @@[m [mvoid func_80020D70() {[m
+ }[m
+ [m
+ /**[m
+[31m- * ???() - func_80020DAC()[m
+[31m- * Pretty close, just a bit left[m
+[31m- * https://decomp.me/scratch/DkMBr[m
+[32m+[m[32m * ???() - func_80020DAC() - MATCHING[m
+[32m+[m[32m * Draw Centered String[m
+[32m+[m[32m * https://decomp.me/scratch/isI8T[m
+  */[m
+[31m-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020DAC);[m
+[32m+[m[32mvoid func_80020DAC(char** arg0, int arg1, int arg2, int arg3) {[m
+[32m+[m[32m    int var_s0;[m
+[32m+[m[32m    int var_s2;[m
+[32m+[m[32m    int var_s3;[m
+[32m+[m
+[32m+[m[32m    var_s2 = 0;[m
+[32m+[m
+[32m+[m[32m    if (*arg0[0] != 0) {[m
+[32m+[m[32m        char **p = arg0;[m
+[32m+[m
+[32m+[m[32m        do {[m
+[32m+[m[32m            p++;[m
+[32m+[m[32m            var_s2++;[m
+[32m+[m[32m        } while (*p[0] != 0);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    var_s3 = arg2 - var_s2 * 7;[m
+[32m+[m
+[32m+[m[32m    for (var_s0 = 0; var_s0 < var_s2; var_s0++) {[m
+[32m+[m[32m        func_800202DC(arg0[var_s0], arg1, var_s3, arg3);[m
+[32m+[m[32m        var_s3 += 14;[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
