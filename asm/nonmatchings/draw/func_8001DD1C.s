@@ -72,7 +72,7 @@ glabel func_8001DD1C
 /* E580 8001DD80 1000A427 */  addiu      $a0, $sp, 0x10
 /* E584 8001DD84 00010524 */  addiu      $a1, $zero, 0x100
 /* E588 8001DD88 B8000624 */  addiu      $a2, $zero, 0xB8
-/* E58C 8001DD8C B780000C */  jal        func_800202DC
+/* E58C 8001DD8C B780000C */  jal        DrawStringCentered
 /* E590 8001DD90 02000724 */   addiu     $a3, $zero, 0x2
 .L8001DD94:
 /* E594 8001DD94 0780033C */  lui        $v1, %hi(D_8006FBC8)

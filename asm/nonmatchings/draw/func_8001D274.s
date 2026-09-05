@@ -108,7 +108,7 @@ glabel func_8001D274
 /* DC00 8001D400 0780013C */  lui        $at, %hi(D_80069DE0)
 /* DC04 8001D404 21082200 */  addu       $at, $at, $v0
 /* DC08 8001D408 E09D248C */  lw         $a0, %lo(D_80069DE0)($at)
-/* DC0C 8001D40C B780000C */  jal        func_800202DC
+/* DC0C 8001D40C B780000C */  jal        DrawStringCentered
 /* DC10 8001D410 01000724 */   addiu     $a3, $zero, 0x1
 .L8001D414:
 /* DC14 8001D414 1800BF8F */  lw         $ra, 0x18($sp)

@@ -317,7 +317,7 @@ glabel func_80020790
 /* 113A8 80020BA8 80180300 */  sll        $v1, $v1, 2
 /* 113AC 80020BAC 21186200 */  addu       $v1, $v1, $v0
 /* 113B0 80020BB0 0000648C */  lw         $a0, 0x0($v1)
-/* 113B4 80020BB4 B780000C */  jal        func_800202DC
+/* 113B4 80020BB4 B780000C */  jal        DrawStringCentered
 /* 113B8 80020BB8 02000724 */   addiu     $a3, $zero, 0x2
 /* 113BC 80020BBC 0780043C */  lui        $a0, %hi(D_80071484)
 /* 113C0 80020BC0 84148424 */  addiu      $a0, $a0, %lo(D_80071484)
@@ -414,7 +414,7 @@ glabel func_80020790
 /* 11514 80020D14 02004724 */  addiu      $a3, $v0, 0x2
 .L80020D18:
 /* 11518 80020D18 00010524 */  addiu      $a1, $zero, 0x100
-/* 1151C 80020D1C B780000C */  jal        func_800202DC
+/* 1151C 80020D1C B780000C */  jal        DrawStringCentered
 /* 11520 80020D20 21308002 */   addu      $a2, $s4, $zero
 .L80020D24:
 /* 11524 80020D24 0E009426 */  addiu      $s4, $s4, 0xE

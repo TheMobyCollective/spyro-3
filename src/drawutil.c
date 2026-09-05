@@ -2,9 +2,9 @@
 #include "drawutil.h"
 #include "stdutil.h"
 
-extern int ClearImage(RECT*, unsigned char, unsigned char, unsigned char);
-extern void DrawSync(int);
 extern void VSync(int);
+extern int func_8002EBB0(void*); // mobyfunc
+extern void func_8002E748(char* string, int screenX, int screenY, int textColour, int* drawLims); // mobyfunc
 
 extern char D_80067570[16][12]; // might be an array of structs, not sure
 extern PauseData pauseData; // 8006fbc4
@@ -131,10 +131,13 @@ INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020168);
 
 /**
  * DrawStringCentered() - func_800202DC() - MATCHING
- * Implementing may mean changing some function signatures
  * https://decomp.me/scratch/iAe5h
  */
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_800202DC);
+void DrawStringCentered(char* arg0, int arg1, int arg2, int arg3) {
+    int x = arg1;
+    x -= (func_8002EBB0(arg0) >> 1);
+    func_8002E748(arg0, x, arg2, arg3, 0);
+}
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020344);
 

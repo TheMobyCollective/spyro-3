@@ -836,7 +836,7 @@ glabel func_loading_80077964
 /* 3230AF4 800785C4 1800A427 */  addiu      $a0, $sp, 0x18
 /* 3230AF8 800785C8 0A010524 */  addiu      $a1, $zero, 0x10A
 /* 3230AFC 800785CC 21300002 */  addu       $a2, $s0, $zero
-/* 3230B00 800785D0 B780000C */  jal        func_800202DC
+/* 3230B00 800785D0 B780000C */  jal        DrawStringCentered
 /* 3230B04 800785D4 01000724 */   addiu     $a3, $zero, 0x1
 .Lloading_800785D8:
 /* 3230B08 800785D8 0780103C */  lui        $s0, %hi(D_8006D058)

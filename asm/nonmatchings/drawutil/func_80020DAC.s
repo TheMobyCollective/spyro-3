@@ -40,7 +40,7 @@ glabel func_80020DAC
 /* 1162C 80020E2C 04003126 */  addiu      $s1, $s1, 0x4
 /* 11630 80020E30 01001026 */  addiu      $s0, $s0, 0x1
 /* 11634 80020E34 21288002 */  addu       $a1, $s4, $zero
-/* 11638 80020E38 B780000C */  jal        func_800202DC
+/* 11638 80020E38 B780000C */  jal        DrawStringCentered
 /* 1163C 80020E3C 2138A002 */   addu      $a3, $s5, $zero
 /* 11640 80020E40 2A101202 */  slt        $v0, $s0, $s2
 /* 11644 80020E44 F7FF4014 */  bnez       $v0, .L80020E24
