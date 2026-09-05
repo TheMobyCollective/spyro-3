@@ -1,5 +1,6 @@
 #include "common.h"
 #include "drawutil.h"
+#include "hud.h"
 #include "stdutil.h"
 
 extern void VSync(int);
@@ -8,6 +9,9 @@ extern void func_8002E748(char* string, int screenX, int screenY, int textColour
 
 extern char D_80067570[16][12]; // might be an array of structs, not sure
 extern PauseData pauseData; // 8006fbc4
+
+extern Hud D_800719D0;
+extern SpriteData* D_8006C788;
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -104,7 +108,22 @@ void func_8001FC90(int x0, int x1, int y0, int y1) {
     D_8006C664 = p + 1;
 }
 
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FD00);
+/**
+ * ???() - func_8001FD00() - MATCHING
+ * https://decomp.me/scratch/G0AqX
+ */
+void func_8001FD00(int x0, int x1, int y0, int y1) {
+    
+    func_8001FABC(24);
+    func_8001FC90(x0, x1, y0 + 8, y1 - 8);
+    func_8001FC90(x0 + 12, x1 - 12, y0, y0 + 8);
+    func_8001FC90(x0 + 12, x1 - 12, y1 - 8, y1); //3 rects, and then 4 of 800289C8 for the rounded corners?
+    
+    func_800289C8(&D_8006C788[D_800719D0.DAT_800719c8], x0, y0);
+    func_800289C8(&D_8006C788[D_800719D0.DAT_800719c8 + 1], x1 - 12, y0);
+    func_800289C8(&D_8006C788[D_800719D0.DAT_800719c8 + 2], x0, y1 - 8);
+    func_800289C8(&D_8006C788[D_800719D0.DAT_800719c8 + 3], x1 - 12, y1 - 8);
+}
 
 /**
  * ???() - func_8001FE48() - MATCHING
