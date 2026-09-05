@@ -25,6 +25,6 @@ void func_80020428(int, int, short, int); // 80020428 FUN_80020428
 void func_80020530(char*); // 80020530 FUN_80020530
 void func_80020790(); // 80020790 fPrepareHelpScreen
 void func_80020D70(); // 80020d70 FUN_80020d70
-void func_80020DAC(char**, int, int, int); // 80020dac FUN_80020dac
+void func_80020DAC(char**, int, int, int); // 80020dac fDrawStringRowCentered
 
 #endif
