@@ -117,10 +117,10 @@
 - [x] func_8002A754
 
 <!-- Init -->
-- [ ] func_8002A794
+- [x] func_8002A794
 - [x] func_8002A7B4
 - [ ] func_8002A834
-- [ ] func_8002A99C
+- [x] func_8002A99C
 - [ ] func_8002A9D0
 - [ ] func_8002AA34
 - [x] func_8002AAFC <!-- crc16 -->

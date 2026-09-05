@@ -90,5 +90,7 @@ void func_8003BEDC();
 void func_8003C0B0(int, int); // ApplyPitchVariance // Causes Bluto glitch
 void func_8003C140(int, int);
 void func_8003C184();
+// ...
+void func_8003CCF0();
 
 #endif

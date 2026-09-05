@@ -10,9 +10,9 @@ glabel func_8002AB38
 /* 1B34C 8002AB4C 3000B0AF */   sw        $s0, 0x30($sp)
 /* 1B350 8002AB50 0DAA000C */  jal        func_8002A834
 /* 1B354 8002AB54 00000000 */   nop
-/* 1B358 8002AB58 E5A9000C */  jal        func_8002A794
+/* 1B358 8002AB58 E5A9000C */  jal        InitSpu
 /* 1B35C 8002AB5C 00000000 */   nop
-/* 1B360 8002AB60 EDA9000C */  jal        func_8002A7B4
+/* 1B360 8002AB60 EDA9000C */  jal        InitCdAndWad
 /* 1B364 8002AB64 00000000 */   nop
 /* 1B368 8002AB68 3B3E010C */  jal        func_8004F8EC
 /* 1B36C 8002AB6C 00000000 */   nop
@@ -73,9 +73,9 @@ glabel func_8002AB38
 /* 1B438 8002AC38 00000000 */   nop
 /* 1B43C 8002AC3C 0F004230 */  andi       $v0, $v0, 0xF
 /* 1B440 8002AC40 80100200 */  sll        $v0, $v0, 2
-/* 1B444 8002AC44 0380013C */  lui        $at, %hi(func_8002A7B4)
+/* 1B444 8002AC44 0380013C */  lui        $at, %hi(InitCdAndWad)
 /* 1B448 8002AC48 21082200 */  addu       $at, $at, $v0
-/* 1B44C 8002AC4C B4A720AC */  sw         $zero, %lo(func_8002A7B4)($at)
+/* 1B44C 8002AC4C B4A720AC */  sw         $zero, %lo(InitCdAndWad)($at)
 .L8002AC50:
 /* 1B450 8002AC50 0780113C */  lui        $s1, %hi(func_title_80074DEC)
 /* 1B454 8002AC54 EC4D3126 */  addiu      $s1, $s1, %lo(func_title_80074DEC)
