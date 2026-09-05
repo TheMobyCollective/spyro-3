@@ -1,5 +1,6 @@
 #include "common.h"
 #include "drawutil.h"
+#include "spyro.h"
 #include "stdutil.h"
 
 extern void VSync(int);
@@ -8,6 +9,21 @@ extern void func_8002E748(char* string, int screenX, int screenY, int textColour
 
 extern char D_80067570[16][12]; // might be an array of structs, not sure
 extern PauseData pauseData; // 8006fbc4
+
+//fDrawSpyroAndMobys
+int func_8002D2C4();
+void func_8002D9BC();
+void func_8002DDA8();
+void func_80030478();
+void func_80031124();
+void func_80033C5C();
+void  func_8003CDA0();
+int func_80040954(s32);
+void func_8004E7AC(s32, s32, s32);
+extern int D_8006C4F8;
+extern int D_8006C668;
+extern int D_8006E344;
+extern char D_80071834;
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -35,7 +51,61 @@ void func_8001EBAC() {
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001EC24);
 
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001EC5C);
+/**
+ * 8001ec5c fDrawSpyroAndMobys() - MATCHING
+ * https://decomp.me/scratch/8b74e
+ */
+long long func_8001EC5C() {
+    int tempUnk4;
+    int surfaceType;
+    char tempAnimProgress;
+
+    func_8004E7AC(D_8006C668 - 12288, 0, 3072);
+    func_80030478();
+    func_80031124();
+    func_80033C5C();
+    func_8002DDA8();
+
+    if (spyro.unk22[1] == 0)
+    {
+        if (D_8006E344 != 13 || D_8006C4F8 == 2)
+        {
+            tempUnk4 = spyro.unk4[1];
+            if (tempUnk4 != 0) 
+            {
+                tempAnimProgress = spyro.unk3[2];
+                spyro.position.z -= tempUnk4 * 2;
+                
+                surfaceType = func_80040954(spyro.unk11[2]);
+                if (surfaceType == 4) {
+                    spyro.unk3[2] = 250;
+                } else {
+                    spyro.unk3[2] = 244;
+                }
+                func_8003CDA0();
+                
+                spyro.position.z += spyro.unk4[1] * 2;
+                spyro.unk4[1] = 0;
+                spyro.unk3[2] = tempAnimProgress;
+            }
+            
+            func_8003CDA0();
+            func_8002D9BC();
+            if (D_80071834 != 0) 
+            {
+                func_8002D2C4();
+            }
+                
+            spyro.unk4[1] = tempUnk4;
+            
+        }
+    }
+    
+    if (D_8006E344 == 6 && D_80071834 != 0) 
+    {
+        func_8002D2C4();
+    }
+}
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001EDEC);
 
