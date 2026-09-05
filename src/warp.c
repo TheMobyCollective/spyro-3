@@ -22,8 +22,6 @@ extern void func_8005399C();
 extern void func_80054E5C();
 // psyq
 extern int VSync(int); // VSync
-extern void DrawSync(int);
-extern int LoadImage(RECT*, unsigned int);
 extern void func_8005C564(DR_MODE*, int, int, int, int); // SetDrawMode - type and args to check
 extern DRAWENV* func_8005E500(DRAWENV*, int, int, int, int); // SetDefDrawEnv
 extern DISPENV* func_8005E5C0(DISPENV*, int, int, int, int); // SetDefDispEnv
