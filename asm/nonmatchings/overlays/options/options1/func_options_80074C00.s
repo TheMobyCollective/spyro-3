@@ -380,7 +380,7 @@ glabel func_options_80074C00
 /* 9654E3C 8007510C 21082200 */  addu       $at, $at, $v0
 /* 9654E40 80075110 509E248C */  lw         $a0, %lo(D_80069E50)($at)
 .Loptions_80075114:
-/* 9654E44 80075114 F180000C */  jal        func_800203C4
+/* 9654E44 80075114 F180000C */  jal        DrawStringRightAligned
 /* 9654E48 80075118 21380002 */   addu      $a3, $s0, $zero
 /* 9654E4C 8007511C 4ED40108 */  j          .Loptions_80075138
 /* 9654E50 80075120 0E003126 */   addiu     $s1, $s1, 0xE

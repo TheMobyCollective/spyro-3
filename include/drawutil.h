@@ -20,7 +20,7 @@ void func_800200A0(int, char, char, char); // 800200a0 fDrawFullScreenFade
 void func_80020168();
 void DrawStringCentered(char*, int, int, int); // 800202dc
 void func_80020344(const char*, int, int, int);
-void func_800203C4(const char*, int, int, int); // 800203c4 fDrawStringRightAligned
+void DrawStringRightAligned(char*, int, int, int); // 800203c4
 void func_80020428(int, int, short, int); // 80020428 FUN_80020428
 void func_80020530(char*); // 80020530 FUN_80020530
 void func_80020790(); // 80020790 fPrepareHelpScreen

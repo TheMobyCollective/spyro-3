@@ -423,7 +423,7 @@ glabel func_loading_80077964
 /* 32304D4 80077FA4 0780013C */  lui        $at, %hi(D_80069DC8)
 /* 32304D8 80077FA8 21082200 */  addu       $at, $at, $v0
 /* 32304DC 80077FAC C89D248C */  lw         $a0, %lo(D_80069DC8)($at)
-/* 32304E0 80077FB0 F180000C */  jal        func_800203C4
+/* 32304E0 80077FB0 F180000C */  jal        DrawStringRightAligned
 /* 32304E4 80077FB4 01000724 */   addiu     $a3, $zero, 0x1
 /* 32304E8 80077FB8 21200002 */  addu       $a0, $s0, $zero
 /* 32304EC 80077FBC 7C010524 */  addiu      $a1, $zero, 0x17C
