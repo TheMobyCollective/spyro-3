@@ -266,10 +266,32 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
 // 16 https://decomp.me/scratch/LsvA9
 // 17 https://decomp.me/scratch/yLjTm
 // 18 https://decomp.me/scratch/KOGtp
+// 20 https://decomp.me/scratch/UcdKf
+// 21 https://decomp.me/scratch/fKN2l
+// 22 https://decomp.me/scratch/7U9H5
+// 23 https://decomp.me/scratch/SQkmN
+// 24 https://decomp.me/scratch/H2Zdb
+// 25 https://decomp.me/scratch/fTDkD
+// 26 https://decomp.me/scratch/AtzdE
+// 27 https://decomp.me/scratch/ndBrE 
+// 28 https://decomp.me/scratch/bkySj
+// 30 https://decomp.me/scratch/FpFZz
+// 31 https://decomp.me/scratch/yzreL
+// 32 https://decomp.me/scratch/Ay9am NON-MATCHING - issues with default case,
+  // maybe needs an additional quantity of useless redundant cases
+// 33 https://decomp.me/scratch/8gBF6
+// 34 https://decomp.me/scratch/vql9j
+// 35 https://decomp.me/scratch/NK9s4 NON-MATCHING - keeps trying to add a jtbl
 
-// Most recent is 18 - this has some new case names for the enum
-// 20 - 50; 61 - 80 TODO
-// Cutscenes are likely all the same; just the pad store
+// Most recent is 35
+// 32; 35; 36 - 50 TODO
+// Cutscenes are all the same, seems to just be the pad store
+
+// All of these will be merged when they're all matched because they're quite fiddly
+// Should be straightforward overall though, but the weird edge cases are annoying
+
+// Needs the animationState to be an int, but for initial
+// decompilation it's useful to have this set to the enum
 
 //////////////////////////////////////////////////////////////////////////////////
 // Function 5 (set Spyro state)
