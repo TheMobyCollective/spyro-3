@@ -10,28 +10,13 @@
 // ovl_header.h will need to be updated to give the pointers to the functions in here more appropriate names
 
 //////////////////////////////////////////////////////////////////////////////////
-// Function 1 TODO
+// Macros
 
-//////////////////////////////////////////////////////////////////////////////////
-// Function 2 TODO
+// For these, consider replacing this with HAS_ANIMATION_STATE_NAME
+// in a list similar to the mobys list in a header made for each level
 
-// Slightly trickier but should be easier when more of them are done, similar to the below
-// 10 https://decomp.me/scratch/zKlCP
-// 11 https://decomp.me/scratch/ruiMl - NON-MATCHING - probably needs some case rearrangement, also has some notes about various variables / structs
-// 37 https://decomp.me/scratch/IDsIj
-
-// Most recent is 11
-// Seems to have some of the strange cases that the function below does, so can probably reuse the same macros (confirm though)
-
-// 11 to finish
-// 12 - 36; 38 - 50; 61 - 80 TODO
-// cutscenes are likely all the same, probably just an instant return
-
-//////////////////////////////////////////////////////////////////////////////////
-// Function 3 (Spyro and critter animation sounds)
-
-// Does not include 16, possibly because it's Sheila
-// Does include 37 for some reason
+// Does not include 16, possibly because it's Sheila, but does include 37 for some reason
+// If you enter 37 with invincibility, the water is just a solid walkable plane, not swimmable
 #if (LEVEL_ID == 10) || (LEVEL_ID == 11) || (LEVEL_ID == 14) || (LEVEL_ID == 15) \
  || (LEVEL_ID == 20) || (LEVEL_ID == 21) || (LEVEL_ID == 23) || (LEVEL_ID == 24) \
  || (LEVEL_ID == 25) || (LEVEL_ID == 30) || (LEVEL_ID == 32) || (LEVEL_ID == 35) \
@@ -46,6 +31,8 @@
     #define IS_SKATEBOARDING_LEVEL
 #endif
 
+// Animation related usage - specifically used for the death animation, not the lava hop animation
+// Does not include 23 - the lava hop is used in the Piranha hit, but there is no death burn
 // Does not include 26 or 30 - in 30, the fire makes Spyro do a different animation
 #if (LEVEL_ID == 12) || (LEVEL_ID == 13) || (LEVEL_ID == 17) || (LEVEL_ID == 27) \
  || (LEVEL_ID == 33) || (LEVEL_ID == 37) || (LEVEL_ID == 42) || (LEVEL_ID == 47) \
@@ -66,16 +53,37 @@
     #define IS_SGT_BYRD_LEVEL
 #endif
 
-// 31 not included, boxing Bentley is considered separate and doesn't have any special sounds
+// 31 not included, boxing Bentley is a separate moby / uses separate animations IDs
 #if (LEVEL_ID == 24) || (LEVEL_ID == 36) || (LEVEL_ID == 41)
     #define IS_BENTLEY_LEVEL
 #endif
 
-// 30 included for some reason? That makes it identical to 43's and 44's
+// 30 included for some reason
 #if (LEVEL_ID == 30) || (LEVEL_ID == 33) || (LEVEL_ID == 43) || (LEVEL_ID == 44) \
  || (LEVEL_ID == 46)
     #define IS_AGENT_9_LEVEL
 #endif
+
+//////////////////////////////////////////////////////////////////////////////////
+// Function 1 TODO
+
+//////////////////////////////////////////////////////////////////////////////////
+// Function 2 TODO
+
+// Slightly trickier but should be easier when more of them are done, similar to the below
+// 10 https://decomp.me/scratch/zKlCP
+// 11 https://decomp.me/scratch/ruiMl - NON-MATCHING - probably needs some case rearrangement, also has some notes about various variables / structs
+// 37 https://decomp.me/scratch/IDsIj
+
+// Most recent is 11
+// Seems to have some of the strange cases that the function below does, so can probably reuse the same macros (confirm though)
+
+// 11 to finish
+// 12 - 36; 38 - 50; 61 - 80 TODO
+// cutscenes are likely all the same, probably just an instant return
+
+//////////////////////////////////////////////////////////////////////////////////
+// Function 3 (Spyro and critter animation sounds)
 
 /**
  * PlaySpecialAnimationSounds() - MATCHING
