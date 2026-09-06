@@ -298,9 +298,30 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
 // 33 https://decomp.me/scratch/8gBF6
 // 34 https://decomp.me/scratch/vql9j
 // 35 https://decomp.me/scratch/NK9s4 NON-MATCHING - keeps trying to add a jtbl
+// 36 https://decomp.me/scratch/ICdHj
+// 37 https://decomp.me/scratch/0muwv
+// 38 https://decomp.me/scratch/GQmlp
+// 40 https://decomp.me/scratch/w0Sg3
+// 41 https://decomp.me/scratch/cxXbh
+// 42 https://decomp.me/scratch/T74YE
+// 43 https://decomp.me/scratch/9iBpU
+// 44 https://decomp.me/scratch/nOzt2
+// 45 https://decomp.me/scratch/jYeP8 NON-MATCHING - keeps trying to add a jtbl
+// 46 https://decomp.me/scratch/Gojir
+// 47 https://decomp.me/scratch/qbxAJ
+// 48 https://decomp.me/scratch/QhrkX
+// 50 https://decomp.me/scratch/56Ye0
 
-// Most recent is 35
-// 35; 36 - 50 TODO
+// Most recent is 50
+
+// Next steps:
+// * Match 35 and 45
+// * Look over all of them and figure out the overall order (incl. figuring out inconsistencies)
+// * Make the full function and test on each level
+
+// There may be case ordering issues in the full function, as it appears a bit inconsistent
+// Whirlwind case may be an issue, solution may be to separate this one out into a separate case
+
 // Cutscenes are all the same, seems to just be the pad store
 
 // All of these will be merged when they're all matched because they're quite fiddly
