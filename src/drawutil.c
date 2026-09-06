@@ -1,10 +1,9 @@
 #include "common.h"
 #include "drawutil.h"
+#include "mobyfunc.h"
 #include "stdutil.h"
 
 extern void VSync(int);
-extern int func_8002EBB0(void*); // mobyfunc
-extern void func_8002E748(char* string, int screenX, int screenY, int textColour, int* drawLims); // mobyfunc
 
 extern char D_80067570[16][12]; // might be an array of structs, not sure
 extern PauseData pauseData; // 8006fbc4
