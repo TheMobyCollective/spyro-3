@@ -264,7 +264,16 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
 // requires changing the Spyro animation state to an int
 // also some of these have updated animation states
 
-// Sometimes you need to add in a pair of redundant break cases to make it match
+// Some of these have matching issues and need some redundant cases
+// It seems to be mainly the levels that have water as well as some other breaking case
+// Adding these seems to help, usually:
+/*
+    case ANIMATION_STATE_SWIM_UNDERWATER:
+    case ANIMATION_STATE_SWIM_TURN_UNDERWATER:
+    case ANIMATION_STATE_SWIM_CHARGE_UNDERWATER:
+    	break;
+*/
+
 // 10 https://decomp.me/scratch/4KNXz
 // 11 https://decomp.me/scratch/GJ9gX
 // 12 https://decomp.me/scratch/pcTDp
