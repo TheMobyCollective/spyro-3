@@ -285,14 +285,13 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
 // 28 https://decomp.me/scratch/bkySj
 // 30 https://decomp.me/scratch/FpFZz
 // 31 https://decomp.me/scratch/yzreL
-// 32 https://decomp.me/scratch/Ay9am NON-MATCHING - issues with default case,
-  // maybe needs an additional quantity of useless redundant cases
+// 32 https://decomp.me/scratch/Ay9am
 // 33 https://decomp.me/scratch/8gBF6
 // 34 https://decomp.me/scratch/vql9j
 // 35 https://decomp.me/scratch/NK9s4 NON-MATCHING - keeps trying to add a jtbl
 
 // Most recent is 35
-// 32; 35; 36 - 50 TODO
+// 35; 36 - 50 TODO
 // Cutscenes are all the same, seems to just be the pad store
 
 // All of these will be merged when they're all matched because they're quite fiddly
