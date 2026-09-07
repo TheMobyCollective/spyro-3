@@ -105,7 +105,7 @@ glabel func_title_80077CFC
 /* 26B2C 80077DFC 0880013C */  lui        $at, %hi(D_title_8007EFEC)
 /* 26B30 80077E00 21082200 */  addu       $at, $at, $v0
 /* 26B34 80077E04 ECEF248C */  lw         $a0, %lo(D_title_8007EFEC)($at)
-/* 26B38 80077E08 6B83000C */  jal        func_80020DAC
+/* 26B38 80077E08 6B83000C */  jal        DrawStringRowCentered
 /* 26B3C 80077E0C 02000724 */   addiu     $a3, $zero, 0x2
 /* 26B40 80077E10 21380000 */  addu       $a3, $zero, $zero
 /* 26B44 80077E14 0880043C */  lui        $a0, %hi(D_title_8007EEA4)
@@ -161,7 +161,7 @@ glabel func_title_80077CFC
 /* 26C00 80077ED0 0880013C */  lui        $at, %hi(D_title_8007EFF4)
 /* 26C04 80077ED4 21082200 */  addu       $at, $at, $v0
 /* 26C08 80077ED8 F4EF248C */  lw         $a0, %lo(D_title_8007EFF4)($at)
-/* 26C0C 80077EDC 6B83000C */  jal        func_80020DAC
+/* 26C0C 80077EDC 6B83000C */  jal        DrawStringRowCentered
 /* 26C10 80077EE0 02000724 */   addiu     $a3, $zero, 0x2
 /* 26C14 80077EE4 0880033C */  lui        $v1, %hi(D_title_8007EEA4)
 /* 26C18 80077EE8 A4EE6324 */  addiu      $v1, $v1, %lo(D_title_8007EEA4)
@@ -217,7 +217,7 @@ glabel func_title_80077CFC
 /* 26CD4 80077FA4 0880013C */  lui        $at, %hi(D_title_8007EFF8)
 /* 26CD8 80077FA8 21082200 */  addu       $at, $at, $v0
 /* 26CDC 80077FAC F8EF248C */  lw         $a0, %lo(D_title_8007EFF8)($at)
-/* 26CE0 80077FB0 6B83000C */  jal        func_80020DAC
+/* 26CE0 80077FB0 6B83000C */  jal        DrawStringRowCentered
 /* 26CE4 80077FB4 02000724 */   addiu     $a3, $zero, 0x2
 /* 26CE8 80077FB8 21380000 */  addu       $a3, $zero, $zero
 /* 26CEC 80077FBC 0880043C */  lui        $a0, %hi(D_title_8007EEB0)
@@ -273,7 +273,7 @@ glabel func_title_80077CFC
 /* 26DA8 80078078 0880013C */  lui        $at, %hi(D_title_8007EFFC)
 /* 26DAC 8007807C 21082200 */  addu       $at, $at, $v0
 /* 26DB0 80078080 FCEF248C */  lw         $a0, %lo(D_title_8007EFFC)($at)
-/* 26DB4 80078084 6B83000C */  jal        func_80020DAC
+/* 26DB4 80078084 6B83000C */  jal        DrawStringRowCentered
 /* 26DB8 80078088 02000724 */   addiu     $a3, $zero, 0x2
 /* 26DBC 8007808C 21380000 */  addu       $a3, $zero, $zero
 /* 26DC0 80078090 0780043C */  lui        $a0, %hi(D_80069DD8)
@@ -329,7 +329,7 @@ glabel func_title_80077CFC
 /* 26E7C 8007814C 0880013C */  lui        $at, %hi(D_title_8007F004)
 /* 26E80 80078150 21082200 */  addu       $at, $at, $v0
 /* 26E84 80078154 04F0248C */  lw         $a0, %lo(D_title_8007F004)($at)
-/* 26E88 80078158 6B83000C */  jal        func_80020DAC
+/* 26E88 80078158 6B83000C */  jal        DrawStringRowCentered
 /* 26E8C 8007815C 02000724 */   addiu     $a3, $zero, 0x2
 /* 26E90 80078160 0780033C */  lui        $v1, %hi(D_80069DD8)
 /* 26E94 80078164 D89D6324 */  addiu      $v1, $v1, %lo(D_80069DD8)
@@ -508,7 +508,7 @@ glabel func_title_80077CFC
 /* 27114 800783E4 0880013C */  lui        $at, %hi(D_title_8007F010)
 /* 27118 800783E8 21082200 */  addu       $at, $at, $v0
 /* 2711C 800783EC 10F0248C */  lw         $a0, %lo(D_title_8007F010)($at)
-/* 27120 800783F0 6B83000C */  jal        func_80020DAC
+/* 27120 800783F0 6B83000C */  jal        DrawStringRowCentered
 /* 27124 800783F4 02000724 */   addiu     $a3, $zero, 0x2
 /* 27128 800783F8 0780033C */  lui        $v1, %hi(D_80069DD8)
 /* 2712C 800783FC D89D6324 */  addiu      $v1, $v1, %lo(D_80069DD8)
@@ -717,7 +717,7 @@ glabel func_title_80077CFC
 /* 27430 80078700 21082200 */  addu       $at, $at, $v0
 /* 27434 80078704 14F0248C */  lw         $a0, %lo(D_title_8007F014)($at)
 .Ltitle_80078708:
-/* 27438 80078708 6B83000C */  jal        func_80020DAC
+/* 27438 80078708 6B83000C */  jal        DrawStringRowCentered
 /* 2743C 8007870C 02000724 */   addiu     $a3, $zero, 0x2
 /* 27440 80078710 F2E10108 */  j          .Ltitle_800787C8
 /* 27444 80078714 00000000 */   nop
@@ -746,7 +746,7 @@ glabel func_title_80077CFC
 /* 27498 80078768 21082200 */  addu       $at, $at, $v0
 /* 2749C 8007876C 18F0248C */  lw         $a0, %lo(D_title_8007F018)($at)
 .Ltitle_80078770:
-/* 274A0 80078770 6B83000C */  jal        func_80020DAC
+/* 274A0 80078770 6B83000C */  jal        DrawStringRowCentered
 /* 274A4 80078774 02000724 */   addiu     $a3, $zero, 0x2
 /* 274A8 80078778 02000724 */  addiu      $a3, $zero, 0x2
 /* 274AC 8007877C 0880043C */  lui        $a0, %hi(D_title_8007EED0)
