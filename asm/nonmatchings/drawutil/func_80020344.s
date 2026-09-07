@@ -24,7 +24,7 @@ glabel func_80020344
 /* 10B90 80020390 21204002 */  addu       $a0, $s2, $zero
 /* 10B94 80020394 21280002 */  addu       $a1, $s0, $zero
 /* 10B98 80020398 21302002 */  addu       $a2, $s1, $zero
-/* 10B9C 8002039C B780000C */  jal        func_800202DC
+/* 10B9C 8002039C B780000C */  jal        DrawStringCentered
 /* 10BA0 800203A0 21386002 */   addu      $a3, $s3, $zero
 /* 10BA4 800203A4 2000BF8F */  lw         $ra, 0x20($sp)
 /* 10BA8 800203A8 1C00B38F */  lw         $s3, 0x1C($sp)

@@ -336,7 +336,7 @@ glabel func_8001D424
 /* E0B8 8001D8B8 0780013C */  lui        $at, %hi(D_80069DBC)
 /* E0BC 8001D8BC 21082200 */  addu       $at, $at, $v0
 /* E0C0 8001D8C0 BC9D248C */  lw         $a0, %lo(D_80069DBC)($at)
-/* E0C4 8001D8C4 F180000C */  jal        func_800203C4
+/* E0C4 8001D8C4 F180000C */  jal        DrawStringRightAligned
 /* E0C8 8001D8C8 01000724 */   addiu     $a3, $zero, 0x1
 /* E0CC 8001D8CC 0780043C */  lui        $a0, %hi(D_8006C6F0)
 /* E0D0 8001D8D0 F0C68424 */  addiu      $a0, $a0, %lo(D_8006C6F0)
@@ -545,7 +545,7 @@ glabel func_8001D424
 /* E3B4 8001DBB4 0780013C */  lui        $at, %hi(D_80069DC0)
 /* E3B8 8001DBB8 21082200 */  addu       $at, $at, $v0
 /* E3BC 8001DBBC C09D248C */  lw         $a0, %lo(D_80069DC0)($at)
-/* E3C0 8001DBC0 F180000C */  jal        func_800203C4
+/* E3C0 8001DBC0 F180000C */  jal        DrawStringRightAligned
 /* E3C4 8001DBC4 86011124 */   addiu     $s1, $zero, 0x186
 .L8001DBC8:
 /* E3C8 8001DBC8 0780023C */  lui        $v0, %hi(D_8006C608)

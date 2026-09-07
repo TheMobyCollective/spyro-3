@@ -12,7 +12,7 @@ glabel func_title_80077BC4
 /* 26910 80077BE0 0880013C */  lui        $at, %hi(D_title_8007EEC0)
 /* 26914 80077BE4 21082200 */  addu       $at, $at, $v0
 /* 26918 80077BE8 C0EE248C */  lw         $a0, %lo(D_title_8007EEC0)($at)
-/* 2691C 80077BEC B780000C */  jal        func_800202DC
+/* 2691C 80077BEC B780000C */  jal        DrawStringCentered
 /* 26920 80077BF0 02000724 */   addiu     $a3, $zero, 0x2
 /* 26924 80077BF4 1000BF8F */  lw         $ra, 0x10($sp)
 /* 26928 80077BF8 1800BD27 */  addiu      $sp, $sp, 0x18

@@ -10,28 +10,13 @@
 // ovl_header.h will need to be updated to give the pointers to the functions in here more appropriate names
 
 //////////////////////////////////////////////////////////////////////////////////
-// Function 1 TODO
+// Macros
 
-//////////////////////////////////////////////////////////////////////////////////
-// Function 2 TODO
+// For these, consider replacing this with HAS_ANIMATION_STATE_NAME
+// in a list similar to the mobys list in a header made for each level
 
-// Slightly trickier but should be easier when more of them are done, similar to the below
-// 10 https://decomp.me/scratch/zKlCP
-// 11 https://decomp.me/scratch/ruiMl - NON-MATCHING - probably needs some case rearrangement, also has some notes about various variables / structs
-// 37 https://decomp.me/scratch/IDsIj
-
-// Most recent is 11
-// Seems to have some of the strange cases that the function below does, so can probably reuse the same macros (confirm though)
-
-// 11 to finish
-// 12 - 36; 38 - 50; 61 - 80 TODO
-// cutscenes are likely all the same, probably just an instant return
-
-//////////////////////////////////////////////////////////////////////////////////
-// Function 3 (Spyro and critter animation sounds)
-
-// Does not include 16, possibly because it's Sheila
-// Does include 37 for some reason
+// Does not include 16, possibly because it's Sheila, but does include 37 for some reason
+// If you enter 37 with invincibility, the water is just a solid walkable plane, not swimmable
 #if (LEVEL_ID == 10) || (LEVEL_ID == 11) || (LEVEL_ID == 14) || (LEVEL_ID == 15) \
  || (LEVEL_ID == 20) || (LEVEL_ID == 21) || (LEVEL_ID == 23) || (LEVEL_ID == 24) \
  || (LEVEL_ID == 25) || (LEVEL_ID == 30) || (LEVEL_ID == 32) || (LEVEL_ID == 35) \
@@ -46,6 +31,8 @@
     #define IS_SKATEBOARDING_LEVEL
 #endif
 
+// Animation related usage - specifically used for the death animation, not the lava hop animation
+// Does not include 23 - the lava hop is used in the Piranha hit, but there is no death burn
 // Does not include 26 or 30 - in 30, the fire makes Spyro do a different animation
 #if (LEVEL_ID == 12) || (LEVEL_ID == 13) || (LEVEL_ID == 17) || (LEVEL_ID == 27) \
  || (LEVEL_ID == 33) || (LEVEL_ID == 37) || (LEVEL_ID == 42) || (LEVEL_ID == 47) \
@@ -66,16 +53,37 @@
     #define IS_SGT_BYRD_LEVEL
 #endif
 
-// 31 not included, boxing Bentley is considered separate and doesn't have any special sounds
+// 31 not included, boxing Bentley is a separate moby / uses separate animations IDs
 #if (LEVEL_ID == 24) || (LEVEL_ID == 36) || (LEVEL_ID == 41)
     #define IS_BENTLEY_LEVEL
 #endif
 
-// 30 included for some reason? That makes it identical to 43's and 44's
+// 30 included for some reason
 #if (LEVEL_ID == 30) || (LEVEL_ID == 33) || (LEVEL_ID == 43) || (LEVEL_ID == 44) \
  || (LEVEL_ID == 46)
     #define IS_AGENT_9_LEVEL
 #endif
+
+//////////////////////////////////////////////////////////////////////////////////
+// Function 1 TODO
+
+//////////////////////////////////////////////////////////////////////////////////
+// Function 2 TODO
+
+// Slightly trickier but should be easier when more of them are done, similar to the below
+// 10 https://decomp.me/scratch/zKlCP
+// 11 https://decomp.me/scratch/ruiMl - NON-MATCHING - probably needs some case rearrangement, also has some notes about various variables / structs
+// 37 https://decomp.me/scratch/IDsIj
+
+// Most recent is 11
+// Seems to have some of the strange cases that the function below does, so can probably reuse the same macros (confirm though)
+
+// 11 to finish
+// 12 - 36; 38 - 50; 61 - 80 TODO
+// cutscenes are likely all the same, probably just an instant return
+
+//////////////////////////////////////////////////////////////////////////////////
+// Function 3 (Spyro and critter animation sounds)
 
 /**
  * PlaySpecialAnimationSounds() - MATCHING
@@ -256,7 +264,16 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
 // requires changing the Spyro animation state to an int
 // also some of these have updated animation states
 
-// Sometimes you need to add in a pair of redundant break cases to make it match
+// Some of these have matching issues and need some redundant cases
+// It seems to be mainly the levels that have water as well as some other breaking case
+// Adding these seems to help, usually:
+/*
+    case ANIMATION_STATE_SWIM_UNDERWATER:
+    case ANIMATION_STATE_SWIM_TURN_UNDERWATER:
+    case ANIMATION_STATE_SWIM_CHARGE_UNDERWATER:
+    	break;
+*/
+
 // 10 https://decomp.me/scratch/4KNXz
 // 11 https://decomp.me/scratch/GJ9gX
 // 12 https://decomp.me/scratch/pcTDp
@@ -266,28 +283,68 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
 // 16 https://decomp.me/scratch/LsvA9
 // 17 https://decomp.me/scratch/yLjTm
 // 18 https://decomp.me/scratch/KOGtp
+// 20 https://decomp.me/scratch/UcdKf
+// 21 https://decomp.me/scratch/fKN2l
+// 22 https://decomp.me/scratch/7U9H5
+// 23 https://decomp.me/scratch/SQkmN
+// 24 https://decomp.me/scratch/H2Zdb
+// 25 https://decomp.me/scratch/fTDkD
+// 26 https://decomp.me/scratch/AtzdE
+// 27 https://decomp.me/scratch/ndBrE 
+// 28 https://decomp.me/scratch/bkySj
+// 30 https://decomp.me/scratch/FpFZz
+// 31 https://decomp.me/scratch/yzreL
+// 32 https://decomp.me/scratch/Ay9am
+// 33 https://decomp.me/scratch/8gBF6
+// 34 https://decomp.me/scratch/vql9j
+// 35 https://decomp.me/scratch/NK9s4 NON-MATCHING - keeps trying to add a jtbl
+// 36 https://decomp.me/scratch/ICdHj
+// 37 https://decomp.me/scratch/0muwv
+// 38 https://decomp.me/scratch/GQmlp
+// 40 https://decomp.me/scratch/w0Sg3
+// 41 https://decomp.me/scratch/cxXbh
+// 42 https://decomp.me/scratch/T74YE
+// 43 https://decomp.me/scratch/9iBpU
+// 44 https://decomp.me/scratch/nOzt2
+// 45 https://decomp.me/scratch/jYeP8 NON-MATCHING - keeps trying to add a jtbl
+// 46 https://decomp.me/scratch/Gojir
+// 47 https://decomp.me/scratch/qbxAJ
+// 48 https://decomp.me/scratch/QhrkX
+// 50 https://decomp.me/scratch/56Ye0
 
-// Most recent is 18 - this has some new case names for the enum
-// 20 - 50; 61 - 80 TODO
-// Cutscenes are likely all the same; just the pad store
+// Most recent is 50
+
+// Next steps:
+// * Match 35 and 45
+// * Look over all of them and figure out the overall order (incl. figuring out inconsistencies)
+// * Make the full function and test on each level
+
+// There may be case ordering issues in the full function, as it appears a bit inconsistent
+// Whirlwind case may be an issue, solution may be to separate this one out into a separate case
+
+// Cutscenes are all the same, seems to just be the pad store
+
+// All of these will be merged when they're all matched because they're quite fiddly
+// Should be straightforward overall though, but the weird edge cases are annoying
+
+// Needs the animationState to be an int, but for initial
+// decompilation it's useful to have this set to the enum
 
 //////////////////////////////////////////////////////////////////////////////////
 // Function 5 (set Spyro state)
 
-// 10 https://decomp.me/scratch/0p1lS NON-MATCHING
-// 11 https://decomp.me/scratch/yW76j NON-MATCHING WIP
-// 12 https://decomp.me/scratch/DGeBR matches but could use some variable clean up and macros
-
-// This one isn't too bad to match, though there's a Sheila case in 10 I'm struggling with
+// 10 https://decomp.me/scratch/0p1lS NON-MATCHING - failing on swim case
+// 11 https://decomp.me/scratch/yW76j NON-MATCHING - failing on swim case
+// 12 https://decomp.me/scratch/DGeBR
+// 13 https://decomp.me/scratch/OO2sw (most up-to-date, 12 and 13 have been merged)
 
 // For these I've split part of the Spyro struct into a union of structs
-// If this ends up being the right approach it'll mean a lot of renaming
-// These could be movement related structs - see how 8007046C onwards looks in-game
+// Along with other updates to the Spyro struct, this will mean a lot of renaming
 
 // Based on similar issues in Camera functions, the issue seems to be that
 // superfly uses part of Spyro's struct differently!
 
-// 10 - 50; 61 - 80 TODO
+// 10 - 11; 14 - 50; 61 - 80 TODO
 
 //////////////////////////////////////////////////////////////////////////////////
 // Function 6 TODO

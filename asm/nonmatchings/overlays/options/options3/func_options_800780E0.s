@@ -150,7 +150,7 @@ glabel func_options_800780E0
 /* 965800C 800782DC 0000848C */  lw         $a0, 0x0($a0)
 .Loptions_800782E0:
 /* 9658010 800782E0 2130E002 */  addu       $a2, $s7, $zero
-/* 9658014 800782E4 B780000C */  jal        func_800202DC
+/* 9658014 800782E4 B780000C */  jal        DrawStringCentered
 /* 9658018 800782E8 0200E734 */   ori       $a3, $a3, 0x2
 /* 965801C 800782EC 20002226 */  addiu      $v0, $s1, 0x20
 /* 9658020 800782F0 21885300 */  addu       $s1, $v0, $s3

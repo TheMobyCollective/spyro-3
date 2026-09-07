@@ -1,6 +1,9 @@
 #include "common.h"
 #include "drawutil.h"
+#include "mobyfunc.h"
 #include "stdutil.h"
+
+extern void VSync(int);
 
 extern char D_80067570[16][12]; // might be an array of structs, not sure
 extern PauseData pauseData; // 8006fbc4
@@ -10,7 +13,24 @@ extern PauseData pauseData; // 8006fbc4
 // I'm using the REORDER_HACK in here which should just equal the normal INCLUDE_ASM right now
 // At time of writing this is a file that would fail when changing to -G8 so this is just saving me time later
 
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001EBAC);
+/**
+ * ???() - func_8001EBAC() - MATCHING
+ * https://decomp.me/scratch/v2ehU
+ */
+void func_8001EBAC() {
+    RECT rect;
+
+    DrawSync(0);
+    VSync(0);
+    rect.x = 0;
+    rect.y = 0;
+    rect.w = 512;
+    rect.h = 240;
+    ClearImage(&rect, 0, 0, 0);
+    rect.y = 228;
+    ClearImage(&rect, 0, 0, 0);
+    DrawSync(0);
+}
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001EC24);
 
@@ -110,19 +130,25 @@ INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020168);
 
 /**
  * DrawStringCentered() - func_800202DC() - MATCHING
- * Implementing may mean changing some function signatures
  * https://decomp.me/scratch/iAe5h
  */
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_800202DC);
+void DrawStringCentered(char* arg0, int arg1, int arg2, int arg3) {
+    int x = arg1;
+    x -= (func_8002EBB0(arg0) >> 1);
+    func_8002E748(arg0, x, arg2, arg3, 0);
+}
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020344);
 
 /**
  * DrawStringRightAligned() - func_800203C4() - MATCHING
- * Implementing may mean changing some function signatures
  * https://decomp.me/scratch/YCZcN
  */
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_800203C4);
+void DrawStringRightAligned(char* arg0, int arg1, int arg2, int arg3) {
+    int x = arg1;
+    x -= func_8002EBB0(arg0);
+    func_8002E748(arg0, x, arg2, arg3, 0);
+}
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020428);
 

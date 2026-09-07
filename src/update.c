@@ -4,14 +4,12 @@
 #include "tracers.h"
 #include "savepoint.h"
 #include "camera.h"
+#include "mobyupdate.h"
 #include "pad.h"
 #include "spu.h"
 #include "stdutil.h"
 #include "warp.h"
 #include "ovl_header.h"
-
-// mobyupdate
-extern void func_8003038C(); // UpdateMobys
 
 // spyroupdate
 extern void func_8003E83C(); // UpdateSpyro

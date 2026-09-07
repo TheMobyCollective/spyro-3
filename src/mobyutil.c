@@ -1,4 +1,5 @@
 #include "common.h"
+#include "mobyfunc.h"
 #include "mobyutil.h"
 #include "stdutil.h"
 #include "ovl_header.h"
@@ -7,9 +8,6 @@
 // collision
 extern int func_8001A310(Vector3D*, int, int, Moby*);
 extern int func_8001A358(Vector3D*, int);
-
-// mobyfunc
-extern void func_8002E2D0();
 
 // spyro
 extern int func_80040954(int);

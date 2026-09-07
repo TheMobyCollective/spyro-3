@@ -1,13 +1,19 @@
 #include "common.h"
+#include "init.h"
+#include "spu.h"
 #include "stdutil.h"
 
 // str
 extern void func_80050578(int sector, int* dest, int len, int sectorOffset); // LoadFromDisc
 extern void func_80050504(char param_1);
+
 // psyq
 extern int func_8005DB08(void* param_1);
 extern int func_8005DB1C(); // CdInit
 extern int func_8005E0BC(char param_1, char* param_2, char* param_3);
+extern void func_8005D384(); // InitGeom
+extern void func_8005D35C(int, int); // SetGeomOffset
+extern void func_8005955C(int); // SetGeomScreen
 
 // rodata
 extern int* overlayStartPtr; // 80011254
@@ -20,16 +26,17 @@ extern WadHeader wadHeader;
 
 /**
  * InitSpu() - func_8002A794() - MATCHING
- * Ready to add
  * https://decomp.me/scratch/7EzZI
  */
-INCLUDE_ASM("asm/nonmatchings/init", func_8002A794);
+void InitSpu() {
+    func_8003CCF0();
+}
 
 /**
  * InitCdAndWad() - func_8002A7B4() - MATCHING
  * https://decomp.me/scratch/Zz25L
  */
-void func_8002A7B4() {
+void InitCdAndWad() {
     char sp10[8];
 
     sp10[0] = 0x80;
@@ -42,17 +49,20 @@ void func_8002A7B4() {
 }
 
 /**
- * ???() - func_8002A834()
+ * SetupDrawDispEnvs() - func_8002A834()
  * https://decomp.me/scratch/YrgPC
  */
 INCLUDE_ASM("asm/nonmatchings/init", func_8002A834);
 
 /**
- * ???() - func_8002A99C() - MATCHING
- * Ready to add
+ * InitGeom?() - func_8002A99C() - MATCHING
  * https://decomp.me/scratch/853Zu
  */
-INCLUDE_ASM("asm/nonmatchings/init", func_8002A99C);
+void func_8002A99C() {
+    func_8005D384();
+    func_8005D35C(0x100, 0x78);
+    func_8005955C(0x155);
+}
 
 INCLUDE_ASM("asm/nonmatchings/init", func_8002A9D0);
 

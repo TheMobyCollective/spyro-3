@@ -1,10 +1,9 @@
 #include "common.h"
+#include "init.h"
 #include "stdutil.h"
 #include "loaders.h"
 #include "spu.h"
 
-// init
-extern void func_8002AA34();
 // spyroupdate
 extern void func_80047190();
 // str

@@ -56,7 +56,7 @@
 - [ ] func_8001E638 <!-- Draw -->
 
 <!-- Drawutil -->
-- [ ] func_8001EBAC
+- [x] func_8001EBAC
 - [ ] func_8001EC24
 - [ ] func_8001EC5C
 - [ ] func_8001EDEC
@@ -69,9 +69,9 @@
 - [ ] func_8001FF44
 - [ ] func_800200A0
 - [ ] func_80020168
-- [ ] func_800202DC
+- [x] func_800202DC
 - [ ] func_80020344
-- [ ] func_800203C4
+- [x] func_800203C4
 - [ ] func_80020428
 - [ ] func_80020530
 - [ ] func_80020790
@@ -117,10 +117,10 @@
 - [x] func_8002A754
 
 <!-- Init -->
-- [ ] func_8002A794
+- [x] func_8002A794
 - [x] func_8002A7B4
 - [ ] func_8002A834
-- [ ] func_8002A99C
+- [x] func_8002A99C
 - [ ] func_8002A9D0
 - [ ] func_8002AA34
 - [x] func_8002AAFC <!-- crc16 -->

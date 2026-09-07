@@ -324,7 +324,7 @@ glabel func_loading_80075B74
 /* 322E560 80076030 0780013C */  lui        $at, %hi(D_80069DC8)
 /* 322E564 80076034 21082200 */  addu       $at, $at, $v0
 /* 322E568 80076038 C89D248C */  lw         $a0, %lo(D_80069DC8)($at)
-/* 322E56C 8007603C F180000C */  jal        func_800203C4
+/* 322E56C 8007603C F180000C */  jal        DrawStringRightAligned
 /* 322E570 80076040 01000724 */   addiu     $a3, $zero, 0x1
 /* 322E574 80076044 21200002 */  addu       $a0, $s0, $zero
 /* 322E578 80076048 7C010524 */  addiu      $a1, $zero, 0x17C
@@ -620,7 +620,7 @@ glabel func_loading_80075B74
 /* 322E9B8 80076488 1800A427 */  addiu      $a0, $sp, 0x18
 /* 322E9BC 8007648C 0A010524 */  addiu      $a1, $zero, 0x10A
 /* 322E9C0 80076490 21300002 */  addu       $a2, $s0, $zero
-/* 322E9C4 80076494 B780000C */  jal        func_800202DC
+/* 322E9C4 80076494 B780000C */  jal        DrawStringCentered
 /* 322E9C8 80076498 01000724 */   addiu     $a3, $zero, 0x1
 .Lloading_8007649C:
 /* 322E9CC 8007649C 0780103C */  lui        $s0, %hi(D_8006D058)

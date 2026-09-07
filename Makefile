@@ -1,9 +1,10 @@
-# Currently a work in progress
 # This does not take account of the antipiracy - this will probably be done in a separate Python script
 # Of course I'd need to make sure this all rebuilds if the antipiracy is run?
 # Or rewrite the AP tools to spit the updated files out into a different folder.
 
-# TODO: warp.c needs -G8
+# TODO: warp.c needs -G8 - apparently I already did this? But I don't know if it works
+# TODO: get it to actually work (right now it complains about endianness)
+# TODO: switch to mipsel like Spyro 1 (probably needs some flag updates or something too because it shits the bed otherwise)
 
 # -------------------------------
 # Compiler & Toolchain Setup
