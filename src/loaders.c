@@ -115,6 +115,6 @@ void func_8002D044() {
     loadingData.D_800722e0 = (int*)(0x801FF800 - *(int*)0x801AE800); // D_801AE800; modelsEnd
     func_8004E828(loadingData.D_800722e0, (int*)0x801AF000, *(int*)0x801AE800); // D_801AE800
     
-    func_8002B5EC(((int)loadingData.D_800722e0 + *(int*)0x801AE804) - 0x800); // D_801AE804; modelsStart
+    func_8002B5EC((void*)(((int)loadingData.D_800722e0 + *(int*)0x801AE804) - 0x800)); // D_801AE804; modelsStart
     func_8002AA34();
 }
