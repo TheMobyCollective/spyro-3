@@ -259,7 +259,7 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
 }
 
 //////////////////////////////////////////////////////////////////////////////////
-// Function 4 TODO
+// Function 4 (align Spyro's rotation)
 
 // requires changing the Spyro animation state to an int
 // also some of these have updated animation states
@@ -347,7 +347,7 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
 // 10 - 11; 14 - 50; 61 - 80 TODO
 
 //////////////////////////////////////////////////////////////////////////////////
-// Function 6 TODO
+// Function 6 (update / change Spyro state?)
 
 // 10 https://decomp.me/scratch/Ck2ls NON-MATCHING
 
