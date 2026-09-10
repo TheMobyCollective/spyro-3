@@ -69,8 +69,18 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800438F4);
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80043A38);
 
+/**
+ * ???() - func_80043ABC() - MATCHING
+ * Aligns Spyro's angles to something
+ * https://decomp.me/scratch/APNca
+ */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80043ABC);
 
+/**
+ * ???() - func_80043E00() - MATCHING
+ * Aligns Spyro's angles to something
+ * https://decomp.me/scratch/rKluO
+ */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80043E00);
 
 /**
