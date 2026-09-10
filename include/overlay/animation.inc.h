@@ -261,19 +261,6 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
 //////////////////////////////////////////////////////////////////////////////////
 // Function 4 (align Spyro's rotation)
 
-// requires changing the Spyro animation state to an int
-// also some of these have updated animation states
-
-// Some of these have matching issues and need some redundant cases
-// It seems to be mainly the levels that have water as well as some other breaking case
-// Adding these seems to help, usually:
-/*
-    case ANIMATION_STATE_SWIM_UNDERWATER:
-    case ANIMATION_STATE_SWIM_TURN_UNDERWATER:
-    case ANIMATION_STATE_SWIM_CHARGE_UNDERWATER:
-    	break;
-*/
-
 // 10 https://decomp.me/scratch/4KNXz
 // 11 https://decomp.me/scratch/GJ9gX
 // 12 https://decomp.me/scratch/pcTDp
@@ -297,7 +284,7 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
 // 32 https://decomp.me/scratch/Ay9am
 // 33 https://decomp.me/scratch/8gBF6
 // 34 https://decomp.me/scratch/vql9j
-// 35 https://decomp.me/scratch/NK9s4 NON-MATCHING - keeps trying to add a jtbl
+// 35 https://decomp.me/scratch/NK9s4
 // 36 https://decomp.me/scratch/ICdHj
 // 37 https://decomp.me/scratch/0muwv
 // 38 https://decomp.me/scratch/GQmlp
@@ -306,26 +293,25 @@ void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
 // 42 https://decomp.me/scratch/T74YE
 // 43 https://decomp.me/scratch/9iBpU
 // 44 https://decomp.me/scratch/nOzt2
-// 45 https://decomp.me/scratch/jYeP8 NON-MATCHING - keeps trying to add a jtbl
+// 45 https://decomp.me/scratch/jYeP8
 // 46 https://decomp.me/scratch/Gojir
 // 47 https://decomp.me/scratch/qbxAJ
 // 48 https://decomp.me/scratch/QhrkX
 // 50 https://decomp.me/scratch/56Ye0
 
 // Most recent is 50
+// You need to include basically all the animations for a given level in each one, but seemingly adding in the superfly states isn't needed?
+// When I tried adding it to level 35 it broke, though removing the diving states fixed it again. So who knows?
 
 // Next steps:
-// * Match 35 and 45
 // * Look over all of them and figure out the overall order (incl. figuring out inconsistencies)
 // * Make the full function and test on each level
 
+// Some of these have updated animation states, so consolidating them will be fun
 // There may be case ordering issues in the full function, as it appears a bit inconsistent
 // Whirlwind case may be an issue, solution may be to separate this one out into a separate case
 
 // Cutscenes are all the same, seems to just be the pad store
-
-// All of these will be merged when they're all matched because they're quite fiddly
-// Should be straightforward overall though, but the weird edge cases are annoying
 
 // Needs the animationState to be an int, but for initial
 // decompilation it's useful to have this set to the enum
