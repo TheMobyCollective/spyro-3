@@ -81,7 +81,7 @@ extern char* (*UpdateParticles)(int delta); // 800742E8, types TODO
 // Animation related, in all levels and cutscenes (likely "overlays/level_XX/spyro.c")
 extern void (*unk_ovlheader_800742EC)(void); // 800742EC, types TODO, likely Update animation state
 extern void (*unk_ovlheader_800742F0)(void); // 800742F0, updates something wrt Spyro's animation state
-extern void (*PlaySpecialAnimationSounds)(void); // 800742F4 // "PlaySpyroSounds"?
+extern void (*g_PlaySpyroSounds)(void); // 800742F4
 extern void (*unk_ovlheader_800742F8)(int); // 800742F8 // AlignSpyroRotation
 extern void (*unk_ovlheader_800742FC)(int); // 800742FC // SetSpyroState?
 extern void (*unk_ovlheader_80074300)(void); // 80074300 // UpdateSpyroState?

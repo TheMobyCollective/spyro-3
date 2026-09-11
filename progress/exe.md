@@ -295,7 +295,7 @@
 - [ ] func_80049ACC
 - [ ] func_80049D70
 - [ ] func_8004B324
-- [ ] func_8004BA6C
+- [x] func_8004BA6C
 - [ ] func_8004BDF0
 - [ ] func_8004BEF8
 - [ ] func_8004CCA0

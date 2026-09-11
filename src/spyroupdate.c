@@ -1,4 +1,12 @@
 #include "common.h"
+#include "ovl_header.h"
+#include "spu.h"
+#include "spyro.h"
+
+extern int D_8006C58C; // level index    
+extern char D_80067968[40][4]; // WalkingSoundIdPerSurface... maybe a struct array?
+
+///////////////////////////////////////////////////////////////////////////////
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8003E83C);
 
@@ -160,11 +168,142 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004B324);
 
 /**
  * PlaySpyroSounds() - func_8004BA6C() - MATCHING
- * Exe version of the PlaySpyroSounds / "PlaySpecialAnimationSounds" from overlay
- * Needs animation case enums but otherwise is done
+ * Exe version of the PlaySpyroSounds from overlay
  * https://decomp.me/scratch/yR0vS
  */
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004BA6C);
+void PlaySpyroSounds() {
+    int animationId;
+    int animationFrame;
+
+    if (g_Spyro.unk20a != 0) {
+        animationId = g_Spyro.critterMobyPtr->animationState.id;
+        switch (g_Spyro.critterMode) {
+        case CRITTER_SHEILA:
+            animationId += ANIMATION_STATE_SHEILA_IDLE;
+            break;
+        case CRITTER_BENTLEY:
+            animationId += ANIMATION_STATE_BENTLEY_IDLE;
+            break;
+        case CRITTER_SGT_BYRD:
+            animationId += ANIMATION_STATE_SGT_BYRD_IDLE;
+            break;
+        case CRITTER_AGENT_9:
+            animationId += ANIMATION_STATE_AGENT_9_IDLE;
+            break;
+        case CRITTER_BENTLEY_BOXING:
+            animationId += ANIMATION_STATE_BENTLEY_BOXING_IDLE;
+            break;
+        case CRITTER_SUBS:
+            animationId += ANIMATION_STATE_SUB_IDLE;
+            break;
+        case CRITTER_SPARX:
+            animationId += ANIMATION_STATE_SPARX_IDLE;
+            break;
+        case CRITTER_HUNTER_4:
+            animationId += ANIMATION_STATE_HUNTER_4_FLY;
+            break;
+        case CRITTER_HUNTER_3:
+            animationId += ANIMATION_STATE_HUNTER_3_IDLE;
+            break;
+        case CRITTER_HUNTER_1:
+            animationId += ANIMATION_STATE_HUNTER_1_PLANE;
+            break;
+        }
+        animationFrame = g_Spyro.critterMobyPtr->animationState.frame;
+    }
+    else {
+        animationId = g_Spyro.bodyAnimation.id;
+        animationFrame = g_Spyro.bodyAnimation.frame;
+    }
+    
+    if (g_Spyro.movementState == MOVEMENT_STATE_SWIM_UNDERWATER || g_Spyro.movementState == MOVEMENT_STATE_SWIM_CHARGE) {
+        if (func_8003BF6C(g_SoundTablePtr->underwater, g_Spyro.unk22[4]) == 0) {
+            g_Spyro.unk22[4] = PlaySound(g_SoundTablePtr->underwater, 0, 4);
+        }
+    }
+    else if (func_8003BF6C(g_SoundTablePtr->underwater, g_Spyro.unk22[4]) != 0) {
+        func_8003BE70(g_Spyro.unk22[4]);
+        g_Spyro.unk22[4] = -1;
+    }
+    
+    if (g_Spyro.unk22[6] != animationFrame) {
+        switch (animationId) {
+        case ANIMATION_STATE_TIPTOE:
+            if (animationFrame == 5 || animationFrame == 13) {
+                int surface = g_Spyro.unk11[2] >> 6;
+                func_8003BB10(0, D_80067968[D_8006C58C][surface], 0);
+                g_Spyro.unk22[6] = animationFrame;
+            }
+            break;
+        case ANIMATION_STATE_RUN:
+            if (animationFrame == 7 || animationFrame == 9 || animationFrame == 17 || animationFrame == 0) {
+                int surface = g_Spyro.unk11[2] >> 6;
+                func_8003BB10(0, D_80067968[D_8006C58C][surface], 0);
+                g_Spyro.unk22[6] = animationFrame;
+            }
+            break;
+        case ANIMATION_STATE_BONK:
+            {
+                int handler;
+                if (animationFrame == 2 || animationFrame == 5) {
+                    handler = PlaySound(g_SoundTablePtr->spyroStop, 0, 0);
+                    g_Spyro.unk22[6] = animationFrame;
+                    if (handler >= 0 && animationFrame == 5) {
+                        func_8003C140(handler, 0xC00);
+                        func_8003C0B0(handler, 0xE00);
+                    }
+                }
+                break;
+            }
+        case ANIMATION_STATE_HURT:
+            {
+                int handler;
+                if (animationFrame == 11 || animationFrame == 14) {
+                    handler = PlaySound(g_SoundTablePtr->spyroStop, 0, 0);
+                    g_Spyro.unk22[6] = animationFrame;
+                    if (handler >= 0) {
+                        if (animationFrame == 14) {
+                            func_8003C140(handler, 0xC00);
+                            func_8003C0B0(handler, 0xE00);
+                        }
+                    }
+                }
+                break;
+            }
+        case 2:
+            if (animationFrame == 2 || animationFrame == 12) {
+                int surface = g_Spyro.unk11[2] >> 6;
+                func_8003BB10(0, D_80067968[D_8006C58C][surface], 0);
+                g_Spyro.unk22[6] = animationFrame;
+            }
+            break;
+        case ANIMATION_STATE_DEATH_FALL_OVER:
+            {
+                int handler;
+                if (animationFrame == 12 || animationFrame == 20) {
+                    handler = PlaySound(g_SoundTablePtr->spyroStop, 0, 0);
+                    g_Spyro.unk22[6] = animationFrame;
+                    if (handler >= 0) {
+                        if (animationFrame == 20) {
+                            func_8003C140(handler, 0xC00);
+                            func_8003C0B0(handler, 0xE00);
+                        }
+                    }
+                }
+                break;
+            }
+        default:
+            if (g_PlaySpyroSounds != 0) {
+                g_PlaySpyroSounds();
+            }
+            break;
+        }
+    }
+    
+    if (animationFrame != g_Spyro.unk22[6]) {
+        g_Spyro.unk22[6] = -1;
+    }
+}
 
 /**
  * AlignSpyroRotation() - func_8004BDF0() - MATCHING

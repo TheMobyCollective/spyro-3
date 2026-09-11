@@ -86,11 +86,10 @@
 // Function 3 (Spyro and critter animation sounds)
 
 /**
- * PlaySpecialAnimationSounds() - MATCHING
- * Unsure on name - maybe PlaySpecialWalkSounds?
+ * PlaySpyroSounds() - MATCHING
  * https://decomp.me/scratch/E3MhZ
  */
-void NAME_OVERLAY_FUNCTION(PlaySpecialAnimationSounds) (void) {
+void NAME_OVERLAY_FUNCTION(PlaySpyroSounds) (void) {
     int animationId;
     int animationFrame;
 

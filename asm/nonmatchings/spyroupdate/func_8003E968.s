@@ -24,7 +24,7 @@ glabel func_8003E968
 /* 2F1AC 8003E9AC 21800000 */   addu      $s0, $zero, $zero
 /* 2F1B0 8003E9B0 C92C010C */  jal        func_8004B324
 /* 2F1B4 8003E9B4 00000000 */   nop
-/* 2F1B8 8003E9B8 9B2E010C */  jal        func_8004BA6C
+/* 2F1B8 8003E9B8 9B2E010C */  jal        PlaySpyroSounds
 /* 2F1BC 8003E9BC 00000000 */   nop
 /* 2F1C0 8003E9C0 0780023C */  lui        $v0, %hi(D_8006C648)
 /* 2F1C4 8003E9C4 48C6428C */  lw         $v0, %lo(D_8006C648)($v0)

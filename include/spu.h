@@ -87,6 +87,7 @@ extern ActiveSound g_ActiveSounds[24]; // 8006FCE4
 int PlaySound(int localSoundId, Moby *moby, char param_3); // 8003BB50
 int func_8003BABC(Moby*, int, int); // PlayMobySound
 void func_8003BEDC();
+int func_8003BF6C(int, int);
 void func_8003C0B0(int, int); // ApplyPitchVariance // Causes Bluto glitch
 void func_8003C140(int, int);
 void func_8003C184();
