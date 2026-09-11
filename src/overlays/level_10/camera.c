@@ -38,7 +38,7 @@ void func_level_10_8008AD44() {
             MIN(var_v1, -0xC0);
             
             camera.unk7c.pos[1].yaw = (ABS(var_v1) >= 9) ? var_v1 : 0;
-            if ((spyro.movementState != 6) || (spyro.unk13cc <= 0)) {
+            if ((spyro.movementState != 6) || (spyro.union144.b.unk148 <= 0)) {
                 camera.unk7c.pos[1].pitch = -spyro.rotation.roll >> 2;
             }
             
@@ -54,7 +54,7 @@ void func_level_10_8008AD44() {
         func_800135A4(&camera.unk7c.pos[7], &D_800693C8, 0); // &D_80068F7C.cam55
         func_800135A4(&camera.unk7c.pos[8], &D_800693B4, 0); // &D_80068F7C.cam54
         if (spyro.movementState == 6) {
-            camera.unk1c4[5] = -spyro.unk13ce;
+            camera.unk1c4[5] = -spyro.union144.b.unk14C;
         }
         break;
         
@@ -103,7 +103,7 @@ void func_level_10_8008AD44() {
         
     case 23:
         if (camera.unk134 == 0) {
-            if (spyro.unk13e[3] & 0x80) {
+            if (spyro.unk13e[1] & 0x80) {
                 func_800135A4(&camera.unk7c.pos[1], &D_80069260, camera.unk6c);
             } else {
                 func_80014354();
