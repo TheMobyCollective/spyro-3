@@ -152,12 +152,25 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800498C0);
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80049ACC);
 
+// has overlay version in "animation.c"
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80049D70);
 
+// has overlay version in "animation.c"
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004B324);
 
+/**
+ * PlaySpyroSounds() - func_8004BA6C() - MATCHING
+ * Exe version of the PlaySpyroSounds / "PlaySpecialAnimationSounds" from overlay
+ * Needs animation case enums but otherwise is done
+ * https://decomp.me/scratch/yR0vS
+ */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004BA6C);
 
+/**
+ * AlignSpyroRotation() - func_8004BDF0() - MATCHING
+ * Exe version of the align Spyro rotation function from overlay
+ * https://decomp.me/scratch/wthTK
+ */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004BDF0);
 
 /**
@@ -167,6 +180,7 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004BDF0);
  */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004BEF8);
 
+// has overlay version in "animation.c"
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004CCA0);
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004E4E4);
