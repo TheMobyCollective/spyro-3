@@ -348,10 +348,10 @@ void func_level_17_8007D19C(Moby* arg0) {
             ovlHeader.unk2c(&sp10);
             break;
         }
-        if (spyro.unk13b == arg0) {
+        if (spyro.m_StoodOnMoby == arg0) {
             arg0->state = 2;
         case 2:
-            if (spyro.unk13b != arg0) {
+            if (spyro.m_StoodOnMoby != arg0) {
                 camera.unk168 = 0;
                 arg0->state = 1;
             } else {

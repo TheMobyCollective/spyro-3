@@ -288,7 +288,7 @@ typedef struct {
     int unk11[8];              // 104
     Vector3D unk12;            // 124, copy of Spyro's position, for some reason
     int unk13a[3];             // 130
-    Moby* unk13b;              // 13C // stood on moby
+    Moby* m_StoodOnMoby;       // 13C
     int unk13ca;               // 140
 
     // Added a union here due to some inconsistent behaviour observed
@@ -351,7 +351,7 @@ typedef struct {
     int unk17a;                // 20C
     int unk17b;                // 210
     int unk17c;                // 214
-    Moby* unk17d;              // 218, whirlwind moby pointer
+    Moby* m_WhirlwindPointer;  // 218
     Vector3D unk17e;           // 21C
     Angle unk18;               // 228
     char padding3;             // 22B

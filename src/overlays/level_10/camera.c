@@ -111,7 +111,7 @@ void func_level_10_8008AD44() {
             }
         }
         func_800142E0();
-        camera.unk6c = spyro.unk17d->angle.yaw * 0x10;
+        camera.unk6c = spyro.m_WhirlwindPointer->angle.yaw * 0x10;
         func_800135A4(&camera.unk7c.pos[5], &D_8006929C[var_s2], 0);
         func_800135A4(&camera.unk7c.pos[6], &D_80069328[var_s2], 0);
         func_800135A4(&camera.unk7c.pos[7], &D_800693C8, 0);
