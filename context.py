@@ -118,7 +118,8 @@ extern Moby* D_8006C550; // moby array ptr
 extern int D_8006C5BC; // currentLvl
 extern int D_8006C648; // deltaTime
 extern Spyro D_80070328; // left without name to make the decompiler find it easier
-extern StreamingData D_8006E470; // streamingData
+extern CDState D_8006E470; // cdState
+extern StreamingData D_8006E470; // streamingData -  would be 8006E48C if CDState and StreamingData are split
 extern SpeedwayData D_8006FA38; // speedwayData (bss)
 extern PauseData D_8006FBC4; // pauseData
 
