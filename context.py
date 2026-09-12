@@ -72,11 +72,7 @@ others = """
 extern int func_80019194(Vector3D*, int);
 extern int func_8001A358(Vector3D*, int);
 
-// Sound
-extern int func_8003BABC(Moby*, int, char); // fPlayMobySound
-extern int func_8003BB10(Moby*, int, char); // fPlayAmbientSound, name probably inaccurate (might be looping sounds)
-extern void func_8003BE70(int); // fKillSound
-extern int func_8003BFC0(Moby*, int);
+// Spyro
 extern void func_800492DC(Vector3D*);
 
 // Stdutil
