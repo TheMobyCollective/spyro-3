@@ -93,15 +93,26 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80043E00);
 
 /**
  * AlignSpyroToLadder() - func_80043F3C() - MATCHING
- * Has some nice macros and a change to the Spyro struct, important
  * https://decomp.me/scratch/Y8ufi
  */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80043F3C);
 
+/**
+ * ???() - func_800441F0() - MATCHING
+ * https://decomp.me/scratch/31veX
+ */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800441F0);
 
+/**
+ * ???() - func_80044240() - MATCHING
+ * https://decomp.me/scratch/K5K7t
+ */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80044240);
 
+/**
+ * ???() - func_800443A4() - MATCHING
+ * https://decomp.me/scratch/dIIES
+ */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800443A4);
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800443EC);

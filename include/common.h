@@ -10,6 +10,10 @@
 #define MAX_SIGNED(x, max) if (x > max) x -= 2*max
 // #define CLAMP(x, min, max) ((x) < (min) ? (min) : ((x) > (max) ? (max) : (x))) // CLAMP not surrently in use
 
+#define SUB_ANGLE(a, b, c) a = (b - c) & 0xFFF; \
+    if(a > 0x800) a -= 0x1000
+#define ADD_ANGLE(a, b, c) a = (b + c) & 0xFFF; \
+    if(a > 0x800) a -= 0x1000
 
 // Maybe move this out when PauseData is moved out of here
 #include "libgpu.h"
@@ -24,6 +28,10 @@ typedef struct {
 typedef struct {
 	short x, y, z;
 } Vector3D16;
+
+typedef struct {
+    int roll, pitch, yaw;
+} Angle12; // just a Vector3D with more obvious naming
 
 typedef struct { /* Similar to the one in libgte */
   short m[3][3]; /* 3x3 rotation matrix */

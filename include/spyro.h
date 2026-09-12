@@ -270,7 +270,7 @@ typedef struct {
         int pitch;             // 60, overall pitch / elevation / incline, goes up to +-0x100
         int yaw;               // 64, overall yaw / azimuth, goes up to +-0x100
     } rotation;
-    int unk7[3];               // 68 // probably rotational velocity vector, yaw not always used though
+    Angle12 unk7;              // 68 // probably rotational velocity vector, yaw not always used though // Possible this struct is only used here?
     Vector3D unk7a[4];         // 74, something speed related, [2] seems to be the true velocity vector?
     int unk7b;                 // A4, seemingly another yaw variable, a copy of rotation.yaw
     int unk7c;                 // A8
