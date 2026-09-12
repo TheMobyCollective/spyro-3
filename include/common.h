@@ -328,15 +328,6 @@ typedef struct {
 } CDState;
 
 typedef struct {
-	// these 7 fields should be removed as they have been moved to CDState
-	int wadSector; // 8006e470
-	int dat_8006e474; // 8006e474
-	CdLoc dat_8006e478; // 8006e478
-	int dat_8006e47c; // 8006e47c
-	int dat_8006e480; // 8006e480
-	int dat_8006e484; // 8006e484
-	int dat_8006e488; // 8006e488
-
 	int dat_8006e48c; // 8006e48c, possibly number of tracks (e..g 8 when playing music)
 	int dat_8006e490; // 8006e490
 	int dat_8006e494; // 8006e494 // MusicFadeTarget?

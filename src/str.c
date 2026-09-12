@@ -26,7 +26,7 @@ extern int language; // 8006C76C
 
 // bss
 extern CDState cdState; // 8006e470
-extern StreamingData streamingData; // 8006e48c if CDState and StreamingData are split
+extern StreamingData streamingData; // 8006e48c
 
 ////////////////////////////////////////////////////////////////////////////////////
 
