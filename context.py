@@ -28,6 +28,11 @@ files = [
     'environment.h',
     'ovl_header.h',
     'moby/mobytag.h',
+	'init.h',
+	'mobydraw.h',
+	'mobyfunc.h',
+	'mobyupdate.h',
+	#'strings.h', # empty right now
 ]
 
 context = '// Context generated ' + datetime.now().strftime("%Y-%m-%d %H:%M:%S") + '\n\n'
