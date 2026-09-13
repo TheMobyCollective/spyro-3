@@ -2,8 +2,22 @@
 #include "ovl_header.h"
 
 // externs
-extern int func_8005D96C(int,int,unsigned int);
-extern int func_8005E0BC(unsigned char, CdLoc*, char*); // unclear type
+
+//psyq
+extern int func_8005D96C(int sectors, unsigned long *buf, int mode); // CdRead 
+extern int func_8005E0BC(unsigned char com, unsigned char *param, unsigned char *result); // CdControl
+extern int func_8005DB1C(void); // CdInit
+extern int func_8005E074(int mode, unsigned char *result); // CdSync
+extern int func_8005E1F8(unsigned char com, unsigned char *param); //CdControlF
+extern int func_8005E018(void); // CdStatus 
+extern int func_8005E038(void); // CdLastCom
+extern int func_8005DB08(void* func); // CdReadCallback
+extern int func_8005F570(CdLoc *pos); //CdPosToInt
+extern CdLoc *CdIntToPos(int intLba, CdLoc *pos);
+
+void func_8004FA24(void); // CDMusicUpdate
+void func_80050504(unsigned char arg0); // CDReadDone
+int func_800503F8(void); // CDLoadTime
 
 // sdata
 extern int speechLba; // 8006C3F4 - should be 90000
@@ -11,7 +25,8 @@ extern int D_8006C674; // 8006C674 - moby speech index to play (entry in speech 
 extern int language; // 8006C76C
 
 // bss
-extern StreamingData streamingData; // 8006e470
+extern CDState cdState; // 8006e470
+extern StreamingData streamingData; // 8006e48c
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -85,43 +100,132 @@ void func_8004F9C0(int startLba, int endLba, int track) {
 INCLUDE_ASM("asm/nonmatchings/str", func_8004FA24);
 
 /**
- * ???() - func_800503F8()
- * TODO
+ * CDLoadTime() - func_800503F8() - MATCHING
+ * Equivalent to CDLoadTime in Spyro 1
+ * https://decomp.me/scratch/jQNst
  */
-INCLUDE_ASM("asm/nonmatchings/str", func_800503F8);
+int func_800503F8(void) {
+    unsigned char modeFlags;
+
+    if (streamingData.dat_8006e48c != 0) {
+        streamingData.musicEnabled = 1;
+        func_8004FA24();
+        return 1;
+    } 
+    
+    if (cdState.isReading != 0) {
+        if (cdState.readTime < cdState.maxReadTime) {
+            return 1;
+        }
+
+        modeFlags = 0x80;
+
+        // Reinitialize the CD subsystem
+        func_8005DB1C();
+        
+        // Set the mode to double speed?
+        func_8005E0BC(0xE, &modeFlags, 0);
+        func_8005DB08(&func_80050504);
+
+        // Wait for the CD subsystem to be ready after the reinitialization
+        while (func_8005E074(1, 0) != 2) {
+            ;
+        }
+
+        func_8005E0BC(2, (void *)&cdState.readLoc, 0);
+
+        cdState.readTime = 0; // Reset the disc read time
+        
+        // Start the read
+        func_8005D96C(cdState.size, cdState.outBuf, 0x80);
+
+        return 1;
+    }
+
+    return func_8005E074(1, 0) != 2;
+}
 
 /**
- * ???() - func_80050504() - TECHNICALLY MATCHING
- * Some delay slot bullshit was resolved using an empty asm call, this will need correction later
- * https://decomp.me/scratch/Dt2wl
+ * CDReadDone() - func_80050504() - MATCHING
+ * Equivalent to CDReadDone from Spyro 1
+ * https://decomp.me/scratch/p8Iac
  */
-void func_80050504(unsigned char arg0) {
-    if (streamingData.dat_8006e480 != 0) {
-        if (arg0 == 2) {
-            streamingData.dat_8006e480 = 0;
-            __asm__ volatile(""); // needed to match, but clearly they didn't do this
+void func_80050504(unsigned char intr) {
+    if (cdState.isReading != 0) {
+        if (intr == 2) {
+            cdState.isReading = 0;
             return;
         }
-        func_8005E0BC(2, &streamingData.dat_8006e478, 0);
-        streamingData.dat_8006e484 = 0;
-        func_8005D96C(streamingData.dat_8006e474, streamingData.dat_8006e47c, 0x80);
+        func_8005E0BC(2, (void *)&cdState.readLoc, 0);
+        cdState.readTime = 0; // Disc read time reset
+        func_8005D96C(cdState.size, cdState.outBuf, 0x80);
     }
 }
 
 /**
- * ???() - func_80050578()
- * Awful, but probably like func_80016500 from S1
- * S1 CD struct seems similar to the start of StreamingData too
- * https://decomp.me/scratch/75XlZ
+ * CDLoadSync() - func_80050578() - MATCHING
+ * Equivalent to CDLoadSync from Spyro 1
+ * https://decomp.me/scratch/nBflt
  */
-INCLUDE_ASM("asm/nonmatchings/str", func_80050578);
+void func_80050578(int sector, void *buf, int len, int sectorOffset) { 
+    unsigned char modeFlags;
+
+    modeFlags = 0x80;
+    
+    do { 
+    } while (func_800503F8()); 
+    
+    // Set the mode to double speed? 
+    func_8005E0BC(0xE, &modeFlags, 0);
+
+    CdIntToPos(sector + (sectorOffset / 2048), &cdState.readLoc);   
+    func_8005E0BC(2, &cdState.readLoc.minute, 0);  
+    
+    cdState.size = (len + 2047) / 2048;
+    cdState.isReading = 1;
+    cdState.outBuf = buf;
+    cdState.maxReadTime = cdState.size + 0x78;
+    cdState.readTime = 0;
+
+    // Start the read
+    func_8005D96C(cdState.size, cdState.outBuf, 0x80);
+    
+    do {
+    } while (func_800503F8()); 
+}
 
 /**
- * ???() - func_80050680()
- * Probably difficult
- * https://decomp.me/scratch/iHBib
+ * CDLoadAsync() - func_80050680() - MATCHING
+ * Equivalent to CDLoadAsync from Spyro 1
+ * https://decomp.me/scratch/yt19k
  */
-INCLUDE_ASM("asm/nonmatchings/str", func_80050680);
+int func_80050680(int sector, void *buf, int len, int sectorOffset) {
+    unsigned char modeFlags;
+
+    modeFlags = 0x80;
+
+    if (func_800503F8() == 0) {
+        
+        // Set the mode to double speed? 
+        func_8005E0BC(0xE, &modeFlags, 0);
+
+        CdIntToPos(sector + (sectorOffset / 2048), &cdState.readLoc);
+        func_8005E0BC(2, &cdState.readLoc.minute, 0);
+
+        cdState.size = (len + 2047) / 2048;
+        cdState.isReading = 1;
+        cdState.outBuf = buf;
+        cdState.maxReadTime = cdState.size + 0x78;
+        cdState.readTime = 0;
+
+        // Start the read
+        func_8005D96C(cdState.size, cdState.outBuf, 0x80);
+
+        return 1;
+    }
+
+    return 0;
+}
 
 /**
  * FindMobyDialogue() - func_8005077C() - MATCHING

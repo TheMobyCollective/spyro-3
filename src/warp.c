@@ -61,7 +61,8 @@ extern int D_8006C718;
 
 // bss
 extern Game game;
-extern StreamingData streamingData; // 8006E470
+extern CDState cdState; // 8006e470
+extern StreamingData streamingData; // 8006e48c
 extern SpeedwayData speedwayData;
 extern PauseData pauseData; // 8006FBC4
 extern PauseData2 pauseData2;
@@ -269,7 +270,7 @@ void func_80058778() {
     case 0:
         // TODO - D_80011254 usage below is weird
         if (pauseData.frameCount == 0) {
-            func_80050578(streamingData.wadSector, D_80011254 + D_8006C714, wadHeader.loadImg[pauseData.cursorPos].size, wadHeader.loadImg[pauseData.cursorPos].offset);
+            func_80050578(cdState.wadSector, D_80011254 + D_8006C714, wadHeader.loadImg[pauseData.cursorPos].size, wadHeader.loadImg[pauseData.cursorPos].offset);
             sp10.x = 0x200;
             sp10.y = 0;
             sp10.w = 0x200;
@@ -442,7 +443,7 @@ void func_80058778() {
         }
         break;
     case 5:
-        func_80050578(streamingData.wadSector, D_80011254, wadHeader.titleOvl.size, wadHeader.titleOvl.offset);
+        func_80050578(cdState.wadSector, D_80011254, wadHeader.titleOvl.size, wadHeader.titleOvl.offset);
         currentLevel = 0;
         D_8006C714 = wadHeader.titleOvl.size;
         func_8004E790(&D_8006D048, 0, 0x40);
@@ -450,7 +451,7 @@ void func_80058778() {
         func_80054E5C();
         break;
     case 6: // sigh
-        func_80050578(streamingData.wadSector, loadingData.D_800722c8, levelWadHeader.area[0].layout.size, levelWadHeader.area[0].layout.offset + wadHeader.cutscene[levelIndex].lvl.offset);
+        func_80050578(cdState.wadSector, loadingData.D_800722c8, levelWadHeader.area[0].layout.size, levelWadHeader.area[0].layout.offset + wadHeader.cutscene[levelIndex].lvl.offset);
         loadingData.D_800722cc = func_8002B810(loadingData.D_800722c8);
         pauseData.dat_8006fbc8 = 3;
         break;
