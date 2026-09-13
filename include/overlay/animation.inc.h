@@ -12,8 +12,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Macros
 
-// For these, consider replacing this with HAS_ANIMATION_STATE_NAME
-// in a list similar to the mobys list in a header made for each level
+// These will be implemented using the level headers instead, but are kept here for use on decomp.me
 
 // Does not include 16, possibly because it's Sheila, but does include 37 for some reason
 // If you enter 37 with invincibility, the water is just a solid walkable plane, not swimmable
@@ -22,13 +21,13 @@
  || (LEVEL_ID == 25) || (LEVEL_ID == 30) || (LEVEL_ID == 32) || (LEVEL_ID == 35) \
  || (LEVEL_ID == 37) || (LEVEL_ID == 41) || (LEVEL_ID == 42) || (LEVEL_ID == 43) \
  || (LEVEL_ID == 44) || (LEVEL_ID == 45) || (LEVEL_ID == 50)
-    #define IS_SWIMMING_LEVEL
+    #define HAS_SWIMMING_ANIMATION_STATES
 #endif
 
 // Includes 33 for some reason
 #if (LEVEL_ID == 11) || (LEVEL_ID == 22) || (LEVEL_ID == 32) || (LEVEL_ID == 33) \
  || (LEVEL_ID == 50)
-    #define IS_SKATEBOARDING_LEVEL
+    #define HAS_SKATEBOARDING_ANIMATION_STATES
 #endif
 
 // Animation related usage - specifically used for the death animation, not the lava hop animation
@@ -37,31 +36,31 @@
 #if (LEVEL_ID == 12) || (LEVEL_ID == 13) || (LEVEL_ID == 17) || (LEVEL_ID == 27) \
  || (LEVEL_ID == 33) || (LEVEL_ID == 37) || (LEVEL_ID == 42) || (LEVEL_ID == 47) \
  || (LEVEL_ID == 50)
-    #define IS_FIRE_LAVA_LEVEL
+    #define HAS_BURN_DEATH_ANIMATION_STATE
 #endif
 
 #if (LEVEL_ID == 20) || (LEVEL_ID == 21) || (LEVEL_ID == 31)
-    #define IS_ICE_LEVEL
+    #define HAS_ICE_SKATE_ANIMATION_STATE
 #endif
 
 #if (LEVEL_ID == 20) || (LEVEL_ID == 23) || (LEVEL_ID == 30) || (LEVEL_ID == 33) \
  || (LEVEL_ID == 34) || (LEVEL_ID == 42) || (LEVEL_ID == 43) || (LEVEL_ID == 44)
-    #define IS_LADDER_LEVEL
+    #define HAS_LADDER_ANIMATION_STATES
 #endif
 
 #if (LEVEL_ID == 13) || (LEVEL_ID == 22) || (LEVEL_ID == 26) || (LEVEL_ID == 34)
-    #define IS_SGT_BYRD_LEVEL
+    #define HAS_SGT_BYRD_ANIMATION_STATES
 #endif
 
 // 31 not included, boxing Bentley is a separate moby / uses separate animations IDs
 #if (LEVEL_ID == 24) || (LEVEL_ID == 36) || (LEVEL_ID == 41)
-    #define IS_BENTLEY_LEVEL
+    #define HAS_BENTLEY_ANIMATION_STATES
 #endif
 
 // 30 included for some reason
 #if (LEVEL_ID == 30) || (LEVEL_ID == 33) || (LEVEL_ID == 43) || (LEVEL_ID == 44) \
  || (LEVEL_ID == 46)
-    #define IS_AGENT_9_LEVEL
+    #define HAS_AGENT_9_ANIMATION_STATES
 #endif
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -132,7 +131,7 @@ void NAME_OVERLAY_FUNCTION(PlaySpyroSounds) (void) {
     
     switch (animationId) {
 
-    #ifdef IS_ICE_LEVEL
+    #ifdef HAS_ICE_SKATE_ANIMATION_STATE
     case ANIMATION_STATE_ICE_SKATE:
         {
             int handler;
@@ -149,7 +148,7 @@ void NAME_OVERLAY_FUNCTION(PlaySpyroSounds) (void) {
         }
     #endif
         
-    #ifdef IS_SKATEBOARDING_LEVEL
+    #ifdef HAS_SKATEBOARDING_ANIMATION_STATES
     case ANIMATION_STATE_FALL_OFF_SKATEBOARD:
         if (animationFrame == 24) {
             PlaySound(g_SoundTablePtr->spyroSkid, 0, 0);
@@ -158,7 +157,7 @@ void NAME_OVERLAY_FUNCTION(PlaySpyroSounds) (void) {
         break;
     #endif
         
-    #ifdef IS_SWIMMING_LEVEL
+    #ifdef HAS_SWIMMING_ANIMATION_STATES
     case ANIMATION_STATE_SWIM_MOVE_SURFACE:
         if (animationFrame == 1) {
             PlaySound(g_SoundTablePtr->waterPaddle, 0, 0);
@@ -167,7 +166,7 @@ void NAME_OVERLAY_FUNCTION(PlaySpyroSounds) (void) {
         break;
     #endif
 
-    #ifdef IS_LADDER_LEVEL
+    #ifdef HAS_LADDER_ANIMATION_STATES
     case ANIMATION_STATE_LADDER_CLIMB:
         {
             int handler;
@@ -198,7 +197,7 @@ void NAME_OVERLAY_FUNCTION(PlaySpyroSounds) (void) {
         }
     #endif
 
-    #ifdef IS_FIRE_LAVA_LEVEL
+    #ifdef HAS_BURN_DEATH_ANIMATION_STATE
     case ANIMATION_STATE_DEATH_BURN:
         if (animationFrame == 13) {
             PlaySound(g_SoundTablePtr->lavaDeath, 0, 0);
@@ -207,7 +206,7 @@ void NAME_OVERLAY_FUNCTION(PlaySpyroSounds) (void) {
         break;
     #endif
 
-    #ifdef IS_BENTLEY_LEVEL
+    #ifdef HAS_BENTLEY_ANIMATION_STATES
     case ANIMATION_STATE_BENTLEY_WALK_START:
         {
             int handler;
@@ -222,7 +221,7 @@ void NAME_OVERLAY_FUNCTION(PlaySpyroSounds) (void) {
         }
     #endif    
 
-    #ifdef IS_SGT_BYRD_LEVEL
+    #ifdef HAS_SGT_BYRD_ANIMATION_STATES
     case ANIMATION_STATE_SGT_BYRD_WALK:
         {
             int handler;
@@ -237,7 +236,7 @@ void NAME_OVERLAY_FUNCTION(PlaySpyroSounds) (void) {
         }
     #endif
 
-    #ifdef IS_AGENT_9_LEVEL
+    #ifdef HAS_AGENT_9_ANIMATION_STATES
     case ANIMATION_STATE_AGENT_9_WALK:
         {
             int handler;

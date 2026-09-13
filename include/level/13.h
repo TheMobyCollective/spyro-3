@@ -23,4 +23,10 @@
 #define HAS_MOBY_630
 #define HAS_MOBY_631
 
+// Animations
+#define HAS_BURN_DEATH_ANIMATION_STATE
+#define HAS_SGT_BYRD_ANIMATION_STATES
+
+// Cameras TODO
+
 #endif
