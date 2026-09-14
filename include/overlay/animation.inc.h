@@ -66,6 +66,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Function 1 TODO
 
+// 10 - 50 TODO
+// Cutscenes appear empty so are done by default
+
 //////////////////////////////////////////////////////////////////////////////////
 // Function 2 TODO
 
@@ -78,8 +81,8 @@
 // Seems to have some of the strange cases that the function below does, so can probably reuse the same macros (confirm though)
 
 // 11 to finish
-// 12 - 36; 38 - 50; 61 - 80 TODO
-// cutscenes are likely all the same, probably just an instant return
+// 12 - 36; 38 - 50 TODO
+// Cutscenes appear empty so are done by default
 
 //////////////////////////////////////////////////////////////////////////////////
 // Function 3 (Spyro and critter animation sounds)
@@ -321,6 +324,8 @@ void NAME_OVERLAY_FUNCTION(PlaySpyroSounds) (void) {
 // 11 https://decomp.me/scratch/yW76j NON-MATCHING - failing on swim case
 // 12 https://decomp.me/scratch/DGeBR
 // 13 https://decomp.me/scratch/OO2sw (most up-to-date, 12 and 13 have been merged)
+// 10 - 11; 14 - 50 TODO
+// Cutscenes appear empty so are done by default
 
 // For these I've split part of the Spyro struct into a union of structs
 // Along with other updates to the Spyro struct, this will mean a lot of renaming
@@ -328,15 +333,25 @@ void NAME_OVERLAY_FUNCTION(PlaySpyroSounds) (void) {
 // Based on similar issues in Camera functions, the issue seems to be that
 // superfly uses part of Spyro's struct differently!
 
-// 10 - 11; 14 - 50; 61 - 80 TODO
-
 //////////////////////////////////////////////////////////////////////////////////
 // Function 6 (update / change Spyro state?)
 
-// 10 https://decomp.me/scratch/Ck2ls NON-MATCHING
+// 10 https://decomp.me/scratch/Ck2ls
+// 11 - 50 TODO
+// Cutscenes appear empty so are done by default
 
-// Not an easy match, lots of if statements
+// Not an easy match, lots of if statements, but theoretically possible
 
-// 10 - 50; 61 - 80 TODO
+/*
+States done:
+ANIMATION_STATE_WHIRLWIND
+ANIMATION_STATE_SUPERFLY
+ANIMATION_STATE_SUPERFLY_FLAP
+ANIMATION_STATE_SUPERFLY_DIVE
+ANIMATION_STATE_SWIM_TURN_UNDERWATER
+ANIMATION_STATE_SWIM_CHARGE_UNDERWATER
+ANIMATION_STATE_SWIM_MOVE_SURFACE
+ANIMATION_STATE_SWIM_STAY_SURFACE
+*/
 
 #endif

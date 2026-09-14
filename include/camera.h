@@ -15,7 +15,7 @@ typedef struct {
 	int pitch;
 } CameraPosition;
 
-enum CameraState {
+enum CameraState { // may want to align this with the animation state / spyro state names
 	CAMERA_NORMAL = 0x0,          // behind spyro
 	CAMERA_MOVING = 0x1,
 	CAMERA_CHARGING = 0x2,
