@@ -216,7 +216,7 @@ glabel func_loading_8007494C
 /* 322D110 80074BE0 21082200 */  addu       $at, $at, $v0
 /* 322D114 80074BE4 E0DB278C */  lw         $a3, %lo(D_8006DBE0)($at)
 .Lloading_80074BE8:
-/* 322D118 80074BE8 A041010C */  jal        func_80050680
+/* 322D118 80074BE8 A041010C */  jal        CDLoadAsync
 /* 322D11C 80074BEC 00080624 */   addiu     $a2, $zero, 0x800
 /* 322D120 80074BF0 3DD40108 */  j          .Lloading_800750F4
 /* 322D124 80074BF4 03000224 */   addiu     $v0, $zero, 0x3
@@ -262,7 +262,7 @@ glabel func_loading_8007494C
 /* 322D1BC 80074C8C E0DB278C */  lw         $a3, %lo(D_8006DBE0)($at)
 .Lloading_80074C90:
 /* 322D1C0 80074C90 0000258E */  lw         $a1, 0x0($s1)
-/* 322D1C4 80074C94 A041010C */  jal        func_80050680
+/* 322D1C4 80074C94 A041010C */  jal        CDLoadAsync
 /* 322D1C8 80074C98 21386700 */   addu      $a3, $v1, $a3
 /* 322D1CC 80074C9C 0780033C */  lui        $v1, %hi(D_8006E344)
 /* 322D1D0 80074CA0 44E3638C */  lw         $v1, %lo(D_8006E344)($v1)
@@ -371,7 +371,7 @@ glabel func_loading_8007494C
 .Lloading_80074E24:
 /* 322D354 80074E24 0800073C */  lui        $a3, (0x80000 >> 16)
 /* 322D358 80074E28 21186200 */  addu       $v1, $v1, $v0
-/* 322D35C 80074E2C A041010C */  jal        func_80050680
+/* 322D35C 80074E2C A041010C */  jal        CDLoadAsync
 /* 322D360 80074E30 21386700 */   addu      $a3, $v1, $a3
 /* 322D364 80074E34 04000224 */  addiu      $v0, $zero, 0x4
 /* 322D368 80074E38 0780013C */  lui        $at, %hi(D_8006C5E4)
@@ -456,7 +456,7 @@ glabel func_loading_8007494C
 .Lloading_80074F5C:
 /* 322D48C 80074F5C 0780063C */  lui        $a2, %hi(D_800720A4)
 /* 322D490 80074F60 A420C68C */  lw         $a2, %lo(D_800720A4)($a2)
-/* 322D494 80074F64 A041010C */  jal        func_80050680
+/* 322D494 80074F64 A041010C */  jal        CDLoadAsync
 /* 322D498 80074F68 21386700 */   addu      $a3, $v1, $a3
 /* 322D49C 80074F6C 3DD40108 */  j          .Lloading_800750F4
 /* 322D4A0 80074F70 05000224 */   addiu     $v0, $zero, 0x5
@@ -502,7 +502,7 @@ glabel func_loading_8007494C
 .Lloading_80075008:
 /* 322D538 80075008 0780063C */  lui        $a2, %hi(D_800720AC)
 /* 322D53C 8007500C AC20C68C */  lw         $a2, %lo(D_800720AC)($a2)
-/* 322D540 80075010 A041010C */  jal        func_80050680
+/* 322D540 80075010 A041010C */  jal        CDLoadAsync
 /* 322D544 80075014 21386700 */   addu      $a3, $v1, $a3
 /* 322D548 80075018 3DD40108 */  j          .Lloading_800750F4
 /* 322D54C 8007501C 06000224 */   addiu     $v0, $zero, 0x6
@@ -548,7 +548,7 @@ glabel func_loading_8007494C
 .Lloading_800750B4:
 /* 322D5E4 800750B4 0780063C */  lui        $a2, %hi(D_800720B4)
 /* 322D5E8 800750B8 B420C68C */  lw         $a2, %lo(D_800720B4)($a2)
-/* 322D5EC 800750BC A041010C */  jal        func_80050680
+/* 322D5EC 800750BC A041010C */  jal        CDLoadAsync
 /* 322D5F0 800750C0 21386700 */   addu      $a3, $v1, $a3
 /* 322D5F4 800750C4 3DD40108 */  j          .Lloading_800750F4
 /* 322D5F8 800750C8 07000224 */   addiu     $v0, $zero, 0x7

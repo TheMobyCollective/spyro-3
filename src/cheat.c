@@ -2,6 +2,7 @@
 #include "cheat.h"
 #include "pad.h"
 #include "spu.h"
+#include "str.h"
 
 // update
 extern void func_80054CD8();
@@ -18,9 +19,6 @@ extern SoundTable* soundTablePtr; // D_8006C654
 extern short D_8006C67C;
 extern int D_8006C784;
 extern int D_8006C7A8;
-
-// bss 8006c7f8
-extern StreamingData streamingData;
 
 // static inlines
 // might be useful in other functions, so should be in the header

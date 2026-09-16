@@ -1,9 +1,9 @@
 #include "common.h"
+#include "str.h"
 #include "ovl_header.h"
 
-// externs
-
-//psyq
+// psyq
+// will need LibCD implemented soon, also there are constants in there that should be used in here (see spyro-1)
 extern int func_8005D96C(int sectors, unsigned long *buf, int mode); // CdRead 
 extern int func_8005E0BC(unsigned char com, unsigned char *param, unsigned char *result); // CdControl
 extern int func_8005DB1C(void); // CdInit
@@ -15,29 +15,18 @@ extern int func_8005DB08(void* func); // CdReadCallback
 extern int func_8005F570(CdLoc *pos); //CdPosToInt
 extern CdLoc *CdIntToPos(int intLba, CdLoc *pos);
 
-void func_8004FA24(void); // CDMusicUpdate
-void func_80050504(unsigned char arg0); // CDReadDone
-int func_800503F8(void); // CDLoadTime
-
 // sdata
 extern int speechLba; // 8006C3F4 - should be 90000
 extern int D_8006C674; // 8006C674 - moby speech index to play (entry in speech list)
 extern int language; // 8006C76C
 
-// bss
-extern CDState cdState; // 8006e470
-extern StreamingData streamingData; // 8006e48c
-
 ////////////////////////////////////////////////////////////////////////////////////
 
 /**
  * ???() - func_8004F8EC() - MATCHING
- * https://decomp.me/scratch/y8iwN
+ * https://decomp.me/scratch/9qGVs
  */
 void func_8004F8EC() {
-    int* temp_v0;
-    int* temp_v1;
-
     streamingData.dat_8006e48c = 0;
     streamingData.musicEnabled = 1;
     streamingData.dat_8006e490 = 0;
@@ -46,8 +35,6 @@ void func_8004F8EC() {
     
     streamingData.musicVolume = 0x5FFF;
     streamingData.speechVolume = 0x7FFF;
-    temp_v0 = &streamingData.musicVolume;
-    temp_v1 = &streamingData.speechVolume;
     streamingData.dat_8006e4b4 = 0;
     
     streamingData.dat_8006e4b8.unk0 = 0;
@@ -55,10 +42,10 @@ void func_8004F8EC() {
     streamingData.dat_8006e4e0.unk0 = 0;
     streamingData.speechData.unk0 = 0;
     
-    streamingData.dat_8006e4b8.volumePtr = temp_v0;
-    streamingData.musicData.volumePtr = temp_v0;
-    streamingData.dat_8006e4e0.volumePtr = temp_v1;
-    streamingData.speechData.volumePtr = temp_v1;
+    streamingData.dat_8006e4b8.volumePtr = &streamingData.musicVolume;
+    streamingData.musicData.volumePtr = &streamingData.musicVolume;
+    streamingData.dat_8006e4e0.volumePtr = &streamingData.speechVolume;
+    streamingData.speechData.volumePtr = &streamingData.speechVolume;
 }
 
 /**
@@ -94,18 +81,18 @@ void func_8004F9C0(int startLba, int endLba, int track) {
 }
 
 /**
- * ???() - func_8004FA24()
- * TODO
+ * CDMusicUpdate() - func_8004FA24()
+ * Might be matching?
+ * https://decomp.me/scratch/yE81A
  */
 INCLUDE_ASM("asm/nonmatchings/str", func_8004FA24);
 
 /**
  * CDLoadTime() - func_800503F8() - MATCHING
- * Equivalent to CDLoadTime in Spyro 1
  * https://decomp.me/scratch/jQNst
  */
-int func_800503F8(void) {
-    unsigned char modeFlags;
+int CDLoadTime() {
+    char modeFlags;
 
     if (streamingData.dat_8006e48c != 0) {
         streamingData.musicEnabled = 1;
@@ -125,12 +112,10 @@ int func_800503F8(void) {
         
         // Set the mode to double speed?
         func_8005E0BC(0xE, &modeFlags, 0);
-        func_8005DB08(&func_80050504);
+        func_8005DB08(&CDReadDone);
 
         // Wait for the CD subsystem to be ready after the reinitialization
-        while (func_8005E074(1, 0) != 2) {
-            ;
-        }
+        while (func_8005E074(1, 0) != 2);
 
         func_8005E0BC(2, (void *)&cdState.readLoc, 0);
 
@@ -147,10 +132,9 @@ int func_800503F8(void) {
 
 /**
  * CDReadDone() - func_80050504() - MATCHING
- * Equivalent to CDReadDone from Spyro 1
  * https://decomp.me/scratch/p8Iac
  */
-void func_80050504(unsigned char intr) {
+void CDReadDone(char intr) {
     if (cdState.isReading != 0) {
         if (intr == 2) {
             cdState.isReading = 0;
@@ -164,16 +148,14 @@ void func_80050504(unsigned char intr) {
 
 /**
  * CDLoadSync() - func_80050578() - MATCHING
- * Equivalent to CDLoadSync from Spyro 1
  * https://decomp.me/scratch/nBflt
  */
-void func_80050578(int sector, void *buf, int len, int sectorOffset) { 
+void CDLoadSync(int sector, void *buf, int len, int sectorOffset) { 
     unsigned char modeFlags;
 
     modeFlags = 0x80;
     
-    do { 
-    } while (func_800503F8()); 
+    while (CDLoadTime()); 
     
     // Set the mode to double speed? 
     func_8005E0BC(0xE, &modeFlags, 0);
@@ -190,21 +172,19 @@ void func_80050578(int sector, void *buf, int len, int sectorOffset) {
     // Start the read
     func_8005D96C(cdState.size, cdState.outBuf, 0x80);
     
-    do {
-    } while (func_800503F8()); 
+    while (CDLoadTime()); 
 }
 
 /**
  * CDLoadAsync() - func_80050680() - MATCHING
- * Equivalent to CDLoadAsync from Spyro 1
  * https://decomp.me/scratch/yt19k
  */
-int func_80050680(int sector, void *buf, int len, int sectorOffset) {
-    unsigned char modeFlags;
+int CDLoadAsync(int sector, void *buf, int len, int sectorOffset) {
+    char modeFlags;
 
     modeFlags = 0x80;
 
-    if (func_800503F8() == 0) {
+    if (CDLoadTime() == 0) {
         
         // Set the mode to double speed? 
         func_8005E0BC(0xE, &modeFlags, 0);
@@ -231,7 +211,7 @@ int func_80050680(int sector, void *buf, int len, int sectorOffset) {
  * FindMobyDialogue() - func_8005077C() - MATCHING
  * https://decomp.me/scratch/05p9Q
  */
-int func_8005077C(SpeechProps* tag) {
+int FindMobyDialogue(SpeechProps* tag) {
     int speechStart;
     int i;
     SpeechData* speechData;

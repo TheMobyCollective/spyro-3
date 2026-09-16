@@ -23,7 +23,7 @@ glabel func_atlas_80075C3C
 /* 962E1B4 80075C84 80DE428C */  lw         $v0, %lo(D_8006D8D8 + 0x5A8)($v0)
 /* 962E1B8 80075C88 00B80634 */  ori        $a2, $zero, 0xB800
 /* 962E1BC 80075C8C 1000BFAF */  sw         $ra, 0x10($sp)
-/* 962E1C0 80075C90 A041010C */  jal        func_80050680
+/* 962E1C0 80075C90 A041010C */  jal        CDLoadAsync
 /* 962E1C4 80075C94 21384700 */   addu      $a3, $v0, $a3
 /* 962E1C8 80075C98 1000BF8F */  lw         $ra, 0x10($sp)
 /* 962E1CC 80075C9C 1800BD27 */  addiu      $sp, $sp, 0x18

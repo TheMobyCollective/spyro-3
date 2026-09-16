@@ -116,7 +116,7 @@ glabel func_800512E4
 /* 41C98 80051498 1000508C */  lw         $s0, 0x10($v0)
 /* 41C9C 8005149C 07006010 */  beqz       $v1, .L800514BC
 /* 41CA0 800514A0 21280000 */   addu      $a1, $zero, $zero
-/* 41CA4 800514A4 DF41010C */  jal        func_8005077C
+/* 41CA4 800514A4 DF41010C */  jal        FindMobyDialogue
 /* 41CA8 800514A8 21202002 */   addu      $a0, $s1, $zero
 /* 41CAC 800514AC 03004010 */  beqz       $v0, .L800514BC
 /* 41CB0 800514B0 21280000 */   addu      $a1, $zero, $zero

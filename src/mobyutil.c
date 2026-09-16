@@ -4,6 +4,7 @@
 #include "stdutil.h"
 #include "ovl_header.h"
 #include "spyro.h"
+#include "str.h"
 
 // collision
 extern int func_8001A310(Vector3D*, int, int, Moby*);
@@ -11,9 +12,6 @@ extern int func_8001A358(Vector3D*, int);
 
 // spyro
 extern int func_80040954(int);
-
-// str
-extern int func_80050680(int, int*, int, int); // fLoadFromWad?(int sector,int *dest,undefined *len,undefined *sectorOffset)
 
 // updatemobys
 extern void func_80055B18(Moby*); // delete moby
@@ -45,7 +43,6 @@ extern int D_8006C770;
 
 // bss
 extern WadHeader wadHeader; // 8006d8d8
-extern CDState cdState; // 8006e470
 extern CollisionData D_80071900;
 extern LevelWadHeader levelWadHeader; // 80072098
 
@@ -616,7 +613,7 @@ void func_80039974(int dragonNo, int localOffset, int sizeLeft) {
     if (var_a2 == 0) {
         var_a2 = temp_a0->size - localOffset;
     }
-    func_80050680(cdState.wadSector, dragonModelPtr, var_a2, localOffset + (wadHeader.lvl[levelIndex].lvl.offset + temp_a0->offset));
+    CDLoadAsync(cdState.wadSector, dragonModelPtr, var_a2, localOffset + (wadHeader.lvl[levelIndex].lvl.offset + temp_a0->offset));
 }
 
 /**

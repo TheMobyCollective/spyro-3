@@ -63,7 +63,7 @@ glabel func_cutscene_64_800775E8
 /* BCCC00 800776D0 21082200 */  addu       $at, $at, $v0
 /* BCCC04 800776D4 18D9278C */  lw         $a3, %lo(D_8006D8D8 + 0x40)($at)
 /* BCCC08 800776D8 00F8C624 */  addiu      $a2, $a2, -0x800
-/* BCCC0C 800776DC 5E41010C */  jal        func_80050578
+/* BCCC0C 800776DC 5E41010C */  jal        CDLoadSync
 /* BCCC10 800776E0 0008E724 */   addiu     $a3, $a3, 0x800
 .Lcutscene_64_800776E4:
 /* BCCC14 800776E4 0000228E */  lw         $v0, 0x0($s1)

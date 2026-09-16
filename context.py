@@ -25,6 +25,7 @@ files = [
     'loaders.h',
     'spu.h',
     'spyro.h',
+    'str.h',
     'environment.h',
     'ovl_header.h',
     'moby/mobytag.h',

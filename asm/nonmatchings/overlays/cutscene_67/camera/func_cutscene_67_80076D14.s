@@ -111,7 +111,7 @@ glabel func_cutscene_67_80076D14
 /* 14EFBCC 80076E9C 00000000 */  nop
 /* 14EFBD0 80076EA0 10004104 */  bgez       $v0, .Lcutscene_67_80076EE4
 /* 14EFBD4 80076EA4 8888063C */   lui       $a2, (0x88888889 >> 16)
-/* 14EFBD8 80076EA8 FE40010C */  jal        func_800503F8
+/* 14EFBD8 80076EA8 FE40010C */  jal        CDLoadTime
 /* 14EFBDC 80076EAC 00000000 */   nop
 /* 14EFBE0 80076EB0 0C004014 */  bnez       $v0, .Lcutscene_67_80076EE4
 /* 14EFBE4 80076EB4 8888063C */   lui       $a2, (0x88888889 >> 16)
@@ -219,7 +219,7 @@ glabel func_cutscene_67_80076D14
 /* 14EFD74 80077044 21186600 */  addu       $v1, $v1, $a2
 /* 14EFD78 80077048 0400678C */  lw         $a3, 0x4($v1)
 /* 14EFD7C 8007704C 0400068D */  lw         $a2, 0x4($t0)
-/* 14EFD80 80077050 A041010C */  jal        func_80050680
+/* 14EFD80 80077050 A041010C */  jal        CDLoadAsync
 /* 14EFD84 80077054 21384700 */   addu      $a3, $v0, $a3
 .Lcutscene_67_80077058:
 /* 14EFD88 80077058 0780033C */  lui        $v1, %hi(D_8006EDE4)

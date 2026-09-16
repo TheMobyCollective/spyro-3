@@ -4,7 +4,7 @@
 glabel func_atlas_80079F1C
 /* 963244C 80079F1C E0FFBD27 */  addiu      $sp, $sp, -0x20
 /* 9632450 80079F20 1800BFAF */  sw         $ra, 0x18($sp)
-/* 9632454 80079F24 FE40010C */  jal        func_800503F8
+/* 9632454 80079F24 FE40010C */  jal        CDLoadTime
 /* 9632458 80079F28 00000000 */   nop
 /* 963245C 80079F2C 9A004014 */  bnez       $v0, .Latlas_8007A198
 /* 9632460 80079F30 00000000 */   nop

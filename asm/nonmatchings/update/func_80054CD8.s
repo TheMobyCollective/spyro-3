@@ -34,7 +34,7 @@ glabel func_80054CD8
 /* 4554C 80054D4C A8C620A4 */  sh         $zero, %lo(D_8006C6A8)($at)
 /* 45550 80054D50 0780013C */  lui        $at, %hi(D_8006C56C)
 /* 45554 80054D54 6CC520AC */  sw         $zero, %lo(D_8006C56C)($at)
-/* 45558 80054D58 5E41010C */  jal        func_80050578
+/* 45558 80054D58 5E41010C */  jal        CDLoadSync
 /* 4555C 80054D5C 00000000 */   nop
 /* 45560 80054D60 B7EF000C */  jal        func_8003BEDC
 /* 45564 80054D64 00000000 */   nop

@@ -8,14 +8,12 @@
 #include "pad.h"
 #include "spu.h"
 #include "stdutil.h"
+#include "str.h"
 #include "warp.h"
 #include "ovl_header.h"
 
 // spyroupdate
 extern void func_8003E83C(); // UpdateSpyro
-
-// str
-extern void func_8004FA24();
 
 // updatepause
 extern void func_80057834(); // pause updates
@@ -37,7 +35,6 @@ extern int D_8006C7C8;
 
 // bss
 extern Game game; // 8006E344 - game.state
-extern StreamingData streamingData; // 8006e470
 extern PauseData pauseData; // 8006fbc4
 
 ////////////////////////////////////////////////////////////////////////////////////

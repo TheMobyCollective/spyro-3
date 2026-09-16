@@ -29,7 +29,7 @@ glabel func_8002AB38
 /* 1B398 8002AB98 E0D8E78C */  lw         $a3, %lo(D_8006D8E0)($a3)
 /* 1B39C 8002AB9C 0780113C */  lui        $s1, %hi(func_title_80074DEC)
 /* 1B3A0 8002ABA0 EC4D3126 */  addiu      $s1, $s1, %lo(func_title_80074DEC)
-/* 1B3A4 8002ABA4 5E41010C */  jal        func_80050578
+/* 1B3A4 8002ABA4 5E41010C */  jal        CDLoadSync
 /* 1B3A8 8002ABA8 00000000 */   nop
 /* 1B3AC 8002ABAC 0000028E */  lw         $v0, 0x0($s0)
 /* 1B3B0 8002ABB0 0880103C */  lui        $s0, %hi(title_text_end)

@@ -1,6 +1,7 @@
 #include "common.h"
 #include "stdutil.h"
 #include "pad.h"
+#include "str.h"
 
 // psyq
 extern void VSync(int); // VSync
@@ -13,9 +14,6 @@ extern int D_8006C644;
 extern int isDemoMode; // 8006C658 - note that isDemoMode should not be volatile in here
 extern char D_8006C760;
 extern int D_8006C7CC;
-
-// bss
-extern CDState cdState; // 8006e470
 
 // TODO - hardware types (e.g. 0x53 is The Contraption)
 

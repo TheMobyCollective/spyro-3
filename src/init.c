@@ -2,10 +2,7 @@
 #include "init.h"
 #include "spu.h"
 #include "stdutil.h"
-
-// str
-extern void func_80050578(int sector, int* dest, int len, int sectorOffset); // LoadFromDisc
-extern void func_80050504(char param_1);
+#include "str.h"
 
 // psyq
 extern int func_8005DB08(void* param_1);
@@ -19,7 +16,6 @@ extern void func_8005955C(int); // SetGeomScreen
 extern int* overlayStartPtr; // 80011254
 
 // bss
-extern CDState cdState; // 8006e470
 extern WadHeader wadHeader;
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -42,9 +38,9 @@ void InitCdAndWad() {
     sp10[0] = 0x80;
     func_8005DB1C();
     func_8005E0BC(0xE, &sp10[0], 0);
-    func_8005DB08(&func_80050504);
+    func_8005DB08(&CDReadDone);
     cdState.wadSector = 0x1F4;
-    func_80050578(0x1F4, overlayStartPtr, 0x800, 0);
+    CDLoadSync(0x1F4, overlayStartPtr, 0x800, 0);
     func_8004E7D4((int*)&wadHeader, overlayStartPtr, 0x620);
 }
 
