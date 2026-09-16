@@ -569,7 +569,7 @@ dlabel D_8006E414
 dlabel D_8006E450
 /* 8006E450 */ .space 0x20
 
-dlabel streamingData
+dlabel cdState
 dlabel D_8006E470
 /* 8006E470 */ .space 0x04
 
@@ -591,6 +591,7 @@ dlabel D_8006E484
 dlabel D_8006E488
 /* 8006E488 */ .space 0x04
 
+dlabel streamingData
 dlabel D_8006E48C
 /* 8006E48C */ .space 0x04
 

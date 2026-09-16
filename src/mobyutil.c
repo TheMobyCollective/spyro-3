@@ -45,7 +45,7 @@ extern int D_8006C770;
 
 // bss
 extern WadHeader wadHeader; // 8006d8d8
-extern StreamingData streamingData; // 8006e470
+extern CDState cdState; // 8006e470
 extern CollisionData D_80071900;
 extern LevelWadHeader levelWadHeader; // 80072098
 
@@ -616,7 +616,7 @@ void func_80039974(int dragonNo, int localOffset, int sizeLeft) {
     if (var_a2 == 0) {
         var_a2 = temp_a0->size - localOffset;
     }
-    func_80050680(streamingData.wadSector, dragonModelPtr, var_a2, localOffset + (wadHeader.lvl[levelIndex].lvl.offset + temp_a0->offset));
+    func_80050680(cdState.wadSector, dragonModelPtr, var_a2, localOffset + (wadHeader.lvl[levelIndex].lvl.offset + temp_a0->offset));
 }
 
 /**

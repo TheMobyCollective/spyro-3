@@ -15,7 +15,7 @@ extern char D_8006C760;
 extern int D_8006C7CC;
 
 // bss
-extern StreamingData streamingData; // 8006e470
+extern CDState cdState; // 8006e470
 
 // TODO - hardware types (e.g. 0x53 is The Contraption)
 
@@ -163,7 +163,7 @@ void func_8003A40C() {
     int var_a1;
     int x;
 
-    streamingData.dat_8006e484++; // music frames?
+    cdState.readTime++; 
     x = isDemoMode; // need this to match, or otherwise to make isDemoMode volatile
     if (x == 0) {
         

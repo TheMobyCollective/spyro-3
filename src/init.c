@@ -19,7 +19,7 @@ extern void func_8005955C(int); // SetGeomScreen
 extern int* overlayStartPtr; // 80011254
 
 // bss
-extern StreamingData streamingData;
+extern CDState cdState; // 8006e470
 extern WadHeader wadHeader;
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -43,7 +43,7 @@ void InitCdAndWad() {
     func_8005DB1C();
     func_8005E0BC(0xE, &sp10[0], 0);
     func_8005DB08(&func_80050504);
-    streamingData.wadSector = 0x1F4;
+    cdState.wadSector = 0x1F4;
     func_80050578(0x1F4, overlayStartPtr, 0x800, 0);
     func_8004E7D4((int*)&wadHeader, overlayStartPtr, 0x620);
 }
