@@ -337,7 +337,8 @@ void NAME_OVERLAY_FUNCTION(PlaySpyroSounds) (void) {
 // Function 6 (update / change Spyro state?)
 
 // 10 https://decomp.me/scratch/Ck2ls
-// 11 - 50 TODO
+// 11 https://decomp.me/scratch/zQdLQ WIP - one bit where the stack usage isn't the same
+// 12 - 50 TODO
 // Cutscenes appear empty so are done by default
 
 // Not an easy match, lots of if statements, but theoretically possible
@@ -352,6 +353,97 @@ ANIMATION_STATE_SWIM_TURN_UNDERWATER
 ANIMATION_STATE_SWIM_CHARGE_UNDERWATER
 ANIMATION_STATE_SWIM_MOVE_SURFACE
 ANIMATION_STATE_SWIM_STAY_SURFACE
+*/
+
+/*
+States appearing for the first time in each level:
+
+New in level 10
+    Whirlwind
+    Superfly
+    SuperflyRaiseHeight
+    UNKNOWN_23 // superfly dive
+    SwimUnderwater
+    SwimTurnUnderwater
+    SwimChargeUnderwater
+    SwimMoveSurface
+    SwimStaySurface
+
+New in level 11
+    IdleLookAround
+    FallOffSkateboard
+    Squash
+    DeathSquash
+    Skateboard
+    SkateboardVerticalJump
+    SkateboardHorizontalJump
+    Sheila 0x41 - 0x46
+    Sheila 0x49
+    Sheila 0x47 - 0x48
+    Sheila 0x4a - 0x4d
+
+New in level 12
+    Shocked
+    LavaHop
+    UNKNOWN_26 // manta ray / idle lick
+    Slide
+    DeathBurn
+
+New in level 13
+    SuperchargeJump
+    UNKNOWN_1D // knockback flip
+    Supercharge
+    Byrd 0x64 - 0x69
+    Byrd 0x6c
+    Byrd 0x6a - 0x6b
+    Byrd 0x6d
+
+New in level 14
+    UNKNOWN_1B
+    UNKNOWN_39 // hurt underwater
+    UNKNOWN_3C // vehicle
+    Sheila 0x4e - 0x4f // some sheila states that were not included in 11! suggests "SHEILA_STATES" may not be enough
+
+New in level 15
+    UNKNOWN_37 // speedway crash
+    Hunter plane 0xaf - 0xb0
+
+New in level 18
+    Sparx 0x98 - 0x99
+
+New in level 20
+    IceStand
+    IceSkate
+    IceSkid
+    LadderHold
+    LadderClimb
+    UNKNOWN_33 // ladder right
+    UNKNOWN_34 // ladder left
+    UNKNOWN_35
+    UNKNOWN_36 // spit
+
+New in level 24
+    Bentley 0x55 - 0x61
+
+New in level 30
+    Agent 9 0x73 - 0x7c
+    Agent 9 0x7e
+    Agent 9 0x80 - 0x84
+
+New in level 31
+    Bentley boxing 0x87 - 0x92 // 0x93 is win, which I guess doesn't need an update function
+
+New in level 32
+    Sink
+    Sub 0x96 - 0x97
+
+New in level 35
+    Hunter boat 0xa5 - 0xab
+
+New in level 45
+    Hunter fly 0xa0 - 0xa3
+
+17/22/23 etc. only have sink as a new one, but probably not worth doing alone
 */
 
 #endif
