@@ -23,12 +23,6 @@ extern int speechLba; // 8006C3F4 - should be 90000
 extern int D_8006C674; // 8006C674 - moby speech index to play (entry in speech list)
 extern int language; // 8006C76C
 
-// Globals referenced by func_8004FA24
-extern int *D_8006E504; // matches - 4 bytes
-extern int *D_8006E4DC; // matches - 4 bytes
-extern int *D_8006E4C8; // matches - 4 bytes
-extern int D_8006E4C0; // matches - 8-byte BSS object; only low 32 bits observed here
-
 ////////////////////////////////////////////////////////////////////////////////////
 
 /**
@@ -93,13 +87,13 @@ void func_8004F9C0(int startLba, int endLba, int track) {
  * CDMusicUpdate() - func_8004FA24() - MATCHING
  * https://decomp.me/scratch/yE81A
  */
-void func_8004FA24(void) {    
+void func_8004FA24() {    
     int cdSyncResult;
     int cdStatus;
     
     CdMusic cdMusic;
 
-    XaAudioData *currentAudio = nullptr;
+    XaAudioData *currentAudio = 0;
 
     int *currentVolumePtr;
     int *cdCommandStatePtr;
@@ -136,58 +130,47 @@ void func_8004FA24(void) {
         break;    
     }    
     
-    if (streamingData.musicEnabled == 0) {
-        if (streamingData.dat_8006e4a0 != 0 &&
-            streamingData.dat_8006e48c == 8) {
-            streamingData.dat_8006e48c = 6;
-            streamingData.dat_8006e4a0 = 0;
-        }
+    if (streamingData.musicEnabled == 0 &&
+        streamingData.dat_8006e4a0 != 0 &&
+        streamingData.dat_8006e48c == 8) {
+        streamingData.dat_8006e48c = 6;
+        streamingData.dat_8006e4a0 = 0;
     }
 
-    if (streamingData.musicEnabled != 0) {
-        if (currentAudio != nullptr &&
-            streamingData.dat_8006e4a0 == 0) {
-            streamingData.dat_8006e48c = 8;
-            streamingData.dat_8006e4a0 = 1;
-            goto block_1fc;
-        }
+    if (streamingData.musicEnabled != 0 &&
+        currentAudio != 0 &&
+        streamingData.dat_8006e4a0 == 0) {
+        streamingData.dat_8006e48c = 8;
+        streamingData.dat_8006e4a0 = 1;
     }
-
-    if (streamingData.musicEnabled != 0) {
-        if (currentAudio == nullptr &&
-            streamingData.dat_8006e4a0 == 0 &&
-            streamingData.dat_8006e48c != 0) {
-            streamingData.dat_8006e4b4 = 0;
-            streamingData.dat_8006e48c = 9;
-        }
+    else if (streamingData.musicEnabled != 0 &&
+        currentAudio == 0 &&
+        streamingData.dat_8006e4a0 == 0 &&
+        streamingData.dat_8006e48c != 0) {
+        streamingData.dat_8006e4b4 = 0;
+        streamingData.dat_8006e48c = 9;
     }
     
-/* Shared CD status/error handling path. */
-block_1fc:
+    /* CD status/error handling */
     if (cdStatus & 0x10) {
         if (streamingData.dat_8006e48c == 8) {
             streamingData.dat_8006e494 = 0;
             streamingData.dat_8006e4b4 = 0;
-            goto block_258;
         } else if (streamingData.dat_8006e48c != 0 &&
                    streamingData.dat_8006e48c != 9) {
             streamingData.dat_8006e494 = 0;
             streamingData.dat_8006e48c = 1;
         }
-
-block_258:
         streamingData.dat_8006e490 = 1;
-        func_8005E1F8(1, nullptr);
+        func_8005E1F8(1, 0);
         return;
     }
     
     if (cdStatus & 0x4) {
         streamingData.dat_8006e494 = 0;
         streamingData.dat_8006e48c = 1;
-        goto block_2f4;
     }
-
-    if ((cdStatus & 0x1) != 0 || cdSyncResult == 5) {
+    else if ((cdStatus & 0x1) != 0 || cdSyncResult == 5) {
         if (streamingData.dat_8006e48c == 8) {
             streamingData.dat_8006e494 = 0;
             streamingData.dat_8006e4b4 = 0;
@@ -197,28 +180,27 @@ block_258:
             streamingData.dat_8006e48c = 1;
         }
 
-        func_8005E1F8(1, nullptr);
+        func_8005E1F8(1, 0);
         return;
     }
 
-/* Handle the active CD/music command state. */
-block_2f4:
+    /* Handle the active CD/music command state. */
     cdCommandStatePtr = &streamingData.dat_8006e490;
     if (*cdCommandStatePtr == 1) {
         if (cdStatus & 0x2) {
 
             if (func_8005E038() == 2) {
-                func_8005E1F8(0x1B, nullptr);
+                func_8005E1F8(0x1B, 0);
                 return;
             }
 
             if (cdStatus & 0x40) {
                 *cdCommandStatePtr = 0;
-                func_8005E1F8(1, nullptr);
+                func_8005E1F8(1, 0);
                 return;
             }
 
-            if (currentAudio != nullptr)
+            if (currentAudio != 0)
                 CdIntToPos(currentAudio->startLba, &cdMusic.cdPos);
             else
                 CdIntToPos(0x3E8, &cdMusic.cdPos);
@@ -227,29 +209,27 @@ block_2f4:
             return;
         }
 
-        func_8005E1F8(9, nullptr);
+        func_8005E1F8(9, 0);
         return;
     }
 
     
     /* State machine is only entered for cdSyncResult == 2. */
-    if (cdSyncResult != 2)
-        return;
+    if (cdSyncResult != 2) return;
 
     switch (streamingData.dat_8006e48c) {
     case 9:
         /* Stop/release current music before selecting next stream. */
         if (streamingData.musicEnabled != 0 &&
             (cdStatus & 0x20)) {
-            func_8005E1F8(9, nullptr);           
+            func_8005E1F8(9, 0);           
         } else {
             streamingData.dat_8006e48c = 0;
         }
         /* falls through to state 0 */
     case 0:
         /*  Select pending speech/music stream. */
-        if (streamingData.musicEnabled != 0)
-            return;
+        if (streamingData.musicEnabled != 0) break;
 
         else if (streamingData.speechData.unk0 != 0) {
             streamingData.dat_8006e4e0 = streamingData.speechData;
@@ -260,17 +240,18 @@ block_2f4:
         else if (streamingData.musicData.unk0 != 0) {
             streamingData.dat_8006e4b8 = streamingData.musicData;
             streamingData.musicData.unk0 = 0;
-            goto block_4d0;
+            /* Activate the pending music stream. */
+            streamingData.dat_8006e4b4 = 1;
+            streamingData.dat_8006e48c = 1;
         }
         else if (streamingData.dat_8006e4b8.unk0 != 0) {
-block_4d0: 
-         /* Shared path: activate the pending music stream. */
+            /* Activate the pending music stream. */
             streamingData.dat_8006e4b4 = 1;
             streamingData.dat_8006e48c = 1;
         }
 
-        func_8005E1F8(1, nullptr);
-        return;
+        func_8005E1F8(1, 0);
+        break;
 
     case 1:
         /* Set up command 0x0E and initialise volume. */
@@ -306,7 +287,7 @@ block_4d0:
 
     case 4:
         /* Start XA playback. */
-        func_8005E1F8(0x1B, nullptr);
+        func_8005E1F8(0x1B, 0);
 
         streamingData.dat_8006e4a4 = 300;
         streamingData.dat_8006e48c = 5;
@@ -320,7 +301,8 @@ block_4d0:
             streamingData.dat_8006e494 = 0;
             streamingData.dat_8006e48c = 6;
 
-        } else {
+        }
+        else {
             streamingData.dat_8006e4a4--;
 
             if (streamingData.dat_8006e4a4 < 0) {
@@ -329,7 +311,7 @@ block_4d0:
             }
         }
 
-        func_8005E1F8(1, nullptr);
+        func_8005E1F8(1, 0);
         break;
 
     case 6:
@@ -353,7 +335,7 @@ block_4d0:
             func_8005E630(&cdMusic.attr);
         }
 
-        func_8005E1F8(0x11, nullptr);
+        func_8005E1F8(0x11, 0);
         break;
 
     case 7:
@@ -384,12 +366,12 @@ block_4d0:
             }
         }
 
-        func_8005E1F8(0x11, nullptr);
+        func_8005E1F8(0x11, 0);
         break;
 
     case 8:
         /* Fade current XA stream volume down and select next stream at zero. */
-        if (currentAudio != nullptr) {
+        if (currentAudio != 0) {
             int volume = *currentAudio->volumePtr;
             /* Preserve the local pointer alias used by the original compiler. */
             currentVolumePtr = &streamingData.dat_8006e494;
@@ -402,53 +384,46 @@ block_4d0:
             streamingData.dat_8006e494 = 0;
         }
 
-        if (streamingData.dat_8006e494 > 0)
-            goto applyVolume;
+        if (streamingData.dat_8006e494 <= 0) {
 
-        streamingData.dat_8006e494 = 0;
-
-        if (streamingData.musicEnabled != 0) {
-            streamingData.dat_8006e4b4 = 0;
-            streamingData.dat_8006e48c = 9;
-            streamingData.dat_8006e4a0 = 0;
-            goto applyVolume;
-        }
-
-        if (streamingData.speechData.unk0 != 0 &&
-            *D_8006E504 > 0) {
-            streamingData.dat_8006e4e0 = streamingData.speechData;
-            streamingData.dat_8006e4b4 = 2;
-            streamingData.speechData.unk0 = 0;
-            streamingData.dat_8006e48c = 1;
-            goto applyVolume;
-        }
-
-        if (streamingData.musicData.unk0 != 0 &&
-            *D_8006E4DC > 0) {
-            streamingData.dat_8006e4b8 = streamingData.musicData;
-            streamingData.musicData.unk0 = 0;
-            streamingData.dat_8006e4b4 = 1;            
-            streamingData.dat_8006e48c = 1;
-            goto applyVolume;
-        }
-        
-        if (streamingData.dat_8006e4b8.unk0 != 0 &&
-            *D_8006E4C8 > 0 ) {
-            if (streamingData.dat_8006e4b8.startLba <
-                    streamingData.dat_8006e4b8.unk0 || 
-                streamingData.dat_8006e4b8.startLba >
-                    D_8006E4C0 - 0x4C) {
-                streamingData.dat_8006e4b8.startLba =
-                    streamingData.dat_8006e4b8.unk0;
+            streamingData.dat_8006e494 = 0;
+            if (streamingData.musicEnabled != 0) {
+                streamingData.dat_8006e4b4 = 0;
+                streamingData.dat_8006e48c = 9;
+                streamingData.dat_8006e4a0 = 0;
             }
-            streamingData.dat_8006e4b4 = 1;
-            streamingData.dat_8006e48c = 1;            
-        } else {
-            streamingData.dat_8006e4b4 = 0;            
-            streamingData.dat_8006e48c = 9;
-        }   
-/* Apply the updated volume and return to the caller. */
-applyVolume:
+            else if (streamingData.speechData.unk0 != 0 &&
+                *streamingData.speechData.volumePtr > 0) {
+                streamingData.dat_8006e4e0 = streamingData.speechData;
+                streamingData.dat_8006e4b4 = 2;
+                streamingData.speechData.unk0 = 0;
+                streamingData.dat_8006e48c = 1;
+            }
+            else if (streamingData.musicData.unk0 != 0 &&
+                *streamingData.musicData.volumePtr > 0) {
+                streamingData.dat_8006e4b8 = streamingData.musicData;
+                streamingData.musicData.unk0 = 0;
+                streamingData.dat_8006e4b4 = 1;            
+                streamingData.dat_8006e48c = 1;
+            }
+            else if (streamingData.dat_8006e4b8.unk0 != 0 &&
+                *streamingData.dat_8006e4b8.volumePtr > 0 ) {
+                if (streamingData.dat_8006e4b8.startLba <
+                        streamingData.dat_8006e4b8.unk0 || 
+                    streamingData.dat_8006e4b8.startLba >
+                        streamingData.dat_8006e4b8.endLba - 0x4C) {
+                    streamingData.dat_8006e4b8.startLba =
+                        streamingData.dat_8006e4b8.unk0;
+                }
+                streamingData.dat_8006e4b4 = 1;
+                streamingData.dat_8006e48c = 1;            
+            }
+            else {
+                streamingData.dat_8006e4b4 = 0;            
+                streamingData.dat_8006e48c = 9;
+            }
+        }
+        /* Apply the updated volume */
         {           
             unsigned short volume;
             volume = streamingData.dat_8006e494;
@@ -456,7 +431,6 @@ applyVolume:
             cdMusic.attr.cd.volume.right = volume;
             cdMusic.attr.cd.volume.left = volume;
             func_8005E630(&cdMusic.attr);         
-            break;    
         }
     }
 }

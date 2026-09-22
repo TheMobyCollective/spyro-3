@@ -30,8 +30,6 @@ typedef struct {
 #define SPU_COMMON_CDVOLR (1 << 7)
 /* End of minimal libspu subset. */
 
-#define nullptr ((void *)0)
-
 // Similar in purpose to CdMusic in Spyro 1; layout is different.
 typedef struct {
     unsigned char commandParam[8];   // 0x10 ControlF parameter
