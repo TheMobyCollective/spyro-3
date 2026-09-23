@@ -24,7 +24,7 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8003FD58);
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800408B8);
 
 /**
- * ???() - func_80040954()
+ * ???() - func_80040954() - MATCHING
  * Roughly equivalent to func_80057380 from spyro-1
  * Checks if the surface is a special surface, and returns its type
  * D_8006D048 struct updated
@@ -319,6 +319,7 @@ void PlaySpyroSounds() {
 /**
  * AlignSpyroRotation() - func_8004BDF0() - MATCHING
  * Exe version of the align Spyro rotation function from overlay
+ * Maybe UpdateSpyroRotation would be preferable
  * https://decomp.me/scratch/wthTK
  */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004BDF0);
@@ -326,6 +327,8 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004BDF0);
 /**
  * UpdateMovementState() - func_8004BEF8() - MATCHING
  * Ready to add, but there's some oddities in here
+ * Maybe UpdateSpyroState, also needs a bit of cleanup, and notably needs the movement physics union
+ * Takes desired animation state as an input so maybe even SetSpyroAnimationState?
  * https://decomp.me/scratch/RSA1r
  */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004BEF8);
