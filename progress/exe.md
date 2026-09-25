@@ -306,7 +306,7 @@
 - [x] func_8004F8EC
 - [x] func_8004F984
 - [x] func_8004F9C0
-- [ ] func_8004FA24
+- [x] func_8004FA24
 - [x] func_800503F8
 - [x] func_80050504
 - [x] func_80050578
