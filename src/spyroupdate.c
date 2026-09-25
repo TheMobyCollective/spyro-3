@@ -5,12 +5,16 @@
 #include "stdutil.h"
 #include "spyro.h"
 
+extern int func_80019138(Vector3D*, int, int, int, int, int);
+extern void func_8001BA30(Vector3D*, int, int, int, int, Moby*);
+
 extern int D_8006C58C; // level index    
 extern char D_80067968[40][4]; // WalkingSoundIdPerSurface... maybe a struct array?
 extern int D_8006C648; // deltaTime
 extern short g_Sin[0x100];
 extern short g_Cos[0x100];
 extern Unk_8006d048 D_8006D048;
+extern CollisionData D_80071900;
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -66,7 +70,20 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80041580);
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800416F4);
 
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800417FC);
+/**
+ * ???() - func_800417FC() - MATCHING
+ * https://decomp.me/scratch/AVQkF
+ */
+void func_800417FC(int arg0, int arg1) {
+    if (g_Spyro.horizontalSpeed > g_Spyro.unk8[0]) {
+        g_Spyro.unk8[0] += arg0;
+        MAX(g_Spyro.unk8[0], g_Spyro.horizontalSpeed);
+    }
+    else {
+        g_Spyro.unk8[0] -= arg1;
+        MIN(g_Spyro.unk8[0], g_Spyro.horizontalSpeed);
+    }
+}
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80041848);
 
@@ -124,7 +141,13 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80043F3C);
  * ???() - func_800441F0() - MATCHING
  * https://decomp.me/scratch/31veX
  */
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800441F0);
+void func_800441F0() {
+    func_8004F168(&g_Spyro.unk7a[3]);
+    func_8004F168(&g_Spyro.unk7a[1]);
+    func_8004F168(&g_Spyro.unk7a[2]);
+    g_Spyro.horizontalSpeed = 0;
+    g_Spyro.unk8[0] = 0;
+}
 
 /**
  * ???() - func_80044240() - MATCHING
@@ -234,7 +257,19 @@ void func_80049484(Vector3D* arg0) {
     func_80049ACC(0xC1, arg0);
 }
 
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800494A8);
+/**
+ * ???() - func_800494A8() - MATCHING
+ * https://decomp.me/scratch/URYjq
+ */
+void func_800494A8() {
+    Vector3D v;
+    func_8004F178(&v, &g_Spyro.position);
+    v.z -= g_Spyro.unk4a;
+    func_8001BA30(&v, 0x80, 1, 0, 0x80000, g_Spyro.critterMobyPtr);
+    if ((func_80019138(&v, 0x80, 1, 0, 0x80000, 0) != 0) && (func_80040954(D_80071900.D_80071924) == 3)) {
+        D_8006D048.m_SurfaceData[D_80071900.D_80071924 & 0x3F]->unk4 |= 0x80000;
+    }
+}
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80049590);
 

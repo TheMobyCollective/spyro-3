@@ -30,7 +30,7 @@ extern void func_8004EF04(Vector3D*, int);
 // ScaleVectorRational	8004f08c
 // ScaleUpVectorExp	8004f0e8
 // ScaleDownVectorExp	8004f110
-// fZeroVector	8004f168
+extern void func_8004F168(Vector3D*); // fZeroVector
 extern void func_8004F178(Vector3D*, Vector3D*); // fSetVector
 extern void func_8004F194(Vector3D*, Vector3D*, Vector3D*); // fAddVector
 // fSubVector	8004f1c8

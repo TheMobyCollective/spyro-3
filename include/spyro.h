@@ -372,6 +372,7 @@ extern Spyro spyro;
 extern Spyro g_Spyro; // preferred label
 
 
+int func_80040954(int);
 void func_80049ACC(int, Vector3D*);
 
 
