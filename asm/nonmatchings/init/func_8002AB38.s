@@ -8,7 +8,7 @@ glabel func_8002AB38
 /* 1B344 8002AB44 3400B1AF */  sw         $s1, 0x34($sp)
 /* 1B348 8002AB48 A171010C */  jal        ResetCallback
 /* 1B34C 8002AB4C 3000B0AF */   sw        $s0, 0x30($sp)
-/* 1B350 8002AB50 0DAA000C */  jal        func_8002A834
+/* 1B350 8002AB50 0DAA000C */  jal        SetupDrawDispEnvs
 /* 1B354 8002AB54 00000000 */   nop
 /* 1B358 8002AB58 E5A9000C */  jal        InitSpu
 /* 1B35C 8002AB5C 00000000 */   nop
@@ -101,9 +101,9 @@ glabel func_8002AB38
 /* 1B49C 8002AC9C 00000000 */   nop
 /* 1B4A0 8002ACA0 1F004230 */  andi       $v0, $v0, 0x1F
 /* 1B4A4 8002ACA4 80100200 */  sll        $v0, $v0, 2
-/* 1B4A8 8002ACA8 0380013C */  lui        $at, %hi(func_8002A834)
+/* 1B4A8 8002ACA8 0380013C */  lui        $at, %hi(SetupDrawDispEnvs)
 /* 1B4AC 8002ACAC 21082200 */  addu       $at, $at, $v0
-/* 1B4B0 8002ACB0 34A820AC */  sw         $zero, %lo(func_8002A834)($at)
+/* 1B4B0 8002ACB0 34A820AC */  sw         $zero, %lo(SetupDrawDispEnvs)($at)
 .L8002ACB4:
 /* 1B4B4 8002ACB4 7BD3010C */  jal        func_title_80074DEC
 /* 1B4B8 8002ACB8 01000424 */   addiu     $a0, $zero, 0x1

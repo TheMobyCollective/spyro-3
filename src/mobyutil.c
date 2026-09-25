@@ -288,7 +288,7 @@ int func_80036018(int arg0, int arg1, int arg2) {
     int diff;
     int absDiff;
 
-    diff = func_8003613C(arg0, arg1); // arg1 - arg0
+    diff = SubAngle8(arg0, arg1); // arg1 - arg0
     absDiff = ABS(diff); // |arg1 - arg0|
     if (arg2 < absDiff) {
         if (diff < 0) return func_8003617C(arg1, arg2);  // if arg1 < arg0,  return arg1 + arg2
@@ -299,50 +299,47 @@ int func_80036018(int arg0, int arg1, int arg2) {
 
 /**
  * ???() - func_800360A0() - MATCHING
- * Does some simple but very specific arithmetic, types took a while to get exactly right
  * https://decomp.me/scratch/J8wdV
  */
-int func_800360A0(int arg0, int arg1, unsigned char arg2) {
-    return func_8003617C(arg1, (func_8003613C(arg1, arg0) * arg2) >> 8); // y + ((x - y) * z) / 256
+int func_800360A0(int arg0, int arg1, char arg2) {
+    return func_8003617C(arg1, (SubAngle8(arg1, arg0) * arg2) >> 8); // y + ((x - y) * z) / 256
 }
 
 /**
  * ???() - func_800360F8 - MATCHING
- * Mixes some functions
  * https://decomp.me/scratch/aUHyS
  */
-int func_800360F8(int arg0, int arg1, int arg2, unsigned char arg3) {
+int func_800360F8(int arg0, int arg1, int arg2, char arg3) {
     return func_800360A0(func_80036018(arg0, arg1, arg2), arg1, arg3);
 }
 
 /**
- * ???() - func_8003613C - MATCHING
- * Signed difference mod 0x80
+ * SubAngle8() - func_8003613C - MATCHING
  * https://decomp.me/scratch/bt3wL
  */
-int func_8003613C(int arg0, int arg1) {
-    int var_a0;
+int SubAngle8(int in0, int in1) {
+    int out;
 
-    var_a0 = (arg1 - arg0) & 0xFF;
-    if (var_a0 >= 0x81) {
-        var_a0 -= 0x100;
+    out = (in1 - in0) & 0xFF;
+    if (out > 0x80) {
+        out -= 0x100;
     }
-    return var_a0;
+    return out;
 }
 
 /**
- * ???() - func_8003615C - MATCHING
- * Signed difference mod 0x800
+ * SubAngle12() - func_8003615C - MATCHING
+ * i.e. 12 bit angle, not 12 byte 3D angle
  * https://decomp.me/scratch/jXP9Z
  */
-int func_8003615C(int arg0, int arg1) {
-    int var_a0;
+int SubAngle12(int in0, int in1) {
+    int out;
 
-    var_a0 = (arg1 - arg0) & 0xFFF;
-    if (var_a0 >= 0x801) {
-        var_a0 -= 0x1000;
+    out = (in1 - in0) & 0xFFF;
+    if (out > 0x800) {
+        out -= 0x1000;
     }
-    return var_a0;
+    return out;
 }
 
 /**

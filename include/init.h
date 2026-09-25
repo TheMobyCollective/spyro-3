@@ -3,7 +3,7 @@
 
 void InitSpu();
 void InitCdAndWad();
-void func_8002A834(); // SetupDrawDispEnvs
+void SetupDrawDispEnvs(); // SetupDrawDispEnvs
 void func_8002A99C(); // InitGeom? This label used in psyq so probably don't wanna call it this
 void func_8002A9D0();
 void func_8002AA34();

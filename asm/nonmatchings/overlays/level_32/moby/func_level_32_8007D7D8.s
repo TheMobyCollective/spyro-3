@@ -2440,7 +2440,7 @@ glabel func_level_32_8007D7D8
 /* 6DE6ED8 8007F9A8 18004014 */  bnez       $v0, .Llevel_32_8007FA0C
 /* 6DE6EDC 8007F9AC F4FF4324 */   addiu     $v1, $v0, -0xC
 /* 6DE6EE0 8007F9B0 4400C492 */  lbu        $a0, 0x44($s6)
-/* 6DE6EE4 8007F9B4 4FD8000C */  jal        func_8003613C
+/* 6DE6EE4 8007F9B4 4FD8000C */  jal        SubAngle8
 /* 6DE6EE8 8007F9B8 21280000 */   addu      $a1, $zero, $zero
 /* 6DE6EEC 8007F9BC 21184000 */  addu       $v1, $v0, $zero
 /* 6DE6EF0 8007F9C0 02006104 */  bgez       $v1, .Llevel_32_8007F9CC

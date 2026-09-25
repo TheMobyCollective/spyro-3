@@ -86,11 +86,11 @@ glabel func_level_50_80094D58
 /* 95E93C4 80094E94 23284500 */   subu      $a1, $v0, $a1
 /* 95E93C8 80094E98 21280002 */  addu       $a1, $s0, $zero
 /* 95E93CC 80094E9C 02002486 */  lh         $a0, 0x2($s1)
-/* 95E93D0 80094EA0 57D8000C */  jal        func_8003615C
+/* 95E93D0 80094EA0 57D8000C */  jal        SubAngle12
 /* 95E93D4 80094EA4 21804000 */   addu      $s0, $v0, $zero
 /* 95E93D8 80094EA8 21904000 */  addu       $s2, $v0, $zero
 /* 95E93DC 80094EAC 00002486 */  lh         $a0, 0x0($s1)
-/* 95E93E0 80094EB0 57D8000C */  jal        func_8003615C
+/* 95E93E0 80094EB0 57D8000C */  jal        SubAngle12
 /* 95E93E4 80094EB4 21280002 */   addu      $a1, $s0, $zero
 /* 95E93E8 80094EB8 0E002386 */  lh         $v1, 0xE($s1)
 /* 95E93EC 80094EBC 00000000 */  nop

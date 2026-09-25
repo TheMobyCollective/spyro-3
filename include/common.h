@@ -356,7 +356,7 @@ typedef struct {
 } StreamingData;
 
 
-/*** Pause? ***/
+/*** Pause ***/
 
 typedef struct {
 	int frameCount; // 8006fbc4
@@ -377,6 +377,9 @@ typedef struct {
 	int* dat_8006fbf8; // 8006fbf8, some kind of pointer seems to be used in Atlas
 } PauseData; // 8006fbc4; may need renaming
 
+
+/*** Display ***/
+
 typedef struct {
 	// Probably in a different struct, to get struct usage to match properly
 	DRAWENV dat_8006fbfc; // 8006fbfc
@@ -385,7 +388,7 @@ typedef struct {
 	DRAWENV dat_8006fc70; // 8006fc70
 	DISPENV dat_8006fccc; // 8006fccc
 	int dat_8006fce0; // 8006fce0 // a ptr used in some memcpys / loading, so perhaps unrelated?
-} PauseData2; // temporary name, because this is clearly not a pause thing - it's a display thing
+} DrawDispEnvs; // at one point had this labelled as PauseData2, in case that's still in some scratches
 
 
 /*** Speedways ***/

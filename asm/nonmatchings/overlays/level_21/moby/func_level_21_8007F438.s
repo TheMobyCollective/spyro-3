@@ -341,7 +341,7 @@ glabel func_level_21_8007F438
 /* 53FBE38 8007F908 C0FF3026 */  addiu      $s0, $s1, -0x40
 .Llevel_21_8007F90C:
 /* 53FBE3C 8007F90C 01004492 */  lbu        $a0, 0x1($s2)
-/* 53FBE40 8007F910 4FD8000C */  jal        func_8003613C
+/* 53FBE40 8007F910 4FD8000C */  jal        SubAngle8
 /* 53FBE44 8007F914 FF000532 */   andi      $a1, $s0, 0xFF
 /* 53FBE48 8007F918 01004392 */  lbu        $v1, 0x1($s2)
 /* 53FBE4C 8007F91C 40100200 */  sll        $v0, $v0, 1

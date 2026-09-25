@@ -733,7 +733,7 @@ glabel func_level_15_8007920C
 .Llevel_15_80079CE0:
 /* 49B4210 80079CE0 700090AE */  sw         $s0, 0x70($s4)
 /* 49B4214 80079CE4 45006492 */  lbu        $a0, 0x45($s3)
-/* 49B4218 80079CE8 4FD8000C */  jal        func_8003613C
+/* 49B4218 80079CE8 4FD8000C */  jal        SubAngle8
 /* 49B421C 80079CEC 80000524 */   addiu     $a1, $zero, 0x80
 /* 49B4220 80079CF0 02004104 */  bgez       $v0, .Llevel_15_80079CFC
 /* 49B4224 80079CF4 00000000 */   nop

@@ -119,7 +119,7 @@
 <!-- Init -->
 - [x] func_8002A794
 - [x] func_8002A7B4
-- [ ] func_8002A834
+- [x] func_8002A834
 - [x] func_8002A99C
 - [ ] func_8002A9D0
 - [ ] func_8002AA34

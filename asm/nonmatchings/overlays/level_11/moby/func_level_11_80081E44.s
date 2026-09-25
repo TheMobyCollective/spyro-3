@@ -1171,7 +1171,7 @@ glabel func_level_11_80081E44
 /* 3E272FC 80082DCC 203A010C */  jal        func_8004E880
 /* 3E27300 80082DD0 21300000 */   addu      $a2, $zero, $zero
 /* 3E27304 80082DD4 46004592 */  lbu        $a1, 0x46($s2)
-/* 3E27308 80082DD8 4FD8000C */  jal        func_8003613C
+/* 3E27308 80082DD8 4FD8000C */  jal        SubAngle8
 /* 3E2730C 80082DDC 21204000 */   addu      $a0, $v0, $zero
 /* 3E27310 80082DE0 02004104 */  bgez       $v0, .Llevel_11_80082DEC
 /* 3E27314 80082DE4 04000224 */   addiu     $v0, $zero, 0x4

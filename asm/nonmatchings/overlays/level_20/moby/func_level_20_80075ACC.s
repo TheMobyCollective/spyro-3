@@ -128,7 +128,7 @@ glabel func_level_20_80075ACC
 /* 50C59CC 80075C9C 23284500 */   subu      $a1, $v0, $a1
 /* 50C59D0 80075CA0 0780043C */  lui        $a0, %hi(D_80070328 + 0xE)
 /* 50C59D4 80075CA4 36038490 */  lbu        $a0, %lo(D_80070328 + 0xE)($a0)
-/* 50C59D8 80075CA8 4FD8000C */  jal        func_8003613C
+/* 50C59D8 80075CA8 4FD8000C */  jal        SubAngle8
 /* 50C59DC 80075CAC 21284000 */   addu      $a1, $v0, $zero
 /* 50C59E0 80075CB0 02004104 */  bgez       $v0, .Llevel_20_80075CBC
 /* 50C59E4 80075CB4 FFFF0224 */   addiu     $v0, $zero, -0x1

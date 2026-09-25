@@ -86,11 +86,11 @@ glabel func_level_15_80083998
 /* 49BE004 80083AD4 23284500 */   subu      $a1, $v0, $a1
 /* 49BE008 80083AD8 21280002 */  addu       $a1, $s0, $zero
 /* 49BE00C 80083ADC 02002486 */  lh         $a0, 0x2($s1)
-/* 49BE010 80083AE0 57D8000C */  jal        func_8003615C
+/* 49BE010 80083AE0 57D8000C */  jal        SubAngle12
 /* 49BE014 80083AE4 21804000 */   addu      $s0, $v0, $zero
 /* 49BE018 80083AE8 21904000 */  addu       $s2, $v0, $zero
 /* 49BE01C 80083AEC 00002486 */  lh         $a0, 0x0($s1)
-/* 49BE020 80083AF0 57D8000C */  jal        func_8003615C
+/* 49BE020 80083AF0 57D8000C */  jal        SubAngle12
 /* 49BE024 80083AF4 21280002 */   addu      $a1, $s0, $zero
 /* 49BE028 80083AF8 0E002386 */  lh         $v1, 0xE($s1)
 /* 49BE02C 80083AFC 00000000 */  nop

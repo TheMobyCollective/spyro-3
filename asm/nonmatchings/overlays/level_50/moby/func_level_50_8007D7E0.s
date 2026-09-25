@@ -675,11 +675,11 @@ glabel func_level_50_8007D7E0
 /* 95D26AC 8007E17C 01000624 */   addiu     $a2, $zero, 0x1
 /* 95D26B0 8007E180 21280002 */  addu       $a1, $s0, $zero
 /* 95D26B4 8007E184 C800A48F */  lw         $a0, 0xC8($sp)
-/* 95D26B8 8007E188 57D8000C */  jal        func_8003615C
+/* 95D26B8 8007E188 57D8000C */  jal        SubAngle12
 /* 95D26BC 8007E18C 21804000 */   addu      $s0, $v0, $zero
 /* 95D26C0 8007E190 2120C003 */  addu       $a0, $fp, $zero
 /* 95D26C4 8007E194 21280002 */  addu       $a1, $s0, $zero
-/* 95D26C8 8007E198 57D8000C */  jal        func_8003615C
+/* 95D26C8 8007E198 57D8000C */  jal        SubAngle12
 /* 95D26CC 8007E19C 21804000 */   addu      $s0, $v0, $zero
 /* 95D26D0 8007E1A0 02000106 */  bgez       $s0, .Llevel_50_8007E1AC
 /* 95D26D4 8007E1A4 00000000 */   nop
@@ -800,11 +800,11 @@ glabel func_level_50_8007D7E0
 /* 95D2878 8007E348 01000624 */   addiu     $a2, $zero, 0x1
 /* 95D287C 8007E34C 21280002 */  addu       $a1, $s0, $zero
 /* 95D2880 8007E350 C800A48F */  lw         $a0, 0xC8($sp)
-/* 95D2884 8007E354 57D8000C */  jal        func_8003615C
+/* 95D2884 8007E354 57D8000C */  jal        SubAngle12
 /* 95D2888 8007E358 21804000 */   addu      $s0, $v0, $zero
 /* 95D288C 8007E35C 21884000 */  addu       $s1, $v0, $zero
 /* 95D2890 8007E360 2120C003 */  addu       $a0, $fp, $zero
-/* 95D2894 8007E364 57D8000C */  jal        func_8003615C
+/* 95D2894 8007E364 57D8000C */  jal        SubAngle12
 /* 95D2898 8007E368 21280002 */   addu      $a1, $s0, $zero
 /* 95D289C 8007E36C 21184000 */  addu       $v1, $v0, $zero
 /* 95D28A0 8007E370 4103222A */  slti       $v0, $s1, 0x341
@@ -840,12 +840,12 @@ glabel func_level_50_8007D7E0
 /* 95D2908 8007E3D8 D000A2AF */   sw        $v0, 0xD0($sp)
 /* 95D290C 8007E3DC 46008592 */  lbu        $a1, 0x46($s4)
 /* 95D2910 8007E3E0 C800A48F */  lw         $a0, 0xC8($sp)
-/* 95D2914 8007E3E4 57D8000C */  jal        func_8003615C
+/* 95D2914 8007E3E4 57D8000C */  jal        SubAngle12
 /* 95D2918 8007E3E8 00290500 */   sll       $a1, $a1, 4
 /* 95D291C 8007E3EC 2120C003 */  addu       $a0, $fp, $zero
 /* 95D2920 8007E3F0 45008592 */  lbu        $a1, 0x45($s4)
 /* 95D2924 8007E3F4 21804000 */  addu       $s0, $v0, $zero
-/* 95D2928 8007E3F8 57D8000C */  jal        func_8003615C
+/* 95D2928 8007E3F8 57D8000C */  jal        SubAngle12
 /* 95D292C 8007E3FC 00290500 */   sll       $a1, $a1, 4
 /* 95D2930 8007E400 FA000424 */  addiu      $a0, $zero, 0xFA
 /* 95D2934 8007E404 2800638E */  lw         $v1, 0x28($s3)

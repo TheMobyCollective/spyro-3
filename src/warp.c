@@ -62,7 +62,7 @@ extern int D_8006C718;
 extern Game game;
 extern SpeedwayData speedwayData;
 extern PauseData pauseData; // 8006FBC4
-extern PauseData2 pauseData2;
+extern DrawDispEnvs g_DrawDispEnvs;
 extern WadHeader wadHeader;
 extern Unk_8006d048 D_8006D048;
 extern LevelWadHeader levelWadHeader; // 80072098
@@ -502,17 +502,17 @@ void func_80059038() {
     case 1:
     case 4:
         if (pauseData.frameCount == 0) {
-            func_8005E500(&pauseData2.dat_8006fc70, 0, 12, 512, 216);
-            func_8005E5C0(&pauseData2.dat_8006fc58, 0,  0, 512, 240);
-            pauseData2.dat_8006fc70.ofs[1] = 0;
-            pauseData2.dat_8006fbfc.isbg = 0;
-            pauseData2.dat_8006fc70.isbg = 0;
-            pauseData2.dat_8006fbfc.dtd = 0;
-            pauseData2.dat_8006fc70.dtd = 0;
-            pauseData2.dat_8006fccc.screen.x = D_8006C694;
-            pauseData2.dat_8006fc58.screen.x = D_8006C694;
-            pauseData2.dat_8006fccc.screen.y = D_8006C698;
-            pauseData2.dat_8006fc58.screen.y = D_8006C698;
+            func_8005E500(&g_DrawDispEnvs.dat_8006fc70, 0, 12, 512, 216);
+            func_8005E5C0(&g_DrawDispEnvs.dat_8006fc58, 0,  0, 512, 240);
+            g_DrawDispEnvs.dat_8006fc70.ofs[1] = 0;
+            g_DrawDispEnvs.dat_8006fbfc.isbg = 0;
+            g_DrawDispEnvs.dat_8006fc70.isbg = 0;
+            g_DrawDispEnvs.dat_8006fbfc.dtd = 0;
+            g_DrawDispEnvs.dat_8006fc70.dtd = 0;
+            g_DrawDispEnvs.dat_8006fccc.screen.x = D_8006C694;
+            g_DrawDispEnvs.dat_8006fc58.screen.x = D_8006C694;
+            g_DrawDispEnvs.dat_8006fccc.screen.y = D_8006C698;
+            g_DrawDispEnvs.dat_8006fc58.screen.y = D_8006C698;
         }
     case 2:
         spr.unk4 = 255;
@@ -531,17 +531,17 @@ void func_80059038() {
         return;
     case 3:
         if (pauseData.frameCount == 0) {
-            func_8005E500(&pauseData2.dat_8006fc70, 0, 240, 512, 216);
-            func_8005E5C0(&pauseData2.dat_8006fc58, 0, 228, 512, 240);
-            pauseData2.dat_8006fc70.ofs[1] = 228;
-            pauseData2.dat_8006fbfc.isbg = 1;
-            pauseData2.dat_8006fc70.isbg = 1;
-            pauseData2.dat_8006fbfc.dtd = 1;
-            pauseData2.dat_8006fc70.dtd = 1;
-            pauseData2.dat_8006fccc.screen.x = D_8006C694;
-            pauseData2.dat_8006fc58.screen.x = D_8006C694;
-            pauseData2.dat_8006fccc.screen.y = D_8006C698;
-            pauseData2.dat_8006fc58.screen.y = D_8006C698;
+            func_8005E500(&g_DrawDispEnvs.dat_8006fc70, 0, 240, 512, 216);
+            func_8005E5C0(&g_DrawDispEnvs.dat_8006fc58, 0, 228, 512, 240);
+            g_DrawDispEnvs.dat_8006fc70.ofs[1] = 228;
+            g_DrawDispEnvs.dat_8006fbfc.isbg = 1;
+            g_DrawDispEnvs.dat_8006fc70.isbg = 1;
+            g_DrawDispEnvs.dat_8006fbfc.dtd = 1;
+            g_DrawDispEnvs.dat_8006fc70.dtd = 1;
+            g_DrawDispEnvs.dat_8006fccc.screen.x = D_8006C694;
+            g_DrawDispEnvs.dat_8006fc58.screen.x = D_8006C694;
+            g_DrawDispEnvs.dat_8006fccc.screen.y = D_8006C698;
+            g_DrawDispEnvs.dat_8006fc58.screen.y = D_8006C698;
         }
         func_80020168();
         return;

@@ -444,7 +444,7 @@ glabel func_level_34_800879A0
 /* 74E3C98 80087F68 203A010C */  jal        func_8004E880
 /* 74E3C9C 80087F6C 23284500 */   subu      $a1, $v0, $a1
 /* 74E3CA0 80087F70 21204000 */  addu       $a0, $v0, $zero
-/* 74E3CA4 80087F74 4FD8000C */  jal        func_8003613C
+/* 74E3CA4 80087F74 4FD8000C */  jal        SubAngle8
 /* 74E3CA8 80087F78 21284002 */   addu      $a1, $s2, $zero
 /* 74E3CAC 80087F7C 04004018 */  blez       $v0, .Llevel_34_80087F90
 /* 74E3CB0 80087F80 00000000 */   nop

@@ -30,7 +30,7 @@ glabel func_level_22_8008F920
 /* 577F6B4 8008F984 23284500 */   subu      $a1, $v0, $a1
 /* 577F6B8 8008F988 21904000 */  addu       $s2, $v0, $zero
 /* 577F6BC 8008F98C 21200002 */  addu       $a0, $s0, $zero
-/* 577F6C0 8008F990 4FD8000C */  jal        func_8003613C
+/* 577F6C0 8008F990 4FD8000C */  jal        SubAngle8
 /* 577F6C4 8008F994 FF004532 */   andi      $a1, $s2, 0xFF
 /* 577F6C8 8008F998 0C006426 */  addiu      $a0, $s3, 0xC
 /* 577F6CC 8008F99C 21288002 */  addu       $a1, $s4, $zero
@@ -62,7 +62,7 @@ glabel func_level_22_8008F920
 /* 577F728 8008F9F8 05004228 */  slti       $v0, $v0, 0x5
 /* 577F72C 8008F9FC 0B004010 */  beqz       $v0, .Llevel_22_8008FA2C
 /* 577F730 8008FA00 2120C003 */   addu      $a0, $fp, $zero
-/* 577F734 8008FA04 4FD8000C */  jal        func_8003613C
+/* 577F734 8008FA04 4FD8000C */  jal        SubAngle8
 /* 577F738 8008FA08 21280002 */   addu      $a1, $s0, $zero
 /* 577F73C 8008FA0C 0300A106 */  bgez       $s5, .Llevel_22_8008FA1C
 /* 577F740 8008FA10 00000000 */   nop
@@ -85,7 +85,7 @@ glabel func_level_22_8008F920
 /* 577F77C 8008FA4C 0E004010 */  beqz       $v0, .Llevel_22_8008FA88
 /* 577F780 8008FA50 00000000 */   nop
 /* 577F784 8008FA54 7400A48F */  lw         $a0, 0x74($sp)
-/* 577F788 8008FA58 4FD8000C */  jal        func_8003613C
+/* 577F788 8008FA58 4FD8000C */  jal        SubAngle8
 /* 577F78C 8008FA5C 21280002 */   addu      $a1, $s0, $zero
 /* 577F790 8008FA60 0300A106 */  bgez       $s5, .Llevel_22_8008FA70
 /* 577F794 8008FA64 00000000 */   nop
