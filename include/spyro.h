@@ -283,7 +283,9 @@ typedef struct {
     int unk9d;                 // C8, some sort of speed variable
     Vector3D unk9e;            // CC, related to unk9d
     Vector3D unk9h;            // D8
-    int unk9ha[6];             // E4
+    int unk9ga;                // E4
+    Vector3D unk9g;            // E8
+    int unk9ha[2];             // F4
     char unk10[8];             // FC
     int unk11[8];              // 104
     Vector3D unk12;            // 124, copy of Spyro's position, for some reason
@@ -368,5 +370,9 @@ typedef struct {
 
 extern Spyro spyro;
 extern Spyro g_Spyro; // preferred label
+
+
+void func_80049ACC(int, Vector3D*);
+
 
 #endif

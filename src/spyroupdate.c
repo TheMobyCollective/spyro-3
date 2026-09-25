@@ -1,10 +1,16 @@
 #include "common.h"
 #include "ovl_header.h"
+#include "camera.h"
 #include "spu.h"
+#include "stdutil.h"
 #include "spyro.h"
 
 extern int D_8006C58C; // level index    
 extern char D_80067968[40][4]; // WalkingSoundIdPerSurface... maybe a struct array?
+extern int D_8006C648; // deltaTime
+extern short g_Sin[0x100];
+extern short g_Cos[0x100];
+extern Unk_8006d048 D_8006D048;
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -30,7 +36,14 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800408B8);
  * D_8006D048 struct updated
  * https://decomp.me/scratch/cwjZ4
  */
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80040954);
+int func_80040954(int surfaceFlags) {
+    int idx = surfaceFlags & 0x3F;
+
+    // Flags are 0x3F when not touching a special surface
+    if (idx == 0x3F) return -1;
+
+    return D_8006D048.m_SurfaceData[idx]->m_Type;
+}
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80040994);
 
@@ -75,7 +88,17 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80043728);
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800438F4);
 
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80043A38);
+/**
+ * ???() - func_80043A38() - MATCHING
+ * https://decomp.me/scratch/euWaA
+ */
+void func_80043A38(int arg0) {
+    func_8004F178(&g_Spyro.unk9g, &g_Spyro.unk9e);
+    func_8004EF04(&g_Spyro.unk9g, arg0);
+    g_Spyro.unk9g.x = -g_Spyro.unk9g.x;
+    g_Spyro.unk9g.y = -g_Spyro.unk9g.y;
+    g_Spyro.unk9g.z = -g_Spyro.unk9g.z;
+}
 
 /**
  * ???() - func_80043ABC() - MATCHING
@@ -133,7 +156,17 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80045D70);
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80046FF8);
 
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80047138);
+/**
+ * ???() - func_80047138() - MATCHING
+ * https://decomp.me/scratch/GR7Ts
+ */
+void func_80047138() {
+    g_Spyro.headAnimation.id = g_Spyro.bodyAnimation.id;
+    g_Spyro.headAnimation.nextId = g_Spyro.bodyAnimation.nextId;
+    g_Spyro.headAnimation.frame = g_Spyro.bodyAnimation.frame;
+    g_Spyro.headAnimation.nextFrame = g_Spyro.bodyAnimation.nextFrame;
+    g_Spyro.unk3[1] = g_Spyro.unk3[0];
+}
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80047190);
 
@@ -151,15 +184,55 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80048444);
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800486FC);
 
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80048948);
+/**
+ * ???() - func_80048948() - MATCHING
+ * https://decomp.me/scratch/ntJS9
+ */
+void func_80048948() {
+    g_Spyro.unk22[5] = -1;
+    g_Spyro.damageFlags = 0;
+    if (g_Spyro.movementState != MOVEMENT_STATE_HURT) {
+        g_Spyro.unk22[0] -= D_8006C648;
+        MIN(g_Spyro.unk22[0], 0);
+    }
+    if (g_Spyro.unk20a != 0) {
+        g_Spyro.critterMobyPtr->damageFlags = 0;
+    }
+}
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800489CC);
 
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800491F4);
+/**
+ * ???() - func_800491F4() - MATCHING
+ * https://decomp.me/scratch/UFazy
+ */
+void func_800491F4() {
+    Vector3D v;
+    int temp_v0;
+
+    func_8004F1C8(&v, &g_Camera.nextCameraPosCartesian, &g_Spyro.position);
+    temp_v0 = func_8004E880(v.x, v.y, 0);
+    v.x = (g_Cos[temp_v0] * g_Spyro.unk4a) >> 0xC;
+    v.y = (g_Sin[temp_v0] * g_Spyro.unk4a) >> 0xC;
+    v.z = 0;
+    func_8004F194(&v, &v, &g_Spyro.position);
+    if (!func_80013E38(&g_Camera.nextCameraPosCartesian, &v, 0)) {
+       g_Spyro.unk3[2] = 0;
+    }
+    else {
+        g_Spyro.unk3[2] = 5;
+    }
+}
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800492DC);
 
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80049484);
+/**
+ * ???() - func_80049484() - MATCHING
+ * https://decomp.me/scratch/2shai
+ */
+void func_80049484(Vector3D* arg0) {
+    func_80049ACC(0xC1, arg0);
+}
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800494A8);
 

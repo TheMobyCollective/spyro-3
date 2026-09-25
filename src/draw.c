@@ -28,7 +28,11 @@ extern int D_8006C598;
  */
 INCLUDE_ASM("asm/nonmatchings/draw", func_8001D274);
 
-// Different in 1.1
+/**
+ * DrawDuringDialogue() - func_8001D424()
+ * Lots to do, also differs in 1.1
+ * https://decomp.me/scratch/0c0gC
+ */
 INCLUDE_ASM("asm/nonmatchings/draw", func_8001D424);
 
 INCLUDE_ASM("asm/nonmatchings/draw", func_8001DC3C);

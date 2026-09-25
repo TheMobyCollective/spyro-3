@@ -25,7 +25,7 @@ extern int func_8004E880(int, int, int);
 // FUN_8004ecf4	8004ecf4
 // fMulVectorByMatrix	8004ed6c
 // fVectorLength	8004ede8
-// FUN_8004ef04	8004ef04
+extern void func_8004EF04(Vector3D*, int);
 // FUN_8004ef74	8004ef74
 // ScaleVectorRational	8004f08c
 // ScaleUpVectorExp	8004f0e8
