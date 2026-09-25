@@ -5,6 +5,7 @@
 #include "stdutil.h"
 #include "spyro.h"
 
+extern int func_80018368(Vector3D*, Vector3D*);
 extern int func_80019138(Vector3D*, int, int, int, int, int);
 extern void func_8001BA30(Vector3D*, int, int, int, int, Moby*);
 
@@ -14,7 +15,7 @@ extern int D_8006C648; // deltaTime
 extern short g_Sin[0x100];
 extern short g_Cos[0x100];
 extern Unk_8006d048 D_8006D048;
-extern CollisionData D_80071900;
+extern CollisionData g_CollisionData;
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -31,7 +32,18 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8003F6F4);
 // Run surface type function
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8003FD58);
 
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800408B8);
+/**
+ * ???() - func_800408B8() - MATCHING
+ * https://decomp.me/scratch/AKVO1
+ */
+int func_800408B8(SHORTMATRIX* arg0, Vector3D* arg1, Vector3D* arg2) {
+    func_8004ED6C(arg0, arg1, arg1);
+    func_8004F194(arg1, arg1, &g_Spyro.position);
+    func_8004ED6C(0, arg2, arg2);
+    func_8004F194(arg2, arg2, &g_Spyro.position);
+    if (func_80018368(arg1, arg2)) return func_80040954(g_CollisionData.D_80071924);
+    return -1;
+}
 
 /**
  * ???() - func_80040954() - MATCHING
@@ -177,7 +189,33 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800458F8);
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80045D70);
 
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80046FF8);
+/**
+ * ???() - func_80046FF8() - MATCHING
+ * https://decomp.me/scratch/sv50A
+ */
+void func_80046FF8() {
+    int temp_a1;
+
+    SUB_ANGLE(temp_a1, g_Spyro.unk13g[2], g_Spyro.unk13f[3]);
+    
+    g_Spyro.unk13h[1] += ((temp_a1 << 7) - g_Spyro.unk13h[1] * 0x10) >> 6;
+    g_Spyro.unk13f[3] += g_Spyro.unk13h[1] >> 6;
+    
+    SUB_ANGLE(temp_a1, g_Spyro.unk13g[3], g_Spyro.unk13g[0]);
+    
+    g_Spyro.unk13h[2] += ((temp_a1 << 7) - g_Spyro.unk13h[2] * 0x10) >> 6;
+    g_Spyro.unk13g[0] += g_Spyro.unk13h[2] >> 6;
+    
+    SUB_ANGLE(temp_a1, g_Spyro.unk13h[0], g_Spyro.unk13g[1]);
+    
+    g_Spyro.headRotation.roll = g_Spyro.unk13f[3] >> 4;
+    g_Spyro.headRotation.pitch = g_Spyro.unk13g[0] >> 4;
+    
+    g_Spyro.unk13h[3] += ((temp_a1 << 7) - g_Spyro.unk13h[3] * 0x10) >> 6;
+    g_Spyro.unk13g[1] += g_Spyro.unk13h[3] >> 6;
+    
+    g_Spyro.headRotation.yaw = g_Spyro.unk13g[1] >> 4;
+}
 
 /**
  * ???() - func_80047138() - MATCHING
@@ -266,8 +304,8 @@ void func_800494A8() {
     func_8004F178(&v, &g_Spyro.position);
     v.z -= g_Spyro.unk4a;
     func_8001BA30(&v, 0x80, 1, 0, 0x80000, g_Spyro.critterMobyPtr);
-    if ((func_80019138(&v, 0x80, 1, 0, 0x80000, 0) != 0) && (func_80040954(D_80071900.D_80071924) == 3)) {
-        D_8006D048.m_SurfaceData[D_80071900.D_80071924 & 0x3F]->unk4 |= 0x80000;
+    if ((func_80019138(&v, 0x80, 1, 0, 0x80000, 0) != 0) && (func_80040954(g_CollisionData.D_80071924) == 3)) {
+        D_8006D048.m_SurfaceData[g_CollisionData.D_80071924 & 0x3F]->unk4 |= 0x80000;
     }
 }
 

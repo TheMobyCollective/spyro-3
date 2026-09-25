@@ -23,7 +23,7 @@ extern int func_8004E880(int, int, int);
 // fGetUsedBits	8004ea74
 // FUN_8004ea90	8004ea90
 // FUN_8004ecf4	8004ecf4
-// fMulVectorByMatrix	8004ed6c
+extern void func_8004ED6C(SHORTMATRIX*, Vector3D*, Vector3D*); // fMulVectorByMatrix
 // fVectorLength	8004ede8
 extern void func_8004EF04(Vector3D*, int);
 // FUN_8004ef74	8004ef74
