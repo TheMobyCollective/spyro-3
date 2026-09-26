@@ -381,6 +381,7 @@ void func_800445F8();
 void func_80044C28();
 void func_80044CF0();
 void func_80047138();
+void func_800492DC(Vector3D*);
 void func_80049ACC(int, Vector3D*);
 
 
