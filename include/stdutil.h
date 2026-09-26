@@ -25,9 +25,9 @@ extern int func_8004EA2C(int); // fCosLerp
 // FUN_8004ecf4	8004ecf4
 extern void func_8004ED6C(SHORTMATRIX*, Vector3D*, Vector3D*); // fMulVectorByMatrix
 extern int func_8004EDE8(Vector3D*, int); // fVectorLength
-extern void func_8004EF04(Vector3D*, int);
+extern void func_8004EF04(Vector3D*, int); // does something using the vector length?
 // FUN_8004ef74	8004ef74
-// ScaleVectorRational	8004f08c
+extern void func_8004F08C(Vector3D*, int, int); // ScaleVectorRational
 // ScaleUpVectorExp	8004f0e8
 // ScaleDownVectorExp	8004f110
 extern void func_8004F168(Vector3D*); // fZeroVector

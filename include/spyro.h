@@ -373,6 +373,14 @@ extern Spyro g_Spyro; // preferred label
 
 
 int func_80040954(int);
+void func_80043ABC(Vector3D*);
+void func_80043E00(Vector3D*);
+void func_80043F3C(Vector3D*);
+void func_800443EC();
+void func_800445F8();
+void func_80044C28();
+void func_80044CF0();
+void func_80047138();
 void func_80049ACC(int, Vector3D*);
 
 
