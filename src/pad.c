@@ -122,7 +122,7 @@ void func_8003A010(Pad* arg0) {
  * This one required isDemoMode to be non-volatile and needed -G0 / G4!
  * https://decomp.me/scratch/lUhLW
  */
-void func_8003A2B0(void) {
+void func_8003A2B0() {
     int i;
     int x;
 

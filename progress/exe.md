@@ -248,9 +248,9 @@
 - [ ] func_80041580
 - [ ] func_800416F4
 - [x] func_800417FC
-- [ ] func_80041848
+- [x] func_80041848
 - [ ] func_80041930
-- [ ] func_80041AE8
+- [x] func_80041AE8
 - [ ] func_80041B64
 - [ ] func_80041C20
 - [ ] func_80042A44
@@ -277,7 +277,7 @@
 - [x] func_80047138
 - [ ] func_80047190
 - [ ] func_800473E4
-- [ ] func_80047C7C
+- [x] func_80047C7C
 - [ ] func_80047D00
 - [ ] func_80047E6C
 - [ ] func_80048210
@@ -299,7 +299,7 @@
 - [ ] func_8004BDF0
 - [ ] func_8004BEF8
 - [ ] func_8004CCA0
-- [ ] func_8004E4E4
+- [x] func_8004E4E4
 - [ ] func_8004E56C
 
 <!-- STR -->

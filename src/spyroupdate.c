@@ -1,6 +1,7 @@
 #include "common.h"
 #include "ovl_header.h"
 #include "camera.h"
+#include "pad.h"
 #include "spu.h"
 #include "stdutil.h"
 #include "spyro.h"
@@ -9,11 +10,13 @@ extern int func_80018368(Vector3D*, Vector3D*);
 extern int func_80019138(Vector3D*, int, int, int, int, int);
 extern void func_8001BA30(Vector3D*, int, int, int, int, Moby*);
 
+extern int g_CurrentLevel; // 8006C5BC
 extern int D_8006C58C; // level index    
 extern char D_80067968[40][4]; // WalkingSoundIdPerSurface... maybe a struct array?
 extern int D_8006C648; // deltaTime
 extern short g_Sin[0x100];
 extern short g_Cos[0x100];
+extern Pad D_8006E3D0; // ? not sure what file this should go in, maybe pad
 extern Unk_8006d048 D_8006D048;
 extern CollisionData g_CollisionData;
 
@@ -97,11 +100,41 @@ void func_800417FC(int arg0, int arg1) {
     }
 }
 
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80041848);
+/**
+ * ???() - func_80041848() - MATCHING
+ * https://decomp.me/scratch/hKRCk
+ */
+void func_80041848() {
+    g_Spyro.unk7a[1].x = g_Spyro.unk8[0];
+    g_Spyro.unk7a[1].y = 0;
+    g_Spyro.unk7a[1].z = 0;
+    if ((g_CurrentLevel == 42) && (g_Spyro.critterMode == CRITTER_SHEILA)) { // Desert Ruins Sheila
+        g_Spyro.unk7a[1].x = g_Spyro.unk8[0] * func_8004EA2C(g_Spyro.unk7b) >> 0xC;
+        g_Spyro.unk7a[1].y = g_Spyro.unk8[0] * func_8004E9E4(g_Spyro.unk7b) >> 0xC;
+        g_Spyro.unk7a[1].z = 0;
+        return;
+    }
+    func_8004ED6C(&g_Spyro.mat30, &g_Spyro.unk7a[1], &g_Spyro.unk7a[1]);
+}
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80041930);
 
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80041AE8);
+/**
+ * ???() - func_80041AE8() - MATCHING
+ * https://decomp.me/scratch/WxLtJ
+ */
+void func_80041AE8() {
+    Vector3D v;
+
+    if (func_8004EDE8(&g_Spyro.unk7a[2], 0) > 384) {
+        func_8004F1C8(&v, &g_Spyro.unk7a[3], &g_Spyro.unk7a[2]);
+        if (func_8004EDE8(&v, 0) > 192) {
+            v.z = 0;
+            func_8004F178(&g_Spyro.unk9h, &v);
+            g_Spyro.unk10[2] = 1;
+        }
+    }
+}
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80041B64);
 
@@ -233,7 +266,23 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80047190);
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800473E4);
 
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80047C7C);
+/**
+ * ???() - func_80047C7C() - MATCHING
+ * https://decomp.me/scratch/qZUu8
+ */
+void func_80047C7C() {
+    if (g_Spyro.unk17a & 0x2C142) {
+        func_8003A964(&D_8006E3D0, &g_Pad);
+    }
+    else {
+        g_Spyro.unk20[2] = 0;
+    }
+    if (!(g_Spyro.unk17a & 0x140)) {
+        g_Spyro.unk17c = 0;
+    }
+    g_Spyro.unk17b = g_Spyro.unk17a;
+    g_Spyro.unk17a = 0;
+}
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80047D00);
 
@@ -315,6 +364,10 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80049688);
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800498C0);
 
+/**
+ * ???() - func_80049ACC()
+ * https://decomp.me/scratch/NWVhg
+ */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80049ACC);
 
 // has overlay version in "animation.c"
@@ -482,6 +535,28 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004BEF8);
 // has overlay version in "animation.c"
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004CCA0);
 
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004E4E4);
+/**
+ * ???() - func_8004E4E4() - MATCHING
+ * https://decomp.me/scratch/oFnZc
+ */
+int func_8004E4E4(int arg0) {
+    int temp_a0;
+    int var_a0;
+
+    temp_a0 = g_Spyro.unk9ha[1] - arg0;
+    
+    if (temp_a0 < 0) {
+        var_a0 = 0x1040 - (func_8004F388(-temp_a0) << 7);
+    }
+    else {
+        var_a0 = (func_8004F388(temp_a0) << 6) + 0x1040;
+    }
+    
+    if (g_CurrentLevel == 45) var_a0 += 0xAAA;
+    MAX(var_a0, 0x5900);
+    MIN(var_a0, 0x800);
+    
+    return var_a0;
+}
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004E56C);

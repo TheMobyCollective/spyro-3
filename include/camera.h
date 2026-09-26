@@ -2,6 +2,7 @@
 #define __CAMERA_H
 
 #include "common.h"
+#include "libgpu.h"
 
 typedef struct {
 	int azimuth;
@@ -69,11 +70,7 @@ typedef struct {
 	int unk8;
 	int unkc;
 	int unk10;
-	int unk14;
-	int unk18;
-	int unk1c;
-	int unk20;
-	int unk24;
+	SHORTMATRIX unk14;
 	Vector3D nextCameraPosCartesian;
 	Vector3D currentCameraPosCartesian;
 	int unk40;

@@ -70,6 +70,8 @@ typedef struct { // e.g. 8006e508
 
 // bss
 extern Pad pad; // 8006e508
+extern Pad g_Pad; // 8006e508
+
 extern PsyqPad demoPadState; // 80071438, actually length 0x24 so there may be more here
 extern PadState D_80071500[4]; // D_80071500
 extern PsyqPad D_800718DC; // 7 ints after this?
@@ -77,7 +79,14 @@ extern PadState D_80071FD8[4]; // 80071fd8
 extern Pad pad2; // 80072018
 
 // functions
-extern void func_8003A584();
-// and the rest
+//func_80039E34
+//func_80039E88
+void func_8003A010(Pad*);
+void func_8003A2B0();
+void func_8003A40C();
+void func_8003A584();
+void func_8003A908(Pad*);
+void func_8003A964(Pad*, Pad*);
+void func_8003A9EC();
 
 #endif
