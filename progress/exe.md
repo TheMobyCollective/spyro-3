@@ -259,9 +259,9 @@
 - [ ] func_80043728
 - [ ] func_800438F4
 - [x] func_80043A38
-- [ ] func_80043ABC
+- [x] func_80043ABC
 - [x] func_80043E00
-- [ ] func_80043F3C
+- [x] func_80043F3C
 - [x] func_800441F0
 - [x] func_80044240
 - [ ] func_800443A4

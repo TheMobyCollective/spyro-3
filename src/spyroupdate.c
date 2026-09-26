@@ -205,7 +205,47 @@ void func_80043A38(int arg0) {
  * Aligns Spyro's angles to something
  * https://decomp.me/scratch/APNca
  */
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80043ABC);
+void func_80043ABC(Vector3D* arg0) {
+    Vector3D sp10;
+    Angle12 sp20;
+
+    if ((g_Spyro.unk9ga >= 0x17) && (g_Spyro.movementState != MOVEMENT_STATE_SLIDE)) {
+        arg0 = 0;
+    }
+    
+    if (arg0 != 0) {
+        sp10.x = ((arg0->x * func_8004EA2C(g_Spyro.rotation.yaw)) + (arg0->y * func_8004E9E4(g_Spyro.rotation.yaw))) >> 0xC;
+        sp10.y = ((arg0->y * func_8004EA2C(g_Spyro.rotation.yaw)) - (arg0->x * func_8004E9E4(g_Spyro.rotation.yaw))) >> 0xC;
+        sp10.z = arg0->z;
+        sp20.roll  = -func_8004E880(func_8004F388((sp10.x * sp10.x) + (sp10.z * sp10.z)), sp10.y, 1);
+        sp20.pitch = -func_8004E880(sp10.z, sp10.x, 1);
+    }
+    else {
+        sp20.roll  = 0;
+        sp20.pitch = 0;
+    }
+
+    SUB_ANGLE(sp20.roll,  sp20.roll,  g_Spyro.rotation.roll);
+    SUB_ANGLE(sp20.pitch, sp20.pitch, g_Spyro.rotation.pitch);
+    
+    g_Spyro.unk7.roll  += (((sp20.roll  << 2) >> 4) - ((g_Spyro.unk7.roll  << 4) >> 6));
+    g_Spyro.unk7.pitch += (((sp20.pitch << 2) >> 4) - ((g_Spyro.unk7.pitch << 4) >> 6));
+    sp20.roll  = g_Spyro.unk7.roll  >> 2;
+    sp20.pitch = g_Spyro.unk7.pitch >> 2;
+
+    ADD_ANGLE(g_Spyro.rotation.roll,  g_Spyro.rotation.roll,  sp20.roll);
+    ADD_ANGLE(g_Spyro.rotation.pitch, g_Spyro.rotation.pitch, sp20.pitch);
+    
+    if ((arg0 != 0)
+     && (g_Spyro.bodyRotation.roll  > 0xE0 || g_Spyro.bodyRotation.roll  < 0x20)
+     && (g_Spyro.bodyRotation.pitch > 0xE0 || g_Spyro.bodyRotation.pitch < 0x20)) {
+        sp10.y = (-func_8004E9E4(sp20.roll)  * (g_Spyro.unk4a + 0x10)) >> 0xC;
+        sp10.x = (-func_8004E9E4(sp20.pitch) * (g_Spyro.unk4a + 0x10)) >> 0xC;
+        sp10.z = ((0x2000 - func_8004EA2C(sp20.roll) - func_8004EA2C(sp20.pitch)) * (g_Spyro.unk4a + 0x10)) >> 0xC;
+        func_8004ED6C(&g_Spyro.mat30, &sp10, &sp10);
+        func_8004F194(&g_Spyro.position, &g_Spyro.position, &sp10);
+    }
+}
 
 /**
  * ???() - func_80043E00() - MATCHING
@@ -235,7 +275,54 @@ void func_80043E00(Vector3D* arg0) {
  * AlignSpyroToLadder() - func_80043F3C() - MATCHING
  * https://decomp.me/scratch/Y8ufi
  */
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80043F3C);
+void func_80043F3C(Vector3D* arg0) {
+    Angle12 sp10;
+    Vector3D sp20;
+    Vector3D sp30;
+    Angle sp40;
+    SHORTMATRIX sp48;
+    
+    sp10.roll = 0;
+    if (g_Spyro.unk10[2] != 0) {
+        sp10.pitch = func_8004E880(arg0->z, func_8004EDE8(arg0, 0), 1);
+        sp10.yaw   = func_8004E880(-arg0->x, -arg0->y, 1);
+    }
+    else {
+        sp10.pitch = g_Spyro.rotation.pitch + 0x400;
+        sp10.yaw   = g_Spyro.rotation.yaw;
+    }
+    
+    SUB_ANGLE(sp10.roll,  sp10.roll,          g_Spyro.rotation.roll);
+    SUB_ANGLE(sp10.pitch, sp10.pitch - 0x400, g_Spyro.rotation.pitch);
+    SUB_ANGLE(sp10.yaw,   sp10.yaw,           g_Spyro.rotation.yaw);
+    
+    g_Spyro.unk7.roll  += ((sp10.roll  << 2) >> 4) - ((g_Spyro.unk7.roll  << 4) >> 6);
+    g_Spyro.unk7.pitch += ((sp10.pitch << 2) >> 4) - ((g_Spyro.unk7.pitch << 4) >> 6);
+    g_Spyro.unk7.yaw   += ((sp10.yaw   << 2) >> 4) - ((g_Spyro.unk7.yaw   << 4) >> 6);
+    sp10.roll  = g_Spyro.unk7.roll  >> 2;
+    sp10.pitch = g_Spyro.unk7.pitch >> 2;
+    sp10.yaw   = g_Spyro.unk7.yaw   >> 2;
+
+    ADD_ANGLE(g_Spyro.rotation.roll,  g_Spyro.rotation.roll,  sp10.roll);
+    ADD_ANGLE(g_Spyro.rotation.pitch, g_Spyro.rotation.pitch, sp10.pitch);
+    ADD_ANGLE(g_Spyro.rotation.yaw,   g_Spyro.rotation.yaw,   sp10.yaw);
+    
+    sp20.z = 0;
+    sp20.y = 0;
+    sp20.x = g_Spyro.unk4a;
+    
+    func_8004F178(&sp30, &sp20);
+    func_8004ED6C(&g_Spyro.mat30, &sp20, &sp20);
+    
+    sp40.roll =  g_Spyro.rotation.roll  >> 4;
+    sp40.pitch = g_Spyro.rotation.pitch >> 4;
+    sp40.yaw =   g_Spyro.rotation.yaw   >> 4;
+    
+    func_8004EA90(&sp40, &sp48, 0);
+    func_8004ED6C(&sp48, &sp30, &sp30);
+    func_8004F1C8(&sp30, &sp30, &sp20);
+    func_8004F1C8(&g_Spyro.position, &g_Spyro.position, &sp30);
+}
 
 /**
  * ???() - func_800441F0() - MATCHING
