@@ -1,6 +1,60 @@
 #include "common.h"
 #include "spu.h"
 
+// libspu types - libspu to add properly, these types were also added in a PR (TODO!!)
+typedef struct {
+    short left;
+    short right;
+} SpuVolume;
+
+typedef struct {
+    SpuVolume volume;
+    int reverb;
+    int mix;
+} SpuExtAttr;
+
+typedef struct {
+    unsigned long mask;
+    SpuVolume mvol;
+    SpuVolume mvolmode;
+    SpuVolume mvolx;
+    SpuExtAttr cd;
+    SpuExtAttr ext;
+} SpuCommonAttr;
+
+typedef struct {
+	unsigned long voice;
+	unsigned long mask;
+	SpuVolume volume;
+	SpuVolume volmode;
+	SpuVolume volumex;
+	unsigned short pitch;
+	unsigned short note;
+	unsigned short sample_note;
+	short envx;
+	unsigned long addr;
+	unsigned long loop_addr;
+	long a_mode;
+	long s_mode;
+	long r_mode;
+	unsigned short ar;
+	unsigned short dr;
+	unsigned short sr;
+	unsigned short rr;
+	unsigned short sl;
+	unsigned short adsr1;
+	unsigned short adsr2;
+} SpuVoiceAttr;
+
+// psyq functions
+void func_8005E600(int);      // SpuSetTransferMode
+void func_8005E630(SpuCommonAttr*); // SpuSetCommonAttr
+void func_8005E9B0(int, int); // SpuSetKey
+void func_8005EBFC();         // SpuInit
+void func_8005EC1C(SpuVoiceAttr*); // SpuSetVoiceAttr
+
+//////////////////////////////////////////////////////////////
+
 extern Model* D_8006EE2C[768]; // probably moby model pointers
 extern int D_8006C630;
 
@@ -120,4 +174,32 @@ INCLUDE_ASM("asm/nonmatchings/spu", func_8003C994);
 
 INCLUDE_ASM("asm/nonmatchings/spu", func_8003CB00);
 
-INCLUDE_ASM("asm/nonmatchings/spu", func_8003CCF0);
+/**
+ * ???() - func_8003CCF0() - MATCHING
+ * https://decomp.me/scratch/3TUaM
+ */
+void func_8003CCF0() {
+    SpuCommonAttr sp10;
+    SpuVoiceAttr sp38;
+    func_8005EBFC();
+    sp10.mask = 3;
+    sp10.mvol.right = 0x3CCC;
+    sp10.mvol.left = 0x3CCC;
+    func_8005E630(&sp10);
+    sp38.mask = 0xFF13;
+    sp38.volume.left = 0x2FFF;
+    sp38.volume.right = 0x2FFF;
+    sp38.pitch = 0x400;
+    sp38.a_mode = 1;
+    sp38.s_mode = 1;
+    sp38.voice = 0xFFFFFF;
+    sp38.r_mode = 3;
+    sp38.ar = 0;
+    sp38.dr = 0;
+    sp38.sr = 0;
+    sp38.rr = 0;
+    sp38.sl = 0xF;
+    func_8005EC1C(&sp38);
+    func_8005E9B0(0, 0xFFFFFF);
+    func_8005E600(0);
+}

@@ -153,7 +153,7 @@
 - [x] func_800359A4
 - [ ] func_80035A80
 - [x] func_80035D38
-- [ ] func_80035D84
+- [x] func_80035D84
 - [x] func_80035DDC
 - [ ] func_80035EE0
 - [x] func_80036018
@@ -162,7 +162,7 @@
 - [x] func_8003613C
 - [x] func_8003615C
 - [x] func_8003617C
-- [ ] func_80036188
+- [x] func_80036188
 - [ ] func_80036220
 - [x] func_8003636C
 - [x] func_800363DC
@@ -229,7 +229,7 @@
 - [ ] func_8003C79C
 - [ ] func_8003C994
 - [ ] func_8003CB00
-- [ ] func_8003CCF0
+- [x] func_8003CCF0
 
 <!-- Spyro -->
 - [x] func_8003E83C
@@ -300,7 +300,7 @@
 - [ ] func_8004BEF8
 - [ ] func_8004CCA0
 - [x] func_8004E4E4
-- [ ] func_8004E56C
+- [x] func_8004E56C
 
 <!-- STR -->
 - [x] func_8004F8EC

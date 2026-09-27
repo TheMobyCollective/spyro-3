@@ -857,4 +857,24 @@ int func_8004E4E4(int arg0) {
     return var_a0;
 }
 
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8004E56C);
+/**
+ * ???() - func_8004E56C() - MATCHING
+ * https://decomp.me/scratch/8F2Do
+ */
+void func_8004E56C(Vector3D* v, SHORTMATRIX* mat) {
+    int var_v0;
+    v->y = -func_8004E880(func_8004F388(mat->m[1][1] * mat->m[1][1] + mat->m[1][0] * mat->m[1][0]), mat->m[1][2], 1);
+    var_v0 = func_8004EA2C(v->y);
+    if (ABS(var_v0) < 0x10) {
+        v->x = 0;
+        if (func_8004E9E4(v->y) < 0) {
+            v->z = func_8004E880(-mat->m[2][1], mat->m[0][1], 1) & 0xFFF;
+        }
+        else {
+            v->z = func_8004E880(mat->m[2][1], -mat->m[0][1], 1) & 0xFFF;
+        }
+        return;
+    }
+    v->z = func_8004E880(mat->m[2][2], -mat->m[0][2], 1);
+    v->x = func_8004E880(mat->m[1][1], mat->m[1][0], 1);
+}

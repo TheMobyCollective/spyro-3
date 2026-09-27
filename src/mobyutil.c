@@ -254,10 +254,16 @@ int func_80035D38(Moby* moby) {
 
 /**
  * SnapMobyToGroundRange() - func_80035D84() - MATCHING
- * Ready to add
  * https://decomp.me/scratch/pfFhX
  */
-INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80035D84);
+int func_80035D84(Moby* moby, int arg1) {
+    int x;
+    
+    moby->position.z += arg1;
+    x = func_8001A358(&moby->position, 0x1000);
+    moby->position.z -= arg1;
+    return x;
+}
 
 /**
  * ???() - func_80035DDC() - MATCHING
@@ -360,10 +366,12 @@ int func_8003617C(int arg0, int arg1) {
 
 /**
  * ???() - func_80036188() - MATCHING
- * Ready to implement
  * https://decomp.me/scratch/a5QDz
  */
-INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80036188);
+void func_80036188(Angle* arg0) {
+    arg0->roll  = -func_8004E880(func_8004F388((D_80071900.D_80071918.x * D_80071900.D_80071918.x) + (D_80071900.D_80071918.z * D_80071900.D_80071918.z)), D_80071900.D_80071918.y, 0);
+    arg0->pitch = -func_8004E880(D_80071900.D_80071918.z, D_80071900.D_80071918.x, 0);
+}
 
 INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80036220);
 
