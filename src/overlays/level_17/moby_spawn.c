@@ -1,6 +1,7 @@
 #include "moby/mobytag.h"
 #include "moby/moby260.h"
 
+#include "spu.h"
 #include "spyro.h"
 #include "stdutil.h"
 #include "warp.h"
@@ -9,11 +10,6 @@
 
 // Collision - unclear types
 extern int func_8001A358(Vector3D*, int);
-
-// Sound
-extern int func_8003BABC(Moby*, int, char); // fPlayMobySound
-extern void func_8003BE70(int); // fKillSound
-extern int func_8003BFC0(Moby*, int);
 
 // Update
 extern void func_80054F94(int, Moby*); // unclear types

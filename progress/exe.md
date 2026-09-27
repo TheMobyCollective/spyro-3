@@ -220,7 +220,7 @@
 - [ ] func_8003BE70
 - [ ] func_8003BEDC
 - [ ] func_8003BF6C
-- [ ] func_8003BFC0
+- [x] func_8003BFC0
 - [ ] func_8003C014
 - [x] func_8003C0B0
 - [ ] func_8003C140
@@ -232,7 +232,7 @@
 - [ ] func_8003CCF0
 
 <!-- Spyro -->
-- [ ] func_8003E83C
+- [x] func_8003E83C
 - [ ] func_8003E968
 - [ ] func_8003F194
 - [ ] func_8003F6F4

@@ -85,7 +85,7 @@ extern SoundDefinition* g_SpuDefinitionsPtr; // 8006C6A0
 // bss
 extern ActiveSound g_ActiveSounds[24]; // 8006FCE4
 
-int PlaySound(int localSoundId, Moby *moby, char param_3); // 8003BB50
+int PlaySound(int localSoundId, Moby *moby, int param_3); // 8003BB50
 int func_8003BABC(Moby*, int, int); // PlayMobySound
 int func_8003BB10(Moby*, int, int); // PlayAmbientSound, name probably inaccurate (might be looping sounds)
 void func_8003BE70(int); // KillSound

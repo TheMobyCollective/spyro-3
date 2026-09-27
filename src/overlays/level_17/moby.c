@@ -2,6 +2,7 @@
 #include "savepoint.h" // vehicles
 #include "camera.h" // anything with the camera
 #include "mobyutil.h"
+#include "spu.h"
 #include "spyro.h"
 #include "ovl_header.h"
 
@@ -16,11 +17,6 @@
 
 // Collision - unclear types
 extern int func_8001A358(Vector3D*, int);
-
-// Sound
-extern int func_8003BABC(Moby*, int, char); // fPlayMobySound
-extern void func_8003BE70(int); // fKillSound
-extern int func_8003BFC0(Moby*, int);
 
 // Stdutil
 extern void func_8004E790(void*, int, int); // memset

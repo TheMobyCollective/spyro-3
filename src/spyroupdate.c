@@ -1,6 +1,7 @@
 #include "common.h"
 #include "ovl_header.h"
 #include "camera.h"
+#include "cheat.h"
 #include "pad.h"
 #include "spu.h"
 #include "stdutil.h"
@@ -9,6 +10,7 @@
 extern int func_80018368(Vector3D*, Vector3D*);
 extern int func_80019138(Vector3D*, int, int, int, int, int);
 extern void func_8001BA30(Vector3D*, int, int, int, int, Moby*);
+extern void func_80055F14(Moby*, int, Vector3D*);
 
 extern void* D_8006C570;
 extern int g_CurrentLevel; // 8006C5BC
@@ -34,7 +36,38 @@ extern Unk_8006C558** D_8006C558;
 
 ///////////////////////////////////////////////////////////////////////////////
 
-INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8003E83C);
+/**
+ * UpdateSpyro() - func_8003E83C() - MATCHING
+ * https://decomp.me/scratch/hl4HV
+ */
+void func_8003E83C() {
+    func_8004F168(g_Spyro.unk7a);
+    func_800489CC();
+    func_800473E4();
+    func_8003E968();
+    func_8003F194();
+    func_8004CCA0();
+    func_80045D70();
+    func_80044240();
+    func_800451C4();
+    func_800458F8();
+    func_80048948();
+    func_800491F4();
+    func_80047C7C();
+    if (g_Spyro.movementState == MOVEMENT_STATE_SUPERFLY) {
+        if (g_Spyro.critterMode == CRITTER_HUNTER_1) {
+            func_80055F14(g_Spyro.critterMobyPtr, 0, &g_Spyro.unk23a);
+            func_80055F14(g_Spyro.critterMobyPtr, 1, &g_Spyro.unk23b);
+        }
+        else {
+            func_80049ACC(0x56, &g_Spyro.unk23a);
+            func_80049ACC(0x55, &g_Spyro.unk23b);
+        }
+    }
+    if (g_CheatFlags.bigHeadMode && (g_Spyro.headRotation.pitch == 0)) {
+        g_Spyro.headRotation.pitch = 1;
+    }
+}
 
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_8003E968);
 

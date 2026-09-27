@@ -17,7 +17,18 @@ INCLUDE_ASM("asm/nonmatchings/spu", func_8003BEDC);
 
 INCLUDE_ASM("asm/nonmatchings/spu", func_8003BF6C);
 
-INCLUDE_ASM("asm/nonmatchings/spu", func_8003BFC0);
+/**
+ * ???() - func_8003BFC0() - MATCHING
+ * https://decomp.me/scratch/STI55
+ */
+int func_8003BFC0(Moby* arg0, int arg1) {
+    if (arg1 >= 0 && g_ActiveSounds[arg1].unk28 == arg0) {
+        if (g_ActiveSounds[arg1].unk0 == 1 || g_ActiveSounds[arg1].unk0 == 2) {
+            return 1;
+        } 
+    }
+    return 0;
+}
 
 INCLUDE_ASM("asm/nonmatchings/spu", func_8003C014);
 

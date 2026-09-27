@@ -365,24 +365,38 @@ typedef struct {
     Moby* critterMobyPtr;      // 250
     int unk21[11];             // [0] 254, 258, 25C, 260; [4] 264, 268, 26C, 270; [8] 274, 278, 27C
     int currentHealth;         // 280
-    int unk22[25];             // [1] makes spyro invisible, [15] changes a lot and is -1 when Spyro is airborne
+    int unk22[9];              // [1] makes spyro invisible, [15] changes a lot and is -1 when Spyro is airborne
+    Vector3D unk23a;           // 2A8
+    Vector3D unk23b;           // 2B4
+    int unk24[10];             // 2C0
 } Spyro;
 
 extern Spyro spyro;
 extern Spyro g_Spyro; // preferred label
 
 
+void func_8003E968();
+void func_8003F194();
 int func_80040954(int);
 void func_80043ABC(Vector3D*);
 void func_80043E00(Vector3D*);
 void func_80043F3C(Vector3D*);
+void func_80044240();
 void func_800443EC();
 void func_800445F8();
 void func_80044C28();
 void func_80044CF0();
+void func_800451C4();
+void func_800458F8();
+void func_80045D70();
 void func_80047138();
+void func_800473E4();
+void func_80047C7C();
+void func_80048948();
+void func_800489CC();
+void func_800491F4();
 void func_800492DC(Vector3D*);
 void func_80049ACC(int, Vector3D*);
-
+void func_8004CCA0();
 
 #endif
