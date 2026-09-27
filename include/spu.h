@@ -77,10 +77,11 @@ typedef struct {
     Moby* unk28;
 } ActiveSound;
 
-// sdata
+// sbss
 extern SoundTable* g_SoundTablePtr; // 8006C654
 extern SoundTable* D_8006C654; // for the initial decompile - remove later
 extern SoundDefinition* g_SpuDefinitionsPtr; // 8006C6A0
+extern char* D_8006C708; // AmbientSoundPointer
 
 // bss
 extern ActiveSound g_ActiveSounds[24]; // 8006FCE4

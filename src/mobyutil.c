@@ -10,9 +10,6 @@
 extern int func_8001A310(Vector3D*, int, int, Moby*);
 extern int func_8001A358(Vector3D*, int);
 
-// spyro
-extern int func_80040954(int);
-
 // updatemobys
 extern void func_80055B18(Moby*); // delete moby
 extern void func_80056270(Moby*);
@@ -43,6 +40,7 @@ extern int D_8006C770;
 
 // bss
 extern WadHeader wadHeader; // 8006d8d8
+extern Model* D_8006EE2C[768]; // model pointers
 extern CollisionData D_80071900;
 extern LevelWadHeader levelWadHeader; // 80072098
 
@@ -70,11 +68,20 @@ void func_80034F40(Moby* moby, int newId) {
 }
 
 /** 
- * SetMobyAnimation() - func_80034F80()
- * Weird, has that weird array I've labelled as "moby sound pointers"??
- * https://decomp.me/scratch/wbxvf
+ * SetMobyAnimation() - func_80034F80() - MATCHING
+ * Weird match!
+ * https://decomp.me/scratch/DoLs6
  */
-INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80034F80);
+void func_80034F80(Moby* arg0, int arg1) {
+    if (arg0->animationState.id != arg1) {
+        arg0->unknown3[1] = 0;
+        arg0->animationProgress = -(D_8006EE2C[arg0->mobyClass]->m_Animations[arg1]->m_NumFrames != 0 && D_8006EE2C[arg0->mobyClass]->m_Animations[arg1]->m_NumFrames != 1) & 0x30;
+        arg0->animationState.id = arg1;
+        arg0->animationState.nextId = arg1;
+        arg0->animationState.frame = 0;
+        arg0->animationState.nextFrame = 1;
+    }
+}
 
 /**
  * SetDefaultMobyProperties() - func_80034FEC() - MATCHING

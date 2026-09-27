@@ -143,7 +143,7 @@
 - [ ] func_8003038C
 - [ ] func_80034DAC
 - [x] func_80034F40
-- [ ] func_80034F80
+- [x] func_80034F80
 - [x] func_80034FEC
 - [ ] func_80035030
 - [ ] func_80035194
@@ -214,16 +214,16 @@
 - [x] func_8003BA00
 
 <!-- SPU -->
-- [ ] func_8003BABC
-- [ ] func_8003BB10
+- [x] func_8003BABC
+- [x] func_8003BB10
 - [ ] func_8003BB50 <!-- PlaySound -->
-- [ ] func_8003BE70
-- [ ] func_8003BEDC
-- [ ] func_8003BF6C
+- [x] func_8003BE70
+- [x] func_8003BEDC
+- [x] func_8003BF6C
 - [x] func_8003BFC0
 - [ ] func_8003C014
 - [x] func_8003C0B0
-- [ ] func_8003C140
+- [x] func_8003C140
 - [ ] func_8003C184
 - [ ] func_8003C428
 - [ ] func_8003C79C

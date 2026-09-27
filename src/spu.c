@@ -1,9 +1,32 @@
 #include "common.h"
 #include "spu.h"
 
-INCLUDE_ASM("asm/nonmatchings/spu", func_8003BABC);
+extern Model* D_8006EE2C[768]; // probably moby model pointers
+extern int D_8006C630;
 
-INCLUDE_ASM("asm/nonmatchings/spu", func_8003BB10);
+//////////////////////////////////////////////////////////////
+
+/**
+ * ???() - func_8003BABC() - MATCHING
+ * https://decomp.me/scratch/kKchg
+ */
+int func_8003BABC(Moby* arg0, int arg1, int arg2) {
+    if (D_8006EE2C[arg0->mobyClass]->m_Sounds[arg1] != 0xFF) {
+        return PlaySound(D_8006EE2C[arg0->mobyClass]->m_Sounds[arg1], arg0, arg2);
+    }
+    return -1;
+}
+
+/**
+ * ???() - func_8003BB10() - MATCHING
+ * https://decomp.me/scratch/tr67c
+ */
+int func_8003BB10(Moby* arg0, int arg1, int arg2) {    
+    if (D_8006C708[arg1] != 0xFF) {
+        return PlaySound(D_8006C708[arg1], arg0, arg2);
+    }
+    return -1;
+}
 
 /** 
  * PlaySound() - func_8003BB50()
@@ -11,19 +34,54 @@ INCLUDE_ASM("asm/nonmatchings/spu", func_8003BB10);
  */
 INCLUDE_ASM("asm/nonmatchings/spu", PlaySound);
 
-INCLUDE_ASM("asm/nonmatchings/spu", func_8003BE70);
+/**
+ * ???() - func_8003BE70() - MATCHING
+ * https://decomp.me/scratch/TvzFy
+ */
+void func_8003BE70(int handle) {
+    if (g_ActiveSounds[handle].unk0 == 1) {
+        g_ActiveSounds[handle].unk0 = 5;
+    }
+    else if (g_ActiveSounds[handle].unk0 == 2) {
+        g_ActiveSounds[handle].unk0 = 3;
+        g_ActiveSounds[handle].unk4 = 0;
+    }
+}
 
-INCLUDE_ASM("asm/nonmatchings/spu", func_8003BEDC);
+/**
+ * ???() - func_8003BEDC() - MATCHING
+ * https://decomp.me/scratch/aupaf
+ */
+void func_8003BEDC() {
+    int handle;
+    D_8006C630 = 1;
+    for (handle = 0; handle < 0x18; handle++) {
+        if ((g_ActiveSounds[handle].unk0 == 1 || g_ActiveSounds[handle].unk0 == 2) && !(g_ActiveSounds[handle].unk2 & 0x40)) {
+            func_8003BE70(handle);
+        }
+    }
+}
 
-INCLUDE_ASM("asm/nonmatchings/spu", func_8003BF6C);
+/**
+ * ???() - func_8003BF6C() - MATCHING
+ * https://decomp.me/scratch/HNDde
+ */
+int func_8003BF6C(int arg0, int handle) {
+    if (handle >= 0 && g_ActiveSounds[handle].unk1 == arg0) {
+        if (g_ActiveSounds[handle].unk0 == 1 || g_ActiveSounds[handle].unk0 == 2) {
+            return 1;
+        }
+    }
+    return 0;
+}
 
 /**
  * ???() - func_8003BFC0() - MATCHING
  * https://decomp.me/scratch/STI55
  */
-int func_8003BFC0(Moby* arg0, int arg1) {
-    if (arg1 >= 0 && g_ActiveSounds[arg1].unk28 == arg0) {
-        if (g_ActiveSounds[arg1].unk0 == 1 || g_ActiveSounds[arg1].unk0 == 2) {
+int func_8003BFC0(Moby* arg0, int handle) {
+    if (handle >= 0 && g_ActiveSounds[handle].unk28 == arg0) {
+        if (g_ActiveSounds[handle].unk0 == 1 || g_ActiveSounds[handle].unk0 == 2) {
             return 1;
         } 
     }
@@ -43,7 +101,14 @@ void func_8003C0B0(int handle, int arg1) {
     g_ActiveSounds[handle].unk2 |= 8;
 }
 
-INCLUDE_ASM("asm/nonmatchings/spu", func_8003C140);
+/**
+ * ???() - func_8003C140() - MATCHING
+ * https://decomp.me/scratch/PnDAX
+ */
+void func_8003C140(int handle, int arg1) {
+    g_ActiveSounds[handle].unkC = arg1;
+    g_ActiveSounds[handle].unk2 |= 0x10;
+}
 
 INCLUDE_ASM("asm/nonmatchings/spu", func_8003C184);
 

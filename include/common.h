@@ -588,4 +588,39 @@ typedef struct {
 	int unk3C;
 } Unk_8006d048; // g_Environment in S1?
 
+typedef struct {
+	short unk0; // "blockOffset"?
+	char unk2; // "number of blocks"?
+	char unk3; // "flags"?
+	int unk4; // "shadow"?
+} AnimationFrame;
+
+typedef struct {
+    char m_NumFrames;
+	char m_NumColours;
+	char unk2; // "vert scale"?
+	char unk3;
+	char m_VertCountHigh;
+	char unk5;
+	char unk6;
+	char unk7;
+	int unk8;
+	void* m_Verts;
+	void* m_Faces;
+	void* m_Colours;
+	void* m_LpFaces;
+	void* m_LpColours;
+	void* m_Data; // ?
+	AnimationFrame m_Frames[1];
+} AnimationHeader;
+
+typedef struct {
+    int m_NumAnimations;              //  0 // >= 0 == Model // have not checked for accuracy in S3
+    char m_Sounds[16];                //  4
+    void *m_CollisionModels[8];       // 14 // have not checked for accuracy in S3
+    void *m_Data;                     // 34 // offset from this to the data, used to offset pointers inside animations // have not checked for accuracy in S3
+    int unk38;                        // 38 // probably ptr to faces
+    AnimationHeader *m_Animations[1]; // 3C // have not checked for accuracy in S3
+} Model;
+
 #endif
