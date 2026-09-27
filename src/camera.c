@@ -1,5 +1,6 @@
 #include "common.h"
 #include "camera.h"
+#include "cheat.h"
 #include "stdutil.h"
 #include "spyro.h"
 
@@ -155,7 +156,17 @@ INCLUDE_ASM("asm/nonmatchings/camera", func_80013E38);
 
 INCLUDE_ASM("asm/nonmatchings/camera", func_8001405C);
 
-INCLUDE_ASM("asm/nonmatchings/camera", func_800142AC);
+/**
+ * ???() - func_800142AC() - MATCHING
+ * https://decomp.me/scratch/zE7uy
+ */
+void func_800142AC() {
+    if (g_CheatFlags.cameraMode != 0) {
+        g_Camera.unk58 = 0;
+        return;
+    }
+    g_Camera.unk58 = 7;
+}
 
 /**
  * ???() - func_800142E0() - MATCHING
@@ -169,10 +180,22 @@ void func_800142E0() {
 
 /**
  * ???() - func_80014354() - MATCHING
- * Ready to add
  * https://decomp.me/scratch/Oix8L
  */
-INCLUDE_ASM("asm/nonmatchings/camera", func_80014354);
+void func_80014354() {
+    if (camera.unk168 == 0xD) {
+        func_800135A4(&camera.unk7c.pos[1], &D_80069058, camera.unk6c);
+    } else if (g_Spyro.unk20a != 0) {
+        func_800135A4(&camera.unk7c.pos[1], &D_800719A8, camera.unk6c);
+    } else if (g_Spyro.movementState == MOVEMENT_STATE_GLIDE) {
+        func_800135A4(&camera.unk7c.pos[1], &D_80068FA4, camera.unk6c);
+    } else if (g_Spyro.movementState == MOVEMENT_STATE_SUPERFLY) {
+        func_800135A4(&camera.unk7c.pos[1], &D_80068FF4, camera.unk6c);
+    } else {
+        func_800135A4(&camera.unk7c.pos[1], &D_80068F7C, camera.unk6c);
+    }
+    camera.unk7c.pos[1].yaw = (camera.unk7c.pos[1].yaw - camera.unk1c4[4]) & 0xFFF;
+}
 
 /**
  * ???() - func_80014450() - MATCHING
