@@ -130,7 +130,7 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80041580);
 
 /**
  * ???() - func_800416F4()
- * WIP, barely started
+ * Nearly there
  * https://decomp.me/scratch/wClhX
  */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800416F4);
@@ -215,8 +215,8 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80043194);
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80043728);
 
 /**
- * ???() - func_800438F4()
- * WIP, barely started
+ * ???() - func_800438F4() - MATCHING
+ * Ready to add
  * https://decomp.me/scratch/ZDzxM
  */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800438F4);
@@ -425,7 +425,7 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800443EC);
 
 /**
  * ???() - func_80044514()
- * WIP, small function, barely started
+ * Nearly there, has some g_Spyro.unk3 related issues
  * https://decomp.me/scratch/0whTj
  */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80044514);
@@ -434,7 +434,7 @@ INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_800445F8);
 
 /**
  * ???() - func_80044C28()
- * WIP
+ * Nearly there, has some g_Spyro.unk3 related issues
  * https://decomp.me/scratch/xvays
  */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80044C28);
@@ -606,8 +606,8 @@ void func_800494A8() {
 }
 
 /**
- * ???() - func_80049590()
- * WIP, haven't started yet
+ * ???() - func_80049590() - MATCHING
+ * Ready to add
  * https://decomp.me/scratch/HD94X
  */
 INCLUDE_ASM("asm/nonmatchings/spyroupdate", func_80049590);
