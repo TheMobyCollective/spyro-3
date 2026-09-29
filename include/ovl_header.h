@@ -98,7 +98,7 @@ extern void (*unk_ovlheader_80074318)(void); // 80074318, types TODO, likely Upd
 extern void (*unk_ovlheader_8007431C)(void); // 8007431C, types TODO, likely Update movement state(?)
 extern void (*unk_ovlheader_80074320)(void); // 80074320, types TODO
 extern void (*unk_ovlheader_80074324)(void); // 80074324, types TODO
-extern void (*unk_ovlheader_80074328)(void); // 80074328, types TODO
+extern void (*unk_ovlheader_80074328)(Moby*); // 80074328
 extern void (*unk_ovlheader_8007432C)(void); // 8007432C, types TODO
 extern int (*unk_ovlheader_80074330)(Vector3D*, int, int); // 80074330, level-specific
 extern int (*unk_ovlheader_80074334)(Vector3D*); // 80074334, level-specific

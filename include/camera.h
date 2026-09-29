@@ -7,7 +7,7 @@
 typedef struct {
 	int azimuth;
 	int elevation;
-	unsigned int radius; // spherical radius
+	int radius; // spherical radius
 } SphericalPosition;
 
 typedef struct {

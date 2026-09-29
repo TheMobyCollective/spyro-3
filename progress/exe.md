@@ -2,9 +2,9 @@
 - [x] main
 
 <!-- Camera -->
-- [ ] func_8001204C
+- [x] func_8001204C
 - [ ] func_80012168
-- [ ] func_8001241C
+- [x] func_8001241C
 - [ ] func_80012530
 - [x] func_80012AC8
 - [x] func_80012B34
@@ -12,7 +12,7 @@
 - [ ] func_80012D18
 - [ ] func_800130DC
 - [x] func_800135A4
-- [ ] func_800135F8
+- [x] func_800135F8
 - [ ] func_800136F0
 - [x] func_800138A0
 - [x] func_80013900
