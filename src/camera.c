@@ -5,12 +5,14 @@
 #include "pad.h"
 #include "stdutil.h"
 #include "spyro.h"
+#include "tracers.h"
 #include "moby/mobytag.h"
 
 // sbss
 extern int D_8006C6D0;
 
-void func_8005955C(int); // SetGeomScreen
+extern void func_8005955C(int); // SetGeomScreen
+extern void func_80055D24(Moby*, int); // fUpdateMobyCollision
 
 ///////////////////////////////////////////////////////////////////////
 
