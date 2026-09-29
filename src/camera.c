@@ -9,19 +9,24 @@ extern int D_8006C6D0;
 
 ///////////////////////////////////////////////////////////////////////
 
+/**
+ * ???() - func_8001204C() - MATCHING
+ * Ready to add
+ * https://decomp.me/scratch/Wbj6B
+ */
 INCLUDE_ASM("asm/nonmatchings/camera", func_8001204C);
 
 /**
  * ???() - func_80012168()
- * WIP
- * https://decomp.me/scratch/IUiur
+ * Close, but not quite there
+ * https://decomp.me/scratch/7av0M
  */
 INCLUDE_ASM("asm/nonmatchings/camera", func_80012168);
 
 /**
  * ???() - func_8001241C() - MATCHING
- * Almost ready to add, but must have struct usage corrected first
- * https://decomp.me/scratch/FD6TW
+ * Ready to add
+ * https://decomp.me/scratch/HotSn
  */
 INCLUDE_ASM("asm/nonmatchings/camera", func_8001241C);
 
@@ -51,8 +56,8 @@ void func_80012B34() {
 
 /**
  * ???() - func_80012BA8()
- * WIP
- * https://decomp.me/scratch/b1d0d
+ * Close but a work in progress
+ * https://decomp.me/scratch/mrVQY
  */
 INCLUDE_ASM("asm/nonmatchings/camera", func_80012BA8);
 
