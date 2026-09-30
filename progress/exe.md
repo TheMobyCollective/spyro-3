@@ -339,7 +339,7 @@
 - [ ] func_80054450
 - [x] func_80054AF8
 - [ ] func_80054B64
-- [ ] func_80054CD8 <!-- WIP - matching, but issues with compilation -->
+- [x] func_80054CD8
 - [ ] func_80054D84
 - [ ] func_80054E5C
 - [ ] func_80054F94 <!-- WIP - matching, but issues with compilation -->
@@ -358,7 +358,7 @@
 - [ ] func_8005663C
 - [ ] func_8005693C
 - [ ] func_800569C0
-- [ ] func_80056A3C
+- [x] func_80056A3C
 - [ ] func_80056A98
 - [ ] func_80056CF0
 - [ ] func_80056ECC

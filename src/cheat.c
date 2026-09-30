@@ -30,6 +30,8 @@ static inline void InitiateLevelWarp(char pLevelId) {
   }
 }
 
+// TODO - update the pad buttons to the defines in pad.h
+
 ///////////////////////////////////////////////////////////////////////
 
 /**
