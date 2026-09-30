@@ -11,7 +11,7 @@
 // sbss
 extern int D_8006C6D0;
 
-extern void func_8005955C(int); // SetGeomScreen
+extern void SetGeomScreen(int);
 extern void func_80055D24(Moby*, int); // fUpdateMobyCollision
 
 ///////////////////////////////////////////////////////////////////////
@@ -23,7 +23,7 @@ extern void func_80055D24(Moby*, int); // fUpdateMobyCollision
 void func_8001204C() {
     func_80012168();
     func_80017028();
-    func_8005955C(g_Camera.unk1c4[5] + 0x155);
+    SetGeomScreen(g_Camera.unk1c4[5] + 0x155);
     g_Camera.unk1c4[4] = 0;
     if (g_Spyro.critterMode == CRITTER_AGENT_9) {
         MobyTag_99* tag = g_Spyro.critterMobyPtr->mobyTag;

@@ -16,7 +16,7 @@ glabel func_8002AB38
 /* 1B364 8002AB64 00000000 */   nop
 /* 1B368 8002AB68 3B3E010C */  jal        func_8004F8EC
 /* 1B36C 8002AB6C 00000000 */   nop
-/* 1B370 8002AB70 67AA000C */  jal        func_8002A99C
+/* 1B370 8002AB70 67AA000C */  jal        InitGTE
 /* 1B374 8002AB74 00000000 */   nop
 /* 1B378 8002AB78 0780103C */  lui        $s0, %hi(D_8006D8E4)
 /* 1B37C 8002AB7C E4D81026 */  addiu      $s0, $s0, %lo(D_8006D8E4)

@@ -29,7 +29,7 @@ glabel func_title_80078B88
 /* 278BC 80078B8C 1000BFAF */  sw         $ra, 0x10($sp)
 /* 278C0 80078B90 0780043C */  lui        $a0, %hi(D_title_80074604)
 /* 278C4 80078B94 04468424 */  addiu      $a0, $a0, %lo(D_title_80074604)
-/* 278C8 80078B98 7F7D010C */  jal        func_8005F5FC
+/* 278C8 80078B98 7F7D010C */  jal        printf
 /* 278CC 80078B9C 00000000 */   nop
 /* 278D0 80078BA0 CEE2010C */  jal        func_title_80078B38
 /* 278D4 80078BA4 00000000 */   nop
@@ -39,7 +39,7 @@ glabel func_title_80078B88
 /* 278E4 80078BB4 00000000 */   nop
 /* 278E8 80078BB8 0780043C */  lui        $a0, %hi(D_title_80074614)
 /* 278EC 80078BBC 14468424 */  addiu      $a0, $a0, %lo(D_title_80074614)
-/* 278F0 80078BC0 7F7D010C */  jal        func_8005F5FC
+/* 278F0 80078BC0 7F7D010C */  jal        printf
 /* 278F4 80078BC4 00000000 */   nop
 /* 278F8 80078BC8 0780043C */  lui        $a0, %hi(D_title_80074630)
 /* 278FC 80078BCC 30468424 */  addiu      $a0, $a0, %lo(D_title_80074630)

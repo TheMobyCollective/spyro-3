@@ -534,9 +534,9 @@ glabel func_title_80074DEC
 /* 242D0 800755A0 00000000 */   nop
 /* 242D4 800755A4 3F004230 */  andi       $v0, $v0, 0x3F
 /* 242D8 800755A8 80100200 */  sll        $v0, $v0, 2
-/* 242DC 800755AC 0380013C */  lui        $at, %hi(func_8002A99C)
+/* 242DC 800755AC 0380013C */  lui        $at, %hi(InitGTE)
 /* 242E0 800755B0 21082200 */  addu       $at, $at, $v0
-/* 242E4 800755B4 9CA920AC */  sw         $zero, %lo(func_8002A99C)($at)
+/* 242E4 800755B4 9CA920AC */  sw         $zero, %lo(InitGTE)($at)
 .Ltitle_800755B8:
 /* 242E8 800755B8 0B00C012 */  beqz       $s6, .Ltitle_800755E8
 /* 242EC 800755BC 00000000 */   nop

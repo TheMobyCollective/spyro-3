@@ -6,7 +6,7 @@
 // will need LibCD implemented soon, also there are constants in there that should be used in here (see spyro-1)
 extern int func_8005D96C(int sectors, unsigned long *buf, int mode); // CdRead 
 extern int func_8005E0BC(unsigned char com, unsigned char *param, unsigned char *result); // CdControl
-extern int func_8005DB1C(void); // CdInit
+extern int CdInit(void); // CdInit
 extern int func_8005E074(int mode, unsigned char *result); // CdSync
 extern int func_8005E1F8(unsigned char com, unsigned char *param); //CdControlF
 extern int func_8005E018(void); // CdStatus 
@@ -108,7 +108,7 @@ int CDLoadTime() {
         modeFlags = 0x80;
 
         // Reinitialize the CD subsystem
-        func_8005DB1C();
+        CdInit();
         
         // Set the mode to double speed?
         func_8005E0BC(0xE, &modeFlags, 0);

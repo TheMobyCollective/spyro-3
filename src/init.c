@@ -8,14 +8,12 @@
 
 // psyq
 extern void VSync(int);
-extern void func_8005955C(int); // SetGeomScreen
-extern void func_8005D384(); // InitGeom
-extern void func_8005D35C(int, int); // SetGeomOffset
+extern void SetGeomScreen(int);
+extern void InitGeom();
+extern void SetGeomOffset(int, int);
 extern int func_8005DB08(void* param_1);
-extern int func_8005DB1C(); // CdInit
+extern int CdInit();
 extern int func_8005E0BC(char param_1, char* param_2, char* param_3);
-extern DRAWENV* func_8005E500(DRAWENV*, int, int, int, int); // SetDefDrawEnv
-extern DISPENV* func_8005E5C0(DISPENV*, int, int, int, int); // SetDefDispEnv
 
 // rodata
 extern int* overlayStartPtr; // 80011254
@@ -45,7 +43,7 @@ void InitCdAndWad() {
     char sp10[8];
 
     sp10[0] = 0x80;
-    func_8005DB1C();
+    CdInit();
     func_8005E0BC(0xE, &sp10[0], 0);
     func_8005DB08(&CDReadDone);
     cdState.wadSector = 0x1F4;
@@ -62,10 +60,10 @@ void SetupDrawDispEnvs() {
     SetDispMask(0);
     ResetGraph(0);
     SetGraphDebug(0);
-    func_8005E500(&g_DrawDispEnvs.dat_8006fbfc, 0,  12, 512, 216);
-    func_8005E500(&g_DrawDispEnvs.dat_8006fc70, 0, 240, 512, 216);
-    func_8005E5C0(&g_DrawDispEnvs.dat_8006fc58, 0, 228, 512, 240);
-    func_8005E5C0(&g_DrawDispEnvs.dat_8006fccc, 0,   0, 512, 240);
+    SetDefDrawEnv(&g_DrawDispEnvs.dat_8006fbfc, 0,  12, 512, 216);
+    SetDefDrawEnv(&g_DrawDispEnvs.dat_8006fc70, 0, 240, 512, 216);
+    SetDefDispEnv(&g_DrawDispEnvs.dat_8006fc58, 0, 228, 512, 240);
+    SetDefDispEnv(&g_DrawDispEnvs.dat_8006fccc, 0,   0, 512, 240);
     g_DrawDispEnvs.dat_8006fc70.ofs[1] = 228;
     g_DrawDispEnvs.dat_8006fbfc.ofs[0] = 0;
     g_DrawDispEnvs.dat_8006fbfc.ofs[1] = 0;
@@ -87,13 +85,13 @@ void SetupDrawDispEnvs() {
 }
 
 /**
- * InitGeom?() - func_8002A99C() - MATCHING
+ * InitGTE() - func_8002A99C() - MATCHING
  * https://decomp.me/scratch/853Zu
  */
-void func_8002A99C() {
-    func_8005D384();
-    func_8005D35C(0x100, 0x78);
-    func_8005955C(0x155);
+void InitGTE() {
+    InitGeom();
+    SetGeomOffset(256, 120);
+    SetGeomScreen(341);
 }
 
 INCLUDE_ASM("asm/nonmatchings/init", func_8002A9D0);

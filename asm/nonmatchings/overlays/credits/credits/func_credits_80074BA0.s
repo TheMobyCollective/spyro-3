@@ -670,7 +670,7 @@ glabel func_credits_80074BA0
 /* 97AA260 80075530 180013A6 */   sh        $s3, 0x18($s0)
 /* 97AA264 80075534 0780043C */  lui        $a0, %hi(D_credits_80074490)
 /* 97AA268 80075538 90448424 */  addiu      $a0, $a0, %lo(D_credits_80074490)
-/* 97AA26C 8007553C 7F7D010C */  jal        func_8005F5FC
+/* 97AA26C 8007553C 7F7D010C */  jal        printf
 /* 97AA270 80075540 00000000 */   nop
 /* 97AA274 80075544 AD3D010C */  jal        func_8004F6B4
 /* 97AA278 80075548 00000000 */   nop

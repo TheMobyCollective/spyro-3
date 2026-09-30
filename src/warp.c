@@ -22,8 +22,6 @@ extern void func_80054E5C();
 // psyq
 extern int VSync(int); // VSync
 extern void func_8005C564(DR_MODE*, int, int, int, int); // SetDrawMode - type and args to check
-extern DRAWENV* func_8005E500(DRAWENV*, int, int, int, int); // SetDefDrawEnv
-extern DISPENV* func_8005E5C0(DISPENV*, int, int, int, int); // SetDefDispEnv
 extern void func_loading_80075114(short);
 extern int func_loading_80077438();
 extern void func_title_80074DEC(int);
@@ -502,8 +500,8 @@ void func_80059038() {
     case 1:
     case 4:
         if (pauseData.frameCount == 0) {
-            func_8005E500(&g_DrawDispEnvs.dat_8006fc70, 0, 12, 512, 216);
-            func_8005E5C0(&g_DrawDispEnvs.dat_8006fc58, 0,  0, 512, 240);
+            SetDefDrawEnv(&g_DrawDispEnvs.dat_8006fc70, 0, 12, 512, 216);
+            SetDefDispEnv(&g_DrawDispEnvs.dat_8006fc58, 0,  0, 512, 240);
             g_DrawDispEnvs.dat_8006fc70.ofs[1] = 0;
             g_DrawDispEnvs.dat_8006fbfc.isbg = 0;
             g_DrawDispEnvs.dat_8006fc70.isbg = 0;
@@ -531,8 +529,8 @@ void func_80059038() {
         return;
     case 3:
         if (pauseData.frameCount == 0) {
-            func_8005E500(&g_DrawDispEnvs.dat_8006fc70, 0, 240, 512, 216);
-            func_8005E5C0(&g_DrawDispEnvs.dat_8006fc58, 0, 228, 512, 240);
+            SetDefDrawEnv(&g_DrawDispEnvs.dat_8006fc70, 0, 240, 512, 216);
+            SetDefDispEnv(&g_DrawDispEnvs.dat_8006fc58, 0, 228, 512, 240);
             g_DrawDispEnvs.dat_8006fc70.ofs[1] = 228;
             g_DrawDispEnvs.dat_8006fbfc.isbg = 1;
             g_DrawDispEnvs.dat_8006fc70.isbg = 1;

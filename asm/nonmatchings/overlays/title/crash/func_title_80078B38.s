@@ -6,7 +6,7 @@ glabel func_title_80078B38
 /* 2786C 80078B3C 1000BFAF */  sw         $ra, 0x10($sp)
 /* 27870 80078B40 7368010C */  jal        SetDispMask
 /* 27874 80078B44 21200000 */   addu      $a0, $zero, $zero
-/* 27878 80078B48 C776010C */  jal        func_8005DB1C
+/* 27878 80078B48 C776010C */  jal        CdInit
 /* 2787C 80078B4C 00000000 */   nop
 /* 27880 80078B50 C276010C */  jal        func_8005DB08
 /* 27884 80078B54 21200000 */   addu      $a0, $zero, $zero

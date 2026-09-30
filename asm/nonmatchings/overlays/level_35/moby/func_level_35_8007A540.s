@@ -54,7 +54,7 @@ glabel func_level_35_8007A540
 /* 76FD2C8 8007A598 00000000 */   nop
 /* 76FD2CC 8007A59C 0780043C */  lui        $a0, %hi(D_level_35_800745C4)
 /* 76FD2D0 8007A5A0 C4458424 */  addiu      $a0, $a0, %lo(D_level_35_800745C4)
-/* 76FD2D4 8007A5A4 7F7D010C */  jal        func_8005F5FC
+/* 76FD2D4 8007A5A4 7F7D010C */  jal        printf
 /* 76FD2D8 8007A5A8 00000000 */   nop
 /* 76FD2DC 8007A5AC C656010C */  jal        func_80055B18
 /* 76FD2E0 8007A5B0 21208002 */   addu      $a0, $s4, $zero

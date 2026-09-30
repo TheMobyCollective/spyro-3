@@ -79,7 +79,7 @@ glabel func_loading_80079C58
 /* 32321CC 80079C9C 01000224 */   addiu     $v0, $zero, 0x1
 .Lloading_80079CA0:
 /* 32321D0 80079CA0 0780043C */  lui        $a0, %hi(D_loading_8007468C)
-/* 32321D4 80079CA4 7F7D010C */  jal        func_8005F5FC
+/* 32321D4 80079CA4 7F7D010C */  jal        printf
 /* 32321D8 80079CA8 8C468424 */   addiu     $a0, $a0, %lo(D_loading_8007468C)
 /* 32321DC 80079CAC 21100000 */  addu       $v0, $zero, $zero
 .Lloading_80079CB0:
@@ -295,7 +295,7 @@ glabel func_loading_80079CC0
 /* 32324DC 80079FAC 000000AE */   sw        $zero, 0x0($s0)
 .Lloading_80079FB0:
 /* 32324E0 80079FB0 0780043C */  lui        $a0, %hi(D_loading_800746B4)
-/* 32324E4 80079FB4 7F7D010C */  jal        func_8005F5FC
+/* 32324E4 80079FB4 7F7D010C */  jal        printf
 /* 32324E8 80079FB8 B4468424 */   addiu     $a0, $a0, %lo(D_loading_800746B4)
 .Lloading_80079FBC:
 /* 32324EC 80079FBC 21100000 */  addu       $v0, $zero, $zero
@@ -330,7 +330,7 @@ glabel func_loading_80079FDC
 /* 3232550 8007A020 01000224 */   addiu     $v0, $zero, 0x1
 .Lloading_8007A024:
 /* 3232554 8007A024 0780043C */  lui        $a0, %hi(D_loading_8007468C)
-/* 3232558 8007A028 7F7D010C */  jal        func_8005F5FC
+/* 3232558 8007A028 7F7D010C */  jal        printf
 /* 323255C 8007A02C 8C468424 */   addiu     $a0, $a0, %lo(D_loading_8007468C)
 /* 3232560 8007A030 21100000 */  addu       $v0, $zero, $zero
 .Lloading_8007A034:
@@ -599,7 +599,7 @@ glabel func_loading_8007A330
 /* 32328F4 8007A3C4 0780043C */  lui        $a0, %hi(D_loading_80074800)
 /* 32328F8 8007A3C8 00488424 */  addiu      $a0, $a0, %lo(D_loading_80074800)
 .Lloading_8007A3CC:
-/* 32328FC 8007A3CC 7F7D010C */  jal        func_8005F5FC
+/* 32328FC 8007A3CC 7F7D010C */  jal        printf
 /* 3232900 8007A3D0 00000000 */   nop
 /* 3232904 8007A3D4 21100000 */  addu       $v0, $zero, $zero
 .Lloading_8007A3D8:
@@ -746,7 +746,7 @@ glabel func_loading_8007A524
 /* 3232AE8 8007A5B8 0780043C */  lui        $a0, %hi(D_loading_80074800)
 /* 3232AEC 8007A5BC 00488424 */  addiu      $a0, $a0, %lo(D_loading_80074800)
 .Lloading_8007A5C0:
-/* 3232AF0 8007A5C0 7F7D010C */  jal        func_8005F5FC
+/* 3232AF0 8007A5C0 7F7D010C */  jal        printf
 /* 3232AF4 8007A5C4 00000000 */   nop
 /* 3232AF8 8007A5C8 21100000 */  addu       $v0, $zero, $zero
 .Lloading_8007A5CC:
@@ -911,7 +911,7 @@ glabel func_loading_8007A718
 /* 3232D24 8007A7F4 0780043C */  lui        $a0, %hi(D_loading_80074800)
 /* 3232D28 8007A7F8 00488424 */  addiu      $a0, $a0, %lo(D_loading_80074800)
 .Lloading_8007A7FC:
-/* 3232D2C 8007A7FC 7F7D010C */  jal        func_8005F5FC
+/* 3232D2C 8007A7FC 7F7D010C */  jal        printf
 /* 3232D30 8007A800 00000000 */   nop
 /* 3232D34 8007A804 21100000 */  addu       $v0, $zero, $zero
 .Lloading_8007A808:
@@ -1082,7 +1082,7 @@ glabel func_loading_8007A970
 /* 3232F7C 8007AA4C 0780043C */  lui        $a0, %hi(D_loading_80074800)
 /* 3232F80 8007AA50 00488424 */  addiu      $a0, $a0, %lo(D_loading_80074800)
 .Lloading_8007AA54:
-/* 3232F84 8007AA54 7F7D010C */  jal        func_8005F5FC
+/* 3232F84 8007AA54 7F7D010C */  jal        printf
 /* 3232F88 8007AA58 00000000 */   nop
 /* 3232F8C 8007AA5C 21100000 */  addu       $v0, $zero, $zero
 .Lloading_8007AA60:
@@ -1287,7 +1287,7 @@ glabel func_loading_8007ACE4
 /* 3233234 8007AD04 08004010 */  beqz       $v0, .Lloading_8007AD28
 /* 3233238 8007AD08 21888000 */   addu      $s1, $a0, $zero
 /* 323323C 8007AD0C 0780043C */  lui        $a0, %hi(D_loading_80074830)
-/* 3233240 8007AD10 7F7D010C */  jal        func_8005F5FC
+/* 3233240 8007AD10 7F7D010C */  jal        printf
 /* 3233244 8007AD14 30488424 */   addiu     $a0, $a0, %lo(D_loading_80074830)
 /* 3233248 8007AD18 61EB0108 */  j          .Lloading_8007AD84
 /* 323324C 8007AD1C FFFF0224 */   addiu     $v0, $zero, -0x1
@@ -1445,7 +1445,7 @@ glabel func_loading_8007AF04
 /* 3233448 8007AF18 06004014 */  bnez       $v0, .Lloading_8007AF34
 /* 323344C 8007AF1C 1000BFAF */   sw        $ra, 0x10($sp)
 /* 3233450 8007AF20 0780043C */  lui        $a0, %hi(D_loading_8007491C)
-/* 3233454 8007AF24 7F7D010C */  jal        func_8005F5FC
+/* 3233454 8007AF24 7F7D010C */  jal        printf
 /* 3233458 8007AF28 1C498424 */   addiu     $a0, $a0, %lo(D_loading_8007491C)
 /* 323345C 8007AF2C DCEB0108 */  j          .Lloading_8007AF70
 /* 3233460 8007AF30 00000000 */   nop
