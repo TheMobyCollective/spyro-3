@@ -29,7 +29,7 @@ extern unsigned char D_80066F7C[40]; // eggs per level
 extern TalkTextData D_80067554[7]; // TriangleToTalkData
 
 // sdata / sbss
-extern int levelIndex; // 8006C58C
+extern int g_LevelIndex; // 8006C58C
 extern int* dragonModelPtr; // 8006C5B0
 extern int D_8006C648; // deltaTime
 extern Moby* D_8006C550; // MobyArrayPointer
@@ -625,7 +625,7 @@ void func_80039974(int dragonNo, int localOffset, int sizeLeft) {
     if (var_a2 == 0) {
         var_a2 = temp_a0->size - localOffset;
     }
-    CDLoadAsync(cdState.wadSector, dragonModelPtr, var_a2, localOffset + (wadHeader.lvl[levelIndex].lvl.offset + temp_a0->offset));
+    CDLoadAsync(cdState.wadSector, dragonModelPtr, var_a2, localOffset + (wadHeader.lvl[g_LevelIndex].lvl.offset + temp_a0->offset));
 }
 
 /**

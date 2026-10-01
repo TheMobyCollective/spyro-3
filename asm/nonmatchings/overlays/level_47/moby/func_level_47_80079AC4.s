@@ -218,7 +218,7 @@ glabel func_level_47_80079AC4
 /* 91192D0 80079DA0 7055010C */  jal        ActivateSparxPowers
 /* 91192D4 80079DA4 00000000 */   nop
 /* 91192D8 80079DA8 21200000 */  addu       $a0, $zero, $zero
-/* 91192DC 80079DAC 2F61010C */  jal        func_800584BC
+/* 91192DC 80079DAC 2F61010C */  jal        WarpToLevel
 /* 91192E0 80079DB0 0A000524 */   addiu     $a1, $zero, 0xA
 .Llevel_47_80079DB4:
 /* 91192E4 80079DB4 7400638E */  lw         $v1, 0x74($s3)

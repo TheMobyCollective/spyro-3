@@ -462,7 +462,7 @@ glabel func_level_17_8007D19C
 /* 4D0AD50 8007D820 0780013C */  lui        $at, %hi(D_800715B5)
 /* 4D0AD54 8007D824 B51522A0 */  sb         $v0, %lo(D_800715B5)($at)
 /* 4D0AD58 8007D828 06000424 */  addiu      $a0, $zero, 0x6
-/* 4D0AD5C 8007D82C 2F61010C */  jal        func_800584BC
+/* 4D0AD5C 8007D82C 2F61010C */  jal        WarpToLevel
 /* 4D0AD60 8007D830 41000524 */   addiu     $a1, $zero, 0x41
 /* 4D0AD64 8007D834 E3F60108 */  j          .Llevel_17_8007DB8C
 /* 4D0AD68 8007D838 21204002 */   addu      $a0, $s2, $zero

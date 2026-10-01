@@ -123,7 +123,7 @@ glabel Draw
 /* EF84 8001E784 0F7A0008 */  j          .L8001E83C
 /* EF88 8001E788 00000000 */   nop
 .L8001E78C:
-/* EF8C 8001E78C 0E64010C */  jal        func_80059038
+/* EF8C 8001E78C 0E64010C */  jal        DrawLoadingImage
 /* EF90 8001E790 00000000 */   nop
 /* EF94 8001E794 0F7A0008 */  j          .L8001E83C
 /* EF98 8001E798 00000000 */   nop

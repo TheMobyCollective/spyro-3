@@ -124,7 +124,7 @@ glabel func_level_20_8007D224
 /* 50CD124 8007D3F4 03F50108 */  j          .Llevel_20_8007D40C
 /* 50CD128 8007D3F8 480002A2 */   sb        $v0, 0x48($s0)
 .Llevel_20_8007D3FC:
-/* 50CD12C 8007D3FC 2F61010C */  jal        func_800584BC
+/* 50CD12C 8007D3FC 2F61010C */  jal        WarpToLevel
 /* 50CD130 8007D400 4E000524 */   addiu     $a1, $zero, 0x4E
 .Llevel_20_8007D404:
 /* 50CD134 8007D404 C656010C */  jal        func_80055B18

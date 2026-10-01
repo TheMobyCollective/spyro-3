@@ -731,7 +731,7 @@ glabel func_80057834
 /* 48A38 80058238 0780013C */  lui        $at, %hi(D_80070148)
 /* 48A3C 8005823C 480120AC */  sw         $zero, %lo(D_80070148)($at)
 /* 48A40 80058240 05000424 */  addiu      $a0, $zero, 0x5
-/* 48A44 80058244 2F61010C */  jal        func_800584BC
+/* 48A44 80058244 2F61010C */  jal        WarpToLevel
 /* 48A48 80058248 21280000 */   addu      $a1, $zero, $zero
 /* 48A4C 8005824C EF600108 */  j          .L800583BC
 /* 48A50 80058250 00000000 */   nop
@@ -802,14 +802,14 @@ glabel func_80057834
 /* 48B44 80058344 06006214 */  bne        $v1, $v0, .L80058360
 /* 48B48 80058348 08000224 */   addiu     $v0, $zero, 0x8
 /* 48B4C 8005834C 21200000 */  addu       $a0, $zero, $zero
-/* 48B50 80058350 2F61010C */  jal        func_800584BC
+/* 48B50 80058350 2F61010C */  jal        WarpToLevel
 /* 48B54 80058354 F9FFA524 */   addiu     $a1, $a1, -0x7
 /* 48B58 80058358 FC600108 */  j          .L800583F0
 /* 48B5C 8005835C 00000000 */   nop
 .L80058360:
 /* 48B60 80058360 05006214 */  bne        $v1, $v0, .L80058378
 /* 48B64 80058364 21200000 */   addu      $a0, $zero, $zero
-/* 48B68 80058368 2F61010C */  jal        func_800584BC
+/* 48B68 80058368 2F61010C */  jal        WarpToLevel
 /* 48B6C 8005836C F8FFA524 */   addiu     $a1, $a1, -0x8
 /* 48B70 80058370 FC600108 */  j          .L800583F0
 /* 48B74 80058374 00000000 */   nop
@@ -827,7 +827,7 @@ glabel func_80057834
 /* 48B9C 8005839C 21200000 */   addu      $a0, $zero, $zero
 /* 48BA0 800583A0 06000424 */  addiu      $a0, $zero, 0x6
 .L800583A4:
-/* 48BA4 800583A4 2F61010C */  jal        func_800584BC
+/* 48BA4 800583A4 2F61010C */  jal        WarpToLevel
 /* 48BA8 800583A8 00000000 */   nop
 /* 48BAC 800583AC 0780013C */  lui        $at, %hi(g_CheatFlags + 4)
 /* 48BB0 800583B0 94FB20A0 */  sb         $zero, %lo(g_CheatFlags + 4)($at)

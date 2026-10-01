@@ -445,7 +445,7 @@ glabel func_level_27_8007D118
 .Llevel_27_8007D738:
 /* 63F1C68 8007D738 000062A0 */  sb         $v0, 0x0($v1)
 /* 63F1C6C 8007D73C 06000424 */  addiu      $a0, $zero, 0x6
-/* 63F1C70 8007D740 2F61010C */  jal        func_800584BC
+/* 63F1C70 8007D740 2F61010C */  jal        WarpToLevel
 /* 63F1C74 8007D744 3F000524 */   addiu     $a1, $zero, 0x3F
 /* 63F1C78 8007D748 0BF60108 */  j          .Llevel_27_8007D82C
 /* 63F1C7C 8007D74C 21204002 */   addu      $a0, $s2, $zero

@@ -248,7 +248,7 @@ glabel func_80050F18
 /* 41AB0 800512B0 00000000 */  nop
 /* 41AB4 800512B4 07004010 */  beqz       $v0, .L800512D4
 /* 41AB8 800512B8 05000424 */   addiu     $a0, $zero, 0x5
-/* 41ABC 800512BC 2F61010C */  jal        func_800584BC
+/* 41ABC 800512BC 2F61010C */  jal        WarpToLevel
 /* 41AC0 800512C0 21280000 */   addu      $a1, $zero, $zero
 /* 41AC4 800512C4 0780023C */  lui        $v0, %hi(D_8006C734)
 /* 41AC8 800512C8 34C7428C */  lw         $v0, %lo(D_8006C734)($v0)

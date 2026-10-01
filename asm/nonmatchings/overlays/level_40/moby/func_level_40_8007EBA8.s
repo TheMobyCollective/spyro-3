@@ -12,7 +12,7 @@ glabel func_level_40_8007EBA8
 /* 7E6A0F4 8007EBC4 21380000 */   addu      $a3, $zero, $zero
 /* 7E6A0F8 8007EBC8 03004010 */  beqz       $v0, .Llevel_40_8007EBD8
 /* 7E6A0FC 8007EBCC 21200000 */   addu      $a0, $zero, $zero
-/* 7E6A100 8007EBD0 2F61010C */  jal        func_800584BC
+/* 7E6A100 8007EBD0 2F61010C */  jal        WarpToLevel
 /* 7E6A104 8007EBD4 2F000524 */   addiu     $a1, $zero, 0x2F
 .Llevel_40_8007EBD8:
 /* 7E6A108 8007EBD8 1000BF8F */  lw         $ra, 0x10($sp)

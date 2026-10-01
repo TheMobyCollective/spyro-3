@@ -33,7 +33,7 @@ extern void func_80055C24(Moby*);
 extern void func_80055D24(Moby*, int); // fUpdateMobyCollision
 
 // Warp
-extern void func_800584BC(int, int); // fWarpToLevel
+extern void WarpToLevel(int, int); // fWarpToLevel
 
 // Psyq
 extern int rand(); // rand
@@ -404,7 +404,7 @@ void func_level_17_8007D19C(Moby* arg0) {
                     func_80054F94(D_80070104.loadLevel, arg0);
                 } else {
                     progressFlags.lvl65_SpikeIsBorn = 1;
-                    func_800584BC(6, 0x41);
+                    WarpToLevel(6, 0x41);
                 }
             }
         }

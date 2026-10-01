@@ -28,7 +28,7 @@ extern unsigned char levelIndexToHomeworldLevelId[40]; // 800671A0
 
 // sdata
 extern int loadStage; // 8006C518
-extern int levelIndex; // 8006C58C
+extern int g_LevelIndex; // 8006C58C
 extern int D_8006C598;
 extern Moby* D_8006C5F8; // dunno what this is but it's a Moby, probably bullet time related
 extern int deltaTime; // 8006C648
@@ -137,7 +137,7 @@ void func_80054AF8() {
     game.state = GAMESTATE_GAME_OVER;
     pauseData.dat_8006fbc8 = 0;
     D_8006C598 = 0;
-    D_8006C7C8 = levelIndexToHomeworldLevelId[levelIndex];
+    D_8006C7C8 = levelIndexToHomeworldLevelId[g_LevelIndex];
     loadStage = 0;
     func_8003BEDC();
     streamingData.musicEnabled = 1;
@@ -306,7 +306,7 @@ void Update(void) {
         func_80057834();
         break;
     case GAMESTATE_LOADING_IMG:
-        func_80058778();
+        UpdateLoadingImage();
         break;
     case GAMESTATE_CUTSCENE:
         (*ovlHeader.UpdateCutscene)(); // UpdateCutscene

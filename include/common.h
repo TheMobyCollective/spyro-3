@@ -64,7 +64,7 @@ typedef struct {
 	DataHeader universalLogo;
 	DataHeader unk1;
 	DataHeader insomniacLogo;
-	CutsceneWads cutscene[21]; // based on func_80058778, 0th is title!
+	CutsceneWads cutscene[21]; // based on UpdateLoadingImage, 0th is title!
 	DataHeader loadOvl; // common
 	DataHeader loadImg[6];
 	DataHeader cutsceneImg[20];

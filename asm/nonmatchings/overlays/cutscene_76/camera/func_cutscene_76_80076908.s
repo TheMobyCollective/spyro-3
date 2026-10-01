@@ -48,7 +48,7 @@ glabel func_cutscene_76_80076908
 /* 264CE70 80076940 00000000 */  nop
 /* 264CE74 80076944 0500A010 */  beqz       $a1, .Lcutscene_76_8007695C
 /* 264CE78 80076948 00000000 */   nop
-/* 264CE7C 8007694C 2F61010C */  jal        func_800584BC
+/* 264CE7C 8007694C 2F61010C */  jal        WarpToLevel
 /* 264CE80 80076950 21200000 */   addu      $a0, $zero, $zero
 /* 264CE84 80076954 A4DA0108 */  j          .Lcutscene_76_80076A90
 /* 264CE88 80076958 000000A2 */   sb        $zero, 0x0($s0)
@@ -148,7 +148,7 @@ glabel func_cutscene_76_80076908
 /* 264CFB0 80076A80 06000424 */  addiu      $a0, $zero, 0x6
 /* 264CFB4 80076A84 49000524 */  addiu      $a1, $zero, 0x49
 .Lcutscene_76_80076A88:
-/* 264CFB8 80076A88 2F61010C */  jal        func_800584BC
+/* 264CFB8 80076A88 2F61010C */  jal        WarpToLevel
 /* 264CFBC 80076A8C 00000000 */   nop
 .Lcutscene_76_80076A90:
 /* 264CFC0 80076A90 1400BF8F */  lw         $ra, 0x14($sp)
