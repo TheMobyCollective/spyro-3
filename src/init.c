@@ -23,7 +23,7 @@ extern DRAWENV* D_8006C600;
 
 // bss
 extern WadHeader wadHeader;
-extern DrawDispEnvs g_DrawDispEnvs;
+extern DB g_DB[2];
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,26 +60,26 @@ void SetupDrawDispEnvs() {
     SetDispMask(0);
     ResetGraph(0);
     SetGraphDebug(0);
-    SetDefDrawEnv(&g_DrawDispEnvs.dat_8006fbfc, 0,  12, 512, 216);
-    SetDefDrawEnv(&g_DrawDispEnvs.dat_8006fc70, 0, 240, 512, 216);
-    SetDefDispEnv(&g_DrawDispEnvs.dat_8006fc58, 0, 228, 512, 240);
-    SetDefDispEnv(&g_DrawDispEnvs.dat_8006fccc, 0,   0, 512, 240);
-    g_DrawDispEnvs.dat_8006fc70.ofs[1] = 228;
-    g_DrawDispEnvs.dat_8006fbfc.ofs[0] = 0;
-    g_DrawDispEnvs.dat_8006fbfc.ofs[1] = 0;
-    g_DrawDispEnvs.dat_8006fc70.ofs[0] = 0;
-    g_DrawDispEnvs.dat_8006fccc.screen.x = 0;
-    g_DrawDispEnvs.dat_8006fc58.screen.x = 0;
-    g_DrawDispEnvs.dat_8006fccc.screen.y = 0;
-    g_DrawDispEnvs.dat_8006fc58.screen.y = 0;
-    g_DrawDispEnvs.dat_8006fbfc.isbg = 1;
-    g_DrawDispEnvs.dat_8006fc70.isbg = 1;
-    g_DrawDispEnvs.dat_8006fbfc.dtd = 1;
-    g_DrawDispEnvs.dat_8006fc70.dtd = 1;
+    SetDefDrawEnv(&g_DB[0].m_DrawEnv, 0,  12, 512, 216);
+    SetDefDrawEnv(&g_DB[1].m_DrawEnv, 0, 240, 512, 216);
+    SetDefDispEnv(&g_DB[0].m_DispEnv, 0, 228, 512, 240);
+    SetDefDispEnv(&g_DB[1].m_DispEnv, 0,   0, 512, 240);
+    g_DB[1].m_DrawEnv.ofs[1] = 228;
+    g_DB[0].m_DrawEnv.ofs[0] = 0;
+    g_DB[0].m_DrawEnv.ofs[1] = 0;
+    g_DB[1].m_DrawEnv.ofs[0] = 0;
+    g_DB[1].m_DispEnv.screen.x = 0;
+    g_DB[0].m_DispEnv.screen.x = 0;
+    g_DB[1].m_DispEnv.screen.y = 0;
+    g_DB[0].m_DispEnv.screen.y = 0;
+    g_DB[0].m_DrawEnv.isbg = 1;
+    g_DB[1].m_DrawEnv.isbg = 1;
+    g_DB[0].m_DrawEnv.dtd = 1;
+    g_DB[1].m_DrawEnv.dtd = 1;
     func_8001EBAC();
     VSync(0);
-    D_8006C600 = &g_DrawDispEnvs.dat_8006fc70;
-    PutDispEnv(&g_DrawDispEnvs.dat_8006fccc);
+    D_8006C600 = &g_DB[1].m_DrawEnv;
+    PutDispEnv(&g_DB[1].m_DispEnv);
     PutDrawEnv(D_8006C600);
     SetDispMask(1);
 }

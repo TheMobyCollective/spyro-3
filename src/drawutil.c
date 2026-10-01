@@ -124,7 +124,7 @@ INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_800200A0);
 
 /**
  * ???() - func_80020168() - MATCHING
- * Ready to add, but means changing how DrawDispEnvs works
+ * Ready to add, note DrawDispEnv is DB
  * https://decomp.me/scratch/RZQZO
  */
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020168);

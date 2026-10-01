@@ -8,7 +8,7 @@
 #define MIN(x, min) if(x < min) x = min
 #define MAX(x, max) if(x > max) x = max
 #define MAX_SIGNED(x, max) if (x > max) x -= 2*max
-// #define CLAMP(x, min, max) ((x) < (min) ? (min) : ((x) > (max) ? (max) : (x))) // CLAMP not surrently in use
+// #define CLAMP(x, min, max) ((x) < (min) ? (min) : ((x) > (max) ? (max) : (x))) // CLAMP not currently in use
 
 #define SUB_ANGLE(a, b, c) a = (b - c) & 0xFFF; \
     if(a > 0x800) a -= 0x1000
@@ -381,14 +381,10 @@ typedef struct {
 /*** Display ***/
 
 typedef struct {
-	// Probably in a different struct, to get struct usage to match properly
-	DRAWENV dat_8006fbfc; // 8006fbfc
-	DISPENV dat_8006fc58; // 8006fc58
-	int dat_8006fc6c; // 8006fc6c
-	DRAWENV dat_8006fc70; // 8006fc70
-	DISPENV dat_8006fccc; // 8006fccc
-	int dat_8006fce0; // 8006fce0 // a ptr used in some memcpys / loading, so perhaps unrelated?
-} DrawDispEnvs; // at one point had this labelled as PauseData2, in case that's still in some scratches
+	DRAWENV m_DrawEnv; // 8006fbfc
+	DISPENV m_DispEnv; // 8006fc58
+	void* dat_8006fc6c; // 8006fc6c
+} DB;
 
 
 /*** Speedways ***/

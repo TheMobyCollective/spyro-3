@@ -60,7 +60,7 @@ extern int D_8006C718;
 extern Game game;
 extern SpeedwayData speedwayData;
 extern PauseData pauseData; // 8006FBC4
-extern DrawDispEnvs g_DrawDispEnvs;
+extern DB g_DB[2];
 extern WadHeader wadHeader;
 extern Unk_8006d048 D_8006D048;
 extern LevelWadHeader levelWadHeader; // 80072098
@@ -222,12 +222,12 @@ void WarpToLevel(int pType, int pLevelId) {
     }
     
     currentLevel = pLevelId;
-    g_DrawDispEnvs.dat_8006fbfc.r0 = 8;
-    g_DrawDispEnvs.dat_8006fbfc.g0 = 8;
-    g_DrawDispEnvs.dat_8006fbfc.b0 = 8;
-    g_DrawDispEnvs.dat_8006fc70.r0 = 8;
-    g_DrawDispEnvs.dat_8006fc70.g0 = 8;
-    g_DrawDispEnvs.dat_8006fc70.b0 = 8;
+    g_DB[0].m_DrawEnv.r0 = 8;
+    g_DB[0].m_DrawEnv.g0 = 8;
+    g_DB[0].m_DrawEnv.b0 = 8;
+    g_DB[1].m_DrawEnv.r0 = 8;
+    g_DB[1].m_DrawEnv.g0 = 8;
+    g_DB[1].m_DrawEnv.b0 = 8;
     func_8001FB10(0x14000);
     func_8003BEDC();
     streamingData.musicEnabled = 1;
@@ -489,17 +489,17 @@ void DrawLoadingImage() {
     case 1:
     case 4:
         if (pauseData.frameCount == 0) {
-            SetDefDrawEnv(&g_DrawDispEnvs.dat_8006fc70, 0, 12, 512, 216);
-            SetDefDispEnv(&g_DrawDispEnvs.dat_8006fc58, 0,  0, 512, 240);
-            g_DrawDispEnvs.dat_8006fc70.ofs[1] = 0;
-            g_DrawDispEnvs.dat_8006fbfc.isbg = 0;
-            g_DrawDispEnvs.dat_8006fc70.isbg = 0;
-            g_DrawDispEnvs.dat_8006fbfc.dtd = 0;
-            g_DrawDispEnvs.dat_8006fc70.dtd = 0;
-            g_DrawDispEnvs.dat_8006fccc.screen.x = D_8006C694;
-            g_DrawDispEnvs.dat_8006fc58.screen.x = D_8006C694;
-            g_DrawDispEnvs.dat_8006fccc.screen.y = D_8006C698;
-            g_DrawDispEnvs.dat_8006fc58.screen.y = D_8006C698;
+            SetDefDrawEnv(&g_DB[1].m_DrawEnv, 0, 12, 512, 216);
+            SetDefDispEnv(&g_DB[0].m_DispEnv, 0,  0, 512, 240);
+            g_DB[1].m_DrawEnv.ofs[1] = 0;
+            g_DB[0].m_DrawEnv.isbg = 0;
+            g_DB[1].m_DrawEnv.isbg = 0;
+            g_DB[0].m_DrawEnv.dtd = 0;
+            g_DB[1].m_DrawEnv.dtd = 0;
+            g_DB[1].m_DispEnv.screen.x = D_8006C694;
+            g_DB[0].m_DispEnv.screen.x = D_8006C694;
+            g_DB[1].m_DispEnv.screen.y = D_8006C698;
+            g_DB[0].m_DispEnv.screen.y = D_8006C698;
         }
     case 2:
         spr.unk4 = 255;
@@ -518,17 +518,17 @@ void DrawLoadingImage() {
         return;
     case 3:
         if (pauseData.frameCount == 0) {
-            SetDefDrawEnv(&g_DrawDispEnvs.dat_8006fc70, 0, 240, 512, 216);
-            SetDefDispEnv(&g_DrawDispEnvs.dat_8006fc58, 0, 228, 512, 240);
-            g_DrawDispEnvs.dat_8006fc70.ofs[1] = 228;
-            g_DrawDispEnvs.dat_8006fbfc.isbg = 1;
-            g_DrawDispEnvs.dat_8006fc70.isbg = 1;
-            g_DrawDispEnvs.dat_8006fbfc.dtd = 1;
-            g_DrawDispEnvs.dat_8006fc70.dtd = 1;
-            g_DrawDispEnvs.dat_8006fccc.screen.x = D_8006C694;
-            g_DrawDispEnvs.dat_8006fc58.screen.x = D_8006C694;
-            g_DrawDispEnvs.dat_8006fccc.screen.y = D_8006C698;
-            g_DrawDispEnvs.dat_8006fc58.screen.y = D_8006C698;
+            SetDefDrawEnv(&g_DB[1].m_DrawEnv, 0, 240, 512, 216);
+            SetDefDispEnv(&g_DB[0].m_DispEnv, 0, 228, 512, 240);
+            g_DB[1].m_DrawEnv.ofs[1] = 228;
+            g_DB[0].m_DrawEnv.isbg = 1;
+            g_DB[1].m_DrawEnv.isbg = 1;
+            g_DB[0].m_DrawEnv.dtd = 1;
+            g_DB[1].m_DrawEnv.dtd = 1;
+            g_DB[1].m_DispEnv.screen.x = D_8006C694;
+            g_DB[0].m_DispEnv.screen.x = D_8006C694;
+            g_DB[1].m_DispEnv.screen.y = D_8006C698;
+            g_DB[0].m_DispEnv.screen.y = D_8006C698;
         }
         func_80020168();
         return;

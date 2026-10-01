@@ -2,7 +2,7 @@
 #include "str.h"
 
 extern WadHeader wadHeader; // 8006d8d8
-extern DrawDispEnvs g_DrawDispEnvs;
+extern DB g_DB[2];
 
 extern struct {
 	int DAT_80070104; // 80070104
@@ -53,7 +53,7 @@ INCLUDE_ASM("asm/nonmatchings/updatepause", func_800569C0);
  * https://decomp.me/scratch/gSiXU
  */
 void func_80056A3C() {
-    CDLoadAsync(cdState.wadSector, (char*)g_DrawDispEnvs.dat_8006fce0 + 0x8000, wadHeader.optionsOvl.size, wadHeader.optionsOvl.offset);
+    CDLoadAsync(cdState.wadSector, (char*)g_DB[1].dat_8006fc6c + 0x8000, wadHeader.optionsOvl.size, wadHeader.optionsOvl.offset);
     D_80070104.DAT_80070138 = wadHeader.optionsOvl.size;
 }
 
