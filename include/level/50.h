@@ -1,0 +1,15 @@
+#ifndef __LEVEL_50_H
+#define __LEVEL_50_H
+
+#define LEVEL_ID 50
+
+// Mobys TODO
+
+// Animations
+#define HAS_SWIMMING_ANIMATION_STATES
+#define HAS_SKATEBOARDING_ANIMATION_STATES
+#define HAS_BURN_DEATH_ANIMATION_STATE
+
+// Cameras TODO
+
+#endif

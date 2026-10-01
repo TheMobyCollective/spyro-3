@@ -2,11 +2,12 @@
 #define __CAMERA_H
 
 #include "common.h"
+#include "libgpu.h"
 
 typedef struct {
 	int azimuth;
 	int elevation;
-	unsigned int radius; // spherical radius
+	int radius; // spherical radius
 } SphericalPosition;
 
 typedef struct {
@@ -15,7 +16,7 @@ typedef struct {
 	int pitch;
 } CameraPosition;
 
-enum CameraState {
+enum CameraState { // may want to align this with the animation state / spyro state names
 	CAMERA_NORMAL = 0x0,          // behind spyro
 	CAMERA_MOVING = 0x1,
 	CAMERA_CHARGING = 0x2,
@@ -69,11 +70,7 @@ typedef struct {
 	int unk8;
 	int unkc;
 	int unk10;
-	int unk14;
-	int unk18;
-	int unk1c;
-	int unk20;
-	int unk24;
+	SHORTMATRIX unk14;
 	Vector3D nextCameraPosCartesian;
 	Vector3D currentCameraPosCartesian;
 	int unk40;
@@ -152,9 +149,13 @@ void func_80017028();
 
 extern CameraPosition D_80068F7C; // cam0
 extern CameraPosition D_80068F90;
-// cams 2 - 6
+extern CameraPosition D_80068FA4;
+// cams 3 - 5
+extern CameraPosition D_80068FF4;
 extern CameraPosition D_80069008; // D_80068F7C.cam7
-// cams 8 - 13
+// cams 8 - 10
+extern CameraPosition D_80069058;
+// cams 12 - 13
 extern CameraPosition D_80069094[2]; // cam14,15 // 0: left, 1: right // Certainly an array, could be up to 5 long?
 // cams 16 - 18
 extern CameraPosition D_800690F8[2]; // cam19,20 // 0: left, 1: right // Certainly an array, could be up to 5 long?
@@ -172,6 +173,7 @@ extern CameraPosition D_800693C8; // D_80068F7C.cam55
 // cams 56 - 64
 
 // bss
+extern CameraPosition D_800719A8; // unclear if this is isolated or part of a larger struct - bss suggests the latter!
 extern CameraPosition D_800719F0;
 
 #endif

@@ -78,13 +78,13 @@ extern Moby* (*SpawnMoby)(int class, Moby* moby); // 800742E0
 extern char* (*SpawnParticle)(int unk1, int unk2, Vector3D* unk3, Vector3D* unk4); // 800742E4, types TODO
 extern char* (*UpdateParticles)(int delta); // 800742E8, types TODO
 
-// Animation related, in all levels and cutscenes
+// Animation related, in all levels and cutscenes (likely "overlays/level_XX/spyro.c")
 extern void (*unk_ovlheader_800742EC)(void); // 800742EC, types TODO, likely Update animation state
-extern void (*unk_ovlheader_800742F0)(void); // 800742F0, types TODO, likely Update animation state(?)
-extern void (*PlaySpecialAnimationSounds)(void); // 800742F4
-extern void (*unk_ovlheader_800742F8)(void); // 800742F8, types TODO, likely Update animation state(?)
-extern void (*unk_ovlheader_800742FC)(void); // 800742FC, types TODO, likely Update movement state(?)
-extern void (*unk_ovlheader_80074300)(void); // 80074300, types TODO, likely Update animation state(?)
+extern void (*unk_ovlheader_800742F0)(void); // 800742F0, updates something wrt Spyro's animation state
+extern void (*g_PlaySpyroSounds)(void); // 800742F4
+extern void (*unk_ovlheader_800742F8)(int); // 800742F8 // AlignSpyroRotation
+extern void (*unk_ovlheader_800742FC)(int); // 800742FC // SetSpyroState?
+extern void (*unk_ovlheader_80074300)(void); // 80074300 // UpdateSpyroState?
 
 // Camera related, in all levels and cutscenes
 extern void (*unk_ovlheader_80074304)(void); // 80074304, types TODO, likely Update camera
@@ -98,7 +98,7 @@ extern void (*unk_ovlheader_80074318)(void); // 80074318, types TODO, likely Upd
 extern void (*unk_ovlheader_8007431C)(void); // 8007431C, types TODO, likely Update movement state(?)
 extern void (*unk_ovlheader_80074320)(void); // 80074320, types TODO
 extern void (*unk_ovlheader_80074324)(void); // 80074324, types TODO
-extern void (*unk_ovlheader_80074328)(void); // 80074328, types TODO
+extern void (*unk_ovlheader_80074328)(Moby*); // 80074328
 extern void (*unk_ovlheader_8007432C)(void); // 8007432C, types TODO
 extern int (*unk_ovlheader_80074330)(Vector3D*, int, int); // 80074330, level-specific
 extern int (*unk_ovlheader_80074334)(Vector3D*); // 80074334, level-specific

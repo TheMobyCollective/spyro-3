@@ -68,6 +68,20 @@ typedef struct {
     int unk10;
 } MobyTag_Fragment;
 
+// Agent 9 - Class 99
+typedef struct {
+    SpeechProps speech;
+    int unk14[23];
+    Moby* unk70;
+    int unk74;
+    int unk78;
+    int unk7C;
+    int unk80;
+    int unk84;
+    int* unk88;
+	// ...
+} MobyTag_99;
+
 ///////////////////////////////////////////////////////////////////////////////
 // Less common mobys
 

@@ -63,7 +63,7 @@ glabel func_title_80079D30
 /* 28B48 80079E18 21082200 */  addu       $at, $at, $v0
 /* 28B4C 80079E1C 18D9278C */  lw         $a3, %lo(D_8006D8D8 + 0x40)($at)
 /* 28B50 80079E20 00F8C624 */  addiu      $a2, $a2, -0x800
-/* 28B54 80079E24 5E41010C */  jal        func_80050578
+/* 28B54 80079E24 5E41010C */  jal        CDLoadSync
 /* 28B58 80079E28 0008E724 */   addiu     $a3, $a3, 0x800
 .Ltitle_80079E2C:
 /* 28B5C 80079E2C 0000228E */  lw         $v0, 0x0($s1)

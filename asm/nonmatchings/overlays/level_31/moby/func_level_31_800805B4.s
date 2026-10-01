@@ -566,7 +566,7 @@ glabel func_level_31_800805B4
 /* 6A9BB3C 80080E0C 203A010C */  jal        func_8004E880
 /* 6A9BB40 80080E10 23284500 */   subu      $a1, $v0, $a1
 /* 6A9BB44 80080E14 21204000 */  addu       $a0, $v0, $zero
-/* 6A9BB48 80080E18 4FD8000C */  jal        func_8003613C
+/* 6A9BB48 80080E18 4FD8000C */  jal        SubAngle8
 /* 6A9BB4C 80080E1C 21280002 */   addu      $a1, $s0, $zero
 /* 6A9BB50 80080E20 43180200 */  sra        $v1, $v0, 1
 /* 6A9BB54 80080E24 23800302 */  subu       $s0, $s0, $v1

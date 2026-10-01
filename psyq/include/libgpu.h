@@ -5,9 +5,10 @@
 // Modified LIBGPU 4.5 header
 
 // from types
-typedef unsigned int u_long;
+typedef unsigned long  u_long;
 typedef unsigned short u_short;
-typedef unsigned char u_char;
+typedef unsigned char  u_char;
+typedef	unsigned int   u_int;
 
 // from libgte
 typedef struct {		/* short word type 3D vector */	
@@ -715,8 +716,7 @@ extern int FntPrint();
 extern int KanjiFntPrint();
 #endif /* _KANJIFNTPRINT_ */
 
-// Reserving for when psyq functions are labelled
-/*
+// Note: not all included in S3, and currently not all labelled (2026-09-05)
 extern DISPENV *GetDispEnv(DISPENV *env);
 extern DISPENV *PutDispEnv(DISPENV *env);
 extern DISPENV *SetDefDispEnv(DISPENV *env, int x, int y, int w, int h);
@@ -816,6 +816,5 @@ extern void GetTexWindow(DR_TWIN *p);
 extern void GetDrawArea(DR_AREA *p);
 extern void GetDrawOffset(DR_OFFSET *p);
 extern void GetDrawEnv2(DR_ENV *p);
-*/
 
 #endif /* _LIBGPU_H_ */

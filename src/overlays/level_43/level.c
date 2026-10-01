@@ -45,7 +45,7 @@ int func_level_43_8008C5AC(Vector3D* vec, int arg1, Moby* pMoby) {
     
     ret = (spyro.unk17c == 2);
     spyro.unk17a = 0x10000040;
-    spyro.unk17d = pMoby;
+    spyro.m_WhirlwindPointer = pMoby;
     func_8004F178(&spyro.unk19, vec);
     spyro.unk20[0] = arg1;
     return ret;

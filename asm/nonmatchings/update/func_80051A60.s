@@ -638,7 +638,7 @@ glabel func_80051A60
 /* 42BA0 800523A0 0780013C */  lui        $at, %hi(D_8006E048)
 /* 42BA4 800523A4 48E022AC */  sw         $v0, %lo(D_8006E048)($at)
 .L800523A8:
-/* 42BA8 800523A8 4FD8000C */  jal        func_8003613C
+/* 42BA8 800523A8 4FD8000C */  jal        SubAngle8
 /* 42BAC 800523AC 21202002 */   addu      $a0, $s1, $zero
 /* 42BB0 800523B0 43100200 */  sra        $v0, $v0, 1
 /* 42BB4 800523B4 23102202 */  subu       $v0, $s1, $v0

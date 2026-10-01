@@ -29,7 +29,7 @@ glabel func_8005693C
 /* 4719C 8005699C 21082200 */  addu       $at, $at, $v0
 /* 471A0 800569A0 E0DB278C */  lw         $a3, %lo(D_8006DBE0)($at)
 /* 471A4 800569A4 21280501 */  addu       $a1, $t0, $a1
-/* 471A8 800569A8 A041010C */  jal        func_80050680
+/* 471A8 800569A8 A041010C */  jal        CDLoadAsync
 /* 471AC 800569AC 21386700 */   addu      $a3, $v1, $a3
 /* 471B0 800569B0 1000BF8F */  lw         $ra, 0x10($sp)
 /* 471B4 800569B4 1800BD27 */  addiu      $sp, $sp, 0x18

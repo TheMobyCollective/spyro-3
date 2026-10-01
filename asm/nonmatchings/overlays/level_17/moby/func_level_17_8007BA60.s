@@ -496,7 +496,7 @@ glabel func_level_17_8007BA60
 .Llevel_17_8007C14C:
 /* 4D0967C 8007C14C 000062A0 */  sb         $v0, 0x0($v1)
 /* 4D09680 8007C150 06000424 */  addiu      $a0, $zero, 0x6
-/* 4D09684 8007C154 2F61010C */  jal        func_800584BC
+/* 4D09684 8007C154 2F61010C */  jal        WarpToLevel
 /* 4D09688 8007C158 3F000524 */   addiu     $a1, $zero, 0x3F
 /* 4D0968C 8007C15C 90F00108 */  j          .Llevel_17_8007C240
 /* 4D09690 8007C160 21204002 */   addu      $a0, $s2, $zero

@@ -166,7 +166,7 @@ dlabel D_8006C588
 /* 5CD88 8006C588 00000000 */ .space 0x04
 .size D_8006C588, . - D_8006C588
 
-dlabel levelIndex
+dlabel g_LevelIndex
 dlabel D_8006C58C
 /* 5CD8C 8006C58C 00000000 */ .space 0x04
 .size D_8006C58C, . - D_8006C58C

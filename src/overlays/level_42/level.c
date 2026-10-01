@@ -33,7 +33,7 @@ int func_level_42_800852D0(Vector3D* vec, int arg1, Moby* pMoby) {
 
     temp_s0 = spyro.unk17c == 2;
     spyro.unk17a = 0x10000040;
-    spyro.unk17d = pMoby; //whirlwind
+    spyro.m_WhirlwindPointer = pMoby; //whirlwind
     func_8004F178(&spyro.unk19, vec); //fSetVector
     spyro.unk20[0] = arg1;
     return temp_s0;

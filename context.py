@@ -25,9 +25,15 @@ files = [
     'loaders.h',
     'spu.h',
     'spyro.h',
+    'str.h',
     'environment.h',
     'ovl_header.h',
     'moby/mobytag.h',
+	'init.h',
+	'mobydraw.h',
+	'mobyfunc.h',
+	'mobyupdate.h',
+	#'strings.h', # empty right now
 ]
 
 context = '// Context generated ' + datetime.now().strftime("%Y-%m-%d %H:%M:%S") + '\n\n'
@@ -72,30 +78,6 @@ others = """
 extern int func_80019194(Vector3D*, int);
 extern int func_8001A358(Vector3D*, int);
 
-// Sound
-extern int func_8003BABC(Moby*, int, char); // fPlayMobySound
-extern int func_8003BB10(Moby*, int, char); // fPlayAmbientSound, name probably inaccurate (might be looping sounds)
-extern void func_8003BE70(int); // fKillSound
-extern int func_8003BFC0(Moby*, int);
-extern void func_800492DC(Vector3D*);
-
-// Stdutil
-extern void func_8004E790(void*, int, int); // memset
-extern int func_8004E880(int, int, int);
-extern void func_8004ED6C(SHORTMATRIX*, Vector3D*, Vector3D*); // multiply vector by matrix, types to check
-extern int func_8004EDE8(Vector3D*, int);
-extern long long func_8004EF74(Vector3D*, Vector3D*, Vector3D*); // apparently a long long, but what do I know?
-extern void func_8004F110(Vector3D*, int); // ScaleDownVectorExp
-extern void func_8004F178(Vector3D*, Vector3D*); // fSetVector
-extern void func_8004F194(Vector3D*, Vector3D*, Vector3D*); // fAddVector
-extern void func_8004F1C8(Vector3D*, Vector3D*, Vector3D*); // fSubVector
-extern void func_8004F1FC(Vector3D*, Vector3D*, int);
-extern void func_8004F228(Vector3D*, Vector3D*, int); // scale down vector (third parameter is the denominator)
-extern void func_8004F52C(Vector3D*, Vector3D16*); // multiply short vector by 4
-extern int func_8004F264(int, int); // subtract absolute
-extern int func_8004F334(Vector3D*, Vector3D*); // distance in octagonal metric
-extern void func_8004F5DC(int, Vector3D*); // unpack collision triangle, triIndex / points
-
 // Update
 extern void func_80054F94(int, Moby*); // levelId, moby (possibly vehicle moby), seems to be set state loading vehicle
 
@@ -118,7 +100,8 @@ extern Moby* D_8006C550; // moby array ptr
 extern int D_8006C5BC; // currentLvl
 extern int D_8006C648; // deltaTime
 extern Spyro D_80070328; // left without name to make the decompiler find it easier
-extern StreamingData D_8006E470; // streamingData
+extern CDState D_8006E470; // cdState
+extern StreamingData D_8006E48C; // streamingData
 extern SpeedwayData D_8006FA38; // speedwayData (bss)
 extern PauseData D_8006FBC4; // pauseData
 

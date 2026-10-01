@@ -1132,7 +1132,7 @@ glabel func_level_50_8008B434
 /* 95E0964 8008C434 0780013C */  lui        $at, %hi(D_800715BB)
 /* 95E0968 8008C438 BB1522A0 */  sb         $v0, %lo(D_800715BB)($at)
 /* 95E096C 8008C43C 06000424 */  addiu      $a0, $zero, 0x6
-/* 95E0970 8008C440 2F61010C */  jal        func_800584BC
+/* 95E0970 8008C440 2F61010C */  jal        WarpToLevel
 /* 95E0974 8008C444 4A000524 */   addiu     $a1, $zero, 0x4A
 /* 95E0978 8008C448 C656010C */  jal        func_80055B18
 /* 95E097C 8008C44C 21206002 */   addu      $a0, $s3, $zero
@@ -1244,7 +1244,7 @@ glabel func_level_50_8008B434
 /* 95E0B08 8008C5D8 000C0624 */   addiu     $a2, $zero, 0xC00
 /* 95E0B0C 8008C5DC 21200002 */  addu       $a0, $s0, $zero
 /* 95E0B10 8008C5E0 46006592 */  lbu        $a1, 0x46($s3)
-/* 95E0B14 8008C5E4 4FD8000C */  jal        func_8003613C
+/* 95E0B14 8008C5E4 4FD8000C */  jal        SubAngle8
 /* 95E0B18 8008C5E8 21884000 */   addu      $s1, $v0, $zero
 /* 95E0B1C 8008C5EC 23800200 */  negu       $s0, $v0
 /* 95E0B20 8008C5F0 0500022A */  slti       $v0, $s0, 0x5
@@ -1381,7 +1381,7 @@ glabel func_level_50_8008B434
 /* 95E0CFC 8008C7CC A0D6000C */  jal        func_80035A80
 /* 95E0D00 8008C7D0 00040624 */   addiu     $a2, $zero, 0x400
 /* 95E0D04 8008C7D4 46006592 */  lbu        $a1, 0x46($s3)
-/* 95E0D08 8008C7D8 4FD8000C */  jal        func_8003613C
+/* 95E0D08 8008C7D8 4FD8000C */  jal        SubAngle8
 /* 95E0D0C 8008C7DC 21200002 */   addu      $a0, $s0, $zero
 /* 95E0D10 8008C7E0 23800200 */  negu       $s0, $v0
 /* 95E0D14 8008C7E4 0500022A */  slti       $v0, $s0, 0x5
@@ -1569,7 +1569,7 @@ glabel func_level_50_8008B434
 /* 95E0FB4 8008CA84 77D7000C */  jal        func_80035DDC
 /* 95E0FB8 8008CA88 1000A0AF */   sw        $zero, 0x10($sp)
 /* 95E0FBC 8008CA8C 46006592 */  lbu        $a1, 0x46($s3)
-/* 95E0FC0 8008CA90 4FD8000C */  jal        func_8003613C
+/* 95E0FC0 8008CA90 4FD8000C */  jal        SubAngle8
 /* 95E0FC4 8008CA94 21200002 */   addu      $a0, $s0, $zero
 /* 95E0FC8 8008CA98 23800200 */  negu       $s0, $v0
 /* 95E0FCC 8008CA9C 0500022A */  slti       $v0, $s0, 0x5

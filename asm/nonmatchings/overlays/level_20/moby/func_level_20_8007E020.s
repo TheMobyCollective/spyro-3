@@ -445,7 +445,7 @@ glabel func_level_20_8007E020
 .Llevel_20_8007E640:
 /* 50CE370 8007E640 000062A0 */  sb         $v0, 0x0($v1)
 /* 50CE374 8007E644 06000424 */  addiu      $a0, $zero, 0x6
-/* 50CE378 8007E648 2F61010C */  jal        func_800584BC
+/* 50CE378 8007E648 2F61010C */  jal        WarpToLevel
 /* 50CE37C 8007E64C 3F000524 */   addiu     $a1, $zero, 0x3F
 /* 50CE380 8007E650 CDF90108 */  j          .Llevel_20_8007E734
 /* 50CE384 8007E654 21204002 */   addu      $a0, $s2, $zero

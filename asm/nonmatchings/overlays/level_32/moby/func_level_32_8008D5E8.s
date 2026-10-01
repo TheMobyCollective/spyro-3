@@ -428,7 +428,7 @@ glabel func_level_32_8008D5E8
 /* 6DF50F8 8008DBC8 00000000 */  nop
 /* 6DF50FC 8008DBCC 35004014 */  bnez       $v0, .Llevel_32_8008DCA4
 /* 6DF5100 8008DBD0 00000000 */   nop
-/* 6DF5104 8008DBD4 FE40010C */  jal        func_800503F8
+/* 6DF5104 8008DBD4 FE40010C */  jal        CDLoadTime
 /* 6DF5108 8008DBD8 00000000 */   nop
 /* 6DF510C 8008DBDC 30004014 */  bnez       $v0, .Llevel_32_8008DCA0
 /* 6DF5110 8008DBE0 00000000 */   nop
@@ -439,7 +439,7 @@ glabel func_level_32_8008D5E8
 /* 6DF5124 8008DBF4 27370208 */  j          .Llevel_32_8008DC9C
 /* 6DF5128 8008DBF8 01000224 */   addiu     $v0, $zero, 0x1
 .Llevel_32_8008DBFC:
-/* 6DF512C 8008DBFC FE40010C */  jal        func_800503F8
+/* 6DF512C 8008DBFC FE40010C */  jal        CDLoadTime
 /* 6DF5130 8008DC00 00000000 */   nop
 /* 6DF5134 8008DC04 26004014 */  bnez       $v0, .Llevel_32_8008DCA0
 /* 6DF5138 8008DC08 00000000 */   nop
@@ -460,7 +460,7 @@ glabel func_level_32_8008D5E8
 /* 6DF5174 8008DC44 27370208 */  j          .Llevel_32_8008DC9C
 /* 6DF5178 8008DC48 02000224 */   addiu     $v0, $zero, 0x2
 .Llevel_32_8008DC4C:
-/* 6DF517C 8008DC4C FE40010C */  jal        func_800503F8
+/* 6DF517C 8008DC4C FE40010C */  jal        CDLoadTime
 /* 6DF5180 8008DC50 00000000 */   nop
 /* 6DF5184 8008DC54 12004014 */  bnez       $v0, .Llevel_32_8008DCA0
 /* 6DF5188 8008DC58 00000000 */   nop
@@ -471,7 +471,7 @@ glabel func_level_32_8008D5E8
 /* 6DF519C 8008DC6C 27370208 */  j          .Llevel_32_8008DC9C
 /* 6DF51A0 8008DC70 03000224 */   addiu     $v0, $zero, 0x3
 .Llevel_32_8008DC74:
-/* 6DF51A4 8008DC74 FE40010C */  jal        func_800503F8
+/* 6DF51A4 8008DC74 FE40010C */  jal        CDLoadTime
 /* 6DF51A8 8008DC78 00000000 */   nop
 /* 6DF51AC 8008DC7C 08004014 */  bnez       $v0, .Llevel_32_8008DCA0
 /* 6DF51B0 8008DC80 00000000 */   nop
@@ -1110,7 +1110,7 @@ glabel func_level_32_8008D5E8
 /* 6DF5AE4 8008E5B4 C5390208 */  j          .Llevel_32_8008E714
 /* 6DF5AE8 8008E5B8 480022A2 */   sb        $v0, 0x48($s1)
 .L8008E5BC_:
-/* 6DF5AEC 8008E5BC FE40010C */  jal        func_800503F8
+/* 6DF5AEC 8008E5BC FE40010C */  jal        CDLoadTime
 /* 6DF5AF0 8008E5C0 00000000 */   nop
 /* 6DF5AF4 8008E5C4 53004014 */  bnez       $v0, .Llevel_32_8008E714
 /* 6DF5AF8 8008E5C8 00000000 */   nop
@@ -1133,7 +1133,7 @@ glabel func_level_32_8008D5E8
 /* 6DF5B34 8008E604 43004010 */  beqz       $v0, .Llevel_32_8008E714
 /* 6DF5B38 8008E608 00000000 */   nop
 /* 6DF5B3C 8008E60C 44002492 */  lbu        $a0, 0x44($s1)
-/* 6DF5B40 8008E610 4FD8000C */  jal        func_8003613C
+/* 6DF5B40 8008E610 4FD8000C */  jal        SubAngle8
 /* 6DF5B44 8008E614 21280000 */   addu      $a1, $zero, $zero
 /* 6DF5B48 8008E618 21184000 */  addu       $v1, $v0, $zero
 /* 6DF5B4C 8008E61C 03006104 */  bgez       $v1, .Llevel_32_8008E62C
@@ -1166,7 +1166,7 @@ glabel func_level_32_8008D5E8
 /* 6DF5BA8 8008E678 A0582594 */  lhu        $a1, %lo(D_800658A0)($at)
 /* 6DF5BAC 8008E67C 44002492 */  lbu        $a0, 0x44($s1)
 /* 6DF5BB0 8008E680 002C0500 */  sll        $a1, $a1, 16
-/* 6DF5BB4 8008E684 4FD8000C */  jal        func_8003613C
+/* 6DF5BB4 8008E684 4FD8000C */  jal        SubAngle8
 /* 6DF5BB8 8008E688 032E0500 */   sra       $a1, $a1, 24
 /* 6DF5BBC 8008E68C 21184000 */  addu       $v1, $v0, $zero
 /* 6DF5BC0 8008E690 03006104 */  bgez       $v1, .Llevel_32_8008E6A0
@@ -1190,7 +1190,7 @@ glabel func_level_32_8008D5E8
 /* 6DF5C00 8008E6D0 20592594 */  lhu        $a1, %lo(D_80065920)($at)
 /* 6DF5C04 8008E6D4 45002492 */  lbu        $a0, 0x45($s1)
 /* 6DF5C08 8008E6D8 002C0500 */  sll        $a1, $a1, 16
-/* 6DF5C0C 8008E6DC 4FD8000C */  jal        func_8003613C
+/* 6DF5C0C 8008E6DC 4FD8000C */  jal        SubAngle8
 /* 6DF5C10 8008E6E0 032E0500 */   sra       $a1, $a1, 24
 /* 6DF5C14 8008E6E4 21184000 */  addu       $v1, $v0, $zero
 /* 6DF5C18 8008E6E8 03006104 */  bgez       $v1, .Llevel_32_8008E6F8

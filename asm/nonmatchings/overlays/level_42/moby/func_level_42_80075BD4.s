@@ -128,7 +128,7 @@ glabel func_level_42_80075BD4
 /* 847AAD4 80075DA4 23284500 */   subu      $a1, $v0, $a1
 /* 847AAD8 80075DA8 0780043C */  lui        $a0, %hi(D_80070328 + 0xE)
 /* 847AADC 80075DAC 36038490 */  lbu        $a0, %lo(D_80070328 + 0xE)($a0)
-/* 847AAE0 80075DB0 4FD8000C */  jal        func_8003613C
+/* 847AAE0 80075DB0 4FD8000C */  jal        SubAngle8
 /* 847AAE4 80075DB4 21284000 */   addu      $a1, $v0, $zero
 /* 847AAE8 80075DB8 02004104 */  bgez       $v0, .Llevel_42_80075DC4
 /* 847AAEC 80075DBC FFFF0224 */   addiu     $v0, $zero, -0x1

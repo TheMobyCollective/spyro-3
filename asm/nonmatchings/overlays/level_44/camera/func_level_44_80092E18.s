@@ -580,7 +580,7 @@ glabel func_level_44_80092E18
 /* 8B66ADC 800935AC 0000248E */  lw         $a0, 0x0($s1)
 /* 8B66AE0 800935B0 0780053C */  lui        $a1, %hi(D_8006E040)
 /* 8B66AE4 800935B4 40E0A584 */  lh         $a1, %lo(D_8006E040)($a1)
-/* 8B66AE8 800935B8 57D8000C */  jal        func_8003615C
+/* 8B66AE8 800935B8 57D8000C */  jal        SubAngle12
 /* 8B66AEC 800935BC 00000000 */   nop
 /* 8B66AF0 800935C0 83180200 */  sra        $v1, $v0, 2
 /* 8B66AF4 800935C4 04006014 */  bnez       $v1, .Llevel_44_800935D8

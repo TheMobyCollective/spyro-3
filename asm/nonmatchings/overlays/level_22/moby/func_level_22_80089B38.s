@@ -173,7 +173,7 @@ glabel func_level_22_80089B38
 /* 5779AE4 80089DB4 23284500 */   subu      $a1, $v0, $a1
 /* 5779AE8 80089DB8 21804000 */  addu       $s0, $v0, $zero
 /* 5779AEC 80089DBC 21200002 */  addu       $a0, $s0, $zero
-/* 5779AF0 80089DC0 4FD8000C */  jal        func_8003613C
+/* 5779AF0 80089DC0 4FD8000C */  jal        SubAngle8
 /* 5779AF4 80089DC4 FF002532 */   andi      $a1, $s1, 0xFF
 /* 5779AF8 80089DC8 6C000324 */  addiu      $v1, $zero, 0x6C
 /* 5779AFC 80089DCC 18004300 */  mult       $v0, $v1
@@ -283,7 +283,7 @@ glabel func_level_22_80089B38
 /* 5779C84 80089F54 203A010C */  jal        func_8004E880
 /* 5779C88 80089F58 23284500 */   subu      $a1, $v0, $a1
 /* 5779C8C 80089F5C 18004592 */  lbu        $a1, 0x18($s2)
-/* 5779C90 80089F60 4FD8000C */  jal        func_8003613C
+/* 5779C90 80089F60 4FD8000C */  jal        SubAngle8
 /* 5779C94 80089F64 21204000 */   addu      $a0, $v0, $zero
 /* 5779C98 80089F68 21184000 */  addu       $v1, $v0, $zero
 /* 5779C9C 80089F6C 02006104 */  bgez       $v1, .Llevel_22_80089F78
@@ -410,7 +410,7 @@ glabel func_level_22_80089B38
 /* 5779E4C 8008A11C 203A010C */  jal        func_8004E880
 /* 5779E50 8008A120 23284500 */   subu      $a1, $v0, $a1
 /* 5779E54 8008A124 18004592 */  lbu        $a1, 0x18($s2)
-/* 5779E58 8008A128 4FD8000C */  jal        func_8003613C
+/* 5779E58 8008A128 4FD8000C */  jal        SubAngle8
 /* 5779E5C 8008A12C 21204000 */   addu      $a0, $v0, $zero
 /* 5779E60 8008A130 21184000 */  addu       $v1, $v0, $zero
 /* 5779E64 8008A134 02006104 */  bgez       $v1, .Llevel_22_8008A140
@@ -650,7 +650,7 @@ glabel func_level_22_80089B38
 /* 577A1B0 8008A480 203A010C */  jal        func_8004E880
 /* 577A1B4 8008A484 23284500 */   subu      $a1, $v0, $a1
 /* 577A1B8 8008A488 18004592 */  lbu        $a1, 0x18($s2)
-/* 577A1BC 8008A48C 4FD8000C */  jal        func_8003613C
+/* 577A1BC 8008A48C 4FD8000C */  jal        SubAngle8
 /* 577A1C0 8008A490 21204000 */   addu      $a0, $v0, $zero
 /* 577A1C4 8008A494 21204000 */  addu       $a0, $v0, $zero
 /* 577A1C8 8008A498 02008104 */  bgez       $a0, .Llevel_22_8008A4A4

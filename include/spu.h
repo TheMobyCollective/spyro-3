@@ -77,18 +77,26 @@ typedef struct {
     Moby* unk28;
 } ActiveSound;
 
-// sdata
+// sbss
 extern SoundTable* g_SoundTablePtr; // 8006C654
+extern SoundTable* D_8006C654; // for the initial decompile - remove later
 extern SoundDefinition* g_SpuDefinitionsPtr; // 8006C6A0
+extern char* D_8006C708; // AmbientSoundPointer
 
 // bss
 extern ActiveSound g_ActiveSounds[24]; // 8006FCE4
 
-int PlaySound(int localSoundId, Moby *moby, char param_3); // 8003BB50
+int PlaySound(int localSoundId, Moby *moby, int param_3); // 8003BB50
 int func_8003BABC(Moby*, int, int); // PlayMobySound
+int func_8003BB10(Moby*, int, int); // PlayAmbientSound, name probably inaccurate (might be looping sounds)
+void func_8003BE70(int); // KillSound
 void func_8003BEDC();
+int func_8003BF6C(int, int);
+int func_8003BFC0(Moby*, int);
 void func_8003C0B0(int, int); // ApplyPitchVariance // Causes Bluto glitch
 void func_8003C140(int, int);
 void func_8003C184();
+// ...
+void func_8003CCF0();
 
 #endif

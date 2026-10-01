@@ -2,7 +2,7 @@
 #include "hud.h"
 #include "spu.h"
 
-extern int func_8002EBB0(int*);
+extern int func_8002EBB0(void*);
 
 // sbss
 extern int D_8006C598;

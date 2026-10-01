@@ -80,7 +80,7 @@ glabel func_loading_80078678
 /* 3230CBC 8007878C 0780023C */  lui        $v0, %hi(D_8006D8D8 + 0x300)
 /* 3230CC0 80078790 D8DB428C */  lw         $v0, %lo(D_8006D8D8 + 0x300)($v0)
 /* 3230CC4 80078794 803B0700 */  sll        $a3, $a3, 14
-/* 3230CC8 80078798 A041010C */  jal        func_80050680
+/* 3230CC8 80078798 A041010C */  jal        CDLoadAsync
 /* 3230CCC 8007879C 21384700 */   addu      $a3, $v0, $a3
 /* 3230CD0 800787A0 01000224 */  addiu      $v0, $zero, 0x1
 /* 3230CD4 800787A4 0780013C */  lui        $at, %hi(D_8007232C)
@@ -143,7 +143,7 @@ glabel func_loading_80078678
 /* 3230DAC 8007887C 8BFC20A0 */  sb         $zero, %lo(D_8006FC8B)($at)
 /* 3230DB0 80078880 B7014010 */  beqz       $v0, .Lloading_80078F60
 /* 3230DB4 80078884 00000000 */   nop
-/* 3230DB8 80078888 FE40010C */  jal        func_800503F8
+/* 3230DB8 80078888 FE40010C */  jal        CDLoadTime
 /* 3230DBC 8007888C 00000000 */   nop
 /* 3230DC0 80078890 B3014014 */  bnez       $v0, .Lloading_80078F60
 /* 3230DC4 80078894 0200113C */   lui       $s1, (0x2A000 >> 16)

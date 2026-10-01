@@ -2605,7 +2605,7 @@ glabel func_level_50_8009A6B4
 /* 95F0FEC 8009CABC 40E08484 */  lh         $a0, %lo(D_8006E040)($a0)
 /* 95F0FF0 8009CAC0 0780053C */  lui        $a1, %hi(D_80070328 + 0xA4)
 /* 95F0FF4 8009CAC4 CC03A58C */  lw         $a1, %lo(D_80070328 + 0xA4)($a1)
-/* 95F0FF8 8009CAC8 57D8000C */  jal        func_8003615C
+/* 95F0FF8 8009CAC8 57D8000C */  jal        SubAngle12
 /* 95F0FFC 8009CACC 00000000 */   nop
 /* 95F1000 8009CAD0 02004104 */  bgez       $v0, .Llevel_50_8009CADC
 /* 95F1004 8009CAD4 00000000 */   nop

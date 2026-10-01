@@ -8,7 +8,7 @@ glabel func_8002A9D0
 /* 1B1DC 8002A9DC 0780053C */  lui        $a1, %hi(D_800718DC)
 /* 1B1E0 8002A9E0 DC18A524 */  addiu      $a1, $a1, %lo(D_800718DC)
 /* 1B1E4 8002A9E4 1000BFAF */  sw         $ra, 0x10($sp)
-/* 1B1E8 8002A9E8 3F73010C */  jal        func_8005CCFC
+/* 1B1E8 8002A9E8 3F73010C */  jal        PadInitDirect
 /* 1B1EC 8002A9EC 00000000 */   nop
 /* 1B1F0 8002A9F0 1B77010C */  jal        func_8005DC6C
 /* 1B1F4 8002A9F4 00000000 */   nop

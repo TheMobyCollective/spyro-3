@@ -1,28 +1,78 @@
 #include "common.h"
 #include "camera.h"
+#include "cheat.h"
+#include "ovl_header.h"
+#include "pad.h"
 #include "stdutil.h"
 #include "spyro.h"
+#include "tracers.h"
+#include "moby/mobytag.h"
 
 // sbss
 extern int D_8006C6D0;
 
+extern void SetGeomScreen(int);
+extern void func_80055D24(Moby*, int); // fUpdateMobyCollision
+
 ///////////////////////////////////////////////////////////////////////
 
-INCLUDE_ASM("asm/nonmatchings/camera", func_8001204C);
+/**
+ * ???() - func_8001204C() - MATCHING
+ * https://decomp.me/scratch/Wbj6B
+ */
+void func_8001204C() {
+    func_80012168();
+    func_80017028();
+    SetGeomScreen(g_Camera.unk1c4[5] + 0x155);
+    g_Camera.unk1c4[4] = 0;
+    if (g_Spyro.critterMode == CRITTER_AGENT_9) {
+        MobyTag_99* tag = g_Spyro.critterMobyPtr->mobyTag;
+        if ((g_Pad.state.held & PAD_SQUARE) &&
+            (g_Spyro.animationState == ANIMATION_STATE_AGENT_9_BOMB_HOLD
+                 || (g_Spyro.animationState == ANIMATION_STATE_AGENT_9_BOMB_RAISE
+                    && g_Camera.cameraState == CAMERA_AGENT_9_POV))) {
+            func_80055D24(g_Spyro.critterMobyPtr, 4);
+            if (unk_ovlheader_80074328 != 0) {
+                unk_ovlheader_80074328(g_Spyro.critterMobyPtr);
+            }
+        }
+        else {
+            if (tag->unk88 != 0) {
+                func_80050B88(tag->unk88);
+                tag->unk88 = 0;
+            }
+            if (tag->unk70 != 0) {
+                func_80055B18(tag->unk70);
+                tag->unk70 = 0;
+            }
+        }
+    }
+    g_Camera.unk40 = 0;
+}
 
 /**
  * ???() - func_80012168()
- * WIP
- * https://decomp.me/scratch/IUiur
+ * Close, but not quite there
+ * https://decomp.me/scratch/7av0M
  */
 INCLUDE_ASM("asm/nonmatchings/camera", func_80012168);
 
 /**
  * ???() - func_8001241C() - MATCHING
- * Almost ready to add, but must have struct usage corrected first
- * https://decomp.me/scratch/FD6TW
+ * https://decomp.me/scratch/HotSn
  */
-INCLUDE_ASM("asm/nonmatchings/camera", func_8001241C);
+void func_8001241C() {
+    if (g_Camera.unk148[2]) {
+        g_Camera.unk7c.pos[3].pos.azimuth = g_Camera.unk148[2];
+    }
+    else {
+        SUB_ANGLE(g_Camera.unk7c.pos[3].pos.azimuth, g_Camera.unk7c.pos[1].pos.azimuth, g_Camera.unk7c.pos[2].pos.azimuth);
+    }
+    g_Camera.unk7c.pos[3].pos.radius = g_Camera.unk7c.pos[1].pos.radius - g_Camera.unk7c.pos[2].pos.radius;
+    SUB_ANGLE(g_Camera.unk7c.pos[3].pos.elevation, g_Camera.unk7c.pos[1].pos.elevation, g_Camera.unk7c.pos[2].pos.elevation);
+    SUB_ANGLE(g_Camera.unk7c.pos[3].yaw,           g_Camera.unk7c.pos[1].yaw,           g_Camera.unk7c.pos[2].yaw);
+    SUB_ANGLE(g_Camera.unk7c.pos[3].pitch,         g_Camera.unk7c.pos[1].pitch,         g_Camera.unk7c.pos[2].pitch);
+}
 
 INCLUDE_ASM("asm/nonmatchings/camera", func_80012530);
 
@@ -50,8 +100,8 @@ void func_80012B34() {
 
 /**
  * ???() - func_80012BA8()
- * WIP
- * https://decomp.me/scratch/b1d0d
+ * Close but a work in progress
+ * https://decomp.me/scratch/mrVQY
  */
 INCLUDE_ASM("asm/nonmatchings/camera", func_80012BA8);
 
@@ -74,10 +124,17 @@ void func_800135A4(CameraPosition* arg0, CameraPosition* arg1, int arg2) {
 
 /**
  * ???() - func_800135F8() - MATCHING
- * Needs clean up but nearly ready to add
+ * Converts a spherical coordinate to a Cartesian vector, and adds to another if given
  * https://decomp.me/scratch/LWgh2
  */
-INCLUDE_ASM("asm/nonmatchings/camera", func_800135F8);
+void func_800135F8(Vector3D* arg0, SphericalPosition* arg1, Vector3D* arg2) {
+    arg0->x = ((arg1->radius * func_8004EA2C(arg1->elevation)) >> 0xC) * func_8004EA2C(arg1->azimuth) >> 0xC;
+    arg0->y = ((arg1->radius * func_8004EA2C(arg1->elevation)) >> 0xC) * func_8004E9E4(arg1->azimuth) >> 0xC;
+    arg0->z =  (arg1->radius * func_8004E9E4(arg1->elevation)) >> 0xC;
+    if (arg2 != 0) {
+        func_8004F194(arg0, arg0, arg2);
+    }
+}
 
 INCLUDE_ASM("asm/nonmatchings/camera", func_800136F0);
 
@@ -155,7 +212,17 @@ INCLUDE_ASM("asm/nonmatchings/camera", func_80013E38);
 
 INCLUDE_ASM("asm/nonmatchings/camera", func_8001405C);
 
-INCLUDE_ASM("asm/nonmatchings/camera", func_800142AC);
+/**
+ * ???() - func_800142AC() - MATCHING
+ * https://decomp.me/scratch/zE7uy
+ */
+void func_800142AC() {
+    if (g_CheatFlags.cameraMode != 0) {
+        g_Camera.unk58 = 0;
+        return;
+    }
+    g_Camera.unk58 = 7;
+}
 
 /**
  * ???() - func_800142E0() - MATCHING
@@ -169,10 +236,22 @@ void func_800142E0() {
 
 /**
  * ???() - func_80014354() - MATCHING
- * Ready to add
  * https://decomp.me/scratch/Oix8L
  */
-INCLUDE_ASM("asm/nonmatchings/camera", func_80014354);
+void func_80014354() {
+    if (camera.unk168 == 0xD) {
+        func_800135A4(&camera.unk7c.pos[1], &D_80069058, camera.unk6c);
+    } else if (g_Spyro.unk20a != 0) {
+        func_800135A4(&camera.unk7c.pos[1], &D_800719A8, camera.unk6c);
+    } else if (g_Spyro.movementState == MOVEMENT_STATE_GLIDE) {
+        func_800135A4(&camera.unk7c.pos[1], &D_80068FA4, camera.unk6c);
+    } else if (g_Spyro.movementState == MOVEMENT_STATE_SUPERFLY) {
+        func_800135A4(&camera.unk7c.pos[1], &D_80068FF4, camera.unk6c);
+    } else {
+        func_800135A4(&camera.unk7c.pos[1], &D_80068F7C, camera.unk6c);
+    }
+    camera.unk7c.pos[1].yaw = (camera.unk7c.pos[1].yaw - camera.unk1c4[4]) & 0xFFF;
+}
 
 /**
  * ???() - func_80014450() - MATCHING

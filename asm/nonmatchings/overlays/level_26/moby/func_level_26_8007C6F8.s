@@ -235,7 +235,7 @@ glabel func_level_26_8007C6F8
 .Llevel_26_8007CA5C:
 /* 622C78C 8007CA5C 12200000 */  mflo       $a0
 /* 622C790 8007CA60 45008592 */  lbu        $a1, 0x45($s4)
-/* 622C794 8007CA64 4FD8000C */  jal        func_8003613C
+/* 622C794 8007CA64 4FD8000C */  jal        SubAngle8
 /* 622C798 8007CA68 00000000 */   nop
 /* 622C79C 8007CA6C 21204000 */  addu       $a0, $v0, $zero
 /* 622C7A0 8007CA70 03008004 */  bltz       $a0, .Llevel_26_8007CA80

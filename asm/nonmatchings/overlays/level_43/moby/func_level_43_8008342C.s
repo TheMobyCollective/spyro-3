@@ -398,7 +398,7 @@ glabel func_level_43_8008342C
 /* 87A8EA8 80083978 06004228 */  slti       $v0, $v0, 0x6
 /* 87A8EAC 8008397C C5024014 */  bnez       $v0, .Llevel_43_80084494
 /* 87A8EB0 80083980 21202002 */   addu      $a0, $s1, $zero
-/* 87A8EB4 80083984 4FD8000C */  jal        func_8003613C
+/* 87A8EB4 80083984 4FD8000C */  jal        SubAngle8
 /* 87A8EB8 80083988 21280002 */   addu      $a1, $s0, $zero
 /* 87A8EBC 8008398C 02004018 */  blez       $v0, .Llevel_43_80083998
 /* 87A8EC0 80083990 01001224 */   addiu     $s2, $zero, 0x1

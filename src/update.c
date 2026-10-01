@@ -4,43 +4,51 @@
 #include "tracers.h"
 #include "savepoint.h"
 #include "camera.h"
+#include "mobyupdate.h"
 #include "pad.h"
 #include "spu.h"
 #include "stdutil.h"
+#include "str.h"
 #include "warp.h"
 #include "ovl_header.h"
 
-// mobyupdate
-extern void func_8003038C(); // UpdateMobys
-
 // spyroupdate
 extern void func_8003E83C(); // UpdateSpyro
-
-// str
-extern void func_8004FA24();
 
 // updatepause
 extern void func_80057834(); // pause updates
 
 //extern void func_title_8007566C(); // title screen updates // "ovlHeader+0x139C"
 
+// rdata
+extern const char* D_80011254;
+
 // data
 extern unsigned char levelIndexToHomeworldLevelId[40]; // 800671A0
 
 // sdata
 extern int loadStage; // 8006C518
-extern int levelIndex; // 8006C58C
+extern int g_LevelIndex; // 8006C58C
 extern int D_8006C598;
 extern Moby* D_8006C5F8; // dunno what this is but it's a Moby, probably bullet time related
 extern int deltaTime; // 8006C648
 extern short D_8006C67C;
 extern int D_8006C718;
 extern int D_8006C7C8;
+extern short D_8006C510;
+extern short D_8006C540;
+extern int D_8006C56C;
+extern short D_8006C6A8;
+extern int D_8006C6AC;
+extern short D_8006C740;
+extern short D_8006C744;
+extern short D_8006C780;
+extern int D_8006C7F0;
 
 // bss
 extern Game game; // 8006E344 - game.state
-extern StreamingData streamingData; // 8006e470
 extern PauseData pauseData; // 8006fbc4
+extern WadHeader wadHeader; // 8006d8d8
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -129,7 +137,7 @@ void func_80054AF8() {
     game.state = GAMESTATE_GAME_OVER;
     pauseData.dat_8006fbc8 = 0;
     D_8006C598 = 0;
-    D_8006C7C8 = levelIndexToHomeworldLevelId[levelIndex];
+    D_8006C7C8 = levelIndexToHomeworldLevelId[g_LevelIndex];
     loadStage = 0;
     func_8003BEDC();
     streamingData.musicEnabled = 1;
@@ -139,10 +147,24 @@ INCLUDE_ASM("asm/nonmatchings/update", func_80054B64);
 
 /**
  * ???() - func_80054CD8() - MATCHING
- * Worth reviewing for the structs etc.
- * https://decomp.me/scratch/kCgmm
+ * Sets gamestate 10
+ * https://decomp.me/scratch/ULWVn
  */
-INCLUDE_ASM("asm/nonmatchings/update", func_80054CD8);
+void func_80054CD8() {
+    game.state = 10;
+    D_8006C744 = 0;
+    D_8006C740 = 0;
+    D_8006C540 = 0;
+    D_8006C510 = -1;
+    D_8006C6AC = 0;
+    D_8006C7F0 = 0;
+    D_8006C780 = 0;
+    D_8006C6A8 = 0;
+    D_8006C56C = 0;
+    CDLoadSync(cdState.wadSector, (char*)D_80011254, wadHeader.creditsOvl.size, wadHeader.creditsOvl.offset);
+    func_8003BEDC();
+    streamingData.musicEnabled = 1;
+}
 
 INCLUDE_ASM("asm/nonmatchings/update", func_80054D84);
 
@@ -284,7 +306,7 @@ void Update(void) {
         func_80057834();
         break;
     case GAMESTATE_LOADING_IMG:
-        func_80058778();
+        UpdateLoadingImage();
         break;
     case GAMESTATE_CUTSCENE:
         (*ovlHeader.UpdateCutscene)(); // UpdateCutscene

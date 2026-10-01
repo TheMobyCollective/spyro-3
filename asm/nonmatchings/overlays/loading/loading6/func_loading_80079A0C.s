@@ -48,7 +48,7 @@ glabel func_loading_80079A0C
 /* 3231F74 80079A44 00000000 */  nop
 /* 3231F78 80079A48 0500A010 */  beqz       $a1, .Lloading_80079A60
 /* 3231F7C 80079A4C 00000000 */   nop
-/* 3231F80 80079A50 2F61010C */  jal        func_800584BC
+/* 3231F80 80079A50 2F61010C */  jal        WarpToLevel
 /* 3231F84 80079A54 21200000 */   addu      $a0, $zero, $zero
 /* 3231F88 80079A58 E5E60108 */  j          .Lloading_80079B94
 /* 3231F8C 80079A5C 000000A2 */   sb        $zero, 0x0($s0)
@@ -148,7 +148,7 @@ glabel func_loading_80079A0C
 /* 32320B4 80079B84 06000424 */  addiu      $a0, $zero, 0x6
 /* 32320B8 80079B88 49000524 */  addiu      $a1, $zero, 0x49
 .Lloading_80079B8C:
-/* 32320BC 80079B8C 2F61010C */  jal        func_800584BC
+/* 32320BC 80079B8C 2F61010C */  jal        WarpToLevel
 /* 32320C0 80079B90 00000000 */   nop
 .Lloading_80079B94:
 /* 32320C4 80079B94 1400BF8F */  lw         $ra, 0x14($sp)

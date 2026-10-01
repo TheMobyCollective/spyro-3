@@ -150,7 +150,7 @@ glabel func_title_8007AB24
 /* 29A50 8007AD20 0000848C */  lw         $a0, 0x0($a0)
 .Ltitle_8007AD24:
 /* 29A54 8007AD24 2130E002 */  addu       $a2, $s7, $zero
-/* 29A58 8007AD28 B780000C */  jal        func_800202DC
+/* 29A58 8007AD28 B780000C */  jal        DrawStringCentered
 /* 29A5C 8007AD2C 0200E734 */   ori       $a3, $a3, 0x2
 /* 29A60 8007AD30 20002226 */  addiu      $v0, $s1, 0x20
 /* 29A64 8007AD34 21885300 */  addu       $s1, $v0, $s3

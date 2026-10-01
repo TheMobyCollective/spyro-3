@@ -45,11 +45,11 @@ glabel func_level_21_8007FC58
 /* 53FC220 8007FCF0 040012AE */   sw        $s2, 0x4($s0)
 .Llevel_21_8007FCF4:
 /* 53FC224 8007FCF4 45002492 */  lbu        $a0, 0x45($s1)
-/* 53FC228 8007FCF8 4FD8000C */  jal        func_8003613C
+/* 53FC228 8007FCF8 4FD8000C */  jal        SubAngle8
 /* 53FC22C 8007FCFC 21280000 */   addu      $a1, $zero, $zero
 /* 53FC230 8007FD00 80000524 */  addiu      $a1, $zero, 0x80
 /* 53FC234 8007FD04 45002492 */  lbu        $a0, 0x45($s1)
-/* 53FC238 8007FD08 4FD8000C */  jal        func_8003613C
+/* 53FC238 8007FD08 4FD8000C */  jal        SubAngle8
 /* 53FC23C 8007FD0C 21804000 */   addu      $s0, $v0, $zero
 /* 53FC240 8007FD10 21204000 */  addu       $a0, $v0, $zero
 /* 53FC244 8007FD14 02000106 */  bgez       $s0, .Llevel_21_8007FD20

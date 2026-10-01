@@ -1,21 +1,14 @@
 #include "common.h"
+#include "mobyfunc.h"
 #include "mobyutil.h"
 #include "stdutil.h"
 #include "ovl_header.h"
 #include "spyro.h"
+#include "str.h"
 
 // collision
 extern int func_8001A310(Vector3D*, int, int, Moby*);
 extern int func_8001A358(Vector3D*, int);
-
-// mobyfunc
-extern void func_8002E2D0();
-
-// spyro
-extern int func_80040954(int);
-
-// str
-extern int func_80050680(int, int*, int, int); // fLoadFromWad?(int sector,int *dest,undefined *len,undefined *sectorOffset)
 
 // updatemobys
 extern void func_80055B18(Moby*); // delete moby
@@ -36,7 +29,7 @@ extern unsigned char D_80066F7C[40]; // eggs per level
 extern TalkTextData D_80067554[7]; // TriangleToTalkData
 
 // sdata / sbss
-extern int levelIndex; // 8006C58C
+extern int g_LevelIndex; // 8006C58C
 extern int* dragonModelPtr; // 8006C5B0
 extern int D_8006C648; // deltaTime
 extern Moby* D_8006C550; // MobyArrayPointer
@@ -47,7 +40,7 @@ extern int D_8006C770;
 
 // bss
 extern WadHeader wadHeader; // 8006d8d8
-extern StreamingData streamingData; // 8006e470
+extern Model* D_8006EE2C[768]; // model pointers
 extern CollisionData D_80071900;
 extern LevelWadHeader levelWadHeader; // 80072098
 
@@ -75,11 +68,20 @@ void func_80034F40(Moby* moby, int newId) {
 }
 
 /** 
- * SetMobyAnimation() - func_80034F80()
- * Weird, has that weird array I've labelled as "moby sound pointers"??
- * https://decomp.me/scratch/wbxvf
+ * SetMobyAnimation() - func_80034F80() - MATCHING
+ * Weird match!
+ * https://decomp.me/scratch/DoLs6
  */
-INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80034F80);
+void func_80034F80(Moby* arg0, int arg1) {
+    if (arg0->animationState.id != arg1) {
+        arg0->unknown3[1] = 0;
+        arg0->animationProgress = -(D_8006EE2C[arg0->mobyClass]->m_Animations[arg1]->m_NumFrames != 0 && D_8006EE2C[arg0->mobyClass]->m_Animations[arg1]->m_NumFrames != 1) & 0x30;
+        arg0->animationState.id = arg1;
+        arg0->animationState.nextId = arg1;
+        arg0->animationState.frame = 0;
+        arg0->animationState.nextFrame = 1;
+    }
+}
 
 /**
  * SetDefaultMobyProperties() - func_80034FEC() - MATCHING
@@ -252,10 +254,16 @@ int func_80035D38(Moby* moby) {
 
 /**
  * SnapMobyToGroundRange() - func_80035D84() - MATCHING
- * Ready to add
  * https://decomp.me/scratch/pfFhX
  */
-INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80035D84);
+int func_80035D84(Moby* moby, int arg1) {
+    int x;
+    
+    moby->position.z += arg1;
+    x = func_8001A358(&moby->position, 0x1000);
+    moby->position.z -= arg1;
+    return x;
+}
 
 /**
  * ???() - func_80035DDC() - MATCHING
@@ -293,7 +301,7 @@ int func_80036018(int arg0, int arg1, int arg2) {
     int diff;
     int absDiff;
 
-    diff = func_8003613C(arg0, arg1); // arg1 - arg0
+    diff = SubAngle8(arg0, arg1); // arg1 - arg0
     absDiff = ABS(diff); // |arg1 - arg0|
     if (arg2 < absDiff) {
         if (diff < 0) return func_8003617C(arg1, arg2);  // if arg1 < arg0,  return arg1 + arg2
@@ -304,50 +312,47 @@ int func_80036018(int arg0, int arg1, int arg2) {
 
 /**
  * ???() - func_800360A0() - MATCHING
- * Does some simple but very specific arithmetic, types took a while to get exactly right
  * https://decomp.me/scratch/J8wdV
  */
-int func_800360A0(int arg0, int arg1, unsigned char arg2) {
-    return func_8003617C(arg1, (func_8003613C(arg1, arg0) * arg2) >> 8); // y + ((x - y) * z) / 256
+int func_800360A0(int arg0, int arg1, char arg2) {
+    return func_8003617C(arg1, (SubAngle8(arg1, arg0) * arg2) >> 8); // y + ((x - y) * z) / 256
 }
 
 /**
  * ???() - func_800360F8 - MATCHING
- * Mixes some functions
  * https://decomp.me/scratch/aUHyS
  */
-int func_800360F8(int arg0, int arg1, int arg2, unsigned char arg3) {
+int func_800360F8(int arg0, int arg1, int arg2, char arg3) {
     return func_800360A0(func_80036018(arg0, arg1, arg2), arg1, arg3);
 }
 
 /**
- * ???() - func_8003613C - MATCHING
- * Signed difference mod 0x80
+ * SubAngle8() - func_8003613C - MATCHING
  * https://decomp.me/scratch/bt3wL
  */
-int func_8003613C(int arg0, int arg1) {
-    int var_a0;
+int SubAngle8(int in0, int in1) {
+    int out;
 
-    var_a0 = (arg1 - arg0) & 0xFF;
-    if (var_a0 >= 0x81) {
-        var_a0 -= 0x100;
+    out = (in1 - in0) & 0xFF;
+    if (out > 0x80) {
+        out -= 0x100;
     }
-    return var_a0;
+    return out;
 }
 
 /**
- * ???() - func_8003615C - MATCHING
- * Signed difference mod 0x800
+ * SubAngle12() - func_8003615C - MATCHING
+ * i.e. 12 bit angle, not 12 byte 3D angle
  * https://decomp.me/scratch/jXP9Z
  */
-int func_8003615C(int arg0, int arg1) {
-    int var_a0;
+int SubAngle12(int in0, int in1) {
+    int out;
 
-    var_a0 = (arg1 - arg0) & 0xFFF;
-    if (var_a0 >= 0x801) {
-        var_a0 -= 0x1000;
+    out = (in1 - in0) & 0xFFF;
+    if (out > 0x800) {
+        out -= 0x1000;
     }
-    return var_a0;
+    return out;
 }
 
 /**
@@ -361,10 +366,12 @@ int func_8003617C(int arg0, int arg1) {
 
 /**
  * ???() - func_80036188() - MATCHING
- * Ready to implement
  * https://decomp.me/scratch/a5QDz
  */
-INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80036188);
+void func_80036188(Angle* arg0) {
+    arg0->roll  = -func_8004E880(func_8004F388((D_80071900.D_80071918.x * D_80071900.D_80071918.x) + (D_80071900.D_80071918.z * D_80071900.D_80071918.z)), D_80071900.D_80071918.y, 0);
+    arg0->pitch = -func_8004E880(D_80071900.D_80071918.z, D_80071900.D_80071918.x, 0);
+}
 
 INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80036220);
 
@@ -618,7 +625,7 @@ void func_80039974(int dragonNo, int localOffset, int sizeLeft) {
     if (var_a2 == 0) {
         var_a2 = temp_a0->size - localOffset;
     }
-    func_80050680(streamingData.wadSector, dragonModelPtr, var_a2, localOffset + (wadHeader.lvl[levelIndex].lvl.offset + temp_a0->offset));
+    CDLoadAsync(cdState.wadSector, dragonModelPtr, var_a2, localOffset + (wadHeader.lvl[g_LevelIndex].lvl.offset + temp_a0->offset));
 }
 
 /**

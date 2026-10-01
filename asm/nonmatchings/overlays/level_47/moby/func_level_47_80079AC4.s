@@ -218,7 +218,7 @@ glabel func_level_47_80079AC4
 /* 91192D0 80079DA0 7055010C */  jal        ActivateSparxPowers
 /* 91192D4 80079DA4 00000000 */   nop
 /* 91192D8 80079DA8 21200000 */  addu       $a0, $zero, $zero
-/* 91192DC 80079DAC 2F61010C */  jal        func_800584BC
+/* 91192DC 80079DAC 2F61010C */  jal        WarpToLevel
 /* 91192E0 80079DB0 0A000524 */   addiu     $a1, $zero, 0xA
 .Llevel_47_80079DB4:
 /* 91192E4 80079DB4 7400638E */  lw         $v1, 0x74($s3)
@@ -1107,7 +1107,7 @@ glabel func_level_47_80079AC4
 /* 9119FBC 8007AA8C 23286500 */   subu      $a1, $v1, $a1
 /* 9119FC0 8007AA90 21B04000 */  addu       $s6, $v0, $zero
 /* 9119FC4 8007AA94 2120A002 */  addu       $a0, $s5, $zero
-/* 9119FC8 8007AA98 4FD8000C */  jal        func_8003613C
+/* 9119FC8 8007AA98 4FD8000C */  jal        SubAngle8
 /* 9119FCC 8007AA9C 2128C002 */   addu      $a1, $s6, $zero
 /* 9119FD0 8007AAA0 8000A2AF */  sw         $v0, 0x80($sp)
 .Llevel_47_8007AAA4:
@@ -1366,7 +1366,7 @@ glabel func_level_47_80079AC4
 /* 911A390 8007AE60 23284500 */   subu      $a1, $v0, $a1
 /* 911A394 8007AE64 21B04000 */  addu       $s6, $v0, $zero
 /* 911A398 8007AE68 9000A48F */  lw         $a0, 0x90($sp)
-/* 911A39C 8007AE6C 4FD8000C */  jal        func_8003613C
+/* 911A39C 8007AE6C 4FD8000C */  jal        SubAngle8
 /* 911A3A0 8007AE70 2128C002 */   addu      $a1, $s6, $zero
 /* 911A3A4 8007AE74 8000A2AF */  sw         $v0, 0x80($sp)
 .Llevel_47_8007AE78:

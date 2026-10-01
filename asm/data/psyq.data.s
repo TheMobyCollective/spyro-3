@@ -174,7 +174,7 @@ dlabel D_8006A118
 .size D_8006A118, . - D_8006A118
 
 dlabel D_8006A11C
-/* 5A91C 8006A11C FCF50580 */ .word func_8005F5FC
+/* 5A91C 8006A11C FCF50580 */ .word printf
 .size D_8006A11C, . - D_8006A11C
 
 dlabel D_8006A120

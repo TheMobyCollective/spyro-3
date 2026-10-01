@@ -1,6 +1,7 @@
 #include "common.h"
 #include "stdutil.h"
 #include "pad.h"
+#include "str.h"
 
 // psyq
 extern void VSync(int); // VSync
@@ -13,9 +14,6 @@ extern int D_8006C644;
 extern int isDemoMode; // 8006C658 - note that isDemoMode should not be volatile in here
 extern char D_8006C760;
 extern int D_8006C7CC;
-
-// bss
-extern StreamingData streamingData; // 8006e470
 
 // TODO - hardware types (e.g. 0x53 is The Contraption)
 
@@ -124,7 +122,7 @@ void func_8003A010(Pad* arg0) {
  * This one required isDemoMode to be non-volatile and needed -G0 / G4!
  * https://decomp.me/scratch/lUhLW
  */
-void func_8003A2B0(void) {
+void func_8003A2B0() {
     int i;
     int x;
 
@@ -163,7 +161,7 @@ void func_8003A40C() {
     int var_a1;
     int x;
 
-    streamingData.dat_8006e484++; // music frames?
+    cdState.readTime++; 
     x = isDemoMode; // need this to match, or otherwise to make isDemoMode volatile
     if (x == 0) {
         

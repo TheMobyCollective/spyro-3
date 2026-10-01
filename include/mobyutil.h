@@ -19,10 +19,10 @@ int func_80035D38(Moby* moby); // SnapMobyToGround
 int func_80035DDC(Moby* arg0, int arg1, int arg2, int arg3, int arg4); // probably returns the result of moving a moby horizontally?
 int func_80035EE0(Moby*, int, int, int, int, int); // probably returns the result of moving a moby horizontally?
 int func_80036018(int arg0, int arg1, int arg2);
-int func_800360A0(int arg0, int arg1, unsigned char arg2);
-int func_800360F8(int arg0, int arg1, int arg2, unsigned char arg3);
-int func_8003613C(int arg0, int arg1); // subtraction
-int func_8003615C(int arg0, int arg1); // subtraction
+int func_800360A0(int arg0, int arg1, char arg2);
+int func_800360F8(int arg0, int arg1, int arg2, char arg3);
+int SubAngle8(int in0, int in1); // subtraction
+int SubAngle12(int in0, int in1); // subtraction
 int func_8003617C(int arg0, int arg1); // addition
 void func_80036188(Angle*);
 // unk func_80036220(unk);

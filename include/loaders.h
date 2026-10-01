@@ -19,11 +19,11 @@ typedef struct {
 } LoadingData;
 
 void func_8002AE00();
-// func_8002AE34
-// func_8002AF9C
-// func_8002B31C
-// func_8002B5EC
-// func_8002B6C8
+void func_8002AE34(int*, int*);
+void func_8002AF9C(int*, int, int*);
+int func_8002B31C(int*, int*);
+void func_8002B5EC(void*); // my notes say pointer is "MobySoundData?*" whatever that is
+void func_8002B6C8();
 void func_8002B768(Particle*);
 void* func_8002B810(void*);
 void func_8002C9F4(char*, int);

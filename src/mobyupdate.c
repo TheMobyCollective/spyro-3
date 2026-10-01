@@ -1,4 +1,5 @@
 #include "common.h"
+#include "mobyupdate.h"
 
 /**
  * UpdateMobys() - func_8003038C()

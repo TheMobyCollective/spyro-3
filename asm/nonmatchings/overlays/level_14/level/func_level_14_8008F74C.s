@@ -86,11 +86,11 @@ glabel func_level_14_8008F74C
 /* 47CEDB8 8008F888 23284500 */   subu      $a1, $v0, $a1
 /* 47CEDBC 8008F88C 21280002 */  addu       $a1, $s0, $zero
 /* 47CEDC0 8008F890 02002486 */  lh         $a0, 0x2($s1)
-/* 47CEDC4 8008F894 57D8000C */  jal        func_8003615C
+/* 47CEDC4 8008F894 57D8000C */  jal        SubAngle12
 /* 47CEDC8 8008F898 21804000 */   addu      $s0, $v0, $zero
 /* 47CEDCC 8008F89C 21904000 */  addu       $s2, $v0, $zero
 /* 47CEDD0 8008F8A0 00002486 */  lh         $a0, 0x0($s1)
-/* 47CEDD4 8008F8A4 57D8000C */  jal        func_8003615C
+/* 47CEDD4 8008F8A4 57D8000C */  jal        SubAngle12
 /* 47CEDD8 8008F8A8 21280002 */   addu      $a1, $s0, $zero
 /* 47CEDDC 8008F8AC 0E002386 */  lh         $v1, 0xE($s1)
 /* 47CEDE0 8008F8B0 00000000 */  nop

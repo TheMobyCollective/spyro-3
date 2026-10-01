@@ -429,7 +429,7 @@ glabel func_level_23_8007C664
 /* 5A99174 8007CC44 00000000 */  nop
 /* 5A99178 8007CC48 35004014 */  bnez       $v0, .Llevel_23_8007CD20
 /* 5A9917C 8007CC4C 00000000 */   nop
-/* 5A99180 8007CC50 FE40010C */  jal        func_800503F8
+/* 5A99180 8007CC50 FE40010C */  jal        CDLoadTime
 /* 5A99184 8007CC54 00000000 */   nop
 /* 5A99188 8007CC58 30004014 */  bnez       $v0, .Llevel_23_8007CD1C
 /* 5A9918C 8007CC5C 00000000 */   nop
@@ -440,7 +440,7 @@ glabel func_level_23_8007C664
 /* 5A991A0 8007CC70 46F30108 */  j          .Llevel_23_8007CD18
 /* 5A991A4 8007CC74 01000224 */   addiu     $v0, $zero, 0x1
 .Llevel_23_8007CC78:
-/* 5A991A8 8007CC78 FE40010C */  jal        func_800503F8
+/* 5A991A8 8007CC78 FE40010C */  jal        CDLoadTime
 /* 5A991AC 8007CC7C 00000000 */   nop
 /* 5A991B0 8007CC80 26004014 */  bnez       $v0, .Llevel_23_8007CD1C
 /* 5A991B4 8007CC84 00000000 */   nop
@@ -461,7 +461,7 @@ glabel func_level_23_8007C664
 /* 5A991F0 8007CCC0 46F30108 */  j          .Llevel_23_8007CD18
 /* 5A991F4 8007CCC4 02000224 */   addiu     $v0, $zero, 0x2
 .Llevel_23_8007CCC8:
-/* 5A991F8 8007CCC8 FE40010C */  jal        func_800503F8
+/* 5A991F8 8007CCC8 FE40010C */  jal        CDLoadTime
 /* 5A991FC 8007CCCC 00000000 */   nop
 /* 5A99200 8007CCD0 12004014 */  bnez       $v0, .Llevel_23_8007CD1C
 /* 5A99204 8007CCD4 00000000 */   nop
@@ -472,7 +472,7 @@ glabel func_level_23_8007C664
 /* 5A99218 8007CCE8 46F30108 */  j          .Llevel_23_8007CD18
 /* 5A9921C 8007CCEC 03000224 */   addiu     $v0, $zero, 0x3
 .Llevel_23_8007CCF0:
-/* 5A99220 8007CCF0 FE40010C */  jal        func_800503F8
+/* 5A99220 8007CCF0 FE40010C */  jal        CDLoadTime
 /* 5A99224 8007CCF4 00000000 */   nop
 /* 5A99228 8007CCF8 08004014 */  bnez       $v0, .Llevel_23_8007CD1C
 /* 5A9922C 8007CCFC 00000000 */   nop
@@ -1111,7 +1111,7 @@ glabel func_level_23_8007C664
 /* 5A99B60 8007D630 E4F50108 */  j          .Llevel_23_8007D790
 /* 5A99B64 8007D634 480022A2 */   sb        $v0, 0x48($s1)
 .L8007D638_:
-/* 5A99B68 8007D638 FE40010C */  jal        func_800503F8
+/* 5A99B68 8007D638 FE40010C */  jal        CDLoadTime
 /* 5A99B6C 8007D63C 00000000 */   nop
 /* 5A99B70 8007D640 53004014 */  bnez       $v0, .Llevel_23_8007D790
 /* 5A99B74 8007D644 00000000 */   nop
@@ -1134,7 +1134,7 @@ glabel func_level_23_8007C664
 /* 5A99BB0 8007D680 43004010 */  beqz       $v0, .Llevel_23_8007D790
 /* 5A99BB4 8007D684 00000000 */   nop
 /* 5A99BB8 8007D688 44002492 */  lbu        $a0, 0x44($s1)
-/* 5A99BBC 8007D68C 4FD8000C */  jal        func_8003613C
+/* 5A99BBC 8007D68C 4FD8000C */  jal        SubAngle8
 /* 5A99BC0 8007D690 21280000 */   addu      $a1, $zero, $zero
 /* 5A99BC4 8007D694 21184000 */  addu       $v1, $v0, $zero
 /* 5A99BC8 8007D698 03006104 */  bgez       $v1, .Llevel_23_8007D6A8
@@ -1167,7 +1167,7 @@ glabel func_level_23_8007C664
 /* 5A99C24 8007D6F4 A0582594 */  lhu        $a1, %lo(D_800658A0)($at)
 /* 5A99C28 8007D6F8 44002492 */  lbu        $a0, 0x44($s1)
 /* 5A99C2C 8007D6FC 002C0500 */  sll        $a1, $a1, 16
-/* 5A99C30 8007D700 4FD8000C */  jal        func_8003613C
+/* 5A99C30 8007D700 4FD8000C */  jal        SubAngle8
 /* 5A99C34 8007D704 032E0500 */   sra       $a1, $a1, 24
 /* 5A99C38 8007D708 21184000 */  addu       $v1, $v0, $zero
 /* 5A99C3C 8007D70C 03006104 */  bgez       $v1, .Llevel_23_8007D71C
@@ -1191,7 +1191,7 @@ glabel func_level_23_8007C664
 /* 5A99C7C 8007D74C 20592594 */  lhu        $a1, %lo(D_80065920)($at)
 /* 5A99C80 8007D750 45002492 */  lbu        $a0, 0x45($s1)
 /* 5A99C84 8007D754 002C0500 */  sll        $a1, $a1, 16
-/* 5A99C88 8007D758 4FD8000C */  jal        func_8003613C
+/* 5A99C88 8007D758 4FD8000C */  jal        SubAngle8
 /* 5A99C8C 8007D75C 032E0500 */   sra       $a1, $a1, 24
 /* 5A99C90 8007D760 21184000 */  addu       $v1, $v0, $zero
 /* 5A99C94 8007D764 03006104 */  bgez       $v1, .Llevel_23_8007D774

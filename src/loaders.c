@@ -1,14 +1,12 @@
 #include "common.h"
+#include "init.h"
 #include "stdutil.h"
 #include "loaders.h"
 #include "spu.h"
+#include "str.h"
 
-// init
-extern void func_8002AA34();
 // spyroupdate
 extern void func_80047190();
-// str
-extern void func_80050578(int, int*, int, int); // fDiscReadSync
 
 // sdata
 extern Particle* D_8006C554; // partsArrayPtr, like first moby ptr?
@@ -16,7 +14,6 @@ extern Particle* D_8006C614; // another parts related pointer it seems
 
 // bss
 extern WadHeader wadHeader;
-extern StreamingData streamingData;
 extern SpeedwayData speedwayData; // 8006FA38
 
 // bss - probably need structs or retyping
@@ -105,17 +102,17 @@ INCLUDE_ASM("asm/nonmatchings/loaders", func_8002CA50);
 
 /**
  * ???() - func_8002D044() - MATCHING
- * Defines streamingData and loadingData
+ * Defines cdState and loadingData
  * Note that some variables in here (modelsEnd and modelsStart) are hardcoded
  * I'm not sure if these are actually relative to something
  * https://decomp.me/scratch/HBeBQ
  */
 void func_8002D044() {
-    func_80050578(streamingData.wadSector, (int*)0x801AE800, wadHeader.spyroMdls.size, wadHeader.spyroMdls.offset);
+    CDLoadSync(cdState.wadSector, (int*)0x801AE800, wadHeader.spyroMdls.size, wadHeader.spyroMdls.offset);
     
     loadingData.D_800722e0 = (int*)(0x801FF800 - *(int*)0x801AE800); // D_801AE800; modelsEnd
     func_8004E828(loadingData.D_800722e0, (int*)0x801AF000, *(int*)0x801AE800); // D_801AE800
     
-    func_8002B5EC(((int)loadingData.D_800722e0 + *(int*)0x801AE804) - 0x800); // D_801AE804; modelsStart
+    func_8002B5EC((void*)(((int)loadingData.D_800722e0 + *(int*)0x801AE804) - 0x800)); // D_801AE804; modelsStart
     func_8002AA34();
 }

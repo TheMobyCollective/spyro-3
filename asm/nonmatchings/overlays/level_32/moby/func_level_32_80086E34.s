@@ -1331,7 +1331,7 @@ glabel func_level_32_80086E34
 /* 6DEF5C8 80088098 18004500 */  mult       $v0, $a1
 /* 6DEF5CC 8008809C 44004492 */  lbu        $a0, 0x44($s2)
 /* 6DEF5D0 800880A0 12400000 */  mflo       $t0
-/* 6DEF5D4 800880A4 4FD8000C */  jal        func_8003613C
+/* 6DEF5D4 800880A4 4FD8000C */  jal        SubAngle8
 /* 6DEF5D8 800880A8 FF000531 */   andi      $a1, $t0, 0xFF
 /* 6DEF5DC 800880AC 21184000 */  addu       $v1, $v0, $zero
 /* 6DEF5E0 800880B0 02006228 */  slti       $v0, $v1, 0x2

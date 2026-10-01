@@ -184,7 +184,7 @@ glabel func_level_48_8007C9B4
 /* 926F99C 8007CC6C 21200000 */   addu      $a0, $zero, $zero
 /* 926F9A0 8007CC70 0780053C */  lui        $a1, %hi(D_8006C5BC)
 /* 926F9A4 8007CC74 BCC5A58C */  lw         $a1, %lo(D_8006C5BC)($a1)
-/* 926F9A8 8007CC78 2F61010C */  jal        func_800584BC
+/* 926F9A8 8007CC78 2F61010C */  jal        WarpToLevel
 /* 926F9AC 8007CC7C F8FFA524 */   addiu     $a1, $a1, -0x8
 .Llevel_48_8007CC80:
 /* 926F9B0 8007CC80 2C00BF8F */  lw         $ra, 0x2C($sp)
