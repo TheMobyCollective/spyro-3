@@ -338,7 +338,8 @@ void NAME_OVERLAY_FUNCTION(PlaySpyroSounds) (void) {
 
 // 10 https://decomp.me/scratch/Ck2ls
 // 11 https://decomp.me/scratch/zQdLQ WIP - one bit where the stack usage isn't the same
-// 12 - 50 TODO
+// 12 https://decomp.me/scratch/2SwlZ WIP
+// 13 - 50 TODO
 // Cutscenes appear empty so are done by default
 
 // Not an easy match, lots of if statements, but theoretically possible

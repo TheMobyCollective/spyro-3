@@ -95,7 +95,7 @@ extern void (*unk_ovlheader_80074310)(void); // 80074310, types TODO, likely Cam
 // Less common ones / level-specific
 extern void (*unk_ovlheader_80074314)(void); // 80074314, types TODO, called by Sparx / butterflies
 extern void (*unk_ovlheader_80074318)(void); // 80074318, types TODO, likely Update active critter
-extern void (*unk_ovlheader_8007431C)(void); // 8007431C, types TODO, likely Update movement state(?)
+extern int (*unk_ovlheader_8007431C)(int); // 8007431C, types TODO, likely Update movement state(?)
 extern void (*unk_ovlheader_80074320)(void); // 80074320, types TODO
 extern void (*unk_ovlheader_80074324)(void); // 80074324, types TODO
 extern void (*unk_ovlheader_80074328)(Moby*); // 80074328
