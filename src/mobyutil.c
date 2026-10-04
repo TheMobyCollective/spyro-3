@@ -47,9 +47,9 @@ extern LevelWadHeader levelWadHeader; // 80072098
 ////////////////////////////////////////////////////////////////////////////////////
 
 /**
- * ???() - func_80034DAC()
- * WIP, lots of externs but a fairly short function
- * https://decomp.me/scratch/cbDKn
+ * ???() - func_80034DAC() - MATCHING
+ * Ready to add, but worth examining the structs in here, there's a moby tag
+ * https://decomp.me/scratch/Nt6l6
  */
 INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80034DAC);
 
@@ -399,10 +399,25 @@ int func_800363DC(int low, int high) {
     return -out;
 }
 
+/**
+ * GetClosestPathNode() - func_8003645C() - MATCHING
+ * Ready to add, fast / octagonal metric, probably needs me to check path tag structure
+ * https://decomp.me/scratch/4RS1P
+ */
 INCLUDE_ASM("asm/nonmatchings/mobyutil", func_8003645C);
 
+/**
+ * GetClosestPathNodeEuclidean() - func_80036518() - MATCHING
+ * Ready to add, probably needs me to check path tag structure
+ * https://decomp.me/scratch/mVz0i
+ */
 INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80036518);
 
+/**
+ * ???() - func_800365E4() - MATCHING
+ * Ready to add, but perhaps worth making less opaque before implementing
+ * https://decomp.me/scratch/z1thJ
+ */
 INCLUDE_ASM("asm/nonmatchings/mobyutil", func_800365E4);
 
 INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80036708);
