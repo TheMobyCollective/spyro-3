@@ -373,6 +373,11 @@ void func_80036188(Angle* arg0) {
     arg0->pitch = -func_8004E880(D_80071900.D_80071918.z, D_80071900.D_80071918.x, 0);
 }
 
+/**
+ * IsInBox() - func_80036220() - MATCHING
+ * Ready to add
+ * https://decomp.me/scratch/AsnpQ
+ */
 INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80036220);
 
 /**
