@@ -1,11 +1,8 @@
-#ifndef __ANIMATION_INC_H
-#define __ANIMATION_INC_H
-
-// Should have a level ID passed into this
-
 #include "ovl_header.h"
 #include "spu.h"
 #include "spyro.h"
+
+// Should have a level ID passed into this
 
 // ovl_header.h will need to be updated to give the pointers to the functions in here more appropriate names
 
@@ -446,5 +443,3 @@ New in level 45
 
 17/22/23 etc. only have sink as a new one, but probably not worth doing alone
 */
-
-#endif

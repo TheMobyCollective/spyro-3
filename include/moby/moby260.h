@@ -28,10 +28,6 @@ extern int D_8006C644; // a frame timer of some sort
 // .bss 8006c7f8
 extern CollisionData D_80071900; // 80071900 // maybe "ray data"?
 
-// Overlay
-//extern char* (*SpawnParticle)(int unk1, int unk2, Vector3D* unk3, Vector3D* unk4); // extern ? (*SpawnParticle)(?, ?, void*, ?);
-//TODO - replace references to ovlHeader.SpawnParticle with just SpawnParticle (really just need to replace instances of ovlHeader in general)
-    
 // Class 260
 // DO NOT USE - in practice this doesn't seem to compile to the same thing
 static inline void MobyUpdate_260(Moby* arg0) {
@@ -73,7 +69,7 @@ static inline void MobyUpdate_260(Moby* arg0) {
             func_80055B18(arg0);
             return;
         }
-        ovlHeader.SpawnParticle(0xA, 0x47, &arg0->position, 0);
+        SpawnParticle(0xA, 0x47, &arg0->position, 0);
         func_80055B18(arg0);
         return;
     }

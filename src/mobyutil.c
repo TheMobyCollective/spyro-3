@@ -294,17 +294,15 @@ INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80035EE0);
 
 /** 
  * ???() - func_80036018() - MATCHING
- * Does some arithmetic
  * https://decomp.me/scratch/u3loU
  */
 int func_80036018(int arg0, int arg1, int arg2) {
     int diff;
     int absDiff;
 
-    diff = SubAngle8(arg0, arg1); // arg1 - arg0
-    absDiff = ABS(diff); // |arg1 - arg0|
-    if (arg2 < absDiff) {
-        if (diff < 0) return func_8003617C(arg1, arg2);  // if arg1 < arg0,  return arg1 + arg2
+    diff = SubAngle8(arg0, arg1);
+    if (arg2 < ABS(diff)) {
+        if (diff < 0) return func_8003617C(arg1,  arg2); // if arg1 <  arg0, return arg1 + arg2
         else          return func_8003617C(arg1, -arg2); // if arg1 >= arg0, return arg1 - arg2
     }
     return arg0;
@@ -662,7 +660,7 @@ void func_800399E8(Moby* moby, Moby** reflectionMoby) {
     sp10.z += 0x12C;
     temp_s0 = func_8001A310(&sp10, 0x7D0, 0, moby);
     if (func_80040954(D_80071900.D_80071924) == 4) {
-        *reflectionMoby = ovlHeader.SpawnMoby(moby->mobyClass, moby);
+        *reflectionMoby = SpawnMoby(moby->mobyClass, moby);
         if (moby->mobyClass == 1) {
             if ((unsigned int)moby < (unsigned int)D_8006C704) {
                 (*reflectionMoby)->substate = D_80066964[moby->gemValue];

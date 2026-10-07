@@ -19,6 +19,7 @@
 // Useful
 // e.g. NAME_OVERLAY_FUNCTION(CameraUpdate) CameraUpdate_level_25
 #define NAME_OVERLAY_FUNCTION(func) CAT3(func, _level_, LEVEL_ID)
+#define NAME_OVERLAY_DATA(data) CAT3(data, _level_, LEVEL_ID)
 #define NAME_OVERLAY_FUNCTION_LEVEL(func, level) CAT3(func, _level_, level)
 
 // Should be equivalent to NAME_OVERLAY_FUNCTION(MobyUpdate_CLASS)
@@ -32,45 +33,8 @@
 // Recommend using NAME_OVERLAY_FUNCTION(func) and MOBYUPDATE(a)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-// Ovl Header Struct
-// TODO - maybe remove this because it's probably not a struct, based on some matching issues
-typedef struct { // possibly NOT a struct, may want to define each of these separately in a header file
-	unsigned int ovlId;
-	char* ovlEnd;
-	void (**MobyUpdate)(Moby* moby); // functions named MobyUpdate_$CLASS according to Sep04 printfs
-	SpeechData* speechData[1]; // there are LANGUAGE_COUNT of these together! TODO add build param
-	Moby* (*SpawnMoby)(int class, Moby* moby); // TODO - should be a function pointer, not sure about the in/outputs
-	char* (*SpawnParticle)(int unk1, int unk2, Vector3D* unk3, Vector3D* unk4);
-    char* (*UpdateParticles)(int delta);
-    void* unk1b[6]; // TODO - animation related, in all levels and cutscenes
-    void* unk1c[4]; // TODO - camera related, in all levels and cutscenes
-	void* unk2a[7]; // TODO - level-specific; [0] called by Sparx / butterflies, [1] SetCritter / UpdateActiveCritter
-	int (*unk2b)(Vector3D*, int, int); // TODO - level-specific
-	int (*unk2c)(Vector3D*); // TODO - level-specific
-	void* unk2d[6]; // TODO - level-specific
-    int (*unk2da)(short*); // sprite related
-    void (*unk2db)(void*); // void (*unk2db)(HudStruct*) actually, maybe int output
-    void (*unk2dc)(void*); // void (*unk2dc)(HudStruct*) actually, maybe int output
-	void (*SpawnFragments)(int fragmentCount, int fragmentClass, Moby* spawningMoby, Vector3D* offsetVecs, int unk2, short unk3);
-	void* unk2dd[5]; // TODO - level-specific
-	void* unk3[2]; // TODO, speedway related
-	void (*UpdateSpeedwayMenu)(enum UpdateFlags updateFlags); // D_8007437C - Speedway menu update
-	void* unk4[10]; // TODO, speedway related
-	void* unk5[47]; // TODO
-	void* unk6[2]; // TODO cutscene related
-	void (*UpdateCutscene)(); // D_8007446C - Cutscene update
-	void* unk7[3]; // TODO, cutscene related
-	void* unk8; // Skateboarding menu init state
-	void* unk9; // Skateboarding set record
-	void (*UpdateSkateMenu)(); // D_80074484 - Skateboarding menu update
-	void* unka; // Skateboarding menu draw?
-	void* unkb; // TODO
-} OvlHeader;
-
-extern OvlHeader ovlHeader; // 800742D0, psyqId (ovlId) is at this location
-
-///////////////////////////////////////////////////////////////////////////////////////////////
-// Pointers - everything from the struct except for the psyqId
+// Pointers
+// psyq ID at 800742D0
 extern char* ovlEnd; // 800742D4
 extern void (**MobyUpdate)(Moby* moby); // 800742D8, functions named MobyUpdate_$CLASS according to Sep04 printfs
 extern SpeechData* speechData[1]; // 800742DC, there are LANGUAGE_COUNT of these together! TODO add build param
@@ -121,7 +85,7 @@ extern void (*unk_ovlheader_80074370)(void); // 80074370, types TODO, likely (Up
 // Speedways
 extern void (*unk_ovlheader_80074374)(void); // 80074374, types TODO, ends speedway game, referenced in other levels in code related to swimming, as this also ends the game
 extern void (*unk_ovlheader_80074378)(void); // 80074378, types TODO
-extern void (*UpdateSpeedwayMenu)(enum UpdateFlags updateFlags); // 8007437C
+extern void (*UpdateSpeedwayMenu)(int updateFlags); // 8007437C // use enum UpdateFlags for reference
 extern void (*unk_ovlheader_80074380)(void); // 80074380, types TODO
 extern void (*unk_ovlheader_80074384)(void); // 80074384, types TODO
 extern void (*unk_ovlheader_80074388)(void); // 80074388, types TODO

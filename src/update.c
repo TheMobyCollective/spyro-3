@@ -228,7 +228,7 @@ void func_80055364(Moby* moby) {
  * ExitBulletTime() - func_80055380() - MATCHING
  * https://decomp.me/scratch/TqcH3
  */
-void func_80055380(void) {
+void func_80055380() {
     game.state = GAMESTATE_GAMEPLAY;
     D_8006C5F8 = 0;
 }
@@ -237,14 +237,10 @@ void func_80055380(void) {
  * UpdateBulletTime() - func_80055398() - MATCHING
  * https://decomp.me/scratch/BtdFp
  */
-void func_80055398(void) {
-    void (*mobyUpdate)(Moby*);
-    void (**mobyUpdateFuncs)(Moby*) = ovlHeader.MobyUpdate;
-
-    if (mobyUpdateFuncs != 0) {
-        mobyUpdate = mobyUpdateFuncs[D_8006C5F8->mobyClass];
-        if (mobyUpdate != 0) {
-            mobyUpdate(D_8006C5F8);
+void func_80055398() {
+    if (MobyUpdate != 0) {
+        if (MobyUpdate[D_8006C5F8->mobyClass] != 0) {
+            MobyUpdate[D_8006C5F8->mobyClass](D_8006C5F8);
         }
     }
     func_8001204C();
@@ -274,8 +270,8 @@ void func_80055398(); // bullet time updates
 */
 
 /*
-void Update(void) {
-    enum UpdateFlags var_a0;
+void Update() {
+    int var_a0;
 
     D_8006C718 = 0;
     func_8003A584();
@@ -294,7 +290,7 @@ void Update(void) {
     case GAMESTATE_SPEEDWAY_MENU:
         var_a0 = 0x10;
         if (camera.unk50 == 2) { // unsigned in some places? maybe causing matching issues
-            (*ovlHeader.UpdateSpeedwayMenu)(var_a0); // 0x10 // UpdateSpeedwayMenu
+            UpdateSpeedwayMenu(0x10);
             var_a0 = 0x11;
         }
         func_80055294(var_a0);
@@ -309,7 +305,7 @@ void Update(void) {
         UpdateLoadingImage();
         break;
     case GAMESTATE_CUTSCENE:
-        (*ovlHeader.UpdateCutscene)(); // UpdateCutscene
+        UpdateCutscene();
         break;
     case GAMESTATE_LOADING_GLIDE:
         func_80054450();
@@ -337,9 +333,8 @@ void Update(void) {
         func_80055398();
         break;
     case GAMESTATE_SKATEBOARD_MENU:
-        (*ovlHeader.UpdateSkateMenu)(); // UpdateSkateMenu
-        var_a0 = 0x3B;
-        func_80055294(var_a0);
+        UpdateSkateMenu();
+        func_80055294(0x3B);
         break;
     }
     func_8003C184();

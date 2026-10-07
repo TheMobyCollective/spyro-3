@@ -161,7 +161,7 @@ void func_level_17_800768D4(Moby* arg0) {
             func_80055B18(arg0);
             return;
         }
-        ovlHeader.SpawnParticle(0xA, 0x47, &arg0->position, 0);
+        SpawnParticle(0xA, 0x47, &arg0->position, 0);
         func_80055B18(arg0);
         return;
     }
@@ -330,18 +330,18 @@ void func_level_17_8007D19C(Moby* arg0) {
             sp10.y = (D_800658A0[arg0->angle.yaw] * 3) >> 3;
             sp10.z = 0;
             func_8004F194(&sp10, &sp10, &arg0->position);
-            if (ovlHeader.unk2b(&sp10, arg0->angle.yaw + 0x80, 0) != 0) {
+            if (unk_ovlheader_80074330(&sp10, arg0->angle.yaw + 0x80, 0) != 0) {
                 spyro.unk17c = 0;
                 func_8004F178(&sp10, &arg0->position);
                 sp10.z += 0x280;
-                ovlHeader.unk2c(&sp10);
+                unk_ovlheader_80074334(&sp10);
                 arg0->substate = 1;
             }
             break;
         case 1:
             func_8004F178(&sp10, &arg0->position);
             sp10.z += 0x280;
-            ovlHeader.unk2c(&sp10);
+            unk_ovlheader_80074334(&sp10);
             break;
         }
         if (spyro.m_StoodOnMoby == arg0) {
@@ -351,7 +351,7 @@ void func_level_17_8007D19C(Moby* arg0) {
                 camera.unk168 = 0;
                 arg0->state = 1;
             } else {
-                if (ovlHeader.unk2b(&arg0->position, arg0->angle.yaw, 0) != 0) {
+                if (unk_ovlheader_80074330(&arg0->position, arg0->angle.yaw, 0) != 0) {
                     D_80070104.loadLevel = ((currentLevel / 10) + 1) * 0xA;
                     arg0->state = 4U;
                 }
@@ -416,9 +416,9 @@ void func_level_17_8007D19C(Moby* arg0) {
         sp20.y = D_800658A0[arg0->angle.yaw];
         sp20.z = 0;
         func_8004F194(&sp20, &sp20, &arg0->position);
-        if (ovlHeader.unk2c(&sp20) != 0) {
+        if (unk_ovlheader_80074334(&sp20) != 0) {
             spyro.unk17c = 0;
-            ovlHeader.unk2b(&sp20, arg0->angle.yaw, 0);
+            unk_ovlheader_80074330(&sp20, arg0->angle.yaw, 0);
             arg0->state = 6U;
         }
         break;
@@ -428,7 +428,7 @@ void func_level_17_8007D19C(Moby* arg0) {
         sp30.y = D_800658A0[arg0->angle.yaw];
         sp30.z = 0;
         func_8004F194(&sp30, &sp30, &arg0->position);
-        if (ovlHeader.unk2b(&sp30, arg0->angle.yaw, 0) != 0) {
+        if (unk_ovlheader_80074330(&sp30, arg0->angle.yaw, 0) != 0) {
             func_8004F178(&sp40, &spyro.position);
             sp40.z -= spyro.unk4a;
             func_8003B634(&savedData, &sp40, spyro.bodyRotation.yaw);

@@ -214,15 +214,15 @@ int CDLoadAsync(int sector, void *buf, int len, int sectorOffset) {
 int FindMobyDialogue(SpeechProps* tag) {
     int speechStart;
     int i;
-    SpeechData* speechData;
+    SpeechData* data;
 
-    speechData = ovlHeader.speechData[language];
-    if (speechData != 0) {
+    data = speechData[language];
+    if (data != 0) {
         i = 0;
-        while (speechData[i].typ != 0xFF) {
-            if ((speechData[i].typ == tag->typ) && (speechData[i].msg == tag->nextMsg)) {
-                speechStart = speechLba + speechData[i].offset;
-                func_8004F9C0(speechStart, speechStart + speechData[i].len, speechData[i].channel);
+        while (data[i].typ != 0xFF) {
+            if ((data[i].typ == tag->typ) && (data[i].msg == tag->nextMsg)) {
+                speechStart = speechLba + data[i].offset;
+                func_8004F9C0(speechStart, speechStart + data[i].len, data[i].channel);
                 D_8006C674 = i;
                 return 1;
             }
