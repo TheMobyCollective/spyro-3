@@ -404,17 +404,58 @@ int func_800363DC(int low, int high) {
 
 /**
  * GetClosestPathNode() - func_8003645C() - MATCHING
- * Ready to add, fast / octagonal metric, probably needs me to check path tag structure
+ * Fast / octagonal metric
  * https://decomp.me/scratch/4RS1P
  */
-INCLUDE_ASM("asm/nonmatchings/mobyutil", func_8003645C);
+int func_8003645C(Vector3D* pPos, PathData* pPath, int* pNodeIndexOut) {
+    int dist;
+    int closestDist = 0xFFFFFF;
+    int closestNode = 0;
+    int i;
+
+    for (i = 0; i < pPath->m_NodeCount; i++) {
+        dist = func_8004F334(pPos, &pPath->m_Nodes[i].m_Position);
+        
+        if (dist < closestDist) {
+            closestDist = dist;
+            closestNode = i;
+        }
+    }
+    
+    if (pNodeIndexOut != 0) {
+        *pNodeIndexOut = closestNode;
+    }
+    
+    return closestDist;
+}
 
 /**
  * GetClosestPathNodeEuclidean() - func_80036518() - MATCHING
- * Ready to add, probably needs me to check path tag structure
  * https://decomp.me/scratch/mVz0i
  */
-INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80036518);
+int func_80036518(Vector3D* pPos, PathData* pPath, int* pNodeIndexOut) {
+    Vector3D v;
+    int dist;
+    int closestDist = 0xFFFFFF;
+    int closestNode = 0;
+    int i;
+
+    for (i = 0; i < pPath->m_NodeCount; i++) {
+        func_8004F1C8(&v, &pPath->m_Nodes[i].m_Position, pPos);
+        dist = func_8004EDE8(&v, 1);
+
+        if (closestDist > dist) {
+            closestDist = dist;
+            closestNode = i;
+        }
+    }
+
+    if (pNodeIndexOut != 0) {
+        *pNodeIndexOut = closestNode;
+    }
+
+    return closestDist;
+}
 
 /**
  * ???() - func_800365E4() - MATCHING

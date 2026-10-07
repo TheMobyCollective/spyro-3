@@ -465,16 +465,14 @@ typedef struct {
 /*** Paths ***/
 
 typedef struct {
-	Vector3D pos;
-	int unk;
-} PathNode;
-
-typedef struct {
-	char nodeCount;
-	char curNode;
-	char unk[10];
-	PathNode* nodes;
-} PathTag;
+  short m_NodeCount;
+  short m_CurrentNode;
+  char unk_0x4[8];
+  struct {
+    Vector3D m_Position;
+    int unk_0xC;
+  } *m_Nodes;
+} PathData;
 
 
 /*** Collision? ***/

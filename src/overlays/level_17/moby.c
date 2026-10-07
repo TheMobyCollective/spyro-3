@@ -251,7 +251,7 @@ INCLUDE_ASM("asm/nonmatchings/overlays/level_17/moby", func_level_17_8007C3D0);
 typedef struct {
     int unk0;
     int unk4;
-    PathTag* unk8;
+    PathData* unk8;
     int unkC; // countdown timer of some sort
     int unk10;
 } MobyTag_651;
@@ -291,7 +291,7 @@ void func_level_17_8007D19C(Moby* arg0) {
                 arg0->state = 7;
                 if ((D_8006C73C != 0) && (currentLevel != D_8006C73C) && ((temp_v1_3 = D_8006C73C % 10, (temp_v1_3 == 0)) || ((temp_v1_3 == 7) && (D_8006C73C < 0x3C))) && (arg0->mobyClass == D_8006C528)) {
                     arg0->position.z += 0xC00;
-                    func_800136F0(&camera.unk170, (Vector3D*)mobyTag->unk8->nodes, &arg0->position);
+                    func_800136F0(&camera.unk170, &mobyTag->unk8->m_Nodes[0].m_Position, &arg0->position);
                     camera.unk170.yaw = 0;
                     camera.unk170.pitch = 0;
                     spyro.unk17a = 0x10018000;
@@ -356,7 +356,7 @@ void func_level_17_8007D19C(Moby* arg0) {
                     arg0->state = 4U;
                 }
                 func_8004F178(&camera.unk184, &arg0->position);
-                func_800136F0(&camera.unk170, (Vector3D*)mobyTag->unk8->nodes, &arg0->position);
+                func_800136F0(&camera.unk170, &mobyTag->unk8->m_Nodes[0].m_Position, &arg0->position);
                 camera.unk170.yaw = 0;
                 camera.unk170.pitch = 0;
                 camera.unk168 = 0x11;
@@ -385,7 +385,7 @@ void func_level_17_8007D19C(Moby* arg0) {
         spyro.unk18.pitch = spyro.bodyRotation.pitch;
         spyro.unk18.yaw = spyro.bodyRotation.yaw;
         func_8004F178(&camera.unk184, &arg0->position);
-        func_800136F0(&camera.unk170, (Vector3D*)mobyTag->unk8->nodes, &arg0->position);
+        func_800136F0(&camera.unk170, &mobyTag->unk8->m_Nodes[0].m_Position, &arg0->position);
         camera.unk170.yaw = 0;
         camera.unk170.pitch = 0;
         camera.unk168 = 0x11;
@@ -448,7 +448,7 @@ void func_level_17_8007D19C(Moby* arg0) {
         spyro.unk18.roll = arg0->angle.roll;
         spyro.unk18.pitch = arg0->angle.pitch;
         spyro.unk18.yaw = arg0->angle.yaw;
-        func_80013AE4((Vector3D*)mobyTag->unk8->nodes, &spyro.position);
+        func_80013AE4(&mobyTag->unk8->m_Nodes[0].m_Position, &spyro.position);
         func_8004F178(&sp50, &arg0->position);
         arg0->position.z += 0x400;
         sp50.z += 0x200;
