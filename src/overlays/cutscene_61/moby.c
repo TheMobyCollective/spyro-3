@@ -1,7 +1,5 @@
 #include "common.h"
 
-INCLUDE_ASM("asm/nonmatchings/overlays/cutscene_61/moby", func_cutscene_61_80074780);
-
 INCLUDE_ASM("asm/nonmatchings/overlays/cutscene_61/moby", func_cutscene_61_80074788);
 
 /**

@@ -27,7 +27,7 @@
 - [x] func_cutscene_61_80074DC4
 
 <!-- moby.c -->
-- [ ] func_cutscene_61_80074780
+- [x] func_cutscene_61_80074780
 - [ ] func_cutscene_61_80074788
 - [ ] func_cutscene_61_80074C0C
 

@@ -27,7 +27,7 @@
 - [ ] func_cutscene_71_8007496C
 
 <!-- moby.c -->
-- [ ] func_cutscene_71_800747AC
+- [x] func_cutscene_71_800747AC
 - [ ] func_cutscene_71_800747B4
 
 <!-- parts_spawn.c -->

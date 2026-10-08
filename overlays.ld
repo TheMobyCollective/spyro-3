@@ -4694,6 +4694,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_61/moby999.o(.rodata);
+        build/src/overlays/cutscene_61/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_61/moby.o(.rodata);
         build/src/overlays/cutscene_61/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_61/cutscene.o(.rodata);
@@ -4706,6 +4708,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_61/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_61/camera.o(.rodata);
         build/src/overlays/cutscene_61/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_61/moby999.o(.text*);
         build/src/overlays/cutscene_61/moby.o(.text*);
         build/src/overlays/cutscene_61/cutscene.o(.text*);
         build/src/overlays/cutscene_61/parts_update.o(.text*);
@@ -4832,6 +4835,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_62/moby999.o(.rodata);
+        build/src/overlays/cutscene_62/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_62/moby.o(.rodata);
         build/src/overlays/cutscene_62/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_62/cutscene.o(.rodata);
@@ -4844,6 +4849,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_62/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_62/camera.o(.rodata);
         build/src/overlays/cutscene_62/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_62/moby999.o(.text*);
         build/src/overlays/cutscene_62/moby.o(.text*);
         build/src/overlays/cutscene_62/cutscene.o(.text*);
         build/src/overlays/cutscene_62/parts_update.o(.text*);
@@ -4970,6 +4976,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_63/moby999.o(.rodata);
+        build/src/overlays/cutscene_63/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_63/moby.o(.rodata);
         build/src/overlays/cutscene_63/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_63/cutscene.o(.rodata);
@@ -4982,6 +4990,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_63/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_63/camera.o(.rodata);
         build/src/overlays/cutscene_63/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_63/moby999.o(.text*);
         build/src/overlays/cutscene_63/moby.o(.text*);
         build/src/overlays/cutscene_63/cutscene.o(.text*);
         build/src/overlays/cutscene_63/parts_update.o(.text*);
@@ -5108,6 +5117,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_64/moby999.o(.rodata);
+        build/src/overlays/cutscene_64/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_64/moby.o(.rodata);
         build/src/overlays/cutscene_64/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_64/cutscene.o(.rodata);
@@ -5120,6 +5131,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_64/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_64/camera.o(.rodata);
         build/src/overlays/cutscene_64/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_64/moby999.o(.text*);
         build/src/overlays/cutscene_64/moby.o(.text*);
         build/src/overlays/cutscene_64/cutscene.o(.text*);
         build/src/overlays/cutscene_64/parts_update.o(.text*);
@@ -5246,6 +5258,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_65/moby999.o(.rodata);
+        build/src/overlays/cutscene_65/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_65/moby.o(.rodata);
         build/src/overlays/cutscene_65/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_65/cutscene.o(.rodata);
@@ -5258,6 +5272,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_65/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_65/camera.o(.rodata);
         build/src/overlays/cutscene_65/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_65/moby999.o(.text*);
         build/src/overlays/cutscene_65/moby.o(.text*);
         build/src/overlays/cutscene_65/cutscene.o(.text*);
         build/src/overlays/cutscene_65/parts_update.o(.text*);
@@ -5384,6 +5399,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_66/moby999.o(.rodata);
+        build/src/overlays/cutscene_66/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_66/moby.o(.rodata);
         build/src/overlays/cutscene_66/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_66/cutscene.o(.rodata);
@@ -5396,6 +5413,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_66/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_66/camera.o(.rodata);
         build/src/overlays/cutscene_66/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_66/moby999.o(.text*);
         build/src/overlays/cutscene_66/moby.o(.text*);
         build/src/overlays/cutscene_66/cutscene.o(.text*);
         build/src/overlays/cutscene_66/parts_update.o(.text*);
@@ -5522,6 +5540,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_67/moby999.o(.rodata);
+        build/src/overlays/cutscene_67/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_67/moby.o(.rodata);
         build/src/overlays/cutscene_67/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_67/cutscene.o(.rodata);
@@ -5534,6 +5554,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_67/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_67/camera.o(.rodata);
         build/src/overlays/cutscene_67/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_67/moby999.o(.text*);
         build/src/overlays/cutscene_67/moby.o(.text*);
         build/src/overlays/cutscene_67/cutscene.o(.text*);
         build/src/overlays/cutscene_67/parts_update.o(.text*);
@@ -5660,6 +5681,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_68/moby999.o(.rodata);
+        build/src/overlays/cutscene_68/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_68/moby.o(.rodata);
         build/src/overlays/cutscene_68/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_68/cutscene.o(.rodata);
@@ -5672,6 +5695,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_68/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_68/camera.o(.rodata);
         build/src/overlays/cutscene_68/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_68/moby999.o(.text*);
         build/src/overlays/cutscene_68/moby.o(.text*);
         build/src/overlays/cutscene_68/cutscene.o(.text*);
         build/src/overlays/cutscene_68/parts_update.o(.text*);
@@ -5798,6 +5822,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_69/moby999.o(.rodata);
+        build/src/overlays/cutscene_69/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_69/moby.o(.rodata);
         build/src/overlays/cutscene_69/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_69/cutscene.o(.rodata);
@@ -5810,6 +5836,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_69/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_69/camera.o(.rodata);
         build/src/overlays/cutscene_69/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_69/moby999.o(.text*);
         build/src/overlays/cutscene_69/moby.o(.text*);
         build/src/overlays/cutscene_69/cutscene.o(.text*);
         build/src/overlays/cutscene_69/parts_update.o(.text*);
@@ -5936,6 +5963,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_70/moby999.o(.rodata);
+        build/src/overlays/cutscene_70/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_70/moby.o(.rodata);
         build/src/overlays/cutscene_70/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_70/cutscene.o(.rodata);
@@ -5948,6 +5977,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_70/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_70/camera.o(.rodata);
         build/src/overlays/cutscene_70/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_70/moby999.o(.text*);
         build/src/overlays/cutscene_70/moby.o(.text*);
         build/src/overlays/cutscene_70/cutscene.o(.text*);
         build/src/overlays/cutscene_70/parts_update.o(.text*);
@@ -6074,6 +6104,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_71/moby999.o(.rodata);
+        build/src/overlays/cutscene_71/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_71/moby.o(.rodata);
         build/src/overlays/cutscene_71/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_71/cutscene.o(.rodata);
@@ -6086,6 +6118,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_71/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_71/camera.o(.rodata);
         build/src/overlays/cutscene_71/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_71/moby999.o(.text*);
         build/src/overlays/cutscene_71/moby.o(.text*);
         build/src/overlays/cutscene_71/cutscene.o(.text*);
         build/src/overlays/cutscene_71/parts_update.o(.text*);
@@ -6212,6 +6245,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_73/moby999.o(.rodata);
+        build/src/overlays/cutscene_73/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_73/moby.o(.rodata);
         build/src/overlays/cutscene_73/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_73/cutscene.o(.rodata);
@@ -6224,6 +6259,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_73/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_73/camera.o(.rodata);
         build/src/overlays/cutscene_73/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_73/moby999.o(.text*);
         build/src/overlays/cutscene_73/moby.o(.text*);
         build/src/overlays/cutscene_73/cutscene.o(.text*);
         build/src/overlays/cutscene_73/parts_update.o(.text*);
@@ -6350,6 +6386,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_74/moby999.o(.rodata);
+        build/src/overlays/cutscene_74/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_74/moby.o(.rodata);
         build/src/overlays/cutscene_74/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_74/cutscene.o(.rodata);
@@ -6362,6 +6400,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_74/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_74/camera.o(.rodata);
         build/src/overlays/cutscene_74/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_74/moby999.o(.text*);
         build/src/overlays/cutscene_74/moby.o(.text*);
         build/src/overlays/cutscene_74/cutscene.o(.text*);
         build/src/overlays/cutscene_74/parts_update.o(.text*);
@@ -6488,6 +6527,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_75/moby999.o(.rodata);
+        build/src/overlays/cutscene_75/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_75/moby.o(.rodata);
         build/src/overlays/cutscene_75/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_75/cutscene.o(.rodata);
@@ -6500,6 +6541,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_75/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_75/camera.o(.rodata);
         build/src/overlays/cutscene_75/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_75/moby999.o(.text*);
         build/src/overlays/cutscene_75/moby.o(.text*);
         build/src/overlays/cutscene_75/cutscene.o(.text*);
         build/src/overlays/cutscene_75/parts_update.o(.text*);
@@ -6626,6 +6668,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_76/moby999.o(.rodata);
+        build/src/overlays/cutscene_76/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_76/moby.o(.rodata);
         build/src/overlays/cutscene_76/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_76/cutscene.o(.rodata);
@@ -6638,6 +6682,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_76/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_76/camera.o(.rodata);
         build/src/overlays/cutscene_76/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_76/moby999.o(.text*);
         build/src/overlays/cutscene_76/moby.o(.text*);
         build/src/overlays/cutscene_76/cutscene.o(.text*);
         build/src/overlays/cutscene_76/parts_update.o(.text*);
@@ -6764,6 +6809,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_77/moby999.o(.rodata);
+        build/src/overlays/cutscene_77/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_77/moby.o(.rodata);
         build/src/overlays/cutscene_77/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_77/cutscene.o(.rodata);
@@ -6776,6 +6823,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_77/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_77/camera.o(.rodata);
         build/src/overlays/cutscene_77/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_77/moby999.o(.text*);
         build/src/overlays/cutscene_77/moby.o(.text*);
         build/src/overlays/cutscene_77/cutscene.o(.text*);
         build/src/overlays/cutscene_77/parts_update.o(.text*);
@@ -6902,6 +6950,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_78/moby999.o(.rodata);
+        build/src/overlays/cutscene_78/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_78/moby.o(.rodata);
         build/src/overlays/cutscene_78/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_78/cutscene.o(.rodata);
@@ -6914,6 +6964,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_78/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_78/camera.o(.rodata);
         build/src/overlays/cutscene_78/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_78/moby999.o(.text*);
         build/src/overlays/cutscene_78/moby.o(.text*);
         build/src/overlays/cutscene_78/cutscene.o(.text*);
         build/src/overlays/cutscene_78/parts_update.o(.text*);
@@ -7040,6 +7091,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_79/moby999.o(.rodata);
+        build/src/overlays/cutscene_79/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_79/moby.o(.rodata);
         build/src/overlays/cutscene_79/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_79/cutscene.o(.rodata);
@@ -7052,6 +7105,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_79/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_79/camera.o(.rodata);
         build/src/overlays/cutscene_79/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_79/moby999.o(.text*);
         build/src/overlays/cutscene_79/moby.o(.text*);
         build/src/overlays/cutscene_79/cutscene.o(.text*);
         build/src/overlays/cutscene_79/parts_update.o(.text*);
@@ -7178,6 +7232,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
+        build/src/overlays/cutscene_80/moby999.o(.rodata);
+        build/src/overlays/cutscene_80/moby999.o(.rodata.jtbl);
         build/src/overlays/cutscene_80/moby.o(.rodata);
         build/src/overlays/cutscene_80/moby.o(.rodata.jtbl);
         build/src/overlays/cutscene_80/cutscene.o(.rodata);
@@ -7190,6 +7246,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/cutscene_80/animation.o(.rodata.jtbl);
         build/src/overlays/cutscene_80/camera.o(.rodata);
         build/src/overlays/cutscene_80/camera.o(.rodata.jtbl);
+        build/src/overlays/cutscene_80/moby999.o(.text*);
         build/src/overlays/cutscene_80/moby.o(.text*);
         build/src/overlays/cutscene_80/cutscene.o(.text*);
         build/src/overlays/cutscene_80/parts_update.o(.text*);
