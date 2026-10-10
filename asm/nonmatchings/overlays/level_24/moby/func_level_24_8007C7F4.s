@@ -123,7 +123,7 @@ glabel func_level_24_8007C7F4
 /* 5DF76E4 8007C9B4 0780023C */  lui        $v0, %hi(D_8006E470)
 /* 5DF76E8 8007C9B8 70E4428C */  lw         $v0, %lo(D_8006E470)($v0)
 /* 5DF76EC 8007C9BC C3220400 */  sra        $a0, $a0, 11
-/* 5DF76F0 8007C9C0 1B7D010C */  jal        func_8005F46C
+/* 5DF76F0 8007C9C0 1B7D010C */  jal        CdIntToPos
 /* 5DF76F4 8007C9C4 21204400 */   addu      $a0, $v0, $a0
 /* 5DF76F8 8007C9C8 02000424 */  addiu      $a0, $zero, 0x2
 /* 5DF76FC 8007C9CC 21280002 */  addu       $a1, $s0, $zero

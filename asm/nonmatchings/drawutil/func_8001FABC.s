@@ -11,7 +11,7 @@ glabel func_8001FABC
 /* 102D4 8001FAD4 21300000 */  addu       $a2, $zero, $zero
 /* 102D8 8001FAD8 1C00BFAF */  sw         $ra, 0x1C($sp)
 /* 102DC 8001FADC 1000A0AF */  sw         $zero, 0x10($sp)
-/* 102E0 8001FAE0 5971010C */  jal        func_8005C564
+/* 102E0 8001FAE0 5971010C */  jal        SetDrawMode
 /* 102E4 8001FAE4 21200002 */   addu      $a0, $s0, $zero
 /* 102E8 8001FAE8 D639010C */  jal        func_8004E758
 /* 102EC 8001FAEC 21200002 */   addu      $a0, $s0, $zero

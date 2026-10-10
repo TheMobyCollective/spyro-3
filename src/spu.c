@@ -47,11 +47,11 @@ typedef struct {
 } SpuVoiceAttr;
 
 // psyq functions
-void func_8005E600(int);      // SpuSetTransferMode
-void func_8005E630(SpuCommonAttr*); // SpuSetCommonAttr
-void func_8005E9B0(int, int); // SpuSetKey
-void func_8005EBFC();         // SpuInit
-void func_8005EC1C(SpuVoiceAttr*); // SpuSetVoiceAttr
+void SpuSetTransferMode(int);      // SpuSetTransferMode
+void SpuSetCommonAttr(SpuCommonAttr*); // SpuSetCommonAttr
+void SpuSetKey(int, int); // SpuSetKey
+void SpuInit();         // SpuInit
+void SpuSetVoiceAttr(SpuVoiceAttr*); // SpuSetVoiceAttr
 
 //////////////////////////////////////////////////////////////
 
@@ -175,31 +175,32 @@ INCLUDE_ASM("asm/nonmatchings/spu", func_8003C994);
 INCLUDE_ASM("asm/nonmatchings/spu", func_8003CB00);
 
 /**
- * ???() - func_8003CCF0() - MATCHING
+ * ???() - SpuInitialize() - MATCHING
+ * SpuInitialize in spyro-1
  * https://decomp.me/scratch/3TUaM
  */
-void func_8003CCF0() {
-    SpuCommonAttr sp10;
-    SpuVoiceAttr sp38;
-    func_8005EBFC();
-    sp10.mask = 3;
-    sp10.mvol.right = 0x3CCC;
-    sp10.mvol.left = 0x3CCC;
-    func_8005E630(&sp10);
-    sp38.mask = 0xFF13;
-    sp38.volume.left = 0x2FFF;
-    sp38.volume.right = 0x2FFF;
-    sp38.pitch = 0x400;
-    sp38.a_mode = 1;
-    sp38.s_mode = 1;
-    sp38.voice = 0xFFFFFF;
-    sp38.r_mode = 3;
-    sp38.ar = 0;
-    sp38.dr = 0;
-    sp38.sr = 0;
-    sp38.rr = 0;
-    sp38.sl = 0xF;
-    func_8005EC1C(&sp38);
-    func_8005E9B0(0, 0xFFFFFF);
-    func_8005E600(0);
+void SpuInitialize() {
+    SpuCommonAttr commonAttr;
+    SpuVoiceAttr voiceAttr;
+    SpuInit();
+    commonAttr.mask = 3;
+    commonAttr.mvol.right = 0x3CCC;
+    commonAttr.mvol.left = 0x3CCC;
+    SpuSetCommonAttr(&commonAttr);
+    voiceAttr.mask = 0xFF13;
+    voiceAttr.volume.left = 0x2FFF;
+    voiceAttr.volume.right = 0x2FFF;
+    voiceAttr.pitch = 0x400;
+    voiceAttr.a_mode = 1;
+    voiceAttr.s_mode = 1;
+    voiceAttr.voice = 0xFFFFFF;
+    voiceAttr.r_mode = 3;
+    voiceAttr.ar = 0;
+    voiceAttr.dr = 0;
+    voiceAttr.sr = 0;
+    voiceAttr.rr = 0;
+    voiceAttr.sl = 0xF;
+    SpuSetVoiceAttr(&voiceAttr);
+    SpuSetKey(0, 0xFFFFFF);
+    SpuSetTransferMode(0);
 }

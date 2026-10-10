@@ -922,7 +922,7 @@ glabel func_title_8007BB40
 /* 2A8D8 8007BBA8 21200002 */  addu       $a0, $s0, $zero
 /* 2A8DC 8007BBAC 1800A527 */  addiu      $a1, $sp, 0x18
 /* 2A8E0 8007BBB0 01000224 */  addiu      $v0, $zero, 0x1
-/* 2A8E4 8007BBB4 056B010C */  jal        func_8005AC14
+/* 2A8E4 8007BBB4 056B010C */  jal        SetDrawEnv
 /* 2A8E8 8007BBB8 3000A2A3 */   sb        $v0, 0x30($sp)
 /* 2A8EC 8007BBBC 6469010C */  jal        DrawPrim
 /* 2A8F0 8007BBC0 21200002 */   addu      $a0, $s0, $zero

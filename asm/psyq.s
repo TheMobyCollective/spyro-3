@@ -1722,7 +1722,7 @@ glabel PutDispEnv
 /* 4B410 8005AC10 2000BD27 */   addiu     $sp, $sp, 0x20
 .size PutDispEnv, . - PutDispEnv
 
-glabel func_8005AC14
+glabel SetDrawEnv
 /* 4B414 8005AC14 D8FFBD27 */  addiu      $sp, $sp, -0x28
 /* 4B418 8005AC18 1800B0AF */  sw         $s0, 0x18($sp)
 /* 4B41C 8005AC1C 2180A000 */  addu       $s0, $a1, $zero
@@ -1853,7 +1853,7 @@ glabel func_8005AC14
 /* 4B600 8005AE00 1800B08F */  lw         $s0, 0x18($sp)
 /* 4B604 8005AE04 0800E003 */  jr         $ra
 /* 4B608 8005AE08 2800BD27 */   addiu     $sp, $sp, 0x28
-.size func_8005AC14, . - func_8005AC14
+.size SetDrawEnv, . - SetDrawEnv
 
 glabel func_8005AE0C
 /* 4B60C 8005AE0C D8FFBD27 */  addiu      $sp, $sp, -0x28
@@ -3494,7 +3494,7 @@ glabel func_8005C474
 /* 4CD10 8005C510 00000000 */   nop
 .size func_8005C474, . - func_8005C474
 
-glabel func_8005C514
+glabel _GPU_ResetCallback
 /* 4CD14 8005C514 E8FFBD27 */  addiu      $sp, $sp, -0x18
 /* 4CD18 8005C518 1000BFAF */  sw         $ra, 0x10($sp)
 /* 4CD1C 8005C51C 0680053C */  lui        $a1, %hi(func_8005BE10)
@@ -3505,7 +3505,7 @@ glabel func_8005C514
 /* 4CD30 8005C530 1800BD27 */  addiu      $sp, $sp, 0x18
 /* 4CD34 8005C534 0800E003 */  jr         $ra
 /* 4CD38 8005C538 00000000 */   nop
-.size func_8005C514, . - func_8005C514
+.size _GPU_ResetCallback, . - _GPU_ResetCallback
 
 glabel func_8005C53C
 /* 4CD3C 8005C53C 0600C010 */  beqz       $a2, .L8005C558
@@ -3522,7 +3522,7 @@ glabel func_8005C53C
 /* 4CD60 8005C560 00000000 */  nop
 .size func_8005C53C, . - func_8005C53C
 
-glabel func_8005C564
+glabel SetDrawMode
 /* 4CD64 8005C564 21408000 */  addu       $t0, $a0, $zero
 /* 4CD68 8005C568 00E1033C */  lui        $v1, (0xE1000200 >> 16)
 /* 4CD6C 8005C56C 1000A98F */  lw         $t1, 0x10($sp)
@@ -3567,7 +3567,7 @@ glabel func_8005C564
 /* 4CDF8 8005C5F8 00000000 */  nop
 /* 4CDFC 8005C5FC 00000000 */  nop
 /* 4CE00 8005C600 00000000 */  nop
-.size func_8005C564, . - func_8005C564
+.size SetDrawMode, . - SetDrawMode
 
 glabel strlen
 /* 4CE04 8005C604 21180000 */  addu       $v1, $zero, $zero
@@ -4674,7 +4674,7 @@ glabel func_8005D440
 /* 4DCD8 8005D4D8 1E79010C */  jal        func_8005E478
 /* 4DCDC 8005D4DC 03000524 */   addiu     $a1, $zero, 0x3
 .L8005D4E0:
-/* 4DCE0 8005D4E0 5C7D010C */  jal        func_8005F570
+/* 4DCE0 8005D4E0 5C7D010C */  jal        CdPosToInt
 /* 4DCE4 8005D4E4 1000A427 */   addiu     $a0, $sp, 0x10
 /* 4DCE8 8005D4E8 0780103C */  lui        $s0, %hi(D_8006B3B0)
 /* 4DCEC 8005D4EC B0B31026 */  addiu      $s0, $s0, %lo(D_8006B3B0)
@@ -4956,7 +4956,7 @@ glabel func_8005D784
 .L8005D8DC:
 /* 4E0DC 8005D8DC 1278010C */  jal        func_8005E048
 /* 4E0E0 8005D8E0 00000000 */   nop
-/* 4E0E4 8005D8E4 5C7D010C */  jal        func_8005F570
+/* 4E0E4 8005D8E4 5C7D010C */  jal        CdPosToInt
 /* 4E0E8 8005D8E8 21204000 */   addu      $a0, $v0, $zero
 /* 4E0EC 8005D8EC 0680043C */  lui        $a0, %hi(func_8005D440)
 /* 4E0F0 8005D8F0 40D48424 */  addiu      $a0, $a0, %lo(func_8005D440)
@@ -5951,7 +5951,7 @@ glabel SetDefDispEnv
 /* 4EDFC 8005E5FC 00000000 */  nop
 .size SetDefDispEnv, . - SetDefDispEnv
 
-glabel func_8005E600
+glabel SpuSetTransferMode
 /* 4EE00 8005E600 05008010 */  beqz       $a0, .L8005E618
 /* 4EE04 8005E604 01000224 */   addiu     $v0, $zero, 0x1
 /* 4EE08 8005E608 04008214 */  bne        $a0, $v0, .L8005E61C
@@ -5966,9 +5966,9 @@ glabel func_8005E600
 /* 4EE24 8005E624 0780013C */  lui        $at, %hi(D_8006B91C)
 /* 4EE28 8005E628 0800E003 */  jr         $ra
 /* 4EE2C 8005E62C 1CB922AC */   sw        $v0, %lo(D_8006B91C)($at)
-.size func_8005E600, . - func_8005E600
+.size SpuSetTransferMode, . - SpuSetTransferMode
 
-glabel func_8005E630
+glabel SpuSetCommonAttr
 /* 4EE30 8005E630 21300000 */  addu       $a2, $zero, $zero
 /* 4EE34 8005E634 0000898C */  lw         $t1, 0x0($a0)
 /* 4EE38 8005E638 00000000 */  nop
@@ -6243,9 +6243,9 @@ jlabel .L8005E780
 /* 4F1A4 8005E9A4 0800E003 */  jr         $ra
 /* 4F1A8 8005E9A8 00000000 */   nop
 /* 4F1AC 8005E9AC 00000000 */  nop
-.size func_8005E630, . - func_8005E630
+.size SpuSetCommonAttr, . - SpuSetCommonAttr
 
-glabel func_8005E9B0
+glabel SpuSetKey
 /* 4F1B0 8005E9B0 FF00023C */  lui        $v0, (0xFFFFFF >> 16)
 /* 4F1B4 8005E9B4 FFFF4234 */  ori        $v0, $v0, (0xFFFFFF & 0xFFFF)
 /* 4F1B8 8005E9B8 2428A200 */  and        $a1, $a1, $v0
@@ -6365,7 +6365,7 @@ glabel func_8005E9B0
 /* 4F364 8005EB64 0800E003 */  jr         $ra
 /* 4F368 8005EB68 00000000 */   nop
 /* 4F36C 8005EB6C 00000000 */  nop
-.size func_8005E9B0, . - func_8005E9B0
+.size SpuSetKey, . - SpuSetKey
 
 glabel func_8005EB70
 /* 4F370 8005EB70 18000A24 */  addiu      $t2, $zero, 0x18
@@ -6410,7 +6410,7 @@ glabel func_8005EB70
 /* 4F3F8 8005EBF8 00000000 */  nop
 .size func_8005EB70, . - func_8005EB70
 
-glabel func_8005EBFC
+glabel SpuInit
 /* 4F3FC 8005EBFC E8FFBD27 */  addiu      $sp, $sp, -0x18
 /* 4F400 8005EC00 1000BFAF */  sw         $ra, 0x10($sp)
 /* 4F404 8005EC04 AB8B010C */  jal        func_80062EAC
@@ -6419,9 +6419,9 @@ glabel func_8005EBFC
 /* 4F410 8005EC10 1800BD27 */  addiu      $sp, $sp, 0x18
 /* 4F414 8005EC14 0800E003 */  jr         $ra
 /* 4F418 8005EC18 00000000 */   nop
-.size func_8005EBFC, . - func_8005EBFC
+.size SpuInit, . - SpuInit
 
-glabel func_8005EC1C
+glabel SpuSetVoiceAttr
 /* 4F41C 8005EC1C C8FFBD27 */  addiu      $sp, $sp, -0x38
 /* 4F420 8005EC20 1800B0AF */  sw         $s0, 0x18($sp)
 /* 4F424 8005EC24 21808000 */  addu       $s0, $a0, $zero
@@ -6874,9 +6874,9 @@ jlabel .L8005EE68
 /* 4FA10 8005F210 3800BD27 */   addiu     $sp, $sp, 0x38
 /* 4FA14 8005F214 00000000 */  nop
 /* 4FA18 8005F218 00000000 */  nop
-.size func_8005EC1C, . - func_8005EC1C
+.size SpuSetVoiceAttr, . - SpuSetVoiceAttr
 
-glabel func_8005F21C
+glabel ScaleMatrix
 /* 4FA1C 8005F21C 0000AB8C */  lw         $t3, 0x0($a1)
 /* 4FA20 8005F220 0400AC8C */  lw         $t4, 0x4($a1)
 /* 4FA24 8005F224 0800AD8C */  lw         $t5, 0x8($a1)
@@ -6957,10 +6957,10 @@ glabel func_8005F21C
 /* 4FB50 8005F350 21108000 */   addu      $v0, $a0, $zero
 /* 4FB54 8005F354 00000000 */  nop
 /* 4FB58 8005F358 00000000 */  nop
-.size func_8005F21C, . - func_8005F21C
+.size ScaleMatrix, . - ScaleMatrix
 
 /* Handwritten function */
-glabel func_8005F35C
+glabel MulMatrix0
 /* 4FB5C 8005F35C 0000888C */  lw         $t0, 0x0($a0)
 /* 4FB60 8005F360 0400898C */  lw         $t1, 0x4($a0)
 /* 4FB64 8005F364 08008A8C */  lw         $t2, 0x8($a0)
@@ -7029,10 +7029,9 @@ glabel func_8005F35C
 /* 4FC60 8005F460 0800E003 */  jr         $ra
 /* 4FC64 8005F464 00000000 */   nop
 /* 4FC68 8005F468 00000000 */  nop
-.size func_8005F35C, . - func_8005F35C
+.size MulMatrix0, . - MulMatrix0
 
-glabel CdIntToPos /* func_8005F46C */
-glabel func_8005F46C
+glabel CdIntToPos
 /* 4FC6C 8005F46C 4E1B033C */  lui        $v1, (0x1B4E81B5 >> 16)
 /* 4FC70 8005F470 B5816334 */  ori        $v1, $v1, (0x1B4E81B5 & 0xFFFF)
 /* 4FC74 8005F474 96008424 */  addiu      $a0, $a0, 0x96
@@ -7100,7 +7099,7 @@ glabel func_8005F46C
 /* 4FD6C 8005F56C 000045A0 */   sb        $a1, 0x0($v0)
 .size CdIntToPos, . - CdIntToPos
 
-glabel func_8005F570
+glabel CdPosToInt
 /* 4FD70 8005F570 00008390 */  lbu        $v1, 0x0($a0)
 /* 4FD74 8005F574 01008690 */  lbu        $a2, 0x1($a0)
 /* 4FD78 8005F578 02290300 */  srl        $a1, $v1, 4
@@ -7136,7 +7135,7 @@ glabel func_8005F570
 /* 4FDF0 8005F5F0 00000000 */  nop
 /* 4FDF4 8005F5F4 00000000 */  nop
 /* 4FDF8 8005F5F8 00000000 */  nop
-.size func_8005F570, . - func_8005F570
+.size CdPosToInt, . - CdPosToInt
 
 glabel printf
 /* 4FDFC 8005F5FC E8FFBD27 */  addiu      $sp, $sp, -0x18

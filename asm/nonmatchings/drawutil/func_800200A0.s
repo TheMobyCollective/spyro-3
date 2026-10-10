@@ -17,7 +17,7 @@ glabel func_800200A0
 /* 108D0 800200D0 21300000 */  addu       $a2, $zero, $zero
 /* 108D4 800200D4 2800BFAF */  sw         $ra, 0x28($sp)
 /* 108D8 800200D8 1000A0AF */  sw         $zero, 0x10($sp)
-/* 108DC 800200DC 5971010C */  jal        func_8005C564
+/* 108DC 800200DC 5971010C */  jal        SetDrawMode
 /* 108E0 800200E0 21200002 */   addu      $a0, $s0, $zero
 /* 108E4 800200E4 D639010C */  jal        func_8004E758
 /* 108E8 800200E8 21200002 */   addu      $a0, $s0, $zero

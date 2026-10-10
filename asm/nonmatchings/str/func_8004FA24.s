@@ -377,7 +377,7 @@ glabel func_8004FA24
 /* 40724 8004FF24 C0000224 */  addiu      $v0, $zero, 0xC0
 /* 40728 8004FF28 4200A0A7 */  sh         $zero, 0x42($sp)
 /* 4072C 8004FF2C 4000A0A7 */  sh         $zero, 0x40($sp)
-/* 40730 8004FF30 8C79010C */  jal        func_8005E630
+/* 40730 8004FF30 8C79010C */  jal        SpuSetCommonAttr
 /* 40734 8004FF34 3000A2AF */   sw        $v0, 0x30($sp)
 /* 40738 8004FF38 0A000224 */  addiu      $v0, $zero, 0xA
 /* 4073C 8004FF3C 0780013C */  lui        $at, %hi(D_8006E4A4)
@@ -487,7 +487,7 @@ glabel func_8004FA24
 /* 408BC 800500BC C0000224 */  addiu      $v0, $zero, 0xC0
 /* 408C0 800500C0 3000A2AF */  sw         $v0, 0x30($sp)
 /* 408C4 800500C4 4200A3A7 */  sh         $v1, 0x42($sp)
-/* 408C8 800500C8 8C79010C */  jal        func_8005E630
+/* 408C8 800500C8 8C79010C */  jal        SpuSetCommonAttr
 /* 408CC 800500CC 4000A3A7 */   sh        $v1, 0x40($sp)
 /* 408D0 800500D0 61400108 */  j          .L80050184
 /* 408D4 800500D4 11000424 */   addiu     $a0, $zero, 0x11
@@ -504,7 +504,7 @@ glabel func_8004FA24
 /* 408FC 800500FC 4200A2A7 */  sh         $v0, 0x42($sp)
 /* 40900 80050100 4000A2A7 */  sh         $v0, 0x40($sp)
 /* 40904 80050104 C0000224 */  addiu      $v0, $zero, 0xC0
-/* 40908 80050108 8C79010C */  jal        func_8005E630
+/* 40908 80050108 8C79010C */  jal        SpuSetCommonAttr
 /* 4090C 8005010C 3000A2AF */   sw        $v0, 0x30($sp)
 .L80050110:
 /* 40910 80050110 0E78010C */  jal        func_8005E038
@@ -512,7 +512,7 @@ glabel func_8004FA24
 /* 40918 80050118 11000324 */  addiu      $v1, $zero, 0x11
 /* 4091C 8005011C 19004314 */  bne        $v0, $v1, .L80050184
 /* 40920 80050120 11000424 */   addiu     $a0, $zero, 0x11
-/* 40924 80050124 5C7D010C */  jal        func_8005F570
+/* 40924 80050124 5C7D010C */  jal        CdPosToInt
 /* 40928 80050128 1D00A427 */   addiu     $a0, $sp, 0x1D
 /* 4092C 8005012C 0000038E */  lw         $v1, 0x0($s0)
 /* 40930 80050130 21204000 */  addu       $a0, $v0, $zero
@@ -699,7 +699,7 @@ glabel func_8004FA24
 /* 40BC4 800503C4 C0000224 */  addiu      $v0, $zero, 0xC0
 /* 40BC8 800503C8 3000A2AF */  sw         $v0, 0x30($sp)
 /* 40BCC 800503CC 4200A3A7 */  sh         $v1, 0x42($sp)
-/* 40BD0 800503D0 8C79010C */  jal        func_8005E630
+/* 40BD0 800503D0 8C79010C */  jal        SpuSetCommonAttr
 /* 40BD4 800503D4 4000A3A7 */   sh        $v1, 0x40($sp)
 .L800503D8:
 /* 40BD8 800503D8 6800BF8F */  lw         $ra, 0x68($sp)

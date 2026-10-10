@@ -276,7 +276,7 @@ glabel func_8003CDA0
 /* 2D9B0 8003D1B0 0800A520 */  addi       $a1, $a1, 0x8 /* handwritten instruction */
 /* 2D9B4 8003D1B4 03008010 */  beqz       $a0, .L8003D1C4
 /* 2D9B8 8003D1B8 10002423 */   addi      $a0, $t9, 0x10 /* handwritten instruction */
-/* 2D9BC 8003D1BC 877C010C */  jal        func_8005F21C
+/* 2D9BC 8003D1BC 877C010C */  jal        ScaleMatrix
 /* 2D9C0 8003D1C0 00000000 */   nop
 .L8003D1C4:
 /* 2D9C4 8003D1C4 17000013 */  beqz       $t8, .L8003D224
@@ -334,7 +334,7 @@ glabel func_8003CDA0
 /* 2DA8C 8003D28C 0800A520 */  addi       $a1, $a1, 0x8 /* handwritten instruction */
 /* 2DA90 8003D290 03008010 */  beqz       $a0, .L8003D2A0
 /* 2DA94 8003D294 4C002423 */   addi      $a0, $t9, 0x4C /* handwritten instruction */
-/* 2DA98 8003D298 877C010C */  jal        func_8005F21C
+/* 2DA98 8003D298 877C010C */  jal        ScaleMatrix
 /* 2DA9C 8003D29C 00000000 */   nop
 .L8003D2A0:
 /* 2DAA0 8003D2A0 80000120 */  addi       $at, $zero, 0x80 /* handwritten instruction */

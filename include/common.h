@@ -3,6 +3,8 @@
 
 #include "include_asm.h"
 
+#define nullptr ((void*)0)
+
 #define ABS(x) ((x) >= 0 ? (x) : -(x))
 #define DOTPRODUCT(v1, v2) ((v1.x * v2.x) + (v1.y * v2.y) + (v1.z * v2.z))
 #define MIN(x, min) if(x < min) x = min

@@ -21,7 +21,6 @@ extern void func_8005399C();
 extern void func_80054E5C();
 // psyq
 extern int VSync(int); // VSync
-extern void func_8005C564(DR_MODE*, int, int, int, int); // SetDrawMode - type and args to check
 extern void func_loading_80075114(short);
 extern int func_loading_80077438();
 extern void func_title_80074DEC(int);
@@ -549,7 +548,7 @@ void func_80059358(int arg0, int arg1) {
 
     for (i = 0; i < 4; i++) {
         temp_s0 = D_8006C664;
-        func_8005C564(&(temp_s0->drMode), 1, 0, 264 + 2 * i, 0);
+        SetDrawMode(&(temp_s0->drMode), 1, 0, 264 + 2 * i, nullptr);
         func_8004E71C((void*)temp_s0, arg1);
         temp_s0->sprite.tag = 0x04000000;
         temp_s0->sprite.code = 100;

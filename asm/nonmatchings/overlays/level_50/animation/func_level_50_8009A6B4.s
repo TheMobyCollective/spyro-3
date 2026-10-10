@@ -1285,7 +1285,7 @@ glabel func_level_50_8009A6B4
 /* 95EFCAC 8009B77C 21282002 */   addu      $a1, $s1, $zero
 /* 95EFCB0 8009B780 21204002 */  addu       $a0, $s2, $zero
 /* 95EFCB4 8009B784 21282002 */  addu       $a1, $s1, $zero
-/* 95EFCB8 8009B788 D77C010C */  jal        func_8005F35C
+/* 95EFCB8 8009B788 D77C010C */  jal        MulMatrix0
 /* 95EFCBC 8009B78C 21300002 */   addu      $a2, $s0, $zero
 /* 95EFCC0 8009B790 21206002 */  addu       $a0, $s3, $zero
 /* 95EFCC4 8009B794 5B39010C */  jal        func_8004E56C

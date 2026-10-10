@@ -12,7 +12,7 @@ extern int func_8005E1F8(unsigned char com, unsigned char *param); //CdControlF
 extern int func_8005E018(void); // CdStatus 
 extern int func_8005E038(void); // CdLastCom
 extern int func_8005DB08(void* func); // CdReadCallback
-extern int func_8005F570(CdLoc *pos); //CdPosToInt
+extern int CdPosToInt(CdLoc *pos); //CdPosToInt
 extern CdLoc *CdIntToPos(int intLba, CdLoc *pos);
 
 // sdata

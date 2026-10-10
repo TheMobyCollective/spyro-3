@@ -50,7 +50,7 @@ glabel func_level_32_80092E80
 /* 6DFA464 80092F34 21280002 */   addu      $a1, $s0, $zero
 /* 6DFA468 80092F38 21204002 */  addu       $a0, $s2, $zero
 /* 6DFA46C 80092F3C 21280002 */  addu       $a1, $s0, $zero
-/* 6DFA470 80092F40 D77C010C */  jal        func_8005F35C
+/* 6DFA470 80092F40 D77C010C */  jal        MulMatrix0
 /* 6DFA474 80092F44 21302002 */   addu      $a2, $s1, $zero
 /* 6DFA478 80092F48 6000A427 */  addiu      $a0, $sp, 0x60
 /* 6DFA47C 80092F4C 5B39010C */  jal        func_8004E56C

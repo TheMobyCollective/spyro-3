@@ -13,7 +13,7 @@ void func_credits_800744BC(int arg0, char r, char g, char b) {
         POLY_F4 f4;
     } *poly = D_8006C664;
     
-    func_8005C564(&poly->drMode, 1, 0, arg0 << 5, 0);
+    SetDrawMode(&poly->drMode, 1, 0, arg0 << 5, nullptr);
     func_8004E71C(&poly->drMode.tag, 8);
     poly->f4.tag = 0x05000000;
     poly->f4.code = 0x28 | 2;

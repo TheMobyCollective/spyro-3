@@ -230,7 +230,7 @@ glabel func_8003C428
 /* 2CF74 8003C774 00000000 */  nop
 /* 2CF78 8003C778 03004010 */  beqz       $v0, .L8003C788
 /* 2CF7C 8003C77C 00000000 */   nop
-/* 2CF80 8003C780 077B010C */  jal        func_8005EC1C
+/* 2CF80 8003C780 077B010C */  jal        SpuSetVoiceAttr
 /* 2CF84 8003C784 1000A427 */   addiu     $a0, $sp, 0x10
 .L8003C788:
 /* 2CF88 8003C788 5400BF8F */  lw         $ra, 0x54($sp)

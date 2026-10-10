@@ -774,7 +774,7 @@ glabel func_level_11_8008B6A0
 /* 3E30624 8008C0F4 21282002 */   addu      $a1, $s1, $zero
 /* 3E30628 8008C0F8 21204002 */  addu       $a0, $s2, $zero
 /* 3E3062C 8008C0FC 21282002 */  addu       $a1, $s1, $zero
-/* 3E30630 8008C100 D77C010C */  jal        func_8005F35C
+/* 3E30630 8008C100 D77C010C */  jal        MulMatrix0
 /* 3E30634 8008C104 21300002 */   addu      $a2, $s0, $zero
 /* 3E30638 8008C108 2120C002 */  addu       $a0, $s6, $zero
 /* 3E3063C 8008C10C 5B39010C */  jal        func_8004E56C

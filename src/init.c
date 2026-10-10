@@ -29,10 +29,11 @@ extern DB g_DB[2];
 
 /**
  * InitSpu() - func_8002A794() - MATCHING
+ * Note Psyq has a function called SpuInit
  * https://decomp.me/scratch/7EzZI
  */
 void InitSpu() {
-    func_8003CCF0();
+    SpuInitialize();
 }
 
 /**
@@ -109,15 +110,15 @@ INCLUDE_ASM("asm/nonmatchings/init", func_8002AA34);
  * https://decomp.me/scratch/nrPlb
  */
 int crc16(unsigned char* data, int in) { // crc16step
-  int i = 7;
-  int out = in ^ (*data << 8);
-  for (i; i >= 0; i--) {
-    if (out & 0x8000) {
-      out = (out * 2) ^ 0x8005; // 0x8005 = CRC16
+    int i = 7;
+    int out = in ^ (*data << 8);
+    for (i; i >= 0; i--) {
+        if (out & 0x8000) {
+            out = (out * 2) ^ 0x8005; // 0x8005 = CRC16
+        }
+        else out *= 2;
     }
-    else out *= 2;
-  }
-  return out;
+    return out;
 }
 
 /**

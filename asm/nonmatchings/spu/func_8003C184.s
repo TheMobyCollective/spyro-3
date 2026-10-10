@@ -149,7 +149,7 @@ glabel func_8003C184
 /* 2CB58 8003C358 21083100 */  addu       $at, $at, $s1
 /* 2CB5C 8003C35C F4FC228C */  lw         $v0, %lo(D_8006FCF4)($at)
 /* 2CB60 8003C360 2800A427 */  addiu      $a0, $sp, 0x28
-/* 2CB64 8003C364 077B010C */  jal        func_8005EC1C
+/* 2CB64 8003C364 077B010C */  jal        SpuSetVoiceAttr
 /* 2CB68 8003C368 3200A2A7 */   sh        $v0, 0x32($sp)
 /* 2CB6C 8003C36C F0F00008 */  j          .L8003C3C0
 /* 2CB70 8003C370 2C009426 */   addiu     $s4, $s4, 0x2C
@@ -165,7 +165,7 @@ glabel func_8003C184
 /* 2CB90 8003C390 10000224 */  addiu      $v0, $zero, 0x10
 /* 2CB94 8003C394 6800B0AF */  sw         $s0, 0x68($sp)
 /* 2CB98 8003C398 6C00A2AF */  sw         $v0, 0x6C($sp)
-/* 2CB9C 8003C39C 077B010C */  jal        func_8005EC1C
+/* 2CB9C 8003C39C 077B010C */  jal        SpuSetVoiceAttr
 /* 2CBA0 8003C3A0 7C00A0A7 */   sh        $zero, 0x7C($sp)
 /* 2CBA4 8003C3A4 25987002 */  or         $s3, $s3, $s0
 /* 2CBA8 8003C3A8 EFF00008 */  j          .L8003C3BC
@@ -183,12 +183,12 @@ glabel func_8003C184
 /* 2CBCC 8003C3CC 2C003126 */   addiu     $s1, $s1, 0x2C
 /* 2CBD0 8003C3D0 0300E012 */  beqz       $s7, .L8003C3E0
 /* 2CBD4 8003C3D4 01000424 */   addiu     $a0, $zero, 0x1
-/* 2CBD8 8003C3D8 6C7A010C */  jal        func_8005E9B0
+/* 2CBD8 8003C3D8 6C7A010C */  jal        SpuSetKey
 /* 2CBDC 8003C3DC 2128E002 */   addu      $a1, $s7, $zero
 .L8003C3E0:
 /* 2CBE0 8003C3E0 03006012 */  beqz       $s3, .L8003C3F0
 /* 2CBE4 8003C3E4 21200000 */   addu      $a0, $zero, $zero
-/* 2CBE8 8003C3E8 6C7A010C */  jal        func_8005E9B0
+/* 2CBE8 8003C3E8 6C7A010C */  jal        SpuSetKey
 /* 2CBEC 8003C3EC 21286002 */   addu      $a1, $s3, $zero
 .L8003C3F0:
 /* 2CBF0 8003C3F0 0780013C */  lui        $at, %hi(D_8006C630)

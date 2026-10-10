@@ -495,8 +495,8 @@ glabel func_level_31_8007A860
 /* 6A95C1C 8007AEEC 0D004014 */  bnez       $v0, .Llevel_31_8007AF24
 /* 6A95C20 8007AEF0 000A422A */   slti      $v0, $s2, 0xA00
 /* 6A95C24 8007AEF4 21800000 */  addu       $s0, $zero, $zero
-/* 6A95C28 8007AEF8 0680113C */  lui        $s1, %hi(func_8005E9B0)
-/* 6A95C2C 8007AEFC B0E93126 */  addiu      $s1, $s1, %lo(func_8005E9B0)
+/* 6A95C28 8007AEF8 0680113C */  lui        $s1, %hi(SpuSetKey)
+/* 6A95C2C 8007AEFC B0E93126 */  addiu      $s1, $s1, %lo(SpuSetKey)
 .Llevel_31_8007AF00:
 /* 6A95C30 8007AF00 9171010C */  jal        rand
 /* 6A95C34 8007AF04 01001026 */   addiu     $s0, $s0, 0x1

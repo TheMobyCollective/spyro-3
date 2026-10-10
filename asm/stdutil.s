@@ -1335,12 +1335,12 @@ glabel func_8004F6C4
 /* 3FF74 8004F774 3800CDA5 */  sh         $t5, 0x38($t6)
 /* 3FF78 8004F778 0000C421 */  addi       $a0, $t6, 0x0 /* handwritten instruction */
 /* 3FF7C 8004F77C 1400C521 */  addi       $a1, $t6, 0x14 /* handwritten instruction */
-/* 3FF80 8004F780 D77C010C */  jal        func_8005F35C
+/* 3FF80 8004F780 D77C010C */  jal        MulMatrix0
 /* 3FF84 8004F784 3C00C621 */   addi      $a2, $t6, 0x3C /* handwritten instruction */
 /* 3FF88 8004F788 801F0E3C */  lui        $t6, (0x1F800000 >> 16)
 /* 3FF8C 8004F78C 2800C421 */  addi       $a0, $t6, (0x1F800028 & 0xFFFF) /* handwritten instruction */
 /* 3FF90 8004F790 3C00C521 */  addi       $a1, $t6, (0x1F80003C & 0xFFFF) /* handwritten instruction */
-/* 3FF94 8004F794 D77C010C */  jal        func_8005F35C
+/* 3FF94 8004F794 D77C010C */  jal        MulMatrix0
 /* 3FF98 8004F798 0000C621 */   addi      $a2, $t6, (0x1F800000 & 0xFFFF) /* handwritten instruction */
 /* 3FF9C 8004F79C 0780013C */  lui        $at, %hi(D_80071540)
 /* 3FFA0 8004F7A0 40152124 */  addiu      $at, $at, %lo(D_80071540)

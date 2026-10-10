@@ -70,7 +70,7 @@ glabel func_8003E968
 /* 2F25C 8003EA5C 21300000 */   addu      $a2, $zero, $zero
 /* 2F260 8003EA60 21202002 */  addu       $a0, $s1, $zero
 /* 2F264 8003EA64 21280002 */  addu       $a1, $s0, $zero
-/* 2F268 8003EA68 D77C010C */  jal        func_8005F35C
+/* 2F268 8003EA68 D77C010C */  jal        MulMatrix0
 /* 2F26C 8003EA6C 21300002 */   addu      $a2, $s0, $zero
 /* 2F270 8003EA70 0780053C */  lui        $a1, %hi(g_CheatFlags + 6)
 /* 2F274 8003EA74 96FBA524 */  addiu      $a1, $a1, %lo(g_CheatFlags + 6)
@@ -78,7 +78,7 @@ glabel func_8003E968
 /* 2F27C 8003EA7C 00000000 */  nop
 /* 2F280 8003EA80 03004010 */  beqz       $v0, .L8003EA90
 /* 2F284 8003EA84 21200002 */   addu      $a0, $s0, $zero
-/* 2F288 8003EA88 877C010C */  jal        func_8005F21C
+/* 2F288 8003EA88 877C010C */  jal        ScaleMatrix
 /* 2F28C 8003EA8C 0200A524 */   addiu     $a1, $a1, 0x2
 .L8003EA90:
 /* 2F290 8003EA90 0780023C */  lui        $v0, %hi(D_80070328 + 8)
