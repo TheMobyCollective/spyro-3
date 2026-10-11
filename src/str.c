@@ -12,11 +12,8 @@ extern int func_8005E1F8(unsigned char com, unsigned char *param); //CdControlF
 extern int func_8005E018(void); // CdStatus 
 extern int func_8005E038(void); // CdLastCom
 extern int func_8005DB08(void* func); // CdReadCallback
-extern int CdPosToInt(CdLoc *pos); //CdPosToInt
-extern CdLoc *CdIntToPos(int intLba, CdLoc *pos);
-
-//spu
-extern void func_8005E630(SpuCommonAttr *attr); // SpuSetCommonAttr
+extern int CdPosToInt(CdlLOC *pos); //CdPosToInt
+extern CdlLOC *CdIntToPos(int intLba, CdlLOC *pos);
 
 // sdata
 extern int speechLba; // 8006C3F4 - should be 90000
@@ -261,7 +258,7 @@ void func_8004FA24() {
         cdMusic.attr.cd.volume.right = 0;
         cdMusic.attr.cd.volume.left = 0;            
         cdMusic.attr.mask = SPU_COMMON_CDVOLL | SPU_COMMON_CDVOLR;
-        func_8005E630(&cdMusic.attr);
+        SpuSetCommonAttr(&cdMusic.attr);
             
         streamingData.dat_8006e4a4 = 10;
         streamingData.dat_8006e48c = 2;
@@ -332,7 +329,7 @@ void func_8004FA24() {
             cdMusic.attr.cd.volume.right = volume;
             cdMusic.attr.cd.volume.left = volume;
 
-            func_8005E630(&cdMusic.attr);
+            SpuSetCommonAttr(&cdMusic.attr);
         }
 
         func_8005E1F8(0x11, 0);
@@ -349,12 +346,12 @@ void func_8004FA24() {
                 cdMusic.attr.cd.volume.left = streamingData.dat_8006e494;
                 cdMusic.attr.mask = SPU_COMMON_CDVOLL | SPU_COMMON_CDVOLR;
 
-                func_8005E630(&cdMusic.attr);
+                SpuSetCommonAttr(&cdMusic.attr);
             }
 
             if (func_8005E038() == 0x11) {
                 trackPosition =
-                    func_8005F570((CdLoc *)&cdMusic.syncData[5]);
+                    CdPosToInt((CdlLOC *)&cdMusic.syncData[5]);
 
                 if (currentAudio->unk0 < trackPosition)
                     currentAudio->startLba = trackPosition;
@@ -430,7 +427,7 @@ void func_8004FA24() {
             cdMusic.attr.mask = SPU_COMMON_CDVOLL | SPU_COMMON_CDVOLR;
             cdMusic.attr.cd.volume.right = volume;
             cdMusic.attr.cd.volume.left = volume;
-            func_8005E630(&cdMusic.attr);         
+            SpuSetCommonAttr(&cdMusic.attr);         
         }
     }
 }

@@ -4,6 +4,7 @@ import re
 proot = 'psyq/include/'
 pfiles = [
     'libgpu.h',
+    'libspu.h',
 ]
 
 root = 'include/'
