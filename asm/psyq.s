@@ -2845,7 +2845,7 @@ glabel func_8005BB60
 /* 4C3C0 8005BBC0 3F004230 */  andi       $v0, $v0, 0x3F
 /* 4C3C4 8005BBC4 F3FF4310 */  beq        $v0, $v1, .L8005BB94
 /* 4C3C8 8005BBC8 00000000 */   nop
-/* 4C3CC 8005BBCC EE71010C */  jal        GetIntrMask
+/* 4C3CC 8005BBCC EE71010C */  jal        SetIntrMask
 /* 4C3D0 8005BBD0 21200000 */   addu      $a0, $zero, $zero
 /* 4C3D4 8005BBD4 0780043C */  lui        $a0, %hi(D_8006A120)
 /* 4C3D8 8005BBD8 20A18424 */  addiu      $a0, $a0, %lo(D_8006A120)
@@ -2889,7 +2889,7 @@ glabel func_8005BB60
 /* 4C468 8005BC68 21284002 */   addu      $a1, $s2, $zero
 /* 4C46C 8005BC6C 0780043C */  lui        $a0, %hi(D_8006A250)
 /* 4C470 8005BC70 50A2848C */  lw         $a0, %lo(D_8006A250)($a0)
-/* 4C474 8005BC74 EE71010C */  jal        GetIntrMask
+/* 4C474 8005BC74 EE71010C */  jal        SetIntrMask
 /* 4C478 8005BC78 00000000 */   nop
 /* 4C47C 8005BC7C 7D6F0108 */  j          .L8005BDF4
 /* 4C480 8005BC80 21100000 */   addu      $v0, $zero, $zero
@@ -2980,7 +2980,7 @@ glabel func_8005BB60
 /* 4C5BC 8005BDBC 01004224 */  addiu      $v0, $v0, 0x1
 /* 4C5C0 8005BDC0 3F004230 */  andi       $v0, $v0, 0x3F
 /* 4C5C4 8005BDC4 0780013C */  lui        $at, %hi(D_8006A248)
-/* 4C5C8 8005BDC8 EE71010C */  jal        GetIntrMask
+/* 4C5C8 8005BDC8 EE71010C */  jal        SetIntrMask
 /* 4C5CC 8005BDCC 48A222AC */   sw        $v0, %lo(D_8006A248)($at)
 /* 4C5D0 8005BDD0 846F010C */  jal        func_8005BE10
 /* 4C5D4 8005BDD4 00000000 */   nop
@@ -3013,7 +3013,7 @@ glabel func_8005BE10
 /* 4C630 8005BE30 24105000 */  and        $v0, $v0, $s0
 /* 4C634 8005BE34 89004014 */  bnez       $v0, .L8005C05C
 /* 4C638 8005BE38 01000224 */   addiu     $v0, $zero, 0x1
-/* 4C63C 8005BE3C EE71010C */  jal        GetIntrMask
+/* 4C63C 8005BE3C EE71010C */  jal        SetIntrMask
 /* 4C640 8005BE40 21200000 */   addu      $a0, $zero, $zero
 /* 4C644 8005BE44 0780043C */  lui        $a0, %hi(D_8006A248)
 /* 4C648 8005BE48 48A2848C */  lw         $a0, %lo(D_8006A248)($a0)
@@ -3117,7 +3117,7 @@ glabel func_8005BE10
 .L8005BFC0:
 /* 4C7C0 8005BFC0 0780043C */  lui        $a0, %hi(D_8006A254)
 /* 4C7C4 8005BFC4 54A2848C */  lw         $a0, %lo(D_8006A254)($a0)
-/* 4C7C8 8005BFC8 EE71010C */  jal        GetIntrMask
+/* 4C7C8 8005BFC8 EE71010C */  jal        SetIntrMask
 /* 4C7CC 8005BFCC 00000000 */   nop
 /* 4C7D0 8005BFD0 0780033C */  lui        $v1, %hi(D_8006A248)
 /* 4C7D4 8005BFD4 48A2638C */  lw         $v1, %lo(D_8006A248)($v1)
@@ -3168,7 +3168,7 @@ glabel func_8005C070
 /* 4C874 8005C074 1000B0AF */  sw         $s0, 0x10($sp)
 /* 4C878 8005C078 21808000 */  addu       $s0, $a0, $zero
 /* 4C87C 8005C07C 1400BFAF */  sw         $ra, 0x14($sp)
-/* 4C880 8005C080 EE71010C */  jal        GetIntrMask
+/* 4C880 8005C080 EE71010C */  jal        SetIntrMask
 /* 4C884 8005C084 21200000 */   addu      $a0, $zero, $zero
 /* 4C888 8005C088 0780013C */  lui        $at, %hi(D_8006A24C)
 /* 4C88C 8005C08C 4CA220AC */  sw         $zero, %lo(D_8006A24C)($at)
@@ -3241,7 +3241,7 @@ glabel func_8005C070
 .L8005C18C:
 /* 4C98C 8005C18C 0780043C */  lui        $a0, %hi(D_8006A258)
 /* 4C990 8005C190 58A2848C */  lw         $a0, %lo(D_8006A258)($a0)
-/* 4C994 8005C194 EE71010C */  jal        GetIntrMask
+/* 4C994 8005C194 EE71010C */  jal        SetIntrMask
 /* 4C998 8005C198 00000000 */   nop
 /* 4C99C 8005C19C 07000232 */  andi       $v0, $s0, 0x7
 /* 4C9A0 8005C1A0 03004014 */  bnez       $v0, .L8005C1B0
@@ -3404,7 +3404,7 @@ glabel func_8005C330
 /* 4CBC8 8005C3C8 0000478C */  lw         $a3, 0x0($v0)
 /* 4CBCC 8005C3CC 7F7D010C */  jal        printf
 /* 4CBD0 8005C3D0 3F00A530 */   andi      $a1, $a1, 0x3F
-/* 4CBD4 8005C3D4 EE71010C */  jal        GetIntrMask
+/* 4CBD4 8005C3D4 EE71010C */  jal        SetIntrMask
 /* 4CBD8 8005C3D8 21200000 */   addu      $a0, $zero, $zero
 /* 4CBDC 8005C3DC 0780013C */  lui        $at, %hi(D_8006A24C)
 /* 4CBE0 8005C3E0 4CA220AC */  sw         $zero, %lo(D_8006A24C)($at)
@@ -3435,7 +3435,7 @@ glabel func_8005C330
 /* 4CC44 8005C444 000062AC */  sw         $v0, 0x0($v1)
 /* 4CC48 8005C448 0780043C */  lui        $a0, %hi(D_8006A258)
 /* 4CC4C 8005C44C 58A2848C */  lw         $a0, %lo(D_8006A258)($a0)
-/* 4CC50 8005C450 EE71010C */  jal        GetIntrMask
+/* 4CC50 8005C450 EE71010C */  jal        SetIntrMask
 /* 4CC54 8005C454 00000000 */   nop
 /* 4CC58 8005C458 19710108 */  j          .L8005C464
 /* 4CC5C 8005C45C FFFF0224 */   addiu     $v0, $zero, -0x1
@@ -3711,14 +3711,14 @@ glabel CheckCallback
 /* 4CFB4 8005C7B4 00000000 */   nop
 .size CheckCallback, . - CheckCallback
 
-glabel GetIntrMask
+glabel SetIntrMask
 /* 4CFB8 8005C7B8 0780033C */  lui        $v1, %hi(D_8006B358)
 /* 4CFBC 8005C7BC 58B3638C */  lw         $v1, %lo(D_8006B358)($v1)
 /* 4CFC0 8005C7C0 00000000 */  nop
 /* 4CFC4 8005C7C4 00006294 */  lhu        $v0, 0x0($v1)
 /* 4CFC8 8005C7C8 0800E003 */  jr         $ra
 /* 4CFCC 8005C7CC 000064A4 */   sh        $a0, 0x0($v1)
-.size GetIntrMask, . - GetIntrMask
+.size SetIntrMask, . - SetIntrMask
 
 glabel func_8005C7D0
 /* 4CFD0 8005C7D0 E8FFBD27 */  addiu      $sp, $sp, -0x18
