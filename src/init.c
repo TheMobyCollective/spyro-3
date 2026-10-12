@@ -11,9 +11,9 @@ extern void VSync(int);
 extern void SetGeomScreen(int);
 extern void InitGeom();
 extern void SetGeomOffset(int, int);
-extern int func_8005DB08(void* param_1);
+extern int CdReadCallback(void* param_1);
 extern int CdInit();
-extern int func_8005E0BC(char param_1, char* param_2, char* param_3);
+extern int CdControl(char param_1, char* param_2, char* param_3);
 
 // rodata
 extern int* overlayStartPtr; // 80011254
@@ -45,8 +45,8 @@ void InitCdAndWad() {
 
     sp10[0] = 0x80;
     CdInit();
-    func_8005E0BC(0xE, &sp10[0], 0);
-    func_8005DB08(&CDReadDone);
+    CdControl(0xE, &sp10[0], 0);
+    CdReadCallback(&CDReadDone);
     cdState.wadSector = 0x1F4;
     CDLoadSync(0x1F4, overlayStartPtr, 0x800, 0);
     func_8004E7D4((int*)&wadHeader, overlayStartPtr, 0x620);

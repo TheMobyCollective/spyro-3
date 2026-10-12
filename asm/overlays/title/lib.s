@@ -1027,7 +1027,7 @@ glabel func_title_8007BCAC
 /* 2AA64 8007BD34 01005226 */  addiu      $s2, $s2, 0x1
 /* 2AA68 8007BD38 00004292 */  lbu        $v0, 0x0($s2)
 /* 2AA6C 8007BD3C 00220400 */  sll        $a0, $a0, 8
-/* 2AA70 8007BD40 7393010C */  jal        func_80064DCC
+/* 2AA70 8007BD40 7393010C */  jal        Krom2RawAdd
 /* 2AA74 8007BD44 25204400 */   or        $a0, $v0, $a0
 /* 2AA78 8007BD48 21202002 */  addu       $a0, $s1, $zero
 /* 2AA7C 8007BD4C 21284000 */  addu       $a1, $v0, $zero
@@ -3055,7 +3055,7 @@ glabel func_title_8007D880
 glabel func_title_8007D894
 /* 2C5C4 8007D894 E8FFBD27 */  addiu      $sp, $sp, -0x18
 /* 2C5C8 8007D898 1400BFAF */  sw         $ra, 0x14($sp)
-/* 2C5CC 8007D89C 117F010C */  jal        func_8005FC44
+/* 2C5CC 8007D89C 117F010C */  jal        EnterCriticalSection
 /* 2C5D0 8007D8A0 1000B0AF */   sw        $s0, 0x10($sp)
 /* 2C5D4 8007D8A4 00F4043C */  lui        $a0, (0xF4000001 >> 16)
 /* 2C5D8 8007D8A8 01008434 */  ori        $a0, $a0, (0xF4000001 & 0xFFFF)
@@ -3166,7 +3166,7 @@ glabel func_title_8007D894
 /* 2C77C 8007DA4C 01000224 */  addiu      $v0, $zero, 0x1
 /* 2C780 8007DA50 03000216 */  bne        $s0, $v0, .Ltitle_8007DA60
 /* 2C784 8007DA54 00000000 */   nop
-/* 2C788 8007DA58 097F010C */  jal        func_8005FC24
+/* 2C788 8007DA58 097F010C */  jal        ExitCriticalSection
 /* 2C78C 8007DA5C 00000000 */   nop
 .Ltitle_8007DA60:
 /* 2C790 8007DA60 1400BF8F */  lw         $ra, 0x14($sp)
@@ -3178,7 +3178,7 @@ glabel func_title_8007D894
 glabel func_title_8007DA70
 /* 2C7A0 8007DA70 E8FFBD27 */  addiu      $sp, $sp, -0x18
 /* 2C7A4 8007DA74 1400BFAF */  sw         $ra, 0x14($sp)
-/* 2C7A8 8007DA78 117F010C */  jal        func_8005FC44
+/* 2C7A8 8007DA78 117F010C */  jal        EnterCriticalSection
 /* 2C7AC 8007DA7C 1000B0AF */   sw        $s0, 0x10($sp)
 /* 2C7B0 8007DA80 0880043C */  lui        $a0, %hi(D_title_80080FC4)
 /* 2C7B4 8007DA84 C40F848C */  lw         $a0, %lo(D_title_80080FC4)($a0)
@@ -3215,7 +3215,7 @@ glabel func_title_8007DA70
 /* 2C830 8007DB00 01000224 */  addiu      $v0, $zero, 0x1
 /* 2C834 8007DB04 03000216 */  bne        $s0, $v0, .Ltitle_8007DB14
 /* 2C838 8007DB08 00000000 */   nop
-/* 2C83C 8007DB0C 097F010C */  jal        func_8005FC24
+/* 2C83C 8007DB0C 097F010C */  jal        ExitCriticalSection
 /* 2C840 8007DB10 00000000 */   nop
 .Ltitle_8007DB14:
 /* 2C844 8007DB14 1400BF8F */  lw         $ra, 0x14($sp)
@@ -4221,11 +4221,11 @@ glabel func_title_8007E964
 /* 2D69C 8007E96C 21808000 */  addu       $s0, $a0, $zero
 /* 2D6A0 8007E970 21200000 */  addu       $a0, $zero, $zero
 /* 2D6A4 8007E974 1800BFAF */  sw         $ra, 0x18($sp)
-/* 2D6A8 8007E978 F37D010C */  jal        func_8005F7CC
+/* 2D6A8 8007E978 F37D010C */  jal        ChangeClearPAD
 /* 2D6AC 8007E97C 1400B1AF */   sw        $s1, 0x14($sp)
 /* 2D6B0 8007E980 5B65010C */  jal        VSync
 /* 2D6B4 8007E984 21200000 */   addu      $a0, $zero, $zero
-/* 2D6B8 8007E988 117F010C */  jal        func_8005FC44
+/* 2D6B8 8007E988 117F010C */  jal        EnterCriticalSection
 /* 2D6BC 8007E98C 00000000 */   nop
 /* 2D6C0 8007E990 6393010C */  jal        func_80064D8C
 /* 2D6C4 8007E994 21884000 */   addu      $s1, $v0, $zero
@@ -4246,7 +4246,7 @@ glabel func_title_8007E964
 /* 2D6FC 8007E9CC 01000224 */  addiu      $v0, $zero, 0x1
 /* 2D700 8007E9D0 03002216 */  bne        $s1, $v0, .Ltitle_8007E9E0
 /* 2D704 8007E9D4 00000000 */   nop
-/* 2D708 8007E9D8 097F010C */  jal        func_8005FC24
+/* 2D708 8007E9D8 097F010C */  jal        ExitCriticalSection
 /* 2D70C 8007E9DC 00000000 */   nop
 .Ltitle_8007E9E0:
 /* 2D710 8007E9E0 1800BF8F */  lw         $ra, 0x18($sp)
@@ -4259,16 +4259,16 @@ glabel func_title_8007E964
 glabel func_title_8007E9F4
 /* 2D724 8007E9F4 E8FFBD27 */  addiu      $sp, $sp, -0x18
 /* 2D728 8007E9F8 1400BFAF */  sw         $ra, 0x14($sp)
-/* 2D72C 8007E9FC 117F010C */  jal        func_8005FC44
+/* 2D72C 8007E9FC 117F010C */  jal        EnterCriticalSection
 /* 2D730 8007EA00 1000B0AF */   sw        $s0, 0x10($sp)
 /* 2D734 8007EA04 23FB010C */  jal        func_title_8007EC8C
 /* 2D738 8007EA08 21804000 */   addu      $s0, $v0, $zero
-/* 2D73C 8007EA0C F37D010C */  jal        func_8005F7CC
+/* 2D73C 8007EA0C F37D010C */  jal        ChangeClearPAD
 /* 2D740 8007EA10 21200000 */   addu      $a0, $zero, $zero
 /* 2D744 8007EA14 01000224 */  addiu      $v0, $zero, 0x1
 /* 2D748 8007EA18 04000216 */  bne        $s0, $v0, .Ltitle_8007EA2C
 /* 2D74C 8007EA1C 21100000 */   addu      $v0, $zero, $zero
-/* 2D750 8007EA20 097F010C */  jal        func_8005FC24
+/* 2D750 8007EA20 097F010C */  jal        ExitCriticalSection
 /* 2D754 8007EA24 00000000 */   nop
 /* 2D758 8007EA28 21100000 */  addu       $v0, $zero, $zero
 .Ltitle_8007EA2C:
@@ -4366,7 +4366,7 @@ glabel D_title_8007EB34
 glabel func_title_8007EB48
 /* 2D878 8007EB48 0880013C */  lui        $at, %hi(D_title_800812C4)
 /* 2D87C 8007EB4C C4123FAC */  sw         $ra, %lo(D_title_800812C4)($at)
-/* 2D880 8007EB50 117F010C */  jal        func_8005FC44
+/* 2D880 8007EB50 117F010C */  jal        EnterCriticalSection
 /* 2D884 8007EB54 00000000 */   nop
 /* 2D888 8007EB58 56000924 */  addiu      $t1, $zero, 0x56
 /* 2D88C 8007EB5C B0000A24 */  addiu      $t2, $zero, 0xB0
@@ -4407,7 +4407,7 @@ glabel func_title_8007EB48
 glabel func_title_8007EBDC
 /* 2D90C 8007EBDC 0880013C */  lui        $at, %hi(D_title_800812C4)
 /* 2D910 8007EBE0 C4123FAC */  sw         $ra, %lo(D_title_800812C4)($at)
-/* 2D914 8007EBE4 117F010C */  jal        func_8005FC44
+/* 2D914 8007EBE4 117F010C */  jal        EnterCriticalSection
 /* 2D918 8007EBE8 00000000 */   nop
 /* 2D91C 8007EBEC 57000924 */  addiu      $t1, $zero, 0x57
 /* 2D920 8007EBF0 B0000A24 */  addiu      $t2, $zero, 0xB0

@@ -112,7 +112,7 @@ glabel func_level_33_8007C338
 /* 71B4200 8007C4D0 21082200 */  addu       $at, $at, $v0
 /* 71B4204 8007C4D4 E8DB228C */  lw         $v0, %lo(D_8006DBE8)($at)
 /* 71B4208 8007C4D8 21300000 */  addu       $a2, $zero, $zero
-/* 71B420C 8007C4DC 2F78010C */  jal        func_8005E0BC
+/* 71B420C 8007C4DC 2F78010C */  jal        CdControl
 /* 71B4210 8007C4E0 21800202 */   addu      $s0, $s0, $v0
 /* 71B4214 8007C4E4 21200002 */  addu       $a0, $s0, $zero
 /* 71B4218 8007C4E8 02008104 */  bgez       $a0, .Llevel_33_8007C4F4
@@ -127,11 +127,11 @@ glabel func_level_33_8007C338
 /* 71B4238 8007C508 21204400 */   addu      $a0, $v0, $a0
 /* 71B423C 8007C50C 02000424 */  addiu      $a0, $zero, 0x2
 /* 71B4240 8007C510 21280002 */  addu       $a1, $s0, $zero
-/* 71B4244 8007C514 2F78010C */  jal        func_8005E0BC
+/* 71B4244 8007C514 2F78010C */  jal        CdControl
 /* 71B4248 8007C518 21300000 */   addu      $a2, $zero, $zero
 /* 71B424C 8007C51C 16000424 */  addiu      $a0, $zero, 0x16
 /* 71B4250 8007C520 21280000 */  addu       $a1, $zero, $zero
-/* 71B4254 8007C524 2F78010C */  jal        func_8005E0BC
+/* 71B4254 8007C524 2F78010C */  jal        CdControl
 /* 71B4258 8007C528 21300000 */   addu      $a2, $zero, $zero
 /* 71B425C 8007C52C 02000224 */  addiu      $v0, $zero, 0x2
 /* 71B4260 8007C530 70F10108 */  j          .Llevel_33_8007C5C0

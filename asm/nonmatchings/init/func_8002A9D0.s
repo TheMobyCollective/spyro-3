@@ -10,7 +10,7 @@ glabel func_8002A9D0
 /* 1B1E4 8002A9E4 1000BFAF */  sw         $ra, 0x10($sp)
 /* 1B1E8 8002A9E8 3F73010C */  jal        PadInitDirect
 /* 1B1EC 8002A9EC 00000000 */   nop
-/* 1B1F0 8002A9F0 1B77010C */  jal        func_8005DC6C
+/* 1B1F0 8002A9F0 1B77010C */  jal        PadStartCom
 /* 1B1F4 8002A9F4 00000000 */   nop
 /* 1B1F8 8002A9F8 7BEA000C */  jal        func_8003A9EC
 /* 1B1FC 8002A9FC 00000000 */   nop

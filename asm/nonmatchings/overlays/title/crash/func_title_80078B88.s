@@ -33,7 +33,7 @@ glabel func_title_80078B88
 /* 278CC 80078B9C 00000000 */   nop
 /* 278D0 80078BA0 CEE2010C */  jal        func_title_80078B38
 /* 278D4 80078BA4 00000000 */   nop
-/* 278D8 80078BA8 037F010C */  jal        func_8005FC0C
+/* 278D8 80078BA8 037F010C */  jal        _96_remove
 /* 278DC 80078BAC 00000000 */   nop
 /* 278E0 80078BB0 6B93010C */  jal        func_80064DAC
 /* 278E4 80078BB4 00000000 */   nop

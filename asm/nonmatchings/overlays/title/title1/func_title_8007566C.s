@@ -230,7 +230,7 @@ glabel func_title_8007566C
 /* 24594 80075864 0F006210 */  beq        $v1, $v0, .Ltitle_800758A4
 /* 24598 80075868 0C000424 */   addiu     $a0, $zero, 0xC
 /* 2459C 8007586C 21280000 */  addu       $a1, $zero, $zero
-/* 245A0 80075870 2F78010C */  jal        func_8005E0BC
+/* 245A0 80075870 2F78010C */  jal        CdControl
 /* 245A4 80075874 21300000 */   addu      $a2, $zero, $zero
 /* 245A8 80075878 0780043C */  lui        $a0, %hi(D_8006C3F4)
 /* 245AC 8007587C F4C3848C */  lw         $a0, %lo(D_8006C3F4)($a0)

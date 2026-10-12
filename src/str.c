@@ -4,14 +4,14 @@
 
 // psyq
 // will need LibCD implemented soon, also there are constants in there that should be used in here (see spyro-1)
-extern int func_8005D96C(int sectors, unsigned long *buf, int mode); // CdRead 
-extern int func_8005E0BC(unsigned char com, unsigned char *param, unsigned char *result); // CdControl
+extern int CdRead(int sectors, unsigned long *buf, int mode); // CdRead 
+extern int CdControl(unsigned char com, unsigned char *param, unsigned char *result); // CdControl
 extern int CdInit(void); // CdInit
-extern int func_8005E074(int mode, unsigned char *result); // CdSync
-extern int func_8005E1F8(unsigned char com, unsigned char *param); //CdControlF
-extern int func_8005E018(void); // CdStatus 
-extern int func_8005E038(void); // CdLastCom
-extern int func_8005DB08(void* func); // CdReadCallback
+extern int CdSync(int mode, unsigned char *result); // CdSync
+extern int CdControlF(unsigned char com, unsigned char *param); //CdControlF
+extern int CdStatus(void); // CdStatus 
+extern int CdLastCom(void); // CdLastCom
+extern int CdReadCallback(void* func); // CdReadCallback
 extern int CdPosToInt(CdlLOC *pos); //CdPosToInt
 extern CdlLOC *CdIntToPos(int intLba, CdlLOC *pos);
 
@@ -95,8 +95,8 @@ void func_8004FA24() {
     int *currentVolumePtr;
     int *cdCommandStatePtr;
     
-    cdSyncResult = func_8005E074(1, cdMusic.syncData);
-    cdStatus = func_8005E018();
+    cdSyncResult = CdSync(1, cdMusic.syncData);
+    cdStatus = CdStatus();
 
     switch (streamingData.dat_8006e4b4) {
     case 0:
@@ -159,7 +159,7 @@ void func_8004FA24() {
             streamingData.dat_8006e48c = 1;
         }
         streamingData.dat_8006e490 = 1;
-        func_8005E1F8(1, 0);
+        CdControlF(1, 0);
         return;
     }
     
@@ -177,7 +177,7 @@ void func_8004FA24() {
             streamingData.dat_8006e48c = 1;
         }
 
-        func_8005E1F8(1, 0);
+        CdControlF(1, 0);
         return;
     }
 
@@ -186,14 +186,14 @@ void func_8004FA24() {
     if (*cdCommandStatePtr == 1) {
         if (cdStatus & 0x2) {
 
-            if (func_8005E038() == 2) {
-                func_8005E1F8(0x1B, 0);
+            if (CdLastCom() == 2) {
+                CdControlF(0x1B, 0);
                 return;
             }
 
             if (cdStatus & 0x40) {
                 *cdCommandStatePtr = 0;
-                func_8005E1F8(1, 0);
+                CdControlF(1, 0);
                 return;
             }
 
@@ -202,11 +202,11 @@ void func_8004FA24() {
             else
                 CdIntToPos(0x3E8, &cdMusic.cdPos);
 
-            func_8005E1F8(2, (void *)&cdMusic.cdPos);
+            CdControlF(2, (void *)&cdMusic.cdPos);
             return;
         }
 
-        func_8005E1F8(9, 0);
+        CdControlF(9, 0);
         return;
     }
 
@@ -219,7 +219,7 @@ void func_8004FA24() {
         /* Stop/release current music before selecting next stream. */
         if (streamingData.musicEnabled != 0 &&
             (cdStatus & 0x20)) {
-            func_8005E1F8(9, 0);           
+            CdControlF(9, 0);           
         } else {
             streamingData.dat_8006e48c = 0;
         }
@@ -247,13 +247,13 @@ void func_8004FA24() {
             streamingData.dat_8006e48c = 1;
         }
 
-        func_8005E1F8(1, 0);
+        CdControlF(1, 0);
         break;
 
     case 1:
         /* Set up command 0x0E and initialise volume. */
         cdMusic.commandParam[0] = 0xC8;
-        func_8005E1F8(0x0E, cdMusic.commandParam);
+        CdControlF(0x0E, cdMusic.commandParam);
 
         cdMusic.attr.cd.volume.right = 0;
         cdMusic.attr.cd.volume.left = 0;            
@@ -267,7 +267,7 @@ void func_8004FA24() {
     case 2:
         /* Position CD at start of XA stream. */
         CdIntToPos(currentAudio->startLba, &cdMusic.cdPos);
-        func_8005E1F8(2, (void *)&cdMusic.cdPos);
+        CdControlF(2, (void *)&cdMusic.cdPos);
 
         streamingData.dat_8006e48c = 3;
         break;
@@ -277,14 +277,14 @@ void func_8004FA24() {
         cdMusic.trackParam[0] = 1;
         cdMusic.trackParam[1] = currentAudio->track;
 
-        func_8005E1F8(0x0D, cdMusic.trackParam);
+        CdControlF(0x0D, cdMusic.trackParam);
 
         streamingData.dat_8006e48c = 4;
         break;
 
     case 4:
         /* Start XA playback. */
-        func_8005E1F8(0x1B, 0);
+        CdControlF(0x1B, 0);
 
         streamingData.dat_8006e4a4 = 300;
         streamingData.dat_8006e48c = 5;
@@ -292,7 +292,7 @@ void func_8004FA24() {
 
     case 5:
         /* Wait for XA playback to become ready. */
-        if (func_8005E038() == 1 &&
+        if (CdLastCom() == 1 &&
             (cdStatus & 0x60) == 0x20) {
 
             streamingData.dat_8006e494 = 0;
@@ -308,7 +308,7 @@ void func_8004FA24() {
             }
         }
 
-        func_8005E1F8(1, 0);
+        CdControlF(1, 0);
         break;
 
     case 6:
@@ -332,7 +332,7 @@ void func_8004FA24() {
             SpuSetCommonAttr(&cdMusic.attr);
         }
 
-        func_8005E1F8(0x11, 0);
+        CdControlF(0x11, 0);
         break;
 
     case 7:
@@ -349,7 +349,7 @@ void func_8004FA24() {
                 SpuSetCommonAttr(&cdMusic.attr);
             }
 
-            if (func_8005E038() == 0x11) {
+            if (CdLastCom() == 0x11) {
                 trackPosition =
                     CdPosToInt((CdlLOC *)&cdMusic.syncData[5]);
 
@@ -363,7 +363,7 @@ void func_8004FA24() {
             }
         }
 
-        func_8005E1F8(0x11, 0);
+        CdControlF(0x11, 0);
         break;
 
     case 8:
@@ -456,23 +456,23 @@ int CDLoadTime() {
         CdInit();
         
         // Set the mode to double speed?
-        func_8005E0BC(0xE, &modeFlags, 0);
-        func_8005DB08(&CDReadDone);
+        CdControl(0xE, &modeFlags, 0);
+        CdReadCallback(&CDReadDone);
 
         // Wait for the CD subsystem to be ready after the reinitialization
-        while (func_8005E074(1, 0) != 2);
+        while (CdSync(1, 0) != 2);
 
-        func_8005E0BC(2, (void *)&cdState.readLoc, 0);
+        CdControl(2, (void *)&cdState.readLoc, 0);
 
         cdState.readTime = 0; // Reset the disc read time
         
         // Start the read
-        func_8005D96C(cdState.size, cdState.outBuf, 0x80);
+        CdRead(cdState.size, cdState.outBuf, 0x80);
 
         return 1;
     }
 
-    return func_8005E074(1, 0) != 2;
+    return CdSync(1, 0) != 2;
 }
 
 /**
@@ -485,9 +485,9 @@ void CDReadDone(char intr) {
             cdState.isReading = 0;
             return;
         }
-        func_8005E0BC(2, (void *)&cdState.readLoc, 0);
+        CdControl(2, (void *)&cdState.readLoc, 0);
         cdState.readTime = 0; // Disc read time reset
-        func_8005D96C(cdState.size, cdState.outBuf, 0x80);
+        CdRead(cdState.size, cdState.outBuf, 0x80);
     }
 }
 
@@ -503,10 +503,10 @@ void CDLoadSync(int sector, void *buf, int len, int sectorOffset) {
     while (CDLoadTime()); 
     
     // Set the mode to double speed? 
-    func_8005E0BC(0xE, &modeFlags, 0);
+    CdControl(0xE, &modeFlags, 0);
 
     CdIntToPos(sector + (sectorOffset / 2048), &cdState.readLoc);   
-    func_8005E0BC(2, &cdState.readLoc.minute, 0);  
+    CdControl(2, &cdState.readLoc.minute, 0);  
     
     cdState.size = (len + 2047) / 2048;
     cdState.isReading = 1;
@@ -515,7 +515,7 @@ void CDLoadSync(int sector, void *buf, int len, int sectorOffset) {
     cdState.readTime = 0;
 
     // Start the read
-    func_8005D96C(cdState.size, cdState.outBuf, 0x80);
+    CdRead(cdState.size, cdState.outBuf, 0x80);
     
     while (CDLoadTime()); 
 }
@@ -532,10 +532,10 @@ int CDLoadAsync(int sector, void *buf, int len, int sectorOffset) {
     if (CDLoadTime() == 0) {
         
         // Set the mode to double speed? 
-        func_8005E0BC(0xE, &modeFlags, 0);
+        CdControl(0xE, &modeFlags, 0);
 
         CdIntToPos(sector + (sectorOffset / 2048), &cdState.readLoc);
-        func_8005E0BC(2, &cdState.readLoc.minute, 0);
+        CdControl(2, &cdState.readLoc.minute, 0);
 
         cdState.size = (len + 2047) / 2048;
         cdState.isReading = 1;
@@ -544,7 +544,7 @@ int CDLoadAsync(int sector, void *buf, int len, int sectorOffset) {
         cdState.readTime = 0;
 
         // Start the read
-        func_8005D96C(cdState.size, cdState.outBuf, 0x80);
+        CdRead(cdState.size, cdState.outBuf, 0x80);
 
         return 1;
     }

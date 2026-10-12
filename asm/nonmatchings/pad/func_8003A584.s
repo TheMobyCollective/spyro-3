@@ -146,7 +146,7 @@ glabel func_8003A584
 /* 2AF80 8003A780 0C00C28E */  lw         $v0, 0xC($s6)
 /* 2AF84 8003A784 47006010 */  beqz       $v1, .L8003A8A4
 /* 2AF88 8003A788 3C0022AE */   sw        $v0, 0x3C($s1)
-/* 2AF8C 8003A78C 2B77010C */  jal        func_8005DCAC
+/* 2AF8C 8003A78C 2B77010C */  jal        PadGetState
 /* 2AF90 8003A790 2120A002 */   addu      $a0, $s5, $zero
 /* 2AF94 8003A794 21184000 */  addu       $v1, $v0, $zero
 /* 2AF98 8003A798 02000724 */  addiu      $a3, $zero, 0x2
@@ -169,13 +169,13 @@ glabel func_8003A584
 /* 2AFD4 8003A7D4 030020A2 */  sb         $zero, 0x3($s1)
 /* 2AFD8 8003A7D8 2120A002 */  addu       $a0, $s5, $zero
 /* 2AFDC 8003A7DC 04000524 */  addiu      $a1, $zero, 0x4
-/* 2AFE0 8003A7E0 5E77010C */  jal        func_8005DD78
+/* 2AFE0 8003A7E0 5E77010C */  jal        PadInfoMode
 /* 2AFE4 8003A7E4 01000624 */   addiu     $a2, $zero, 0x1
 /* 2AFE8 8003A7E8 07000324 */  addiu      $v1, $zero, 0x7
 /* 2AFEC 8003A7EC 2D004314 */  bne        $v0, $v1, .L8003A8A4
 /* 2AFF0 8003A7F0 2120A002 */   addu      $a0, $s5, $zero
 /* 2AFF4 8003A7F4 FFFF0524 */  addiu      $a1, $zero, -0x1
-/* 2AFF8 8003A7F8 9C77010C */  jal        func_8005DE70
+/* 2AFF8 8003A7F8 9C77010C */  jal        PadInfoAct
 /* 2AFFC 8003A7FC 21300000 */   addu      $a2, $zero, $zero
 /* 2B000 8003A800 21984000 */  addu       $s3, $v0, $zero
 /* 2B004 8003A804 02000724 */  addiu      $a3, $zero, 0x2
@@ -185,7 +185,7 @@ glabel func_8003A584
 /* 2B014 8003A814 2120A002 */  addu       $a0, $s5, $zero
 .L8003A818:
 /* 2B018 8003A818 21280002 */  addu       $a1, $s0, $zero
-/* 2B01C 8003A81C 9C77010C */  jal        func_8005DE70
+/* 2B01C 8003A81C 9C77010C */  jal        PadInfoAct
 /* 2B020 8003A820 04000624 */   addiu     $a2, $zero, 0x4
 /* 2B024 8003A824 21904202 */  addu       $s2, $s2, $v0
 /* 2B028 8003A828 01001026 */  addiu      $s0, $s0, 0x1
@@ -200,11 +200,11 @@ glabel func_8003A584
 /* 2B04C 8003A84C 0B004014 */  bnez       $v0, .L8003A87C
 /* 2B050 8003A850 00000000 */   nop
 /* 2B054 8003A854 1000A58F */  lw         $a1, 0x10($sp)
-/* 2B058 8003A858 F177010C */  jal        func_8005DFC4
+/* 2B058 8003A858 F177010C */  jal        PadSetAct
 /* 2B05C 8003A85C 02000624 */   addiu     $a2, $zero, 0x2
 /* 2B060 8003A860 0680053C */  lui        $a1, %hi(D_80065870)
 /* 2B064 8003A864 7058A524 */  addiu      $a1, $a1, %lo(D_80065870)
-/* 2B068 8003A868 D177010C */  jal        func_8005DF44
+/* 2B068 8003A868 D177010C */  jal        PadSetActAlign
 /* 2B06C 8003A86C 2120A002 */   addu      $a0, $s5, $zero
 /* 2B070 8003A870 02004010 */  beqz       $v0, .L8003A87C
 /* 2B074 8003A874 00000000 */   nop
@@ -213,7 +213,7 @@ glabel func_8003A584
 /* 2B07C 8003A87C 030037A2 */  sb         $s7, 0x3($s1)
 /* 2B080 8003A880 2120A002 */  addu       $a0, $s5, $zero
 /* 2B084 8003A884 01000524 */  addiu      $a1, $zero, 0x1
-/* 2B088 8003A888 DF77010C */  jal        func_8005DF7C
+/* 2B088 8003A888 DF77010C */  jal        PadSetMainMode
 /* 2B08C 8003A88C 21300000 */   addu      $a2, $zero, $zero
 /* 2B090 8003A890 04004010 */  beqz       $v0, .L8003A8A4
 /* 2B094 8003A894 00000000 */   nop

@@ -394,7 +394,7 @@ glabel func_8002CA50
 .L8002CF9C:
 /* 1D79C 8002CF9C 21280000 */  addu       $a1, $zero, $zero
 .L8002CFA0:
-/* 1D7A0 8002CFA0 2F78010C */  jal        func_8005E0BC
+/* 1D7A0 8002CFA0 2F78010C */  jal        CdControl
 /* 1D7A4 8002CFA4 21300000 */   addu      $a2, $zero, $zero
 /* 1D7A8 8002CFA8 0780033C */  lui        $v1, %hi(D_8006E344)
 /* 1D7AC 8002CFAC 44E3638C */  lw         $v1, %lo(D_8006E344)($v1)

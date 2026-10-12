@@ -112,7 +112,7 @@ glabel func_level_23_8007ABC8
 /* 5A97290 8007AD60 21082200 */  addu       $at, $at, $v0
 /* 5A97294 8007AD64 E8DB228C */  lw         $v0, %lo(D_8006DBE8)($at)
 /* 5A97298 8007AD68 21300000 */  addu       $a2, $zero, $zero
-/* 5A9729C 8007AD6C 2F78010C */  jal        func_8005E0BC
+/* 5A9729C 8007AD6C 2F78010C */  jal        CdControl
 /* 5A972A0 8007AD70 21800202 */   addu      $s0, $s0, $v0
 /* 5A972A4 8007AD74 21200002 */  addu       $a0, $s0, $zero
 /* 5A972A8 8007AD78 02008104 */  bgez       $a0, .Llevel_23_8007AD84
@@ -127,11 +127,11 @@ glabel func_level_23_8007ABC8
 /* 5A972C8 8007AD98 21204400 */   addu      $a0, $v0, $a0
 /* 5A972CC 8007AD9C 02000424 */  addiu      $a0, $zero, 0x2
 /* 5A972D0 8007ADA0 21280002 */  addu       $a1, $s0, $zero
-/* 5A972D4 8007ADA4 2F78010C */  jal        func_8005E0BC
+/* 5A972D4 8007ADA4 2F78010C */  jal        CdControl
 /* 5A972D8 8007ADA8 21300000 */   addu      $a2, $zero, $zero
 /* 5A972DC 8007ADAC 16000424 */  addiu      $a0, $zero, 0x16
 /* 5A972E0 8007ADB0 21280000 */  addu       $a1, $zero, $zero
-/* 5A972E4 8007ADB4 2F78010C */  jal        func_8005E0BC
+/* 5A972E4 8007ADB4 2F78010C */  jal        CdControl
 /* 5A972E8 8007ADB8 21300000 */   addu      $a2, $zero, $zero
 /* 5A972EC 8007ADBC 02000224 */  addiu      $v0, $zero, 0x2
 /* 5A972F0 8007ADC0 94EB0108 */  j          .Llevel_23_8007AE50

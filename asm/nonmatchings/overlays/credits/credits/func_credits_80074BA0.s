@@ -1252,7 +1252,7 @@ glabel func_credits_80074BA0
 /* 97AAAD8 80075DA8 00000000 */  nop
 /* 97AAADC 80075DAC CD004014 */  bnez       $v0, .Lcredits_800760E4
 /* 97AAAE0 80075DB0 01000424 */   addiu     $a0, $zero, 0x1
-/* 97AAAE4 80075DB4 1D78010C */  jal        func_8005E074
+/* 97AAAE4 80075DB4 1D78010C */  jal        CdSync
 /* 97AAAE8 80075DB8 21280000 */   addu      $a1, $zero, $zero
 /* 97AAAEC 80075DBC 02000324 */  addiu      $v1, $zero, 0x2
 /* 97AAAF0 80075DC0 C8004314 */  bne        $v0, $v1, .Lcredits_800760E4

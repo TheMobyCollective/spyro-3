@@ -8,11 +8,11 @@ glabel func_title_80078B38
 /* 27874 80078B44 21200000 */   addu      $a0, $zero, $zero
 /* 27878 80078B48 C776010C */  jal        CdInit
 /* 2787C 80078B4C 00000000 */   nop
-/* 27880 80078B50 C276010C */  jal        func_8005DB08
+/* 27880 80078B50 C276010C */  jal        CdReadCallback
 /* 27884 80078B54 21200000 */   addu      $a0, $zero, $zero
 /* 27888 80078B58 C571010C */  jal        VSyncCallback
 /* 2788C 80078B5C 21200000 */   addu      $a0, $zero, $zero
-/* 27890 80078B60 2377010C */  jal        func_8005DC8C
+/* 27890 80078B60 2377010C */  jal        PadStopCom
 /* 27894 80078B64 00000000 */   nop
 /* 27898 80078B68 FF67010C */  jal        ResetGraph
 /* 2789C 80078B6C 03000424 */   addiu     $a0, $zero, 0x3

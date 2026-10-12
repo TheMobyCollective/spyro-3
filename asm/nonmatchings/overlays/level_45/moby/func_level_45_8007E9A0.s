@@ -64,7 +64,7 @@ glabel func_level_45_8007E9A0
 /* 8D3AFAC 8007EA7C 23808300 */  subu       $s0, $a0, $v1
 /* 8D3AFB0 8007EA80 21100202 */  addu       $v0, $s0, $v0
 /* 8D3AFB4 8007EA84 FF0F5030 */  andi       $s0, $v0, 0xFFF
-/* 8D3AFB8 8007EA88 8B93010C */  jal        func_80064E2C
+/* 8D3AFB8 8007EA88 8B93010C */  jal        rcos
 /* 8D3AFBC 8007EA8C 21200002 */   addu      $a0, $s0, $zero
 /* 8D3AFC0 8007EA90 0000238E */  lw         $v1, 0x0($s1)
 /* 8D3AFC4 8007EA94 00000000 */  nop
@@ -72,7 +72,7 @@ glabel func_level_45_8007E9A0
 /* 8D3AFCC 8007EA9C 21200002 */  addu       $a0, $s0, $zero
 /* 8D3AFD0 8007EAA0 12400000 */  mflo       $t0
 /* 8D3AFD4 8007EAA4 03130800 */  sra        $v0, $t0, 12
-/* 8D3AFD8 8007EAA8 B393010C */  jal        func_80064ECC
+/* 8D3AFD8 8007EAA8 B393010C */  jal        rsin
 /* 8D3AFDC 8007EAAC 1800A2AF */   sw        $v0, 0x18($sp)
 /* 8D3AFE0 8007EAB0 0000238E */  lw         $v1, 0x0($s1)
 /* 8D3AFE4 8007EAB4 00000000 */  nop

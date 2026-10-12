@@ -96,7 +96,7 @@ glabel func_atlas_80077830
 .Latlas_80077988:
 /* 962FEB8 80077988 1000A427 */  addiu      $a0, $sp, 0x10
 .Latlas_8007798C:
-/* 962FEBC 8007798C 7793010C */  jal        func_80064DDC
+/* 962FEBC 8007798C 7793010C */  jal        strcpy
 /* 962FEC0 80077990 00000000 */   nop
 /* 962FEC4 80077994 2128A002 */  addu       $a1, $s5, $zero
 /* 962FEC8 80077998 21304002 */  addu       $a2, $s2, $zero
