@@ -5,13 +5,17 @@ import re
 
 # What inputs do I expect:
 ## level ID (argparse or something to that effect would be useful)
+## a flag to stop before creating or editing any files would be nice
 
 # What do I need to do first:
 ## update the moby_update table to take account of duplicate mobys and sort out the nullptrs, add a comment to it that it might be able to be done with defsym / --allow-multiple-definition instead
 ## check non-fragments for duplicates
-## check what spyro-1 does for tags and mimic this across the project first
 ## normalise the include folders (e.g. should these go in overlays?) based on spyro-1 and check references to the files in here are still accurate
 ## look over the TODOs in here
+## move include/moby/mobytag.h to include/moby_props.h and update any file references
+## move include/moby/moby_spawn.h to include/overlays/moby_spawn.h and update any file references
+## start moving mobytag names to MobyXXXProps
+## moby includes should go in include/overlays/moby/XXX.inc.h, this means moving the ones in include/overlays/moby_update and updating any file references
 
 instructions = """\
 Each of the following will need to be updated manually:
@@ -25,17 +29,17 @@ Each of the following will need to be updated manually:
 """
 
 mobyUpdateFile = """\
+#include "common.h"
 #include "level/{level}.h"
 #include "overlays/moby_update.inc.h"
 """
 
-# TODO: add an include for moby tags, however Spyro 1 does this
 mobyFile = """\
 #include "common.h"
-#include ""
+#include "moby_props.h"
 #include "level/{level}.h"
 
-//#include "overlays/moby_update/{mobyclass}.inc.h"
+//#include "overlays/moby/{mobyclass}.inc.h"
 INCLUDE_ASM("asm/nonmatchings/overlays/level_{level}/moby", {func});
 """
 
@@ -129,14 +133,18 @@ def reduce_mobys(mobys):
     # TODO this moby class may not always be correct (e.g. if the level doesn't have the lowest), maybe refer to a dictionary with the intended values for each one after the reduction
 
 def output_progress_snippet(mobys, levelId):
-    return
-    # TODO print for each in address order, using progressString
     # must be reduced first
+    for moby in mobys:
+        print(progressString.format(level = levelId, mobyclass = moby['mobyclass']))
 
 def output_ld_snippet(mobys, levelId):
-    return
-    # TODO print for each in address order, using the ld strings above
     # must be reduced first
+    for moby in mobys:
+        print(mobyRodataLdString.format(level = levelId, mobyclass = moby['mobyclass']))
+    print(ldSnippetString1.format(level = levelId))
+    for moby in mobys:
+        print(mobyTextLdString.format(level = levelId, mobyclass = moby['mobyclass']))
+    print(ldSnippetString2.format(level = levelId))
 
 def output_moby_files(mobys, levelId):
     return
@@ -175,5 +183,12 @@ output_instructions(levelId)
 print("/*** HAS_MOBY DEFINES ***/")
 sort_mobys_by_address(mobys)
 output_header_snippet(mobys)
+
+print("/*** PROGRESS SNIPPET ***/")
+reduce_mobys(mobys)
+output_progress_snippet(mobys, levelId)
+
+print("/*** LD SNIPPET ***/")
+output_ld_snippet(mobys, levelId)
 
 # TODO the rest!
