@@ -3,19 +3,17 @@ import re
 
 # Work in progress script to split out each of the mobys into their own files
 
-# What inputs do I expect:
-## level ID (argparse or something to that effect would be useful)
-## a flag to stop before creating or editing any files would be nice
-
 # What do I need to do first:
 ## update the moby_update table to take account of duplicate mobys and sort out the nullptrs, add a comment to it that it might be able to be done with defsym / --allow-multiple-definition instead
-## check non-fragments for duplicates
+### finish research into mobys with duplicate code
+### check non-fragments for duplicates
 ## normalise the include folders (e.g. should these go in overlays?) based on spyro-1 and check references to the files in here are still accurate
 ## look over the TODOs in here
 ## move include/moby/mobytag.h to include/moby_props.h and update any file references
 ## move include/moby/moby_spawn.h to include/overlays/moby_spawn.h and update any file references
 ## start moving mobytag names to MobyXXXProps
 ## moby includes should go in include/overlays/moby/XXX.inc.h, this means moving the ones in include/overlays/moby_update and updating any file references
+## can I generate speech.c? See how difficult this would be
 
 instructions = """\
 Each of the following will need to be updated manually:
@@ -133,12 +131,12 @@ def reduce_mobys(mobys):
     # TODO this moby class may not always be correct (e.g. if the level doesn't have the lowest), maybe refer to a dictionary with the intended values for each one after the reduction
 
 def output_progress_snippet(mobys, levelId):
-    # must be reduced first
+    # Mobys must be reduced first
     for moby in mobys:
         print(progressString.format(level = levelId, mobyclass = moby['mobyclass']))
 
 def output_ld_snippet(mobys, levelId):
-    # must be reduced first
+    # Mobys must be reduced first
     for moby in mobys:
         print(mobyRodataLdString.format(level = levelId, mobyclass = moby['mobyclass']))
     print(ldSnippetString1.format(level = levelId))
@@ -147,9 +145,10 @@ def output_ld_snippet(mobys, levelId):
     print(ldSnippetString2.format(level = levelId))
 
 def output_moby_files(mobys, levelId):
-    return
-    # TODO print to file for each in address order, using mobyFile
-    # must be reduced first
+    # Mobys must be reduced first
+    for moby in mobys:
+        with open("src/overlays/level_{level}/moby{mobyclass}.c".format(level = levelId, mobyclass = moby['mobyclass']), "w") as f:
+            f.write(mobyFile.format(level = levelId, mobyclass = moby['mobyclass'], func = moby['func']))
 
 def output_header_snippet(mobys):
     # Mobys must NOT be reduced first
@@ -157,22 +156,29 @@ def output_header_snippet(mobys):
         print(hasMobyString.format(mobyclass = moby['mobyclass']))
 
 def output_moby_update_file(levelId):
-    return
-    # TODO print to file using mobyUpdateFile
+    with open("src/overlays/level_{level}/moby_update.c".format(level = levelId), "w") as f:
+        f.write(mobyUpdateFile.format(level = levelId))
 
 def output_instructions(levelId):
     print(instructions.format(level = levelId))
 
 def update_moby_asms(mobys, levelId):
-    return
-    # TODO update each moby asm file for each in address order, do a regex replace using func?
-    # must be reduced first
-    # will need to check if the file needs moving too but it may not hurt to rename it
+    # Mobys must be reduced first
+    for moby in mobys:
+        with open("asm/nonmatchings/overlays/level_{level}/moby/{func}.s".format(level = levelId, func = moby['func']), "r") as f:
+            data = f.read()
+            data_new = data.replace(moby['func'], "MobyUpdate_{mobyclass}_level_{level}".format(level = levelId, mobyclass = moby['mobyclass']))
+        with open("asm/nonmatchings/overlays/level_{level}/moby/{func}.s".format(level = levelId, func = moby['func']), "w") as f:
+            f.write(data_new)
 
-
-
-# "example level {level}, example moby {mobyclass}".format(level = 10, mobyclass = 1)
-
+# TODO argparsing
+## What inputs do I expect:
+## level ID (argparse or something to that effect would be useful)
+## a flag to stop before creating or editing any files would be nice
+# import sys
+# sys.argv is an array of the arguments
+# sys.argv[1] for first non-command argument
+# OR use argparse
 levelId = 10
 
 mobys = get_mobys(levelId)
@@ -191,4 +197,11 @@ output_progress_snippet(mobys, levelId)
 print("/*** LD SNIPPET ***/")
 output_ld_snippet(mobys, levelId)
 
-# TODO the rest!
+# TODO add a return here if in --no-file-updates mode
+
+print("/*** WRITING NEW FILES ***/")
+output_moby_update_file(levelId)
+output_moby_files(mobys, levelId)
+update_moby_asms(mobys, levelId)
+
+print("/*** Success! ***/")

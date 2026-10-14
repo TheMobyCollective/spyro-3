@@ -32,6 +32,11 @@ void func_8001EBAC() {
     DrawSync(0);
 }
 
+/**
+ * ???() - func_8001EC24() - MATCHING
+ * TODO - ready to add
+ * https://decomp.me/scratch/mFO0V
+ */
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001EC24);
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001EC5C);
@@ -39,11 +44,17 @@ INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001EC5C);
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001EDEC);
 
 /**
- * ???() - func_8001FABC()
- * https://decomp.me/scratch/RfQhe
+ * ???() - func_8001FABC() - MATCHING
+ * TODO - ready to add
+ * https://decomp.me/scratch/1dV0m
  */
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FABC);
 
+/**
+ * ???() - func_8001FB10() - MATCHING
+ * TODO - ready to add
+ * https://decomp.me/scratch/SkpDA
+ */
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FB10);
 
 /**
@@ -118,13 +129,23 @@ void func_8001FE48(int arg0, int arg1, int arg2, int arg3) {
     func_8001FC90(arg0 + 3, arg1 - 3,    arg3 - 1,    arg3);
 }
 
+/**
+ * ???() - func_8001FF44() - MATCHING
+ * TODO - ready to add
+ * https://decomp.me/scratch/Gqcxj
+ */
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FF44);
 
+/**
+ * ???() - func_800200A0() - MATCHING
+ * TODO - ready to add
+ * https://decomp.me/scratch/GZGND
+ */
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_800200A0);
 
 /**
  * ???() - func_80020168() - MATCHING
- * Ready to add, note DrawDispEnv is DB
+ * TODO - ready to add, note DrawDispEnv is DB
  * https://decomp.me/scratch/RZQZO
  */
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020168);
@@ -151,14 +172,24 @@ void DrawStringRightAligned(char* arg0, int arg1, int arg2, int arg3) {
     func_8002E748(arg0, x, arg2, arg3, 0);
 }
 
+/**
+ * ???() - func_80020428() - MATCHING
+ * TODO - ready to add
+ * https://decomp.me/scratch/Gcvhv
+ */
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020428);
 
+/**
+ * ???() - func_80020530() - MATCHING
+ * TODO - ready to add
+ * https://decomp.me/scratch/i0k7F
+ */
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020530);
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020790);
 
 /**
- * ???() - func_80020D70() - MATCHING 
+ * ???() - func_80020D70() - MATCHING
  * https://decomp.me/scratch/iZDl3
  */
 void func_80020D70() {

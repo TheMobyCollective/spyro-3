@@ -1,6 +1,7 @@
 #include "common.h"
 #include "draw.h"
 
+// TODO - update drawutil.h signature for this function + add include here
 // drawutil
 void func_800200A0(int, int, int, int);
 
@@ -23,7 +24,7 @@ extern int D_8006C598;
 
 /**
  * ???() - func_8001D274() - MATCHING 
- * Ready to implement
+ * TODO - ready to implement
  * https://decomp.me/scratch/trvA1
  */
 INCLUDE_ASM("asm/nonmatchings/draw", func_8001D274);
@@ -35,8 +36,18 @@ INCLUDE_ASM("asm/nonmatchings/draw", func_8001D274);
  */
 INCLUDE_ASM("asm/nonmatchings/draw", func_8001D424);
 
+/**
+ * ???() - func_8001DC3C() - MATCHING 
+ * TODO - ready to implement
+ * https://decomp.me/scratch/D8Vxh
+ */
 INCLUDE_ASM("asm/nonmatchings/draw", func_8001DC3C);
 
+/**
+ * ???() - func_8001DC5C() - MATCHING 
+ * TODO - ready to implement
+ * https://decomp.me/scratch/kuPho
+ */
 INCLUDE_ASM("asm/nonmatchings/draw", func_8001DC5C);
 
 INCLUDE_ASM("asm/nonmatchings/draw", func_8001DD1C);
@@ -129,7 +140,7 @@ void func_8001E3F8() {
 
 /**
  * ???() - func_8001E460() - MATCHING
- * Ready to add
+ * TODO - ready to implement
  * https://decomp.me/scratch/k2213
  */
 INCLUDE_ASM("asm/nonmatchings/draw", func_8001E460);
