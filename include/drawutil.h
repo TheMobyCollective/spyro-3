@@ -16,7 +16,7 @@ void func_8001FC90(int, int, int, int); // 8001fc90 FUN_8001fc90
 void func_8001FD00(int, int, int, int); // 8001fd00 FUN_8001fd00
 void func_8001FE48(int, int, int, int); // 8001fe48 FUN_8001fe48
 void func_8001FF44(); // 8001ff44 fDrawScreenBorder
-void func_800200A0(int, char, char, char); // 800200a0 fDrawFullScreenFade
+void func_800200A0(int, int, int, int); // 800200a0 fDrawFullScreenFade
 void func_80020168();
 void DrawStringCentered(char*, int, int, int); // 800202dc
 void func_80020344(const char*, int, int, int);

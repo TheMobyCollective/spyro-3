@@ -17,7 +17,7 @@ extern int func_8002F098();
 extern int func_8002F540(int, char, int);
 extern void func_8002F5B4();
 extern void func_8002FB68();
-extern void func_8002FEE0(int**);
+extern void func_8002FEE0(void*); // has been observed to take a Unknown_80070260*
 extern void func_80030258(void*);
 extern void func_8003032C();
 

@@ -40,10 +40,10 @@
 - [x] func_80017B7C
 
 <!-- Draw -->
-- [ ] func_8001D274
+- [x] func_8001D274
 - [ ] func_8001D424
-- [ ] func_8001DC3C
-- [ ] func_8001DC5C
+- [x] func_8001DC3C
+- [x] func_8001DC5C
 - [ ] func_8001DD1C
 - [x] func_8001E2A8
 - [x] func_8001E2C8
@@ -51,7 +51,7 @@
 - [x] func_8001E374
 - [x] func_8001E394
 - [x] func_8001E3F8
-- [ ] func_8001E460
+- [x] func_8001E460
 - [x] func_8001E618
 - [ ] func_8001E638 <!-- Draw -->
 
