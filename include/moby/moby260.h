@@ -5,7 +5,7 @@
 #include "camera.h"
 #include "ovl_header.h"
 // for the tag, assuming I don't move it back in here:
-#include "moby/mobytag.h"
+#include "moby_props.h"
 
 // functions
 extern int func_80019194(Vector3D*, int);

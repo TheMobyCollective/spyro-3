@@ -127,7 +127,7 @@ The following assumptions have been made in determining an appropriate file stru
 * In the long term, mobys should probably each have their own C file in `/src/moby`, so that each moby only needs to be built once. It's not clear how this will work, if it'll work at all.
   * There is evidence in the rodata structure for the overlays that each moby had a separate source file, rather than all of them sitting in one moby file per overlay.
   * Most mobys are the same across all levels. Mobys that aren't will need to be handled somewhat differently - eggs are one example.
-  * Overlays contain a lot of common functions even outside of the moby code. Ideally, much of these will be implemented using `#include`s similar to how `moby_spawn.h` currently works.
+  * Overlays contain a lot of common functions even outside of the moby code. Ideally, much of these will be implemented using `#include`s similar to how `moby_spawn.inc.h` currently works.
 * All PsyQ / library functions and variables are implemented by included assembly files. The PsyQ compiler and linker are not used and thus specific features it implements may be done slightly differently in this repository.
 
 ## Contribution Policy

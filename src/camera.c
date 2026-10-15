@@ -6,7 +6,7 @@
 #include "stdutil.h"
 #include "spyro.h"
 #include "tracers.h"
-#include "moby/mobytag.h"
+#include "moby_props.h"
 
 // sbss
 extern int D_8006C6D0;

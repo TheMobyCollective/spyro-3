@@ -1,4 +1,4 @@
-#include "moby/mobytag.h"
+#include "moby_props.h"
 #include "moby/moby260.h"
 
 #include "spu.h"

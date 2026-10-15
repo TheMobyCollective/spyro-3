@@ -1,8 +1,5 @@
-#ifndef __MOBY_SPAWN_H
-#define __MOBY_SPAWN_H
-
 #include "ovl_header.h"
-#include "moby/mobytag.h"
+#include "moby_props.h"
 #include "mobyutil.h"
 #include "camera.h"
 #include "stdutil.h"
@@ -440,5 +437,3 @@ Moby* NAME_OVERLAY_FUNCTION(MobySpawn) (int mobyClass, Moby* linkedMoby) {
     }
     return newMoby;
 }
-
-#endif

@@ -29,7 +29,7 @@ files = [
     'str.h',
     'environment.h',
     'ovl_header.h',
-    'moby/mobytag.h',
+    'moby_props.h',
 	'init.h',
 	'mobydraw.h',
 	'mobyfunc.h',

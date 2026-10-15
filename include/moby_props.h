@@ -1,7 +1,9 @@
-#ifndef __MOBYTAG_H
-#define __MOBYTAG_H
+#ifndef __MOBY_PROPS_H
+#define __MOBY_PROPS_H
 
 #include "common.h"
+
+// I will eventually want to move the mobytag names to "MobyXXXProps" as per spyro-1
 
 ///////////////////////////////////////////////////////////////////////////////
 // Common mobys

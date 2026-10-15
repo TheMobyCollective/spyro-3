@@ -6,7 +6,7 @@
 #include "spyro.h"
 #include "ovl_header.h"
 
-#include "moby/mobytag.h"
+#include "moby_props.h"
 #include "moby/moby260.h"
 
 // change arg0 to pMoby

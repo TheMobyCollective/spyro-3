@@ -5,4 +5,4 @@
  * MobySpawn_level_13() - func_level_13_800841A0() - MATCHING
  * https://decomp.me/scratch/Fu66x
  */
-#include "moby/moby_spawn.h"
+#include "overlays/moby_spawn.inc.h"

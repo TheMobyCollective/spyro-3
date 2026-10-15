@@ -9,13 +9,9 @@ import argparse
 ## update the moby_update table to take account of duplicate mobys and sort out the nullptrs, add a comment to it that it might be able to be done with defsym / --allow-multiple-definition instead
 ### finish research into mobys with duplicate code
 ### check non-fragments for duplicates
-## normalise the include folders (e.g. should these go in overlays?) based on spyro-1 and check references to the files in here are still accurate
-## look over the TODOs in here
-## move include/moby/mobytag.h to include/moby_props.h and update any file references
-## move include/moby/moby_spawn.h to include/overlays/moby_spawn.h and update any file references
-## start moving mobytag names to MobyXXXProps
-## moby includes should go in include/overlays/moby/XXX.inc.h, this means moving the ones in include/overlays/moby_update and updating any file references
+### create a dictionary for these to resolve the last TODO below
 ## can I generate speech.c? See how difficult this would be
+### probably out of scope for this script
 
 instructions = """\
 Each of the following will need to be updated manually:
@@ -31,6 +27,7 @@ Each of the following will need to be updated manually:
 mobyUpdateFile = """\
 #include "common.h"
 #include "level/{level}.h"
+
 #include "overlays/moby_update.inc.h"
 """
 
@@ -150,7 +147,7 @@ def output_moby_files(mobys, levelId):
     # Mobys must be reduced first
     for moby in mobys:
         with open("src/overlays/level_{level}/moby{mobyclass}.c".format(level = levelId, mobyclass = moby['mobyclass']), "w") as f:
-            f.write(mobyFile.format(level = levelId, mobyclass = moby['mobyclass'], func = moby['func']))
+            f.write(mobyFile.format(level = levelId, mobyclass = moby['mobyclass'], func = moby['function']))
 
 def output_header_snippet(mobys):
     # Mobys must NOT be reduced first
@@ -167,10 +164,10 @@ def output_instructions(levelId):
 def update_moby_asms(mobys, levelId):
     # Mobys must be reduced first
     for moby in mobys:
-        with open("asm/nonmatchings/overlays/level_{level}/moby/{func}.s".format(level = levelId, func = moby['func']), "r") as f:
+        with open("asm/nonmatchings/overlays/level_{level}/moby/{func}.s".format(level = levelId, func = moby['function']), "r") as f:
             data = f.read()
-            data_new = data.replace(moby['func'], "MobyUpdate_{mobyclass}_level_{level}".format(level = levelId, mobyclass = moby['mobyclass']))
-        with open("asm/nonmatchings/overlays/level_{level}/moby/{func}.s".format(level = levelId, func = moby['func']), "w") as f:
+            data_new = data.replace(moby['function'], "MobyUpdate_{mobyclass}_level_{level}".format(level = levelId, mobyclass = moby['mobyclass']))
+        with open("asm/nonmatchings/overlays/level_{level}/moby/{func}.s".format(level = levelId, func = moby['function']), "w") as f:
             f.write(data_new)
 
 def main():
