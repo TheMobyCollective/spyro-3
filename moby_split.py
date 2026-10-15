@@ -1,5 +1,7 @@
+import sys
 import operator
 import re
+import argparse
 
 # Work in progress script to split out each of the mobys into their own files
 
@@ -46,12 +48,12 @@ hasMobyString = "#define HAS_MOBY_{mobyclass}"
 progressString = "- [ ] MobyUpdate_{mobyclass}_level_{level}"
 
 mobyTextLdString = """\
-        build/src/overlays/level_{level}/moby{mobyclass}.o(.text*);
+        build/src/overlays/level_{level}/moby{mobyclass}.o(.text*);\
 """
 
 mobyRodataLdString = """\
         build/src/overlays/level_{level}/moby{mobyclass}.o(.rodata);
-        build/src/overlays/level_{level}/moby{mobyclass}.o(.rodata.jtbl);
+        build/src/overlays/level_{level}/moby{mobyclass}.o(.rodata.jtbl);\
 """
 
 # mobyRodata goes before this
@@ -68,7 +70,7 @@ ldSnippetString1 = """\
         build/src/overlays/level_{level}/animation.o(.rodata.jtbl);
         build/src/overlays/level_{level}/camera.o(.rodata);
         build/src/overlays/level_{level}/camera.o(.rodata.jtbl);
-        level_{level}_text_start = .;
+        level_{level}_text_start = .;\
 """
 # mobyText goes before this
 ldSnippetString2 = """\
@@ -171,37 +173,39 @@ def update_moby_asms(mobys, levelId):
         with open("asm/nonmatchings/overlays/level_{level}/moby/{func}.s".format(level = levelId, func = moby['func']), "w") as f:
             f.write(data_new)
 
-# TODO argparsing
-## What inputs do I expect:
-## level ID (argparse or something to that effect would be useful)
-## a flag to stop before creating or editing any files would be nice
-# import sys
-# sys.argv is an array of the arguments
-# sys.argv[1] for first non-command argument
-# OR use argparse
-levelId = 10
+def main():
+    parser = argparse.ArgumentParser(prog='Moby Splitter')
+    parser.add_argument('levelId')
+    parser.add_argument('-n', '--no-file-updates', action='store_true')
+    args = vars(parser.parse_args())
+    levelId = args['levelId']
+    noFileUpdates = args['no_file_updates']
 
-mobys = get_mobys(levelId)
+    mobys = get_mobys(levelId)
 
-print("/*** MANUAL EDITS ***/")
-output_instructions(levelId)
+    print("/*** MANUAL EDITS ***/")
+    output_instructions(levelId)
 
-print("/*** HAS_MOBY DEFINES ***/")
-sort_mobys_by_address(mobys)
-output_header_snippet(mobys)
+    print("/*** HAS_MOBY DEFINES ***/")
+    sort_mobys_by_address(mobys)
+    output_header_snippet(mobys)
 
-print("/*** PROGRESS SNIPPET ***/")
-reduce_mobys(mobys)
-output_progress_snippet(mobys, levelId)
+    print("/*** PROGRESS SNIPPET ***/")
+    reduce_mobys(mobys)
+    output_progress_snippet(mobys, levelId)
 
-print("/*** LD SNIPPET ***/")
-output_ld_snippet(mobys, levelId)
+    print("/*** LD SNIPPET ***/")
+    output_ld_snippet(mobys, levelId)
 
-# TODO add a return here if in --no-file-updates mode
+    if (noFileUpdates):
+        sys.exit()
 
-print("/*** WRITING NEW FILES ***/")
-output_moby_update_file(levelId)
-output_moby_files(mobys, levelId)
-update_moby_asms(mobys, levelId)
+    print("/*** WRITING NEW FILES ***/")
+    output_moby_update_file(levelId)
+    output_moby_files(mobys, levelId)
+    update_moby_asms(mobys, levelId)
 
-print("/*** Success! ***/")
+    print("/*** Success! ***/")
+
+if __name__ == "__main__":
+    main()
