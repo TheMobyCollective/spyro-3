@@ -3,16 +3,6 @@ import operator
 import re
 import argparse
 
-# Work in progress script to split out each of the mobys into their own files
-
-# What do I need to do first:
-## update the moby_update table to take account of duplicate mobys and sort out the nullptrs, add a comment to it that it might be able to be done with defsym / --allow-multiple-definition instead
-### finish research into mobys with duplicate code
-### check non-fragments for duplicates
-### create a dictionary for these to resolve the last TODO below
-## can I generate speech.c? See how difficult this would be
-### probably out of scope for this script
-
 instructions = """\
 Each of the following will need to be updated manually:
 - Update overlays.ld to include g_MobyUpdate_level_{level} (under the line with .level_{level}_end)
@@ -86,6 +76,123 @@ ldSnippetString2 = """\
         . = ALIGN(., 2048);
 """
 
+identicalMobys = {
+    # Butterflies
+    211: 16,
+
+    # Skateboards and skateboard spawners
+    251: 54,
+    461: 54,
+    660: 54,
+
+    # Pushable blocks
+    79: 75,
+
+    # Ice blocks
+    324: 121,
+
+    # Portal icons - 195 was added late in development, 265 came first
+    195: 265, 
+
+    # Gem containers
+    202: 201,
+    203: 201,
+
+    # Lost Fleet walls
+    214: 213,
+
+    # Electrical forcefields
+    616: 318,
+
+    # Signs
+    408: 325,
+    544: 325,
+    683: 325,
+    684: 325,
+    685: 325,
+
+    # Sand blocks
+    450: 421,
+    470: 421,
+    471: 421,
+    472: 421,
+    473: 421,
+
+    # Sunrise Spring Home NPCs
+    434: 432,
+    435: 432,
+    436: 432,
+    527: 432,
+
+    # Midday Garden Home NPCs, including non-caged Byrd
+    662: 661,
+    663: 661,
+    664: 661,
+    669: 661,
+
+    # Evening Lake Home NPCs, excluding Bentley
+    675: 674,
+    676: 674,
+    677: 674,
+
+    # A handful of fragment mobys have code identical to the Lost Fleet / SBR crab fragments.
+    # (29, 56, 162, 215, 327, 467, 491, 504, 648, 715, 748)
+    # However, Lost Fleet notably has two separate mobys with this code at different addresses.
+    # We will assume the crab fragments are the same, as are the group used in Desert Ruins.
+    491: 327,
+    504: 467,
+    648: 467,
+    748: 467,
+
+    # These fragments have been observed in multiple levels and have always been seen to overlap.
+    # An assumption will be made that they are all one group, even though the Haunted ones are never
+    # in a level with the others.
+    424: 423,
+    451: 423,
+    474: 423,
+    476: 423,
+    481: 423,
+    619: 423,
+
+    # These fragments are all the same, appear in two proveably identical groups, and all have consecutive classes.
+    # We won't include identical mobys from other levels that aren't consecutive (235, 288, 698)
+    736: 735,
+    737: 735,
+    738: 735,
+
+    # Many fragment mobys have code identical to 501 (egg shell).
+    # (107, 142, 145, 146, 219, 278, 290, 293, 294, 296, 340, 444, 501, 530, 558, 559, 570, 612)
+    # However, only 290 and 570 are observed to use the same address as 501, and the rest do not.
+    # 142 / 145 / 146 use the same address, as do 293 / 294.
+    # Most of the rest of these mobys are used in different levels, so it's unclear if
+    # they're just identical code or if they're literally the same update function.
+    # I have for the mostpart assumed they're separate, but it's possible that some of these were
+    # using the same moby update functions.
+    145: 142,
+    146: 142,
+    501: 290,
+    570: 290,
+    294: 293,
+
+    # Dino Mines fragments - class 752 was probably the one made first in this case, due to the class-wrap.
+    275: 752,
+
+    # Common fragments
+    307: 306,
+    308: 306,
+    309: 306,
+    310: 306,
+    568: 306,
+    630: 306,
+    631: 306,
+
+    # Enchanted Towers fragments - not sure these are even used
+    569: 564,
+
+    # Dino Mines fragments
+    749: 744,
+}
+
 def get_mobys(levelId):
     mobys = []
     firstLine = 0
@@ -121,13 +228,10 @@ def reduce_mobys(mobys):
         if i == 0:
             break
         if mobys[i]['address'] == mobys[i - 1]['address']:
-            # for most mobys, the one created first is likely the one with the lowest class
-            # however it's likely that 275 was created later to occupy a gap in the classes, i.e. it was based on 752
-            # it doesn't matter either way
-            if mobys[i - 1]['mobyclass'] == 275:
-                mobys[i - 1]['mobyclass'] = 752
             mobys.pop(i)
-    # TODO this moby class may not always be correct (e.g. if the level doesn't have the lowest), maybe refer to a dictionary with the intended values for each one after the reduction
+    for moby in mobys:
+        if moby['mobyclass'] in identicalMobys:
+            moby['mobyclass'] = identicalMobys[moby['mobyclass']]
 
 def output_progress_snippet(mobys, levelId):
     # Mobys must be reduced first
