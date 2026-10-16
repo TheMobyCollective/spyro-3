@@ -1,7 +1,7 @@
 #include "ovl_header.h"
+#include "overlays/moby_update.h"
 
 // Note that some moby functions are deliberately set to have the same pointer.
-
 // As for the ifdefs / nullptrs, it might be able to be done with defsym / --allow-multiple-definition instead.
 
 void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
