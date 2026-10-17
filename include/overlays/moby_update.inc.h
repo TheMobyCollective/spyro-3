@@ -3805,7 +3805,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_633
-		&MOBYUPDATE(633),
+		&MOBYUPDATE(191), // Seashell Shore fragments (April build)
 	#else
 		0,
 	#endif

@@ -96,6 +96,11 @@ identicalMobys = {
     # Ice blocks
     324: 121,
 
+    # Seashell Shore fragments - the tree fragments (191) aren't here in final, but they are in April, and moby code ordering
+    # suggests they're the same despite us not having a build with both in the same level
+    # (i.e. they're both sandwiched between 100 and 257)
+    633: 191,
+
     # Portal icons - 195 was added late in development, 265 came first
     195: 265, 
 
