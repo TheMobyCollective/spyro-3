@@ -70,6 +70,13 @@ typedef struct {
     int unk10;
 } MobyTag_Fragment;
 
+typedef struct {
+    Vector3D position;
+    int xWidth;
+    int yWidth;
+    int angle;
+} BoxTag;
+
 // Agent 9 - Class 99
 typedef struct {
     SpeechProps speech;
@@ -139,6 +146,14 @@ typedef struct {
 } MobyTag_326;
 
 typedef struct {
+    int unk0;
+    int unk4;
+    PathData* unk8;
+    int unkC; // countdown timer of some sort
+    int unk10;
+} MobyTag_651;
+
+typedef struct {
 	char unk0; // mostly guesses
 	char unk1;
 	char unk2;
@@ -163,5 +178,31 @@ typedef struct {
 	char unk16;
 	char unk17;
 } MobyTag_704;
+
+typedef struct {
+    Moby* unk0;
+    int unk4;
+} MobyTag_486;
+
+// Placeholder for now, used in 486
+typedef struct {
+    int unk0;
+    int unk4;
+    int unk8;
+    int unkC;
+    int unk10;
+    int unk14;
+    int unk18;
+    int unk1C;
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2C;
+    int unk30;
+    int unk34;
+    int unk38;
+    int unk3C;
+    int unk40;
+} MobyTag_514;
 
 #endif

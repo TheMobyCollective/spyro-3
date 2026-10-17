@@ -248,14 +248,6 @@ INCLUDE_ASM("asm/nonmatchings/overlays/level_17/moby", func_level_17_8007C3D0);
  * ASM not deleted yet for cross-level reasons, todo
  * https://decomp.me/scratch/YdBst
  */
-typedef struct {
-    int unk0;
-    int unk4;
-    PathData* unk8;
-    int unkC; // countdown timer of some sort
-    int unk10;
-} MobyTag_651;
-
 void func_level_17_8007D19C(Moby* arg0) {
     Vector3D sp10;
     Vector3D sp20;

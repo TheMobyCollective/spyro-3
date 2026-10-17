@@ -1,6 +1,8 @@
 #include "common.h"
 #include "spyro.h"
 
+#include "moby_props.h"
+
 /*
 // Maybe all of this (except level ID) in a separate file for useful macros
 #define LEVEL_ID 10
@@ -25,12 +27,6 @@
 extern void func_80039714(Moby*); // fUpdateFragmentMoby
 
 // 942
-typedef struct {
-    Vector3D position;
-    int xWidth;
-    int yWidth;
-    int angle;
-} BoxTag;
 extern int func_80036220(Vector3D*, BoxTag*, int, int); // isInBox; second arg should be a box tag actually
 
 // For 486
@@ -40,41 +36,13 @@ extern short D_800658A0[0x100]; // sin
 extern short D_80065920[0x100]; // cos
 extern Moby* D_8006C550; // moby array ptr
 
-typedef struct {
-    Moby* unk0;
-    int unk4;
-} MobyTag_486;
-
-// Placeholder for now, used in 486
-typedef struct {
-    int unk0;
-    int unk4;
-    int unk8;
-    int unkC;
-    int unk10;
-    int unk14;
-    int unk18;
-    int unk1C;
-    int unk20;
-    int unk24;
-    int unk28;
-    int unk2C;
-    int unk30;
-    int unk34;
-    int unk38;
-    int unk3C;
-    int unk40;
-} MobyTag_514;
-
 ////////////////////////////////////////////////////////////////////////////////////
 
 /**
  * MobyUpdate_1() - func_level_10_80074C50()
  * Gem
  * A good one to use to update the context
- * https://decomp.me/scratch/zKX9n
- * https://decomp.me/scratch/Birmk (newer)
- * https://decomp.me/scratch/6CkM7 (newest)
+ * https://decomp.me/scratch/6CkM7
  */
 INCLUDE_ASM("asm/nonmatchings/overlays/level_10/moby", func_level_10_80074C50);
 
@@ -85,8 +53,7 @@ INCLUDE_ASM("asm/nonmatchings/overlays/level_10/moby", func_level_10_80075F38);
 /**
  * MobyUpdate_200() - func_level_10_80077488() - MATCHING
  * Gem Basket
- * Ready to add, but seems to use a non-struct version of the overlay header
- * Will need to start defining the function pointers individually in ovl_header.h
+ * TODO - ready to add
  * https://decomp.me/scratch/HOd1q
  */
 INCLUDE_ASM("asm/nonmatchings/overlays/level_10/moby", func_level_10_80077488);
@@ -113,7 +80,7 @@ INCLUDE_ASM("asm/nonmatchings/overlays/level_10/moby", func_level_10_80079D58);
 
 /**
  * MobyUpdate_459() - func_level_10_80079EE4() - MATCHING
- * 
+ * TODO - ready to add, common fragment code
  * https://decomp.me/scratch/ebfYd
  */
 INCLUDE_ASM("asm/nonmatchings/overlays/level_10/moby", func_level_10_80079EE4);
@@ -204,8 +171,8 @@ void func_level_10_80080D88(Moby* moby) {
 
 /**
  * MobyUpdate_983() - func_level_10_80080DC8() - MATCHING
- * 
- * https://decomp.me/scratch/Mln7L
+ * TODO - ready to add
+ * https://decomp.me/scratch/muFir
  */
 INCLUDE_ASM("asm/nonmatchings/overlays/level_10/moby", func_level_10_80080DC8);
 
@@ -216,10 +183,9 @@ INCLUDE_ASM("asm/nonmatchings/overlays/level_10/moby", func_level_10_80081AA0);
 /**
  * MobyUpdate_1023() - func_level_10_80081CAC()
  * Whirlwind
- * Uses an if statement rather than a switch statement
+ * Uses an if-else block rather than a switch statement
  * Haven't fully figured out the placement of the else statement yet, seems complicated
- * https://decomp.me/scratch/0cVy2
- * https://decomp.me/scratch/GQsha (newer)
+ * https://decomp.me/scratch/GQsha
  */
 INCLUDE_ASM("asm/nonmatchings/overlays/level_10/moby", func_level_10_80081CAC);
 
