@@ -3,10 +3,6 @@ import operator
 import re
 import argparse
 
-## TODO
-# - Investigate supporting conversion of the speech table
-# - C doesn't seem to like pointer arrays, figure out how to implement the moby update table
-
 instructions = """\
 Each of the following will need to be updated manually:
 - Update overlays.ld to include g_MobyUpdate_level_{level} (under the line with .level_{level}_end)
