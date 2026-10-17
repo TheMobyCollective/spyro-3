@@ -2,6 +2,7 @@ import sys
 import operator
 import re
 import argparse
+import os.path
 
 instructions = """\
 Each of the following will need to be updated manually:
@@ -13,6 +14,8 @@ Each of the following will need to be updated manually:
 - Update asm/data/overlays/level_{level}/level.data.s to remove the moby table (leave in the dialogue table)
   - You may need to check that the size underneath the dialogue table is using the dialogue table's symbol
 - Check for any RODATA lines in src/overlays/level_{level}/moby.c and copy these into the respective moby's file
+- Check for any comments and implemented mobys in src/overlays/level_{level}/moby.c and copy them into their intended files
+  - This may require renaming some moby functions to their new names, using the MOBYUPDATE macro
 - Delete src/overlays/level_{level}/moby.c
 """
 
@@ -271,11 +274,13 @@ def output_instructions(levelId):
 def update_moby_asms(mobys, levelId):
     # Mobys must be reduced first
     for moby in mobys:
-        with open("asm/nonmatchings/overlays/level_{level}/moby/{func}.s".format(level = levelId, func = moby['function']), "r") as f:
-            data = f.read()
-            data_new = data.replace(moby['function'], "MobyUpdate_{mobyclass}_level_{level}".format(level = levelId, mobyclass = moby['mobyclass']))
-        with open("asm/nonmatchings/overlays/level_{level}/moby/{func}.s".format(level = levelId, func = moby['function']), "w") as f:
-            f.write(data_new)
+        filename = "asm/nonmatchings/overlays/level_{level}/moby/{func}.s".format(level = levelId, func = moby['function'])
+        if os.path.exists(filename): # account for already implemented mobys with removed asm
+            with open(filename, "r") as f:
+                data = f.read()
+                data_new = data.replace(moby['function'], "MobyUpdate_{mobyclass}_level_{level}".format(level = levelId, mobyclass = moby['mobyclass']))
+            with open(filename, "w") as f:
+                f.write(data_new)
 
 def main():
     parser = argparse.ArgumentParser(prog='Moby Splitter')
