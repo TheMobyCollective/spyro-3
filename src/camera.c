@@ -164,7 +164,37 @@ void func_80013900(CameraPosition* arg0) {
 
 INCLUDE_ASM("asm/nonmatchings/camera", func_80013918);
 
-INCLUDE_ASM("asm/nonmatchings/camera", func_800139A4);
+/**
+ * ???() - func_800139A4() - MATCHING
+ * https://decomp.me/scratch/KUkv3
+ */
+void func_800139A4() {
+    if (camera.unk148[2] != 0) {
+        camera.unk148[3] = 1;
+    }
+    else if (camera.unk148[3] == 1) {
+        SUB_ANGLE(camera.unk148[4], camera.unk7c.pos[0].pos.azimuth, camera.unk7c.pos[1].pos.azimuth);
+        camera.unk7c.pos[1].pos.azimuth = camera.unk7c.pos[0].pos.azimuth;
+        camera.unk148[3] = 2;
+    }
+    else if (camera.unk148[3] == 2) {
+        if (camera.unk148[4] > 0) {
+            camera.unk148[4] -= 0x18;
+            if (camera.unk148[4] <= 0) {
+                camera.unk148[4] = 0;
+                camera.unk148[3] = 0;
+            } 
+        } 
+        else {
+            camera.unk148[4] += 0x18;
+            if (camera.unk148[4] >= 0) {
+                camera.unk148[4] = 0;
+                camera.unk148[3] = 0;
+            }
+        }
+        ADD_ANGLE(camera.unk7c.pos[1].pos.azimuth, camera.unk7c.pos[1].pos.azimuth, camera.unk148[4]);
+    }
+}
 
 /**
  * ???() - func_80013ACC() - MATCHING

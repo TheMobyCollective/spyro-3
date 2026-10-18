@@ -10,9 +10,9 @@ typedef struct {
 	int* D_800722c4; // envPtr
 	char* D_800722c8; // layoutPtr // LevelWadHeader*? void*?
 	char* D_800722cc; // demoInputsPtr
-	int* D_800722d0;
-	int* D_800722d4;
-	int* D_800722d8;
+	char* D_800722d0;
+	char* D_800722d4;
+	char* D_800722d8;
 	int* D_800722dc;
 	int* D_800722e0; // ptr
 	int* D_800722e4;

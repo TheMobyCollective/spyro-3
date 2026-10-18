@@ -3,12 +3,16 @@
 #include "spu.h"
 
 extern int func_8002EBB0(void*);
+extern void func_8004E758(void*); //fAddHudOT
+
+extern char D_800674E8[20]; // maybe an easing function
 
 // sbss
 extern int D_8006C598;
 extern int g_CurrentLevel; // D_8006C5BC
 extern int D_8006C64C;
 extern int deltaTime; // 8006C648
+extern void* D_8006C664;
 extern int D_8006C784; // g_Lives
 extern int D_8006C660; // g_EggTotal
 extern int D_8006C71C; // g_GemTotal
@@ -263,11 +267,33 @@ void func_80027FCC(HudEntry* hud, int spriteClass) {
 }
 
 /**
- * SetHud() - func_8002803C()
- * WIP
- * https://decomp.me/scratch/VNAQB
+ * SetHud() - func_8002803C() - MATCHING
+ * https://decomp.me/scratch/m3u0r
  */
-INCLUDE_ASM("asm/nonmatchings/hud", func_8002803C);
+int func_8002803C(int index, int spriteId, void* soundFuncPtr, void* arg3, void* fallbackFuncPtr, void* displayVar, int max) {
+    HudEntry* hudEntry;
+
+    hudEntry = &g_HudEntries[index & 0xF];
+    index = index & 0xFFF0;
+    if ((hudEntry->unk8 != displayVar) || (hudEntry->unk6 != max) || (hudEntry->unk4 != spriteId) || (hudEntry->unk3A != index) || (hudEntry->unkC != soundFuncPtr) || (hudEntry->unk10 != arg3) || (hudEntry->unk14 != fallbackFuncPtr)) {
+        hudEntry->unk6 = max;
+        hudEntry->unk8 = displayVar;
+        hudEntry->unk4 = spriteId;
+        hudEntry->unk3A = index;
+        hudEntry->unkC = soundFuncPtr;
+        hudEntry->unk10 = arg3;
+        hudEntry->unk14 = fallbackFuncPtr;
+        hudEntry->unk1A = g_Hud.DAT_800719c8++;
+        if (hudEntry->movementFrame > 50) {
+            hudEntry->movementFrame = 100 - hudEntry->movementFrame;
+            if (hudEntry->movementFrame > 50) {
+                hudEntry->movementFrame = 0;
+            }
+        }
+        hudEntry->isOffScreen = 1;
+    }
+    return hudEntry->unk1A;
+}
 
 /**
  * ???() - func_80028154() - MATCHING
@@ -427,10 +453,108 @@ int func_800285A4(int arg0) {
 
 /**
  * ???() - func_800289C8() - MATCHING
- * Ready to add
- * https://decomp.me/scratch/UXqpI
+ * Could do with some more cleanup
+ * https://decomp.me/scratch/5QQwT
  */
-INCLUDE_ASM("asm/nonmatchings/hud", func_800289C8);
+void* func_800289C8(SpriteData* arg0, int arg1, int arg2) {
+    int var_s0 = 0;
+    int var_s2 = 0;
+    POLY_FT4* temp_s1 = D_8006C664;
+    POLY_FT4* temp_t6;
+
+    temp_s1->tag = 0x09000000;
+    *(int*)&temp_s1->r0 = 0x2C808080;
+    if ((arg0->unk6 & 0x60) != 0x60) {
+        temp_s1->code |= 2;
+    }
+    
+    temp_s1->x0 = arg1;
+    temp_s1->x2 = arg1;
+    temp_s1->y0 = arg2;
+    temp_s1->y1 = arg2;
+    temp_s1->tpage = arg0->unk6;
+    temp_s1->clut =  arg0->unk2;
+    temp_s1->x1 = arg1 + (arg0->unk4 - arg0->unk0);
+    temp_s1->y2 = arg2 + (arg0->unk5 - arg0->unk1);
+    temp_s1->u0 = arg0->unk0;
+    temp_s1->u1 = arg0->unk4;
+    
+    if ((temp_s1->u1 & 0xFF) != 0xFF) {
+        temp_s1->u1++;
+        temp_s1->x1++;
+    } else {
+        var_s0 = 1;
+    }
+    temp_s1->v0 = arg0->unk1;
+    temp_s1->v2 = arg0->unk5;
+    if ((temp_s1->v2 & 0xFF) != 0xFF) {
+        temp_s1->v2++;
+        temp_s1->y2++;
+    } else {
+        var_s2 = 1;
+    }
+    temp_s1->x3 = temp_s1->x1;
+    temp_s1->y3 = temp_s1->y2;
+    temp_s1->u2 = temp_s1->u0;
+    temp_s1->u3 = temp_s1->u1;
+    temp_s1->v1 = temp_s1->v0;
+    temp_s1->v3 = temp_s1->v2;
+    func_8004E758(temp_s1);
+    
+    temp_t6 = temp_s1 + 1;
+    D_8006C664 = temp_t6;
+    if (var_s0 != 0) {
+        POLY_FT4* temp_s6 = D_8006C664;
+        temp_s6->tag = temp_s1->tag;
+        *(int*)&temp_s6->r0 = *(int*)&temp_s1->r0;
+        temp_s6->x0 = temp_s1->x1;
+        temp_s6->x2 = temp_s1->x1;
+        temp_s6->x1 = temp_s1->x1 + 1;
+        temp_s6->x3 = temp_s1->x1 + 1;
+        temp_s6->y0 = temp_s1->y0;
+        temp_s6->y1 = temp_s1->y0;
+        temp_s6->y2 = temp_s1->y2;
+        temp_s6->y3 = temp_s1->y2;
+        temp_s6->u0 = temp_s1->u1;
+        temp_s6->u2 = temp_s1->u1;
+        temp_s6->u1 = temp_s1->u1;
+        temp_s6->u3 = temp_s1->u1;
+        temp_s6->v0 = temp_s1->v0;
+        temp_s6->v1 = temp_s1->v0;
+        temp_s6->v2 = temp_s1->v2;
+        temp_s6->v3 = temp_s1->v2;
+        temp_s6->tpage = temp_s1->tpage;
+        temp_s6->clut = temp_s1->clut;
+        func_8004E758(temp_t6);
+        D_8006C664 = temp_s6 + 1;
+    }
+    if (var_s2 != 0) {
+        POLY_FT4* temp_s0 = D_8006C664;
+        temp_s0->tag = temp_s1->tag;
+        *(int*)&temp_s0->r0 = *(int*)&temp_s1->r0;
+        temp_s0->x0 = temp_s1->x0;
+        temp_s0->x2 = temp_s1->x0;
+        temp_s0->x1 = temp_s1->x1; 
+        temp_s0->x3 = temp_s1->x1;
+        temp_s0->y0 = temp_s1->y2;
+        temp_s0->y1 = temp_s1->y2;
+        temp_s0->y2 = temp_s1->y2 + 1;
+        temp_s0->y3 = temp_s1->y2 + 1;
+        temp_s0->u0 = temp_s1->u0; 
+        temp_s0->u2 = temp_s1->u0;
+        temp_s0->u1 = temp_s1->u1; 
+        temp_s0->u3 = temp_s1->u1;
+        temp_s0->v0 = temp_s1->v2; 
+        temp_s0->v1 = temp_s1->v2;
+        temp_s0->v2 = temp_s1->v2;
+        temp_s0->v3 = temp_s1->v2;
+        temp_s0->tpage = temp_s1->tpage;
+        temp_s0->clut = temp_s1->clut; 
+        func_8004E758(temp_s0); 
+        D_8006C664 = temp_s0 + 1;
+    }
+    return temp_s1;
+}
 
 /**
  * ???() - func_80028D30()
@@ -487,7 +611,32 @@ int func_80029674(HudEntry* arg0, int* arg1, int* arg2) {
     return ret;
 }
 
-INCLUDE_ASM("asm/nonmatchings/hud", func_80029708);
+/**
+ * ???() - func_80029708() - MATCHING
+ * https://decomp.me/scratch/o2l1V
+ */
+void func_80029708(HudEntry* hudEntry, int* arg1, int* arg2, int* arg3) {
+    MIN(*arg1,0);
+    if (*arg1 >= 0x3C) {
+        *arg1 = 0x3B;
+    }
+    if (hudEntry->displayMode & 1) {
+        *arg3 -= D_800674E8[*arg1];
+        *arg1 = -hudEntry->movementFrame;
+    }
+    else if (hudEntry->displayMode & 2) {
+        *arg3 += D_800674E8[*arg1];
+        *arg1 = hudEntry->movementFrame;
+    }
+    else if (hudEntry->displayMode & 4) {
+        *arg2 -= D_800674E8[*arg1] * 2;
+        *arg1 = -(hudEntry->movementFrame + 0x3C);
+    }
+    else if (hudEntry->displayMode & 8) {
+        *arg2 += D_800674E8[*arg1] * 2;
+        *arg1 =  hudEntry->movementFrame + 0x3C;
+    } 
+}
 
 /**
  * ???() - func_8002982C() - MATCHING

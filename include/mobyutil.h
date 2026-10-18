@@ -3,7 +3,7 @@
 
 #include "common.h"
 
-// unk func_80034DAC(unk);
+void func_80034DAC(Moby* pSparx);
 void func_80034F40(Moby* moby, int newId); // DoMobyAnimation
 // unk func_80034F80(unk); // SetMobyAnimation
 void func_80034FEC(Moby* arg0); // SetDefaultMobyProperties

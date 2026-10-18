@@ -17,7 +17,7 @@
 #define ADD_ANGLE(a, b, c) a = (b + c) & 0xFFF; \
     if(a > 0x800) a -= 0x1000
 
-// Maybe move this out when PauseData is moved out of here
+// Move this out when DB is moved out of here
 #include "libgpu.h"
 
 
@@ -564,5 +564,26 @@ typedef struct {
     int unk38;                        // 38 // probably ptr to faces
     AnimationHeader *m_Animations[1]; // 3C // have not checked for accuracy in S3
 } Model;
+
+typedef struct {
+	int DAT_80070104; // 80070104
+	int DAT_80070108; // 80070108
+	int DAT_8007010c; // 8007010c
+	int DAT_80070110; // 80070110
+    char DAT_80070114;
+    char DAT_80070115;
+    short DAT_80070116;
+    Vector3D DAT_80070118;
+    int DAT_80070124;
+    int DAT_80070128;
+    int DAT_8007012C;
+    char DAT_80070130;
+    char DAT_80070131;
+    char DAT_80070132;
+    char DAT_80070133;
+    short DAT_80070134;
+    short DAT_80070136;
+    // ...
+} Unk_80070104; // whatever this is
 
 #endif

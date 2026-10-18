@@ -1,12 +1,23 @@
 #include "common.h"
+#include "libgpu.h"
 #include "drawutil.h"
+#include "loaders.h"
 #include "mobyfunc.h"
 #include "stdutil.h"
 
 extern void VSync(int);
+extern void func_8004E7AC(int, int, int);
+
+extern DB* D_8006C600; // current DB?
+extern int D_8006C634;
+extern void* D_8006C664;
+extern int D_8006C668;
+extern int D_8006C7D4;
+extern int D_8006C7DC;
 
 extern char D_80067570[16][12]; // might be an array of structs, not sure
 extern PauseData pauseData; // 8006fbc4
+extern DB g_DB[2];
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -34,10 +45,12 @@ void func_8001EBAC() {
 
 /**
  * ???() - func_8001EC24() - MATCHING
- * TODO - ready to add
  * https://decomp.me/scratch/mFO0V
  */
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001EC24);
+void func_8001EC24() {
+    func_8004E7AC(D_8006C668 - 0x3000, 0, 0x1C00);
+    func_80022378();
+}
 
 INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001EC5C);
 
@@ -45,17 +58,28 @@ INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001EDEC);
 
 /**
  * ???() - func_8001FABC() - MATCHING
- * TODO - ready to add
- * https://decomp.me/scratch/1dV0m
+ * https://decomp.me/scratch/3KSwA
  */
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FABC);
+void func_8001FABC(int tpage) {
+    DR_MODE* temp_s0 = D_8006C664;
+    SetDrawMode(temp_s0, 1, 0, tpage, 0);
+    func_8004E758(temp_s0);
+    D_8006C664 = temp_s0 + 1;
+}
 
 /**
  * ???() - func_8001FB10() - MATCHING
- * TODO - ready to add
- * https://decomp.me/scratch/SkpDA
+ * Seems to be related to fading the screen to black
+ * https://decomp.me/scratch/G2dBH
  */
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_8001FB10);
+void func_8001FB10(int arg0) {
+    DrawSync(0);
+    D_8006C7DC = arg0;
+    loadingData.D_800722d4 =  loadingData.D_800722d8 - arg0;
+    loadingData.D_800722d0 = (loadingData.D_800722d8 - arg0) - arg0;
+    g_DB[0].dat_8006fc6c   = (loadingData.D_800722d8 - arg0) - arg0;
+    g_DB[1].dat_8006fc6c   =  loadingData.D_800722d8 - arg0;
+}
 
 /**
  * ???() - func_8001FB74() - MATCHING
@@ -145,10 +169,48 @@ INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_800200A0);
 
 /**
  * ???() - func_80020168() - MATCHING
- * TODO - ready to add, note DrawDispEnv is DB
  * https://decomp.me/scratch/RZQZO
  */
-INCLUDE_ASM_REORDER_HACK("asm/nonmatchings/drawutil", func_80020168);
+void func_80020168() {
+    RECT sp10;
+    int i;
+    
+    DrawSync(0);
+    VSync(0);
+    
+    sp10.x = 0;
+    sp10.y = (D_8006C600 != &g_DB[0]) ? 240 : 12;
+    sp10.w = 512;
+    sp10.h = 216;
+    
+    MoveImage(&sp10, 0, (D_8006C600 == &g_DB[0]) ? 240 : 12);
+    DrawSync(0);
+    
+    g_DB[0].m_DrawEnv.isbg = 0;
+    g_DB[1].m_DrawEnv.isbg = 0;
+    for (i = 0; i < 16; i++) {
+        DB* env = (D_8006C600 != &g_DB[0]) ? &g_DB[0] : &g_DB[1];
+        D_8006C600 = env;
+        D_8006C7D4 = D_8006C634 + 0x1000;
+        D_8006C664 = env->dat_8006fc6c;
+        
+        if (i == 0) {
+            func_800200A0(2, 16, 16, 16);
+        }
+        else {
+            func_800200A0(2, 32, 32, 32);
+        }
+        
+        DrawSync(0);
+        VSync(0);
+        PutDispEnv(&D_8006C600->m_DispEnv);
+        PutDrawEnv(&D_8006C600->m_DrawEnv);
+        DrawOTag(func_8004E664(0x580));
+    }
+    func_8001EBAC();
+    g_DB[0].m_DrawEnv.isbg = 1;
+    g_DB[1].m_DrawEnv.isbg = 1;
+}
 
 /**
  * DrawStringCentered() - func_800202DC() - MATCHING

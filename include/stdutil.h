@@ -5,7 +5,7 @@
 
 // Maybe vectors etc. should be defined in here?
 
-// fBuildOT	8004e664
+extern void* func_8004E664(int); // fBuildOT
 extern void func_8004E71C(void*, int); // fAddWorldOT
 extern void func_8004E758(void*); //fAddHudOT
 
@@ -23,7 +23,7 @@ extern int func_8004E9E4(int); // fSinLerp
 extern int func_8004EA2C(int); // fCosLerp
 // fGetUsedBits	8004ea74
 extern void func_8004EA90(Angle*, SHORTMATRIX*, int*); // arg0 seems to be used as an int in this function // 8004ea90
-// FUN_8004ecf4	8004ecf4
+extern void func_8004ECF4(SHORTMATRIX*, SHORTMATRIX*);
 extern void func_8004ED6C(SHORTMATRIX*, Vector3D*, Vector3D*); // fMulVectorByMatrix
 extern int func_8004EDE8(Vector3D*, int); // fVectorLength
 extern void func_8004EF04(Vector3D*, int); // does something using the vector length?

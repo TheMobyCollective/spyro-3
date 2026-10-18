@@ -9,6 +9,15 @@
 // Common mobys
 
 typedef struct {
+    Vector3D unk0;
+    int unkC;
+    char unk10;
+    char unk11;
+    char unk12;
+    char unk13;
+} SomethingElse; // currently unknown, related to Sparx
+
+typedef struct {
     short unk0; // animation frame timer
     unsigned char unk2;
     char unk3; // position / rotation of Sparx
@@ -20,7 +29,7 @@ typedef struct {
     char unkC; // ?
     char unkD; // idle timer, jumps to 0x78 whenever Spyro moves
     short unkE; // ?
-    int unk10; // seems to be a pointer to somewhere else in bss, maybe some kind of counter? unclear
+    SomethingElse* unk10; // seems to be a pointer to somewhere else in bss? unclear
     Moby* unk14; // captured moby
     int unk18; // maybe unused / padding?
 } MobyTag_120; // used by 8006e394

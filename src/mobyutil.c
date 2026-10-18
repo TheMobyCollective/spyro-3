@@ -1,10 +1,12 @@
 #include "common.h"
+#include "camera.h"
 #include "mobyfunc.h"
 #include "mobyutil.h"
 #include "stdutil.h"
 #include "ovl_header.h"
 #include "spyro.h"
 #include "str.h"
+#include "moby_props.h"
 
 // collision
 extern int func_8001A310(Vector3D*, int, int, Moby*);
@@ -12,6 +14,8 @@ extern int func_8001A358(Vector3D*, int);
 
 // updatemobys
 extern void func_80055B18(Moby*); // delete moby
+extern void func_80055D24(Moby*, int); // fUpdateMobyCollision
+extern void func_80055F14(Moby*, int, Vector3D*); // get moby vertex pos; rotates vertex pos by moby rot matrix
 extern void func_80056270(Moby*);
 extern void func_8005629C(Moby*);
 
@@ -41,6 +45,7 @@ extern int D_8006C770;
 // bss
 extern WadHeader wadHeader; // 8006d8d8
 extern Model* D_8006EE2C[768]; // model pointers
+extern Unk_80070104 D_80070104;
 extern CollisionData D_80071900;
 extern LevelWadHeader levelWadHeader; // 80072098
 
@@ -48,10 +53,46 @@ extern LevelWadHeader levelWadHeader; // 80072098
 
 /**
  * ???() - func_80034DAC() - MATCHING
- * Ready to add, but worth examining the structs in here, there's a moby tag
+ * Uses a currently unknown struct related to Sparx
  * https://decomp.me/scratch/Nt6l6
  */
-INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80034DAC);
+void func_80034DAC(Moby* pSparx) {
+    Vector3D v;
+    SHORTMATRIX mat;
+    MobyTag_120* tag = pSparx->mobyTag;
+    
+    if ((pSparx->unknown3[1] & 2) && (pSparx->animationState.nextId != 0)) {
+        D_8006C770 = 0;
+        pSparx->animationState.id = pSparx->animationState.nextId;
+        pSparx->animationState.frame = pSparx->animationState.nextFrame;
+        pSparx->animationProgress = 0x72;
+        pSparx->animationState.nextId = 0;
+        pSparx->animationState.nextFrame = 0;
+        func_80035734(pSparx);
+    }
+    
+    pSparx->angle.roll = D_80070104.DAT_80070130;
+    pSparx->angle.pitch = D_80070104.DAT_80070131;
+    func_8003585C(pSparx, D_80070104.DAT_80070132, 0x10, 0, 0, 0);
+    func_8004ECF4(&mat, &g_Camera.unk14);
+    func_8004ED6C(&mat, &D_80070104.DAT_80070118, &v);
+    func_8004F194(&v, &v, &g_Camera.nextCameraPosCartesian);
+    func_8004F1C8(&v, &v, &pSparx->position);
+    func_8004F110(&v, 2);
+    func_8004F194(&pSparx->position, &pSparx->position, &v);
+    func_80055D24(pSparx, 4);
+    
+    if (tag->unk10 != 0) {
+        tag->unk10->unk13 = 0x7F;
+        if (spyro.currentHealth >= 4) {
+            tag->unk10->unk10 = spyro.currentHealth;
+        }
+        else {
+            tag->unk10->unk10 = 1;
+        }
+        func_80055F14(pSparx, 0, &tag->unk10->unk0);
+    }
+}
 
 /** 
  * DoMobyAnimation - func_80034F40() - MATCHING
@@ -286,11 +327,26 @@ int func_80035DDC(Moby* arg0, int arg1, int arg2, int arg3, int arg4) {
 
 /**
  * ???() - func_80035EE0() - MATCHING
- * Ready to add
- * Does something involving moving a moby and some sin / cos stuff
  * https://decomp.me/scratch/jDsId
  */
-INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80035EE0);
+int func_80035EE0(Moby* arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+    Vector3D sp18;
+
+    if (!(arg5 & 0x10000)) {
+        if      (D_8006C648 == 3) arg2 += arg2 >> 1;
+        else if (D_8006C648 == 4) arg2 *= 2;
+    }
+    sp18.x = (D_80065920[arg1] * arg2) >> 0xC;
+    sp18.y = (D_800658A0[arg1] * arg2) >> 0xC;
+    sp18.z = 0;
+    func_8004F194(&sp18, &sp18, &arg0->position);
+    if (arg5 & 0x2000) {
+        if (sp18.x < 0x400) sp18.x = 0x400;
+        if (sp18.y < 0x400) sp18.y = 0x400;
+        if (sp18.z < 0x400) sp18.z = 0x400;
+    }
+    return func_80038000(arg0, &sp18, arg4, arg3, arg5);
+}
 
 /** 
  * ???() - func_80036018() - MATCHING
@@ -373,10 +429,29 @@ void func_80036188(Angle* arg0) {
 
 /**
  * IsInBox() - func_80036220() - MATCHING
- * Ready to add
  * https://decomp.me/scratch/AsnpQ
  */
-INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80036220);
+int func_80036220(Vector3D* pPos, BoxTag* pBox, int pPadding, int pHeight) {
+    Vector3D u;
+    Vector3D v;
+    int angle;
+
+    angle = pBox->angle;
+    func_8004F1C8(&v, pPos, &pBox->position);
+
+    // rotate the distance vector
+    u.x = ((v.x * D_80065920[angle]) >> 0xC) - ((v.y * D_800658A0[angle]) >> 0xC);
+    u.y = ((v.x * D_800658A0[angle]) >> 0xC) + ((v.y * D_80065920[angle]) >> 0xC);
+
+    if (ABS(u.x) < (pBox->xWidth + pPadding) && ABS(u.y) < (pBox->yWidth + pPadding)) {
+        int isInBox = 1;
+        if (pHeight != 0) {            
+            isInBox = (pHeight >= ABS(v.z));
+        }
+        return isInBox;
+    }
+    return 0;
+}
 
 /**
  * RandBetween() - func_8003636C() - MATCHING
