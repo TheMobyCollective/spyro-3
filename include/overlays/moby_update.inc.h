@@ -109,7 +109,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_17
-		&MOBYUPDATE(17),
+		&MOBYUPDATE(4), // Bamboo Terrace large Rhynocs
 	#else
 		0,
 	#endif

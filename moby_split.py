@@ -82,6 +82,9 @@ ldSnippetString2 = """\
 """
 
 identicalMobys = {
+    # Bamboo Terrace large Rhynocs
+    17: 4,
+
     # Butterflies
     211: 16,
 
