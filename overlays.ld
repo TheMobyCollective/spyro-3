@@ -1097,7 +1097,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
     .level_17 {
         LONG(19)
         LONG(.level_17_end)
-        LONG(D_level_17_80083EEC)
+        LONG(g_MobyUpdate_level_17)
         LONG(D_level_17_80084EEC)
         LONG(func_level_17_8007EFAC)
         LONG(func_level_17_8008163C)
@@ -1208,7 +1208,71 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_17)
+        build/src/overlays/level_17/moby16.o(.rodata);
+        build/src/overlays/level_17/moby16.o(.rodata.jtbl);
+        build/src/overlays/level_17/moby120.o(.rodata);
+        build/src/overlays/level_17/moby120.o(.rodata.jtbl);
+        build/src/overlays/level_17/moby260.o(.rodata);
+        build/src/overlays/level_17/moby260.o(.rodata.jtbl);
+        build/src/overlays/level_17/moby272.o(.rodata);
+        build/src/overlays/level_17/moby272.o(.rodata.jtbl);
+        build/src/overlays/level_17/moby401.o(.rodata);
+        build/src/overlays/level_17/moby401.o(.rodata.jtbl);
+        build/src/overlays/level_17/moby488.o(.rodata);
+        build/src/overlays/level_17/moby488.o(.rodata.jtbl);
+        build/src/overlays/level_17/moby543.o(.rodata);
+        build/src/overlays/level_17/moby543.o(.rodata.jtbl);
+        build/src/overlays/level_17/moby514.o(.rodata);
+        build/src/overlays/level_17/moby514.o(.rodata.jtbl);
+        build/src/overlays/level_17/moby516.o(.rodata);
+        build/src/overlays/level_17/moby516.o(.rodata.jtbl);
+        build/src/overlays/level_17/moby651.o(.rodata);
+        build/src/overlays/level_17/moby651.o(.rodata.jtbl);
+        build/src/overlays/level_17/moby132.o(.rodata);
+        build/src/overlays/level_17/moby132.o(.rodata.jtbl);
+        build/src/overlays/level_17/moby290.o(.rodata);
+        build/src/overlays/level_17/moby290.o(.rodata.jtbl);
+        build/src/overlays/level_17/moby311.o(.rodata);
+        build/src/overlays/level_17/moby311.o(.rodata.jtbl);
+        build/src/overlays/level_17/moby_spawn.o(.rodata);
+        build/src/overlays/level_17/moby_spawn.o(.rodata.jtbl);
+        build/src/overlays/level_17/level.o(.rodata);
+        build/src/overlays/level_17/level.o(.rodata.jtbl);
+        build/src/overlays/level_17/parts_update.o(.rodata);
+        build/src/overlays/level_17/parts_update.o(.rodata.jtbl);
+        build/src/overlays/level_17/parts_spawn.o(.rodata);
+        build/src/overlays/level_17/parts_spawn.o(.rodata.jtbl);
+        build/src/overlays/level_17/animation.o(.rodata);
+        build/src/overlays/level_17/animation.o(.rodata.jtbl);
+        build/src/overlays/level_17/camera.o(.rodata);
+        build/src/overlays/level_17/camera.o(.rodata.jtbl);
+        level_17_text_start = .;
+        build/src/overlays/level_17/moby16.o(.text*);
+        build/src/overlays/level_17/moby120.o(.text*);
+        build/src/overlays/level_17/moby260.o(.text*);
+        build/src/overlays/level_17/moby272.o(.text*);
+        build/src/overlays/level_17/moby401.o(.text*);
+        build/src/overlays/level_17/moby488.o(.text*);
+        build/src/overlays/level_17/moby543.o(.text*);
+        build/src/overlays/level_17/moby514.o(.text*);
+        build/src/overlays/level_17/moby516.o(.text*);
+        build/src/overlays/level_17/moby651.o(.text*);
+        build/src/overlays/level_17/moby132.o(.text*);
+        build/src/overlays/level_17/moby290.o(.text*);
+        build/src/overlays/level_17/moby311.o(.text*);
+        build/src/overlays/level_17/moby_update.o(.text*);
+        build/src/overlays/level_17/moby_spawn.o(.text*);
+        build/src/overlays/level_17/level.o(.text*);
+        build/src/overlays/level_17/parts_update.o(.text*);
+        build/src/overlays/level_17/parts_spawn.o(.text*);
+        build/asm/overlays/level_17/check.o(.text*);
+        build/src/overlays/level_17/animation.o(.text*);
+        build/src/overlays/level_17/camera.o(.text*);
+        level_17_data_start = .;
+        build/src/overlays/level_17/moby_update.o(.data*);
+        build/asm/data/overlays/level_17/level.data.o(.data*);
+        .level_17_end = .;
+        . = ALIGN(., 2048);
     }
 
     .level_18 {

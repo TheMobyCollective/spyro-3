@@ -583,7 +583,20 @@ typedef struct {
     char DAT_80070133;
     short DAT_80070134;
     short DAT_80070136;
-    // ...
+	int DAT_80070138; // 80070138
+	int DAT_8007013c; // 8007013c
+	int DAT_80070140; // 80070140
+	int DAT_80070144; // 80070144
+	int DAT_80070148; // 80070148
+	short DAT_8007014c; // 8007014c
+	char DAT_8007014e; // 8007014e
+	char DAT_8007014f; // 8007014f
+	int DAT_80070150; // 80070150
+	int DAT_80070154; // 80070154
+	short DAT_80070158; // 80070158
+	short loadLevel; // 8007015a; i.e. to load via vehicle
+	int DAT_8007015c; // 8007015c
 } Unk_80070104; // whatever this is
+// there's also possibly more afterwards from 80070160 to 80070260, but this might be separate
 
 #endif

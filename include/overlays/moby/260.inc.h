@@ -1,20 +1,15 @@
-#ifndef __MOBY260_H
-#define __MOBY260_H
-
 #include "common.h"
 #include "camera.h"
+#include "stdutil.h"
 #include "ovl_header.h"
-// for the tag, assuming I don't move it back in here:
 #include "moby_props.h"
+
+// Gem (etc.) 3D number
+// TODO - there's probably asm for this sticking around, and this will need to be implemented for all levels
 
 // functions
 extern int func_80019194(Vector3D*, int);
 extern int func_8001A358(Vector3D*, int);
-extern int func_8004E880(int, int, int);
-extern void func_8004EF04(Vector3D*, int);
-extern void func_8004F08C(Vector3D*, int, int);
-extern void func_8004F178(Vector3D*, Vector3D*); // fSetVector
-extern void func_8004F194(Vector3D*, Vector3D*, Vector3D*); // fAddVector
 extern void func_80055B18(Moby*); // fDeleteMoby
 extern void func_8005629C(Moby*);
 
@@ -28,9 +23,11 @@ extern int D_8006C644; // a frame timer of some sort
 // .bss 8006c7f8
 extern CollisionData D_80071900; // 80071900 // maybe "ray data"?
 
-// Class 260
-// DO NOT USE - in practice this doesn't seem to compile to the same thing
-static inline void MobyUpdate_260(Moby* arg0) {
+/**
+ * MobyUpdate_260() - MATCHING
+ * https://decomp.me/scratch/IJ8Wz
+ */
+void MOBYUPDATE(260) (Moby* arg0) {
     Vector3D sp10;
     int temp_v0_3;
     unsigned char temp_v0_5;
@@ -93,5 +90,3 @@ static inline void MobyUpdate_260(Moby* arg0) {
     sp10.z = 0x520;
     func_8004F194(&arg0->position, &mobyTag->unk0->position, &sp10);
 }
-
-#endif

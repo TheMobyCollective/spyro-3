@@ -22,19 +22,20 @@
 - [ ] func_level_17_800804E4
 
 <!-- moby.c -->
-- [ ] func_level_17_80074CF8
-- [ ] func_level_17_80075384
-- [x] func_level_17_800768D4
-- [ ] func_level_17_80076BD8
-- [ ] func_level_17_8007774C
-- [ ] func_level_17_8007A770
-- [ ] func_level_17_8007B304
-- [ ] func_level_17_8007BA60
-- [ ] func_level_17_8007C3D0
-- [x] func_level_17_8007D19C
-- [ ] func_level_17_8007DC38
-- [x] func_level_17_8007ED8C
-- [ ] func_level_17_8007EDAC
+- [ ] MobyUpdate_16_level_17
+- [ ] MobyUpdate_120_level_17
+- [x] MobyUpdate_260_level_17
+- [ ] MobyUpdate_272_level_17
+- [ ] MobyUpdate_401_level_17
+- [ ] MobyUpdate_488_level_17
+- [ ] MobyUpdate_543_level_17
+- [ ] MobyUpdate_514_level_17
+- [ ] MobyUpdate_516_level_17
+- [x] MobyUpdate_651_level_17
+- [ ] MobyUpdate_132_level_17
+- [x] MobyUpdate_290_level_17
+- [ ] MobyUpdate_311_level_17
+<!-- moby_spawn -->
 - [x] func_level_17_8007EFAC
 
 <!-- parts_spawn.c -->

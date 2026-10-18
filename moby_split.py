@@ -11,6 +11,7 @@ Each of the following will need to be updated manually:
 - Update include/level/{level}.h to include the output HAS_MOBY defines
 - Update progress/level_{level}.md to replace the contents of the moby section to the output progress snippet
   - Do not delete the final function in the moby section, as this is MobySpawn
+- Find any references to specific instances of the moby update array (e.g. in AP code) and replace with level_{level}_data_start
 - Update asm/data/overlays/level_{level}/level.data.s to remove the moby table (leave in the dialogue table)
   - You may need to check that the size underneath the dialogue table is using the dialogue table's symbol
 - Check for any RODATA lines in src/overlays/level_{level}/moby.c and copy these into the respective moby's file
@@ -28,7 +29,6 @@ mobyUpdateFile = """\
 
 mobyFile = """\
 #include "common.h"
-#include "moby_props.h"
 #include "level/{level}.h"
 
 //#include "overlays/moby/{mobyclass}.inc.h"

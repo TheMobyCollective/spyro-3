@@ -1,35 +1,23 @@
 #include "common.h"
-#include "savepoint.h" // vehicles
-#include "camera.h" // anything with the camera
+#include "ovl_header.h"
+#include "stdutil.h"
+#include "moby_props.h"
+#include "savepoint.h"
+#include "camera.h"
 #include "mobyutil.h"
 #include "spu.h"
 #include "spyro.h"
-#include "ovl_header.h"
 
-#include "moby_props.h"
-#include "moby/moby260.h"
-
-// change arg0 to pMoby
-// #define LEVEL_ID 17
-
-////////////////////////////////////////////////////////////////////////////////////
-// Includes etc.
+// TODO - apparently asm still to remove
 
 // Collision - unclear types
 extern int func_8001A358(Vector3D*, int);
-
-// Stdutil
-extern void func_8004E790(void*, int, int); // memset
-extern void func_8004F178(Vector3D*, Vector3D*); // fSetVector
-extern void func_8004F194(Vector3D*, Vector3D*, Vector3D*); // fAddVector
 
 // Update
 extern void func_80054F94(int, Moby*); // unclear types
 
 // UpdateMobys
-extern Moby* func_80055A7C(); // get first empty allocated moby
 extern void func_80055B18(Moby*); // fDeleteMoby
-extern void func_80055C24(Moby*);
 extern void func_80055D24(Moby*, int); // fUpdateMobyCollision
 
 // Warp
@@ -46,209 +34,24 @@ extern unsigned char lvlIdToIndex[0x48]; // 80066fcc
 
 // .sdata 8006c3b0
 extern int D_8006C528;
-extern Moby* mobyArrayPtr; // moby array ptr
 extern int D_8006C598;
 extern int currentLevel; // 8006C5BC
 extern int D_8006C73C;
-extern int D_8006C784; // lifeCount
 extern unsigned char D_8006C7B4; // EggsCollectedSinceEnteredBitmask
 
 // .bss 8006c7f8
 extern Game game; // 8006E344
-
-extern MobyTag_120 D_8006E394; // bss, some sort of shared moby tag?? used by Sparx
-
-extern struct {
-	int DAT_80070104; // 80070104
-	int DAT_80070108; // 80070108
-	int DAT_8007010c; // 8007010c
-	int DAT_80070110; // 80070110
-	char DAT_80070114; // 80070114
-	char DAT_80070115; // 80070115
-	short DAT_80070116; // 80070116, maybe char?
-	int DAT_80070118; // 80070118
-	int DAT_8007011c; // 8007011c
-	int DAT_80070120; // 80070120
-	Vector3D DAT_80070124; // 80070124, type is a guess
-	char DAT_80070130; // 80070130
-	char DAT_80070131; // 80070131
-	char DAT_80070132; // 80070132
-	char DAT_80070133; // 80070133
-	short DAT_80070134; // 80070134
-	short DAT_80070136; // 80070136
-	int DAT_80070138; // 80070138
-	int DAT_8007013c; // 8007013c
-	int DAT_80070140; // 80070140
-	int DAT_80070144; // 80070144
-	int DAT_80070148; // 80070148
-	short DAT_8007014c; // 8007014c
-	char DAT_8007014e; // 8007014e
-	char DAT_8007014f; // 8007014f
-	int DAT_80070150; // 80070150
-	int DAT_80070154; // 80070154
-	short DAT_80070158; // 80070158
-	short loadLevel; // 8007015a; i.e. to load via vehicle
-	int DAT_8007015c; // 8007015c
-} D_80070104; // not sure what this does yet, haven't currently typed it
-// there's also possibly more afterwards from 80070160 to 80070260, but this might be separate
+extern Unk_80070104 D_80070104;
 
 extern unsigned char eggsCollectedArray[40]; // 80070300 EggsCollectedBitmaskArray
 extern ProgressFlags progressFlags; // 80071570
 
-////////////////////////////////////////////////////////////////////////////////////
-// Common mobys
-
 /**
- * MobyUpdate_16() - func_level_17_80074CF8()
- * Butterfly (16), Extra Life Butterfly (211)
- * This one looks fucking awful, very WIP
- * https://decomp.me/scratch/L5FpK
- */
-INCLUDE_ASM("asm/nonmatchings/overlays/level_17/moby", func_level_17_80074CF8);
-
-/**
- * MobyUpdate_120() - func_level_17_80075384()
- * Sparx
- * TODO
- */
-INCLUDE_ASM("asm/nonmatchings/overlays/level_17/moby", func_level_17_80075384);
-
-/**
- * MobyUpdate_260() - func_level_17_800768D4() - MATCHING
- * Thought about implementing with a static inline, but it doesn't compile the same!!
- * This is a common one that can be added to other levels too (keeping the asm for now)
- * https://decomp.me/scratch/IJ8Wz
- */
-void func_level_17_800768D4(Moby* arg0) {
-// MOBY_UPDATE_FUNC(260)
-// MOBY_UPDATE_FUNC(260, LEVEL_ID) {
-    //MobyUpdate_260(moby);
-    Vector3D sp10;
-    int temp_v0_3;
-    unsigned char temp_v0_5;
-    unsigned char var_a0;
-    Vector3D* temp_a0;
-    Vector3D* temp_s1;
-    MobyTag_260* mobyTag;
-
-    mobyTag = (MobyTag_260*)arg0->mobyTag;
-    if (arg0->substate == 0) {
-        if (mobyTag->unk4 > 0) {
-            arg0->angle.yaw++;
-            mobyTag->unkC.z = mobyTag->unkC.z - 6;
-            if (mobyTag->unkC.z < -0x80) {
-                mobyTag->unkC.z = -0x80;
-            }
-            arg0->position.x += mobyTag->unkC.x;
-            arg0->position.y += mobyTag->unkC.y;
-            arg0->position.z += mobyTag->unkC.z;
-            temp_s1 = &arg0->position;
-            if (arg0->position.z >= 0x400) {
-                func_8001A358(temp_s1, 0x2000);
-                func_8005629C(arg0);
-                if (func_80019194(temp_s1, 0x100) != 0) {
-                    func_8004F178(temp_s1, &D_80071900.targetedPosition);
-                    func_8004EF04(&D_80071900.D_80071918, 0x1000);
-                    temp_v0_3 = DOTPRODUCT(mobyTag->unkC, D_80071900.D_80071918) >> 0xB;
-                    if (temp_v0_3 < 0) {
-                        func_8004F08C(&D_80071900.D_80071918, 0x1000, -temp_v0_3);
-                        func_8004F194(&mobyTag->unkC, &mobyTag->unkC, &D_80071900.D_80071918);
-                    }
-                }
-                mobyTag->unk4--;
-                return;
-            }
-            func_80055B18(arg0);
-            return;
-        }
-        SpawnParticle(0xA, 0x47, &arg0->position, 0);
-        func_80055B18(arg0);
-        return;
-    }
-    if (mobyTag->unk0->state != 0) {
-        func_80055B18(arg0);
-        return;
-    }
-    
-    var_a0 = func_8004E880(camera.nextCameraPosCartesian.x - arg0->position.x, camera.nextCameraPosCartesian.y - arg0->position.y, 0);
-    arg0->angle.yaw = (D_800658A0[(unsigned char)(D_8006C644 * 4)] >> 0x7) + (unsigned char)(var_a0 + 0x80);
-    if (arg0->substate == 2) {
-        var_a0 += 0x80;
-    }
-    
-    sp10.x = 0;
-    sp10.y = 0;
-    if (arg0->substate != 3) {
-        sp10.x =  D_800658A0[var_a0] / 28;
-        sp10.y = -D_80065920[var_a0] / 28;
-    }
-    sp10.z = 0x520;
-    func_8004F194(&arg0->position, &mobyTag->unk0->position, &sp10);
-}
-
-/**
- * MobyUpdate_272() - func_level_17_80076BD8()
- * 
- * Zoe
- */
-INCLUDE_ASM("asm/nonmatchings/overlays/level_17/moby", func_level_17_80076BD8);
-
-////////////////////////////////////////////////////////////////////////////////////
-// Level 17 mobys
-
-/**
- * MobyUpdate_401() - func_level_17_8007774C()
- * Buzz
- * Still very WIP but decent progress has been made
- * Contains A LOT of stuff for putting into contexts
- * https://decomp.me/scratch/w7teg
- * https://decomp.me/scratch/Bftil (newer)
- * https://decomp.me/scratch/ytT0h (newest)
- */
-INCLUDE_ASM("asm/nonmatchings/overlays/level_17/moby", func_level_17_8007774C);
-
-/**
- * MobyUpdate_488() - func_level_17_8007A770()
- * Sheila
- * TODO
- */
-INCLUDE_ASM("asm/nonmatchings/overlays/level_17/moby", func_level_17_8007A770);
-
-/**
- * MobyUpdate_543() - func_level_17_8007B304()
- * Sheep fodder
- * WIP
- * https://decomp.me/scratch/Zzeuz
- */
-INCLUDE_ASM("asm/nonmatchings/overlays/level_17/moby", func_level_17_8007B304);
-
-////////////////////////////////////////////////////////////////////////////////////
-// Vehicles (level 10 mobys)
-// Probable include split here - these are amongst level-specific mobys in Sunrise Spring Home though
-// Possible that these are just taken straight from the level 10 mobys, assuming they're the same
-// Sheep are probably different though
-
-/**
- * MobyUpdate_514() - func_level_17_8007BA60()
- * 
- * TODO
- */
-INCLUDE_ASM("asm/nonmatchings/overlays/level_17/moby", func_level_17_8007BA60);
-
-/**
- * MobyUpdate_516() - func_level_17_8007C3D0()
- * 
- * TODO
- */
-INCLUDE_ASM("asm/nonmatchings/overlays/level_17/moby", func_level_17_8007C3D0);
-
-/**
- * MobyUpdate_651() - func_level_17_8007D19C() - MATCHING
- * Tonnes of includes which should be in the decomp.me context really
- * ASM not deleted yet for cross-level reasons, todo
+ * MobyUpdate_651() - MATCHING
  * https://decomp.me/scratch/YdBst
  */
-void func_level_17_8007D19C(Moby* arg0) {
+
+void MOBYUPDATE(651) (Moby* arg0) {
     Vector3D sp10;
     Vector3D sp20;
     Vector3D sp30;
@@ -505,36 +308,3 @@ void func_level_17_8007D19C(Moby* arg0) {
     }
     
 }
-
-////////////////////////////////////////////////////////////////////////////////////
-// Eggs
-
-extern void func_80039714(Moby*);
-
-/**
- * MobyUpdate_132() - func_level_17_8007DC38()
- * Eggs
- * WIP
- * https://decomp.me/scratch/U56AS
- */
-INCLUDE_ASM("asm/nonmatchings/overlays/level_17/moby", func_level_17_8007DC38);
-
-/**
- * MobyUpdate_501() - func_level_17_8007ED8C()
- * Egg Fragments
- * Just reuse code from Sunrise Spring Home
- */
-void func_level_17_8007ED8C(Moby* moby) {
-    func_80039714(moby);
-}
-
-////////////////////////////////////////////////////////////////////////////////////
-// Utils
-
-/**
- * MobyUpdate_311() - func_level_17_8007EDAC()
- * Triangle to talk text
- * Difficult to match? Possibly lots of local variables which need specifying in the right places
- * https://decomp.me/scratch/RnpBS
- */
-INCLUDE_ASM("asm/nonmatchings/overlays/level_17/moby", func_level_17_8007EDAC);
