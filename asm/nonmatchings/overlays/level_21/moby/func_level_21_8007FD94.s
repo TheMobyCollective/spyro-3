@@ -1,7 +1,7 @@
 .set noat      /* allow manual use of $at */
 .set noreorder /* don't insert nops after branches */
 
-glabel func_level_21_8007FD94
+glabel MobyUpdate_336_level_21
 /* 53FC2C4 8007FD94 C8FFBD27 */  addiu      $sp, $sp, -0x38
 /* 53FC2C8 8007FD98 1C00B1AF */  sw         $s1, 0x1C($sp)
 /* 53FC2CC 8007FD9C 21888000 */  addu       $s1, $a0, $zero
@@ -47,8 +47,8 @@ glabel func_level_21_8007FD94
 /* 53FC360 8007FE30 21004014 */  bnez       $v0, .Llevel_21_8007FEB8
 /* 53FC364 8007FE34 00000000 */   nop
 /* 53FC368 8007FE38 21280000 */  addu       $a1, $zero, $zero
-/* 53FC36C 8007FE3C 0980063C */  lui        $a2, %hi(D_level_21_8008F6A0)
-/* 53FC370 8007FE40 A0F6C624 */  addiu      $a2, $a2, %lo(D_level_21_8008F6A0)
+/* 53FC36C 8007FE3C 0980063C */  lui        $a2, %hi(level_21_data_start)
+/* 53FC370 8007FE40 A0F6C624 */  addiu      $a2, $a2, %lo(level_21_data_start)
 .Llevel_21_8007FE44:
 /* 53FC374 8007FE44 1C00038E */  lw         $v1, 0x1C($s0)
 /* 53FC378 8007FE48 00000000 */  nop
@@ -426,8 +426,8 @@ glabel func_level_21_8007FD94
 /* 53FC8D4 800803A4 C3100200 */  sra        $v0, $v0, 3
 /* 53FC8D8 800803A8 400022A2 */  sb         $v0, 0x40($s1)
 /* 53FC8DC 800803AC 1C00038E */  lw         $v1, 0x1C($s0)
-/* 53FC8E0 800803B0 0980023C */  lui        $v0, %hi(D_level_21_8008F6A0)
-/* 53FC8E4 800803B4 A0F64224 */  addiu      $v0, $v0, %lo(D_level_21_8008F6A0)
+/* 53FC8E0 800803B0 0980023C */  lui        $v0, %hi(level_21_data_start)
+/* 53FC8E4 800803B4 A0F64224 */  addiu      $v0, $v0, %lo(level_21_data_start)
 /* 53FC8E8 800803B8 4F006214 */  bne        $v1, $v0, .Llevel_21_800804F8
 /* 53FC8EC 800803BC 00000000 */   nop
 /* 53FC8F0 800803C0 2C00028E */  lw         $v0, 0x2C($s0)
@@ -614,4 +614,4 @@ glabel func_level_21_8007FD94
 /* 53FCB84 80080654 3800BD27 */  addiu      $sp, $sp, 0x38
 /* 53FCB88 80080658 0800E003 */  jr         $ra
 /* 53FCB8C 8008065C 00000000 */   nop
-.size func_level_21_8007FD94, . - func_level_21_8007FD94
+.size MobyUpdate_336_level_21, . - MobyUpdate_336_level_21
