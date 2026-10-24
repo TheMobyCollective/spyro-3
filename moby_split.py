@@ -15,6 +15,7 @@ Each of the following will need to be updated manually:
 - Update asm/data/overlays/level_{level}/level.data.s to remove the moby table (leave in the dialogue table)
   - You may need to check that the size underneath the dialogue table is using the dialogue table's symbol
 - Check for any RODATA lines in src/overlays/level_{level}/moby.c and copy these into the respective moby's file
+  - You may need to move the actual content of these asm files into their respective moby asm files, for rodata alignment
 - Check for any comments and implemented mobys in src/overlays/level_{level}/moby.c and copy them into their intended files
   - This may require renaming some moby functions to their new names, using the MOBYUPDATE macro
 - Delete src/overlays/level_{level}/moby.c

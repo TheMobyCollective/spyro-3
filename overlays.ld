@@ -1278,7 +1278,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
     .level_18 {
         LONG(20)
         LONG(.level_18_end)
-        LONG(D_level_18_80088184)
+        LONG(g_MobyUpdate_level_18)
         LONG(D_level_18_800891A8)
         LONG(func_level_18_8008309C)
         LONG(func_level_18_80086920)
@@ -1388,7 +1388,146 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_18)
+        build/src/overlays/level_18/moby1.o(.rodata);
+        build/src/overlays/level_18/moby1.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby16.o(.rodata);
+        build/src/overlays/level_18/moby16.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby120.o(.rodata);
+        build/src/overlays/level_18/moby120.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby326.o(.rodata);
+        build/src/overlays/level_18/moby326.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby541.o(.rodata);
+        build/src/overlays/level_18/moby541.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby482.o(.rodata);
+        build/src/overlays/level_18/moby482.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby260.o(.rodata);
+        build/src/overlays/level_18/moby260.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby272.o(.rodata);
+        build/src/overlays/level_18/moby272.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby132.o(.rodata);
+        build/src/overlays/level_18/moby132.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby290.o(.rodata);
+        build/src/overlays/level_18/moby290.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby311.o(.rodata);
+        build/src/overlays/level_18/moby311.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby151.o(.rodata);
+        build/src/overlays/level_18/moby151.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby163.o(.rodata);
+        build/src/overlays/level_18/moby163.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby187.o(.rodata);
+        build/src/overlays/level_18/moby187.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby289.o(.rodata);
+        build/src/overlays/level_18/moby289.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby339.o(.rodata);
+        build/src/overlays/level_18/moby339.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby368.o(.rodata);
+        build/src/overlays/level_18/moby368.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby373.o(.rodata);
+        build/src/overlays/level_18/moby373.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby374.o(.rodata);
+        build/src/overlays/level_18/moby374.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby381.o(.rodata);
+        build/src/overlays/level_18/moby381.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby382.o(.rodata);
+        build/src/overlays/level_18/moby382.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby390.o(.rodata);
+        build/src/overlays/level_18/moby390.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby453.o(.rodata);
+        build/src/overlays/level_18/moby453.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby521.o(.rodata);
+        build/src/overlays/level_18/moby521.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby567.o(.rodata);
+        build/src/overlays/level_18/moby567.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby577.o(.rodata);
+        build/src/overlays/level_18/moby577.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby578.o(.rodata);
+        build/src/overlays/level_18/moby578.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby588.o(.rodata);
+        build/src/overlays/level_18/moby588.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby590.o(.rodata);
+        build/src/overlays/level_18/moby590.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby591.o(.rodata);
+        build/src/overlays/level_18/moby591.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby593.o(.rodata);
+        build/src/overlays/level_18/moby593.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby601.o(.rodata);
+        build/src/overlays/level_18/moby601.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby681.o(.rodata);
+        build/src/overlays/level_18/moby681.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby710.o(.rodata);
+        build/src/overlays/level_18/moby710.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby957.o(.rodata);
+        build/src/overlays/level_18/moby957.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby960.o(.rodata);
+        build/src/overlays/level_18/moby960.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby971.o(.rodata);
+        build/src/overlays/level_18/moby971.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby981.o(.rodata);
+        build/src/overlays/level_18/moby981.o(.rodata.jtbl);
+        build/src/overlays/level_18/moby_spawn.o(.rodata);
+        build/src/overlays/level_18/moby_spawn.o(.rodata.jtbl);
+        build/src/overlays/level_18/level.o(.rodata);
+        build/src/overlays/level_18/level.o(.rodata.jtbl);
+        build/src/overlays/level_18/parts_update.o(.rodata);
+        build/src/overlays/level_18/parts_update.o(.rodata.jtbl);
+        build/src/overlays/level_18/parts_spawn.o(.rodata);
+        build/src/overlays/level_18/parts_spawn.o(.rodata.jtbl);
+        build/src/overlays/level_18/animation.o(.rodata);
+        build/src/overlays/level_18/animation.o(.rodata.jtbl);
+        build/src/overlays/level_18/camera.o(.rodata);
+        build/src/overlays/level_18/camera.o(.rodata.jtbl);
+        level_18_text_start = .;
+        build/src/overlays/level_18/moby1.o(.text*);
+        build/src/overlays/level_18/moby16.o(.text*);
+        build/src/overlays/level_18/moby120.o(.text*);
+        build/src/overlays/level_18/moby326.o(.text*);
+        build/src/overlays/level_18/moby541.o(.text*);
+        build/src/overlays/level_18/moby482.o(.text*);
+        build/src/overlays/level_18/moby260.o(.text*);
+        build/src/overlays/level_18/moby272.o(.text*);
+        build/src/overlays/level_18/moby132.o(.text*);
+        build/src/overlays/level_18/moby290.o(.text*);
+        build/src/overlays/level_18/moby311.o(.text*);
+        build/src/overlays/level_18/moby151.o(.text*);
+        build/src/overlays/level_18/moby163.o(.text*);
+        build/src/overlays/level_18/moby187.o(.text*);
+        build/src/overlays/level_18/moby289.o(.text*);
+        build/src/overlays/level_18/moby339.o(.text*);
+        build/src/overlays/level_18/moby368.o(.text*);
+        build/src/overlays/level_18/moby373.o(.text*);
+        build/src/overlays/level_18/moby374.o(.text*);
+        build/src/overlays/level_18/moby381.o(.text*);
+        build/src/overlays/level_18/moby382.o(.text*);
+        build/src/overlays/level_18/moby390.o(.text*);
+        build/src/overlays/level_18/moby453.o(.text*);
+        build/src/overlays/level_18/moby521.o(.text*);
+        build/src/overlays/level_18/moby567.o(.text*);
+        build/src/overlays/level_18/moby577.o(.text*);
+        build/src/overlays/level_18/moby578.o(.text*);
+        build/src/overlays/level_18/moby588.o(.text*);
+        build/src/overlays/level_18/moby590.o(.text*);
+        build/src/overlays/level_18/moby591.o(.text*);
+        build/src/overlays/level_18/moby593.o(.text*);
+        build/src/overlays/level_18/moby601.o(.text*);
+        build/src/overlays/level_18/moby681.o(.text*);
+        build/src/overlays/level_18/moby710.o(.text*);
+        build/src/overlays/level_18/moby957.o(.text*);
+        build/src/overlays/level_18/moby960.o(.text*);
+        build/src/overlays/level_18/moby971.o(.text*);
+        build/src/overlays/level_18/moby981.o(.text*);
+        build/src/overlays/level_18/moby_update.o(.text*);
+        build/src/overlays/level_18/moby_spawn.o(.text*);
+        build/src/overlays/level_18/level.o(.text*);
+        build/src/overlays/level_18/parts_update.o(.text*);
+        build/src/overlays/level_18/parts_spawn.o(.text*);
+        build/asm/overlays/level_18/check.o(.text*);
+        build/src/overlays/level_18/animation.o(.text*);
+        build/src/overlays/level_18/camera.o(.text*);
+        level_18_data_start = .;
+        build/src/overlays/level_18/moby_update.o(.data*);
+        build/asm/data/overlays/level_18/level.data.o(.data*);
+        .level_18_end = .;
+        . = ALIGN(., 2048);
     }
 
     .level_20 {
