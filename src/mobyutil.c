@@ -743,6 +743,7 @@ INCLUDE_ASM("asm/nonmatchings/mobyutil", func_800391E8);
 
 /**
  * TODO
+ * UpdateFragmentMoby
  */
 INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80039714);
 
