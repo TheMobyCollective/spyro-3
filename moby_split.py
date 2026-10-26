@@ -116,7 +116,9 @@ identicalMobys = {
     214: 213,
 
     # Electrical forcefields
-    616: 318,
+    # Order reversed as 318 appears based on 616 (due to moby code ordering)
+    # i.e. this sits between class 602 and class 617
+    318: 616,
 
     # Signs
     408: 325,

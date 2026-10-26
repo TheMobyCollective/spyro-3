@@ -1915,7 +1915,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_318
-		&MOBYUPDATE(318),
+		&MOBYUPDATE(616), // Electrical forcefields
 	#else
 		0,
 	#endif
@@ -3703,7 +3703,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_616
-		&MOBYUPDATE(318), // Electrical forcefields
+		&MOBYUPDATE(616), // Electrical forcefields
 	#else
 		0,
 	#endif
