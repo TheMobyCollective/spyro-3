@@ -31,7 +31,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_4
-		&MOBYUPDATE(4),
+		&MOBYUPDATE(17), // Bamboo Terrace large Rhynocs
 	#else
 		0,
 	#endif
@@ -109,7 +109,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_17
-		&MOBYUPDATE(4), // Bamboo Terrace large Rhynocs
+		&MOBYUPDATE(17), // Bamboo Terrace large Rhynocs
 	#else
 		0,
 	#endif
@@ -247,7 +247,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_40
-		&MOBYUPDATE(40),
+		&MOBYUPDATE(140), // Rhynoc submarine
 	#else
 		0,
 	#endif
@@ -709,7 +709,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_117
-		&MOBYUPDATE(117),
+		&MOBYUPDATE(103), // Skateboarding Hunter
 	#else
 		0,
 	#endif
@@ -1363,7 +1363,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_226
-		&MOBYUPDATE(226),
+		&MOBYUPDATE(155), // Crabs
 	#else
 		0,
 	#endif
@@ -1489,7 +1489,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_247
-		&MOBYUPDATE(247),
+		&MOBYUPDATE(121), // Ice blocks
 	#else
 		0,
 	#endif
@@ -3733,7 +3733,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_621
-		&MOBYUPDATE(621),
+		&MOBYUPDATE(94), // bullets / thrown rocks
 	#else
 		0,
 	#endif

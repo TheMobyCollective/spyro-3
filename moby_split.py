@@ -83,8 +83,8 @@ ldSnippetString2 = """\
 """
 
 identicalMobys = {
-    # Bamboo Terrace large Rhynocs
-    17: 4,
+    # Bamboo Terrace large Rhynocs - moby ordering suggests 4 is based on 17's code
+    4: 17,
 
     # Butterflies
     211: 16,
@@ -97,8 +97,21 @@ identicalMobys = {
     # Pushable blocks
     79: 75,
 
+    # Bullets / rocks
+    621: 94,
+
+    # Skateboarding Hunters
+    117: 103,
+
     # Ice blocks
+    247: 121, # this one is only in prototypes, but the class is not used in the final
     324: 121,
+
+    # Rhynoc Submarines - Lost Fleet's (140) were first
+    40: 140,
+
+    # Crabs
+    226: 155,
 
     # Seashell Shore fragments - the tree fragments (191) aren't here in final, but they are in April, and moby code ordering
     # suggests they're the same despite us not having a build with both in the same level
