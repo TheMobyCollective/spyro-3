@@ -83,11 +83,18 @@ ldSnippetString2 = """\
 """
 
 identicalMobys = {
+    # Butterflies
+    211: 16,
+
     # Bamboo Terrace large Rhynocs - moby ordering suggests 4 is based on 17's code
     4: 17,
 
-    # Butterflies
-    211: 16,
+    # Various fragments (Brian H?) - confirmed by moby ordering.
+    # Note there are other similar fragments (327, 467, 491, 504, 648, 748) that are not the same function, confirmed via ordering.
+    56: 29,
+    162: 29,
+    215: 29,
+    715: 29,
 
     # Skateboards and skateboard spawners
     251: 54,
@@ -125,9 +132,6 @@ identicalMobys = {
     # (i.e. they're both sandwiched between 100 and 257)
     633: 191,
 
-    # Portal icons - 195 was added late in development, 265 came first
-    195: 265, 
-
     # Gem containers
     202: 201,
     203: 201,
@@ -135,10 +139,8 @@ identicalMobys = {
     # Lost Fleet walls
     214: 213,
 
-    # Electrical forcefields
-    # Order reversed as 318 appears based on 616 (due to moby code ordering)
-    # i.e. this sits between class 602 and class 617
-    318: 616,
+    # Portal icons - 195 was added late in development, 265 came first
+    195: 265, 
 
     # Signs
     408: 325,
@@ -160,6 +162,15 @@ identicalMobys = {
     436: 432,
     527: 432,
 
+    # Electrical forcefields
+    # Order reversed as 318 appears based on 616 (due to moby code ordering)
+    # i.e. this sits between class 602 and class 617
+    318: 616,
+
+    # Rhynoc skateboard / Yeti snowboard
+    # Lost Fleet (623) was first
+    380: 623,
+
     # Midday Garden Home NPCs, including non-caged Byrd
     662: 661,
     663: 661,
@@ -171,14 +182,13 @@ identicalMobys = {
     676: 674,
     677: 674,
 
-    # A handful of fragment mobys have code identical to the Lost Fleet / SBR crab fragments.
-    # (29, 56, 162, 215, 327, 467, 491, 504, 648, 715, 748)
-    # However, Lost Fleet notably has two separate mobys with this code at different addresses.
-    # We will assume the crab fragments are the same, as are the group used in Desert Ruins.
+    # Enemy fragments (Brian H?) - confirmed by moby ordering, and by some appearing in the same level.
+    # Note there are other similar fragments (29, 56, 162, 215, 715) that are not the same function, confirmed via ordering.
+    467: 327,
     491: 327,
-    504: 467,
-    648: 467,
-    748: 467,
+    504: 327,
+    648: 327,
+    748: 327,
 
     # These fragments have been observed in multiple levels and have always been seen to overlap.
     # An assumption will be made that they are all one group, even though the Haunted ones are never

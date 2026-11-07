@@ -181,7 +181,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_29
-		&MOBYUPDATE(29),
+		&MOBYUPDATE(29), // Various fragments (Brian H? 29 group)
 	#else
 		0,
 	#endif
@@ -343,7 +343,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_56
-		&MOBYUPDATE(56),
+		&MOBYUPDATE(29), // Various fragments (Brian H? 29 group)
 	#else
 		0,
 	#endif
@@ -979,7 +979,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_162
-		&MOBYUPDATE(162),
+		&MOBYUPDATE(29), // Various fragments (Brian H? 29 group)
 	#else
 		0,
 	#endif
@@ -1297,7 +1297,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_215
-		&MOBYUPDATE(215),
+		&MOBYUPDATE(29), // Various fragments (Brian H? 29 group)
 	#else
 		0,
 	#endif
@@ -1969,7 +1969,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_327
-		&MOBYUPDATE(327),
+		&MOBYUPDATE(327), // Enemy fragments (Brian H? 327 group)
 	#else
 		0,
 	#endif
@@ -2287,7 +2287,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_380
-		&MOBYUPDATE(380),
+		&MOBYUPDATE(623), // Rhynoc skateboard / Yeti snowboard
 	#else
 		0,
 	#endif
@@ -2809,7 +2809,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_467
-		&MOBYUPDATE(467),
+		&MOBYUPDATE(327), // Enemy fragments (Brian H? 327 group)
 	#else
 		0,
 	#endif
@@ -2953,7 +2953,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_491
-		&MOBYUPDATE(327), // Crab fragments
+		&MOBYUPDATE(327), // Enemy fragments (Brian H? 327 group)
 	#else
 		0,
 	#endif
@@ -3031,7 +3031,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_504
-		&MOBYUPDATE(467), // Desert Ruins enemy fragments
+		&MOBYUPDATE(327), // Enemy fragments (Brian H? 327 group)
 	#else
 		0,
 	#endif
@@ -3895,7 +3895,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_648
-		&MOBYUPDATE(467), // Desert Ruins enemy fragments
+		&MOBYUPDATE(327), // Enemy fragments (Brian H? 327 group)
 	#else
 		0,
 	#endif
@@ -4297,7 +4297,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_715
-		&MOBYUPDATE(715),
+		&MOBYUPDATE(29), // Various fragments (Brian H? 29 group)
 	#else
 		0,
 	#endif
@@ -4495,7 +4495,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_748
-		&MOBYUPDATE(467), // Desert Ruins enemy fragments
+		&MOBYUPDATE(327), // Enemy fragments (Brian H? 327 group)
 	#else
 		0,
 	#endif
