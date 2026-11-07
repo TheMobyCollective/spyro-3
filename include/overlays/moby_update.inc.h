@@ -91,7 +91,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_14
-		&MOBYUPDATE(14),
+		&MOBYUPDATE(168), // Bug fodder
 	#else
 		0,
 	#endif
@@ -1417,7 +1417,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_235
-		&MOBYUPDATE(235),
+		&MOBYUPDATE(235), // Fragments (Matt)
 	#else
 		0,
 	#endif
@@ -1735,7 +1735,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_288
-		&MOBYUPDATE(288),
+		&MOBYUPDATE(235), // Fragments (Matt)
 	#else
 		0,
 	#endif
@@ -1939,7 +1939,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_322
-		&MOBYUPDATE(322),
+		&MOBYUPDATE(76), // bubbles
 	#else
 		0,
 	#endif
@@ -2095,7 +2095,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_348
-		&MOBYUPDATE(348),
+		&MOBYUPDATE(76), // bubbles
 	#else
 		0,
 	#endif
@@ -4195,7 +4195,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_698
-		&MOBYUPDATE(698),
+		&MOBYUPDATE(235), // Fragments (Matt)
 	#else
 		0,
 	#endif
@@ -4417,25 +4417,25 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_735
-		&MOBYUPDATE(735),
+		&MOBYUPDATE(235), // Fragments (Matt)
 	#else
 		0,
 	#endif
 
 	#ifdef HAS_MOBY_736
-		&MOBYUPDATE(735), // Midnight Mountain / Desert Ruins fragments
+		&MOBYUPDATE(235), // Fragments (Matt)
 	#else
 		0,
 	#endif
 
 	#ifdef HAS_MOBY_737
-		&MOBYUPDATE(735), // Midnight Mountain / Desert Ruins fragments
+		&MOBYUPDATE(235), // Fragments (Matt)
 	#else
 		0,
 	#endif
 
 	#ifdef HAS_MOBY_738
-		&MOBYUPDATE(735), // Midnight Mountain / Desert Ruins fragments
+		&MOBYUPDATE(235), // Fragments (Matt)
 	#else
 		0,
 	#endif

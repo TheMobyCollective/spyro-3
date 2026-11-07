@@ -97,6 +97,10 @@ identicalMobys = {
     # Pushable blocks
     79: 75,
 
+    # Bubbles in non-swimmable liquid
+    322: 76,
+    348: 76,
+
     # Bullets / rocks
     621: 94,
 
@@ -112,6 +116,9 @@ identicalMobys = {
 
     # Crabs
     226: 155,
+
+    # Bug fodder (Gavin?) - 168-based according to moby ordering
+    14: 168,
 
     # Seashell Shore fragments - the tree fragments (191) aren't here in final, but they are in April, and moby code ordering
     # suggests they're the same despite us not having a build with both in the same level
@@ -183,11 +190,14 @@ identicalMobys = {
     481: 423,
     619: 423,
 
-    # These fragments are all the same, appear in two proveably identical groups, and all have consecutive classes.
-    # We won't include identical mobys from other levels that aren't consecutive (235, 288, 698)
-    736: 735,
-    737: 735,
-    738: 735,
+    # A few fragments from various levels, confirmed in some levels to be the same function. Moby ordering
+    # suggests the rest are the same, though 288 and 698 are more weakly implied to be the same.
+    288: 235,
+    698: 235,
+    735: 235,
+    736: 235,
+    737: 235,
+    738: 235,
 
     # Many fragment mobys have code identical to 501 (egg shell).
     # (107, 142, 145, 146, 219, 278, 290, 293, 294, 296, 340, 444, 501, 530, 558, 559, 570, 612)
