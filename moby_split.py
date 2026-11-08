@@ -121,6 +121,15 @@ identicalMobys = {
     # Rhynoc Submarines - Lost Fleet's (140) were first
     40: 140,
 
+    # Various fragments (501ish fragments - separate from other similar mobys due to ordering), appears to be 142-based
+    107: 142,
+    145: 142,
+    146: 142,
+    378: 142, # has level specific stuff
+    444: 142,
+    558: 142,
+    741: 142, # has level specific stuff
+
     # Crabs
     226: 155,
 
@@ -139,8 +148,35 @@ identicalMobys = {
     # Lost Fleet walls
     214: 213,
 
+    # A few fragments from various levels, confirmed in some levels to be the same function. Moby ordering
+    # suggests the rest are the same, though 288 and 698 are more weakly implied to be the same.
+    288: 235,
+    698: 235,
+    735: 235,
+    736: 235,
+    737: 235,
+    738: 235,
+
     # Portal icons - 195 was added late in development, 265 came first
     195: 265,
+
+    # Various fragments (501ish fragments - separate from other similar mobys due to ordering)
+    501: 290,
+    570: 290,
+    564: 290,
+    569: 290,
+
+    # Sgt. Byrd's base fragments (501ish fragments - separate from other similar mobys due to ordering)
+    294: 293,
+
+    # Common fragments
+    307: 306,
+    308: 306,
+    309: 306,
+    310: 306,
+    568: 306,
+    630: 306,
+    631: 306,
 
     # Enemy fragments (Brian H?) - confirmed by moby ordering, and by some appearing in the same level.
     # Note there are other similar fragments (29, 56, 162, 215, 715) that are not the same function, confirmed via ordering.
@@ -149,6 +185,12 @@ identicalMobys = {
     504: 327,
     648: 327,
     748: 327,
+
+    # Various fragments (501ish fragments - separate from other similar mobys due to ordering), also seems to be 340-based
+    278: 340,
+    530: 340,
+    559: 340,
+    612: 340,
 
     # Signs - 408-based (Bentley sign) based on moby code ordering
     325: 408,
@@ -163,6 +205,16 @@ identicalMobys = {
     471: 421,
     472: 421,
     473: 421,
+
+    # These fragments have been observed in multiple levels and have always been seen to overlap.
+    # An assumption will be made that they are all one group, even though the Haunted ones are never
+    # in a level with the others.
+    424: 423,
+    451: 423,
+    474: 423,
+    476: 423,
+    481: 423,
+    619: 423,
 
     # Sunrise Spring Home NPCs
     434: 432,
@@ -190,61 +242,6 @@ identicalMobys = {
     676: 674,
     677: 674,
 
-    # These fragments have been observed in multiple levels and have always been seen to overlap.
-    # An assumption will be made that they are all one group, even though the Haunted ones are never
-    # in a level with the others.
-    424: 423,
-    451: 423,
-    474: 423,
-    476: 423,
-    481: 423,
-    619: 423,
-
-    # A few fragments from various levels, confirmed in some levels to be the same function. Moby ordering
-    # suggests the rest are the same, though 288 and 698 are more weakly implied to be the same.
-    288: 235,
-    698: 235,
-    735: 235,
-    736: 235,
-    737: 235,
-    738: 235,
-
-    # Various fragments (501ish fragments - separate from other similar mobys due to ordering), appears to be 142-based
-    107: 142,
-    145: 142,
-    146: 142,
-    378: 142, # has level specific stuff
-    444: 142,
-    558: 142,
-    741: 142, # has level specific stuff
-
-    # Various fragments (501ish fragments - separate from other similar mobys due to ordering)
-    501: 290,
-    570: 290,
-    564: 290,
-    569: 290,
-
-    # Sgt. Byrd's base fragments (501ish fragments - separate from other similar mobys due to ordering)
-    294: 293,
-
-    # Various fragments (501ish fragments - separate from other similar mobys due to ordering), also seems to be 340-based
-    278: 340,
-    530: 340,
-    559: 340,
-    612: 340,
-
-    # Dino Mines fragments - class 752 was probably the one made first in this case, due to the class-wrap.
-    275: 752,
-
-    # Common fragments
-    307: 306,
-    308: 306,
-    309: 306,
-    310: 306,
-    568: 306,
-    630: 306,
-    631: 306,
-
     # Vultures
     732: 729,
 
@@ -253,6 +250,9 @@ identicalMobys = {
 
     # Dino Mines fragments
     749: 744,
+
+    # Dino Mines fragments - class 752 was probably the one made first in this case, due to the class-wrap.
+    275: 752,
 }
 
 def get_mobys(levelId):
