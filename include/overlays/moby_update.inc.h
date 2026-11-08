@@ -685,7 +685,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_113
-		&MOBYUPDATE(113),
+		&MOBYUPDATE(46), // Fodder
 	#else
 		0,
 	#endif
@@ -1375,7 +1375,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_228
-		&MOBYUPDATE(228),
+		&MOBYUPDATE(46), // Fodder
 	#else
 		0,
 	#endif
@@ -1819,7 +1819,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_302
-		&MOBYUPDATE(302),
+		&MOBYUPDATE(46), // Fodder
 	#else
 		0,
 	#endif

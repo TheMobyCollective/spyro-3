@@ -96,6 +96,11 @@ identicalMobys = {
     215: 29,
     715: 29,
 
+    # Fodder
+    113: 46,
+    228: 46,
+    302: 46,
+
     # Skateboards and skateboard spawners
     251: 54,
     461: 54,
