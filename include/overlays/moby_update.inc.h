@@ -4399,13 +4399,13 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_732
-		&MOBYUPDATE(732),
+		&MOBYUPDATE(729), // Vultures
 	#else
 		0,
 	#endif
 
 	#ifdef HAS_MOBY_733
-		&MOBYUPDATE(733),
+		&MOBYUPDATE(730), // Feathers
 	#else
 		0,
 	#endif

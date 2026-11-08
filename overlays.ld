@@ -2419,10 +2419,10 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/level_21/moby395.o(.rodata.jtbl);
         build/src/overlays/level_21/moby634.o(.rodata);
         build/src/overlays/level_21/moby634.o(.rodata.jtbl);
-        build/src/overlays/level_21/moby732.o(.rodata);
-        build/src/overlays/level_21/moby732.o(.rodata.jtbl);
-        build/src/overlays/level_21/moby733.o(.rodata);
-        build/src/overlays/level_21/moby733.o(.rodata.jtbl);
+        build/src/overlays/level_21/moby729.o(.rodata);
+        build/src/overlays/level_21/moby729.o(.rodata.jtbl);
+        build/src/overlays/level_21/moby730.o(.rodata);
+        build/src/overlays/level_21/moby730.o(.rodata.jtbl);
         build/src/overlays/level_21/moby947.o(.rodata);
         build/src/overlays/level_21/moby947.o(.rodata.jtbl);
         build/src/overlays/level_21/moby1022.o(.rodata);
@@ -2487,8 +2487,8 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         build/src/overlays/level_21/moby361.o(.text*);
         build/src/overlays/level_21/moby395.o(.text*);
         build/src/overlays/level_21/moby634.o(.text*);
-        build/src/overlays/level_21/moby732.o(.text*);
-        build/src/overlays/level_21/moby733.o(.text*);
+        build/src/overlays/level_21/moby729.o(.text*);
+        build/src/overlays/level_21/moby730.o(.text*);
         build/src/overlays/level_21/moby947.o(.text*);
         build/src/overlays/level_21/moby1022.o(.text*);
         build/src/overlays/level_21/moby182.o(.text*);

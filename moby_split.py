@@ -245,6 +245,12 @@ identicalMobys = {
     630: 306,
     631: 306,
 
+    # Vultures
+    732: 729,
+
+    # Feathers
+    733: 730,
+
     # Dino Mines fragments
     749: 744,
 }
