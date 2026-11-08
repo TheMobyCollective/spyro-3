@@ -140,14 +140,22 @@ identicalMobys = {
     214: 213,
 
     # Portal icons - 195 was added late in development, 265 came first
-    195: 265, 
+    195: 265,
 
-    # Signs
-    408: 325,
-    544: 325,
-    683: 325,
-    684: 325,
-    685: 325,
+    # Enemy fragments (Brian H?) - confirmed by moby ordering, and by some appearing in the same level.
+    # Note there are other similar fragments (29, 56, 162, 215, 715) that are not the same function, confirmed via ordering.
+    467: 327,
+    491: 327,
+    504: 327,
+    648: 327,
+    748: 327,
+
+    # Signs - 408-based (Bentley sign) based on moby code ordering
+    325: 408,
+    544: 408,
+    683: 408,
+    684: 408,
+    685: 408,
 
     # Sand blocks
     450: 421,
@@ -182,14 +190,6 @@ identicalMobys = {
     676: 674,
     677: 674,
 
-    # Enemy fragments (Brian H?) - confirmed by moby ordering, and by some appearing in the same level.
-    # Note there are other similar fragments (29, 56, 162, 215, 715) that are not the same function, confirmed via ordering.
-    467: 327,
-    491: 327,
-    504: 327,
-    648: 327,
-    748: 327,
-
     # These fragments have been observed in multiple levels and have always been seen to overlap.
     # An assumption will be made that they are all one group, even though the Haunted ones are never
     # in a level with the others.
@@ -209,19 +209,29 @@ identicalMobys = {
     737: 235,
     738: 235,
 
-    # Many fragment mobys have code identical to 501 (egg shell).
-    # (107, 142, 145, 146, 219, 278, 290, 293, 294, 296, 340, 444, 501, 530, 558, 559, 570, 612)
-    # However, only 290 and 570 are observed to use the same address as 501, and the rest do not.
-    # 142 / 145 / 146 use the same address, as do 293 / 294.
-    # Most of the rest of these mobys are used in different levels, so it's unclear if
-    # they're just identical code or if they're literally the same update function.
-    # I have for the mostpart assumed they're separate, but it's possible that some of these were
-    # using the same moby update functions.
+    # Various fragments (501ish fragments - separate from other similar mobys due to ordering), appears to be 142-based
+    107: 142,
     145: 142,
     146: 142,
+    378: 142, # has level specific stuff
+    444: 142,
+    558: 142,
+    741: 142, # has level specific stuff
+
+    # Various fragments (501ish fragments - separate from other similar mobys due to ordering)
     501: 290,
     570: 290,
+    564: 290,
+    569: 290,
+
+    # Sgt. Byrd's base fragments (501ish fragments - separate from other similar mobys due to ordering)
     294: 293,
+
+    # Various fragments (501ish fragments - separate from other similar mobys due to ordering), also seems to be 340-based
+    278: 340,
+    530: 340,
+    559: 340,
+    612: 340,
 
     # Dino Mines fragments - class 752 was probably the one made first in this case, due to the class-wrap.
     275: 752,
@@ -234,9 +244,6 @@ identicalMobys = {
     568: 306,
     630: 306,
     631: 306,
-
-    # Enchanted Towers fragments - not sure these are even used
-    569: 564,
 
     # Dino Mines fragments
     749: 744,

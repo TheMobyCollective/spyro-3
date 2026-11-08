@@ -649,7 +649,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_107
-		&MOBYUPDATE(107),
+		&MOBYUPDATE(142), // Various fragments
 	#else
 		0,
 	#endif
@@ -859,7 +859,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_142
-		&MOBYUPDATE(142),
+		&MOBYUPDATE(142), // Various fragments
 	#else
 		0,
 	#endif
@@ -877,13 +877,13 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_145
-		&MOBYUPDATE(142), // Lost Fleet fragments
+		&MOBYUPDATE(142), // Various fragments
 	#else
 		0,
 	#endif
 
 	#ifdef HAS_MOBY_146
-		&MOBYUPDATE(142), // Lost Fleet fragments
+		&MOBYUPDATE(142), // Various fragments
 	#else
 		0,
 	#endif
@@ -1675,7 +1675,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_278
-		&MOBYUPDATE(278),
+		&MOBYUPDATE(340), // A few overlapping fragments (Matt?)
 	#else
 		0,
 	#endif
@@ -1747,7 +1747,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_290
-		&MOBYUPDATE(290),
+		&MOBYUPDATE(290), // A few overlapping fragments (Gavin?)
 	#else
 		0,
 	#endif
@@ -1957,7 +1957,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_325
-		&MOBYUPDATE(325),
+		&MOBYUPDATE(408), // Signs
 	#else
 		0,
 	#endif
@@ -2047,7 +2047,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_340
-		&MOBYUPDATE(340),
+		&MOBYUPDATE(340), // A few overlapping fragments (Matt?)
 	#else
 		0,
 	#endif
@@ -2275,7 +2275,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_378
-		&MOBYUPDATE(378),
+		&MOBYUPDATE(142), // Various fragments
 	#else
 		0,
 	#endif
@@ -2455,7 +2455,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_408
-		&MOBYUPDATE(325), // Signs
+		&MOBYUPDATE(408), // Signs
 	#else
 		0,
 	#endif
@@ -2671,7 +2671,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_444
-		&MOBYUPDATE(444),
+		&MOBYUPDATE(142), // Various fragments
 	#else
 		0,
 	#endif
@@ -3013,7 +3013,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_501
-		&MOBYUPDATE(290), // A few overlapping fragments
+		&MOBYUPDATE(290), // A few overlapping fragments (Gavin?)
 	#else
 		0,
 	#endif
@@ -3187,7 +3187,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_530
-		&MOBYUPDATE(530),
+		&MOBYUPDATE(340), // A few overlapping fragments (Matt?)
 	#else
 		0,
 	#endif
@@ -3271,7 +3271,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_544
-		&MOBYUPDATE(325), // Signs
+		&MOBYUPDATE(408), // Signs
 	#else
 		0,
 	#endif
@@ -3355,13 +3355,13 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_558
-		&MOBYUPDATE(558),
+		&MOBYUPDATE(142), // Various fragments
 	#else
 		0,
 	#endif
 
 	#ifdef HAS_MOBY_559
-		&MOBYUPDATE(559),
+		&MOBYUPDATE(340), // A few overlapping fragments (Matt?)
 	#else
 		0,
 	#endif
@@ -3391,7 +3391,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_564
-		&MOBYUPDATE(564),
+		&MOBYUPDATE(290), // A few overlapping fragments (Gavin?)
 	#else
 		0,
 	#endif
@@ -3421,13 +3421,13 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_569
-		&MOBYUPDATE(564), // Enchanted Towers fragments
+		&MOBYUPDATE(290),// A few overlapping fragments (Gavin?)
 	#else
 		0,
 	#endif
 
 	#ifdef HAS_MOBY_570
-		&MOBYUPDATE(290), // A few overlapping fragments
+		&MOBYUPDATE(290), // A few overlapping fragments (Gavin?)
 	#else
 		0,
 	#endif
@@ -3679,7 +3679,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_612
-		&MOBYUPDATE(612),
+		&MOBYUPDATE(340), // A few overlapping fragments (Matt?)
 	#else
 		0,
 	#endif
@@ -4105,19 +4105,19 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_683
-		&MOBYUPDATE(325), // Signs
+		&MOBYUPDATE(408), // Signs
 	#else
 		0,
 	#endif
 
 	#ifdef HAS_MOBY_684
-		&MOBYUPDATE(325), // Signs
+		&MOBYUPDATE(408), // Signs
 	#else
 		0,
 	#endif
 
 	#ifdef HAS_MOBY_685
-		&MOBYUPDATE(325), // Signs
+		&MOBYUPDATE(408), // Signs
 	#else
 		0,
 	#endif
@@ -4453,7 +4453,7 @@ void (*NAME_OVERLAY_DATA(g_MobyUpdate)[1024]) (Moby* pMoby) = {
 	#endif
 
 	#ifdef HAS_MOBY_741
-		&MOBYUPDATE(741),
+		&MOBYUPDATE(142), // Various fragments
 	#else
 		0,
 	#endif

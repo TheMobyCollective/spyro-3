@@ -36,11 +36,11 @@
 - [ ] MobyUpdate_1002_level_10
 - [ ] MobyUpdate_170_level_10
 - [ ] MobyUpdate_198_level_10
-- [ ] MobyUpdate_325_level_10
+- [ ] MobyUpdate_408_level_10
 - [ ] MobyUpdate_459_level_10
 - [ ] MobyUpdate_460_level_10
 - [ ] MobyUpdate_265_level_10
-- [x] MobyUpdate_559_level_10
+- [x] MobyUpdate_340_level_10
 - [ ] MobyUpdate_416_level_10
 - [ ] MobyUpdate_425_level_10
 - [ ] MobyUpdate_426_level_10
