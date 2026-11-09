@@ -1,7 +1,0 @@
-.section .rodata
-
-dlabel D_level_14_800747C4
-/* 47B3CF4 800747C4 68010000 */ .word 0x00000168
-/* 47B3CF8 800747C8 7C010000 */ .word 0x0000017C
-/* 47B3CFC 800747CC 90010000 */ .word 0x00000190
-.size D_level_14_800747C4, . - D_level_14_800747C4

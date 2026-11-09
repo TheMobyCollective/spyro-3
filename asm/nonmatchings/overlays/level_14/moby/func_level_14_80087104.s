@@ -1,7 +1,23 @@
 .set noat      /* allow manual use of $at */
 .set noreorder /* don't insert nops after branches */
 
-glabel func_level_14_80087104
+.section .rodata
+.align 3
+dlabel D_level_14_80074AF0
+/* 47B4020 80074AF0 84030000 */ .word 0x00000384
+/* 47B4024 80074AF4 BC020000 */ .word 0x000002BC
+/* 47B4028 80074AF8 58020000 */ .word 0x00000258
+.size D_level_14_80074AF0, . - D_level_14_80074AF0
+
+dlabel D_level_14_80074AFC
+/* 47B402C 80074AFC 02000000 */ .word 0x00000002
+/* 47B4030 80074B00 03000000 */ .word 0x00000003
+/* 47B4034 80074B04 04000000 */ .word 0x00000004
+.size D_level_14_80074AFC, . - D_level_14_80074AFC
+
+.section .text
+
+glabel MobyUpdate_420_level_14
 /* 47C6634 80087104 90FFBD27 */  addiu      $sp, $sp, -0x70
 /* 47C6638 80087108 5C00B3AF */  sw         $s3, 0x5C($sp)
 /* 47C663C 8008710C 21988000 */  addu       $s3, $a0, $zero
@@ -1014,4 +1030,4 @@ glabel func_level_14_80087104
 /* 47C74E8 80087FB8 7000BD27 */  addiu      $sp, $sp, 0x70
 /* 47C74EC 80087FBC 0800E003 */  jr         $ra
 /* 47C74F0 80087FC0 00000000 */   nop
-.size func_level_14_80087104, . - func_level_14_80087104
+.size MobyUpdate_420_level_14, . - MobyUpdate_420_level_14
