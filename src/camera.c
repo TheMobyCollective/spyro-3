@@ -1,15 +1,13 @@
 #include "common.h"
 #include "camera.h"
 #include "cheat.h"
+#include "globals.h"
 #include "ovl_header.h"
 #include "pad.h"
 #include "stdutil.h"
 #include "spyro.h"
 #include "tracers.h"
 #include "moby_props.h"
-
-// sbss
-extern int D_8006C6D0;
 
 extern void SetGeomScreen(int);
 extern void func_80055D24(Moby*, int); // fUpdateMobyCollision

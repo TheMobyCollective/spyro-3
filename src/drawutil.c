@@ -1,19 +1,13 @@
 #include "common.h"
 #include "libgpu.h"
 #include "drawutil.h"
+#include "globals.h"
 #include "loaders.h"
 #include "mobyfunc.h"
 #include "stdutil.h"
 
 extern void VSync(int);
 extern void func_8004E7AC(int, int, int);
-
-extern DB* D_8006C600; // current DB?
-extern int D_8006C634;
-extern void* D_8006C664;
-extern int D_8006C668;
-extern int D_8006C7D4;
-extern int D_8006C7DC;
 
 extern char D_80067570[16][12]; // might be an array of structs, not sure
 extern PauseData pauseData; // 8006fbc4

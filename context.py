@@ -34,7 +34,9 @@ files = [
 	'mobydraw.h',
 	'mobyfunc.h',
 	'mobyupdate.h',
+    'globals.h',
 	#'strings.h', # empty right now
+    #'tables.h',
 ]
 
 context = '// Context generated ' + datetime.now().strftime("%Y-%m-%d %H:%M:%S") + '\n\n'
@@ -97,9 +99,6 @@ extern int rand(); // rand
 // Variables
 extern short D_800658A0[0x100]; // sin
 extern short D_80065920[0x100]; // cos
-extern Moby* D_8006C550; // moby array ptr
-extern int D_8006C5BC; // currentLvl
-extern int D_8006C648; // deltaTime
 extern Spyro D_80070328; // left without name to make the decompiler find it easier
 extern CDState D_8006E470; // cdState
 extern StreamingData D_8006E48C; // streamingData

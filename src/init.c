@@ -1,6 +1,7 @@
 #include "common.h"
 #include "init.h"
 #include "drawutil.h"
+#include "globals.h"
 #include "libgpu.h"
 #include "spu.h"
 #include "stdutil.h"
@@ -17,9 +18,6 @@ extern int CdControl(char param_1, char* param_2, char* param_3);
 
 // rodata
 extern int* overlayStartPtr; // 80011254
-
-// sbss
-extern DRAWENV* D_8006C600;
 
 // bss
 extern WadHeader wadHeader;
@@ -54,6 +52,7 @@ void InitCdAndWad() {
 
 /**
  * SetupDrawDispEnvs() - func_8002A834() - MATCHING
+ * TODO - rename to SetupDB?
  * https://decomp.me/scratch/dTBAm
  */
 void SetupDrawDispEnvs() {
@@ -79,9 +78,9 @@ void SetupDrawDispEnvs() {
     g_DB[1].m_DrawEnv.dtd = 1;
     func_8001EBAC();
     VSync(0);
-    D_8006C600 = &g_DB[1].m_DrawEnv;
-    PutDispEnv(&g_DB[1].m_DispEnv);
-    PutDrawEnv(D_8006C600);
+    D_8006C600 = &g_DB[1];
+    PutDispEnv(&D_8006C600->m_DispEnv);
+    PutDrawEnv(&D_8006C600->m_DrawEnv);
     SetDispMask(1);
 }
 

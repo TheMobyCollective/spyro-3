@@ -1,5 +1,6 @@
 #include "common.h"
 #include "cheat.h"
+#include "globals.h"
 #include "pad.h"
 #include "spu.h"
 #include "str.h"
@@ -14,11 +15,6 @@ extern Sparx sparx; // 8006580c
 
 // sdata 8006c3b0
 extern int localDifficultyOverride; // D_8006C404
-extern int D_8006C5BC;
-extern SoundTable* soundTablePtr; // D_8006C654
-extern short D_8006C67C;
-extern int D_8006C784;
-extern int D_8006C7A8;
 
 // static inlines
 // might be useful in other functions, so should be in the header

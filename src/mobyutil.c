@@ -1,5 +1,6 @@
 #include "common.h"
 #include "camera.h"
+#include "globals.h"
 #include "mobyfunc.h"
 #include "mobyutil.h"
 #include "stdutil.h"
@@ -31,16 +32,6 @@ extern unsigned char D_80066990[8]; // GemColourIndices
 extern unsigned char D_80066F54[40]; // gems per level / 100
 extern unsigned char D_80066F7C[40]; // eggs per level
 extern TalkTextData D_80067554[7]; // TriangleToTalkData
-
-// sdata / sbss
-extern int g_LevelIndex; // 8006C58C
-extern int* dragonModelPtr; // 8006C5B0
-extern int D_8006C648; // deltaTime
-extern Moby* D_8006C550; // MobyArrayPointer
-extern int D_8006C580;
-extern Moby* D_8006C704; // FirstAllocatedMobyPointer
-extern unsigned short** D_8006C730;
-extern int D_8006C770;
 
 // bss
 extern WadHeader wadHeader; // 8006d8d8

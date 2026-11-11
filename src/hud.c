@@ -1,5 +1,6 @@
 #include "common.h"
 #include "hud.h"
+#include "globals.h"
 #include "spu.h"
 
 extern int func_8002EBB0(void*);
@@ -7,19 +8,7 @@ extern void func_8004E758(void*); //fAddHudOT
 
 extern char D_800674E8[20]; // maybe an easing function
 
-// sbss
-extern int D_8006C598;
-extern int g_CurrentLevel; // D_8006C5BC
-extern int D_8006C64C;
-extern int deltaTime; // 8006C648
-extern void* D_8006C664;
-extern int D_8006C784; // g_Lives
-extern int D_8006C660; // g_EggTotal
-extern int D_8006C71C; // g_GemTotal
-extern int D_8006C74C;
-extern int D_8006C768;
 extern SpeedwayData speedwayData; // D_8006FA38
-
 extern Vector3D D_800714F4; // likely just the aiming reticle position, e.g. in Country Speedway / Dino Mines 
 
 typedef struct {

@@ -14,4 +14,6 @@
 //extern char g_BalloonistDialogueIndices[40];
 //extern const char *g_BalloonistDialogue[];
 
+// May indeed be text.h / text.c instead!
+
 #endif // !__STRINGS_H

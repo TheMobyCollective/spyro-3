@@ -3,6 +3,7 @@
 #include "cyclorama.h"
 #include "draw.h"
 #include "drawutil.h"
+#include "globals.h"
 #include "hud.h"
 #include "mobyfunc.h"
 #include "pad.h"
@@ -18,16 +19,6 @@ void func_credits_80076118();
 
 // partsdraw
 void func_8003AA38();
-
-// sbss
-extern int D_8006C514;
-extern int D_8006C598;
-extern int D_8006C5B8;
-extern int D_8006C658;
-extern int D_8006C6D4;
-extern int D_8006C76C;
-extern int D_8006C7C0;
-extern int D_8006C7E4;
 
 // data
 extern const char* D_80069DE0[]; // "DEMO MODE"
