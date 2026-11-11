@@ -1,7 +1,7 @@
 .set noat      /* allow manual use of $at */
 .set noreorder /* don't insert nops after branches */
 
-glabel func_level_22_8008D4C8
+glabel MobyUpdate_573_level_22
 /* 577D1F8 8008D4C8 90FFBD27 */  addiu      $sp, $sp, -0x70
 /* 577D1FC 8008D4CC 6800B2AF */  sw         $s2, 0x68($sp)
 /* 577D200 8008D4D0 21908000 */  addu       $s2, $a0, $zero
@@ -206,8 +206,8 @@ glabel func_level_22_8008D4C8
 /* 577D4FC 8008D7CC 21004014 */  bnez       $v0, .Llevel_22_8008D854
 /* 577D500 8008D7D0 21204002 */   addu      $a0, $s2, $zero
 /* 577D504 8008D7D4 21280000 */  addu       $a1, $zero, $zero
-/* 577D508 8008D7D8 0A80063C */  lui        $a2, %hi(D_level_22_8009B090)
-/* 577D50C 8008D7DC 90B0C624 */  addiu      $a2, $a2, %lo(D_level_22_8009B090)
+/* 577D508 8008D7D8 0A80063C */  lui        $a2, %hi(level_22_data_start)
+/* 577D50C 8008D7DC 90B0C624 */  addiu      $a2, $a2, %lo(level_22_data_start)
 .Llevel_22_8008D7E0:
 /* 577D510 8008D7E0 3400238E */  lw         $v1, 0x34($s1)
 /* 577D514 8008D7E4 00000000 */  nop
@@ -427,4 +427,4 @@ glabel func_level_22_8008D4C8
 /* 577D818 8008DAE8 7000BD27 */  addiu      $sp, $sp, 0x70
 /* 577D81C 8008DAEC 0800E003 */  jr         $ra
 /* 577D820 8008DAF0 00000000 */   nop
-.size func_level_22_8008D4C8, . - func_level_22_8008D4C8
+.size MobyUpdate_573_level_22, . - MobyUpdate_573_level_22
