@@ -1,7 +1,7 @@
 .set noat      /* allow manual use of $at */
 .set noreorder /* don't insert nops after branches */
 
-glabel func_level_26_8007BDEC
+glabel MobyUpdate_991_level_26
 /* 622BB1C 8007BDEC D0FFBD27 */  addiu      $sp, $sp, -0x30
 /* 622BB20 8007BDF0 2C00BFAF */  sw         $ra, 0x2C($sp)
 /* 622BB24 8007BDF4 2800B2AF */  sw         $s2, 0x28($sp)
@@ -79,4 +79,4 @@ glabel func_level_26_8007BDEC
 /* 622BC40 8007BF10 3000BD27 */  addiu      $sp, $sp, 0x30
 /* 622BC44 8007BF14 0800E003 */  jr         $ra
 /* 622BC48 8007BF18 00000000 */   nop
-.size func_level_26_8007BDEC, . - func_level_26_8007BDEC
+.size MobyUpdate_991_level_26, . - MobyUpdate_991_level_26

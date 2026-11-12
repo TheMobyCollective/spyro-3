@@ -22,29 +22,30 @@
 - [ ] func_level_27_80085CF8
 
 <!-- moby.c -->
-- [ ] func_level_27_80074DEC
-- [ ] func_level_27_80075478
-- [ ] func_level_27_800769C8
-- [ ] func_level_27_80076B04
-- [ ] func_level_27_80076E08
-- [ ] func_level_27_8007797C
-- [ ] func_level_27_80079A14
-- [ ] func_level_27_80079ED0
-- [ ] func_level_27_8007A230
-- [ ] func_level_27_8007A3C0
-- [ ] func_level_27_8007B050
-- [ ] func_level_27_8007C1D4
-- [ ] func_level_27_8007CE84
-- [ ] func_level_27_8007D118
-- [ ] func_level_27_8007D9A0
-- [ ] func_level_27_8007E76C
-- [ ] func_level_27_8007F208
-- [ ] func_level_27_8008035C
-- [ ] func_level_27_8008037C
-- [ ] func_level_27_8008057C
-- [ ] func_level_27_8008246C
-- [ ] func_level_27_800826A0
-- [ ] func_level_27_80082E44
+- [ ] MobyUpdate_16_level_27
+- [ ] MobyUpdate_120_level_27
+- [ ] MobyUpdate_326_level_27
+- [ ] MobyUpdate_260_level_27
+- [ ] MobyUpdate_272_level_27
+- [ ] MobyUpdate_351_level_27
+- [ ] MobyUpdate_413_level_27
+- [ ] MobyUpdate_447_level_27
+- [ ] MobyUpdate_448_level_27
+- [ ] MobyUpdate_536_level_27
+- [ ] MobyUpdate_639_level_27
+- [ ] MobyUpdate_640_level_27
+- [ ] MobyUpdate_990_level_27
+- [ ] MobyUpdate_514_level_27
+- [ ] MobyUpdate_516_level_27
+- [ ] MobyUpdate_651_level_27
+- [ ] MobyUpdate_132_level_27
+- [ ] MobyUpdate_290_level_27
+- [ ] MobyUpdate_311_level_27
+- [ ] MobyUpdate_386_level_27
+- [ ] MobyUpdate_989_level_27
+- [ ] MobyUpdate_992_level_27
+- [ ] MobyUpdate_994_level_27
+<!-- moby_spawn -->
 - [ ] func_level_27_80083B34
 
 <!-- parts_spawn.c -->
