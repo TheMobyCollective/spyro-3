@@ -101,7 +101,6 @@ void func_80034F40(Moby* moby, int newId) {
 
 /** 
  * SetMobyAnimation() - func_80034F80() - MATCHING
- * Weird match!
  * https://decomp.me/scratch/DoLs6
  */
 void func_80034F80(Moby* pMoby, int newId) {
