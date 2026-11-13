@@ -89,6 +89,7 @@ extern int D_8006C784; // g_Lives
 extern int D_8006C7A8;
 // ...
 extern int D_8006C7C0;
+extern int D_8006C7C4; // probably ACT difficulty
 // ...
 extern int D_8006C7D4;
 // 8006c7d8

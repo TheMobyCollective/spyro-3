@@ -41,7 +41,7 @@
 - [ ] MobyUpdate_326_level_15
 - [ ] MobyUpdate_541_level_15
 - [ ] MobyUpdate_482_level_15
-- [ ] MobyUpdate_260_level_15
+- [x] MobyUpdate_260_level_15
 - [ ] MobyUpdate_272_level_15
 - [ ] MobyUpdate_29_level_15
 - [ ] MobyUpdate_142_level_15

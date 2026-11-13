@@ -214,4 +214,10 @@ typedef struct {
     int unk40;
 } MobyTag_514;
 
+typedef struct {
+    int m_TargetClass;
+    int unk4;
+    int unk8;
+} MobyVars1002;
+
 #endif

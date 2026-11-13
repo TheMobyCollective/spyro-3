@@ -36,11 +36,11 @@
 - [ ] MobyUpdate_200_level_14
 - [ ] MobyUpdate_201_level_14
 - [ ] MobyUpdate_209_level_14
-- [ ] MobyUpdate_260_level_14
+- [x] MobyUpdate_260_level_14
 - [ ] MobyUpdate_272_level_14
 - [ ] MobyUpdate_306_level_14
 - [ ] MobyUpdate_563_level_14
-- [ ] MobyUpdate_1002_level_14
+- [x] MobyUpdate_1002_level_14
 - [ ] MobyUpdate_170_level_14
 - [ ] MobyUpdate_408_level_14
 - [ ] MobyUpdate_1022_level_14

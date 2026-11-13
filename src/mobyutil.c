@@ -104,14 +104,14 @@ void func_80034F40(Moby* moby, int newId) {
  * Weird match!
  * https://decomp.me/scratch/DoLs6
  */
-void func_80034F80(Moby* arg0, int arg1) {
-    if (arg0->animationState.id != arg1) {
-        arg0->unknown3[1] = 0;
-        arg0->animationProgress = -(D_8006EE2C[arg0->mobyClass]->m_Animations[arg1]->m_NumFrames != 0 && D_8006EE2C[arg0->mobyClass]->m_Animations[arg1]->m_NumFrames != 1) & 0x30;
-        arg0->animationState.id = arg1;
-        arg0->animationState.nextId = arg1;
-        arg0->animationState.frame = 0;
-        arg0->animationState.nextFrame = 1;
+void func_80034F80(Moby* pMoby, int newId) {
+    if (pMoby->animationState.id != newId) {
+        pMoby->unknown3[1] = 0;
+        pMoby->animationProgress = D_8006EE2C[pMoby->mobyClass]->m_Animations[newId]->m_NumFrames < 2 ? 0 : 0x30;
+        pMoby->animationState.id = newId;
+        pMoby->animationState.nextId = newId;
+        pMoby->animationState.frame = 0;
+        pMoby->animationState.nextFrame = 1;
     }
 }
 

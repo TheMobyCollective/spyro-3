@@ -33,12 +33,12 @@
 - [ ] MobyUpdate_201_level_13
 - [ ] MobyUpdate_205_level_13
 - [ ] MobyUpdate_208_level_13
-- [ ] MobyUpdate_260_level_13
+- [x] MobyUpdate_260_level_13
 - [ ] MobyUpdate_212_level_13
 - [ ] MobyUpdate_272_level_13
 - [ ] MobyUpdate_306_level_13
 - [ ] MobyUpdate_563_level_13
-- [ ] MobyUpdate_1002_level_13
+- [x] MobyUpdate_1002_level_13
 - [ ] MobyUpdate_198_level_13
 - [ ] MobyUpdate_408_level_13
 - [ ] MobyUpdate_1022_level_13

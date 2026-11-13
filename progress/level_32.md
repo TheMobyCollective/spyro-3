@@ -50,11 +50,11 @@
 - [ ] MobyUpdate_200_level_32
 - [ ] MobyUpdate_201_level_32
 - [ ] MobyUpdate_209_level_32
-- [ ] MobyUpdate_260_level_32
+- [x] MobyUpdate_260_level_32
 - [ ] MobyUpdate_272_level_32
 - [ ] MobyUpdate_306_level_32
 - [ ] MobyUpdate_563_level_32
-- [ ] MobyUpdate_1002_level_32
+- [x] MobyUpdate_1002_level_32
 - [ ] MobyUpdate_29_level_32
 - [ ] MobyUpdate_31_level_32
 - [ ] MobyUpdate_43_level_32

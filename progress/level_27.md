@@ -25,7 +25,7 @@
 - [ ] MobyUpdate_16_level_27
 - [ ] MobyUpdate_120_level_27
 - [ ] MobyUpdate_326_level_27
-- [ ] MobyUpdate_260_level_27
+- [x] MobyUpdate_260_level_27
 - [ ] MobyUpdate_272_level_27
 - [ ] MobyUpdate_351_level_27
 - [ ] MobyUpdate_413_level_27

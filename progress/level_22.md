@@ -48,11 +48,11 @@
 - [ ] MobyUpdate_201_level_22
 - [ ] MobyUpdate_204_level_22
 - [ ] MobyUpdate_208_level_22
-- [ ] MobyUpdate_260_level_22
+- [x] MobyUpdate_260_level_22
 - [ ] MobyUpdate_272_level_22
 - [ ] MobyUpdate_306_level_22
 - [ ] MobyUpdate_563_level_22
-- [ ] MobyUpdate_1002_level_22
+- [x] MobyUpdate_1002_level_22
 - [ ] MobyUpdate_29_level_22
 - [ ] MobyUpdate_123_level_22
 - [ ] MobyUpdate_170_level_22

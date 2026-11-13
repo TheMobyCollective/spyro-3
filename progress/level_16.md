@@ -27,7 +27,7 @@
 - [ ] MobyUpdate_120_level_16
 - [ ] MobyUpdate_200_level_16
 - [ ] MobyUpdate_201_level_16
-- [ ] MobyUpdate_260_level_16
+- [x] MobyUpdate_260_level_16
 - [ ] MobyUpdate_272_level_16
 - [ ] MobyUpdate_306_level_16
 - [ ] MobyUpdate_563_level_16
