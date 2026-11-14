@@ -1,7 +1,0 @@
-.section .rodata
-
-dlabel D_level_23_80074C24
-/* 5A91154 80074C24 E02E0000 */ .word 0x00002EE0
-/* 5A91158 80074C28 F82A0000 */ .word 0x00002AF8
-/* 5A9115C 80074C2C 10270000 */ .word 0x00002710
-.size D_level_23_80074C24, . - D_level_23_80074C24
