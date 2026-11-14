@@ -21,12 +21,13 @@ def update_c(level, moby):
             data_new = data.replace("//#include \"overlays/moby/{cls}.inc.h\"".format(cls = moby), "#include \"overlays/moby/{cls}.inc.h\"".format(cls = moby))
             match = re.search(r"INCLUDE_ASM.*func_.*(?=\))", data_new)
             data_new_2 = re.sub("INCLUDE_ASM.*(\r\n|\r|\n)", "", data_new)
-        with open(file, "w") as f:
-            f.write(data_new_2)
+        if data_new_2 != data:
+            with open(file, "w") as f:
+                f.write(data_new_2)
         if match:
             return re.search(r"func_.*(?=\))", match.string).string
         else:
-            print("Cannot find file to delete")
+            print("Cannot find name of file to delete")
             return ""
     print("FAILED C UPDATE - file does not exist")
 
@@ -41,8 +42,9 @@ def update_progress(level, moby):
                 print("Nothing to update - moby not present in progress file")
                 return False
             data_new = data.replace(" ] MobyUpdate_{cls}_".format(cls = moby), "x] MobyUpdate_{cls}_".format(cls = moby))
-        with open(file, "w") as f:
-            f.write(data_new)
+        if data_new != data:
+            with open(file, "w") as f:
+                f.write(data_new)
         return True
     print("FAILED PROGRESS UPDATE - file does not exist")
     return False
