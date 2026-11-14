@@ -65,7 +65,7 @@
 - [ ] MobyUpdate_158_level_31
 - [ ] MobyUpdate_160_level_31
 - [ ] MobyUpdate_178_level_31
-- [ ] MobyUpdate_290_level_31
+- [x] MobyUpdate_290_level_31
 - [ ] MobyUpdate_183_level_31
 - [ ] MobyUpdate_239_level_31
 - [ ] MobyUpdate_311_level_31

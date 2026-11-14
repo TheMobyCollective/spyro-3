@@ -63,7 +63,7 @@
 - [ ] MobyUpdate_998_level_25
 - [ ] MobyUpdate_1016_level_25
 - [ ] MobyUpdate_132_level_25
-- [ ] MobyUpdate_290_level_25
+- [x] MobyUpdate_290_level_25
 - [ ] MobyUpdate_311_level_25
 <!-- moby_spawn -->
 - [ ] func_level_25_8007F7A4

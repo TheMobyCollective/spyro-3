@@ -61,7 +61,7 @@
 - [ ] MobyUpdate_1016_level_21
 - [ ] MobyUpdate_1023_level_21
 - [ ] MobyUpdate_132_level_21
-- [ ] MobyUpdate_290_level_21
+- [x] MobyUpdate_290_level_21
 - [ ] MobyUpdate_311_level_21
 <!-- moby_spawn -->
 - [ ] func_level_21_8008549C

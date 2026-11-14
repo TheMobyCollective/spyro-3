@@ -55,7 +55,7 @@
 - [ ] MobyUpdate_164_level_26
 - [ ] MobyUpdate_167_level_26
 - [ ] MobyUpdate_168_level_26
-- [ ] MobyUpdate_290_level_26
+- [x] MobyUpdate_290_level_26
 - [ ] MobyUpdate_248_level_26
 - [ ] MobyUpdate_291_level_26
 - [ ] MobyUpdate_292_level_26

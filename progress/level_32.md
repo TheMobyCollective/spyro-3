@@ -97,7 +97,7 @@
 - [ ] MobyUpdate_1023_level_32
 - [ ] MobyUpdate_54_level_32
 - [ ] MobyUpdate_132_level_32
-- [ ] MobyUpdate_290_level_32
+- [x] MobyUpdate_290_level_32
 - [ ] MobyUpdate_311_level_32
 - [ ] MobyUpdate_412_level_32
 <!-- moby_spawn -->
