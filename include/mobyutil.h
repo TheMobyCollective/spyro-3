@@ -33,7 +33,7 @@ int func_800363DC(int low, int high);
 // unk func_800365E4(unk);
 // unk func_80036708(unk);
 // unk func_800368A4(unk);
-void func_800369B8();
+void func_800369B8(Moby* pMoby, int arg1);
 // unk func_800369D8(unk);
 // unk func_80036A68(unk);
 void func_80036E60(Moby*); // update gem totals

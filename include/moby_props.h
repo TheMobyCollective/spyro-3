@@ -215,6 +215,31 @@ typedef struct {
 } MobyTag_514;
 
 typedef struct {
+    int unk0;
+    int unk4;
+    int unk8;
+    int unkC;
+    int unk10;
+    int unk14;
+    EnemyTag unk18; // the name of this struct is probably wrong
+    int unk30;
+    int unk34;
+} MobyVars46;
+
+typedef struct {
+    Vector3D unk0;
+    int unkC;
+} MobyVars245;
+
+typedef struct {
+    Moby* unk0;
+    char unk4;
+    char unk5;
+    char unk6;
+    char unk7;
+} MobyVars265;
+
+typedef struct {
     int m_TargetClass;
     int unk4;
     int unk8;

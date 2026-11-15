@@ -43,6 +43,7 @@ extern DB* D_8006C600; // current DB?
 // ...
 extern int D_8006C634;
 // ...
+extern int D_8006C644;
 
 // consolidate these
 extern int deltaTime; // 8006C648

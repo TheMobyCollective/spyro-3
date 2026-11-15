@@ -537,8 +537,8 @@ INCLUDE_ASM("asm/nonmatchings/mobyutil", func_800368A4);
  * ???() - func_800369B8() - MATCHING
  * https://decomp.me/scratch/fWFU8
  */
-void func_800369B8() {
-    func_8002E2D0();
+void func_800369B8(Moby* pMoby, int arg1) {
+    func_8002E2D0(pMoby, arg1);
 }
 
 /**
