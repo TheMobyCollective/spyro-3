@@ -31,7 +31,7 @@
 - [ ] MobyUpdate_200_level_23
 - [ ] MobyUpdate_201_level_23
 - [ ] MobyUpdate_205_level_23
-- [ ] MobyUpdate_260_level_23
+- [x] MobyUpdate_260_level_23
 - [ ] MobyUpdate_212_level_23
 - [ ] MobyUpdate_272_level_23
 - [ ] MobyUpdate_306_level_23
