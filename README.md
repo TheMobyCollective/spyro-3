@@ -113,6 +113,8 @@ I have also included a pair of shell scripts `prepare_cd.sh` and `build_cd.sh` w
 * `python3 progress.py` will generate values to put into the README progress tables.
   * Manual updates to the progress files in `/progress` is required first.
 * `python3 context.py` will generate a context file appropriate for use in decomp.me.
+* `python3 moby_implement.py $MOBY_CLASS` will implement a provided moby class for each level, if the moby has already been implemented in a file at `include/overlays/moby/$MOBY_CLASS.inc.h`.
+  * When using this script, ensure the output still matches for all levels. Some levels will have a different implementation of a given moby to other levels.
 
 ## File Structure
 The following assumptions have been made in determining an appropriate file structure for the project:
