@@ -10,7 +10,7 @@ extern void func_80055B18(Moby*); // fDeleteMoby
 extern void func_80055D24(Moby*, int); // fUpdateMobyCollision
 
 /**
- * MobyUpdate_46 - MATCHING
+ * MobyUpdate_46() - MATCHING
  * Code shared by multiple fodder mobys
  * Lost Fleet hermit crab (46)
  * Sheila's Alp duck (113)

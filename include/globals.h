@@ -18,6 +18,9 @@ extern int D_8006C514;
 // ...
 extern Moby* D_8006C550; // MobyArrayPointer
 // ...
+extern int D_8006C574;
+extern int D_8006C578; // AllocatedMobyLimit
+// ...
 extern int D_8006C580;
 // 8006c584
 // 8006c588
@@ -53,7 +56,7 @@ extern int D_8006C64C;
 // 8006c650
 extern SoundTable* soundTablePtr; // D_8006C654
 extern int D_8006C658;
-// 8006c65c
+extern Moby* D_8006C65C; // sparxMobyPtr
 extern int D_8006C660; // g_EggTotal
 extern void* D_8006C664;
 extern int D_8006C668;
