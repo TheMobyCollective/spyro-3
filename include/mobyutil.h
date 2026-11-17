@@ -2,6 +2,7 @@
 #define __MOBYUTIL_H
 
 #include "common.h"
+#include "moby_props.h"
 
 void func_80034DAC(Moby* pSparx);
 void func_80034F40(Moby* moby, int newId); // DoMobyAnimation
