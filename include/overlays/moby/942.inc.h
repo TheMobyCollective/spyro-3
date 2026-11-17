@@ -2,8 +2,7 @@
 #include "spyro.h"
 #include "moby_props.h"
 #include "ovl_header.h"
-
-extern int func_80036220(Vector3D*, BoxTag*, int, int); // isInBox
+#include "mobyutil.h"
 
 /**
  * MobyUpdate_942() - MATCHING

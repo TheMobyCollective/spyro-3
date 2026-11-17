@@ -25,7 +25,7 @@ int SubAngle8(int in0, int in1); // subtraction
 int SubAngle12(int in0, int in1); // subtraction
 int func_8003617C(int arg0, int arg1); // addition
 void func_80036188(Angle*);
-// unk func_80036220(unk);
+int func_80036220(Vector3D* pPos, BoxTag* pBox, int pPadding, int pHeight); // IsInBox
 int func_8003636C(int low, int high);
 int func_800363DC(int low, int high);
 // unk func_8003645C(unk);
@@ -52,7 +52,7 @@ int func_80038B44(int lvlIndex, int gems, int eggs); // CalculateAtlasPercentage
 void func_80038BF8(Moby*, EnemyTag*, int, int); // void fSmallEnemyDeath
 // unk func_80038F14(unk);
 // unk func_800391E8(unk);
-// unk func_80039714(unk);
+void func_80039714(Moby*); // fUpdateFragmentMoby
 void func_80039974(int dragonNo, int localOffset, int sizeLeft); // load dragon model
 // unk func_800399E8(unk);
 // unk func_80039B6C(unk); // UpdateMobyReflection()

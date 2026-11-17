@@ -1,6 +1,5 @@
 #include "ovl_header.h"
-
-extern void func_80039714(Moby*);
+#include "mobyutil.h"
 
 /**
  * MobyUpdate_290() - MATCHING

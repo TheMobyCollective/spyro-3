@@ -227,6 +227,13 @@ typedef struct {
 } MobyVars46;
 
 typedef struct {
+    char unk0;
+    char unk1;
+    short unk2;
+    Moby* unk4;
+} MobyVars170;
+
+typedef struct {
     Vector3D unk0;
     int unkC;
 } MobyVars245;
@@ -238,6 +245,11 @@ typedef struct {
     char unk6;
     char unk7;
 } MobyVars265;
+
+typedef struct {
+    BoxTag box;
+    int unk18;
+} MobyVars983;
 
 typedef struct {
     int m_TargetClass;
