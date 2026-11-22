@@ -1,7 +1,7 @@
 .set noat      /* allow manual use of $at */
 .set noreorder /* don't insert nops after branches */
 
-glabel func_level_46_80086DD8
+glabel MobyUpdate_987_level_46
 /* 8F59308 80086DD8 D0FFBD27 */  addiu      $sp, $sp, -0x30
 /* 8F5930C 80086DDC 2800B2AF */  sw         $s2, 0x28($sp)
 /* 8F59310 80086DE0 21908000 */  addu       $s2, $a0, $zero
@@ -60,8 +60,8 @@ glabel func_level_46_80086DD8
 .Llevel_46_80086EA8:
 /* 8F593D8 80086EA8 0780023C */  lui        $v0, %hi(D_8006C54C)
 /* 8F593DC 80086EAC 4CC5428C */  lw         $v0, %lo(D_8006C54C)($v0)
-/* 8F593E0 80086EB0 0980033C */  lui        $v1, %hi(D_level_46_80091B40)
-/* 8F593E4 80086EB4 401B6324 */  addiu      $v1, $v1, %lo(D_level_46_80091B40)
+/* 8F593E0 80086EB0 0980033C */  lui        $v1, %hi(level_46_data_start)
+/* 8F593E4 80086EB4 401B6324 */  addiu      $v1, $v1, %lo(level_46_data_start)
 /* 8F593E8 80086EB8 FFFF4224 */  addiu      $v0, $v0, -0x1
 /* 8F593EC 80086EBC 1E004314 */  bne        $v0, $v1, .Llevel_46_80086F38
 /* 8F593F0 80086EC0 00000000 */   nop
@@ -243,4 +243,4 @@ glabel func_level_46_80086DD8
 /* 8F59688 80087158 3000BD27 */  addiu      $sp, $sp, 0x30
 /* 8F5968C 8008715C 0800E003 */  jr         $ra
 /* 8F59690 80087160 00000000 */   nop
-.size func_level_46_80086DD8, . - func_level_46_80086DD8
+.size MobyUpdate_987_level_46, . - MobyUpdate_987_level_46
