@@ -183,6 +183,6 @@ void func_level_11_80091BDC(int cameraState) {
 
 /**
  * WIP
- * https://decomp.me/scratch/g19Id
+ * https://decomp.me/scratch/6KUmT
  */
 INCLUDE_ASM("asm/nonmatchings/overlays/level_11/camera", func_level_11_80091CA8);
