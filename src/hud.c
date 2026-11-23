@@ -546,8 +546,8 @@ void* func_800289C8(SpriteData* arg0, int arg1, int arg2) {
 }
 
 /**
- * ???() - func_80028D30()
- * Nearly matching
+ * ???() - func_80028D30() - MATCHING
+ * Ready to add
  * https://decomp.me/scratch/zr6ZQ
  */
 INCLUDE_ASM("asm/nonmatchings/hud", func_80028D30);
