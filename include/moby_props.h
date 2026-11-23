@@ -100,6 +100,21 @@ typedef struct {
 	// ...
 } MobyTag_99;
 
+typedef struct {
+    Vector3D unk0;
+    short unkC;
+    char unkE;
+    char unkF;
+    char unk10;
+    char unk11;
+    char unk12;
+    char unk13;
+    char unk14;
+    char unk15;
+    char unk16;
+    char unk17;
+} FodderVars; // name is a guess
+
 ///////////////////////////////////////////////////////////////////////////////
 // Less common mobys
 
@@ -215,12 +230,7 @@ typedef struct {
 } MobyTag_514;
 
 typedef struct {
-    int unk0;
-    int unk4;
-    int unk8;
-    int unkC;
-    int unk10;
-    int unk14;
+    FodderVars unk0;
     EnemyTag unk18; // the name of this struct is probably wrong
     int unk30;
     int unk34;

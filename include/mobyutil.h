@@ -40,7 +40,7 @@ Moby* func_80036A68(Moby*, int, Vector3D*, Vector3D*); // drop gem
 void func_80036E60(Moby*); // update gem totals
 void func_80037014(Moby* moby);
 // unk func_80037058(unk);
-// unk func_80037168(unk);
+void func_80037168(Moby*, FodderVars*, int);
 // unk func_80037324(unk);
 // unk func_80037768(unk);
 // unk func_80037A60(unk);

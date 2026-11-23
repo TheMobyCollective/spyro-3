@@ -579,6 +579,11 @@ void func_80037014(Moby* moby) {
 
 INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80037058);
 
+/**
+ * ???() - func_80037168()
+ * Register / stack issues right now
+ * https://decomp.me/scratch/ptVqQ
+ */
 INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80037168);
 
 //////////////////////////////////////////////////////////////// jtbl section below
@@ -690,6 +695,11 @@ void func_80037F50(Moby* arg0) {
     }
 }
 
+/**
+ * ???() - func_80038000()
+ * Tricky
+ * https://decomp.me/scratch/wIWEX
+ */
 INCLUDE_ASM("asm/nonmatchings/mobyutil", func_80038000);
 
 INCLUDE_ASM("asm/nonmatchings/mobyutil", func_800382F4);
