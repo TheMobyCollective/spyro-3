@@ -204,5 +204,6 @@ void func_level_10_8008B3E0(int cameraState) {
  * ???() - func_level_10_8008B528()
  * Not quite there yet, there's a block that I can't get to appear
  * https://decomp.me/scratch/MDxON
+ * https://decomp.me/scratch/OBroD (newer)
  */
 INCLUDE_ASM("asm/nonmatchings/overlays/level_10/camera", func_level_10_8008B528);
