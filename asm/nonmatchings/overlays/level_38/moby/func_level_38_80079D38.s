@@ -1,7 +1,7 @@
 .set noat      /* allow manual use of $at */
 .set noreorder /* don't insert nops after branches */
 
-glabel func_level_38_80079D38
+glabel MobyUpdate_163_level_38
 /* 7C38A68 80079D38 0780023C */  lui        $v0, %hi(D_80070328 + 0x250)
 /* 7C38A6C 80079D3C 7805428C */  lw         $v0, %lo(D_80070328 + 0x250)($v0)
 /* 7C38A70 80079D40 D0FFBD27 */  addiu      $sp, $sp, -0x30
@@ -82,4 +82,4 @@ glabel func_level_38_80079D38
 /* 7C38B88 80079E58 3000BD27 */  addiu      $sp, $sp, 0x30
 /* 7C38B8C 80079E5C 0800E003 */  jr         $ra
 /* 7C38B90 80079E60 00000000 */   nop
-.size func_level_38_80079D38, . - func_level_38_80079D38
+.size MobyUpdate_163_level_38, . - MobyUpdate_163_level_38

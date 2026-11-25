@@ -1,7 +1,0 @@
-.section .rodata
-
-dlabel D_level_38_800746FC
-/* 7C3342C 800746FC C8000000 */ .word 0x000000C8
-/* 7C33430 80074700 D2000000 */ .word 0x000000D2
-/* 7C33434 80074704 DC000000 */ .word 0x000000DC
-.size D_level_38_800746FC, . - D_level_38_800746FC

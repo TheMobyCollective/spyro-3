@@ -4680,7 +4680,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
     .level_28 {
         LONG(29)
         LONG(.level_28_end)
-        LONG(D_level_28_800862D4)
+        LONG(g_MobyUpdate_level_28)
         LONG(D_level_28_800872F8)
         LONG(func_level_28_800810A4)
         LONG(func_level_28_80084A90)
@@ -4790,7 +4790,131 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_28)
+        build/src/overlays/level_28/moby1.o(.rodata);
+        build/src/overlays/level_28/moby1.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby16.o(.rodata);
+        build/src/overlays/level_28/moby16.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby120.o(.rodata);
+        build/src/overlays/level_28/moby120.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby326.o(.rodata);
+        build/src/overlays/level_28/moby326.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby541.o(.rodata);
+        build/src/overlays/level_28/moby541.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby482.o(.rodata);
+        build/src/overlays/level_28/moby482.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby260.o(.rodata);
+        build/src/overlays/level_28/moby260.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby272.o(.rodata);
+        build/src/overlays/level_28/moby272.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby132.o(.rodata);
+        build/src/overlays/level_28/moby132.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby290.o(.rodata);
+        build/src/overlays/level_28/moby290.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby311.o(.rodata);
+        build/src/overlays/level_28/moby311.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby151.o(.rodata);
+        build/src/overlays/level_28/moby151.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby163.o(.rodata);
+        build/src/overlays/level_28/moby163.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby187.o(.rodata);
+        build/src/overlays/level_28/moby187.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby339.o(.rodata);
+        build/src/overlays/level_28/moby339.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby368.o(.rodata);
+        build/src/overlays/level_28/moby368.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby373.o(.rodata);
+        build/src/overlays/level_28/moby373.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby381.o(.rodata);
+        build/src/overlays/level_28/moby381.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby382.o(.rodata);
+        build/src/overlays/level_28/moby382.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby453.o(.rodata);
+        build/src/overlays/level_28/moby453.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby567.o(.rodata);
+        build/src/overlays/level_28/moby567.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby577.o(.rodata);
+        build/src/overlays/level_28/moby577.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby593.o(.rodata);
+        build/src/overlays/level_28/moby593.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby600.o(.rodata);
+        build/src/overlays/level_28/moby600.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby601.o(.rodata);
+        build/src/overlays/level_28/moby601.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby602.o(.rodata);
+        build/src/overlays/level_28/moby602.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby616.o(.rodata);
+        build/src/overlays/level_28/moby616.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby617.o(.rodata);
+        build/src/overlays/level_28/moby617.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby644.o(.rodata);
+        build/src/overlays/level_28/moby644.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby666.o(.rodata);
+        build/src/overlays/level_28/moby666.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby681.o(.rodata);
+        build/src/overlays/level_28/moby681.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby971.o(.rodata);
+        build/src/overlays/level_28/moby971.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby975.o(.rodata);
+        build/src/overlays/level_28/moby975.o(.rodata.jtbl);
+        build/src/overlays/level_28/moby_spawn.o(.rodata);
+        build/src/overlays/level_28/moby_spawn.o(.rodata.jtbl);
+        build/src/overlays/level_28/level.o(.rodata);
+        build/src/overlays/level_28/level.o(.rodata.jtbl);
+        build/src/overlays/level_28/parts_update.o(.rodata);
+        build/src/overlays/level_28/parts_update.o(.rodata.jtbl);
+        build/src/overlays/level_28/parts_spawn.o(.rodata);
+        build/src/overlays/level_28/parts_spawn.o(.rodata.jtbl);
+        build/src/overlays/level_28/animation.o(.rodata);
+        build/src/overlays/level_28/animation.o(.rodata.jtbl);
+        build/src/overlays/level_28/camera.o(.rodata);
+        build/src/overlays/level_28/camera.o(.rodata.jtbl);
+        level_28_text_start = .;
+        build/src/overlays/level_28/moby1.o(.text*);
+        build/src/overlays/level_28/moby16.o(.text*);
+        build/src/overlays/level_28/moby120.o(.text*);
+        build/src/overlays/level_28/moby326.o(.text*);
+        build/src/overlays/level_28/moby541.o(.text*);
+        build/src/overlays/level_28/moby482.o(.text*);
+        build/src/overlays/level_28/moby260.o(.text*);
+        build/src/overlays/level_28/moby272.o(.text*);
+        build/src/overlays/level_28/moby132.o(.text*);
+        build/src/overlays/level_28/moby290.o(.text*);
+        build/src/overlays/level_28/moby311.o(.text*);
+        build/src/overlays/level_28/moby151.o(.text*);
+        build/src/overlays/level_28/moby163.o(.text*);
+        build/src/overlays/level_28/moby187.o(.text*);
+        build/src/overlays/level_28/moby339.o(.text*);
+        build/src/overlays/level_28/moby368.o(.text*);
+        build/src/overlays/level_28/moby373.o(.text*);
+        build/src/overlays/level_28/moby381.o(.text*);
+        build/src/overlays/level_28/moby382.o(.text*);
+        build/src/overlays/level_28/moby453.o(.text*);
+        build/src/overlays/level_28/moby567.o(.text*);
+        build/src/overlays/level_28/moby577.o(.text*);
+        build/src/overlays/level_28/moby593.o(.text*);
+        build/src/overlays/level_28/moby600.o(.text*);
+        build/src/overlays/level_28/moby601.o(.text*);
+        build/src/overlays/level_28/moby602.o(.text*);
+        build/src/overlays/level_28/moby616.o(.text*);
+        build/src/overlays/level_28/moby617.o(.text*);
+        build/src/overlays/level_28/moby644.o(.text*);
+        build/src/overlays/level_28/moby666.o(.text*);
+        build/src/overlays/level_28/moby681.o(.text*);
+        build/src/overlays/level_28/moby971.o(.text*);
+        build/src/overlays/level_28/moby975.o(.text*);
+        build/src/overlays/level_28/moby_update.o(.text*);
+        build/src/overlays/level_28/moby_spawn.o(.text*);
+        build/src/overlays/level_28/level.o(.text*);
+        build/src/overlays/level_28/parts_update.o(.text*);
+        build/src/overlays/level_28/parts_spawn.o(.text*);
+        build/asm/overlays/level_28/check.o(.text*);
+        build/src/overlays/level_28/animation.o(.text*);
+        build/src/overlays/level_28/camera.o(.text*);
+        level_28_data_start = .;
+        build/src/overlays/level_28/moby_update.o(.data*);
+        build/asm/data/overlays/level_28/level.data.o(.data*);
+        .level_28_end = .;
+        . = ALIGN(., 2048);
     }
 
     .level_30 {
@@ -6233,7 +6357,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
     .level_35 {
         LONG(35)
         LONG(.level_35_end)
-        LONG(D_level_35_8008C4CC)
+        LONG(g_MobyUpdate_level_35)
         LONG(D_level_35_8008D4CC)
         LONG(func_level_35_800805A8)
         LONG(func_level_35_8008723C)
@@ -6343,7 +6467,131 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_35)
+        build/src/overlays/level_35/moby1.o(.rodata);
+        build/src/overlays/level_35/moby1.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby120.o(.rodata);
+        build/src/overlays/level_35/moby120.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby326.o(.rodata);
+        build/src/overlays/level_35/moby326.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby541.o(.rodata);
+        build/src/overlays/level_35/moby541.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby482.o(.rodata);
+        build/src/overlays/level_35/moby482.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby260.o(.rodata);
+        build/src/overlays/level_35/moby260.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby272.o(.rodata);
+        build/src/overlays/level_35/moby272.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby29.o(.rodata);
+        build/src/overlays/level_35/moby29.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby408.o(.rodata);
+        build/src/overlays/level_35/moby408.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby76.o(.rodata);
+        build/src/overlays/level_35/moby76.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby92.o(.rodata);
+        build/src/overlays/level_35/moby92.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby144.o(.rodata);
+        build/src/overlays/level_35/moby144.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby338.o(.rodata);
+        build/src/overlays/level_35/moby338.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby340.o(.rodata);
+        build/src/overlays/level_35/moby340.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby349.o(.rodata);
+        build/src/overlays/level_35/moby349.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby363.o(.rodata);
+        build/src/overlays/level_35/moby363.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby364.o(.rodata);
+        build/src/overlays/level_35/moby364.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby376.o(.rodata);
+        build/src/overlays/level_35/moby376.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby383.o(.rodata);
+        build/src/overlays/level_35/moby383.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby718.o(.rodata);
+        build/src/overlays/level_35/moby718.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby725.o(.rodata);
+        build/src/overlays/level_35/moby725.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby726.o(.rodata);
+        build/src/overlays/level_35/moby726.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby968.o(.rodata);
+        build/src/overlays/level_35/moby968.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby998.o(.rodata);
+        build/src/overlays/level_35/moby998.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby1016.o(.rodata);
+        build/src/overlays/level_35/moby1016.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby132.o(.rodata);
+        build/src/overlays/level_35/moby132.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby290.o(.rodata);
+        build/src/overlays/level_35/moby290.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby311.o(.rodata);
+        build/src/overlays/level_35/moby311.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby48.o(.rodata);
+        build/src/overlays/level_35/moby48.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby128.o(.rodata);
+        build/src/overlays/level_35/moby128.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby323.o(.rodata);
+        build/src/overlays/level_35/moby323.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby515.o(.rodata);
+        build/src/overlays/level_35/moby515.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby645.o(.rodata);
+        build/src/overlays/level_35/moby645.o(.rodata.jtbl);
+        build/src/overlays/level_35/moby_spawn.o(.rodata);
+        build/src/overlays/level_35/moby_spawn.o(.rodata.jtbl);
+        build/src/overlays/level_35/level.o(.rodata);
+        build/src/overlays/level_35/level.o(.rodata.jtbl);
+        build/src/overlays/level_35/parts_update.o(.rodata);
+        build/src/overlays/level_35/parts_update.o(.rodata.jtbl);
+        build/src/overlays/level_35/parts_spawn.o(.rodata);
+        build/src/overlays/level_35/parts_spawn.o(.rodata.jtbl);
+        build/src/overlays/level_35/animation.o(.rodata);
+        build/src/overlays/level_35/animation.o(.rodata.jtbl);
+        build/src/overlays/level_35/camera.o(.rodata);
+        build/src/overlays/level_35/camera.o(.rodata.jtbl);
+        level_35_text_start = .;
+        build/src/overlays/level_35/moby1.o(.text*);
+        build/src/overlays/level_35/moby120.o(.text*);
+        build/src/overlays/level_35/moby326.o(.text*);
+        build/src/overlays/level_35/moby541.o(.text*);
+        build/src/overlays/level_35/moby482.o(.text*);
+        build/src/overlays/level_35/moby260.o(.text*);
+        build/src/overlays/level_35/moby272.o(.text*);
+        build/src/overlays/level_35/moby29.o(.text*);
+        build/src/overlays/level_35/moby408.o(.text*);
+        build/src/overlays/level_35/moby76.o(.text*);
+        build/src/overlays/level_35/moby92.o(.text*);
+        build/src/overlays/level_35/moby144.o(.text*);
+        build/src/overlays/level_35/moby338.o(.text*);
+        build/src/overlays/level_35/moby340.o(.text*);
+        build/src/overlays/level_35/moby349.o(.text*);
+        build/src/overlays/level_35/moby363.o(.text*);
+        build/src/overlays/level_35/moby364.o(.text*);
+        build/src/overlays/level_35/moby376.o(.text*);
+        build/src/overlays/level_35/moby383.o(.text*);
+        build/src/overlays/level_35/moby718.o(.text*);
+        build/src/overlays/level_35/moby725.o(.text*);
+        build/src/overlays/level_35/moby726.o(.text*);
+        build/src/overlays/level_35/moby968.o(.text*);
+        build/src/overlays/level_35/moby998.o(.text*);
+        build/src/overlays/level_35/moby1016.o(.text*);
+        build/src/overlays/level_35/moby132.o(.text*);
+        build/src/overlays/level_35/moby290.o(.text*);
+        build/src/overlays/level_35/moby311.o(.text*);
+        build/src/overlays/level_35/moby48.o(.text*);
+        build/src/overlays/level_35/moby128.o(.text*);
+        build/src/overlays/level_35/moby323.o(.text*);
+        build/src/overlays/level_35/moby515.o(.text*);
+        build/src/overlays/level_35/moby645.o(.text*);
+        build/src/overlays/level_35/moby_update.o(.text*);
+        build/src/overlays/level_35/moby_spawn.o(.text*);
+        build/src/overlays/level_35/level.o(.text*);
+        build/src/overlays/level_35/parts_update.o(.text*);
+        build/src/overlays/level_35/parts_spawn.o(.text*);
+        build/asm/overlays/level_35/check.o(.text*);
+        build/src/overlays/level_35/animation.o(.text*);
+        build/src/overlays/level_35/camera.o(.text*);
+        level_35_data_start = .;
+        build/src/overlays/level_35/moby_update.o(.data*);
+        build/asm/data/overlays/level_35/level.data.o(.data*);
+        .level_35_end = .;
+        . = ALIGN(., 2048);
     }
 
     .level_36 {
@@ -6825,7 +7073,7 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
     .level_38 {
         LONG(38)
         LONG(.level_38_end)
-        LONG(D_level_38_80088504)
+        LONG(g_MobyUpdate_level_38)
         LONG(D_level_38_80089528)
         LONG(func_level_38_80082C6C)
         LONG(func_level_38_800869A8)
@@ -6935,7 +7183,134 @@ OVERLAY main_BSS_END : NOCROSSREFS SUBALIGN(4) {
         LONG(0)
         LONG(0)
         LONG(0)
-        LEVEL(level_38)
+        build/src/overlays/level_38/moby1.o(.rodata);
+        build/src/overlays/level_38/moby1.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby16.o(.rodata);
+        build/src/overlays/level_38/moby16.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby120.o(.rodata);
+        build/src/overlays/level_38/moby120.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby326.o(.rodata);
+        build/src/overlays/level_38/moby326.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby541.o(.rodata);
+        build/src/overlays/level_38/moby541.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby482.o(.rodata);
+        build/src/overlays/level_38/moby482.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby260.o(.rodata);
+        build/src/overlays/level_38/moby260.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby272.o(.rodata);
+        build/src/overlays/level_38/moby272.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby132.o(.rodata);
+        build/src/overlays/level_38/moby132.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby290.o(.rodata);
+        build/src/overlays/level_38/moby290.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby311.o(.rodata);
+        build/src/overlays/level_38/moby311.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby151.o(.rodata);
+        build/src/overlays/level_38/moby151.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby163.o(.rodata);
+        build/src/overlays/level_38/moby163.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby187.o(.rodata);
+        build/src/overlays/level_38/moby187.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby368.o(.rodata);
+        build/src/overlays/level_38/moby368.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby373.o(.rodata);
+        build/src/overlays/level_38/moby373.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby381.o(.rodata);
+        build/src/overlays/level_38/moby381.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby382.o(.rodata);
+        build/src/overlays/level_38/moby382.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby453.o(.rodata);
+        build/src/overlays/level_38/moby453.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby550.o(.rodata);
+        build/src/overlays/level_38/moby550.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby551.o(.rodata);
+        build/src/overlays/level_38/moby551.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby557.o(.rodata);
+        build/src/overlays/level_38/moby557.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby577.o(.rodata);
+        build/src/overlays/level_38/moby577.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby593.o(.rodata);
+        build/src/overlays/level_38/moby593.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby601.o(.rodata);
+        build/src/overlays/level_38/moby601.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby622.o(.rodata);
+        build/src/overlays/level_38/moby622.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby624.o(.rodata);
+        build/src/overlays/level_38/moby624.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby625.o(.rodata);
+        build/src/overlays/level_38/moby625.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby626.o(.rodata);
+        build/src/overlays/level_38/moby626.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby655.o(.rodata);
+        build/src/overlays/level_38/moby655.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby681.o(.rodata);
+        build/src/overlays/level_38/moby681.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby700.o(.rodata);
+        build/src/overlays/level_38/moby700.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby971.o(.rodata);
+        build/src/overlays/level_38/moby971.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby972.o(.rodata);
+        build/src/overlays/level_38/moby972.o(.rodata.jtbl);
+        build/src/overlays/level_38/moby_spawn.o(.rodata);
+        build/src/overlays/level_38/moby_spawn.o(.rodata.jtbl);
+        build/src/overlays/level_38/level.o(.rodata);
+        build/src/overlays/level_38/level.o(.rodata.jtbl);
+        build/src/overlays/level_38/parts_update.o(.rodata);
+        build/src/overlays/level_38/parts_update.o(.rodata.jtbl);
+        build/src/overlays/level_38/parts_spawn.o(.rodata);
+        build/src/overlays/level_38/parts_spawn.o(.rodata.jtbl);
+        build/src/overlays/level_38/animation.o(.rodata);
+        build/src/overlays/level_38/animation.o(.rodata.jtbl);
+        build/src/overlays/level_38/camera.o(.rodata);
+        build/src/overlays/level_38/camera.o(.rodata.jtbl);
+        level_38_text_start = .;
+        build/src/overlays/level_38/moby1.o(.text*);
+        build/src/overlays/level_38/moby16.o(.text*);
+        build/src/overlays/level_38/moby120.o(.text*);
+        build/src/overlays/level_38/moby326.o(.text*);
+        build/src/overlays/level_38/moby541.o(.text*);
+        build/src/overlays/level_38/moby482.o(.text*);
+        build/src/overlays/level_38/moby260.o(.text*);
+        build/src/overlays/level_38/moby272.o(.text*);
+        build/src/overlays/level_38/moby132.o(.text*);
+        build/src/overlays/level_38/moby290.o(.text*);
+        build/src/overlays/level_38/moby311.o(.text*);
+        build/src/overlays/level_38/moby151.o(.text*);
+        build/src/overlays/level_38/moby163.o(.text*);
+        build/src/overlays/level_38/moby187.o(.text*);
+        build/src/overlays/level_38/moby368.o(.text*);
+        build/src/overlays/level_38/moby373.o(.text*);
+        build/src/overlays/level_38/moby381.o(.text*);
+        build/src/overlays/level_38/moby382.o(.text*);
+        build/src/overlays/level_38/moby453.o(.text*);
+        build/src/overlays/level_38/moby550.o(.text*);
+        build/src/overlays/level_38/moby551.o(.text*);
+        build/src/overlays/level_38/moby557.o(.text*);
+        build/src/overlays/level_38/moby577.o(.text*);
+        build/src/overlays/level_38/moby593.o(.text*);
+        build/src/overlays/level_38/moby601.o(.text*);
+        build/src/overlays/level_38/moby622.o(.text*);
+        build/src/overlays/level_38/moby624.o(.text*);
+        build/src/overlays/level_38/moby625.o(.text*);
+        build/src/overlays/level_38/moby626.o(.text*);
+        build/src/overlays/level_38/moby655.o(.text*);
+        build/src/overlays/level_38/moby681.o(.text*);
+        build/src/overlays/level_38/moby700.o(.text*);
+        build/src/overlays/level_38/moby971.o(.text*);
+        build/src/overlays/level_38/moby972.o(.text*);
+        build/src/overlays/level_38/moby_update.o(.text*);
+        build/src/overlays/level_38/moby_spawn.o(.text*);
+        build/src/overlays/level_38/level.o(.text*);
+        build/src/overlays/level_38/parts_update.o(.text*);
+        build/src/overlays/level_38/parts_spawn.o(.text*);
+        build/asm/overlays/level_38/check.o(.text*);
+        build/src/overlays/level_38/animation.o(.text*);
+        build/src/overlays/level_38/camera.o(.text*);
+        level_38_data_start = .;
+        build/src/overlays/level_38/moby_update.o(.data*);
+        build/asm/data/overlays/level_38/level.data.o(.data*);
+        .level_38_end = .;
+        . = ALIGN(., 2048);
     }
 
     .level_40 {
