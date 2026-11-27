@@ -1,7 +1,0 @@
-.section .rodata
-
-dlabel D_level_44_800748DC
-/* 8B47E0C 800748DC 0E010000 */ .word 0x0000010E
-/* 8B47E10 800748E0 36010000 */ .word 0x00000136
-/* 8B47E14 800748E4 5E010000 */ .word 0x0000015E
-.size D_level_44_800748DC, . - D_level_44_800748DC

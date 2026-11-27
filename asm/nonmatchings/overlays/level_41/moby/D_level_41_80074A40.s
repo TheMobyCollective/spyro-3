@@ -1,7 +1,0 @@
-.section .rodata
-
-dlabel D_level_41_80074A40
-/* 813A770 80074A40 F00F0000 */ .word 0x00000FF0
-/* 813A774 80074A44 100E0000 */ .word 0x00000E10
-/* 813A778 80074A48 E40C0000 */ .word 0x00000CE4
-.size D_level_41_80074A40, . - D_level_41_80074A40

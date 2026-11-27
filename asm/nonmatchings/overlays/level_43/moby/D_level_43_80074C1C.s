@@ -1,7 +1,0 @@
-.section .rodata
-
-dlabel D_level_43_80074C1C
-/* 879A14C 80074C1C 06000000 */ .word 0x00000006
-/* 879A150 80074C20 07000000 */ .word 0x00000007
-/* 879A154 80074C24 08000000 */ .word 0x00000008
-.size D_level_43_80074C1C, . - D_level_43_80074C1C
