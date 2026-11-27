@@ -14,7 +14,7 @@ void func_80035734(Moby* moby);
 int func_8003573C(Moby* arg0, int arg1, int arg2, int arg3); // aim at Spyro?
 int func_8003585C(Moby*, int, int, int, int, int );
 int func_800359A4(void*, int); // fCountDownTimer
-// unk func_80035A80(unk);
+int func_80035A80(Moby*, int, int, int, int, int, int, int);
 int func_80035D38(Moby* moby); // SnapMobyToGround
 // unk func_80035D84(unk); // SnapMobyToGroundRange
 int func_80035DDC(Moby* arg0, int arg1, int arg2, int arg3, int arg4); // probably returns the result of moving a moby horizontally?

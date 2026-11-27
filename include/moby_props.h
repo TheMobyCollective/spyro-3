@@ -101,6 +101,20 @@ typedef struct {
 } MobyTag_99;
 
 typedef struct {
+    SpeechProps unk0;
+    int unk14; // several lines padding for dialogue pointers
+    int unk18;
+    int unk1C;
+    int unk20;
+    int unk24;
+    int unk28;
+    int unk2C;
+    int unk30;
+    int unk34;
+    Vector3D unk38;
+} MobyVars_Critter; // which one? probably all of them use this as a base
+
+typedef struct {
     Vector3D unk0;
     short unkC;
     char unkE;
@@ -168,6 +182,17 @@ typedef struct {
 	char unk2;
 	char unk3;
 } MobyTag_326;
+
+typedef struct {
+    int unk0;
+    Colour* unk4;
+} MobyVars426;
+
+typedef struct {
+    int unk0;
+    int unk4;
+    int unk8;
+} MobyVars443;
 
 typedef struct {
     int unk0;
@@ -260,6 +285,11 @@ typedef struct {
     BoxTag box;
     int unk18;
 } MobyVars983;
+
+typedef struct {
+    int unk0;
+    int unk4;
+} MobyVars993;
 
 typedef struct {
     int m_TargetClass;
