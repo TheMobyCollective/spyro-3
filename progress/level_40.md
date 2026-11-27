@@ -37,7 +37,7 @@
 - [ ] MobyUpdate_179_level_40
 - [ ] MobyUpdate_235_level_40
 - [ ] MobyUpdate_264_level_40
-- [ ] MobyUpdate_265_level_40
+- [x] MobyUpdate_265_level_40
 - [ ] MobyUpdate_321_level_40
 - [ ] MobyUpdate_426_level_40
 - [ ] MobyUpdate_427_level_40

@@ -45,7 +45,7 @@
 - [ ] MobyUpdate_563_level_24
 - [x] MobyUpdate_1002_level_24
 - [ ] MobyUpdate_142_level_24
-- [ ] MobyUpdate_170_level_24
+- [x] MobyUpdate_170_level_24
 - [ ] MobyUpdate_361_level_24
 - [ ] MobyUpdate_408_level_24
 - [ ] MobyUpdate_459_level_24

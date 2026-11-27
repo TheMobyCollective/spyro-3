@@ -34,12 +34,12 @@
 - [ ] MobyUpdate_306_level_10
 - [ ] MobyUpdate_563_level_10
 - [x] MobyUpdate_1002_level_10
-- [ ] MobyUpdate_170_level_10
+- [x] MobyUpdate_170_level_10
 - [ ] MobyUpdate_198_level_10
 - [ ] MobyUpdate_408_level_10
 - [ ] MobyUpdate_459_level_10
 - [ ] MobyUpdate_460_level_10
-- [ ] MobyUpdate_265_level_10
+- [x] MobyUpdate_265_level_10
 - [x] MobyUpdate_340_level_10
 - [ ] MobyUpdate_416_level_10
 - [ ] MobyUpdate_425_level_10
@@ -54,7 +54,7 @@
 - [ ] MobyUpdate_561_level_10
 - [ ] MobyUpdate_651_level_10
 - [x] MobyUpdate_942_level_10
-- [ ] MobyUpdate_983_level_10
+- [x] MobyUpdate_983_level_10
 - [ ] MobyUpdate_988_level_10
 - [ ] MobyUpdate_1016_level_10
 - [ ] MobyUpdate_1023_level_10

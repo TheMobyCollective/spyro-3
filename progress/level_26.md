@@ -61,7 +61,7 @@
 - [ ] MobyUpdate_292_level_26
 - [ ] MobyUpdate_293_level_26
 - [ ] MobyUpdate_311_level_26
-- [ ] MobyUpdate_356_level_26
+- [x] MobyUpdate_356_level_26
 - [ ] MobyUpdate_984_level_26
 - [ ] MobyUpdate_1005_level_26
 <!-- moby_spawn -->

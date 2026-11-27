@@ -49,7 +49,7 @@
 - [ ] MobyUpdate_272_level_41
 - [ ] MobyUpdate_306_level_41
 - [ ] MobyUpdate_1002_level_41
-- [ ] MobyUpdate_170_level_41
+- [x] MobyUpdate_170_level_41
 - [ ] MobyUpdate_198_level_41
 - [ ] MobyUpdate_408_level_41
 - [ ] MobyUpdate_459_level_41
@@ -64,7 +64,7 @@
 - [ ] MobyUpdate_132_level_41
 - [ ] MobyUpdate_290_level_41
 - [ ] MobyUpdate_311_level_41
-- [ ] MobyUpdate_356_level_41
+- [x] MobyUpdate_356_level_41
 - [ ] MobyUpdate_45_level_41
 - [ ] MobyUpdate_276_level_41
 - [ ] MobyUpdate_279_level_41
