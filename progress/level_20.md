@@ -31,7 +31,7 @@
 - [ ] MobyUpdate_482_level_20
 - [ ] MobyUpdate_200_level_20
 - [ ] MobyUpdate_201_level_20
-- [ ] MobyUpdate_209_level_20
+- [x] MobyUpdate_209_level_20
 - [x] MobyUpdate_260_level_20
 - [ ] MobyUpdate_272_level_20
 - [ ] MobyUpdate_306_level_20

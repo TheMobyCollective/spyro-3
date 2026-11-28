@@ -46,7 +46,7 @@
 - [ ] MobyUpdate_12_level_45
 - [ ] MobyUpdate_92_level_45
 - [ ] MobyUpdate_144_level_45
-- [ ] MobyUpdate_235_level_45
+- [x] MobyUpdate_235_level_45
 - [ ] MobyUpdate_319_level_45
 - [ ] MobyUpdate_338_level_45
 - [ ] MobyUpdate_340_level_45

@@ -49,7 +49,7 @@
 - [ ] MobyUpdate_326_level_32
 - [ ] MobyUpdate_200_level_32
 - [ ] MobyUpdate_201_level_32
-- [ ] MobyUpdate_209_level_32
+- [x] MobyUpdate_209_level_32
 - [x] MobyUpdate_260_level_32
 - [ ] MobyUpdate_272_level_32
 - [ ] MobyUpdate_306_level_32

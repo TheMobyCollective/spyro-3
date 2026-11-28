@@ -30,7 +30,7 @@
 - [ ] MobyUpdate_16_level_30
 - [ ] MobyUpdate_120_level_30
 - [ ] MobyUpdate_201_level_30
-- [ ] MobyUpdate_209_level_30
+- [x] MobyUpdate_209_level_30
 - [x] MobyUpdate_260_level_30
 - [ ] MobyUpdate_272_level_30
 - [ ] MobyUpdate_306_level_30
@@ -41,7 +41,7 @@
 - [ ] MobyUpdate_408_level_30
 - [ ] MobyUpdate_459_level_30
 - [ ] MobyUpdate_460_level_30
-- [ ] MobyUpdate_235_level_30
+- [x] MobyUpdate_235_level_30
 - [x] MobyUpdate_265_level_30
 - [ ] MobyUpdate_268_level_30
 - [ ] MobyUpdate_425_level_30

@@ -1,5 +1,4 @@
 #include "common.h"
 #include "level/44.h"
 
-//#include "overlays/moby/209.inc.h"
-INCLUDE_ASM("asm/nonmatchings/overlays/level_44/moby", func_level_44_800785C4);
+#include "overlays/moby/209.inc.h"
