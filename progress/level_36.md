@@ -49,7 +49,7 @@
 - [ ] MobyUpdate_282_level_36
 - [ ] MobyUpdate_285_level_36
 - [ ] MobyUpdate_615_level_36
-- [ ] MobyUpdate_991_level_36
+- [x] MobyUpdate_991_level_36
 - [ ] MobyUpdate_1011_level_36
 - [ ] MobyUpdate_132_level_36
 - [ ] MobyUpdate_290_level_36

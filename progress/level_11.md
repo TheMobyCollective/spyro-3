@@ -55,7 +55,7 @@
 - [ ] MobyUpdate_57_level_11
 - [ ] MobyUpdate_182_level_11
 - [x] MobyUpdate_245_level_11
-- [ ] MobyUpdate_993_level_11
+- [x] MobyUpdate_993_level_11
 - [ ] MobyUpdate_1011_level_11
 - [ ] MobyUpdate_1016_level_11
 - [ ] MobyUpdate_1023_level_11

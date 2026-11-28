@@ -41,7 +41,7 @@
 - [ ] MobyUpdate_272_level_31
 - [ ] MobyUpdate_306_level_31
 - [x] MobyUpdate_1002_level_31
-- [ ] MobyUpdate_1003_level_31
+- [x] MobyUpdate_1003_level_31
 - [ ] MobyUpdate_198_level_31
 - [ ] MobyUpdate_408_level_31
 - [ ] MobyUpdate_1022_level_31
@@ -51,7 +51,7 @@
 - [ ] MobyUpdate_242_level_31
 - [ ] MobyUpdate_243_level_31
 - [ ] MobyUpdate_244_level_31
-- [ ] MobyUpdate_993_level_31
+- [x] MobyUpdate_993_level_31
 - [ ] MobyUpdate_1011_level_31
 - [ ] MobyUpdate_60_level_31
 - [ ] MobyUpdate_62_level_31

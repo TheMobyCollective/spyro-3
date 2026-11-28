@@ -70,7 +70,7 @@
 - [ ] MobyUpdate_90_level_22
 - [ ] MobyUpdate_182_level_22
 - [ ] MobyUpdate_982_level_22
-- [ ] MobyUpdate_993_level_22
+- [x] MobyUpdate_993_level_22
 - [ ] MobyUpdate_999_level_22
 - [ ] MobyUpdate_1011_level_22
 - [ ] MobyUpdate_1021_level_22

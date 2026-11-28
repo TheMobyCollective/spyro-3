@@ -36,14 +36,14 @@
 - [ ] MobyUpdate_272_level_23
 - [ ] MobyUpdate_306_level_23
 - [ ] MobyUpdate_1002_level_23
-- [ ] MobyUpdate_1004_level_23
+- [x] MobyUpdate_1004_level_23
 - [ ] MobyUpdate_129_level_23
 - [ ] MobyUpdate_142_level_23
 - [ ] MobyUpdate_408_level_23
 - [ ] MobyUpdate_1022_level_23
 - [ ] MobyUpdate_57_level_23
 - [ ] MobyUpdate_182_level_23
-- [ ] MobyUpdate_993_level_23
+- [x] MobyUpdate_993_level_23
 - [ ] MobyUpdate_1011_level_23
 - [ ] MobyUpdate_1016_level_23
 - [ ] MobyUpdate_1023_level_23

@@ -59,7 +59,7 @@
 - [x] MobyUpdate_245_level_13
 - [ ] MobyUpdate_287_level_13
 - [ ] MobyUpdate_556_level_13
-- [ ] MobyUpdate_993_level_13
+- [x] MobyUpdate_993_level_13
 - [ ] MobyUpdate_999_level_13
 - [ ] MobyUpdate_1011_level_13
 - [ ] MobyUpdate_1018_level_13

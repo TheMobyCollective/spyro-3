@@ -30,7 +30,7 @@
 - [ ] MobyUpdate_306_level_12
 - [ ] MobyUpdate_563_level_12
 - [x] MobyUpdate_1002_level_12
-- [ ] MobyUpdate_1004_level_12
+- [x] MobyUpdate_1004_level_12
 - [x] MobyUpdate_46_level_12
 - [ ] MobyUpdate_123_level_12
 - [ ] MobyUpdate_188_level_12

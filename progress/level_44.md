@@ -47,7 +47,7 @@
 - [ ] MobyUpdate_1022_level_44
 - [ ] MobyUpdate_99_level_44
 - [ ] MobyUpdate_182_level_44
-- [ ] MobyUpdate_993_level_44
+- [x] MobyUpdate_993_level_44
 - [ ] MobyUpdate_999_level_44
 - [ ] MobyUpdate_1011_level_44
 - [ ] MobyUpdate_132_level_44

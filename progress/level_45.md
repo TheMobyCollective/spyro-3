@@ -38,7 +38,7 @@
 - [ ] MobyUpdate_1_level_45
 - [ ] MobyUpdate_120_level_45
 - [ ] MobyUpdate_326_level_45
-- [ ] MobyUpdate_541_level_45
+- [x] MobyUpdate_541_level_45
 - [ ] MobyUpdate_482_level_45
 - [ ] MobyUpdate_260_level_45
 - [ ] MobyUpdate_272_level_45

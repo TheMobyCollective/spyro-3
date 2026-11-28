@@ -32,7 +32,7 @@
 - [ ] MobyUpdate_16_level_48
 - [ ] MobyUpdate_120_level_48
 - [ ] MobyUpdate_326_level_48
-- [ ] MobyUpdate_541_level_48
+- [x] MobyUpdate_541_level_48
 - [ ] MobyUpdate_482_level_48
 - [ ] MobyUpdate_260_level_48
 - [ ] MobyUpdate_272_level_48

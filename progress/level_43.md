@@ -48,7 +48,7 @@
 - [ ] MobyUpdate_1022_level_43
 - [ ] MobyUpdate_99_level_43
 - [ ] MobyUpdate_182_level_43
-- [ ] MobyUpdate_993_level_43
+- [x] MobyUpdate_993_level_43
 - [ ] MobyUpdate_132_level_43
 - [ ] MobyUpdate_290_level_43
 - [ ] MobyUpdate_311_level_43
