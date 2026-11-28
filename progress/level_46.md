@@ -58,7 +58,7 @@
 - [ ] MobyUpdate_190_level_46
 - [ ] MobyUpdate_191_level_46
 - [ ] MobyUpdate_197_level_46
-- [ ] MobyUpdate_219_level_46
+- [x] MobyUpdate_219_level_46
 - [ ] MobyUpdate_220_level_46
 - [ ] MobyUpdate_221_level_46
 - [ ] MobyUpdate_227_level_46

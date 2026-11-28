@@ -37,7 +37,7 @@
 - [ ] MobyUpdate_990_level_27
 - [ ] MobyUpdate_514_level_27
 - [ ] MobyUpdate_516_level_27
-- [ ] MobyUpdate_651_level_27
+- [x] MobyUpdate_651_level_27
 - [ ] MobyUpdate_132_level_27
 - [x] MobyUpdate_290_level_27
 - [ ] MobyUpdate_311_level_27
