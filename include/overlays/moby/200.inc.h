@@ -18,7 +18,7 @@ extern int rand();
  * https://decomp.me/scratch/jdb3M
  */
 
-void func_level_10_80077488(Moby* pMoby) {
+void MOBYUPDATE(200) (Moby* pMoby) {
 
     if (*(int*)pMoby->mobyTag != 0) {
         func_80037014(pMoby);

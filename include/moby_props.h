@@ -133,6 +133,14 @@ typedef struct {
 // Less common mobys
 
 typedef struct {
+    int unk0;
+    int unk4;
+    int unk8;
+    short unkC;
+    short unkE;
+} MobyVars71; // possibly shared with 235 due to similar functions
+
+typedef struct {
 	Vector3D unk0; // PLACEHOLDER, unsure of length
 } MobyTag_76;
 
@@ -173,6 +181,14 @@ typedef struct {
 } MobyTag_90;
 
 typedef struct {
+    int unk0;
+    int unk4;
+    int unk8;
+    short unkC;
+    short unkE;
+} MobyVars235; // may just be the Fragment one? Also identical to 71 so far
+
+typedef struct {
 	Vector3D unk0;
 	int unkC;
 } MobyTag_245;
@@ -193,6 +209,14 @@ typedef struct {
     int unk4;
     int unk8;
 } MobyVars443;
+
+typedef struct {
+    int unk0; // timer, probably could use a common vars
+} MobyVars482;
+
+typedef struct {
+    int unk0; // timer, probably could use a common vars
+} MobyVars541;
 
 typedef struct {
     int unk0;
@@ -296,5 +320,9 @@ typedef struct {
     int unk4;
     int unk8;
 } MobyVars1002;
+
+typedef struct {
+    int unk0;
+} MobyVars1004;
 
 #endif
