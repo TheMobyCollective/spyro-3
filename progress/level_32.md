@@ -99,7 +99,7 @@
 - [ ] MobyUpdate_132_level_32
 - [x] MobyUpdate_290_level_32
 - [ ] MobyUpdate_311_level_32
-- [ ] MobyUpdate_412_level_32
+- [x] MobyUpdate_412_level_32
 <!-- moby_spawn -->
 - [ ] func_level_32_8008E988
 

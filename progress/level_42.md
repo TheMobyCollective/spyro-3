@@ -73,7 +73,7 @@
 - [ ] MobyUpdate_132_level_42
 - [ ] MobyUpdate_290_level_42
 - [ ] MobyUpdate_311_level_42
-- [ ] MobyUpdate_412_level_42
+- [x] MobyUpdate_412_level_42
 - [ ] MobyUpdate_466_level_42
 - [ ] MobyUpdate_959_level_42
 <!-- moby_spawn -->

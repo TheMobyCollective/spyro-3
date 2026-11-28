@@ -78,10 +78,10 @@
 - [x] MobyUpdate_359_level_11
 - [ ] MobyUpdate_419_level_11
 - [ ] MobyUpdate_428_level_11
-- [ ] MobyUpdate_443_level_11
+- [x] MobyUpdate_443_level_11
 - [ ] MobyUpdate_995_level_11
 - [ ] MobyUpdate_997_level_11
-- [ ] MobyUpdate_412_level_11
+- [x] MobyUpdate_412_level_11
 <!-- moby_spawn -->
 - [ ] func_level_11_80084A5C
 

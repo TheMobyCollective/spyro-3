@@ -72,7 +72,7 @@
 - [ ] MobyUpdate_177_level_23
 - [ ] MobyUpdate_180_level_23
 - [ ] MobyUpdate_404_level_23
-- [ ] MobyUpdate_412_level_23
+- [x] MobyUpdate_412_level_23
 - [ ] MobyUpdate_974_level_23
 - [ ] MobyUpdate_1000_level_23
 - [ ] MobyUpdate_1006_level_23

@@ -73,7 +73,7 @@
 - [ ] MobyUpdate_389_level_34
 - [ ] MobyUpdate_391_level_34
 - [ ] MobyUpdate_410_level_34
-- [ ] MobyUpdate_423_level_34
+- [x] MobyUpdate_423_level_34
 - [ ] MobyUpdate_463_level_34
 - [ ] MobyUpdate_464_level_34
 - [ ] MobyUpdate_465_level_34

@@ -45,7 +45,7 @@
 - [x] MobyUpdate_265_level_30
 - [ ] MobyUpdate_268_level_30
 - [ ] MobyUpdate_425_level_30
-- [ ] MobyUpdate_426_level_30
+- [x] MobyUpdate_426_level_30
 - [ ] MobyUpdate_427_level_30
 - [ ] MobyUpdate_502_level_30
 - [ ] MobyUpdate_514_level_30
@@ -62,7 +62,7 @@
 - [ ] MobyUpdate_132_level_30
 - [x] MobyUpdate_290_level_30
 - [ ] MobyUpdate_311_level_30
-- [ ] MobyUpdate_412_level_30
+- [x] MobyUpdate_412_level_30
 - [ ] MobyUpdate_717_level_30
 - [ ] MobyUpdate_722_level_30
 <!-- moby_spawn -->

@@ -39,7 +39,7 @@
 - [ ] MobyUpdate_264_level_40
 - [x] MobyUpdate_265_level_40
 - [ ] MobyUpdate_321_level_40
-- [ ] MobyUpdate_426_level_40
+- [x] MobyUpdate_426_level_40
 - [ ] MobyUpdate_427_level_40
 - [ ] MobyUpdate_498_level_40
 - [ ] MobyUpdate_505_level_40
@@ -58,7 +58,7 @@
 - [ ] MobyUpdate_132_level_40
 - [ ] MobyUpdate_290_level_40
 - [ ] MobyUpdate_311_level_40
-- [ ] MobyUpdate_412_level_40
+- [x] MobyUpdate_412_level_40
 <!-- moby_spawn -->
 - [ ] func_level_40_800824AC
 

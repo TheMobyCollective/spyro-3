@@ -43,7 +43,7 @@
 - [x] MobyUpdate_340_level_10
 - [ ] MobyUpdate_416_level_10
 - [ ] MobyUpdate_425_level_10
-- [ ] MobyUpdate_426_level_10
+- [x] MobyUpdate_426_level_10
 - [ ] MobyUpdate_427_level_10
 - [ ] MobyUpdate_431_level_10
 - [ ] MobyUpdate_432_level_10

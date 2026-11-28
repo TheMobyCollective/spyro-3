@@ -46,7 +46,7 @@
 - [ ] MobyUpdate_122_level_20
 - [x] MobyUpdate_265_level_20
 - [ ] MobyUpdate_425_level_20
-- [ ] MobyUpdate_426_level_20
+- [x] MobyUpdate_426_level_20
 - [ ] MobyUpdate_427_level_20
 - [ ] MobyUpdate_498_level_20
 - [ ] MobyUpdate_499_level_20
@@ -55,7 +55,7 @@
 - [ ] MobyUpdate_516_level_20
 - [ ] MobyUpdate_519_level_20
 - [ ] MobyUpdate_522_level_20
-- [ ] MobyUpdate_524_level_20
+- [x] MobyUpdate_524_level_20
 - [ ] MobyUpdate_651_level_20
 - [ ] MobyUpdate_661_level_20
 - [ ] MobyUpdate_988_level_20
@@ -65,7 +65,7 @@
 - [x] MobyUpdate_290_level_20
 - [ ] MobyUpdate_311_level_20
 - [ ] MobyUpdate_997_level_20
-- [ ] MobyUpdate_412_level_20
+- [x] MobyUpdate_412_level_20
 <!-- moby_spawn -->
 - [ ] func_level_20_80084218
 

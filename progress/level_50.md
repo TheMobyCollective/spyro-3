@@ -83,7 +83,7 @@
 - [x] MobyUpdate_265_level_50
 - [ ] MobyUpdate_338_level_50
 - [ ] MobyUpdate_364_level_50
-- [ ] MobyUpdate_426_level_50
+- [x] MobyUpdate_426_level_50
 - [ ] MobyUpdate_427_level_50
 - [ ] MobyUpdate_1011_level_50
 - [ ] MobyUpdate_1016_level_50
