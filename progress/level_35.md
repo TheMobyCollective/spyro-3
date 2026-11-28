@@ -49,7 +49,7 @@
 - [ ] MobyUpdate_92_level_35
 - [ ] MobyUpdate_144_level_35
 - [ ] MobyUpdate_338_level_35
-- [ ] MobyUpdate_340_level_35
+- [x] MobyUpdate_340_level_35
 - [ ] MobyUpdate_349_level_35
 - [ ] MobyUpdate_363_level_35
 - [ ] MobyUpdate_364_level_35
@@ -62,7 +62,7 @@
 - [ ] MobyUpdate_998_level_35
 - [ ] MobyUpdate_1016_level_35
 - [ ] MobyUpdate_132_level_35
-- [ ] MobyUpdate_290_level_35
+- [x] MobyUpdate_290_level_35
 - [ ] MobyUpdate_311_level_35
 - [ ] MobyUpdate_48_level_35
 - [ ] MobyUpdate_128_level_35

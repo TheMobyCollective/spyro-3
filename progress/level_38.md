@@ -36,7 +36,7 @@
 - [ ] MobyUpdate_260_level_38
 - [ ] MobyUpdate_272_level_38
 - [ ] MobyUpdate_132_level_38
-- [ ] MobyUpdate_290_level_38
+- [x] MobyUpdate_290_level_38
 - [ ] MobyUpdate_311_level_38
 - [ ] MobyUpdate_151_level_38
 - [ ] MobyUpdate_163_level_38

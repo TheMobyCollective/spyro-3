@@ -53,7 +53,7 @@
 - [ ] MobyUpdate_144_level_15
 - [ ] MobyUpdate_329_level_15
 - [ ] MobyUpdate_338_level_15
-- [ ] MobyUpdate_340_level_15
+- [x] MobyUpdate_340_level_15
 - [ ] MobyUpdate_349_level_15
 - [ ] MobyUpdate_363_level_15
 - [ ] MobyUpdate_383_level_15

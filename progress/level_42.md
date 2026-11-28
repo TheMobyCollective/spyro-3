@@ -71,7 +71,7 @@
 - [ ] MobyUpdate_1011_level_42
 - [ ] MobyUpdate_1023_level_42
 - [ ] MobyUpdate_132_level_42
-- [ ] MobyUpdate_290_level_42
+- [x] MobyUpdate_290_level_42
 - [ ] MobyUpdate_311_level_42
 - [x] MobyUpdate_412_level_42
 - [ ] MobyUpdate_466_level_42

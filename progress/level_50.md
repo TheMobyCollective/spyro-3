@@ -89,7 +89,7 @@
 - [ ] MobyUpdate_1016_level_50
 - [ ] MobyUpdate_54_level_50
 - [ ] MobyUpdate_132_level_50
-- [ ] MobyUpdate_290_level_50
+- [x] MobyUpdate_290_level_50
 - [ ] MobyUpdate_311_level_50
 - [ ] MobyUpdate_197_level_50
 - [ ] MobyUpdate_216_level_50

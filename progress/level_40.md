@@ -56,7 +56,7 @@
 - [ ] MobyUpdate_1016_level_40
 - [ ] MobyUpdate_1023_level_40
 - [ ] MobyUpdate_132_level_40
-- [ ] MobyUpdate_290_level_40
+- [x] MobyUpdate_290_level_40
 - [ ] MobyUpdate_311_level_40
 - [x] MobyUpdate_412_level_40
 <!-- moby_spawn -->

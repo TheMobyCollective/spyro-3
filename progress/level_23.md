@@ -49,7 +49,7 @@
 - [ ] MobyUpdate_1023_level_23
 - [ ] MobyUpdate_8_level_23
 - [ ] MobyUpdate_132_level_23
-- [ ] MobyUpdate_290_level_23
+- [x] MobyUpdate_290_level_23
 - [ ] MobyUpdate_311_level_23
 - [ ] MobyUpdate_18_level_23
 - [ ] MobyUpdate_19_level_23

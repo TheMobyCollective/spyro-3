@@ -57,7 +57,7 @@
 - [ ] MobyUpdate_516_level_37
 - [ ] MobyUpdate_651_level_37
 - [ ] MobyUpdate_132_level_37
-- [ ] MobyUpdate_290_level_37
+- [x] MobyUpdate_290_level_37
 - [ ] MobyUpdate_311_level_37
 <!-- moby_spawn -->
 - [ ] func_level_37_800841C8
